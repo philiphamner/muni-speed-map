@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# GTFS raw data (large files)
+data/gtfs/*.txt
+data/gtfs/*.zip
