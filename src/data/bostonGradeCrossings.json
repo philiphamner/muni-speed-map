@@ -130,27 +130,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "61545717,61545730,6184831915",
-        "type": "level_crossing",
-        "routes": [
-          "Mattapan"
-        ],
-        "crossingCount": 3,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.09142293333333,
-          42.267324566666666
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "61563623,69488284,7773725253,7773725254",
         "type": "level_crossing",
         "routes": [
@@ -166,27 +145,6 @@
         "coordinates": [
           -71.14025675,
           42.3486251
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "67449525,5184799474",
-        "type": "level_crossing",
-        "routes": [
-          "Mattapan"
-        ],
-        "crossingCount": 2,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.0731987,
-          42.270052750000005
         ]
       }
     },
@@ -1112,27 +1070,6 @@
         "coordinates": [
           -71.11430949999999,
           42.34402205
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "5184774266,5184774281",
-        "type": "level_crossing",
-        "routes": [
-          "Mattapan"
-        ],
-        "crossingCount": 2,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.08722745,
-          42.26757655
         ]
       }
     },

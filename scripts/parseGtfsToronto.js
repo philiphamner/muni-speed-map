@@ -1,39 +1,46 @@
-// Parse Boston MBTA GTFS data and extract Green Line routes as GeoJSON
+// Parse Toronto TTC GTFS data and extract Streetcar lines as GeoJSON
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const gtfsDir = join(__dirname, "..", "gtfs_boston");
+const gtfsDir = join(__dirname, "..", "gtfs_toronto");
 const outputDir = join(__dirname, "..", "src", "data");
 
-// MBTA Green Line branches (light rail / street-running)
-// Green-B = Boston College branch (Comm Ave street-running)
-// Green-C = Cleveland Circle branch (Beacon St reservation)
-// Green-D = Riverside branch (mostly grade-separated)
-// Green-E = Heath Street branch (Huntington Ave street-running)
-const GREEN_LINE_ROUTES = ["Green-B", "Green-C", "Green-D", "Green-E"];
+// Toronto TTC Streetcar lines (route_id from GTFS)
+// Main daytime streetcar routes
+const STREETCAR_LINES = [
+  "501",
+  "504",
+  "505",
+  "506",
+  "509",
+  "510",
+  "511",
+  "512",
+];
 
-// Line colors matching MBTA branding
+// Line colors - TTC streetcars are traditionally red
 const LINE_COLORS = {
-  "Green-B": "#00843D",
-  "Green-C": "#00843D",
-  "Green-D": "#00843D",
-  "Green-E": "#00843D",
+  501: "#ED1C24", // Queen
+  504: "#ED1C24", // King
+  505: "#ED1C24", // Dundas
+  506: "#ED1C24", // Carlton
+  509: "#ED1C24", // Harbourfront
+  510: "#ED1C24", // Spadina
+  511: "#ED1C24", // Bathurst
+  512: "#ED1C24", // St Clair
 };
 
 const LINE_NAMES = {
-  "Green-B": "Green Line B",
-  "Green-C": "Green Line C",
-  "Green-D": "Green Line D",
-  "Green-E": "Green Line E",
-};
-
-const LINE_LETTERS = {
-  "Green-B": "B",
-  "Green-C": "C",
-  "Green-D": "D",
-  "Green-E": "E",
+  501: "501 Queen",
+  504: "504 King",
+  505: "505 Dundas",
+  506: "506 Carlton",
+  509: "509 Harbourfront",
+  510: "510 Spadina",
+  511: "511 Bathurst",
+  512: "512 St Clair",
 };
 
 function parseCSV(filename) {
@@ -41,7 +48,7 @@ function parseCSV(filename) {
   const lines = content.trim().split("\n");
   const headers = lines[0]
     .split(",")
-    .map((h) => h.trim().replace(/^\uFEFF/, "")); // Remove BOM if present
+    .map((h) => h.trim().replace(/^\uFEFF/, ""));
 
   return lines.slice(1).map((line) => {
     const values = [];
@@ -69,31 +76,31 @@ function parseCSV(filename) {
 }
 
 function main() {
-  console.log("Parsing Boston MBTA GTFS data...");
+  console.log("Parsing Toronto TTC GTFS data...");
   console.log(`GTFS directory: ${gtfsDir}`);
 
   // Parse routes
   const routes = parseCSV("routes.txt");
   console.log(`Total routes: ${routes.length}`);
-  const greenRoutes = routes.filter((r) =>
-    GREEN_LINE_ROUTES.includes(r.route_id)
+  const streetcarRoutes = routes.filter((r) =>
+    STREETCAR_LINES.includes(r.route_id)
   );
   console.log(
-    `Found ${greenRoutes.length} Green Line routes:`,
-    greenRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
+    `Found ${streetcarRoutes.length} Streetcar routes:`,
+    streetcarRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
   );
 
   // Parse trips to get shape_ids for each route
   const trips = parseCSV("trips.txt");
   console.log(`Total trips: ${trips.length}`);
-  const greenTrips = trips.filter((t) =>
-    GREEN_LINE_ROUTES.includes(t.route_id)
+  const streetcarTrips = trips.filter((t) =>
+    STREETCAR_LINES.includes(t.route_id)
   );
-  console.log(`Green Line trips: ${greenTrips.length}`);
+  console.log(`Streetcar trips: ${streetcarTrips.length}`);
 
   // Count trips per shape_id for each route/direction
   const shapeCounts = {};
-  greenTrips.forEach((trip) => {
+  streetcarTrips.forEach((trip) => {
     const key = `${trip.route_id}_${trip.direction_id}`;
     if (!shapeCounts[key]) {
       shapeCounts[key] = {
@@ -116,8 +123,6 @@ function main() {
   const selectedShapes = {};
   Object.entries(shapeCounts).forEach(([key, data]) => {
     const shapes = Object.entries(data.shapes);
-
-    // Sort by count (descending) and pick the most common
     shapes.sort((a, b) => b[1].count - a[1].count);
 
     const [shapeId, info] = shapes[0];
@@ -141,7 +146,7 @@ function main() {
   const shapes = parseCSV("shapes.txt");
   console.log(`Total shape points: ${shapes.length}`);
 
-  // Group shape points by shape_id and filter for our routes
+  // Group shape points by shape_id
   const shapePoints = {};
   shapes.forEach((pt) => {
     if (selectedShapes[pt.shape_id]) {
@@ -165,7 +170,7 @@ function main() {
   // Create GeoJSON features
   const features = Object.entries(shapePoints).map(([shapeId, points]) => {
     const info = selectedShapes[shapeId];
-    const route = greenRoutes.find((r) => r.route_id === info.route_id);
+    const route = streetcarRoutes.find((r) => r.route_id === info.route_id);
     const routeId = info.route_id;
 
     return {
@@ -176,7 +181,7 @@ function main() {
         route_name: LINE_NAMES[routeId] || route?.route_long_name || routeId,
         route_color:
           LINE_COLORS[routeId] || `#${route?.route_color || "666666"}`,
-        route_letter: LINE_LETTERS[routeId] || routeId,
+        route_letter: routeId,
         direction_id: info.direction_id,
         direction: info.direction_id === "0" ? "outbound" : "inbound",
         headsign: info.headsign,
@@ -194,7 +199,7 @@ function main() {
   };
 
   // Write output
-  const outputPath = join(outputDir, "bostonGreenLineRoutes.json");
+  const outputPath = join(outputDir, "torontoStreetcarRoutes.json");
   writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
   console.log(`\nWrote ${features.length} features to ${outputPath}`);
 

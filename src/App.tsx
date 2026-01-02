@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { SpeedMap } from './components/SpeedMap';
-import { Controls } from './components/Controls';
-import { MUNI_LINES, getLinesForCity } from './types';
-import type { City } from './types';
-import './App.css';
+import { useState, useEffect } from "react";
+import { SpeedMap } from "./components/SpeedMap";
+import { Controls } from "./components/Controls";
+import { MUNI_LINES, getLinesForCity } from "./types";
+import type { City } from "./types";
+import "./App.css";
 
 export interface SpeedFilter {
   minSpeed: number;
@@ -11,7 +11,7 @@ export interface SpeedFilter {
   showNoData: boolean;
 }
 
-export type ViewMode = 'raw' | 'segments';
+export type ViewMode = "raw" | "segments" | "live";
 
 export interface LineStats {
   line: string;
@@ -22,15 +22,16 @@ export interface LineStats {
 
 function App() {
   // City selector - SF or LA
-  const [city, setCity] = useState<City>('SF');
-  
+  const [city, setCity] = useState<City>("SF");
+
   // Lines selected for the current city
   const [selectedLines, setSelectedLines] = useState<string[]>(
-    MUNI_LINES.filter(line => line !== 'F') as string[]
+    MUNI_LINES.filter((line) => line !== "F") as string[]
   );
-  
+
   const [vehicleCount, setVehicleCount] = useState(0);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
+  const [dataAgeMinutes, setDataAgeMinutes] = useState<number | null>(null);
   const [speedFilter, setSpeedFilter] = useState<SpeedFilter>({
     minSpeed: 0,
     maxSpeed: 50,
@@ -40,15 +41,15 @@ function App() {
   const [showStops, setShowStops] = useState(false);
   const [showCrossings, setShowCrossings] = useState(false);
   const [hideStoppedTrains, setHideStoppedTrains] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>('raw');
+  const [viewMode, setViewMode] = useState<ViewMode>("raw");
   const [lineStats, setLineStats] = useState<LineStats[]>([]);
 
   // Reset state when city changes
   useEffect(() => {
     const lines = getLinesForCity(city);
     // For SF, exclude F by default; for LA and Seattle, select all
-    if (city === 'SF') {
-      setSelectedLines(lines.filter(line => line !== 'F') as string[]);
+    if (city === "SF") {
+      setSelectedLines(lines.filter((line) => line !== "F") as string[]);
     } else {
       setSelectedLines([...lines] as string[]);
     }
@@ -56,6 +57,11 @@ function App() {
     setLineStats([]);
     setVehicleCount(0);
     setLastUpdate(null);
+    setDataAgeMinutes(null);
+    // If switching away from live mode, default to raw
+    if (viewMode === "live") {
+      setViewMode("raw");
+    }
     // Note: showStops, showCrossings, showRouteLines, speedFilter, viewMode,
     // and hideStoppedTrains are intentionally preserved across city switches
   }, [city]);
@@ -69,6 +75,7 @@ function App() {
         setSelectedLines={setSelectedLines}
         vehicleCount={vehicleCount}
         lastUpdate={lastUpdate}
+        dataAgeMinutes={dataAgeMinutes}
         speedFilter={speedFilter}
         setSpeedFilter={setSpeedFilter}
         showRouteLines={showRouteLines}
@@ -83,7 +90,7 @@ function App() {
         setViewMode={setViewMode}
         lineStats={lineStats}
       />
-      <SpeedMap 
+      <SpeedMap
         key={city}
         city={city}
         selectedLines={selectedLines}
@@ -93,10 +100,11 @@ function App() {
         showCrossings={showCrossings}
         hideStoppedTrains={hideStoppedTrains}
         viewMode={viewMode}
-        onVehicleUpdate={(count, time, stats) => {
+        onVehicleUpdate={(count, time, stats, ageMinutes) => {
           setVehicleCount(count);
           setLastUpdate(time);
           if (stats) setLineStats(stats);
+          if (ageMinutes !== undefined) setDataAgeMinutes(ageMinutes);
         }}
       />
     </div>

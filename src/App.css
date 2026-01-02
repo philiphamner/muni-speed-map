@@ -69,9 +69,40 @@
   box-shadow: 0 2px 8px rgba(0, 217, 255, 0.2);
 }
 
+/* Warning style for cities with data quality issues */
+.city-btn.city-btn-warning {
+  color: rgba(255, 180, 100, 0.7);
+}
+
+.city-btn.city-btn-warning:hover {
+  color: rgba(255, 180, 100, 0.9);
+  background: rgba(255, 150, 50, 0.1);
+}
+
+.city-btn.city-btn-warning.active {
+  background: linear-gradient(135deg, rgba(255, 150, 50, 0.3) 0%, rgba(255, 100, 50, 0.2) 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 150, 50, 0.2);
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 52px; /* Fixed height to prevent shifting */
+}
+
+.app-city {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .app-title {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   background: linear-gradient(135deg, #00d9ff 0%, #00ff88 100%);
@@ -79,12 +110,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.5px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
-.app-subtitle {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 4px 0 0 0;
+.app-title.app-title-long {
+  font-size: 1.25rem;
 }
 
 .control-group {
@@ -228,6 +259,7 @@
   border-radius: 8px;
   padding: 3px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 52px;
 }
 
 .view-mode-btn {
@@ -250,6 +282,46 @@
 .view-mode-btn.active {
   background: rgba(0, 217, 255, 0.2);
   color: #00d9ff;
+}
+
+.view-mode-btn.live-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+}
+
+.view-mode-btn.live-btn .btn-main-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.view-mode-btn.live-btn .btn-icon {
+  font-size: 0.5rem;
+  line-height: 1;
+}
+
+.view-mode-btn.live-btn .btn-subtext {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  min-height: 1em;
+}
+
+.view-mode-btn.live-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.view-mode-btn.live-btn.disabled:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.view-mode-btn.live-btn.active {
+  background: rgba(0, 255, 100, 0.2);
+  color: #00ff64;
 }
 
 /* Legend */
@@ -595,6 +667,22 @@
   text-decoration: underline;
 }
 
+/* Data quality warning box */
+.info-section .data-warning {
+  background: rgba(255, 150, 50, 0.15);
+  border: 1px solid rgba(255, 150, 50, 0.4);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(255, 200, 150, 0.9);
+}
+
+.info-section .data-warning strong {
+  color: #ffaa55;
+}
+
 .live-indicator {
   display: inline-block;
   width: 8px;
@@ -615,10 +703,13 @@
 
 /* Status Section */
 .status-section {
-  padding: 12px 16px;
+  padding: 14px 16px;
   background: rgba(0, 255, 136, 0.1);
   border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .status-row {
@@ -626,26 +717,14 @@
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
+  line-height: 1.3;
 }
 
 .status-row.muted {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 4px;
-}
-
-.status-hint {
-  margin-top: 8px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.status-hint code {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: 'SF Mono', monospace;
-}
 
 /* Database Status */
 .db-status {

@@ -1,39 +1,30 @@
-// Parse Boston MBTA GTFS data and extract Green Line routes as GeoJSON
+// Parse Sacramento SacRT GTFS data and extract Light Rail lines as GeoJSON
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const gtfsDir = join(__dirname, "..", "gtfs_boston");
+const gtfsDir = join(__dirname, "..", "gtfs_sacramento");
 const outputDir = join(__dirname, "..", "src", "data");
 
-// MBTA Green Line branches (light rail / street-running)
-// Green-B = Boston College branch (Comm Ave street-running)
-// Green-C = Cleveland Circle branch (Beacon St reservation)
-// Green-D = Riverside branch (mostly grade-separated)
-// Green-E = Heath Street branch (Huntington Ave street-running)
-const GREEN_LINE_ROUTES = ["Green-B", "Green-C", "Green-D", "Green-E"];
+// Sacramento Light Rail lines (route_id from GTFS)
+// 507 = Gold Line, 533 = Blue Line
+const LIGHT_RAIL_LINES = ["507", "533"];
 
-// Line colors matching MBTA branding
+// Line colors matching SacRT branding
 const LINE_COLORS = {
-  "Green-B": "#00843D",
-  "Green-C": "#00843D",
-  "Green-D": "#00843D",
-  "Green-E": "#00843D",
+  507: "#EED211", // Gold Line
+  533: "#0000FF", // Blue Line
 };
 
 const LINE_NAMES = {
-  "Green-B": "Green Line B",
-  "Green-C": "Green Line C",
-  "Green-D": "Green Line D",
-  "Green-E": "Green Line E",
+  507: "Gold Line",
+  533: "Blue Line",
 };
 
 const LINE_LETTERS = {
-  "Green-B": "B",
-  "Green-C": "C",
-  "Green-D": "D",
-  "Green-E": "E",
+  507: "Gold",
+  533: "Blue",
 };
 
 function parseCSV(filename) {
@@ -41,7 +32,7 @@ function parseCSV(filename) {
   const lines = content.trim().split("\n");
   const headers = lines[0]
     .split(",")
-    .map((h) => h.trim().replace(/^\uFEFF/, "")); // Remove BOM if present
+    .map((h) => h.trim().replace(/^\uFEFF/, ""));
 
   return lines.slice(1).map((line) => {
     const values = [];
@@ -69,31 +60,31 @@ function parseCSV(filename) {
 }
 
 function main() {
-  console.log("Parsing Boston MBTA GTFS data...");
+  console.log("Parsing Sacramento SacRT GTFS data...");
   console.log(`GTFS directory: ${gtfsDir}`);
 
   // Parse routes
   const routes = parseCSV("routes.txt");
   console.log(`Total routes: ${routes.length}`);
-  const greenRoutes = routes.filter((r) =>
-    GREEN_LINE_ROUTES.includes(r.route_id)
+  const lightRailRoutes = routes.filter((r) =>
+    LIGHT_RAIL_LINES.includes(r.route_id)
   );
   console.log(
-    `Found ${greenRoutes.length} Green Line routes:`,
-    greenRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
+    `Found ${lightRailRoutes.length} Light Rail routes:`,
+    lightRailRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
   );
 
   // Parse trips to get shape_ids for each route
   const trips = parseCSV("trips.txt");
   console.log(`Total trips: ${trips.length}`);
-  const greenTrips = trips.filter((t) =>
-    GREEN_LINE_ROUTES.includes(t.route_id)
+  const lightRailTrips = trips.filter((t) =>
+    LIGHT_RAIL_LINES.includes(t.route_id)
   );
-  console.log(`Green Line trips: ${greenTrips.length}`);
+  console.log(`Light Rail trips: ${lightRailTrips.length}`);
 
   // Count trips per shape_id for each route/direction
   const shapeCounts = {};
-  greenTrips.forEach((trip) => {
+  lightRailTrips.forEach((trip) => {
     const key = `${trip.route_id}_${trip.direction_id}`;
     if (!shapeCounts[key]) {
       shapeCounts[key] = {
@@ -116,8 +107,6 @@ function main() {
   const selectedShapes = {};
   Object.entries(shapeCounts).forEach(([key, data]) => {
     const shapes = Object.entries(data.shapes);
-
-    // Sort by count (descending) and pick the most common
     shapes.sort((a, b) => b[1].count - a[1].count);
 
     const [shapeId, info] = shapes[0];
@@ -141,7 +130,7 @@ function main() {
   const shapes = parseCSV("shapes.txt");
   console.log(`Total shape points: ${shapes.length}`);
 
-  // Group shape points by shape_id and filter for our routes
+  // Group shape points by shape_id
   const shapePoints = {};
   shapes.forEach((pt) => {
     if (selectedShapes[pt.shape_id]) {
@@ -165,18 +154,19 @@ function main() {
   // Create GeoJSON features
   const features = Object.entries(shapePoints).map(([shapeId, points]) => {
     const info = selectedShapes[shapeId];
-    const route = greenRoutes.find((r) => r.route_id === info.route_id);
+    const route = lightRailRoutes.find((r) => r.route_id === info.route_id);
     const routeId = info.route_id;
+    const routeLetter = LINE_LETTERS[routeId] || routeId;
 
     return {
       type: "Feature",
       properties: {
         shape_id: shapeId,
-        route_id: routeId,
+        route_id: routeLetter, // Use "Gold" / "Blue" as route_id for frontend
         route_name: LINE_NAMES[routeId] || route?.route_long_name || routeId,
         route_color:
           LINE_COLORS[routeId] || `#${route?.route_color || "666666"}`,
-        route_letter: LINE_LETTERS[routeId] || routeId,
+        route_letter: routeLetter,
         direction_id: info.direction_id,
         direction: info.direction_id === "0" ? "outbound" : "inbound",
         headsign: info.headsign,
@@ -194,7 +184,7 @@ function main() {
   };
 
   // Write output
-  const outputPath = join(outputDir, "bostonGreenLineRoutes.json");
+  const outputPath = join(outputDir, "sacramentoLightRailRoutes.json");
   writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
   console.log(`\nWrote ${features.length} features to ${outputPath}`);
 

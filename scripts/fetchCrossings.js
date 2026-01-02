@@ -199,6 +199,24 @@ const CITIES = {
     bbox: [32.5, -117.3, 33.0, -116.8],
     routesFile: 'sanDiegoTrolleyRoutes.json',
     outputFile: 'sanDiegoGradeCrossings.json'
+  },
+  Toronto: {
+    name: 'Toronto',
+    bbox: [43.58, -79.55, 43.75, -79.25],
+    routesFile: 'torontoStreetcarRoutes.json',
+    outputFile: 'torontoGradeCrossings.json'
+  },
+  Philadelphia: {
+    name: 'Philadelphia',
+    bbox: [39.85, -75.35, 40.05, -75.05],
+    routesFile: 'phillyTrolleyRoutes.json',
+    outputFile: 'phillyGradeCrossings.json'
+  },
+  Sacramento: {
+    name: 'Sacramento',
+    bbox: [38.45, -121.6, 38.7, -121.2],
+    routesFile: 'sacramentoLightRailRoutes.json',
+    outputFile: 'sacramentoGradeCrossings.json'
   }
 };
 

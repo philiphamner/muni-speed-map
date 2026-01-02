@@ -1,21 +1,30 @@
-// Parse Boston MBTA GTFS data and extract Green Line stops as GeoJSON
+// Parse Toronto TTC GTFS data and extract Streetcar stops as GeoJSON
 import { readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const gtfsDir = join(__dirname, "..", "gtfs_boston");
+const gtfsDir = join(__dirname, "..", "gtfs_toronto");
 const outputDir = join(__dirname, "..", "src", "data");
 
-// MBTA Green Line branches
-const GREEN_LINE_ROUTES = ["Green-B", "Green-C", "Green-D", "Green-E"];
+// Toronto TTC Streetcar lines
+const STREETCAR_LINES = [
+  "501",
+  "504",
+  "505",
+  "506",
+  "509",
+  "510",
+  "511",
+  "512",
+];
 
 function parseCSV(filename) {
   const content = readFileSync(join(gtfsDir, filename), "utf-8");
   const lines = content.trim().split("\n");
   const headers = lines[0]
     .split(",")
-    .map((h) => h.trim().replace(/^\uFEFF/, "")); // Remove BOM if present
+    .map((h) => h.trim().replace(/^\uFEFF/, ""));
 
   return lines.slice(1).map((line) => {
     const values = [];
@@ -43,7 +52,7 @@ function parseCSV(filename) {
 }
 
 function main() {
-  console.log("Parsing Boston MBTA GTFS stops data...");
+  console.log("Parsing Toronto TTC GTFS stops data...");
 
   // Parse all files
   const stops = parseCSV("stops.txt");
@@ -57,7 +66,7 @@ function main() {
   // Build trip -> route mapping
   const tripRoutes = {};
   trips.forEach((trip) => {
-    if (GREEN_LINE_ROUTES.includes(trip.route_id)) {
+    if (STREETCAR_LINES.includes(trip.route_id)) {
       tripRoutes[trip.trip_id] = trip.route_id;
     }
   });
@@ -74,12 +83,12 @@ function main() {
     }
   });
 
-  // Filter stops that serve Green Line routes
-  const greenStops = stops.filter((stop) => stopRoutes[stop.stop_id]);
-  console.log(`Found ${greenStops.length} stops serving Green Line`);
+  // Filter stops that serve Streetcar lines
+  const streetcarStops = stops.filter((stop) => stopRoutes[stop.stop_id]);
+  console.log(`Found ${streetcarStops.length} stops serving Streetcar lines`);
 
   // Create GeoJSON features
-  const features = greenStops.map((stop) => {
+  const features = streetcarStops.map((stop) => {
     const routes = Array.from(stopRoutes[stop.stop_id] || []).sort();
 
     return {
@@ -102,18 +111,9 @@ function main() {
   };
 
   // Write output
-  const outputPath = join(outputDir, "bostonGreenLineStops.json");
+  const outputPath = join(outputDir, "torontoStreetcarStops.json");
   writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
-  console.log(`\nWrote ${features.length} stops to ${outputPath}`);
-
-  // Summary by route
-  console.log("\nStops per line:");
-  GREEN_LINE_ROUTES.forEach((line) => {
-    const count = features.filter((f) =>
-      f.properties.routes.includes(line)
-    ).length;
-    console.log(`  ${line}: ${count} stops`);
-  });
+  console.log(`Wrote ${features.length} stops to ${outputPath}`);
 }
 
 main();

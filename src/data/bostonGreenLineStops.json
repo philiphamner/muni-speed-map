@@ -112,23 +112,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": "70261",
-        "stop_name": "Ashmont",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.063191,
-          42.283768
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stop_id": "170136",
         "stop_name": "Babcock Street",
         "routes": [
@@ -581,40 +564,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": "70265",
-        "stop_name": "Butler",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.062513,
-          42.272449
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70266",
-        "stop_name": "Butler",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.062438,
-          42.272477
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stop_id": "70180",
         "stop_name": "Brookline Village",
         "routes": [
@@ -643,108 +592,6 @@
         "coordinates": [
           -71.117041,
           42.33257
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70273",
-        "stop_name": "Capen Street",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.087139,
-          42.267589
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70274",
-        "stop_name": "Capen Street",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.087338,
-          42.267563
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70263",
-        "stop_name": "Cedar Grove",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.060392,
-          42.279546
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70264",
-        "stop_name": "Cedar Grove",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.060381,
-          42.279693
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70269",
-        "stop_name": "Central Avenue",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.073523,
-          42.270054
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70270",
-        "stop_name": "Central Avenue",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.073358,
-          42.270001
         ]
       }
     },
@@ -1724,40 +1571,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": "70275",
-        "stop_name": "Mattapan",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.092389,
-          42.267625
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70276",
-        "stop_name": "Mattapan",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.092233,
-          42.267559
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stop_id": "70511",
         "stop_name": "Medford/Tufts",
         "routes": [
@@ -1862,40 +1675,6 @@
         "coordinates": [
           -71.106688,
           42.39405
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70267",
-        "stop_name": "Milton",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.067253,
-          42.270388
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70268",
-        "stop_name": "Milton",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.067289,
-          42.270308
         ]
       }
     },
@@ -2609,40 +2388,6 @@
         "coordinates": [
           -71.093993,
           42.37699
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70271",
-        "stop_name": "Valley Road",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.081504,
-          42.268389
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stop_id": "70272",
-        "stop_name": "Valley Road",
-        "routes": [
-          "Mattapan"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.081343,
-          42.268347
         ]
       }
     },
