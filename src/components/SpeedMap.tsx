@@ -1,14 +1,76 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import type { MuniLine } from '../types';
+import type { City } from '../types';
 import { supabase } from '../lib/supabase';
 import muniRoutes from '../data/muniMetroRoutes.json';
 import muniStops from '../data/muniMetroStops.json';
-import type { SpeedFilter, ViewMode } from '../App';
+import sfCrossings from '../data/sfGradeCrossings.json';
+import laMetroRoutes from '../data/laMetroRoutes.json';
+import laMetroStops from '../data/laMetroStops.json';
+import laCrossings from '../data/laGradeCrossings.json';
+import seattleLinkRoutes from '../data/seattleLinkRoutes.json';
+import seattleLinkStops from '../data/seattleLinkStops.json';
+import seattleCrossings from '../data/seattleGradeCrossings.json';
+import bostonGreenLineRoutes from '../data/bostonGreenLineRoutes.json';
+import bostonGreenLineStops from '../data/bostonGreenLineStops.json';
+import bostonCrossings from '../data/bostonGradeCrossings.json';
+import portlandMaxRoutes from '../data/portlandMaxRoutes.json';
+import portlandMaxStops from '../data/portlandMaxStops.json';
+import portlandCrossings from '../data/portlandGradeCrossings.json';
+import sanDiegoTrolleyRoutes from '../data/sanDiegoTrolleyRoutes.json';
+import sanDiegoTrolleyStops from '../data/sanDiegoTrolleyStops.json';
+import sanDiegoCrossings from '../data/sanDiegoGradeCrossings.json';
+import type { SpeedFilter, ViewMode, LineStats } from '../App';
 
 // Maximum distance in meters from route line to be considered "on route"
 const MAX_DISTANCE_FROM_ROUTE_METERS = 100;
+
+// City-specific configurations
+const CITY_CONFIG = {
+  SF: {
+    center: [-122.433, 37.767] as [number, number],
+    zoom: 12.5,
+    routes: muniRoutes,
+    stops: muniStops,
+    crossings: sfCrossings,
+  },
+  LA: {
+    center: [-118.25, 34.05] as [number, number],
+    zoom: 10.5,
+    routes: laMetroRoutes,
+    stops: laMetroStops,
+    crossings: laCrossings,
+  },
+  Seattle: {
+    center: [-122.33, 47.60] as [number, number],
+    zoom: 10.5,
+    routes: seattleLinkRoutes,
+    stops: seattleLinkStops,
+    crossings: seattleCrossings,
+  },
+  Boston: {
+    center: [-71.08, 42.35] as [number, number],
+    zoom: 12,
+    routes: bostonGreenLineRoutes,
+    stops: bostonGreenLineStops,
+    crossings: bostonCrossings,
+  },
+  Portland: {
+    center: [-122.68, 45.52] as [number, number],
+    zoom: 11.5,
+    routes: portlandMaxRoutes,
+    stops: portlandMaxStops,
+    crossings: portlandCrossings,
+  },
+  'San Diego': {
+    center: [-117.15, 32.72] as [number, number],
+    zoom: 11,
+    routes: sanDiegoTrolleyRoutes,
+    stops: sanDiegoTrolleyStops,
+    crossings: sanDiegoCrossings,
+  },
+};
 
 // Haversine distance between two points in meters
 function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
@@ -33,11 +95,9 @@ function distanceToSegment(
   const dy = y2 - y1;
   
   if (dx === 0 && dy === 0) {
-    // Segment is a point
     return haversineDistance(py, px, y1, x1);
   }
   
-  // Project point onto line segment
   const t = Math.max(0, Math.min(1, 
     ((px - x1) * dx + (py - y1) * dy) / (dx * dx + dy * dy)
   ));
@@ -48,14 +108,13 @@ function distanceToSegment(
   return haversineDistance(py, px, nearestY, nearestX);
 }
 
-// Calculate minimum distance from a point to a LineString (array of coordinates)
+// Calculate minimum distance from a point to a LineString
 function distanceToLineString(lat: number, lon: number, coordinates: number[][]): number {
   let minDistance = Infinity;
   
   for (let i = 0; i < coordinates.length - 1; i++) {
-    const [x1, y1] = coordinates[i];     // [lon, lat]
-    const [x2, y2] = coordinates[i + 1]; // [lon, lat]
-    
+    const [x1, y1] = coordinates[i];
+    const [x2, y2] = coordinates[i + 1];
     const dist = distanceToSegment(lon, lat, x1, y1, x2, y2);
     if (dist < minDistance) {
       minDistance = dist;
@@ -65,11 +124,11 @@ function distanceToLineString(lat: number, lon: number, coordinates: number[][])
   return minDistance;
 }
 
-// Build a map of route_id -> array of LineString coordinates (both directions)
-function buildRouteGeometryMap(): Map<string, number[][][]> {
+// Build route geometry map for a given city's routes
+function buildRouteGeometryMap(routes: any): Map<string, number[][][]> {
   const routeMap = new Map<string, number[][][]>();
   
-  muniRoutes.features.forEach((feature: any) => {
+  routes.features.forEach((feature: any) => {
     const routeId = feature.properties.route_id;
     const coordinates = feature.geometry.coordinates;
     
@@ -82,7 +141,7 @@ function buildRouteGeometryMap(): Map<string, number[][][]> {
   return routeMap;
 }
 
-// Check if a point is within the threshold distance of its route
+// Check if a point is within threshold distance of its route
 function isOnRoute(
   lat: number, 
   lon: number, 
@@ -90,9 +149,8 @@ function isOnRoute(
   routeGeometryMap: Map<string, number[][][]>
 ): boolean {
   const routeLines = routeGeometryMap.get(routeId);
-  if (!routeLines) return true; // If no route geometry, include by default
+  if (!routeLines) return true;
   
-  // Check distance to both directions of the route
   for (const lineCoords of routeLines) {
     const distance = distanceToLineString(lat, lon, lineCoords);
     if (distance <= MAX_DISTANCE_FROM_ROUTE_METERS) {
@@ -102,9 +160,6 @@ function isOnRoute(
   
   return false;
 }
-
-// Pre-build the route geometry map (done once at module load)
-const routeGeometryMap = buildRouteGeometryMap();
 
 // Segment size in meters
 const SEGMENT_SIZE_METERS = 100;
@@ -123,13 +178,11 @@ function findNearestPointOnLine(lat: number, lon: number, coordinates: number[][
   for (let i = 0; i < coordinates.length - 1; i++) {
     const [x1, y1] = coordinates[i];
     const [x2, y2] = coordinates[i + 1];
-    
     const segmentLength = haversineDistance(y1, x1, y2, x2);
     
     const dist = distanceToSegment(lon, lat, x1, y1, x2, y2);
     if (dist < minDistance) {
       minDistance = dist;
-      // Approximate position along segment
       const dx = x2 - x1;
       const dy = y2 - y1;
       const t = (dx === 0 && dy === 0) ? 0 : 
@@ -140,7 +193,6 @@ function findNearestPointOnLine(lat: number, lon: number, coordinates: number[][
     distanceAlong += segmentLength;
   }
   
-  // Calculate total length
   for (let i = 0; i < coordinates.length - 1; i++) {
     const [x1, y1] = coordinates[i];
     const [x2, y2] = coordinates[i + 1];
@@ -150,10 +202,10 @@ function findNearestPointOnLine(lat: number, lon: number, coordinates: number[][
   return { distance: minDistance, distanceAlong: bestDistanceAlong, totalLength };
 }
 
-// Create segments along a LineString, preserving all intermediate coordinates
+// Create segments along a LineString
 function createSegments(coordinates: number[][], routeId: string, direction: string): {
   segmentId: string;
-  coords: number[][];  // All coordinates for this segment (preserves curves)
+  coords: number[][];
   startDistance: number;
   endDistance: number;
 }[] {
@@ -174,18 +226,13 @@ function createSegments(coordinates: number[][], routeId: string, direction: str
     const [x2, y2] = coordinates[i + 1];
     const edgeLength = haversineDistance(y1, x1, y2, x2);
     
-    let edgeStart = 0;
-    
-    // Check if we cross one or more segment boundaries on this edge
     while (distanceAlong + edgeLength >= (segmentIndex + 1) * SEGMENT_SIZE_METERS) {
-      // Calculate the point where we cross the boundary
       const boundaryDistance = (segmentIndex + 1) * SEGMENT_SIZE_METERS;
       const distanceIntoBoundary = boundaryDistance - distanceAlong;
       const t = distanceIntoBoundary / edgeLength;
       const crossX = x1 + t * (x2 - x1);
       const crossY = y1 + t * (y2 - y1);
       
-      // Complete this segment
       currentSegmentCoords.push([crossX, crossY]);
       
       segments.push({
@@ -195,14 +242,11 @@ function createSegments(coordinates: number[][], routeId: string, direction: str
         endDistance: boundaryDistance,
       });
       
-      // Start new segment
       currentSegmentCoords = [[crossX, crossY]];
       segmentStartDistance = boundaryDistance;
       segmentIndex++;
-      edgeStart = t;
     }
     
-    // Add the end point of this edge to current segment (if not already there)
     if (i < coordinates.length - 2) {
       currentSegmentCoords.push(coordinates[i + 1]);
     }
@@ -210,7 +254,6 @@ function createSegments(coordinates: number[][], routeId: string, direction: str
     distanceAlong += edgeLength;
   }
   
-  // Add final point and segment
   currentSegmentCoords.push(coordinates[coordinates.length - 1]);
   if (currentSegmentCoords.length >= 2) {
     segments.push({
@@ -224,34 +267,29 @@ function createSegments(coordinates: number[][], routeId: string, direction: str
   return segments;
 }
 
-// Build segment data from all routes (combining both directions)
+// Build segment data from routes
 interface SegmentData {
   segmentId: string;
   routeId: string;
-  coordinates: number[][];  // Full geometry preserving curves
+  coordinates: number[][];
   startDistance: number;
   endDistance: number;
 }
 
-function buildAllSegments(): SegmentData[] {
+function buildAllSegments(routes: any): SegmentData[] {
   const allSegments: SegmentData[] = [];
   const seenRoutes = new Set<string>();
   
-  // Only use one direction's geometry per route (to avoid duplicates)
-  muniRoutes.features.forEach((feature: any) => {
+  routes.features.forEach((feature: any) => {
     const routeId = feature.properties.route_id;
     
-    // Skip if we already processed this route
     if (seenRoutes.has(routeId)) return;
     seenRoutes.add(routeId);
     
     const coordinates = feature.geometry.coordinates;
-    
-    // Create segments without direction distinction
     const segments = createSegments(coordinates, routeId, 'combined');
     
     segments.forEach(seg => {
-      // Use route + segment index only (no direction)
       const segmentId = `${routeId}_${seg.segmentId.split('_').pop()}`;
       allSegments.push({
         segmentId,
@@ -266,12 +304,14 @@ function buildAllSegments(): SegmentData[] {
   return allSegments;
 }
 
-// Pre-build all segments
-const allRouteSegments = buildAllSegments();
-
-// Assign a vehicle to its segment (direction-agnostic)
-function findSegmentForVehicle(lat: number, lon: number, routeId: string): string | null {
-  const routeFeatures = muniRoutes.features.filter(
+// Find segment for a vehicle
+function findSegmentForVehicle(
+  lat: number, 
+  lon: number, 
+  routeId: string,
+  routes: any
+): string | null {
+  const routeFeatures = routes.features.filter(
     (f: any) => f.properties.route_id === routeId
   );
   
@@ -280,7 +320,6 @@ function findSegmentForVehicle(lat: number, lon: number, routeId: string): strin
   
   for (const feature of routeFeatures) {
     const coordinates = (feature as any).geometry.coordinates;
-    
     const result = findNearestPointOnLine(lat, lon, coordinates);
     
     if (result.distance < minDistance && result.distance <= MAX_DISTANCE_FROM_ROUTE_METERS) {
@@ -297,7 +336,6 @@ function findSegmentForVehicle(lat: number, lon: number, routeId: string): strin
 }
 
 // Convert direction_id to human-readable direction
-// Handles various formats: 0/1, "0"/"1", "IB"/"OB", "Inbound"/"Outbound"
 function getDirection(directionId: any): string | undefined {
   if (directionId == null || directionId === '') return undefined;
   
@@ -306,8 +344,6 @@ function getDirection(directionId: any): string | undefined {
   if (dir === '0' || dir === 'ob' || dir === 'outbound') return 'Outbound';
   if (dir === '1' || dir === 'ib' || dir === 'inbound') return 'Inbound';
   
-  // Log unexpected values for debugging
-  console.log('Unknown direction_id:', directionId);
   return undefined;
 }
 
@@ -319,19 +355,22 @@ interface Vehicle {
   direction?: string;
   speed?: number;
   recordedAt: string;
-  segmentId?: string;  // Pre-computed segment assignment
+  segmentId?: string | null;
 }
 
 interface SpeedMapProps {
-  selectedLines: MuniLine[];
+  city: City;
+  selectedLines: string[];
   speedFilter: SpeedFilter;
   showRouteLines: boolean;
   showStops: boolean;
+  showCrossings: boolean;
+  hideStoppedTrains: boolean;
   viewMode: ViewMode;
-  onVehicleUpdate?: (count: number, time: Date) => void;
+  onVehicleUpdate?: (count: number, time: Date, lineStats?: LineStats[]) => void;
 }
 
-export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops, viewMode, onVehicleUpdate }: SpeedMapProps) {
+export function SpeedMap({ city, selectedLines, speedFilter, showRouteLines, showStops, showCrossings, hideStoppedTrains, viewMode, onVehicleUpdate }: SpeedMapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const popup = useRef<maplibregl.Popup | null>(null);
@@ -344,7 +383,12 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
   const onVehicleUpdateRef = useRef(onVehicleUpdate);
   onVehicleUpdateRef.current = onVehicleUpdate;
 
-  // Fetch vehicle positions from Supabase with pagination (data collected by the collector)
+  // Memoize city-specific data
+  const cityConfig = useMemo(() => CITY_CONFIG[city], [city]);
+  const routeGeometryMap = useMemo(() => buildRouteGeometryMap(cityConfig.routes), [cityConfig.routes]);
+  const allRouteSegments = useMemo(() => buildAllSegments(cityConfig.routes), [cityConfig.routes]);
+
+  // Fetch vehicle positions from Supabase filtered by city
   const fetchVehiclesFromSupabase = useCallback(async () => {
     if (!supabase) {
       setDataSource('none');
@@ -352,20 +396,58 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
     }
 
     try {
-      // Fetch all data using pagination (Supabase default limit is 1000)
       const PAGE_SIZE = 1000;
       let allData: any[] = [];
       let from = 0;
       let hasMore = true;
+      
+      const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
       setLoadingProgress('Loading positions...');
       
       while (hasMore) {
-        const { data, error } = await supabase
+        // Build base query
+        const baseQuery = supabase
           .from('vehicle_positions')
           .select('*')
+          .gte('recorded_at', since)
           .order('recorded_at', { ascending: false })
           .range(from, from + PAGE_SIZE - 1);
+        
+        // Filter by city
+        // LA data has city='LA', SF data has city=null or 'SF', Seattle data has city='Seattle', Boston has city='Boston'
+        let query;
+        if (city === 'LA') {
+          query = baseQuery.eq('city', 'LA');
+        } else if (city === 'Seattle') {
+          query = baseQuery.eq('city', 'Seattle');
+        } else if (city === 'Boston') {
+          query = baseQuery.eq('city', 'Boston');
+        } else if (city === 'Portland') {
+          query = baseQuery.eq('city', 'Portland');
+        } else if (city === 'San Diego') {
+          query = baseQuery.eq('city', 'San Diego');
+        } else {
+          query = baseQuery.or('city.is.null,city.eq.SF');
+        }
+
+        let { data, error } = await query;
+        
+        // If city column doesn't exist (old schema), fall back to unfiltered query
+        // This is only for backwards compatibility with old data
+        if (error && error.code === '42703') {
+          console.log('City column not found, fetching all data (legacy)...');
+          const fallbackQuery = supabase
+            .from('vehicle_positions')
+            .select('*')
+            .gte('recorded_at', since)
+            .order('recorded_at', { ascending: false })
+            .range(from, from + PAGE_SIZE - 1);
+          
+          const result = await fallbackQuery;
+          data = result.data;
+          error = result.error;
+        }
 
         if (error) {
           console.error('Error fetching from Supabase:', error);
@@ -380,19 +462,12 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
         } else {
           hasMore = false;
         }
-
-        // Safety limit to prevent infinite loops / browser overload
-        if (allData.length >= 50000) {
-          console.log('Reached 50k position limit');
-          hasMore = false;
-        }
       }
 
       setLoadingProgress('');
-      console.log(`Fetched ${allData.length} positions from Supabase`);
+      console.log(`Fetched ${allData.length} ${city} positions from last 7 days`);
 
-      // Show ALL positions as individual points
-      // Pre-compute segment assignments for performance
+      // Pre-compute segment assignments
       console.time('Pre-computing segments');
       const allPositions: Vehicle[] = allData.map((row: any) => {
         const lat = row.lat;
@@ -406,7 +481,7 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
           direction: getDirection(row.direction_id),
           speed: row.speed_calculated,
           recordedAt: row.recorded_at,
-          segmentId: findSegmentForVehicle(lat, lon, routeId),  // Pre-compute once
+          segmentId: findSegmentForVehicle(lat, lon, routeId, cityConfig.routes),
         };
       });
       console.timeEnd('Pre-computing segments');
@@ -414,26 +489,59 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
       setVehicles(allPositions);
       setDataSource('supabase');
       
+      // Calculate line statistics
+      const lineSpeedMap = new Map<string, number[]>();
+      allPositions.forEach(v => {
+        if (v.speed == null) return;
+        if (!lineSpeedMap.has(v.routeId)) {
+          lineSpeedMap.set(v.routeId, []);
+        }
+        lineSpeedMap.get(v.routeId)!.push(v.speed);
+      });
+      
+      const stats: LineStats[] = [];
+      lineSpeedMap.forEach((speeds, line) => {
+        const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
+        const sorted = [...speeds].sort((a, b) => a - b);
+        const mid = Math.floor(sorted.length / 2);
+        const median = sorted.length % 2 === 0 
+          ? (sorted[mid - 1] + sorted[mid]) / 2 
+          : sorted[mid];
+        stats.push({ line, avgSpeed: avg, medianSpeed: median, count: speeds.length });
+      });
+      stats.sort((a, b) => b.avgSpeed - a.avgSpeed);
+      
       if (allPositions.length > 0) {
         const latestTime = new Date(allPositions[0].recordedAt);
-        onVehicleUpdateRef.current?.(allPositions.length, latestTime);
+        onVehicleUpdateRef.current?.(allPositions.length, latestTime, stats);
       } else {
-        onVehicleUpdateRef.current?.(0, new Date());
+        onVehicleUpdateRef.current?.(0, new Date(), []);
       }
     } catch (error) {
       console.error('Error fetching vehicles:', error);
       setDataSource('none');
     }
-  }, []); // No dependencies - uses ref for callback
+  }, [city, cityConfig.routes]);
 
-  // Fetch once on mount (no auto-refresh for historical data view)
+  // Fetch data when city changes
   useEffect(() => {
+    setVehicles([]);
+    setDataSource('loading');
     fetchVehiclesFromSupabase();
   }, [fetchVehiclesFromSupabase]);
 
   // Initialize map
   useEffect(() => {
-    if (!mapContainer.current || map.current) return;
+    if (!mapContainer.current) return;
+
+    // Remove existing map if any
+    if (map.current) {
+      map.current.remove();
+      map.current = null;
+    }
+    
+    // Reset mapLoaded state for new map
+    setMapLoaded(false);
 
     map.current = new maplibregl.Map({
       container: mapContainer.current,
@@ -461,9 +569,9 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
           },
         ],
       },
-      center: [-122.433, 37.767],
-      zoom: 12.5,
-      minZoom: 11,
+      center: cityConfig.center,
+      zoom: cityConfig.zoom,
+      minZoom: 9,
       maxZoom: 18,
     });
 
@@ -482,333 +590,531 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
       map.current?.remove();
       map.current = null;
     };
-  }, []);
+  }, [city]); // Re-initialize map when city changes
 
-  // Add routes layer when map loads
+  // Add routes layer
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
+    
+    const addRouteLayers = () => {
+      if (!map.current) return;
+      
+      // If no lines selected, show all routes; otherwise filter to selected
+      const filteredRoutes = {
+        ...cityConfig.routes,
+        features: selectedLines.length === 0 
+          ? cityConfig.routes.features 
+          : cityConfig.routes.features.filter(
+              (f: any) => selectedLines.includes(f.properties.route_id)
+            ),
+      };
 
-    // Filter routes based on selection (empty = show nothing)
-    const filteredRoutes = {
-      ...muniRoutes,
-      features: muniRoutes.features.filter(
-        (f: any) => selectedLines.includes(f.properties.route_id)
-      ),
-    };
+      // Remove existing layers
+      try {
+        if (map.current.getLayer('routes-outline')) map.current.removeLayer('routes-outline');
+        if (map.current.getLayer('routes')) map.current.removeLayer('routes');
+        if (map.current.getSource('routes')) map.current.removeSource('routes');
+      } catch (e) {
+        // Layer/source may not exist, ignore
+      }
 
-    // Remove existing layers
-    if (map.current.getLayer('routes-outline')) map.current.removeLayer('routes-outline');
-    if (map.current.getLayer('routes')) map.current.removeLayer('routes');
-    if (map.current.getSource('routes')) map.current.removeSource('routes');
-
-    // Add routes source
-    map.current.addSource('routes', {
-      type: 'geojson',
-      data: filteredRoutes as any,
-    });
-
-    // Find the first data layer to insert routes below (routes should always be at bottom)
-    // Priority: vehicles-glow (if exists), otherwise stops (if exists), otherwise top
-    const firstDataLayer = map.current.getLayer('vehicles-glow') 
-      ? 'vehicles-glow' 
-      : map.current.getLayer('stops') 
-        ? 'stops' 
-        : undefined;
-
-    // Route outline
-    map.current.addLayer({
-      id: 'routes-outline',
-      type: 'line',
-      source: 'routes',
-      layout: {
-        'line-join': 'round',
-        'line-cap': 'round',
-        'visibility': showRouteLines ? 'visible' : 'none',
-      },
-      paint: {
-        'line-color': '#000',
-        'line-width': 7,
-        'line-opacity': 0.6,
-      },
-    }, firstDataLayer);
-
-    // Route lines with their official colors
-    map.current.addLayer({
-      id: 'routes',
-      type: 'line',
-      source: 'routes',
-      layout: {
-        'line-join': 'round',
-        'line-cap': 'round',
-        'visibility': showRouteLines ? 'visible' : 'none',
-      },
-      paint: {
-        'line-color': ['get', 'route_color'],
-        'line-width': 4,
-        'line-opacity': 0.9,
-      },
-    }, firstDataLayer);
-
-    // Route hover
-    map.current.on('mouseenter', 'routes', () => {
-      if (map.current) map.current.getCanvas().style.cursor = 'pointer';
-    });
-
-    map.current.on('mouseleave', 'routes', () => {
-      if (map.current) map.current.getCanvas().style.cursor = '';
-      popup.current?.remove();
-    });
-
-    map.current.on('mousemove', 'routes', (e) => {
-      if (!e.features?.length || !map.current) return;
-      const props = e.features[0].properties;
-      popup.current
-        ?.setLngLat(e.lngLat)
-        .setHTML(
-          `<div class="popup-content">
-            <div class="popup-title" style="color: ${props.route_color}">${props.route_name}</div>
-          </div>`
-        )
-        .addTo(map.current);
-    });
-  }, [mapLoaded, selectedLines, showRouteLines]);
-
-  // Add/update stops layer (filtered by selected lines, always on top)
-  useEffect(() => {
-    if (!map.current || !mapLoaded) return;
-
-    // Filter stops to only show those serving selected lines
-    // A stop is shown if ANY of its routes are in the selected lines
-    const filteredStops = {
-      ...muniStops,
-      features: muniStops.features.filter((f: any) =>
-        f.properties.routes.some((r: string) => selectedLines.includes(r as MuniLine))
-      ),
-    };
-
-    // Check if stops source already exists
-    const existingSource = map.current.getSource('stops') as maplibregl.GeoJSONSource;
-
-    if (existingSource) {
-      // Update data and visibility
-      existingSource.setData(filteredStops as any);
-      map.current.setLayoutProperty('stops', 'visibility', showStops ? 'visible' : 'none');
-      map.current.setLayoutProperty('stops-label', 'visibility', showStops ? 'visible' : 'none');
-    } else {
-      // First time: create source and layers
-      map.current.addSource('stops', {
+      map.current.addSource('routes', {
         type: 'geojson',
-        data: filteredStops as any,
+        data: filteredRoutes as any,
       });
 
-      // Stop markers (diamond shape) - added WITHOUT beforeId so they render ON TOP of everything
+      const firstDataLayer = map.current.getLayer('vehicles-glow') 
+        ? 'vehicles-glow' 
+        : map.current.getLayer('stops') 
+          ? 'stops' 
+          : undefined;
+
       map.current.addLayer({
-        id: 'stops',
-        type: 'symbol',
-        source: 'stops',
+        id: 'routes-outline',
+        type: 'line',
+        source: 'routes',
         layout: {
-          'visibility': showStops ? 'visible' : 'none',
-          'text-field': '◆',
-          'text-size': 20,
-          'text-allow-overlap': true,
-          'text-ignore-placement': true,
+          'line-join': 'round',
+          'line-cap': 'round',
+          'visibility': showRouteLines ? 'visible' : 'none',
         },
         paint: {
-          'text-color': '#ffffff',
-          'text-halo-color': '#333333',
-          'text-halo-width': 2.5,
+          'line-color': '#000',
+          'line-width': 7,
+          'line-opacity': 0.6,
         },
-      });
+      }, firstDataLayer);
 
-      // Stop labels (visible on zoom) - also on top
       map.current.addLayer({
-        id: 'stops-label',
-        type: 'symbol',
-        source: 'stops',
+        id: 'routes',
+        type: 'line',
+        source: 'routes',
         layout: {
-          'visibility': showStops ? 'visible' : 'none',
-          'text-field': ['get', 'stop_name'],
-          'text-size': 11,
-          'text-offset': [0, 1.2],
-          'text-anchor': 'top',
-          'text-optional': true,
+          'line-join': 'round',
+          'line-cap': 'round',
+          'visibility': showRouteLines ? 'visible' : 'none',
         },
         paint: {
-          'text-color': '#ffffff',
-          'text-halo-color': '#000000',
-          'text-halo-width': 1.5,
+          'line-color': ['get', 'route_color'],
+          'line-width': 4,
+          'line-opacity': 0.9,
         },
-        minzoom: 14, // Only show labels when zoomed in
-      });
+      }, firstDataLayer);
 
-      // Stop hover
-      map.current.on('mouseenter', 'stops', () => {
+      // Route hover
+      map.current.on('mouseenter', 'routes', () => {
         if (map.current) map.current.getCanvas().style.cursor = 'pointer';
       });
 
-      map.current.on('mouseleave', 'stops', () => {
+      map.current.on('mouseleave', 'routes', () => {
         if (map.current) map.current.getCanvas().style.cursor = '';
         popup.current?.remove();
       });
 
-      map.current.on('mousemove', 'stops', (e) => {
+      map.current.on('mousemove', 'routes', (e) => {
         if (!e.features?.length || !map.current) return;
         const props = e.features[0].properties;
-        const routes = JSON.parse(props.routes || '[]');
-        
         popup.current
           ?.setLngLat(e.lngLat)
           .setHTML(
             `<div class="popup-content">
-              <div class="popup-title">${props.stop_name}</div>
-              <div class="popup-detail">Lines: ${routes.join(', ')}</div>
+              <div class="popup-title" style="color: ${props.route_color}">${props.route_name}</div>
             </div>`
           )
           .addTo(map.current);
       });
+    };
+    
+    // If style is already loaded, add layers immediately
+    // Otherwise, wait for it with a small delay
+    if (map.current.isStyleLoaded()) {
+      addRouteLayers();
+    } else {
+      // Use a small timeout to wait for style to initialize
+      const waitForStyle = () => {
+        if (!map.current) return;
+        if (map.current.isStyleLoaded()) {
+          addRouteLayers();
+        } else {
+          setTimeout(waitForStyle, 50);
+        }
+      };
+      setTimeout(waitForStyle, 50);
     }
-  }, [mapLoaded, showStops, selectedLines]);
+  }, [mapLoaded, selectedLines, showRouteLines, cityConfig.routes]);
 
-  // Speed-based color scale (defined once, used in layers)
+  // Add/update stops layer
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+    
+    const addStopsLayers = () => {
+      if (!map.current) return;
+
+      // If no lines selected, show all stops; otherwise filter to selected
+      const filteredStops = {
+        ...cityConfig.stops,
+        features: selectedLines.length === 0
+          ? cityConfig.stops.features
+          : cityConfig.stops.features.filter((f: any) =>
+              f.properties.routes.some((r: string) => selectedLines.includes(r))
+            ),
+      };
+
+      const existingSource = map.current.getSource('stops') as maplibregl.GeoJSONSource;
+
+      if (existingSource) {
+        existingSource.setData(filteredStops as any);
+        map.current.setLayoutProperty('stops', 'visibility', showStops ? 'visible' : 'none');
+        map.current.setLayoutProperty('stops-label', 'visibility', showStops ? 'visible' : 'none');
+      } else {
+        map.current.addSource('stops', {
+          type: 'geojson',
+          data: filteredStops as any,
+        });
+
+        map.current.addLayer({
+          id: 'stops',
+          type: 'symbol',
+          source: 'stops',
+          layout: {
+            'visibility': showStops ? 'visible' : 'none',
+            'text-field': '◆',
+            'text-size': 20,
+            'text-allow-overlap': true,
+            'text-ignore-placement': true,
+          },
+          paint: {
+            'text-color': '#ffffff',
+            'text-halo-color': '#333333',
+            'text-halo-width': 2.5,
+          },
+        });
+
+        map.current.addLayer({
+          id: 'stops-label',
+          type: 'symbol',
+          source: 'stops',
+          layout: {
+            'visibility': showStops ? 'visible' : 'none',
+            'text-field': ['get', 'stop_name'],
+            'text-size': 11,
+            'text-offset': [0, 1.2],
+            'text-anchor': 'top',
+            'text-optional': true,
+          },
+          paint: {
+            'text-color': '#ffffff',
+            'text-halo-color': '#000000',
+            'text-halo-width': 1.5,
+          },
+          minzoom: 14,
+        });
+
+        // Stop hover
+        map.current.on('mouseenter', 'stops', () => {
+          if (map.current) map.current.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.current.on('mouseleave', 'stops', () => {
+          if (map.current) map.current.getCanvas().style.cursor = '';
+          popup.current?.remove();
+        });
+
+        map.current.on('mousemove', 'stops', (e) => {
+          if (!e.features?.length || !map.current) return;
+          const props = e.features[0].properties;
+          const routes = JSON.parse(props.routes || '[]');
+          
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title">${props.stop_name}</div>
+                <div class="popup-detail">Lines: ${routes.join(', ')}</div>
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+    };
+    
+    // If style is already loaded, add layers immediately
+    // Otherwise, wait for it with a small delay
+    if (map.current.isStyleLoaded()) {
+      addStopsLayers();
+    } else {
+      const waitForStyle = () => {
+        if (!map.current) return;
+        if (map.current.isStyleLoaded()) {
+          addStopsLayers();
+        } else {
+          setTimeout(waitForStyle, 50);
+        }
+      };
+      setTimeout(waitForStyle, 50);
+    }
+  }, [mapLoaded, showStops, selectedLines, cityConfig.stops]);
+
+  // Show all grade crossings regardless of selected lines
+  // Note: F-line only crossings are already filtered out during the fetch script
+  const filteredCrossings = useMemo(() => {
+    // Each crossing has a 'routes' property listing which transit lines it's near
+    // Show all crossings that have at least one route
+    const nearbyFeatures = cityConfig.crossings.features.filter((crossing: any) => {
+      const nearRoutes: string[] = crossing.properties.routes;
+      return nearRoutes && nearRoutes.length > 0;
+    });
+    
+    return { ...cityConfig.crossings, features: nearbyFeatures };
+  }, [cityConfig.crossings]);
+
+  // Add/update crossings layer
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+    
+    const addCrossingsLayer = () => {
+      if (!map.current) return;
+
+      const existingSource = map.current.getSource('crossings') as maplibregl.GeoJSONSource;
+
+      if (existingSource) {
+        // Update data with filtered crossings
+        existingSource.setData(filteredCrossings as any);
+        map.current.setLayoutProperty('crossings', 'visibility', showCrossings ? 'visible' : 'none');
+      } else {
+        map.current.addSource('crossings', {
+          type: 'geojson',
+          data: filteredCrossings as any,
+        });
+
+        // Add crossing markers - use ✕ symbol in orange/yellow
+        map.current.addLayer({
+          id: 'crossings',
+          type: 'symbol',
+          source: 'crossings',
+          layout: {
+            'visibility': showCrossings ? 'visible' : 'none',
+            'text-field': '✕',
+            'text-size': 14,
+            'text-allow-overlap': true,
+            'text-ignore-placement': true,
+          },
+          paint: {
+            'text-color': '#ff9500',
+            'text-halo-color': '#000000',
+            'text-halo-width': 1.5,
+          },
+        });
+
+        // Crossing hover popup
+        map.current.on('mouseenter', 'crossings', () => {
+          if (map.current) map.current.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.current.on('mouseleave', 'crossings', () => {
+          if (map.current) map.current.getCanvas().style.cursor = '';
+          popup.current?.remove();
+        });
+
+        map.current.on('mousemove', 'crossings', (e) => {
+          if (!e.features?.length || !map.current) return;
+          
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title">Grade Crossing</div>
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+    };
+    
+    if (map.current.isStyleLoaded()) {
+      addCrossingsLayer();
+    } else {
+      const waitForStyle = () => {
+        if (!map.current) return;
+        if (map.current.isStyleLoaded()) {
+          addCrossingsLayer();
+        } else {
+          setTimeout(waitForStyle, 50);
+        }
+      };
+      setTimeout(waitForStyle, 50);
+    }
+  }, [mapLoaded, showCrossings, filteredCrossings]);
+
+  // Speed-based color scale
   const speedColorExpression: maplibregl.ExpressionSpecification = [
     'case',
-    ['==', ['get', 'speed'], null], '#666666',  // No speed data - gray
-    ['<', ['get', 'speed'], 5], '#ff3333',      // Very slow - red
-    ['<', ['get', 'speed'], 10], '#ff9933',     // Slow - orange
-    ['<', ['get', 'speed'], 15], '#ffdd33',     // Moderate - yellow
-    ['<', ['get', 'speed'], 25], '#88ff33',     // Good - lime green
-    '#33ffff'                                    // Fast - cyan
+    ['==', ['get', 'speed'], null], '#666666',
+    ['<', ['get', 'speed'], 5], '#ff3333',
+    ['<', ['get', 'speed'], 10], '#ff9933',
+    ['<', ['get', 'speed'], 15], '#ffdd33',
+    ['<', ['get', 'speed'], 25], '#88ff33',
+    '#33ffff'
   ];
 
-  // Update vehicle data source when vehicles or selected lines change
+  // Update vehicle data source
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
-
-    // Filter vehicles by selected lines and on-route check (speed filtering is done via layer filter)
-    const filteredVehicles = vehicles.filter((v) => 
-      selectedLines.includes(v.routeId as MuniLine) &&
-      isOnRoute(v.lat, v.lon, v.routeId, routeGeometryMap)
-    );
-
-    // Create GeoJSON for vehicles
-    const vehicleGeoJSON = {
-      type: 'FeatureCollection' as const,
-      features: filteredVehicles.map((v) => ({
-        type: 'Feature' as const,
-        properties: {
-          id: v.id,
-          routeId: v.routeId,
-          direction: v.direction ?? null,
-          speed: v.speed ?? null,  // Ensure null for no data
-          recordedAt: v.recordedAt,
-        },
-        geometry: {
-          type: 'Point' as const,
-          coordinates: [v.lon, v.lat],
-        },
-      })),
-    };
-
-    // Check if source already exists
-    const existingSource = map.current.getSource('vehicles') as maplibregl.GeoJSONSource;
     
-    if (existingSource) {
-      // Just update the data, don't recreate layers
-      existingSource.setData(vehicleGeoJSON);
-    } else {
-      // First time: create source and layers
-      map.current.addSource('vehicles', {
-        type: 'geojson',
-        data: vehicleGeoJSON,
-      });
+    const addVehicleLayers = () => {
+      if (!map.current) return;
 
-      // Vehicle glow
-      map.current.addLayer({
-        id: 'vehicles-glow',
-        type: 'circle',
-        source: 'vehicles',
-        paint: {
-          'circle-radius': 6,
-          'circle-color': speedColorExpression,
-          'circle-opacity': 0.3,
-          'circle-blur': 0.5,
-        },
-      });
+      const filteredVehicles = vehicles.filter((v) => 
+        selectedLines.includes(v.routeId) &&
+        isOnRoute(v.lat, v.lon, v.routeId, routeGeometryMap)
+      );
 
-      // Vehicle dots
-      map.current.addLayer({
-        id: 'vehicles',
-        type: 'circle',
-        source: 'vehicles',
-        paint: {
-          'circle-radius': 4,
-          'circle-color': speedColorExpression,
-        },
-      });
+      const vehicleGeoJSON = {
+        type: 'FeatureCollection' as const,
+        features: filteredVehicles.map((v) => ({
+          type: 'Feature' as const,
+          properties: {
+            id: v.id,
+            routeId: v.routeId,
+            direction: v.direction ?? null,
+            speed: v.speed ?? null,
+            recordedAt: v.recordedAt,
+            city: city, // Include city for popup display logic
+          },
+          geometry: {
+            type: 'Point' as const,
+            coordinates: [v.lon, v.lat],
+          },
+        })),
+      };
 
-      // Vehicle hover (only set up once)
-      map.current.on('mouseenter', 'vehicles', () => {
-        if (map.current) map.current.getCanvas().style.cursor = 'pointer';
-      });
-
-      map.current.on('mouseleave', 'vehicles', () => {
-        if (map.current) map.current.getCanvas().style.cursor = '';
-        popup.current?.remove();
-      });
-
-      map.current.on('mousemove', 'vehicles', (e) => {
-        if (!e.features?.length || !map.current) return;
-        const props = e.features[0].properties;
-        const speed = props.speed != null ? `${Math.round(props.speed)} mph` : 'Speed unknown';
-        const dateTime = new Date(props.recordedAt).toLocaleString('en-US', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: true,
+      const existingSource = map.current.getSource('vehicles') as maplibregl.GeoJSONSource;
+      
+      if (existingSource) {
+        existingSource.setData(vehicleGeoJSON);
+      } else {
+        map.current.addSource('vehicles', {
+          type: 'geojson',
+          data: vehicleGeoJSON,
         });
-        const direction = props.direction || '';
-        
-        popup.current
-          ?.setLngLat(e.lngLat)
-          .setHTML(
-            `<div class="popup-content">
-              <div class="popup-title">${props.routeId} Train${direction ? ` · ${direction}` : ''}</div>
-              <div class="popup-detail">Vehicle #${props.id}</div>
-              <div class="popup-speed">${speed}</div>
-              <div class="popup-time">${dateTime}</div>
-            </div>`
-          )
-          .addTo(map.current);
-      });
-    }
-  }, [vehicles, mapLoaded, selectedLines]);
 
-  // Update speed filter on layers (GPU-side filtering, no flicker)
+        // Filter to hide null speed data points and optionally stopped trains
+        const initialFilters: maplibregl.ExpressionSpecification[] = [
+          ['!=', ['get', 'speed'], null],
+          ['>=', ['get', 'speed'], speedFilter.minSpeed],
+          ['<=', ['get', 'speed'], speedFilter.maxSpeed]
+        ];
+        if (hideStoppedTrains) {
+          initialFilters.push(['>', ['get', 'speed'], 0]);
+        }
+        const initialFilter: maplibregl.FilterSpecification = ['all', ...initialFilters];
+
+        map.current.addLayer({
+          id: 'vehicles-glow',
+          type: 'circle',
+          source: 'vehicles',
+          filter: initialFilter,
+          paint: {
+            'circle-radius': 6,
+            'circle-color': speedColorExpression,
+            'circle-opacity': 0.3,
+            'circle-blur': 0.5,
+          },
+        });
+
+        map.current.addLayer({
+          id: 'vehicles',
+          type: 'circle',
+          source: 'vehicles',
+          filter: initialFilter,
+          paint: {
+            'circle-radius': 4,
+            'circle-color': speedColorExpression,
+          },
+        });
+
+        // Vehicle hover
+        map.current.on('mouseenter', 'vehicles', () => {
+          if (map.current) map.current.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.current.on('mouseleave', 'vehicles', () => {
+          if (map.current) map.current.getCanvas().style.cursor = '';
+          popup.current?.remove();
+        });
+
+        map.current.on('mousemove', 'vehicles', (e) => {
+          if (!e.features?.length || !map.current) return;
+          const props = e.features[0].properties;
+          const speed = props.speed != null ? `${Math.round(props.speed)} mph` : 'Speed unknown';
+          const dateTime = new Date(props.recordedAt).toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true,
+          });
+          // Only show direction for SF (Inbound/Outbound makes sense there)
+          // LA and Seattle use terminus-based naming which we don't have yet
+          const direction = props.city === 'SF' ? (props.direction || '') : '';
+          
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title">${props.routeId} Train${direction ? ` · ${direction}` : ''}</div>
+                <div class="popup-detail">Vehicle #${props.id}</div>
+                <div class="popup-speed">${speed}</div>
+                <div class="popup-time">${dateTime}</div>
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+    };
+    
+    // If style is already loaded, add layers immediately
+    // Otherwise, wait for it with a small delay
+    if (map.current.isStyleLoaded()) {
+      addVehicleLayers();
+    } else {
+      const waitForStyle = () => {
+        if (!map.current) return;
+        if (map.current.isStyleLoaded()) {
+          addVehicleLayers();
+        } else {
+          setTimeout(waitForStyle, 50);
+        }
+      };
+      setTimeout(waitForStyle, 50);
+    }
+  }, [vehicles, mapLoaded, selectedLines, routeGeometryMap]);
+
+  // Update speed filter
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
     if (!map.current.getLayer('vehicles')) return;
 
-    // Build filter expression for speed
-    // Only show points with valid speed data within the min/max range
-    const filterExpression: maplibregl.FilterSpecification = [
-      'all',
+    const filters: maplibregl.ExpressionSpecification[] = [
       ['!=', ['get', 'speed'], null],
       ['>=', ['get', 'speed'], speedFilter.minSpeed],
       ['<=', ['get', 'speed'], speedFilter.maxSpeed]
     ];
+    
+    // Hide stopped trains (0 mph) if toggle is enabled
+    if (hideStoppedTrains) {
+      filters.push(['>', ['get', 'speed'], 0]);
+    }
+
+    const filterExpression: maplibregl.FilterSpecification = ['all', ...filters];
 
     map.current.setFilter('vehicles', filterExpression);
     map.current.setFilter('vehicles-glow', filterExpression);
-  }, [speedFilter, mapLoaded]);
+  }, [speedFilter, hideStoppedTrains, mapLoaded]);
 
-  // Handle view mode toggle - show/hide raw dots and segment layer
+  // Ensure proper layer ordering: routes at bottom, then segments, crossings, stops, then vehicles on top
+  // This runs whenever any toggle changes to ensure correct z-ordering
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+    
+    // Small delay to ensure layers are added before reordering
+    const reorderLayers = () => {
+      if (!map.current) return;
+      
+      // Order from bottom to top
+      const layerOrder = ['routes-outline', 'routes', 'speed-segments', 'crossings', 'stops', 'stops-label', 'vehicles-glow', 'vehicles'];
+      
+      // Get existing layers in our order
+      const existingLayers = layerOrder.filter(id => map.current?.getLayer(id));
+      
+      if (existingLayers.length < 2) return;
+      
+      // Move each layer to top in order, establishing correct z-order
+      for (let i = 0; i < existingLayers.length; i++) {
+        const currentLayer = existingLayers[i];
+        try {
+          // moveLayer with no second argument moves to top
+          // Processing in order ensures correct stacking
+          map.current.moveLayer(currentLayer);
+        } catch (e) {
+          // Layer might not exist, ignore
+        }
+      }
+    };
+    
+    // Run immediately and after a short delay (for layers being added)
+    reorderLayers();
+    const timeoutId = setTimeout(reorderLayers, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [mapLoaded, vehicles, showStops, showCrossings, showRouteLines, viewMode]);
+
+  // Handle view mode toggle
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
 
-    // Show/hide raw dots based on view mode
     if (map.current.getLayer('vehicles')) {
       map.current.setLayoutProperty('vehicles', 'visibility', viewMode === 'raw' ? 'visible' : 'none');
     }
@@ -816,16 +1122,14 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
       map.current.setLayoutProperty('vehicles-glow', 'visibility', viewMode === 'raw' ? 'visible' : 'none');
     }
 
-    // Handle segment view
     if (viewMode === 'segments') {
-      // Calculate segment averages from vehicles (using pre-computed segmentId)
       const segmentSpeeds: Map<string, number[]> = new Map();
       
       vehicles.forEach(v => {
         if (v.speed == null) return;
-        if (!selectedLines.includes(v.routeId as MuniLine)) return;
+        if (!selectedLines.includes(v.routeId)) return;
         if (v.speed < speedFilter.minSpeed || v.speed > speedFilter.maxSpeed) return;
-        if (!v.segmentId) return;  // Use pre-computed segment
+        if (!v.segmentId) return;
         
         if (!segmentSpeeds.has(v.segmentId)) {
           segmentSpeeds.set(v.segmentId, []);
@@ -833,16 +1137,14 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
         segmentSpeeds.get(v.segmentId)!.push(v.speed);
       });
 
-      // Calculate averages
       const segmentAverages: Map<string, { avg: number; count: number }> = new Map();
       segmentSpeeds.forEach((speeds, segmentId) => {
         const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
         segmentAverages.set(segmentId, { avg, count: speeds.length });
       });
 
-      // Build GeoJSON for segments with data
       const segmentFeatures = allRouteSegments
-        .filter(seg => selectedLines.includes(seg.routeId as MuniLine))
+        .filter(seg => selectedLines.includes(seg.routeId))
         .filter(seg => segmentAverages.has(seg.segmentId))
         .map(seg => {
           const data = segmentAverages.get(seg.segmentId)!;
@@ -866,7 +1168,6 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
         features: segmentFeatures,
       };
 
-      // Update or create segment layer
       const existingSource = map.current.getSource('speed-segments') as maplibregl.GeoJSONSource;
       
       if (existingSource) {
@@ -878,7 +1179,13 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
           data: segmentGeoJSON,
         });
 
-        // Add segment layer with speed-based coloring
+        // Find the first layer that should be above segments (stops or vehicles)
+        const aboveLayer = map.current.getLayer('stops') 
+          ? 'stops' 
+          : map.current.getLayer('vehicles-glow')
+            ? 'vehicles-glow'
+            : undefined;
+
         map.current.addLayer({
           id: 'speed-segments',
           type: 'line',
@@ -899,9 +1206,8 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
             ],
             'line-opacity': 0.9,
           },
-        });
+        }, aboveLayer);
 
-        // Add hover for segments
         map.current.on('mouseenter', 'speed-segments', () => {
           if (map.current) map.current.getCanvas().style.cursor = 'pointer';
         });
@@ -928,19 +1234,18 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
         });
       }
     } else {
-      // Hide segment layer when in raw mode
       if (map.current.getLayer('speed-segments')) {
         map.current.setLayoutProperty('speed-segments', 'visibility', 'none');
       }
     }
-  }, [viewMode, vehicles, mapLoaded, selectedLines, speedFilter]);
+  }, [viewMode, vehicles, mapLoaded, selectedLines, speedFilter, allRouteSegments]);
 
   return (
     <div className="map-wrapper">
       <div ref={mapContainer} className="map-container" />
       {dataSource === 'none' && (
         <div className="data-status">
-          No data yet. Run <code>npm run collect</code> to start collecting.
+          No data yet. Run <code>npm run collect:{city === 'LA' ? 'la' : city === 'Seattle' ? 'seattle' : city === 'Boston' ? 'boston' : city === 'Portland' ? 'portland' : city === 'San Diego' ? 'sandiego' : 'sf'}</code> to start collecting.
         </div>
       )}
       {loadingProgress && (
@@ -951,4 +1256,3 @@ export function SpeedMap({ selectedLines, speedFilter, showRouteLines, showStops
     </div>
   );
 }
-

@@ -8,8 +8,24 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "collect": "node scripts/collectData.js",
-    "parse-gtfs": "node scripts/parseGtfs.js"
+    "collect:sf": "node scripts/collectData.js",
+    "collect:la": "node scripts/collectDataLA.js",
+    "collect:seattle": "node scripts/collectDataSeattle.js",
+    "collect:boston": "node scripts/collectDataBoston.js",
+    "collect:portland": "node scripts/collectDataPortland.js",
+    "collect:sandiego": "node scripts/collectDataSanDiego.js",
+    "collect:all": "bash scripts/collectAll.sh",
+    "parse-gtfs": "node scripts/parseGtfs.js",
+    "parse-gtfs:la": "node scripts/parseGtfsLA.js",
+    "parse-gtfs:seattle": "node scripts/parseGtfsSeattle.js",
+    "parse-gtfs:boston": "node scripts/parseGtfsBoston.js",
+    "parse-gtfs:portland": "node scripts/parseGtfsPortland.js",
+    "parse-stops:seattle": "node scripts/parseStopsSeattle.js",
+    "parse-stops:boston": "node scripts/parseStopsBoston.js",
+    "parse-stops:portland": "node scripts/parseStopsPortland.js",
+    "parse-gtfs:sandiego": "node scripts/parseGtfsSanDiego.js",
+    "parse-stops:sandiego": "node scripts/parseStopsSanDiego.js",
+    "fetch-crossings": "node scripts/fetchCrossings.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
@@ -17,7 +33,8 @@
     "maplibre-gl": "^5.15.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-map-gl": "^8.1.0"
+    "react-map-gl": "^8.1.0",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import type { MuniLine } from '../types';
-import { MUNI_LINES } from '../types';
-import { getPositionCount, supabase } from '../lib/supabase';
-import type { SpeedFilter, ViewMode } from '../App';
+import type { MuniLine, LAMetroLine, SeattleLinkLine, BostonGreenLine, PortlandMaxLine, SanDiegoTrolleyLine, City } from '../types';
+import { LA_METRO_LINE_INFO, SEATTLE_LINK_LINE_INFO, BOSTON_GREEN_LINE_INFO, PORTLAND_MAX_LINE_INFO, SAN_DIEGO_TROLLEY_LINE_INFO, getLinesForCity } from '../types';
+import type { SpeedFilter, ViewMode, LineStats } from '../App';
 
 // Official SFMTA colors from GTFS
 const MUNI_COLORS: Record<MuniLine, string> = {
@@ -15,9 +13,61 @@ const MUNI_COLORS: Record<MuniLine, string> = {
   T: '#BF2B45',
 };
 
+// Get color for any line (SF, LA, Seattle, Boston, or Portland)
+function getLineColor(line: string, city: City): string {
+  if (city === 'SF') {
+    return MUNI_COLORS[line as MuniLine] || '#666';
+  } else if (city === 'LA') {
+    return LA_METRO_LINE_INFO[line as LAMetroLine]?.color || '#666';
+  } else if (city === 'Seattle') {
+    return SEATTLE_LINK_LINE_INFO[line as SeattleLinkLine]?.color || '#666';
+  } else if (city === 'Boston') {
+    return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.color || '#666';
+  } else if (city === 'Portland') {
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.color || '#666';
+  } else {
+    return SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.color || '#666';
+  }
+}
+
+// Get display label for a line
+function getLineLabel(line: string, city: City): string {
+  if (city === 'SF') {
+    return line;
+  } else if (city === 'LA') {
+    return LA_METRO_LINE_INFO[line as LAMetroLine]?.letter || line;
+  } else if (city === 'Seattle') {
+    return SEATTLE_LINK_LINE_INFO[line as SeattleLinkLine]?.letter || line;
+  } else if (city === 'Boston') {
+    return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.letter || line;
+  } else if (city === 'Portland') {
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.letter || line;
+  } else {
+    return SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.letter || line;
+  }
+}
+
+// Get line info for tooltip
+function getLineInfo(line: string, city: City): string | undefined {
+  if (city === 'LA') {
+    return LA_METRO_LINE_INFO[line as LAMetroLine]?.name;
+  } else if (city === 'Seattle') {
+    return SEATTLE_LINK_LINE_INFO[line as SeattleLinkLine]?.name;
+  } else if (city === 'Boston') {
+    return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.name;
+  } else if (city === 'Portland') {
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.name;
+  } else if (city === 'San Diego') {
+    return SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.name;
+  }
+  return undefined;
+}
+
 interface ControlsProps {
-  selectedLines: MuniLine[];
-  setSelectedLines: (lines: MuniLine[]) => void;
+  city: City;
+  setCity: (city: City) => void;
+  selectedLines: string[];
+  setSelectedLines: (lines: string[]) => void;
   vehicleCount: number;
   lastUpdate: Date | null;
   speedFilter: SpeedFilter;
@@ -26,37 +76,40 @@ interface ControlsProps {
   setShowRouteLines: (show: boolean) => void;
   showStops: boolean;
   setShowStops: (show: boolean) => void;
+  showCrossings: boolean;
+  setShowCrossings: (show: boolean) => void;
+  hideStoppedTrains: boolean;
+  setHideStoppedTrains: (hide: boolean) => void;
   viewMode: ViewMode;
   setViewMode: (mode: ViewMode) => void;
+  lineStats: LineStats[];
 }
 
-export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUpdate, speedFilter, setSpeedFilter, showRouteLines, setShowRouteLines, showStops, setShowStops, viewMode, setViewMode }: ControlsProps) {
-  const [dbPositionCount, setDbPositionCount] = useState<number>(0);
-  const [dbConnected, setDbConnected] = useState<boolean>(false);
+export function Controls({ 
+  city, 
+  setCity, 
+  selectedLines, 
+  setSelectedLines, 
+  vehicleCount, 
+  lastUpdate, 
+  speedFilter, 
+  setSpeedFilter, 
+  showRouteLines, 
+  setShowRouteLines, 
+  showStops, 
+  setShowStops, 
+  showCrossings,
+  setShowCrossings,
+  hideStoppedTrains,
+  setHideStoppedTrains,
+  viewMode, 
+  setViewMode, 
+  lineStats 
+}: ControlsProps) {
 
-  useEffect(() => {
-    // Check database connection and get position count
-    async function checkDb() {
-      if (!supabase) {
-        setDbConnected(false);
-        return;
-      }
-      
-      try {
-        const count = await getPositionCount();
-        setDbPositionCount(count);
-        setDbConnected(true);
-      } catch {
-        setDbConnected(false);
-      }
-    }
-    
-    checkDb();
-    const interval = setInterval(checkDb, 30000); // Update every 30s
-    return () => clearInterval(interval);
-  }, []);
+  const allLines = getLinesForCity(city);
 
-  const toggleLine = (line: MuniLine) => {
+  const toggleLine = (line: string) => {
     if (selectedLines.includes(line)) {
       setSelectedLines(selectedLines.filter((l) => l !== line));
     } else {
@@ -65,17 +118,72 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
   };
 
   const selectAllLines = () => {
-    setSelectedLines([...MUNI_LINES]);
+    setSelectedLines([...allLines] as string[]);
   };
 
   const clearAllLines = () => {
     setSelectedLines([]);
   };
 
+  const cityTitle = city === 'SF' ? 'Muni Speed Map' 
+    : city === 'LA' ? 'LA Metro Speed Map' 
+    : city === 'Seattle' ? 'Seattle Link Speed Map'
+    : city === 'Boston' ? 'Boston Green Line Speed Map'
+    : city === 'Portland' ? 'Portland MAX Speed Map'
+    : 'San Diego Trolley Speed Map';
+  const citySubtitle = city === 'SF' ? 'San Francisco Muni' 
+    : city === 'LA' ? 'Los Angeles Metro Rail' 
+    : city === 'Seattle' ? 'Sound Transit Link Light Rail'
+    : city === 'Boston' ? 'MBTA Green Line & Mattapan'
+    : city === 'Portland' ? 'TriMet MAX Light Rail'
+    : 'MTS Trolley';
+
   return (
     <div className="controls-panel">
-      <h1 className="app-title">Muni Speed Map</h1>
-      <p className="app-subtitle">Real-time train tracking</p>
+      {/* City Selector */}
+      <div className="city-selector">
+        {/* Row 1: California */}
+        <button
+          className={`city-btn ${city === 'SF' ? 'active' : ''}`}
+          onClick={() => setCity('SF')}
+        >
+          🌉 SF
+        </button>
+        <button
+          className={`city-btn ${city === 'LA' ? 'active' : ''}`}
+          onClick={() => setCity('LA')}
+        >
+          🌴 LA
+        </button>
+        <button
+          className={`city-btn ${city === 'San Diego' ? 'active' : ''}`}
+          onClick={() => setCity('San Diego')}
+        >
+          🌊 SD
+        </button>
+        {/* Row 2: Pacific NW + East */}
+        <button
+          className={`city-btn ${city === 'Seattle' ? 'active' : ''}`}
+          onClick={() => setCity('Seattle')}
+        >
+          ☕ Seattle
+        </button>
+        <button
+          className={`city-btn ${city === 'Portland' ? 'active' : ''}`}
+          onClick={() => setCity('Portland')}
+        >
+          🚲 PDX
+        </button>
+        <button
+          className={`city-btn ${city === 'Boston' ? 'active' : ''}`}
+          onClick={() => setCity('Boston')}
+        >
+          🦞 Boston
+        </button>
+      </div>
+
+      <h1 className="app-title">{cityTitle}</h1>
+      <p className="app-subtitle">{citySubtitle}</p>
 
       {/* Data Status */}
       <div className="status-section">
@@ -86,6 +194,11 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
         {lastUpdate && (
           <div className="status-row muted">
             Latest: {lastUpdate.toLocaleTimeString()}
+          </div>
+        )}
+        {vehicleCount === 0 && (
+          <div className="status-hint">
+            Run <code>npm run collect:{city === 'LA' ? 'la' : city === 'Seattle' ? 'seattle' : city === 'Boston' ? 'boston' : city === 'Portland' ? 'portland' : city === 'San Diego' ? 'sandiego' : 'sf'}</code> to start collecting data
           </div>
         )}
       </div>
@@ -115,7 +228,7 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
           <label className="control-label">Filter Lines</label>
           <div className="toggle-group">
             <button 
-              className={`toggle-button ${selectedLines.length === MUNI_LINES.length ? 'active' : ''}`}
+              className={`toggle-button ${selectedLines.length === allLines.length ? 'active' : ''}`}
               onClick={selectAllLines}
             >
               All
@@ -129,16 +242,17 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
           </div>
         </div>
         <div className="line-buttons">
-          {MUNI_LINES.map((line) => (
+          {allLines.map((line) => (
             <button
               key={line}
               className={`line-button ${selectedLines.includes(line) ? 'active' : 'inactive'}`}
               style={{
-                '--line-color': MUNI_COLORS[line],
+                '--line-color': getLineColor(line, city),
               } as React.CSSProperties}
               onClick={() => toggleLine(line)}
+              title={getLineInfo(line, city)}
             >
-              {line}
+              {getLineLabel(line, city)}
             </button>
           ))}
         </div>
@@ -160,6 +274,26 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
               onChange={(e) => setShowStops(e.target.checked)}
             />
             Show stations
+          </label>
+        </div>
+        <div className="route-lines-toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={showCrossings}
+              onChange={(e) => setShowCrossings(e.target.checked)}
+            />
+            Show grade crossings
+          </label>
+        </div>
+        <div className="route-lines-toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={hideStoppedTrains}
+              onChange={(e) => setHideStoppedTrains(e.target.checked)}
+            />
+            Hide stopped trains (0 mph)
           </label>
         </div>
       </div>
@@ -200,7 +334,7 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
             className="reset-filter-btn"
             onClick={() => {
               setSpeedFilter({ minSpeed: 0, maxSpeed: 50, showNoData: true });
-              setSelectedLines([...MUNI_LINES]);
+              setSelectedLines([...allLines] as string[]);
               setShowRouteLines(true);
               setShowStops(true);
             }}
@@ -215,73 +349,106 @@ export function Controls({ selectedLines, setSelectedLines, vehicleCount, lastUp
         <div className="control-label">Speed Legend</div>
         <div className="speed-legend">
           <div className="speed-legend-item">
-            <span className="speed-dot" style={{ backgroundColor: '#ff3333' }}></span>
-            <span>0–5 mph (very slow)</span>
+            <span className="speed-legend-dot" style={{ backgroundColor: '#ff3333' }}></span>
+            <span>&lt; 5 mph (very slow)</span>
           </div>
           <div className="speed-legend-item">
-            <span className="speed-dot" style={{ backgroundColor: '#ff9933' }}></span>
-            <span>5–10 mph (slow)</span>
+            <span className="speed-legend-dot" style={{ backgroundColor: '#ff9933' }}></span>
+            <span>5-10 mph (slow)</span>
           </div>
           <div className="speed-legend-item">
-            <span className="speed-dot" style={{ backgroundColor: '#ffdd33' }}></span>
-            <span>10–15 mph (moderate)</span>
+            <span className="speed-legend-dot" style={{ backgroundColor: '#ffdd33' }}></span>
+            <span>10-15 mph (moderate)</span>
           </div>
           <div className="speed-legend-item">
-            <span className="speed-dot" style={{ backgroundColor: '#88ff33' }}></span>
-            <span>15–25 mph (good)</span>
+            <span className="speed-legend-dot" style={{ backgroundColor: '#88ff33' }}></span>
+            <span>15-25 mph (good)</span>
           </div>
           <div className="speed-legend-item">
-            <span className="speed-dot" style={{ backgroundColor: '#33ffff' }}></span>
-            <span>25+ mph (fast)</span>
+            <span className="speed-legend-dot" style={{ backgroundColor: '#33ffff' }}></span>
+            <span>&gt; 25 mph (fast)</span>
           </div>
         </div>
       </div>
 
-      {/* Database Status */}
-      <div className="db-status">
-        <div className="control-label">Database</div>
-        {dbConnected ? (
-          <div className="db-connected">
-            <span className="db-dot connected"></span>
-            <span>Connected</span>
-            {dbPositionCount > 0 && (
-              <span className="db-count">{dbPositionCount.toLocaleString()} positions</span>
-            )}
+      {/* Line Statistics */}
+      {lineStats.length > 0 && (
+        <div className="control-group">
+          <div className="control-label">Speed by Line</div>
+          <div className="line-stats">
+            {lineStats.map((stat) => (
+              <div key={stat.line} className="line-stat-item">
+                <span 
+                  className="line-stat-badge"
+                  style={{ backgroundColor: getLineColor(stat.line, city) }}
+                  title={getLineInfo(stat.line, city)}
+                >
+                  {getLineLabel(stat.line, city)}
+                </span>
+                <div className="line-stat-speeds">
+                  <span className="line-stat-speed">{stat.avgSpeed.toFixed(1)}</span>
+                  <span className="line-stat-label">avg</span>
+                  <span className="line-stat-speed">{stat.medianSpeed.toFixed(1)}</span>
+                  <span className="line-stat-label">median</span>
+                </div>
+                <span className="line-stat-count">({stat.count.toLocaleString()})</span>
+              </div>
+            ))}
           </div>
-        ) : (
-          <div className="db-disconnected">
-            <span className="db-dot disconnected"></span>
-            <span>Not connected</span>
-          </div>
-        )}
-        {dbPositionCount === 0 && dbConnected && (
-          <div className="db-hint">
-            Run <code>npm run collect</code> to start collecting data
-          </div>
-        )}
-      </div>
+        </div>
+      )}
+
 
       {/* Info */}
       <div className="info-section">
         <h3>About This Map</h3>
         <p>
-          Each dot shows a train's location and speed at a point in time.
+          <strong>How speed is calculated:</strong> Train positions are collected via GPS. 
+          {city === 'SF' 
+            ? ' Speed is calculated from the distance traveled between consecutive readings (~90 seconds).'
+            : city === 'LA'
+            ? ' LA Metro provides speed directly in the data stream.'
+            : city === 'Boston'
+            ? ' MBTA provides speed directly in the data stream.'
+            : city === 'Portland'
+            ? ' TriMet provides speed directly in the data stream.'
+            : city === 'San Diego'
+            ? ' Speed is calculated from the distance traveled between consecutive readings (~90 seconds).'
+            : ' Speed is calculated from the distance traveled between consecutive readings (~90 seconds).'}
         </p>
         <p>
-          <strong style={{color: '#ff3333'}}>Red dots</strong> = slow areas where trains get delayed.
-          <strong style={{color: '#33ffff'}}> Cyan dots</strong> = fast sections.
+          <strong>Tunnel gaps:</strong> Some tunnels have no GPS signal, so trains appear to "jump" through them with no data points inside.
         </p>
         <p>
-          Use the filters to find bottlenecks and identify where transit improvements would have the most impact.
+          <strong>Data freshness:</strong> This map displays the last 7 days of collected data.
         </p>
-      </div>
-
-      <div className="data-note">
-        <p>
+        <p className="data-attribution">
           Data from{' '}
-          <a href="https://511.org/open-data" target="_blank" rel="noopener noreferrer">
-            511.org
-          </a>{' '}
+          {city === 'SF' ? (
+            <a href="https://511.org/open-data" target="_blank" rel="noopener noreferrer">
+              511.org
+            </a>
+          ) : city === 'LA' ? (
+            <a href="https://developer.metro.net/" target="_blank" rel="noopener noreferrer">
+              LA Metro API
+            </a>
+          ) : city === 'Seattle' ? (
+            <a href="https://api.pugetsound.onebusaway.org/" target="_blank" rel="noopener noreferrer">
+              Sound Transit OneBusAway API
+            </a>
+          ) : city === 'Boston' ? (
+            <a href="https://api-v3.mbta.com/" target="_blank" rel="noopener noreferrer">
+              MBTA V3 API
+            </a>
+          ) : city === 'Portland' ? (
+            <a href="https://developer.trimet.org/" target="_blank" rel="noopener noreferrer">
+              TriMet API
+            </a>
+          ) : (
+            <a href="https://www.sdmts.com/business-center/app-developers" target="_blank" rel="noopener noreferrer">
+              MTS OneBusAway API
+            </a>
+          )}{' '}
           GTFS-realtime
         </p>
       </div>

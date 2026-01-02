@@ -23,9 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-# GTFS raw data (large files)
-data/gtfs/*.txt
-data/gtfs/*.zip
+# GTFS raw data (large files - can be re-downloaded)
+gtfs_*/
+data/gtfs/
 
 # Environment variables
 .env

@@ -29,6 +29,46 @@
   overflow-y: auto;
 }
 
+/* City Selector */
+.city-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.city-btn {
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.city-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.city-btn.active {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(0, 255, 136, 0.2) 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 217, 255, 0.2);
+}
+
 .app-title {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.75rem;
@@ -262,7 +302,8 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-.speed-dot {
+.speed-dot,
+.speed-legend-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -358,6 +399,57 @@
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
   color: #fff;
+}
+
+/* Line Statistics */
+.line-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.line-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.line-stat-badge {
+  min-width: 24px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.line-stat-speeds {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.line-stat-speed {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  width: 32px;
+  text-align: right;
+}
+
+.line-stat-label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  width: 36px;
+}
+
+.line-stat-count {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: auto;
 }
 
 /* Data Note */
@@ -486,6 +578,23 @@
   margin-bottom: 0;
 }
 
+.info-section .data-attribution {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.info-section .data-attribution a {
+  color: #00d9ff;
+  text-decoration: none;
+}
+
+.info-section .data-attribution a:hover {
+  text-decoration: underline;
+}
+
 .live-indicator {
   display: inline-block;
   width: 8px;
@@ -523,6 +632,19 @@
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
   margin-top: 4px;
+}
+
+.status-hint {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.status-hint code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', monospace;
 }
 
 /* Database Status */
