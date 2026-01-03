@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS vehicle_positions (
   speed_reported DOUBLE PRECISION,      -- Speed from API (if available)
   speed_calculated DOUBLE PRECISION,    -- Speed calculated from previous position
   segment_id TEXT,                       -- Nearest route segment
+  headsign TEXT,                         -- Destination shown on vehicle (e.g. "Red Line to Airport")
   
   -- Index for fast queries
   CONSTRAINT valid_lat CHECK (lat BETWEEN -90 AND 90),

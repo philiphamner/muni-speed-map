@@ -5,6 +5,7 @@ import type {
   SeattleLinkLine,
   BostonGreenLine,
   PortlandMaxLine,
+  PortlandStreetcarLine,
   SanDiegoTrolleyLine,
   TorontoStreetcarLine,
   PhillyTrolleyLine,
@@ -16,6 +17,7 @@ import {
   SEATTLE_LINK_LINE_INFO,
   BOSTON_GREEN_LINE_INFO,
   PORTLAND_MAX_LINE_INFO,
+  PORTLAND_STREETCAR_LINE_INFO,
   SAN_DIEGO_TROLLEY_LINE_INFO,
   TORONTO_STREETCAR_LINE_INFO,
   PHILLY_TROLLEY_LINE_INFO,
@@ -46,7 +48,8 @@ function getLineColor(line: string, city: City): string {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.color || "#666";
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.color || "#666";
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.color || 
+           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.color || "#666";
   } else if (city === "San Diego") {
     return (
       SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.color || "#666"
@@ -80,7 +83,8 @@ function getLineLabel(line: string, city: City): string {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.letter || line;
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.letter || line;
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.letter || 
+           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.letter || line;
   } else if (city === "San Diego") {
     return (
       SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.letter || line
@@ -109,7 +113,8 @@ function getLineInfo(line: string, city: City): string | undefined {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.name;
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.name;
+    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.name ||
+           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.name;
   } else if (city === "San Diego") {
     return SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.name;
   } else if (city === "Toronto") {

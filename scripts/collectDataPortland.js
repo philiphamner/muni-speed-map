@@ -21,6 +21,13 @@ const TRIMET_APP_ID = 'REDACTED_TRIMET_KEY';
 // MAX Light Rail lines (route IDs)
 // 90 = MAX Red, 100 = MAX Blue, 190 = MAX Yellow, 200 = MAX Green, 290 = MAX Orange
 const MAX_LINES = ['90', '100', '190', '200', '290'];
+
+// Portland Streetcar lines (route IDs)
+// 193 = NS Line, 194 = A Loop, 195 = B Loop
+const STREETCAR_LINES = ['193', '194', '195'];
+
+// All rail lines (MAX + Streetcar)
+const RAIL_LINES = [...MAX_LINES, ...STREETCAR_LINES];
 const POLL_INTERVAL_MS = 90000; // 90 seconds
 
 // Initialize Supabase client
@@ -98,9 +105,9 @@ async function fetchVehiclePositions() {
     const data = await response.json();
     const vehicles = data?.resultSet?.vehicle || [];
     
-    // Filter for MAX lines only
-    const maxVehicles = vehicles
-      .filter(v => MAX_LINES.includes(String(v.routeNumber)))
+    // Filter for MAX and Streetcar lines
+    const railVehicles = vehicles
+      .filter(v => RAIL_LINES.includes(String(v.routeNumber)))
       .map(v => {
         const vehicleId = String(v.vehicleID);
         const lat = parseFloat(v.latitude);
@@ -120,11 +127,12 @@ async function fetchVehiclePositions() {
           speed_calculated: calculatedSpeed,
           recorded_at: v.time ? new Date(v.time).toISOString() : new Date().toISOString(),
           city: 'Portland',
+          headsign: v.signMessage || null,  // Destination shown on train
         };
       })
       .filter(v => v.lat !== 0 && v.lon !== 0 && v.vehicle_id);
     
-    return maxVehicles;
+    return railVehicles;
   } catch (error) {
     console.error('Error fetching vehicle positions:', error.message);
     return [];
@@ -181,7 +189,7 @@ async function collectOnce() {
     console.log(`[${timestamp} PT] Error: ${error.message}`);
   } else {
     console.log(
-      `[${timestamp} PT] Saved ${count} Portland MAX positions ` +
+      `[${timestamp} PT] Saved ${count} Portland rail positions ` +
       `(${withSpeed.length} with speed) in ${elapsed}ms`
     );
   }
@@ -197,9 +205,10 @@ async function runCollector() {
     process.exit(1);
   }
   
-  console.log('🌲 Portland MAX Speed Map - Data Collector');
+  console.log('🌲 Portland MAX & Streetcar Speed Map - Data Collector');
   console.log(`   Polling TriMet API every ${POLL_INTERVAL_MS / 1000} seconds`);
-  console.log(`   Tracking routes: ${MAX_LINES.join(', ')}`);
+  console.log(`   Tracking MAX routes: ${MAX_LINES.join(', ')}`);
+  console.log(`   Tracking Streetcar routes: ${STREETCAR_LINES.join(', ')}`);
   console.log('   Press Ctrl+C to stop\n');
   
   // Initial collection

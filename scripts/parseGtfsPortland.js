@@ -1,4 +1,4 @@
-// Parse Portland TriMet GTFS data and extract MAX Light Rail lines as GeoJSON
+// Parse Portland TriMet GTFS data and extract MAX Light Rail + Streetcar lines as GeoJSON
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -15,13 +15,23 @@ const outputDir = join(__dirname, '..', 'src', 'data');
 // 290 = MAX Orange Line
 const MAX_LINES = ['90', '100', '190', '200', '290'];
 
-// Line colors matching TriMet branding
+// Portland Streetcar lines (route_id from GTFS)
+// 193 = NS Line, 194 = A Loop, 195 = B Loop
+const STREETCAR_LINES = ['193', '194', '195'];
+
+// All rail lines
+const RAIL_LINES = [...MAX_LINES, ...STREETCAR_LINES];
+
+// Line colors matching official branding
 const LINE_COLORS = {
   '90': '#C41F3E',   // MAX Red Line
   '100': '#1359AE',  // MAX Blue Line
   '190': '#FFC52F',  // MAX Yellow Line
   '200': '#008342',  // MAX Green Line
   '290': '#D05F27',  // MAX Orange Line
+  '193': '#72A130',  // Portland Streetcar NS Line (official)
+  '194': '#D91965',  // Portland Streetcar A Loop (official)
+  '195': '#4650BE',  // Portland Streetcar B Loop (official)
 };
 
 const LINE_NAMES = {
@@ -30,6 +40,9 @@ const LINE_NAMES = {
   '190': 'MAX Yellow Line',
   '200': 'MAX Green Line',
   '290': 'MAX Orange Line',
+  '193': 'NS Line',
+  '194': 'A Loop',
+  '195': 'B Loop',
 };
 
 const LINE_LETTERS = {
@@ -38,6 +51,9 @@ const LINE_LETTERS = {
   '190': 'Yellow',
   '200': 'Green',
   '290': 'Orange',
+  '193': 'NS',
+  '194': 'A',
+  '195': 'B',
 };
 
 function parseCSV(filename) {
@@ -71,24 +87,24 @@ function parseCSV(filename) {
 }
 
 function main() {
-  console.log('Parsing Portland TriMet GTFS data...');
+  console.log('Parsing Portland TriMet GTFS data (MAX + Streetcar)...');
   console.log(`GTFS directory: ${gtfsDir}`);
   
   // Parse routes
   const routes = parseCSV('routes.txt');
   console.log(`Total routes: ${routes.length}`);
-  const maxRoutes = routes.filter(r => MAX_LINES.includes(r.route_id));
-  console.log(`Found ${maxRoutes.length} MAX Light Rail routes:`, maxRoutes.map(r => `${r.route_id} (${r.route_long_name})`));
+  const railRoutes = routes.filter(r => RAIL_LINES.includes(r.route_id));
+  console.log(`Found ${railRoutes.length} rail routes:`, railRoutes.map(r => `${r.route_id} (${r.route_long_name})`));
   
   // Parse trips to get shape_ids for each route
   const trips = parseCSV('trips.txt');
   console.log(`Total trips: ${trips.length}`);
-  const maxTrips = trips.filter(t => MAX_LINES.includes(t.route_id));
-  console.log(`MAX Light Rail trips: ${maxTrips.length}`);
+  const railTrips = trips.filter(t => RAIL_LINES.includes(t.route_id));
+  console.log(`Rail trips: ${railTrips.length}`);
   
   // Count trips per shape_id for each route/direction
   const shapeCounts = {};
-  maxTrips.forEach(trip => {
+  railTrips.forEach(trip => {
     const key = `${trip.route_id}_${trip.direction_id}`;
     if (!shapeCounts[key]) {
       shapeCounts[key] = {
@@ -107,23 +123,41 @@ function main() {
     shapeCounts[key].shapes[shapeId].count++;
   });
   
-  // Pick the most common shape for each route/direction
+  // Pick shapes for each route/direction
+  // For streetcar routes, include ALL shapes to capture full loop coverage
+  // For MAX routes, just pick the most common shape
   const selectedShapes = {};
   Object.entries(shapeCounts).forEach(([key, data]) => {
     const shapes = Object.entries(data.shapes);
+    const isStreetcar = STREETCAR_LINES.includes(data.route_id);
     
-    // Sort by count (descending) and pick the most common
+    // Sort by count (descending)
     shapes.sort((a, b) => b[1].count - a[1].count);
     
-    const [shapeId, info] = shapes[0];
-    selectedShapes[shapeId] = {
-      route_id: data.route_id,
-      direction_id: data.direction_id,
-      headsign: info.headsign,
-      trip_count: info.count
-    };
-    
-    console.log(`${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${info.headsign || 'no headsign'}, ${info.count} trips)`);
+    if (isStreetcar) {
+      // For streetcar, include all shapes with significant trip counts (>10 trips)
+      shapes.forEach(([shapeId, info]) => {
+        if (info.count >= 10) {
+          selectedShapes[shapeId] = {
+            route_id: data.route_id,
+            direction_id: data.direction_id,
+            headsign: info.headsign,
+            trip_count: info.count
+          };
+          console.log(`${data.route_id} dir ${data.direction_id}: included shape ${shapeId} (${info.headsign || 'no headsign'}, ${info.count} trips)`);
+        }
+      });
+    } else {
+      // For MAX, just pick the most common
+      const [shapeId, info] = shapes[0];
+      selectedShapes[shapeId] = {
+        route_id: data.route_id,
+        direction_id: data.direction_id,
+        headsign: info.headsign,
+        trip_count: info.count
+      };
+      console.log(`${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${info.headsign || 'no headsign'}, ${info.count} trips)`);
+    }
   });
   
   console.log(`\nSelected ${Object.keys(selectedShapes).length} shapes`);
@@ -156,7 +190,7 @@ function main() {
   // Create GeoJSON features
   const features = Object.entries(shapePoints).map(([shapeId, points]) => {
     const info = selectedShapes[shapeId];
-    const route = maxRoutes.find(r => r.route_id === info.route_id);
+    const route = railRoutes.find(r => r.route_id === info.route_id);
     const routeId = info.route_id;
     
     return {

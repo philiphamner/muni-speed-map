@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import type { City } from "../types";
-import { getLinesForCity, CITIES } from "../types";
+import type { City, LAMetroLine } from "../types";
+import { getLinesForCity, CITIES, LA_METRO_LINE_INFO } from "../types";
 import { supabase } from "../lib/supabase";
 import muniRoutes from "../data/muniMetroRoutes.json";
 import muniStops from "../data/muniMetroStops.json";
@@ -459,6 +459,36 @@ function getDirection(directionId: any): string | undefined {
   return undefined;
 }
 
+// SF Muni terminus names by line and direction
+const SF_TERMINUS: Record<string, { inbound: string; outbound: string }> = {
+  F: { inbound: "to Fisherman's Wharf", outbound: "to Castro" },
+  J: { inbound: "to Embarcadero", outbound: "to Balboa Park" },
+  K: { inbound: "to Embarcadero", outbound: "to Balboa Park" },
+  L: { inbound: "to Embarcadero", outbound: "to SF Zoo" },
+  M: { inbound: "to Embarcadero", outbound: "to Balboa Park" },
+  N: { inbound: "to Caltrain", outbound: "to Ocean Beach" },
+  T: { inbound: "to Chinatown", outbound: "to Sunnydale" },
+};
+
+// LA Metro terminus names by line and direction
+const LA_TERMINUS: Record<string, { inbound: string; outbound: string }> = {
+  "801": { inbound: "to Downtown LA", outbound: "to Long Beach" },
+  "802": { inbound: "to Union Station", outbound: "to North Hollywood" },
+  "803": { inbound: "to Redondo Beach", outbound: "to Norwalk" },
+  "804": { inbound: "to Downtown LA", outbound: "to Santa Monica" },
+  "805": { inbound: "to Union Station", outbound: "to Wilshire/Western" },
+  "806": { inbound: "to East LA", outbound: "to APU/Citrus College" },
+  "807": { inbound: "to Expo/Crenshaw", outbound: "to Westchester/Veterans" },
+};
+
+// Boston Green Line branch display names
+const BOSTON_BRANCH_NAMES: Record<string, string> = {
+  "Green-B": "B Branch",
+  "Green-C": "C Branch",
+  "Green-D": "D Branch",
+  "Green-E": "E Branch",
+};
+
 interface Vehicle {
   id: string;
   lat: number;
@@ -468,6 +498,7 @@ interface Vehicle {
   speed?: number;
   recordedAt: string;
   segmentId?: string | null;
+  headsign?: string | null;
 }
 
 // Module-level cache - persists across component remounts for instant city switching
@@ -542,6 +573,7 @@ async function preloadCityData(targetCity: City): Promise<void> {
       speed: row.speed_calculated,
       recordedAt: row.recorded_at,
       segmentId: findSegmentForVehicle(row.lat, row.lon, row.route_id, cityConfig.routes),
+      headsign: row.headsign,
     }));
 
     // Store in cache
@@ -764,6 +796,7 @@ export function SpeedMap({
             routeId,
             cityConfig.routes
           ),
+          headsign: row.headsign,
         };
       });
       console.timeEnd("Pre-computing segments");
@@ -1382,6 +1415,7 @@ export function SpeedMap({
             speed: v.speed ?? null,
             recordedAt: v.recordedAt,
             city: city, // Include city for popup display logic
+            headsign: v.headsign ?? null,
           },
           geometry: {
             type: "Point" as const,
@@ -1474,18 +1508,46 @@ export function SpeedMap({
             second: "2-digit",
             hour12: true,
           });
-          // Only show direction for SF (Inbound/Outbound makes sense there)
-          // LA and Seattle use terminus-based naming which we don't have yet
-          const direction = props.city === "SF" ? props.direction || "" : "";
+          
+          // Build popup title based on city
+          let titleLine = `${props.routeId} Train`;
+          let detailLine = `Vehicle #${props.id}`;
+          
+          if (props.city === "Portland" && props.headsign) {
+            // Portland: Use headsign directly (e.g., "Yellow Line to City Ctr/Milw")
+            titleLine = props.headsign;
+            detailLine = `Vehicle #${props.id.split('-')[0]}`;
+          } else if (props.city === "SF") {
+            // SF: Prefer API headsign if available (e.g., "Fisherman's Wharf")
+            // Fall back to hardcoded terminus mapping for older data
+            if (props.headsign) {
+              titleLine = `${props.routeId} Line to ${props.headsign}`;
+            } else {
+              const terminus = SF_TERMINUS[props.routeId];
+              const dir = props.direction === "Inbound" ? terminus?.inbound : terminus?.outbound;
+              titleLine = `${props.routeId} Line ${dir || ""}`.trim();
+            }
+          } else if (props.city === "LA") {
+            // LA: Show line letter + terminus based on direction
+            // LA GTFS uses: direction 0 = NB/EB (toward downtown), direction 1 = SB/WB (away)
+            // But getDirection() maps 0 → "Outbound", 1 → "Inbound", so we swap the lookup
+            const lineInfo = LA_METRO_LINE_INFO[props.routeId as LAMetroLine];
+            const lineLetter = lineInfo?.letter || props.routeId;
+            const terminus = LA_TERMINUS[props.routeId];
+            const dir = props.direction === "Outbound" ? terminus?.inbound : terminus?.outbound;
+            titleLine = dir ? `${lineLetter} Line ${dir}` : `${lineLetter} Line`;
+          } else if (props.city === "Boston") {
+            // Boston: Show branch name (e.g., "B Branch" instead of "Green-B")
+            const branchName = BOSTON_BRANCH_NAMES[props.routeId] || props.routeId;
+            titleLine = `Green Line ${branchName}`;
+          }
 
           popup.current
             ?.setLngLat(e.lngLat)
             .setHTML(
               `<div class="popup-content">
-                <div class="popup-title">${props.routeId} Train${
-                direction ? ` · ${direction}` : ""
-              }</div>
-                <div class="popup-detail">Vehicle #${props.id}</div>
+                <div class="popup-title">${titleLine}</div>
+                <div class="popup-detail">${detailLine}</div>
                 <div class="popup-speed">${speed}</div>
                 <div class="popup-time">${dateTime}</div>
               </div>`
@@ -1679,6 +1741,7 @@ export function SpeedMap({
             speed: v.speed ?? null,
             recordedAt: v.recordedAt,
             city: city,
+            headsign: v.headsign ?? null,
           },
           geometry: {
             type: "Point" as const,

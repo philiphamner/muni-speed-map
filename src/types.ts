@@ -95,6 +95,25 @@ export const PORTLAND_MAX_LINE_INFO: Record<
   "290": { name: "MAX Orange Line", letter: "Orange", color: "#D05F27" },
 };
 
+// Portland Streetcar lines
+// 193 = NS Line, 194 = A Loop, 195 = B Loop
+export const PORTLAND_STREETCAR_LINES = ["193", "194", "195"] as const;
+export type PortlandStreetcarLine = (typeof PORTLAND_STREETCAR_LINES)[number];
+
+// Portland Streetcar line names and colors (official GTFS colors)
+export const PORTLAND_STREETCAR_LINE_INFO: Record<
+  PortlandStreetcarLine,
+  { name: string; letter: string; color: string }
+> = {
+  "193": { name: "NS Line", letter: "NS", color: "#72A130" },
+  "194": { name: "A Loop", letter: "A", color: "#D91965" },
+  "195": { name: "B Loop", letter: "B", color: "#4650BE" },
+};
+
+// Combined Portland rail lines (MAX + Streetcar)
+export const PORTLAND_RAIL_LINES = [...PORTLAND_MAX_LINES, ...PORTLAND_STREETCAR_LINES] as const;
+export type PortlandRailLine = PortlandMaxLine | PortlandStreetcarLine;
+
 // San Diego MTS Trolley lines
 // 510 = Blue Line, 520 = Orange Line, 530 = Green Line
 export const SAN_DIEGO_TROLLEY_LINES = ["510", "520", "530", "535"] as const;
@@ -214,7 +233,7 @@ export function getLinesForCity(city: City): readonly string[] {
     case "Boston":
       return BOSTON_GREEN_LINE_ROUTES;
     case "Portland":
-      return PORTLAND_MAX_LINES;
+      return PORTLAND_RAIL_LINES;
     case "San Diego":
       return SAN_DIEGO_TROLLEY_LINES;
     case "Toronto":

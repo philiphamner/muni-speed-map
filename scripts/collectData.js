@@ -67,15 +67,22 @@ async function fetchVehiclePositions() {
         const location = journey?.VehicleLocation;
         const recordedAt = v?.RecordedAtTime || new Date().toISOString();
         
+        // Get destination display from the API (e.g., "Fisherman's Wharf", "Ocean Beach")
+        const headsign = journey?.MonitoredCall?.DestinationDisplay || 
+                        journey?.DestinationName || 
+                        '';
+        
         return {
           vehicle_id: journey?.VehicleRef || '',
           route_id: journey?.LineRef || '',
           direction_id: journey?.DirectionRef || '',
+          headsign: headsign,
           lat: parseFloat(location?.Latitude) || 0,
           lon: parseFloat(location?.Longitude) || 0,
           heading: parseFloat(journey?.Bearing) || null,
           speed_reported: journey?.Velocity ? parseFloat(journey.Velocity) : null,
           recorded_at: recordedAt,
+          city: 'SF',
         };
       })
       .filter(v => v.lat !== 0 && v.lon !== 0 && v.vehicle_id);
