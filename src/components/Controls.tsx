@@ -678,15 +678,30 @@ export function Controls({
             </p>
           </>
         )}
+        {city === "Seattle" && (
+          <div className="data-warning">
+            <strong>⚠️ No Data Available:</strong> Seattle Link data collection
+            requires a Sound Transit API key. Route lines and infrastructure
+            are shown, but no speed data is currently being collected.
+          </div>
+        )}
+        {city === "San Diego" && (
+          <div className="data-warning">
+            <strong>⚠️ No Data Available:</strong> San Diego Trolley data
+            collection requires an MTS API key. Route lines and infrastructure
+            are shown, but no speed data is currently being collected.
+          </div>
+        )}
         <p>
           <strong>Grade crossings (X):</strong> Locations where the train
-          tracks cross a road at street level. Trains must slow down and sound
-          their horn at these intersections for safety.
+          tracks cross a road at street level. These may have gates, stop signs,
+          traffic lights (with signal priority or preemption), or other controls
+          that can affect train speeds.
         </p>
         <p>
           <strong>Track switches (Y):</strong> Moveable rail sections that
-          allow trains to change tracks. They often require slower speeds and
-          cluster at junctions where multiple lines meet.
+          allow trains to change tracks. Switches are often found at junctions
+          where multiple lines meet or at terminal turnbacks.
         </p>
         {city !== "Toronto" && city !== "Philadelphia" && (
           <p className="data-attribution">
