@@ -50,7 +50,7 @@ const FEATURE_URL =
           .replace(/^TRAX\s+/i, "")
           .replace(/\s*Line$/i, "")
           .replace(/\s*Streetcar$/i, "")
-          .trim()
+          .trim(),
       )
       .filter((v, i, a) => a.indexOf(v) === i); // unique
 

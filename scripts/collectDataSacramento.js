@@ -46,7 +46,7 @@ function loadTrackGeometry() {
   try {
     const routesPath = join(
       __dirname,
-      "../src/data/sacramentoLightRailRoutes.json"
+      "../src/data/sacramentoLightRailRoutes.json",
     );
     const routesData = JSON.parse(readFileSync(routesPath, "utf8"));
 
@@ -196,7 +196,7 @@ function calculateSpeed(
   prevTime,
   currLat,
   currLon,
-  currTime
+  currTime,
 ) {
   const distance = haversineDistance(prevLat, prevLon, currLat, currLon);
   const timeDiff = (currTime - prevTime) / 1000; // Convert to seconds
@@ -219,7 +219,7 @@ function calculateSpeed(
 
 async function collectData() {
   console.log(
-    `[${new Date().toLocaleString()}] Fetching Sacramento SacRT vehicle positions...`
+    `[${new Date().toLocaleString()}] Fetching Sacramento SacRT vehicle positions...`,
   );
 
   try {
@@ -230,7 +230,7 @@ async function collectData() {
 
     const buffer = await response.arrayBuffer();
     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-      new Uint8Array(buffer)
+      new Uint8Array(buffer),
     );
 
     const positions = [];
@@ -274,7 +274,7 @@ async function collectData() {
           prevPos.timestamp,
           lat,
           lon,
-          timestamp
+          timestamp,
         );
       }
 
@@ -298,7 +298,7 @@ async function collectData() {
     }
 
     console.log(
-      `   Found ${lightRailCount} vehicles on track, rejected ${rejectedCount} off-track`
+      `   Found ${lightRailCount} vehicles on track, rejected ${rejectedCount} off-track`,
     );
 
     if (positions.length === 0) {
@@ -316,12 +316,12 @@ async function collectData() {
       console.error("Error saving to Supabase:", error);
     } else {
       const withSpeed = positions.filter(
-        (p) => p.speed_calculated != null
+        (p) => p.speed_calculated != null,
       ).length;
       console.log(
         `[${new Date().toLocaleString()}] Saved ${
           positions.length
-        } positions (${withSpeed} with speed) in ${Date.now() - startTime}ms`
+        } positions (${withSpeed} with speed) in ${Date.now() - startTime}ms`,
       );
     }
   } catch (error) {

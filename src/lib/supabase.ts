@@ -5,7 +5,7 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn(
-    "Supabase credentials not found. Database features will be disabled."
+    "Supabase credentials not found. Database features will be disabled.",
   );
 }
 
@@ -46,7 +46,7 @@ export interface SegmentSpeed {
 
 // Insert vehicle positions
 export async function insertPositions(
-  positions: Omit<VehiclePosition, "id">[]
+  positions: Omit<VehiclePosition, "id">[],
 ) {
   if (!supabase) return { error: new Error("Supabase not configured") };
 
@@ -75,7 +75,7 @@ export async function getRecentPositions(minutes: number = 5) {
 // Get segment speeds for a given time period
 export async function getSegmentSpeeds(
   dayType: string,
-  hourBucket: number
+  hourBucket: number,
 ): Promise<{ data: SegmentSpeed[]; error: Error | null }> {
   if (!supabase) return { data: [], error: null };
 

@@ -6,16 +6,11 @@
       "properties": {
         "stop_id": "70126",
         "stop_name": "Allston Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.137881,
-          42.348649
-        ]
+        "coordinates": [-71.137881, 42.348649]
       }
     },
     {
@@ -23,16 +18,11 @@
       "properties": {
         "stop_id": "70127",
         "stop_name": "Allston Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.137362,
-          42.348546
-        ]
+        "coordinates": [-71.137362, 42.348546]
       }
     },
     {
@@ -40,16 +30,11 @@
       "properties": {
         "stop_id": "170140",
         "stop_name": "Amory Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.114318,
-          42.350901
-        ]
+        "coordinates": [-71.114318, 42.350901]
       }
     },
     {
@@ -57,16 +42,11 @@
       "properties": {
         "stop_id": "170141",
         "stop_name": "Amory Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.115027,
-          42.351066
-        ]
+        "coordinates": [-71.115027, 42.351066]
       }
     },
     {
@@ -74,19 +54,11 @@
       "properties": {
         "stop_id": "70156",
         "stop_name": "Arlington",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.070893,
-          42.351902
-        ]
+        "coordinates": [-71.070893, 42.351902]
       }
     },
     {
@@ -94,19 +66,11 @@
       "properties": {
         "stop_id": "70157",
         "stop_name": "Arlington",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.070893,
-          42.351902
-        ]
+        "coordinates": [-71.070893, 42.351902]
       }
     },
     {
@@ -114,16 +78,11 @@
       "properties": {
         "stop_id": "170136",
         "stop_name": "Babcock Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.119553,
-          42.351538
-        ]
+        "coordinates": [-71.119553, 42.351538]
       }
     },
     {
@@ -131,16 +90,11 @@
       "properties": {
         "stop_id": "170137",
         "stop_name": "Babcock Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.120257,
-          42.351695
-        ]
+        "coordinates": [-71.120257, 42.351695]
       }
     },
     {
@@ -148,18 +102,11 @@
       "properties": {
         "stop_id": "70509",
         "stop_name": "Ball Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111331,
-          42.40038
-        ]
+        "coordinates": [-71.111331, 42.40038]
       }
     },
     {
@@ -167,18 +114,11 @@
       "properties": {
         "stop_id": "70510",
         "stop_name": "Ball Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111207,
-          42.400103
-        ]
+        "coordinates": [-71.111207, 42.400103]
       }
     },
     {
@@ -186,16 +126,11 @@
       "properties": {
         "stop_id": "70257",
         "stop_name": "Back of the Hill",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111046,
-          42.329369
-        ]
+        "coordinates": [-71.111046, 42.329369]
       }
     },
     {
@@ -203,16 +138,11 @@
       "properties": {
         "stop_id": "70258",
         "stop_name": "Back of the Hill",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.110931,
-          42.329399
-        ]
+        "coordinates": [-71.110931, 42.329399]
       }
     },
     {
@@ -220,16 +150,11 @@
       "properties": {
         "stop_id": "70176",
         "stop_name": "Beaconsfield",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.140112,
-          42.335625
-        ]
+        "coordinates": [-71.140112, 42.335625]
       }
     },
     {
@@ -237,16 +162,11 @@
       "properties": {
         "stop_id": "70177",
         "stop_name": "Beaconsfield",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.140903,
-          42.335912
-        ]
+        "coordinates": [-71.140903, 42.335912]
       }
     },
     {
@@ -254,16 +174,11 @@
       "properties": {
         "stop_id": "70229",
         "stop_name": "Washington Square",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.135139,
-          42.339471
-        ]
+        "coordinates": [-71.135139, 42.339471]
       }
     },
     {
@@ -271,16 +186,11 @@
       "properties": {
         "stop_id": "70230",
         "stop_name": "Washington Square",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.134587,
-          42.339519
-        ]
+        "coordinates": [-71.134587, 42.339519]
       }
     },
     {
@@ -288,16 +198,11 @@
       "properties": {
         "stop_id": "70148",
         "stop_name": "Blandford Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.099821,
-          42.349165
-        ]
+        "coordinates": [-71.099821, 42.349165]
       }
     },
     {
@@ -305,16 +210,11 @@
       "properties": {
         "stop_id": "70149",
         "stop_name": "Blandford Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.100213,
-          42.349276
-        ]
+        "coordinates": [-71.100213, 42.349276]
       }
     },
     {
@@ -322,16 +222,11 @@
       "properties": {
         "stop_id": "70225",
         "stop_name": "Brandon Hall",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.128869,
-          42.340053
-        ]
+        "coordinates": [-71.128869, 42.340053]
       }
     },
     {
@@ -339,16 +234,11 @@
       "properties": {
         "stop_id": "70226",
         "stop_name": "Brandon Hall",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.12866,
-          42.340038
-        ]
+        "coordinates": [-71.12866, 42.340038]
       }
     },
     {
@@ -356,19 +246,11 @@
       "properties": {
         "stop_id": "70158",
         "stop_name": "Boylston",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.064682,
-          42.352531
-        ]
+        "coordinates": [-71.064682, 42.352531]
       }
     },
     {
@@ -376,19 +258,11 @@
       "properties": {
         "stop_id": "70159",
         "stop_name": "Boylston",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.064545,
-          42.353214
-        ]
+        "coordinates": [-71.064545, 42.353214]
       }
     },
     {
@@ -396,16 +270,11 @@
       "properties": {
         "stop_id": "70134",
         "stop_name": "Packard's Corner",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.125067,
-          42.351891
-        ]
+        "coordinates": [-71.125067, 42.351891]
       }
     },
     {
@@ -413,16 +282,11 @@
       "properties": {
         "stop_id": "70135",
         "stop_name": "Packard's Corner",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.12551,
-          42.351651
-        ]
+        "coordinates": [-71.12551, 42.351651]
       }
     },
     {
@@ -430,16 +294,11 @@
       "properties": {
         "stop_id": "70178",
         "stop_name": "Brookline Hills",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.126406,
-          42.331293
-        ]
+        "coordinates": [-71.126406, 42.331293]
       }
     },
     {
@@ -447,16 +306,11 @@
       "properties": {
         "stop_id": "70179",
         "stop_name": "Brookline Hills",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.127025,
-          42.331413
-        ]
+        "coordinates": [-71.127025, 42.331413]
       }
     },
     {
@@ -464,16 +318,11 @@
       "properties": {
         "stop_id": "70249",
         "stop_name": "Brigham Circle",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.104487,
-          42.334331
-        ]
+        "coordinates": [-71.104487, 42.334331]
       }
     },
     {
@@ -481,16 +330,11 @@
       "properties": {
         "stop_id": "70250",
         "stop_name": "Brigham Circle",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.103017,
-          42.334846
-        ]
+        "coordinates": [-71.103017, 42.334846]
       }
     },
     {
@@ -498,16 +342,11 @@
       "properties": {
         "stop_id": "70144",
         "stop_name": "Boston University Central",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.106902,
-          42.350013
-        ]
+        "coordinates": [-71.106902, 42.350013]
       }
     },
     {
@@ -515,16 +354,11 @@
       "properties": {
         "stop_id": "70145",
         "stop_name": "Boston University Central",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.107455,
-          42.350148
-        ]
+        "coordinates": [-71.107455, 42.350148]
       }
     },
     {
@@ -532,16 +366,11 @@
       "properties": {
         "stop_id": "70146",
         "stop_name": "Boston University East",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.103989,
-          42.349659
-        ]
+        "coordinates": [-71.103989, 42.349659]
       }
     },
     {
@@ -549,16 +378,11 @@
       "properties": {
         "stop_id": "70147",
         "stop_name": "Boston University East",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.104657,
-          42.349811
-        ]
+        "coordinates": [-71.104657, 42.349811]
       }
     },
     {
@@ -566,16 +390,11 @@
       "properties": {
         "stop_id": "70180",
         "stop_name": "Brookline Village",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.116751,
-          42.332614
-        ]
+        "coordinates": [-71.116751, 42.332614]
       }
     },
     {
@@ -583,16 +402,11 @@
       "properties": {
         "stop_id": "70181",
         "stop_name": "Brookline Village",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.117041,
-          42.33257
-        ]
+        "coordinates": [-71.117041, 42.33257]
       }
     },
     {
@@ -600,16 +414,11 @@
       "properties": {
         "stop_id": "70172",
         "stop_name": "Chestnut Hill",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.164146,
-          42.326799
-        ]
+        "coordinates": [-71.164146, 42.326799]
       }
     },
     {
@@ -617,16 +426,11 @@
       "properties": {
         "stop_id": "70173",
         "stop_name": "Chestnut Hill",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.16478,
-          42.326782
-        ]
+        "coordinates": [-71.16478, 42.326782]
       }
     },
     {
@@ -634,16 +438,11 @@
       "properties": {
         "stop_id": "70112",
         "stop_name": "Chestnut Hill Avenue",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.152526,
-          42.33873
-        ]
+        "coordinates": [-71.152526, 42.33873]
       }
     },
     {
@@ -651,16 +450,11 @@
       "properties": {
         "stop_id": "70113",
         "stop_name": "Chestnut Hill Avenue",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.153025,
-          42.33829
-        ]
+        "coordinates": [-71.153025, 42.33829]
       }
     },
     {
@@ -668,16 +462,11 @@
       "properties": {
         "stop_id": "70114",
         "stop_name": "Chiswick Road",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.150633,
-          42.340808
-        ]
+        "coordinates": [-71.150633, 42.340808]
       }
     },
     {
@@ -685,16 +474,11 @@
       "properties": {
         "stop_id": "70115",
         "stop_name": "Chiswick Road",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.15114,
-          42.34054
-        ]
+        "coordinates": [-71.15114, 42.34054]
       }
     },
     {
@@ -702,16 +486,11 @@
       "properties": {
         "stop_id": "70237",
         "stop_name": "Cleveland Circle",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.149201,
-          42.336216
-        ]
+        "coordinates": [-71.149201, 42.336216]
       }
     },
     {
@@ -719,16 +498,11 @@
       "properties": {
         "stop_id": "70238",
         "stop_name": "Cleveland Circle",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.148774,
-          42.336252
-        ]
+        "coordinates": [-71.148774, 42.336252]
       }
     },
     {
@@ -736,19 +510,11 @@
       "properties": {
         "stop_id": "70154",
         "stop_name": "Copley",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.078049,
-          42.349871
-        ]
+        "coordinates": [-71.078049, 42.349871]
       }
     },
     {
@@ -756,19 +522,11 @@
       "properties": {
         "stop_id": "70155",
         "stop_name": "Copley",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.077376,
-          42.350126
-        ]
+        "coordinates": [-71.077376, 42.350126]
       }
     },
     {
@@ -776,16 +534,11 @@
       "properties": {
         "stop_id": "70219",
         "stop_name": "Coolidge Corner",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.120915,
-          42.342274
-        ]
+        "coordinates": [-71.120915, 42.342274]
       }
     },
     {
@@ -793,16 +546,11 @@
       "properties": {
         "stop_id": "70220",
         "stop_name": "Coolidge Corner",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.121685,
-          42.342028
-        ]
+        "coordinates": [-71.121685, 42.342028]
       }
     },
     {
@@ -810,16 +558,11 @@
       "properties": {
         "stop_id": "70233",
         "stop_name": "Dean Road",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.141753,
-          42.337807
-        ]
+        "coordinates": [-71.141753, 42.337807]
       }
     },
     {
@@ -827,16 +570,11 @@
       "properties": {
         "stop_id": "70234",
         "stop_name": "Dean Road",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.142309,
-          42.337628
-        ]
+        "coordinates": [-71.142309, 42.337628]
       }
     },
     {
@@ -844,16 +582,11 @@
       "properties": {
         "stop_id": "70166",
         "stop_name": "Eliot",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.21642,
-          42.318871
-        ]
+        "coordinates": [-71.21642, 42.318871]
       }
     },
     {
@@ -861,16 +594,11 @@
       "properties": {
         "stop_id": "70167",
         "stop_name": "Eliot",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.216949,
-          42.319214
-        ]
+        "coordinates": [-71.216949, 42.319214]
       }
     },
     {
@@ -878,16 +606,11 @@
       "properties": {
         "stop_id": "70235",
         "stop_name": "Englewood Avenue",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.145867,
-          42.336964
-        ]
+        "coordinates": [-71.145867, 42.336964]
       }
     },
     {
@@ -895,16 +618,11 @@
       "properties": {
         "stop_id": "70236",
         "stop_name": "Englewood Avenue",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.145368,
-          42.337011
-        ]
+        "coordinates": [-71.145368, 42.337011]
       }
     },
     {
@@ -912,18 +630,11 @@
       "properties": {
         "stop_id": "70513",
         "stop_name": "East Somerville",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.087032,
-          42.379881
-        ]
+        "coordinates": [-71.087032, 42.379881]
       }
     },
     {
@@ -931,18 +642,11 @@
       "properties": {
         "stop_id": "70514",
         "stop_name": "East Somerville",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.086829,
-          42.379624
-        ]
+        "coordinates": [-71.086829, 42.379624]
       }
     },
     {
@@ -950,16 +654,11 @@
       "properties": {
         "stop_id": "70227",
         "stop_name": "Fairbanks Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.131228,
-          42.33969
-        ]
+        "coordinates": [-71.131228, 42.33969]
       }
     },
     {
@@ -967,16 +666,11 @@
       "properties": {
         "stop_id": "70228",
         "stop_name": "Fairbanks Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.131078,
-          42.339644
-        ]
+        "coordinates": [-71.131078, 42.339644]
       }
     },
     {
@@ -984,16 +678,11 @@
       "properties": {
         "stop_id": "70251",
         "stop_name": "Fenwood Road",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.105721,
-          42.33374
-        ]
+        "coordinates": [-71.105721, 42.33374]
       }
     },
     {
@@ -1001,16 +690,11 @@
       "properties": {
         "stop_id": "70252",
         "stop_name": "Fenwood Road",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.105583,
-          42.333706
-        ]
+        "coordinates": [-71.105583, 42.333706]
       }
     },
     {
@@ -1018,16 +702,11 @@
       "properties": {
         "stop_id": "70186",
         "stop_name": "Fenway",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.104269,
-          42.345328
-        ]
+        "coordinates": [-71.104269, 42.345328]
       }
     },
     {
@@ -1035,16 +714,11 @@
       "properties": {
         "stop_id": "70187",
         "stop_name": "Fenway",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.104968,
-          42.345029
-        ]
+        "coordinates": [-71.104968, 42.345029]
       }
     },
     {
@@ -1052,18 +726,11 @@
       "properties": {
         "stop_id": "70505",
         "stop_name": "Gilman Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.096956,
-          42.388043
-        ]
+        "coordinates": [-71.096956, 42.388043]
       }
     },
     {
@@ -1071,18 +738,11 @@
       "properties": {
         "stop_id": "70506",
         "stop_name": "Gilman Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.096629,
-          42.387831
-        ]
+        "coordinates": [-71.096629, 42.387831]
       }
     },
     {
@@ -1090,19 +750,11 @@
       "properties": {
         "stop_id": "70201",
         "stop_name": "Government Center",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.059215,
-          42.359705
-        ]
+        "coordinates": [-71.059215, 42.359705]
       }
     },
     {
@@ -1110,19 +762,11 @@
       "properties": {
         "stop_id": "70202",
         "stop_name": "Government Center",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.059215,
-          42.359705
-        ]
+        "coordinates": [-71.059215, 42.359705]
       }
     },
     {
@@ -1130,16 +774,11 @@
       "properties": {
         "stop_id": "70128",
         "stop_name": "Griggs Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.1345,
-          42.348747
-        ]
+        "coordinates": [-71.1345, 42.348747]
       }
     },
     {
@@ -1147,16 +786,11 @@
       "properties": {
         "stop_id": "70129",
         "stop_name": "Griggs Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.134305,
-          42.348919
-        ]
+        "coordinates": [-71.134305, 42.348919]
       }
     },
     {
@@ -1164,19 +798,11 @@
       "properties": {
         "stop_id": "70203",
         "stop_name": "Haymarket",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.05829,
-          42.363021
-        ]
+        "coordinates": [-71.05829, 42.363021]
       }
     },
     {
@@ -1184,19 +810,11 @@
       "properties": {
         "stop_id": "70204",
         "stop_name": "Haymarket",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.05829,
-          42.363021
-        ]
+        "coordinates": [-71.05829, 42.363021]
       }
     },
     {
@@ -1204,16 +822,11 @@
       "properties": {
         "stop_id": "70130",
         "stop_name": "Harvard Avenue",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.131298,
-          42.350263
-        ]
+        "coordinates": [-71.131298, 42.350263]
       }
     },
     {
@@ -1221,16 +834,11 @@
       "properties": {
         "stop_id": "70131",
         "stop_name": "Harvard Avenue",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.130727,
-          42.350602
-        ]
+        "coordinates": [-71.130727, 42.350602]
       }
     },
     {
@@ -1238,16 +846,11 @@
       "properties": {
         "stop_id": "70260",
         "stop_name": "Heath Street",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.110252,
-          42.328316
-        ]
+        "coordinates": [-71.110252, 42.328316]
       }
     },
     {
@@ -1255,16 +858,11 @@
       "properties": {
         "stop_id": "70213",
         "stop_name": "Hawes Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111761,
-          42.344758
-        ]
+        "coordinates": [-71.111761, 42.344758]
       }
     },
     {
@@ -1272,16 +870,11 @@
       "properties": {
         "stop_id": "70214",
         "stop_name": "Hawes Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111157,
-          42.344867
-        ]
+        "coordinates": [-71.111157, 42.344867]
       }
     },
     {
@@ -1289,18 +882,11 @@
       "properties": {
         "stop_id": "70152",
         "stop_name": "Hynes Convention Center",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.087903,
-          42.347888
-        ]
+        "coordinates": [-71.087903, 42.347888]
       }
     },
     {
@@ -1308,18 +894,11 @@
       "properties": {
         "stop_id": "70153",
         "stop_name": "Hynes Convention Center",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.087903,
-          42.347888
-        ]
+        "coordinates": [-71.087903, 42.347888]
       }
     },
     {
@@ -1327,17 +906,11 @@
       "properties": {
         "stop_id": "70150",
         "stop_name": "Kenmore",
-        "routes": [
-          "Green-C",
-          "Green-D"
-        ]
+        "routes": ["Green-C", "Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.095169,
-          42.348949
-        ]
+        "coordinates": [-71.095169, 42.348949]
       }
     },
     {
@@ -1345,17 +918,11 @@
       "properties": {
         "stop_id": "70151",
         "stop_name": "Kenmore",
-        "routes": [
-          "Green-C",
-          "Green-D"
-        ]
+        "routes": ["Green-C", "Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.095169,
-          42.348949
-        ]
+        "coordinates": [-71.095169, 42.348949]
       }
     },
     {
@@ -1363,16 +930,11 @@
       "properties": {
         "stop_id": "71150",
         "stop_name": "Kenmore",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.095169,
-          42.348949
-        ]
+        "coordinates": [-71.095169, 42.348949]
       }
     },
     {
@@ -1380,16 +942,11 @@
       "properties": {
         "stop_id": "71151",
         "stop_name": "Kenmore",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.095169,
-          42.348949
-        ]
+        "coordinates": [-71.095169, 42.348949]
       }
     },
     {
@@ -1397,16 +954,11 @@
       "properties": {
         "stop_id": "70215",
         "stop_name": "Kent Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.114097,
-          42.344117
-        ]
+        "coordinates": [-71.114097, 42.344117]
       }
     },
     {
@@ -1414,16 +966,11 @@
       "properties": {
         "stop_id": "70216",
         "stop_name": "Kent Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.114569,
-          42.343927
-        ]
+        "coordinates": [-71.114569, 42.343927]
       }
     },
     {
@@ -1431,16 +978,11 @@
       "properties": {
         "stop_id": "70106",
         "stop_name": "Boston College",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.167029,
-          42.340149
-        ]
+        "coordinates": [-71.167029, 42.340149]
       }
     },
     {
@@ -1448,16 +990,11 @@
       "properties": {
         "stop_id": "70107",
         "stop_name": "Boston College",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.166849,
-          42.34024
-        ]
+        "coordinates": [-71.166849, 42.34024]
       }
     },
     {
@@ -1465,19 +1002,11 @@
       "properties": {
         "stop_id": "70501",
         "stop_name": "Lechmere",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.076457,
-          42.371566
-        ]
+        "coordinates": [-71.076457, 42.371566]
       }
     },
     {
@@ -1485,19 +1014,11 @@
       "properties": {
         "stop_id": "70502",
         "stop_name": "Lechmere",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.07586,
-          42.370989
-        ]
+        "coordinates": [-71.07586, 42.370989]
       }
     },
     {
@@ -1505,16 +1026,11 @@
       "properties": {
         "stop_id": "70247",
         "stop_name": "Longwood Medical Area",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.099883,
-          42.33608
-        ]
+        "coordinates": [-71.099883, 42.33608]
       }
     },
     {
@@ -1522,16 +1038,11 @@
       "properties": {
         "stop_id": "70248",
         "stop_name": "Longwood Medical Area",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.099328,
-          42.336217
-        ]
+        "coordinates": [-71.099328, 42.336217]
       }
     },
     {
@@ -1539,16 +1050,11 @@
       "properties": {
         "stop_id": "70182",
         "stop_name": "Longwood",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.109777,
-          42.341808
-        ]
+        "coordinates": [-71.109777, 42.341808]
       }
     },
     {
@@ -1556,16 +1062,11 @@
       "properties": {
         "stop_id": "70183",
         "stop_name": "Longwood",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.110147,
-          42.341571
-        ]
+        "coordinates": [-71.110147, 42.341571]
       }
     },
     {
@@ -1573,18 +1074,11 @@
       "properties": {
         "stop_id": "70511",
         "stop_name": "Medford/Tufts",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.11728,
-          42.408306
-        ]
+        "coordinates": [-71.11728, 42.408306]
       }
     },
     {
@@ -1592,18 +1086,11 @@
       "properties": {
         "stop_id": "70512",
         "stop_name": "Medford/Tufts",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.117339,
-          42.40828
-        ]
+        "coordinates": [-71.117339, 42.40828]
       }
     },
     {
@@ -1611,16 +1098,11 @@
       "properties": {
         "stop_id": "70245",
         "stop_name": "Museum of Fine Arts",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.09524,
-          42.337875
-        ]
+        "coordinates": [-71.09524, 42.337875]
       }
     },
     {
@@ -1628,16 +1110,11 @@
       "properties": {
         "stop_id": "70246",
         "stop_name": "Museum of Fine Arts",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.094682,
-          42.338017
-        ]
+        "coordinates": [-71.094682, 42.338017]
       }
     },
     {
@@ -1645,18 +1122,11 @@
       "properties": {
         "stop_id": "70507",
         "stop_name": "Magoun Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.106824,
-          42.394357
-        ]
+        "coordinates": [-71.106824, 42.394357]
       }
     },
     {
@@ -1664,18 +1134,11 @@
       "properties": {
         "stop_id": "70508",
         "stop_name": "Magoun Square",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.106688,
-          42.39405
-        ]
+        "coordinates": [-71.106688, 42.39405]
       }
     },
     {
@@ -1683,16 +1146,11 @@
       "properties": {
         "stop_id": "70253",
         "stop_name": "Mission Park",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.109276,
-          42.333279
-        ]
+        "coordinates": [-71.109276, 42.333279]
       }
     },
     {
@@ -1700,16 +1158,11 @@
       "properties": {
         "stop_id": "70254",
         "stop_name": "Mission Park",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.10968,
-          42.333092
-        ]
+        "coordinates": [-71.10968, 42.333092]
       }
     },
     {
@@ -1717,16 +1170,11 @@
       "properties": {
         "stop_id": "70168",
         "stop_name": "Newton Highlands",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.205082,
-          42.322738
-        ]
+        "coordinates": [-71.205082, 42.322738]
       }
     },
     {
@@ -1734,16 +1182,11 @@
       "properties": {
         "stop_id": "70169",
         "stop_name": "Newton Highlands",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.205421,
-          42.32253
-        ]
+        "coordinates": [-71.205421, 42.32253]
       }
     },
     {
@@ -1751,16 +1194,11 @@
       "properties": {
         "stop_id": "70170",
         "stop_name": "Newton Centre",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.192024,
-          42.329552
-        ]
+        "coordinates": [-71.192024, 42.329552]
       }
     },
     {
@@ -1768,16 +1206,11 @@
       "properties": {
         "stop_id": "70171",
         "stop_name": "Newton Centre",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.192622,
-          42.3294
-        ]
+        "coordinates": [-71.192622, 42.3294]
       }
     },
     {
@@ -1785,19 +1218,11 @@
       "properties": {
         "stop_id": "70205",
         "stop_name": "North Station",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.060205,
-          42.36528
-        ]
+        "coordinates": [-71.060205, 42.36528]
       }
     },
     {
@@ -1805,19 +1230,11 @@
       "properties": {
         "stop_id": "70206",
         "stop_name": "North Station",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.060205,
-          42.36528
-        ]
+        "coordinates": [-71.060205, 42.36528]
       }
     },
     {
@@ -1825,16 +1242,11 @@
       "properties": {
         "stop_id": "70243",
         "stop_name": "Northeastern University",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.09021,
-          42.339897
-        ]
+        "coordinates": [-71.09021, 42.339897]
       }
     },
     {
@@ -1842,16 +1254,11 @@
       "properties": {
         "stop_id": "70244",
         "stop_name": "Northeastern University",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.0892,
-          42.340222
-        ]
+        "coordinates": [-71.0892, 42.340222]
       }
     },
     {
@@ -1859,16 +1266,11 @@
       "properties": {
         "stop_id": "70196",
         "stop_name": "Park Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.062424,
-          42.356395
-        ]
+        "coordinates": [-71.062424, 42.356395]
       }
     },
     {
@@ -1876,16 +1278,11 @@
       "properties": {
         "stop_id": "70197",
         "stop_name": "Park Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.062424,
-          42.356395
-        ]
+        "coordinates": [-71.062424, 42.356395]
       }
     },
     {
@@ -1893,16 +1290,11 @@
       "properties": {
         "stop_id": "70198",
         "stop_name": "Park Street",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.062424,
-          42.356395
-        ]
+        "coordinates": [-71.062424, 42.356395]
       }
     },
     {
@@ -1910,16 +1302,11 @@
       "properties": {
         "stop_id": "70199",
         "stop_name": "Park Street",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.062424,
-          42.356395
-        ]
+        "coordinates": [-71.062424, 42.356395]
       }
     },
     {
@@ -1927,19 +1314,11 @@
       "properties": {
         "stop_id": "70200",
         "stop_name": "Park Street",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.062424,
-          42.356395
-        ]
+        "coordinates": [-71.062424, 42.356395]
       }
     },
     {
@@ -1947,16 +1326,11 @@
       "properties": {
         "stop_id": "70239",
         "stop_name": "Prudential",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.081696,
-          42.34557
-        ]
+        "coordinates": [-71.081696, 42.34557]
       }
     },
     {
@@ -1964,16 +1338,11 @@
       "properties": {
         "stop_id": "70240",
         "stop_name": "Prudential",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.081696,
-          42.34557
-        ]
+        "coordinates": [-71.081696, 42.34557]
       }
     },
     {
@@ -1981,16 +1350,11 @@
       "properties": {
         "stop_id": "70160",
         "stop_name": "Riverside",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.252256,
-          42.337317
-        ]
+        "coordinates": [-71.252256, 42.337317]
       }
     },
     {
@@ -1998,16 +1362,11 @@
       "properties": {
         "stop_id": "70161",
         "stop_name": "Riverside",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.252236,
-          42.337348
-        ]
+        "coordinates": [-71.252236, 42.337348]
       }
     },
     {
@@ -2015,16 +1374,11 @@
       "properties": {
         "stop_id": "70174",
         "stop_name": "Reservoir",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.147879,
-          42.335181
-        ]
+        "coordinates": [-71.147879, 42.335181]
       }
     },
     {
@@ -2032,16 +1386,11 @@
       "properties": {
         "stop_id": "70175",
         "stop_name": "Reservoir",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.148601,
-          42.335163
-        ]
+        "coordinates": [-71.148601, 42.335163]
       }
     },
     {
@@ -2049,16 +1398,11 @@
       "properties": {
         "stop_id": "70255",
         "stop_name": "Riverway",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111925,
-          42.331391
-        ]
+        "coordinates": [-71.111925, 42.331391]
       }
     },
     {
@@ -2066,16 +1410,11 @@
       "properties": {
         "stop_id": "70256",
         "stop_name": "Riverway",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.111961,
-          42.331871
-        ]
+        "coordinates": [-71.111961, 42.331871]
       }
     },
     {
@@ -2083,16 +1422,11 @@
       "properties": {
         "stop_id": "70211",
         "stop_name": "Saint Mary's Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.107697,
-          42.345884
-        ]
+        "coordinates": [-71.107697, 42.345884]
       }
     },
     {
@@ -2100,16 +1434,11 @@
       "properties": {
         "stop_id": "70212",
         "stop_name": "Saint Mary's Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.107166,
-          42.346007
-        ]
+        "coordinates": [-71.107166, 42.346007]
       }
     },
     {
@@ -2117,16 +1446,11 @@
       "properties": {
         "stop_id": "70110",
         "stop_name": "South Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.157057,
-          42.339371
-        ]
+        "coordinates": [-71.157057, 42.339371]
       }
     },
     {
@@ -2134,16 +1458,11 @@
       "properties": {
         "stop_id": "70111",
         "stop_name": "South Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.157499,
-          42.339581
-        ]
+        "coordinates": [-71.157499, 42.339581]
       }
     },
     {
@@ -2151,19 +1470,11 @@
       "properties": {
         "stop_id": "70207",
         "stop_name": "Science Park/West End",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.067666,
-          42.366664
-        ]
+        "coordinates": [-71.067666, 42.366664]
       }
     },
     {
@@ -2171,19 +1482,11 @@
       "properties": {
         "stop_id": "70208",
         "stop_name": "Science Park/West End",
-        "routes": [
-          "Green-B",
-          "Green-C",
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-B", "Green-C", "Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.067666,
-          42.366664
-        ]
+        "coordinates": [-71.067666, 42.366664]
       }
     },
     {
@@ -2191,16 +1494,11 @@
       "properties": {
         "stop_id": "70116",
         "stop_name": "Sutherland Road",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.146089,
-          42.341589
-        ]
+        "coordinates": [-71.146089, 42.341589]
       }
     },
     {
@@ -2208,16 +1506,11 @@
       "properties": {
         "stop_id": "70117",
         "stop_name": "Sutherland Road",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.146607,
-          42.341577
-        ]
+        "coordinates": [-71.146607, 42.341577]
       }
     },
     {
@@ -2225,16 +1518,11 @@
       "properties": {
         "stop_id": "70217",
         "stop_name": "Saint Paul Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.116927,
-          42.34334
-        ]
+        "coordinates": [-71.116927, 42.34334]
       }
     },
     {
@@ -2242,16 +1530,11 @@
       "properties": {
         "stop_id": "70218",
         "stop_name": "Saint Paul Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.117498,
-          42.343118
-        ]
+        "coordinates": [-71.117498, 42.343118]
       }
     },
     {
@@ -2259,16 +1542,11 @@
       "properties": {
         "stop_id": "70223",
         "stop_name": "Summit Avenue",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.125652,
-          42.34112
-        ]
+        "coordinates": [-71.125652, 42.34112]
       }
     },
     {
@@ -2276,16 +1554,11 @@
       "properties": {
         "stop_id": "70224",
         "stop_name": "Summit Avenue",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.125759,
-          42.341027
-        ]
+        "coordinates": [-71.125759, 42.341027]
       }
     },
     {
@@ -2293,16 +1566,11 @@
       "properties": {
         "stop_id": "70241",
         "stop_name": "Symphony",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.085056,
-          42.342687
-        ]
+        "coordinates": [-71.085056, 42.342687]
       }
     },
     {
@@ -2310,16 +1578,11 @@
       "properties": {
         "stop_id": "70242",
         "stop_name": "Symphony",
-        "routes": [
-          "Green-E"
-        ]
+        "routes": ["Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.085056,
-          42.342687
-        ]
+        "coordinates": [-71.085056, 42.342687]
       }
     },
     {
@@ -2327,16 +1590,11 @@
       "properties": {
         "stop_id": "70231",
         "stop_name": "Tappan Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.138731,
-          42.338498
-        ]
+        "coordinates": [-71.138731, 42.338498]
       }
     },
     {
@@ -2344,16 +1602,11 @@
       "properties": {
         "stop_id": "70232",
         "stop_name": "Tappan Street",
-        "routes": [
-          "Green-C"
-        ]
+        "routes": ["Green-C"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.13819,
-          42.338567
-        ]
+        "coordinates": [-71.13819, 42.338567]
       }
     },
     {
@@ -2361,16 +1614,11 @@
       "properties": {
         "stop_id": "70503",
         "stop_name": "Union Square",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.093964,
-          42.377024
-        ]
+        "coordinates": [-71.093964, 42.377024]
       }
     },
     {
@@ -2378,17 +1626,11 @@
       "properties": {
         "stop_id": "70504",
         "stop_name": "Union Square",
-        "routes": [
-          "Green-D",
-          "Green-E"
-        ]
+        "routes": ["Green-D", "Green-E"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.093993,
-          42.37699
-        ]
+        "coordinates": [-71.093993, 42.37699]
       }
     },
     {
@@ -2396,16 +1638,11 @@
       "properties": {
         "stop_id": "70164",
         "stop_name": "Waban",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.230476,
-          42.325695
-        ]
+        "coordinates": [-71.230476, 42.325695]
       }
     },
     {
@@ -2413,16 +1650,11 @@
       "properties": {
         "stop_id": "70165",
         "stop_name": "Waban",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.230714,
-          42.325967
-        ]
+        "coordinates": [-71.230714, 42.325967]
       }
     },
     {
@@ -2430,16 +1662,11 @@
       "properties": {
         "stop_id": "70120",
         "stop_name": "Washington Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.142385,
-          42.344329
-        ]
+        "coordinates": [-71.142385, 42.344329]
       }
     },
     {
@@ -2447,16 +1674,11 @@
       "properties": {
         "stop_id": "70121",
         "stop_name": "Washington Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.142731,
-          42.343974
-        ]
+        "coordinates": [-71.142731, 42.343974]
       }
     },
     {
@@ -2464,16 +1686,11 @@
       "properties": {
         "stop_id": "70162",
         "stop_name": "Woodland",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.243055,
-          42.332703
-        ]
+        "coordinates": [-71.243055, 42.332703]
       }
     },
     {
@@ -2481,16 +1698,11 @@
       "properties": {
         "stop_id": "70163",
         "stop_name": "Woodland",
-        "routes": [
-          "Green-D"
-        ]
+        "routes": ["Green-D"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.243659,
-          42.333094
-        ]
+        "coordinates": [-71.243659, 42.333094]
       }
     },
     {
@@ -2498,16 +1710,11 @@
       "properties": {
         "stop_id": "70124",
         "stop_name": "Warren Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.140436,
-          42.348285
-        ]
+        "coordinates": [-71.140436, 42.348285]
       }
     },
     {
@@ -2515,16 +1722,11 @@
       "properties": {
         "stop_id": "70125",
         "stop_name": "Warren Street",
-        "routes": [
-          "Green-B"
-        ]
+        "routes": ["Green-B"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -71.140051,
-          42.348819
-        ]
+        "coordinates": [-71.140051, 42.348819]
       }
     }
   ]

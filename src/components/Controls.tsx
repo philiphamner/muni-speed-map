@@ -272,17 +272,17 @@ export function Controls({
     dataAgeMinutes === null
       ? ""
       : dataAgeMinutes < 1
-      ? "(now)"
-      : dataAgeMinutes < 60
-      ? `(${Math.round(dataAgeMinutes)}m ago)`
-      : dataAgeMinutes < 1440
-      ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
-      : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
+        ? "(now)"
+        : dataAgeMinutes < 60
+          ? `(${Math.round(dataAgeMinutes)}m ago)`
+          : dataAgeMinutes < 1440
+            ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
+            : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
   const liveTooltip = isLiveFresh
     ? "Show current train positions"
     : hasAnyData
-    ? "Show last known train positions (data is stale)"
-    : "No data loaded yet";
+      ? "Show last known train positions (data is stale)"
+      : "No data loaded yet";
 
   const allLines = getLinesForCity(city);
 
@@ -649,7 +649,7 @@ export function Controls({
                   ...speedFilter,
                   minSpeed: Math.min(
                     Number(e.target.value),
-                    speedFilter.maxSpeed
+                    speedFilter.maxSpeed,
                   ),
                 })
               }
@@ -671,7 +671,7 @@ export function Controls({
                   ...speedFilter,
                   maxSpeed: Math.max(
                     Number(e.target.value),
-                    speedFilter.minSpeed
+                    speedFilter.minSpeed,
                   ),
                 })
               }

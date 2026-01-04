@@ -88,18 +88,18 @@ function main() {
   const routes = parseCSV("routes.txt");
   console.log(`Total routes: ${routes.length}`);
   const trolleyRoutes = routes.filter((r) =>
-    TROLLEY_ROUTE_IDS.includes(r.route_id)
+    TROLLEY_ROUTE_IDS.includes(r.route_id),
   );
   console.log(
     `Found ${trolleyRoutes.length} Trolley routes:`,
-    trolleyRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
+    trolleyRoutes.map((r) => `${r.route_id} (${r.route_long_name})`),
   );
 
   // Parse trips to get shape_ids for each route
   const trips = parseCSV("trips.txt");
   console.log(`Total trips: ${trips.length}`);
   const trolleyTrips = trips.filter((t) =>
-    TROLLEY_ROUTE_IDS.includes(t.route_id)
+    TROLLEY_ROUTE_IDS.includes(t.route_id),
   );
   console.log(`Trolley trips: ${trolleyTrips.length}`);
 
@@ -141,7 +141,7 @@ function main() {
     console.log(
       `${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${
         info.headsign || "no headsign"
-      }, ${info.count} trips)`
+      }, ${info.count} trips)`,
     );
   });
 
@@ -216,7 +216,7 @@ function main() {
     console.log(
       `  ${p.route_id} ${p.direction}: ${p.route_name} (${
         p.headsign || "no headsign"
-      })`
+      })`,
     );
   });
 }

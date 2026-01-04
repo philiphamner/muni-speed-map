@@ -39,7 +39,7 @@ const POLL_INTERVAL_MS = Number(process.env.POLL_INTERVAL_MS) || 90000; // 90 se
 // Initialize Supabase client
 if (!SUPABASE_ANON_KEY) {
   console.error(
-    "ERROR: SUPABASE_ANON_KEY is not set. Set SUPABASE_ANON_KEY in the environment or .env before running the collector."
+    "ERROR: SUPABASE_ANON_KEY is not set. Set SUPABASE_ANON_KEY in the environment or .env before running the collector.",
   );
   process.exit(1);
 }
@@ -122,7 +122,7 @@ async function fetchVehiclePositions() {
   try {
     if (!VEHICLE_POSITIONS_URL) {
       console.error(
-        "VEHICLE_POSITIONS_URL is not set. Set VEHICLE_POSITIONS_URL in environment to the DART GTFS-RT vehicle positions feed URL."
+        "VEHICLE_POSITIONS_URL is not set. Set VEHICLE_POSITIONS_URL in environment to the DART GTFS-RT vehicle positions feed URL.",
       );
       return [];
     }
@@ -139,7 +139,7 @@ async function fetchVehiclePositions() {
 
     const buffer = await response.arrayBuffer();
     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-      new Uint8Array(buffer)
+      new Uint8Array(buffer),
     );
 
     // Filter for light rail vehicles
@@ -148,7 +148,7 @@ async function fetchVehiclePositions() {
         (entity) =>
           entity.vehicle &&
           entity.vehicle.trip &&
-          isRailRoute(entity.vehicle.trip.routeId)
+          isRailRoute(entity.vehicle.trip.routeId),
       )
       .map((entity) => {
         const v = entity.vehicle;
@@ -234,7 +234,7 @@ async function collectOnce() {
   } else {
     console.log(
       `[${timestamp} CT] Saved ${count} Dallas DART rail positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`
+        `(${withSpeed.length} with speed) in ${elapsed}ms`,
     );
   }
 }
@@ -243,7 +243,7 @@ async function collectOnce() {
 async function runCollector() {
   console.log("⭐ Dallas DART Light Rail - Data Collector");
   console.log(
-    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`
+    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`,
   );
   console.log(`   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")}`);
   console.log("   Press Ctrl+C to stop\n");

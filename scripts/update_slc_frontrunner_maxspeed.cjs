@@ -4,7 +4,7 @@ const path = require("path");
 
 const DATA_DIR = path.join(__dirname, "..", "src", "data");
 const routes = JSON.parse(
-  fs.readFileSync(path.join(DATA_DIR, "slcTraxRoutes.json"), "utf8")
+  fs.readFileSync(path.join(DATA_DIR, "slcTraxRoutes.json"), "utf8"),
 );
 
 const fr = routes.features.find((f) => {
@@ -109,7 +109,7 @@ function tryHost(hostIndex) {
         console.error(
           "Error parsing Overpass response from",
           hostname,
-          err?.message || err
+          err?.message || err,
         );
         console.log("Trying next host...");
         tryHost(hostIndex + 1);

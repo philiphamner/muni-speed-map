@@ -6,16 +6,11 @@
       "properties": {
         "stop_id": "80101",
         "stop_name": "Downtown Long Beach Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.192921,
-          33.768071
-        ]
+        "coordinates": [-118.192921, 33.768071]
       }
     },
     {
@@ -23,16 +18,11 @@
       "properties": {
         "stop_id": "80102",
         "stop_name": "Pacific Ave Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.1937,
-          33.772258
-        ]
+        "coordinates": [-118.1937, 33.772258]
       }
     },
     {
@@ -40,16 +30,11 @@
       "properties": {
         "stop_id": "80105",
         "stop_name": "Anaheim Street Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189384,
-          33.78183
-        ]
+        "coordinates": [-118.189384, 33.78183]
       }
     },
     {
@@ -57,16 +42,11 @@
       "properties": {
         "stop_id": "80106",
         "stop_name": "Pacific Coast Hwy Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189382,
-          33.78909
-        ]
+        "coordinates": [-118.189382, 33.78909]
       }
     },
     {
@@ -74,16 +54,11 @@
       "properties": {
         "stop_id": "80107",
         "stop_name": "Willow Street Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189834,
-          33.807079
-        ]
+        "coordinates": [-118.189834, 33.807079]
       }
     },
     {
@@ -91,16 +66,11 @@
       "properties": {
         "stop_id": "80108",
         "stop_name": "Wardlow Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.19609,
-          33.819865
-        ]
+        "coordinates": [-118.19609, 33.819865]
       }
     },
     {
@@ -108,16 +78,11 @@
       "properties": {
         "stop_id": "80109",
         "stop_name": "Del Amo Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.211017,
-          33.848222
-        ]
+        "coordinates": [-118.211017, 33.848222]
       }
     },
     {
@@ -125,16 +90,11 @@
       "properties": {
         "stop_id": "80110",
         "stop_name": "Artesia Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.222503,
-          33.876082
-        ]
+        "coordinates": [-118.222503, 33.876082]
       }
     },
     {
@@ -142,16 +102,11 @@
       "properties": {
         "stop_id": "80111",
         "stop_name": "Compton Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.224249,
-          33.89749
-        ]
+        "coordinates": [-118.224249, 33.89749]
       }
     },
     {
@@ -159,16 +114,11 @@
       "properties": {
         "stop_id": "80112",
         "stop_name": "Willowbrook - Rosa Parks Station - Metro A-Line",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.237555,
-          33.928048
-        ]
+        "coordinates": [-118.237555, 33.928048]
       }
     },
     {
@@ -176,16 +126,11 @@
       "properties": {
         "stop_id": "80113",
         "stop_name": "103rd Street / Watts Towers  Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243159,
-          33.94222
-        ]
+        "coordinates": [-118.243159, 33.94222]
       }
     },
     {
@@ -193,16 +138,11 @@
       "properties": {
         "stop_id": "80114",
         "stop_name": "Firestone Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243205,
-          33.959611
-        ]
+        "coordinates": [-118.243205, 33.959611]
       }
     },
     {
@@ -210,16 +150,11 @@
       "properties": {
         "stop_id": "80115",
         "stop_name": "Florence Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243271,
-          33.97374
-        ]
+        "coordinates": [-118.243271, 33.97374]
       }
     },
     {
@@ -227,16 +162,11 @@
       "properties": {
         "stop_id": "80116",
         "stop_name": "Slauson Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243398,
-          33.98876
-        ]
+        "coordinates": [-118.243398, 33.98876]
       }
     },
     {
@@ -244,16 +174,11 @@
       "properties": {
         "stop_id": "80117",
         "stop_name": "Vernon Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243303,
-          34.00292
-        ]
+        "coordinates": [-118.243303, 34.00292]
       }
     },
     {
@@ -261,16 +186,11 @@
       "properties": {
         "stop_id": "80118",
         "stop_name": "Washington Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243084,
-          34.01965
-        ]
+        "coordinates": [-118.243084, 34.01965]
       }
     },
     {
@@ -278,16 +198,11 @@
       "properties": {
         "stop_id": "80119",
         "stop_name": "San Pedro Street Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.255505,
-          34.026807
-        ]
+        "coordinates": [-118.255505, 34.026807]
       }
     },
     {
@@ -295,16 +210,11 @@
       "properties": {
         "stop_id": "80120",
         "stop_name": "Grand / LATTC Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.269333,
-          34.033155
-        ]
+        "coordinates": [-118.269333, 34.033155]
       }
     },
     {
@@ -312,17 +222,11 @@
       "properties": {
         "stop_id": "80121",
         "stop_name": "Pico Station",
-        "routes": [
-          "801",
-          "804"
-        ]
+        "routes": ["801", "804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.266118,
-          34.040735
-        ]
+        "coordinates": [-118.266118, 34.040735]
       }
     },
     {
@@ -330,17 +234,11 @@
       "properties": {
         "stop_id": "80122",
         "stop_name": "7th Street / Metro Center Station - Metro A & E Lines",
-        "routes": [
-          "801",
-          "804"
-        ]
+        "routes": ["801", "804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.258822,
-          34.04861
-        ]
+        "coordinates": [-118.258822, 34.04861]
       }
     },
     {
@@ -348,16 +246,11 @@
       "properties": {
         "stop_id": "80123",
         "stop_name": "LATTC / Ortho Institute Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.273603,
-          34.029112
-        ]
+        "coordinates": [-118.273603, 34.029112]
       }
     },
     {
@@ -365,16 +258,11 @@
       "properties": {
         "stop_id": "80124",
         "stop_name": "Jefferson / USC Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.278118,
-          34.022123
-        ]
+        "coordinates": [-118.278118, 34.022123]
       }
     },
     {
@@ -382,16 +270,11 @@
       "properties": {
         "stop_id": "80125",
         "stop_name": "Expo Park / USC Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.285734,
-          34.018227
-        ]
+        "coordinates": [-118.285734, 34.018227]
       }
     },
     {
@@ -399,16 +282,11 @@
       "properties": {
         "stop_id": "80126",
         "stop_name": "Expo / Vermont Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.29154,
-          34.018245
-        ]
+        "coordinates": [-118.29154, 34.018245]
       }
     },
     {
@@ -416,16 +294,11 @@
       "properties": {
         "stop_id": "80127",
         "stop_name": "Expo / Western Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.30891,
-          34.018331
-        ]
+        "coordinates": [-118.30891, 34.018331]
       }
     },
     {
@@ -433,16 +306,11 @@
       "properties": {
         "stop_id": "80128",
         "stop_name": "Expo / Crenshaw E-Line Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.335078,
-          34.022526
-        ]
+        "coordinates": [-118.335078, 34.022526]
       }
     },
     {
@@ -450,16 +318,11 @@
       "properties": {
         "stop_id": "80129",
         "stop_name": "Farmdale Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.346095,
-          34.023981
-        ]
+        "coordinates": [-118.346095, 34.023981]
       }
     },
     {
@@ -467,16 +330,11 @@
       "properties": {
         "stop_id": "80130",
         "stop_name": "Expo / La Brea / Ethel Bradley Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.355159,
-          34.024803
-        ]
+        "coordinates": [-118.355159, 34.024803]
       }
     },
     {
@@ -484,16 +342,11 @@
       "properties": {
         "stop_id": "80131",
         "stop_name": "La Cienega / Jefferson Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.37212,
-          34.026355
-        ]
+        "coordinates": [-118.37212, 34.026355]
       }
     },
     {
@@ -501,16 +354,11 @@
       "properties": {
         "stop_id": "80132",
         "stop_name": "Culver City Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.388986,
-          34.027896
-        ]
+        "coordinates": [-118.388986, 34.027896]
       }
     },
     {
@@ -518,16 +366,11 @@
       "properties": {
         "stop_id": "80133",
         "stop_name": "Palms Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.404255,
-          34.029323
-        ]
+        "coordinates": [-118.404255, 34.029323]
       }
     },
     {
@@ -535,16 +378,11 @@
       "properties": {
         "stop_id": "80134",
         "stop_name": "Westwood / Rancho Park Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.424576,
-          34.036816
-        ]
+        "coordinates": [-118.424576, 34.036816]
       }
     },
     {
@@ -552,16 +390,11 @@
       "properties": {
         "stop_id": "80135",
         "stop_name": "Expo / Sepulveda Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.434234,
-          34.035408
-        ]
+        "coordinates": [-118.434234, 34.035408]
       }
     },
     {
@@ -569,16 +402,11 @@
       "properties": {
         "stop_id": "80136",
         "stop_name": "Expo / Bundy Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.452896,
-          34.031705
-        ]
+        "coordinates": [-118.452896, 34.031705]
       }
     },
     {
@@ -586,16 +414,11 @@
       "properties": {
         "stop_id": "80137",
         "stop_name": "26th Street / Bergamot Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.46912,
-          34.027995
-        ]
+        "coordinates": [-118.46912, 34.027995]
       }
     },
     {
@@ -603,16 +426,11 @@
       "properties": {
         "stop_id": "80138",
         "stop_name": "17th Street / SMC Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.480372,
-          34.023155
-        ]
+        "coordinates": [-118.480372, 34.023155]
       }
     },
     {
@@ -620,16 +438,11 @@
       "properties": {
         "stop_id": "80139",
         "stop_name": "Downtown Santa Monica Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.491384,
-          34.01401
-        ]
+        "coordinates": [-118.491384, 34.01401]
       }
     },
     {
@@ -637,16 +450,11 @@
       "properties": {
         "stop_id": "80153",
         "stop_name": "1st Street Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189362,
-          33.76874
-        ]
+        "coordinates": [-118.189362, 33.76874]
       }
     },
     {
@@ -654,16 +462,11 @@
       "properties": {
         "stop_id": "80154",
         "stop_name": "5th Street Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189412,
-          33.773598
-        ]
+        "coordinates": [-118.189412, 33.773598]
       }
     },
     {
@@ -671,16 +474,11 @@
       "properties": {
         "stop_id": "801100",
         "stop_name": "Glendora Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.8663,
-          34.1319
-        ]
+        "coordinates": [-117.8663, 34.1319]
       }
     },
     {
@@ -688,16 +486,11 @@
       "properties": {
         "stop_id": "801101",
         "stop_name": "San Dimas Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.8058,
-          34.1052
-        ]
+        "coordinates": [-117.8058, 34.1052]
       }
     },
     {
@@ -705,16 +498,11 @@
       "properties": {
         "stop_id": "801102",
         "stop_name": "La Verne / Fairplex Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.7681,
-          34.0972
-        ]
+        "coordinates": [-117.7681, 34.0972]
       }
     },
     {
@@ -722,16 +510,11 @@
       "properties": {
         "stop_id": "801103",
         "stop_name": "Pomona North Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.7522,
-          34.094
-        ]
+        "coordinates": [-117.7522, 34.094]
       }
     },
     {
@@ -739,16 +522,11 @@
       "properties": {
         "stop_id": "80201",
         "stop_name": "North Hollywood Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.376808,
-          34.168504
-        ]
+        "coordinates": [-118.376808, 34.168504]
       }
     },
     {
@@ -756,16 +534,11 @@
       "properties": {
         "stop_id": "80202",
         "stop_name": "Universal / Studio City Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.362699,
-          34.140002
-        ]
+        "coordinates": [-118.362699, 34.140002]
       }
     },
     {
@@ -773,16 +546,11 @@
       "properties": {
         "stop_id": "80203",
         "stop_name": "Hollywood / Highland Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.338549,
-          34.101547
-        ]
+        "coordinates": [-118.338549, 34.101547]
       }
     },
     {
@@ -790,16 +558,11 @@
       "properties": {
         "stop_id": "80204",
         "stop_name": "Hollywood / Vine Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.32518,
-          34.10163
-        ]
+        "coordinates": [-118.32518, 34.10163]
       }
     },
     {
@@ -807,16 +570,11 @@
       "properties": {
         "stop_id": "80205",
         "stop_name": "Hollywood / Western Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.308117,
-          34.101737
-        ]
+        "coordinates": [-118.308117, 34.101737]
       }
     },
     {
@@ -824,16 +582,11 @@
       "properties": {
         "stop_id": "80206",
         "stop_name": "Vermont / Sunset Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.291756,
-          34.097708
-        ]
+        "coordinates": [-118.291756, 34.097708]
       }
     },
     {
@@ -841,16 +594,11 @@
       "properties": {
         "stop_id": "80207",
         "stop_name": "Vermont / Santa Monica Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.29173,
-          34.08991
-        ]
+        "coordinates": [-118.29173, 34.08991]
       }
     },
     {
@@ -858,16 +606,11 @@
       "properties": {
         "stop_id": "80208",
         "stop_name": "Vermont / Beverly Station",
-        "routes": [
-          "802"
-        ]
+        "routes": ["802"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.291686,
-          34.076526
-        ]
+        "coordinates": [-118.291686, 34.076526]
       }
     },
     {
@@ -875,17 +618,11 @@
       "properties": {
         "stop_id": "80209",
         "stop_name": "Wilshire / Vermont Station",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.290082,
-          34.062701
-        ]
+        "coordinates": [-118.290082, 34.062701]
       }
     },
     {
@@ -893,17 +630,11 @@
       "properties": {
         "stop_id": "80210",
         "stop_name": "Westlake / MacArthur Park Station",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.274879,
-          34.056368
-        ]
+        "coordinates": [-118.274879, 34.056368]
       }
     },
     {
@@ -911,17 +642,11 @@
       "properties": {
         "stop_id": "80211",
         "stop_name": "7th Street / Metro Center Station - Metro B & D Lines",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.258682,
-          34.048634
-        ]
+        "coordinates": [-118.258682, 34.048634]
       }
     },
     {
@@ -929,17 +654,11 @@
       "properties": {
         "stop_id": "80212",
         "stop_name": "Pershing Square Station",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.251259,
-          34.049316
-        ]
+        "coordinates": [-118.251259, 34.049316]
       }
     },
     {
@@ -947,17 +666,11 @@
       "properties": {
         "stop_id": "80213",
         "stop_name": "Civic Center / Grand Park Station",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.246057,
-          34.0549
-        ]
+        "coordinates": [-118.246057, 34.0549]
       }
     },
     {
@@ -965,17 +678,11 @@
       "properties": {
         "stop_id": "80214",
         "stop_name": "Union Station - Metro B & D Lines",
-        "routes": [
-          "802",
-          "805"
-        ]
+        "routes": ["802", "805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.234249,
-          34.056197
-        ]
+        "coordinates": [-118.234249, 34.056197]
       }
     },
     {
@@ -983,16 +690,11 @@
       "properties": {
         "stop_id": "80215",
         "stop_name": "Wilshire / Normandie Station",
-        "routes": [
-          "805"
-        ]
+        "routes": ["805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.301458,
-          34.061753
-        ]
+        "coordinates": [-118.301458, 34.061753]
       }
     },
     {
@@ -1000,16 +702,11 @@
       "properties": {
         "stop_id": "80216",
         "stop_name": "Wilshire / Western Station",
-        "routes": [
-          "805"
-        ]
+        "routes": ["805"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.308756,
-          34.061689
-        ]
+        "coordinates": [-118.308756, 34.061689]
       }
     },
     {
@@ -1017,16 +714,11 @@
       "properties": {
         "stop_id": "80301",
         "stop_name": "Redondo Beach Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.369196,
-          33.89464
-        ]
+        "coordinates": [-118.369196, 33.89464]
       }
     },
     {
@@ -1034,16 +726,11 @@
       "properties": {
         "stop_id": "80302",
         "stop_name": "Douglas Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.383113,
-          33.905299
-        ]
+        "coordinates": [-118.383113, 33.905299]
       }
     },
     {
@@ -1051,16 +738,11 @@
       "properties": {
         "stop_id": "80303",
         "stop_name": "El Segundo Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.386539,
-          33.916063
-        ]
+        "coordinates": [-118.386539, 33.916063]
       }
     },
     {
@@ -1068,16 +750,11 @@
       "properties": {
         "stop_id": "80304",
         "stop_name": "Mariposa Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.387572,
-          33.9232
-        ]
+        "coordinates": [-118.387572, 33.9232]
       }
     },
     {
@@ -1085,16 +762,11 @@
       "properties": {
         "stop_id": "80305",
         "stop_name": "Aviation / Imperial Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.377134,
-          33.929621
-        ]
+        "coordinates": [-118.377134, 33.929621]
       }
     },
     {
@@ -1102,16 +774,11 @@
       "properties": {
         "stop_id": "80306",
         "stop_name": "Hawthorne / Lennox Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.351602,
-          33.933408
-        ]
+        "coordinates": [-118.351602, 33.933408]
       }
     },
     {
@@ -1119,16 +786,11 @@
       "properties": {
         "stop_id": "80307",
         "stop_name": "Crenshaw C-Line Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.32655,
-          33.925201
-        ]
+        "coordinates": [-118.32655, 33.925201]
       }
     },
     {
@@ -1136,16 +798,11 @@
       "properties": {
         "stop_id": "80308",
         "stop_name": "Vermont / Athens Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.291733,
-          33.928683
-        ]
+        "coordinates": [-118.291733, 33.928683]
       }
     },
     {
@@ -1153,16 +810,11 @@
       "properties": {
         "stop_id": "80309",
         "stop_name": "Harbor Freeway Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2811,
-          33.928714
-        ]
+        "coordinates": [-118.2811, 33.928714]
       }
     },
     {
@@ -1170,16 +822,11 @@
       "properties": {
         "stop_id": "80310",
         "stop_name": "Avalon Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.265217,
-          33.927465
-        ]
+        "coordinates": [-118.265217, 33.927465]
       }
     },
     {
@@ -1187,16 +834,11 @@
       "properties": {
         "stop_id": "80311",
         "stop_name": "Willowbrook - Rosa Parks Station - Metro C-Line",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.238052,
-          33.928258
-        ]
+        "coordinates": [-118.238052, 33.928258]
       }
     },
     {
@@ -1204,16 +846,11 @@
       "properties": {
         "stop_id": "80312",
         "stop_name": "Lynwood Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.209945,
-          33.92488
-        ]
+        "coordinates": [-118.209945, 33.92488]
       }
     },
     {
@@ -1221,16 +858,11 @@
       "properties": {
         "stop_id": "80313",
         "stop_name": "Lakewood Blvd Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.1406,
-          33.91307
-        ]
+        "coordinates": [-118.1406, 33.91307]
       }
     },
     {
@@ -1238,16 +870,11 @@
       "properties": {
         "stop_id": "80314",
         "stop_name": "Norwalk Station",
-        "routes": [
-          "803"
-        ]
+        "routes": ["803"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.104717,
-          33.914033
-        ]
+        "coordinates": [-118.104717, 33.914033]
       }
     },
     {
@@ -1255,16 +882,11 @@
       "properties": {
         "stop_id": "80401",
         "stop_name": "Atlantic Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.154469,
-          34.033398
-        ]
+        "coordinates": [-118.154469, 34.033398]
       }
     },
     {
@@ -1272,16 +894,11 @@
       "properties": {
         "stop_id": "80402",
         "stop_name": "East LA Civic Center Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.161206,
-          34.033364
-        ]
+        "coordinates": [-118.161206, 34.033364]
       }
     },
     {
@@ -1289,16 +906,11 @@
       "properties": {
         "stop_id": "80403",
         "stop_name": "Maravilla Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.16814,
-          34.033319
-        ]
+        "coordinates": [-118.16814, 34.033319]
       }
     },
     {
@@ -1306,16 +918,11 @@
       "properties": {
         "stop_id": "80404",
         "stop_name": "Indiana Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.192182,
-          34.0343
-        ]
+        "coordinates": [-118.192182, 34.0343]
       }
     },
     {
@@ -1323,16 +930,11 @@
       "properties": {
         "stop_id": "80405",
         "stop_name": "Soto Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.210061,
-          34.043747
-        ]
+        "coordinates": [-118.210061, 34.043747]
       }
     },
     {
@@ -1340,16 +942,11 @@
       "properties": {
         "stop_id": "80406",
         "stop_name": "Mariachi Plaza / Boyle Heights Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.219648,
-          34.047215
-        ]
+        "coordinates": [-118.219648, 34.047215]
       }
     },
     {
@@ -1357,16 +954,11 @@
       "properties": {
         "stop_id": "80407",
         "stop_name": "Pico / Aliso Station",
-        "routes": [
-          "804"
-        ]
+        "routes": ["804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.22594,
-          34.047634
-        ]
+        "coordinates": [-118.22594, 34.047634]
       }
     },
     {
@@ -1374,16 +966,11 @@
       "properties": {
         "stop_id": "80409",
         "stop_name": "Union Station - Metro A-Line",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.234759,
-          34.056061
-        ]
+        "coordinates": [-118.234759, 34.056061]
       }
     },
     {
@@ -1391,16 +978,11 @@
       "properties": {
         "stop_id": "80410",
         "stop_name": "Chinatown Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.23584,
-          34.063861
-        ]
+        "coordinates": [-118.23584, 34.063861]
       }
     },
     {
@@ -1408,16 +990,11 @@
       "properties": {
         "stop_id": "80411",
         "stop_name": "Lincoln Heights / Cypress Park Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.220429,
-          34.080949
-        ]
+        "coordinates": [-118.220429, 34.080949]
       }
     },
     {
@@ -1425,16 +1002,11 @@
       "properties": {
         "stop_id": "80412",
         "stop_name": "Heritage Square / Arroyo Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.213213,
-          34.087227
-        ]
+        "coordinates": [-118.213213, 34.087227]
       }
     },
     {
@@ -1442,16 +1014,11 @@
       "properties": {
         "stop_id": "80413",
         "stop_name": "Southwest Museum Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.206712,
-          34.098243
-        ]
+        "coordinates": [-118.206712, 34.098243]
       }
     },
     {
@@ -1459,16 +1026,11 @@
       "properties": {
         "stop_id": "80414",
         "stop_name": "Highland Park Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.192606,
-          34.111179
-        ]
+        "coordinates": [-118.192606, 34.111179]
       }
     },
     {
@@ -1476,16 +1038,11 @@
       "properties": {
         "stop_id": "80415",
         "stop_name": "South Pasadena Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.157886,
-          34.115186
-        ]
+        "coordinates": [-118.157886, 34.115186]
       }
     },
     {
@@ -1493,16 +1050,11 @@
       "properties": {
         "stop_id": "80416",
         "stop_name": "Fillmore Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.148126,
-          34.133521
-        ]
+        "coordinates": [-118.148126, 34.133521]
       }
     },
     {
@@ -1510,16 +1062,11 @@
       "properties": {
         "stop_id": "80417",
         "stop_name": "Del Mar Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.148214,
-          34.14191
-        ]
+        "coordinates": [-118.148214, 34.14191]
       }
     },
     {
@@ -1527,16 +1074,11 @@
       "properties": {
         "stop_id": "80418",
         "stop_name": "Memorial Park Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.147512,
-          34.148356
-        ]
+        "coordinates": [-118.147512, 34.148356]
       }
     },
     {
@@ -1544,16 +1086,11 @@
       "properties": {
         "stop_id": "80419",
         "stop_name": "Lake Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.13139,
-          34.151806
-        ]
+        "coordinates": [-118.13139, 34.151806]
       }
     },
     {
@@ -1561,16 +1098,11 @@
       "properties": {
         "stop_id": "80420",
         "stop_name": "Allen Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.114348,
-          34.152417
-        ]
+        "coordinates": [-118.114348, 34.152417]
       }
     },
     {
@@ -1578,16 +1110,11 @@
       "properties": {
         "stop_id": "80421",
         "stop_name": "Sierra Madre Villa Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.081212,
-          34.147752
-        ]
+        "coordinates": [-118.081212, 34.147752]
       }
     },
     {
@@ -1595,16 +1122,11 @@
       "properties": {
         "stop_id": "80422",
         "stop_name": "Arcadia Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.029199,
-          34.14286
-        ]
+        "coordinates": [-118.029199, 34.14286]
       }
     },
     {
@@ -1612,16 +1134,11 @@
       "properties": {
         "stop_id": "80423",
         "stop_name": "Monrovia Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.003473,
-          34.133155
-        ]
+        "coordinates": [-118.003473, 34.133155]
       }
     },
     {
@@ -1629,16 +1146,11 @@
       "properties": {
         "stop_id": "80424",
         "stop_name": "Duarte / City of Hope Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.96768,
-          34.132518
-        ]
+        "coordinates": [-117.96768, 34.132518]
       }
     },
     {
@@ -1646,16 +1158,11 @@
       "properties": {
         "stop_id": "80425",
         "stop_name": "Irwindale Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.932506,
-          34.129048
-        ]
+        "coordinates": [-117.932506, 34.129048]
       }
     },
     {
@@ -1663,16 +1170,11 @@
       "properties": {
         "stop_id": "80426",
         "stop_name": "Azusa Downtown Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.906631,
-          34.135863
-        ]
+        "coordinates": [-117.906631, 34.135863]
       }
     },
     {
@@ -1680,16 +1182,11 @@
       "properties": {
         "stop_id": "80427",
         "stop_name": "APU / Citrus College Station",
-        "routes": [
-          "801"
-        ]
+        "routes": ["801"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.891636,
-          34.136814
-        ]
+        "coordinates": [-117.891636, 34.136814]
       }
     },
     {
@@ -1697,17 +1194,11 @@
       "properties": {
         "stop_id": "80701",
         "stop_name": "Aviation / Century Station",
-        "routes": [
-          "803",
-          "807"
-        ]
+        "routes": ["803", "807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.378683,
-          33.94557205
-        ]
+        "coordinates": [-118.378683, 33.94557205]
       }
     },
     {
@@ -1715,17 +1206,11 @@
       "properties": {
         "stop_id": "80702",
         "stop_name": "LAX / Metro Transit Center",
-        "routes": [
-          "803",
-          "807"
-        ]
+        "routes": ["803", "807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.37866,
-          33.9500753
-        ]
+        "coordinates": [-118.37866, 33.9500753]
       }
     },
     {
@@ -1733,16 +1218,11 @@
       "properties": {
         "stop_id": "80703",
         "stop_name": "Westchester / Veterans Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.374378,
-          33.96203144
-        ]
+        "coordinates": [-118.374378, 33.96203144]
       }
     },
     {
@@ -1750,16 +1230,11 @@
       "properties": {
         "stop_id": "80704",
         "stop_name": "Downtown Inglewood Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3514966,
-          33.96715635
-        ]
+        "coordinates": [-118.3514966, 33.96715635]
       }
     },
     {
@@ -1767,16 +1242,11 @@
       "properties": {
         "stop_id": "80705",
         "stop_name": "Fairview Heights Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3360716,
-          33.97525155
-        ]
+        "coordinates": [-118.3360716, 33.97525155]
       }
     },
     {
@@ -1784,16 +1254,11 @@
       "properties": {
         "stop_id": "80706",
         "stop_name": "Hyde Park Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3308158,
-          33.98818653
-        ]
+        "coordinates": [-118.3308158, 33.98818653]
       }
     },
     {
@@ -1801,16 +1266,11 @@
       "properties": {
         "stop_id": "80707",
         "stop_name": "Leimert Park Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3320162,
-          34.00390927
-        ]
+        "coordinates": [-118.3320162, 34.00390927]
       }
     },
     {
@@ -1818,16 +1278,11 @@
       "properties": {
         "stop_id": "80708",
         "stop_name": "Martin Luther King Jr Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3353594,
-          34.00956339
-        ]
+        "coordinates": [-118.3353594, 34.00956339]
       }
     },
     {
@@ -1835,16 +1290,11 @@
       "properties": {
         "stop_id": "80709",
         "stop_name": "Expo / Crenshaw K-Line Station",
-        "routes": [
-          "807"
-        ]
+        "routes": ["807"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.3348508,
-          34.02215554
-        ]
+        "coordinates": [-118.3348508, 34.02215554]
       }
     },
     {
@@ -1852,17 +1302,11 @@
       "properties": {
         "stop_id": "81401",
         "stop_name": "Grand Ave Arts / Bunker Hill Station",
-        "routes": [
-          "801",
-          "804"
-        ]
+        "routes": ["801", "804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2515307,
-          34.05472448
-        ]
+        "coordinates": [-118.2515307, 34.05472448]
       }
     },
     {
@@ -1870,17 +1314,11 @@
       "properties": {
         "stop_id": "81402",
         "stop_name": "Historic Broadway Station",
-        "routes": [
-          "801",
-          "804"
-        ]
+        "routes": ["801", "804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2463211,
-          34.05215607
-        ]
+        "coordinates": [-118.2463211, 34.05215607]
       }
     },
     {
@@ -1888,17 +1326,11 @@
       "properties": {
         "stop_id": "81403",
         "stop_name": "Little Tokyo / Arts District Station",
-        "routes": [
-          "801",
-          "804"
-        ]
+        "routes": ["801", "804"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2387567,
-          34.04884524
-        ]
+        "coordinates": [-118.2387567, 34.04884524]
       }
     }
   ]

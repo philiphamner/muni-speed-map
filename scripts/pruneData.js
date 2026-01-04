@@ -121,7 +121,7 @@ async function main() {
   }
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   console.log(
-    `\n✅ Done! Total deleted: ${totalDeleted.toLocaleString()} positions`
+    `\n✅ Done! Total deleted: ${totalDeleted.toLocaleString()} positions`,
   );
 }
 

@@ -15,7 +15,7 @@ async function fetchAndPrint() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const buf = await res.arrayBuffer();
     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-      new Uint8Array(buf)
+      new Uint8Array(buf),
     );
 
     const LIGHT_RAIL = new Set(["901", "902"]); // Blue = 901, Green = 902
@@ -23,7 +23,7 @@ async function fetchAndPrint() {
     const vehicles = feed.entity
       .filter(
         (e) =>
-          e.vehicle && e.vehicle.trip && LIGHT_RAIL.has(e.vehicle.trip.routeId)
+          e.vehicle && e.vehicle.trip && LIGHT_RAIL.has(e.vehicle.trip.routeId),
       )
       .map((e) => {
         const v = e.vehicle;
@@ -34,8 +34,8 @@ async function fetchAndPrint() {
             v.trip.routeId === "901"
               ? "Blue"
               : v.trip.routeId === "902"
-              ? "Green"
-              : v.trip.routeId,
+                ? "Green"
+                : v.trip.routeId,
           lat: v.position?.latitude,
           lon: v.position?.longitude,
           speed: v.position?.speed ?? null,

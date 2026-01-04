@@ -120,7 +120,7 @@ async function fetchVehiclePositions() {
 
     const buffer = await response.arrayBuffer();
     const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-      new Uint8Array(buffer)
+      new Uint8Array(buffer),
     );
 
     // Filter for light rail vehicles
@@ -129,7 +129,7 @@ async function fetchVehiclePositions() {
         (entity) =>
           entity.vehicle &&
           entity.vehicle.trip &&
-          LIGHT_RAIL_ROUTES.includes(entity.vehicle.trip.routeId)
+          LIGHT_RAIL_ROUTES.includes(entity.vehicle.trip.routeId),
       )
       .map((entity) => {
         const v = entity.vehicle;
@@ -215,7 +215,7 @@ async function collectOnce() {
   } else {
     console.log(
       `[${timestamp} CT] Saved ${count} Minneapolis light rail positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`
+        `(${withSpeed.length} with speed) in ${elapsed}ms`,
     );
   }
 }
@@ -224,10 +224,10 @@ async function collectOnce() {
 async function runCollector() {
   console.log("🌆 Minneapolis Metro Transit Light Rail - Data Collector");
   console.log(
-    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`
+    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`,
   );
   console.log(
-    `   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")} (Blue & Green Lines)`
+    `   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")} (Blue & Green Lines)`,
   );
   console.log("   Press Ctrl+C to stop\n");
 

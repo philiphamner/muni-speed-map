@@ -142,7 +142,7 @@ function calculateSpeed(vehicle) {
     prev.lat,
     prev.lon,
     vehicle.lat,
-    vehicle.lon
+    vehicle.lon,
   );
 
   if (distanceMeters < 1) {
@@ -165,7 +165,7 @@ function calculateSpeed(vehicle) {
 // Main collection loop
 async function collectData() {
   console.log(
-    `[${formatTime(new Date())}] Fetching Toronto TTC vehicle positions...`
+    `[${formatTime(new Date())}] Fetching Toronto TTC vehicle positions...`,
   );
 
   try {
@@ -223,7 +223,7 @@ async function collectData() {
         console.log(
           `[${formatTime(new Date())}] Saved ${
             positionsToInsert.length
-          } positions (${speedCount} with speed) in ${duration}ms`
+          } positions (${speedCount} with speed) in ${duration}ms`,
         );
       }
     }

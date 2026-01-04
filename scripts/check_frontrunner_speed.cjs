@@ -19,15 +19,15 @@ function haversine(a, b) {
 
 const DATA_DIR = path.join(__dirname, "..", "src", "data");
 const routes = JSON.parse(
-  fs.readFileSync(path.join(DATA_DIR, "slcTraxRoutes.json"), "utf8")
+  fs.readFileSync(path.join(DATA_DIR, "slcTraxRoutes.json"), "utf8"),
 );
 const maxs = JSON.parse(
-  fs.readFileSync(path.join(DATA_DIR, "slcMaxspeed.json"), "utf8")
+  fs.readFileSync(path.join(DATA_DIR, "slcMaxspeed.json"), "utf8"),
 );
 let frMax = { type: "FeatureCollection", features: [] };
 try {
   frMax = JSON.parse(
-    fs.readFileSync(path.join(DATA_DIR, "slcFrontRunnerMaxspeed.json"), "utf8")
+    fs.readFileSync(path.join(DATA_DIR, "slcFrontRunnerMaxspeed.json"), "utf8"),
   );
 } catch (e) {
   /* ignore if not present */
@@ -75,5 +75,5 @@ console.log(
   "FrontRunner route coords:",
   routeCoords.length,
   "Maxspeed features near route (<=100m):",
-  hits
+  hits,
 );

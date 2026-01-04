@@ -6,18 +6,11 @@
       "properties": {
         "stop_id": "7601",
         "stop_name": "Union Station/NW 5th & Glisan MAX Stn",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.675604,
-          45.526732
-        ]
+        "coordinates": [-122.675604, 45.526732]
       }
     },
     {
@@ -25,18 +18,11 @@
       "properties": {
         "stop_id": "7606",
         "stop_name": "PSU South/SW 5th & Jackson MAX Stn",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682999,
-          45.508979
-        ]
+        "coordinates": [-122.682999, 45.508979]
       }
     },
     {
@@ -44,18 +30,11 @@
       "properties": {
         "stop_id": "7608",
         "stop_name": "City Hall/SW 5th & Jefferson MAX Station",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.679742,
-          45.514914
-        ]
+        "coordinates": [-122.679742, 45.514914]
       }
     },
     {
@@ -63,18 +42,11 @@
       "properties": {
         "stop_id": "7618",
         "stop_name": "PSU Urban Center/SW 5th & Mill MAX Station",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.681551,
-          45.511645
-        ]
+        "coordinates": [-122.681551, 45.511645]
       }
     },
     {
@@ -82,18 +54,11 @@
       "properties": {
         "stop_id": "7627",
         "stop_name": "SW 5th & Oak St MAX Station",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.676178,
-          45.521573
-        ]
+        "coordinates": [-122.676178, 45.521573]
       }
     },
     {
@@ -101,18 +66,11 @@
       "properties": {
         "stop_id": "7646",
         "stop_name": "Pioneer Place/SW 5th Ave MAX Station",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.677934,
-          45.518255
-        ]
+        "coordinates": [-122.677934, 45.518255]
       }
     },
     {
@@ -120,17 +78,11 @@
       "properties": {
         "stop_id": "7763",
         "stop_name": "Union Station/NW 6th & Hoyt MAX Stn",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.676517,
-          45.527222
-        ]
+        "coordinates": [-122.676517, 45.527222]
       }
     },
     {
@@ -138,17 +90,11 @@
       "properties": {
         "stop_id": "7774",
         "stop_name": "PSU Urban Center/SW 6th & Montgomery MAX Stn",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.68255,
-          45.511597
-        ]
+        "coordinates": [-122.68255, 45.511597]
       }
     },
     {
@@ -156,17 +102,11 @@
       "properties": {
         "stop_id": "7777",
         "stop_name": "Pioneer Courthouse/SW 6th Ave MAX Stn",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.678558,
-          45.518964
-        ]
+        "coordinates": [-122.678558, 45.518964]
       }
     },
     {
@@ -174,17 +114,11 @@
       "properties": {
         "stop_id": "7787",
         "stop_name": "SW 6th & Pine MAX Station",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.676756,
-          45.522323
-        ]
+        "coordinates": [-122.676756, 45.522323]
       }
     },
     {
@@ -192,17 +126,11 @@
       "properties": {
         "stop_id": "8333",
         "stop_name": "Library/SW 9th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.68162,
-          45.51916
-        ]
+        "coordinates": [-122.68162, 45.51916]
       }
     },
     {
@@ -210,17 +138,11 @@
       "properties": {
         "stop_id": "8334",
         "stop_name": "Pioneer Square South MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.679145,
-          45.518496
-        ]
+        "coordinates": [-122.679145, 45.518496]
       }
     },
     {
@@ -228,17 +150,11 @@
       "properties": {
         "stop_id": "8336",
         "stop_name": "Yamhill District MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.674172,
-          45.517153
-        ]
+        "coordinates": [-122.674172, 45.517153]
       }
     },
     {
@@ -246,17 +162,11 @@
       "properties": {
         "stop_id": "8337",
         "stop_name": "Oak/ SW 1st Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.672146,
-          45.52028
-        ]
+        "coordinates": [-122.672146, 45.52028]
       }
     },
     {
@@ -264,17 +174,11 @@
       "properties": {
         "stop_id": "8339",
         "stop_name": "Old Town/Chinatown MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.671353,
-          45.52518
-        ]
+        "coordinates": [-122.671353, 45.52518]
       }
     },
     {
@@ -282,18 +186,11 @@
       "properties": {
         "stop_id": "8340",
         "stop_name": "Rose Quarter TC MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.664917,
-          45.530057
-        ]
+        "coordinates": [-122.664917, 45.530057]
       }
     },
     {
@@ -301,18 +198,11 @@
       "properties": {
         "stop_id": "8341",
         "stop_name": "Convention Center MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.661908,
-          45.530052
-        ]
+        "coordinates": [-122.661908, 45.530052]
       }
     },
     {
@@ -320,18 +210,11 @@
       "properties": {
         "stop_id": "8342",
         "stop_name": "NE 7th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.65774,
-          45.530055
-        ]
+        "coordinates": [-122.65774, 45.530055]
       }
     },
     {
@@ -339,18 +222,11 @@
       "properties": {
         "stop_id": "8343",
         "stop_name": "Lloyd Center/NE 11th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.653638,
-          45.530067
-        ]
+        "coordinates": [-122.653638, 45.530067]
       }
     },
     {
@@ -358,18 +234,11 @@
       "properties": {
         "stop_id": "8344",
         "stop_name": "Hollywood/NE 42nd Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.620708,
-          45.532772
-        ]
+        "coordinates": [-122.620708, 45.532772]
       }
     },
     {
@@ -377,18 +246,11 @@
       "properties": {
         "stop_id": "8345",
         "stop_name": "NE 60th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.602703,
-          45.528764
-        ]
+        "coordinates": [-122.602703, 45.528764]
       }
     },
     {
@@ -396,18 +258,11 @@
       "properties": {
         "stop_id": "8346",
         "stop_name": "NE 82nd Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.577811,
-          45.533237
-        ]
+        "coordinates": [-122.577811, 45.533237]
       }
     },
     {
@@ -415,18 +270,11 @@
       "properties": {
         "stop_id": "8347",
         "stop_name": "Gateway/NE 99th Ave TC MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.563578,
-          45.530269
-        ]
+        "coordinates": [-122.563578, 45.530269]
       }
     },
     {
@@ -434,16 +282,11 @@
       "properties": {
         "stop_id": "8348",
         "stop_name": "E 102nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.557314,
-          45.52258
-        ]
+        "coordinates": [-122.557314, 45.52258]
       }
     },
     {
@@ -451,16 +294,11 @@
       "properties": {
         "stop_id": "8349",
         "stop_name": "E 122nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.536799,
-          45.522447
-        ]
+        "coordinates": [-122.536799, 45.522447]
       }
     },
     {
@@ -468,16 +306,11 @@
       "properties": {
         "stop_id": "8350",
         "stop_name": "E 148th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.509687,
-          45.522237
-        ]
+        "coordinates": [-122.509687, 45.522237]
       }
     },
     {
@@ -485,16 +318,11 @@
       "properties": {
         "stop_id": "8351",
         "stop_name": "E 162nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.495467,
-          45.522121
-        ]
+        "coordinates": [-122.495467, 45.522121]
       }
     },
     {
@@ -502,16 +330,11 @@
       "properties": {
         "stop_id": "8352",
         "stop_name": "E 172nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.485173,
-          45.522048
-        ]
+        "coordinates": [-122.485173, 45.522048]
       }
     },
     {
@@ -519,16 +342,11 @@
       "properties": {
         "stop_id": "8353",
         "stop_name": "E 181st Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.476143,
-          45.521932
-        ]
+        "coordinates": [-122.476143, 45.521932]
       }
     },
     {
@@ -536,16 +354,11 @@
       "properties": {
         "stop_id": "8354",
         "stop_name": "Rockwood/E 188th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.470537,
-          45.520398
-        ]
+        "coordinates": [-122.470537, 45.520398]
       }
     },
     {
@@ -553,16 +366,11 @@
       "properties": {
         "stop_id": "8355",
         "stop_name": "Ruby Junction/E 197th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.459174,
-          45.515577
-        ]
+        "coordinates": [-122.459174, 45.515577]
       }
     },
     {
@@ -570,16 +378,11 @@
       "properties": {
         "stop_id": "8356",
         "stop_name": "Gresham City Hall MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.435826,
-          45.505687
-        ]
+        "coordinates": [-122.435826, 45.505687]
       }
     },
     {
@@ -587,16 +390,11 @@
       "properties": {
         "stop_id": "8357",
         "stop_name": "Gresham Central TC MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.426643,
-          45.502473
-        ]
+        "coordinates": [-122.426643, 45.502473]
       }
     },
     {
@@ -604,16 +402,11 @@
       "properties": {
         "stop_id": "8359",
         "stop_name": "Cleveland Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.41845,
-          45.501772
-        ]
+        "coordinates": [-122.41845, 45.501772]
       }
     },
     {
@@ -621,16 +414,11 @@
       "properties": {
         "stop_id": "8360",
         "stop_name": "Gresham Central TC MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.427348,
-          45.502705
-        ]
+        "coordinates": [-122.427348, 45.502705]
       }
     },
     {
@@ -638,16 +426,11 @@
       "properties": {
         "stop_id": "8361",
         "stop_name": "Gresham City Hall MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.436285,
-          45.505981
-        ]
+        "coordinates": [-122.436285, 45.505981]
       }
     },
     {
@@ -655,16 +438,11 @@
       "properties": {
         "stop_id": "8362",
         "stop_name": "Ruby Junction/E 197th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.461119,
-          45.516502
-        ]
+        "coordinates": [-122.461119, 45.516502]
       }
     },
     {
@@ -672,16 +450,11 @@
       "properties": {
         "stop_id": "8363",
         "stop_name": "Rockwood/E 188th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.471093,
-          45.520723
-        ]
+        "coordinates": [-122.471093, 45.520723]
       }
     },
     {
@@ -689,16 +462,11 @@
       "properties": {
         "stop_id": "8364",
         "stop_name": "E 181st Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.478074,
-          45.522065
-        ]
+        "coordinates": [-122.478074, 45.522065]
       }
     },
     {
@@ -706,16 +474,11 @@
       "properties": {
         "stop_id": "8365",
         "stop_name": "E 172nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.48714,
-          45.52214
-        ]
+        "coordinates": [-122.48714, 45.52214]
       }
     },
     {
@@ -723,16 +486,11 @@
       "properties": {
         "stop_id": "8366",
         "stop_name": "E 162nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.497432,
-          45.522235
-        ]
+        "coordinates": [-122.497432, 45.522235]
       }
     },
     {
@@ -740,16 +498,11 @@
       "properties": {
         "stop_id": "8367",
         "stop_name": "E 148th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.511614,
-          45.522344
-        ]
+        "coordinates": [-122.511614, 45.522344]
       }
     },
     {
@@ -757,16 +510,11 @@
       "properties": {
         "stop_id": "8368",
         "stop_name": "E 122nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.538704,
-          45.522556
-        ]
+        "coordinates": [-122.538704, 45.522556]
       }
     },
     {
@@ -774,16 +522,11 @@
       "properties": {
         "stop_id": "8369",
         "stop_name": "E 102nd Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.559244,
-          45.522691
-        ]
+        "coordinates": [-122.559244, 45.522691]
       }
     },
     {
@@ -791,17 +534,11 @@
       "properties": {
         "stop_id": "8370",
         "stop_name": "Gateway/NE 99th Ave TC MAX Station",
-        "routes": [
-          "100",
-          "200"
-        ]
+        "routes": ["100", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.563627,
-          45.530839
-        ]
+        "coordinates": [-122.563627, 45.530839]
       }
     },
     {
@@ -809,18 +546,11 @@
       "properties": {
         "stop_id": "8371",
         "stop_name": "NE 82nd Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.578479,
-          45.533486
-        ]
+        "coordinates": [-122.578479, 45.533486]
       }
     },
     {
@@ -828,18 +558,11 @@
       "properties": {
         "stop_id": "8372",
         "stop_name": "NE 60th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.603342,
-          45.528491
-        ]
+        "coordinates": [-122.603342, 45.528491]
       }
     },
     {
@@ -847,18 +570,11 @@
       "properties": {
         "stop_id": "8373",
         "stop_name": "Hollywood/NE 42nd Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.621367,
-          45.532957
-        ]
+        "coordinates": [-122.621367, 45.532957]
       }
     },
     {
@@ -866,18 +582,11 @@
       "properties": {
         "stop_id": "8374",
         "stop_name": "Lloyd Center/NE 11th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.654335,
-          45.530146
-        ]
+        "coordinates": [-122.654335, 45.530146]
       }
     },
     {
@@ -885,18 +594,11 @@
       "properties": {
         "stop_id": "8375",
         "stop_name": "NE 7th Ave MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.658277,
-          45.53015
-        ]
+        "coordinates": [-122.658277, 45.53015]
       }
     },
     {
@@ -904,18 +606,11 @@
       "properties": {
         "stop_id": "8376",
         "stop_name": "Convention Center MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.66254,
-          45.530138
-        ]
+        "coordinates": [-122.66254, 45.530138]
       }
     },
     {
@@ -923,18 +618,11 @@
       "properties": {
         "stop_id": "8377",
         "stop_name": "Rose Quarter TC MAX Station",
-        "routes": [
-          "100",
-          "200",
-          "90"
-        ]
+        "routes": ["100", "200", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.665557,
-          45.530235
-        ]
+        "coordinates": [-122.665557, 45.530235]
       }
     },
     {
@@ -942,17 +630,11 @@
       "properties": {
         "stop_id": "8378",
         "stop_name": "Old Town/Chinatown MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.671467,
-          45.524695
-        ]
+        "coordinates": [-122.671467, 45.524695]
       }
     },
     {
@@ -960,17 +642,11 @@
       "properties": {
         "stop_id": "8380",
         "stop_name": "Oak/ SW 1st Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.672523,
-          45.51986
-        ]
+        "coordinates": [-122.672523, 45.51986]
       }
     },
     {
@@ -978,17 +654,11 @@
       "properties": {
         "stop_id": "8381",
         "stop_name": "Morrison/SW 3rd Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.675386,
-          45.518181
-        ]
+        "coordinates": [-122.675386, 45.518181]
       }
     },
     {
@@ -996,17 +666,11 @@
       "properties": {
         "stop_id": "8383",
         "stop_name": "Pioneer Square North MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.679475,
-          45.519253
-        ]
+        "coordinates": [-122.679475, 45.519253]
       }
     },
     {
@@ -1014,17 +678,11 @@
       "properties": {
         "stop_id": "8384",
         "stop_name": "Galleria/SW 10th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.681919,
-          45.51991
-        ]
+        "coordinates": [-122.681919, 45.51991]
       }
     },
     {
@@ -1032,17 +690,11 @@
       "properties": {
         "stop_id": "9299",
         "stop_name": "NW 6th & Davis MAX Station",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.676429,
-          45.524405
-        ]
+        "coordinates": [-122.676429, 45.524405]
       }
     },
     {
@@ -1050,18 +702,11 @@
       "properties": {
         "stop_id": "9303",
         "stop_name": "NW 5th & Couch MAX Station",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.675498,
-          45.523885
-        ]
+        "coordinates": [-122.675498, 45.523885]
       }
     },
     {
@@ -1069,17 +714,11 @@
       "properties": {
         "stop_id": "9624",
         "stop_name": "Sunset TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.781299,
-          45.510383
-        ]
+        "coordinates": [-122.781299, 45.510383]
       }
     },
     {
@@ -1087,17 +726,11 @@
       "properties": {
         "stop_id": "9757",
         "stop_name": "Providence Park MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.689816,
-          45.521833
-        ]
+        "coordinates": [-122.689816, 45.521833]
       }
     },
     {
@@ -1105,17 +738,11 @@
       "properties": {
         "stop_id": "9758",
         "stop_name": "Providence Park MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.689886,
-          45.521321
-        ]
+        "coordinates": [-122.689886, 45.521321]
       }
     },
     {
@@ -1123,17 +750,11 @@
       "properties": {
         "stop_id": "9818",
         "stop_name": "Beaverton TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.801723,
-          45.49133
-        ]
+        "coordinates": [-122.801723, 45.49133]
       }
     },
     {
@@ -1141,17 +762,11 @@
       "properties": {
         "stop_id": "9819",
         "stop_name": "Beaverton Creek MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.833325,
-          45.500584
-        ]
+        "coordinates": [-122.833325, 45.500584]
       }
     },
     {
@@ -1159,17 +774,11 @@
       "properties": {
         "stop_id": "9821",
         "stop_name": "Beaverton TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.8012,
-          45.491696
-        ]
+        "coordinates": [-122.8012, 45.491696]
       }
     },
     {
@@ -1177,17 +786,11 @@
       "properties": {
         "stop_id": "9822",
         "stop_name": "Beaverton Creek MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.832785,
-          45.500249
-        ]
+        "coordinates": [-122.832785, 45.500249]
       }
     },
     {
@@ -1195,17 +798,11 @@
       "properties": {
         "stop_id": "9823",
         "stop_name": "Beaverton Central MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.807441,
-          45.490425
-        ]
+        "coordinates": [-122.807441, 45.490425]
       }
     },
     {
@@ -1213,17 +810,11 @@
       "properties": {
         "stop_id": "9824",
         "stop_name": "Beaverton Central MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.806766,
-          45.490501
-        ]
+        "coordinates": [-122.806766, 45.490501]
       }
     },
     {
@@ -1231,17 +822,11 @@
       "properties": {
         "stop_id": "9825",
         "stop_name": "Millikan Way MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.821806,
-          45.495421
-        ]
+        "coordinates": [-122.821806, 45.495421]
       }
     },
     {
@@ -1249,17 +834,11 @@
       "properties": {
         "stop_id": "9826",
         "stop_name": "Millikan Way MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.821238,
-          45.495102
-        ]
+        "coordinates": [-122.821238, 45.495102]
       }
     },
     {
@@ -1267,17 +846,11 @@
       "properties": {
         "stop_id": "9827",
         "stop_name": "Merlo Rd/SW 158th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.842424,
-          45.505399
-        ]
+        "coordinates": [-122.842424, 45.505399]
       }
     },
     {
@@ -1285,17 +858,11 @@
       "properties": {
         "stop_id": "9828",
         "stop_name": "Merlo Rd/SW 158th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.841872,
-          45.505058
-        ]
+        "coordinates": [-122.841872, 45.505058]
       }
     },
     {
@@ -1303,17 +870,11 @@
       "properties": {
         "stop_id": "9829",
         "stop_name": "Elmonica/SW 170th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.851732,
-          45.510134
-        ]
+        "coordinates": [-122.851732, 45.510134]
       }
     },
     {
@@ -1321,17 +882,11 @@
       "properties": {
         "stop_id": "9830",
         "stop_name": "Elmonica/SW 170th Ave MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.851193,
-          45.509777
-        ]
+        "coordinates": [-122.851193, 45.509777]
       }
     },
     {
@@ -1339,17 +894,11 @@
       "properties": {
         "stop_id": "9831",
         "stop_name": "Willow Creek/SW 185th Ave TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.869874,
-          45.517117
-        ]
+        "coordinates": [-122.869874, 45.517117]
       }
     },
     {
@@ -1357,17 +906,11 @@
       "properties": {
         "stop_id": "9832",
         "stop_name": "Willow Creek/SW 185th Ave TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.870518,
-          45.517375
-        ]
+        "coordinates": [-122.870518, 45.517375]
       }
     },
     {
@@ -1375,17 +918,11 @@
       "properties": {
         "stop_id": "9833",
         "stop_name": "Quatama MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.889131,
-          45.523319
-        ]
+        "coordinates": [-122.889131, 45.523319]
       }
     },
     {
@@ -1393,17 +930,11 @@
       "properties": {
         "stop_id": "9834",
         "stop_name": "Quatama MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.888511,
-          45.523082
-        ]
+        "coordinates": [-122.888511, 45.523082]
       }
     },
     {
@@ -1411,17 +942,11 @@
       "properties": {
         "stop_id": "9835",
         "stop_name": "Orenco MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.915467,
-          45.530257
-        ]
+        "coordinates": [-122.915467, 45.530257]
       }
     },
     {
@@ -1429,17 +954,11 @@
       "properties": {
         "stop_id": "9836",
         "stop_name": "Orenco MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.916198,
-          45.530298
-        ]
+        "coordinates": [-122.916198, 45.530298]
       }
     },
     {
@@ -1447,17 +966,11 @@
       "properties": {
         "stop_id": "9837",
         "stop_name": "Hillsboro Airport/Fairgrounds MAX Stn",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.946499,
-          45.526924
-        ]
+        "coordinates": [-122.946499, 45.526924]
       }
     },
     {
@@ -1465,17 +978,11 @@
       "properties": {
         "stop_id": "9838",
         "stop_name": "Hillsboro Airport/Fairgrounds MAX Stn",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.945808,
-          45.527041
-        ]
+        "coordinates": [-122.945808, 45.527041]
       }
     },
     {
@@ -1483,17 +990,11 @@
       "properties": {
         "stop_id": "9839",
         "stop_name": "Hawthorn Farm MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.93038,
-          45.530012
-        ]
+        "coordinates": [-122.93038, 45.530012]
       }
     },
     {
@@ -1501,17 +1002,11 @@
       "properties": {
         "stop_id": "9840",
         "stop_name": "Hawthorn Farm MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.93112,
-          45.529921
-        ]
+        "coordinates": [-122.93112, 45.529921]
       }
     },
     {
@@ -1519,16 +1014,11 @@
       "properties": {
         "stop_id": "9841",
         "stop_name": "Washington/SE 12th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.969152,
-          45.521102
-        ]
+        "coordinates": [-122.969152, 45.521102]
       }
     },
     {
@@ -1536,16 +1026,11 @@
       "properties": {
         "stop_id": "9842",
         "stop_name": "Washington/SE 12th Ave MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.969867,
-          45.521231
-        ]
+        "coordinates": [-122.969867, 45.521231]
       }
     },
     {
@@ -1553,16 +1038,11 @@
       "properties": {
         "stop_id": "9843",
         "stop_name": "Hillsboro Health District MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.978017,
-          45.521288
-        ]
+        "coordinates": [-122.978017, 45.521288]
       }
     },
     {
@@ -1570,16 +1050,11 @@
       "properties": {
         "stop_id": "9844",
         "stop_name": "Hillsboro Health District MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.978728,
-          45.521315
-        ]
+        "coordinates": [-122.978728, 45.521315]
       }
     },
     {
@@ -1587,16 +1062,11 @@
       "properties": {
         "stop_id": "9845",
         "stop_name": "Hillsboro Central/SE 3rd TC MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.985653,
-          45.521431
-        ]
+        "coordinates": [-122.985653, 45.521431]
       }
     },
     {
@@ -1604,16 +1074,11 @@
       "properties": {
         "stop_id": "9846",
         "stop_name": "Hillsboro Central/SE 3rd TC MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.984926,
-          45.521357
-        ]
+        "coordinates": [-122.984926, 45.521357]
       }
     },
     {
@@ -1621,16 +1086,11 @@
       "properties": {
         "stop_id": "9848",
         "stop_name": "Hatfield Government Center MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.991022,
-          45.522204
-        ]
+        "coordinates": [-122.991022, 45.522204]
       }
     },
     {
@@ -1638,17 +1098,11 @@
       "properties": {
         "stop_id": "9969",
         "stop_name": "Sunset TC MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.780757,
-          45.510098
-        ]
+        "coordinates": [-122.780757, 45.510098]
       }
     },
     {
@@ -1656,17 +1110,11 @@
       "properties": {
         "stop_id": "10117",
         "stop_name": "Goose Hollow/SW Jefferson St MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.694089,
-          45.518236
-        ]
+        "coordinates": [-122.694089, 45.518236]
       }
     },
     {
@@ -1674,17 +1122,11 @@
       "properties": {
         "stop_id": "10118",
         "stop_name": "Goose Hollow/SW Jefferson St MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.693544,
-          45.517989
-        ]
+        "coordinates": [-122.693544, 45.517989]
       }
     },
     {
@@ -1692,17 +1134,11 @@
       "properties": {
         "stop_id": "10120",
         "stop_name": "Washington Park MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.71634,
-          45.510653
-        ]
+        "coordinates": [-122.71634, 45.510653]
       }
     },
     {
@@ -1710,17 +1146,11 @@
       "properties": {
         "stop_id": "10121",
         "stop_name": "Washington Park MAX Station",
-        "routes": [
-          "100",
-          "90"
-        ]
+        "routes": ["100", "90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.717244,
-          45.510661
-        ]
+        "coordinates": [-122.717244, 45.510661]
       }
     },
     {
@@ -1728,18 +1158,11 @@
       "properties": {
         "stop_id": "10293",
         "stop_name": "PSU South/SW 6th & College MAX Stn",
-        "routes": [
-          "190",
-          "200",
-          "290"
-        ]
+        "routes": ["190", "200", "290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.683593,
-          45.509616
-        ]
+        "coordinates": [-122.683593, 45.509616]
       }
     },
     {
@@ -1747,16 +1170,11 @@
       "properties": {
         "stop_id": "10572",
         "stop_name": "Parkrose/Sumner TC MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.56538,
-          45.559201
-        ]
+        "coordinates": [-122.56538, 45.559201]
       }
     },
     {
@@ -1764,16 +1182,11 @@
       "properties": {
         "stop_id": "10573",
         "stop_name": "Parkrose/Sumner TC MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.565861,
-          45.558829
-        ]
+        "coordinates": [-122.565861, 45.558829]
       }
     },
     {
@@ -1781,16 +1194,11 @@
       "properties": {
         "stop_id": "10574",
         "stop_name": "Cascades MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.55829,
-          45.57239
-        ]
+        "coordinates": [-122.55829, 45.57239]
       }
     },
     {
@@ -1798,16 +1206,11 @@
       "properties": {
         "stop_id": "10575",
         "stop_name": "Cascades MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.5577,
-          45.572075
-        ]
+        "coordinates": [-122.5577, 45.572075]
       }
     },
     {
@@ -1815,16 +1218,11 @@
       "properties": {
         "stop_id": "10576",
         "stop_name": "Mt Hood Ave MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.567151,
-          45.577359
-        ]
+        "coordinates": [-122.567151, 45.577359]
       }
     },
     {
@@ -1832,16 +1230,11 @@
       "properties": {
         "stop_id": "10577",
         "stop_name": "Mt Hood Ave MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.567141,
-          45.576861
-        ]
+        "coordinates": [-122.567141, 45.576861]
       }
     },
     {
@@ -1849,16 +1242,11 @@
       "properties": {
         "stop_id": "10579",
         "stop_name": "Portland Int'l Airport MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.5931,
-          45.587584
-        ]
+        "coordinates": [-122.5931, 45.587584]
       }
     },
     {
@@ -1866,16 +1254,11 @@
       "properties": {
         "stop_id": "11498",
         "stop_name": "Expo Center MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.685706,
-          45.605354
-        ]
+        "coordinates": [-122.685706, 45.605354]
       }
     },
     {
@@ -1883,16 +1266,11 @@
       "properties": {
         "stop_id": "11499",
         "stop_name": "Delta Park/Vanport MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.685731,
-          45.596116
-        ]
+        "coordinates": [-122.685731, 45.596116]
       }
     },
     {
@@ -1900,16 +1278,11 @@
       "properties": {
         "stop_id": "11500",
         "stop_name": "Kenton/N Denver Ave MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.685879,
-          45.583792
-        ]
+        "coordinates": [-122.685879, 45.583792]
       }
     },
     {
@@ -1917,16 +1290,11 @@
       "properties": {
         "stop_id": "11501",
         "stop_name": "N Lombard TC MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682163,
-          45.576578
-        ]
+        "coordinates": [-122.682163, 45.576578]
       }
     },
     {
@@ -1934,16 +1302,11 @@
       "properties": {
         "stop_id": "11502",
         "stop_name": "Rosa Parks MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682217,
-          45.569349
-        ]
+        "coordinates": [-122.682217, 45.569349]
       }
     },
     {
@@ -1951,16 +1314,11 @@
       "properties": {
         "stop_id": "11503",
         "stop_name": "N Killingsworth St MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682297,
-          45.562205
-        ]
+        "coordinates": [-122.682297, 45.562205]
       }
     },
     {
@@ -1968,16 +1326,11 @@
       "properties": {
         "stop_id": "11504",
         "stop_name": "N Prescott St MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682294,
-          45.555097
-        ]
+        "coordinates": [-122.682294, 45.555097]
       }
     },
     {
@@ -1985,16 +1338,11 @@
       "properties": {
         "stop_id": "11505",
         "stop_name": "Overlook Park MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.681061,
-          45.549123
-        ]
+        "coordinates": [-122.681061, 45.549123]
       }
     },
     {
@@ -2002,16 +1350,11 @@
       "properties": {
         "stop_id": "11506",
         "stop_name": "Albina/Mississippi MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.67536,
-          45.539481
-        ]
+        "coordinates": [-122.67536, 45.539481]
       }
     },
     {
@@ -2019,16 +1362,11 @@
       "properties": {
         "stop_id": "11507",
         "stop_name": "Interstate/Rose Quarter MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.667769,
-          45.530091
-        ]
+        "coordinates": [-122.667769, 45.530091]
       }
     },
     {
@@ -2036,16 +1374,11 @@
       "properties": {
         "stop_id": "11508",
         "stop_name": "Interstate/Rose Quarter MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.667879,
-          45.53028
-        ]
+        "coordinates": [-122.667879, 45.53028]
       }
     },
     {
@@ -2053,16 +1386,11 @@
       "properties": {
         "stop_id": "11509",
         "stop_name": "Albina/Mississippi MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.675617,
-          45.539626
-        ]
+        "coordinates": [-122.675617, 45.539626]
       }
     },
     {
@@ -2070,16 +1398,11 @@
       "properties": {
         "stop_id": "11510",
         "stop_name": "Overlook Park MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.680925,
-          45.548308
-        ]
+        "coordinates": [-122.680925, 45.548308]
       }
     },
     {
@@ -2087,16 +1410,11 @@
       "properties": {
         "stop_id": "11511",
         "stop_name": "N Prescott St MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682282,
-          45.555278
-        ]
+        "coordinates": [-122.682282, 45.555278]
       }
     },
     {
@@ -2104,16 +1422,11 @@
       "properties": {
         "stop_id": "11512",
         "stop_name": "N Killingsworth St MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.68215,
-          45.563117
-        ]
+        "coordinates": [-122.68215, 45.563117]
       }
     },
     {
@@ -2121,16 +1434,11 @@
       "properties": {
         "stop_id": "11513",
         "stop_name": "Rosa Parks MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682062,
-          45.570416
-        ]
+        "coordinates": [-122.682062, 45.570416]
       }
     },
     {
@@ -2138,16 +1446,11 @@
       "properties": {
         "stop_id": "11514",
         "stop_name": "N Lombard TC MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.682004,
-          45.577642
-        ]
+        "coordinates": [-122.682004, 45.577642]
       }
     },
     {
@@ -2155,16 +1458,11 @@
       "properties": {
         "stop_id": "11515",
         "stop_name": "Kenton/N Denver Ave MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.685944,
-          45.583927
-        ]
+        "coordinates": [-122.685944, 45.583927]
       }
     },
     {
@@ -2172,16 +1470,11 @@
       "properties": {
         "stop_id": "11516",
         "stop_name": "Delta Park/Vanport MAX Station",
-        "routes": [
-          "190"
-        ]
+        "routes": ["190"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.685562,
-          45.596147
-        ]
+        "coordinates": [-122.685562, 45.596147]
       }
     },
     {
@@ -2189,17 +1482,11 @@
       "properties": {
         "stop_id": "13123",
         "stop_name": "SW 6th & Madison MAX Station",
-        "routes": [
-          "190",
-          "200"
-        ]
+        "routes": ["190", "200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.680381,
-          45.515633
-        ]
+        "coordinates": [-122.680381, 45.515633]
       }
     },
     {
@@ -2207,16 +1494,11 @@
       "properties": {
         "stop_id": "13124",
         "stop_name": "SE Main St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.564467,
-          45.513986
-        ]
+        "coordinates": [-122.564467, 45.513986]
       }
     },
     {
@@ -2224,16 +1506,11 @@
       "properties": {
         "stop_id": "13125",
         "stop_name": "SE Division St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566663,
-          45.503123
-        ]
+        "coordinates": [-122.566663, 45.503123]
       }
     },
     {
@@ -2241,16 +1518,11 @@
       "properties": {
         "stop_id": "13126",
         "stop_name": "SE Powell Blvd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.56617,
-          45.495503
-        ]
+        "coordinates": [-122.56617, 45.495503]
       }
     },
     {
@@ -2258,16 +1530,11 @@
       "properties": {
         "stop_id": "13127",
         "stop_name": "SE Holgate Blvd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566315,
-          45.490868
-        ]
+        "coordinates": [-122.566315, 45.490868]
       }
     },
     {
@@ -2275,16 +1542,11 @@
       "properties": {
         "stop_id": "13128",
         "stop_name": "Lents/SE Foster Rd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566871,
-          45.480188
-        ]
+        "coordinates": [-122.566871, 45.480188]
       }
     },
     {
@@ -2292,16 +1554,11 @@
       "properties": {
         "stop_id": "13129",
         "stop_name": "SE Flavel St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566761,
-          45.467602
-        ]
+        "coordinates": [-122.566761, 45.467602]
       }
     },
     {
@@ -2309,16 +1566,11 @@
       "properties": {
         "stop_id": "13130",
         "stop_name": "SE Fuller Rd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.573578,
-          45.453138
-        ]
+        "coordinates": [-122.573578, 45.453138]
       }
     },
     {
@@ -2326,16 +1578,11 @@
       "properties": {
         "stop_id": "13132",
         "stop_name": "Clackamas Town Center TC MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.567769,
-          45.435721
-        ]
+        "coordinates": [-122.567769, 45.435721]
       }
     },
     {
@@ -2343,16 +1590,11 @@
       "properties": {
         "stop_id": "13133",
         "stop_name": "SE Fuller Rd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.573656,
-          45.453637
-        ]
+        "coordinates": [-122.573656, 45.453637]
       }
     },
     {
@@ -2360,16 +1602,11 @@
       "properties": {
         "stop_id": "13134",
         "stop_name": "SE Flavel St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566542,
-          45.468068
-        ]
+        "coordinates": [-122.566542, 45.468068]
       }
     },
     {
@@ -2377,16 +1614,11 @@
       "properties": {
         "stop_id": "13135",
         "stop_name": "Lents/SE Foster Rd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566745,
-          45.480686
-        ]
+        "coordinates": [-122.566745, 45.480686]
       }
     },
     {
@@ -2394,16 +1626,11 @@
       "properties": {
         "stop_id": "13136",
         "stop_name": "SE Holgate Blvd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566229,
-          45.491369
-        ]
+        "coordinates": [-122.566229, 45.491369]
       }
     },
     {
@@ -2411,16 +1638,11 @@
       "properties": {
         "stop_id": "13137",
         "stop_name": "SE Powell Blvd MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566198,
-          45.495991
-        ]
+        "coordinates": [-122.566198, 45.495991]
       }
     },
     {
@@ -2428,16 +1650,11 @@
       "properties": {
         "stop_id": "13138",
         "stop_name": "SE Division St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.566584,
-          45.503608
-        ]
+        "coordinates": [-122.566584, 45.503608]
       }
     },
     {
@@ -2445,16 +1662,11 @@
       "properties": {
         "stop_id": "13139",
         "stop_name": "SE Main St MAX Station",
-        "routes": [
-          "200"
-        ]
+        "routes": ["200"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.564413,
-          45.514525
-        ]
+        "coordinates": [-122.564413, 45.514525]
       }
     },
     {
@@ -2462,16 +1674,11 @@
       "properties": {
         "stop_id": "13449",
         "stop_name": "Civic Drive MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.441843,
-          45.508293
-        ]
+        "coordinates": [-122.441843, 45.508293]
       }
     },
     {
@@ -2479,16 +1686,11 @@
       "properties": {
         "stop_id": "13450",
         "stop_name": "Civic Drive MAX Station",
-        "routes": [
-          "100"
-        ]
+        "routes": ["100"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.441302,
-          45.507972
-        ]
+        "coordinates": [-122.441302, 45.507972]
       }
     },
     {
@@ -2496,16 +1698,11 @@
       "properties": {
         "stop_id": "13710",
         "stop_name": "Lincoln St/SW 3rd Ave MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.680154,
-          45.507902
-        ]
+        "coordinates": [-122.680154, 45.507902]
       }
     },
     {
@@ -2513,16 +1710,11 @@
       "properties": {
         "stop_id": "13711",
         "stop_name": "South Waterfront/S Moody MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.671141,
-          45.502693
-        ]
+        "coordinates": [-122.671141, 45.502693]
       }
     },
     {
@@ -2530,16 +1722,11 @@
       "properties": {
         "stop_id": "13712",
         "stop_name": "OMSI/SE Water MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.662559,
-          45.506475
-        ]
+        "coordinates": [-122.662559, 45.506475]
       }
     },
     {
@@ -2547,16 +1734,11 @@
       "properties": {
         "stop_id": "13713",
         "stop_name": "Clinton St/SE 12th Ave MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.652986,
-          45.502604
-        ]
+        "coordinates": [-122.652986, 45.502604]
       }
     },
     {
@@ -2564,16 +1746,11 @@
       "properties": {
         "stop_id": "13714",
         "stop_name": "SE 17th Ave & Rhine St MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.648178,
-          45.497644
-        ]
+        "coordinates": [-122.648178, 45.497644]
       }
     },
     {
@@ -2581,16 +1758,11 @@
       "properties": {
         "stop_id": "13715",
         "stop_name": "SE 17th Ave & Holgate Blvd MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.64854,
-          45.490639
-        ]
+        "coordinates": [-122.64854, 45.490639]
       }
     },
     {
@@ -2598,16 +1770,11 @@
       "properties": {
         "stop_id": "13716",
         "stop_name": "SE Bybee Blvd MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.63999,
-          45.474667
-        ]
+        "coordinates": [-122.63999, 45.474667]
       }
     },
     {
@@ -2615,16 +1782,11 @@
       "properties": {
         "stop_id": "13717",
         "stop_name": "SE Tacoma/Johnson Creek MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.637423,
-          45.462631
-        ]
+        "coordinates": [-122.637423, 45.462631]
       }
     },
     {
@@ -2632,16 +1794,11 @@
       "properties": {
         "stop_id": "13718",
         "stop_name": "Milwaukie/Main St MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.640056,
-          45.441027
-        ]
+        "coordinates": [-122.640056, 45.441027]
       }
     },
     {
@@ -2649,16 +1806,11 @@
       "properties": {
         "stop_id": "13720",
         "stop_name": "SE Park Ave MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.635065,
-          45.430734
-        ]
+        "coordinates": [-122.635065, 45.430734]
       }
     },
     {
@@ -2666,16 +1818,11 @@
       "properties": {
         "stop_id": "13721",
         "stop_name": "Milwaukie/Main St MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.63982,
-          45.44143
-        ]
+        "coordinates": [-122.63982, 45.44143]
       }
     },
     {
@@ -2683,16 +1830,11 @@
       "properties": {
         "stop_id": "13722",
         "stop_name": "SE Tacoma/Johnson Creek MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.63785,
-          45.462984
-        ]
+        "coordinates": [-122.63785, 45.462984]
       }
     },
     {
@@ -2700,16 +1842,11 @@
       "properties": {
         "stop_id": "13723",
         "stop_name": "SE Bybee Blvd MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.640055,
-          45.475104
-        ]
+        "coordinates": [-122.640055, 45.475104]
       }
     },
     {
@@ -2717,16 +1854,11 @@
       "properties": {
         "stop_id": "13724",
         "stop_name": "SE 17th Ave & Holgate Blvd MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.648456,
-          45.491139
-        ]
+        "coordinates": [-122.648456, 45.491139]
       }
     },
     {
@@ -2734,16 +1866,11 @@
       "properties": {
         "stop_id": "13725",
         "stop_name": "SE 17th Ave & Rhine St MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.648142,
-          45.498131
-        ]
+        "coordinates": [-122.648142, 45.498131]
       }
     },
     {
@@ -2751,16 +1878,11 @@
       "properties": {
         "stop_id": "13726",
         "stop_name": "Clinton St/SE 12th Ave MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.653516,
-          45.502953
-        ]
+        "coordinates": [-122.653516, 45.502953]
       }
     },
     {
@@ -2768,16 +1890,11 @@
       "properties": {
         "stop_id": "13727",
         "stop_name": "OMSI/SE Water MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.662862,
-          45.506618
-        ]
+        "coordinates": [-122.662862, 45.506618]
       }
     },
     {
@@ -2785,16 +1902,11 @@
       "properties": {
         "stop_id": "13728",
         "stop_name": "South Waterfront/S Moody MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.671539,
-          45.502716
-        ]
+        "coordinates": [-122.671539, 45.502716]
       }
     },
     {
@@ -2802,16 +1914,11 @@
       "properties": {
         "stop_id": "13729",
         "stop_name": "Lincoln St/SW 3rd Ave MAX Station",
-        "routes": [
-          "290"
-        ]
+        "routes": ["290"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.680858,
-          45.507942
-        ]
+        "coordinates": [-122.680858, 45.507942]
       }
     },
     {
@@ -2819,16 +1926,11 @@
       "properties": {
         "stop_id": "14250",
         "stop_name": "Gateway North MAX Station",
-        "routes": [
-          "90"
-        ]
+        "routes": ["90"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.563749,
-          45.532331
-        ]
+        "coordinates": [-122.563749, 45.532331]
       }
     }
   ]

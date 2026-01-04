@@ -64,7 +64,11 @@
 }
 
 .city-btn.active {
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(0, 255, 136, 0.2) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.3) 0%,
+    rgba(0, 255, 136, 0.2) 100%
+  );
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 217, 255, 0.2);
 }
@@ -82,7 +86,11 @@
 }
 
 .city-btn.city-btn-warning.active {
-  background: linear-gradient(135deg, rgba(255, 80, 80, 0.35) 0%, rgba(200, 50, 50, 0.25) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 80, 80, 0.35) 0%,
+    rgba(200, 50, 50, 0.25) 100%
+  );
   color: #ff7777;
   box-shadow: 0 2px 12px rgba(255, 80, 80, 0.3);
   text-shadow: 0 0 8px rgba(255, 100, 100, 0.5);
@@ -101,7 +109,11 @@
 }
 
 .city-btn.city-btn-pending.active {
-  background: linear-gradient(135deg, rgba(255, 217, 61, 0.35) 0%, rgba(200, 170, 30, 0.25) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 217, 61, 0.35) 0%,
+    rgba(200, 170, 30, 0.25) 100%
+  );
   color: #ffed4a;
   box-shadow: 0 2px 12px rgba(255, 217, 61, 0.3);
   text-shadow: 0 0 8px rgba(255, 230, 100, 0.5);
@@ -123,7 +135,11 @@
 }
 
 .app-title {
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -664,7 +680,7 @@
 
 .popup-coords {
   font-size: 0.7rem;
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
   color: rgba(255, 255, 255, 0.6);
   background: rgba(0, 0, 0, 0.3);
   padding: 4px 8px;
@@ -719,8 +735,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.2); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
 }
 
 /* Info section */
@@ -823,7 +846,6 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-
 /* Database Status */
 .db-status {
   padding: 12px;
@@ -832,7 +854,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.db-connected, .db-disconnected {
+.db-connected,
+.db-disconnected {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -870,7 +893,7 @@
   background: rgba(255, 255, 255, 0.1);
   padding: 2px 6px;
   border-radius: 4px;
-  font-family: 'SF Mono', monospace;
+  font-family: "SF Mono", monospace;
 }
 
 /* Data status message on map */
@@ -894,7 +917,7 @@
   color: #00d9ff;
   padding: 4px 8px;
   border-radius: 4px;
-  font-family: 'SF Mono', monospace;
+  font-family: "SF Mono", monospace;
 }
 
 .popup-time {
@@ -921,7 +944,7 @@
 }
 
 .loading-indicator::before {
-  content: '';
+  content: "";
   width: 12px;
   height: 12px;
   border: 2px solid rgba(0, 217, 255, 0.3);
@@ -931,7 +954,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Ensure MapLibre canvas fills container */
@@ -962,8 +987,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -979,11 +1008,11 @@
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }

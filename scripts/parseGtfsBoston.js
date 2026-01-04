@@ -76,18 +76,18 @@ function main() {
   const routes = parseCSV("routes.txt");
   console.log(`Total routes: ${routes.length}`);
   const greenRoutes = routes.filter((r) =>
-    GREEN_LINE_ROUTES.includes(r.route_id)
+    GREEN_LINE_ROUTES.includes(r.route_id),
   );
   console.log(
     `Found ${greenRoutes.length} Green Line routes:`,
-    greenRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
+    greenRoutes.map((r) => `${r.route_id} (${r.route_long_name})`),
   );
 
   // Parse trips to get shape_ids for each route
   const trips = parseCSV("trips.txt");
   console.log(`Total trips: ${trips.length}`);
   const greenTrips = trips.filter((t) =>
-    GREEN_LINE_ROUTES.includes(t.route_id)
+    GREEN_LINE_ROUTES.includes(t.route_id),
   );
   console.log(`Green Line trips: ${greenTrips.length}`);
 
@@ -131,7 +131,7 @@ function main() {
     console.log(
       `${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${
         info.headsign || "no headsign"
-      }, ${info.count} trips)`
+      }, ${info.count} trips)`,
     );
   });
 
@@ -205,7 +205,7 @@ function main() {
     console.log(
       `  ${p.route_id} ${p.direction}: ${p.route_name} (${
         p.headsign || "no headsign"
-      })`
+      })`,
     );
   });
 }

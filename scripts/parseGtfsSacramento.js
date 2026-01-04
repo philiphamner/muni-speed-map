@@ -67,18 +67,18 @@ function main() {
   const routes = parseCSV("routes.txt");
   console.log(`Total routes: ${routes.length}`);
   const lightRailRoutes = routes.filter((r) =>
-    LIGHT_RAIL_LINES.includes(r.route_id)
+    LIGHT_RAIL_LINES.includes(r.route_id),
   );
   console.log(
     `Found ${lightRailRoutes.length} Light Rail routes:`,
-    lightRailRoutes.map((r) => `${r.route_id} (${r.route_long_name})`)
+    lightRailRoutes.map((r) => `${r.route_id} (${r.route_long_name})`),
   );
 
   // Parse trips to get shape_ids for each route
   const trips = parseCSV("trips.txt");
   console.log(`Total trips: ${trips.length}`);
   const lightRailTrips = trips.filter((t) =>
-    LIGHT_RAIL_LINES.includes(t.route_id)
+    LIGHT_RAIL_LINES.includes(t.route_id),
   );
   console.log(`Light Rail trips: ${lightRailTrips.length}`);
 
@@ -120,7 +120,7 @@ function main() {
     console.log(
       `${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${
         info.headsign || "no headsign"
-      }, ${info.count} trips)`
+      }, ${info.count} trips)`,
     );
   });
 
@@ -195,7 +195,7 @@ function main() {
     console.log(
       `  ${p.route_id} ${p.direction}: ${p.route_name} (${
         p.headsign || "no headsign"
-      })`
+      })`,
     );
   });
 }

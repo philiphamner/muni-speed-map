@@ -57,7 +57,7 @@ async function fetchVehiclePositions() {
         headers: {
           Accept: "application/vnd.api+json",
         },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -115,7 +115,7 @@ function calculateSpeed(vehicle) {
         lastPos.lat,
         lastPos.lon,
         vehicle.lat,
-        vehicle.lon
+        vehicle.lon,
       );
 
       // Filter out GPS jumps (unrealistic speeds > 80 mph)
@@ -171,7 +171,7 @@ async function collectOnce() {
 
   // Count vehicles with calculated speeds
   const withSpeed = vehiclesWithSpeed.filter(
-    (v) => v.speed_calculated !== undefined
+    (v) => v.speed_calculated !== undefined,
   );
 
   // Save to database
@@ -194,7 +194,7 @@ async function collectOnce() {
   } else {
     console.log(
       `[${timestamp} ET] Saved ${count} Boston Green Line positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`
+        `(${withSpeed.length} with speed) in ${elapsed}ms`,
     );
   }
 }
@@ -203,7 +203,7 @@ async function collectOnce() {
 async function runCollector() {
   console.log("🦞 Boston Green Line Speed Map - Data Collector");
   console.log(
-    `   Polling MBTA V3 API every ${POLL_INTERVAL_MS / 1000} seconds`
+    `   Polling MBTA V3 API every ${POLL_INTERVAL_MS / 1000} seconds`,
   );
   console.log(`   Tracking routes: ${GREEN_LINE_ROUTES.join(", ")}`);
   console.log("   Press Ctrl+C to stop\n");

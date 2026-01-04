@@ -51,7 +51,7 @@ function main() {
   const trips = parseCSV("trips.txt");
 
   console.log(
-    `Loaded ${stops.length} stops, ${stopTimes.length} stop_times, ${trips.length} trips`
+    `Loaded ${stops.length} stops, ${stopTimes.length} stop_times, ${trips.length} trips`,
   );
 
   // Build trip -> route mapping
@@ -110,7 +110,7 @@ function main() {
   console.log("\nStops per line:");
   LINK_LINES.forEach((line) => {
     const count = features.filter((f) =>
-      f.properties.routes.includes(line)
+      f.properties.routes.includes(line),
     ).length;
     console.log(`  ${line}: ${count} stops`);
   });

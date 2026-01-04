@@ -135,17 +135,17 @@ async function fetchVehiclePositions() {
     const contentType = response.headers.get("content-type") || "";
     if (
       !/protobuf|octet|application\/x-protobuf|application\/proto/i.test(
-        contentType
+        contentType,
       )
     ) {
       const bodyText = await response.text();
       console.error(
         "GTFS-RT endpoint returned unexpected content-type:",
-        contentType
+        contentType,
       );
       console.error(
         "Response body (truncated):\n",
-        bodyText.substring(0, 2000)
+        bodyText.substring(0, 2000),
       );
       return [];
     }
@@ -154,13 +154,13 @@ async function fetchVehiclePositions() {
     let feed;
     try {
       feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-        new Uint8Array(buffer)
+        new Uint8Array(buffer),
       );
     } catch (err) {
       const asText = Buffer.from(buffer).toString("utf8");
       console.error(
         "Failed to decode GTFS-RT protobuf. First 2000 chars of response:\n",
-        asText.substring(0, 2000)
+        asText.substring(0, 2000),
       );
       console.error("Decode error:", err && err.message ? err.message : err);
       return [];
@@ -172,7 +172,7 @@ async function fetchVehiclePositions() {
         (entity) =>
           entity.vehicle &&
           entity.vehicle.trip &&
-          isRailRoute(entity.vehicle.trip.routeId)
+          isRailRoute(entity.vehicle.trip.routeId),
       )
       .map((entity) => {
         const v = entity.vehicle;
@@ -258,7 +258,7 @@ async function collectOnce() {
   } else {
     console.log(
       `[${timestamp} MT] Saved ${count} Salt Lake City TRAX positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`
+        `(${withSpeed.length} with speed) in ${elapsed}ms`,
     );
   }
 }
@@ -267,7 +267,7 @@ async function collectOnce() {
 async function runCollector() {
   console.log("🏔️ Salt Lake City TRAX Light Rail - Data Collector");
   console.log(
-    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`
+    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`,
   );
   console.log(`   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")}`);
   console.log("   Press Ctrl+C to stop\n");

@@ -28,7 +28,7 @@ function App() {
 
   // Lines selected for the current city
   const [selectedLines, setSelectedLines] = useState<string[]>(
-    MUNI_LINES.filter((line) => line !== "F") as string[]
+    MUNI_LINES.filter((line) => line !== "F") as string[],
   );
 
   // Track if "none" was selected to preserve across city switches

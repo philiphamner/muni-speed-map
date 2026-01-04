@@ -60,7 +60,7 @@ function main() {
   const trips = parseCSV("trips.txt");
 
   console.log(
-    `Loaded ${stops.length} stops, ${stopTimes.length} stop_times, ${trips.length} trips`
+    `Loaded ${stops.length} stops, ${stopTimes.length} stop_times, ${trips.length} trips`,
   );
 
   // Build trip -> route mapping

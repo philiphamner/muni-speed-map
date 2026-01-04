@@ -6,17 +6,11 @@
       "properties": {
         "stop_id": "75102",
         "stop_name": "12th & Imperial Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.1532179,
-          32.70587009
-        ]
+        "coordinates": [-117.1532179, 32.70587009]
       }
     },
     {
@@ -24,17 +18,11 @@
       "properties": {
         "stop_id": "75103",
         "stop_name": "12th & Imperial Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15332593,
-          32.70578492
-        ]
+        "coordinates": [-117.15332593, 32.70578492]
       }
     },
     {
@@ -42,16 +30,11 @@
       "properties": {
         "stop_id": "75100",
         "stop_name": "12th & Imperial Station (Bayside)",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15389991,
-          32.70523403
-        ]
+        "coordinates": [-117.15389991, 32.70523403]
       }
     },
     {
@@ -59,16 +42,11 @@
       "properties": {
         "stop_id": "75014",
         "stop_name": "24th Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.10800607,
-          32.66196491
-        ]
+        "coordinates": [-117.10800607, 32.66196491]
       }
     },
     {
@@ -76,16 +54,11 @@
       "properties": {
         "stop_id": "75015",
         "stop_name": "24th Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.10800516,
-          32.66170409
-        ]
+        "coordinates": [-117.10800516, 32.66170409]
       }
     },
     {
@@ -93,16 +66,11 @@
       "properties": {
         "stop_id": "75074",
         "stop_name": "25th & Commercial St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.13873095,
-          32.70527695
-        ]
+        "coordinates": [-117.13873095, 32.70527695]
       }
     },
     {
@@ -110,16 +78,11 @@
       "properties": {
         "stop_id": "75075",
         "stop_name": "25th & Commercial St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14115393,
-          32.70528997
-        ]
+        "coordinates": [-117.14115393, 32.70528997]
       }
     },
     {
@@ -127,16 +90,11 @@
       "properties": {
         "stop_id": "75072",
         "stop_name": "32nd/Commercial St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.12475301,
-          32.70576993
-        ]
+        "coordinates": [-117.12475301, 32.70576993]
       }
     },
     {
@@ -144,16 +102,11 @@
       "properties": {
         "stop_id": "75073",
         "stop_name": "32nd/Commercial St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.1245239,
-          32.70577705
-        ]
+        "coordinates": [-117.1245239, 32.70577705]
       }
     },
     {
@@ -161,16 +114,11 @@
       "properties": {
         "stop_id": "75070",
         "stop_name": "47th Street Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09481908,
-          32.70843908
-        ]
+        "coordinates": [-117.09481908, 32.70843908]
       }
     },
     {
@@ -178,16 +126,11 @@
       "properties": {
         "stop_id": "75071",
         "stop_name": "47th Street Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09507209,
-          32.70844807
-        ]
+        "coordinates": [-117.09507209, 32.70844807]
       }
     },
     {
@@ -195,16 +138,11 @@
       "properties": {
         "stop_id": "75032",
         "stop_name": "70th Street Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.0422951,
-          32.772147
-        ]
+        "coordinates": [-117.0422951, 32.772147]
       }
     },
     {
@@ -212,16 +150,11 @@
       "properties": {
         "stop_id": "75033",
         "stop_name": "70th Street Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.0424841,
-          32.77229009
-        ]
+        "coordinates": [-117.0424841, 32.77229009]
       }
     },
     {
@@ -229,16 +162,11 @@
       "properties": {
         "stop_id": "75016",
         "stop_name": "8th Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11309508,
-          32.67501911
-        ]
+        "coordinates": [-117.11309508, 32.67501911]
       }
     },
     {
@@ -246,16 +174,11 @@
       "properties": {
         "stop_id": "75017",
         "stop_name": "8th Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11308188,
-          32.67473308
-        ]
+        "coordinates": [-117.11308188, 32.67473308]
       }
     },
     {
@@ -263,17 +186,11 @@
       "properties": {
         "stop_id": "75028",
         "stop_name": "Amaya Drive Station",
-        "routes": [
-          "520",
-          "530"
-        ]
+        "routes": ["520", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.00186302,
-          32.7854099
-        ]
+        "coordinates": [-117.00186302, 32.7854099]
       }
     },
     {
@@ -281,17 +198,11 @@
       "properties": {
         "stop_id": "75029",
         "stop_name": "Amaya Drive Station",
-        "routes": [
-          "520",
-          "530"
-        ]
+        "routes": ["520", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.001606,
-          32.78541311
-        ]
+        "coordinates": [-117.001606, 32.78541311]
       }
     },
     {
@@ -299,16 +210,11 @@
       "properties": {
         "stop_id": "75084",
         "stop_name": "America Plaza Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16881107,
-          32.71638588
-        ]
+        "coordinates": [-117.16881107, 32.71638588]
       }
     },
     {
@@ -316,17 +222,11 @@
       "properties": {
         "stop_id": "75085",
         "stop_name": "America Plaza Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.1688139,
-          32.7166269
-        ]
+        "coordinates": [-117.1688139, 32.7166269]
       }
     },
     {
@@ -334,16 +234,11 @@
       "properties": {
         "stop_id": "75024",
         "stop_name": "Arnele Avenue Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.97568505,
-          32.80466109
-        ]
+        "coordinates": [-116.97568505, 32.80466109]
       }
     },
     {
@@ -351,16 +246,11 @@
       "properties": {
         "stop_id": "75025",
         "stop_name": "Arnele Avenue Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.97577313,
-          32.80448906
-        ]
+        "coordinates": [-116.97577313, 32.80448906]
       }
     },
     {
@@ -368,16 +258,11 @@
       "properties": {
         "stop_id": "77774",
         "stop_name": "Balboa Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.21405986,
-          32.8057379
-        ]
+        "coordinates": [-117.21405986, 32.8057379]
       }
     },
     {
@@ -385,16 +270,11 @@
       "properties": {
         "stop_id": "77775",
         "stop_name": "Balboa Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.21406638,
-          32.80585769
-        ]
+        "coordinates": [-117.21406638, 32.80585769]
       }
     },
     {
@@ -402,16 +282,11 @@
       "properties": {
         "stop_id": "75018",
         "stop_name": "Barrio Logan Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14666504,
-          32.69812698
-        ]
+        "coordinates": [-117.14666504, 32.69812698]
       }
     },
     {
@@ -419,16 +294,11 @@
       "properties": {
         "stop_id": "75019",
         "stop_name": "Barrio Logan Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14645586,
-          32.69788609
-        ]
+        "coordinates": [-117.14645586, 32.69788609]
       }
     },
     {
@@ -436,16 +306,11 @@
       "properties": {
         "stop_id": "75002",
         "stop_name": "Beyer Blvd Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.04706184,
-          32.55765602
-        ]
+        "coordinates": [-117.04706184, 32.55765602]
       }
     },
     {
@@ -453,16 +318,11 @@
       "properties": {
         "stop_id": "75003",
         "stop_name": "Beyer Blvd Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.046839,
-          32.55745297
-        ]
+        "coordinates": [-117.046839, 32.55745297]
       }
     },
     {
@@ -470,17 +330,11 @@
       "properties": {
         "stop_id": "75090",
         "stop_name": "City College Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15417292,
-          32.71628902
-        ]
+        "coordinates": [-117.15417292, 32.71628902]
       }
     },
     {
@@ -488,17 +342,11 @@
       "properties": {
         "stop_id": "75091",
         "stop_name": "City College Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15422206,
-          32.71623012
-        ]
+        "coordinates": [-117.15422206, 32.71623012]
       }
     },
     {
@@ -506,17 +354,11 @@
       "properties": {
         "stop_id": "75086",
         "stop_name": "Civic Center Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.1624709,
-          32.71671
-        ]
+        "coordinates": [-117.1624709, 32.71671]
       }
     },
     {
@@ -524,17 +366,11 @@
       "properties": {
         "stop_id": "75087",
         "stop_name": "Civic Center Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16242896,
-          32.71677298
-        ]
+        "coordinates": [-117.16242896, 32.71677298]
       }
     },
     {
@@ -542,16 +378,11 @@
       "properties": {
         "stop_id": "77772",
         "stop_name": "Clairemont Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.20618712,
-          32.7899797
-        ]
+        "coordinates": [-117.20618712, 32.7899797]
       }
     },
     {
@@ -559,16 +390,11 @@
       "properties": {
         "stop_id": "77773",
         "stop_name": "Clairemont Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.20612915,
-          32.79006453
-        ]
+        "coordinates": [-117.20612915, 32.79006453]
       }
     },
     {
@@ -576,16 +402,11 @@
       "properties": {
         "stop_id": "75096",
         "stop_name": "Convention Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16346306,
-          32.70898098
-        ]
+        "coordinates": [-117.16346306, 32.70898098]
       }
     },
     {
@@ -593,16 +414,11 @@
       "properties": {
         "stop_id": "75097",
         "stop_name": "Convention Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16331998,
-          32.70881988
-        ]
+        "coordinates": [-117.16331998, 32.70881988]
       }
     },
     {
@@ -610,17 +426,11 @@
       "properties": {
         "stop_id": "75080",
         "stop_name": "County Center/Little Italy Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16989795,
-          32.72149387
-        ]
+        "coordinates": [-117.16989795, 32.72149387]
       }
     },
     {
@@ -628,17 +438,11 @@
       "properties": {
         "stop_id": "75081",
         "stop_name": "County Center/Little Italy Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16998502,
-          32.72136294
-        ]
+        "coordinates": [-117.16998502, 32.72136294]
       }
     },
     {
@@ -646,16 +450,11 @@
       "properties": {
         "stop_id": "75109",
         "stop_name": "Courthouse Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16602361,
-          32.71671555
-        ]
+        "coordinates": [-117.16602361, 32.71671555]
       }
     },
     {
@@ -663,16 +462,11 @@
       "properties": {
         "stop_id": "75012",
         "stop_name": "E Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09905693,
-          32.63910499
-        ]
+        "coordinates": [-117.09905693, 32.63910499]
       }
     },
     {
@@ -680,16 +474,11 @@
       "properties": {
         "stop_id": "75013",
         "stop_name": "E Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09906612,
-          32.63884492
-        ]
+        "coordinates": [-117.09906612, 32.63884492]
       }
     },
     {
@@ -697,16 +486,11 @@
       "properties": {
         "stop_id": "75026",
         "stop_name": "El Cajon Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.97613899,
-          32.79206489
-        ]
+        "coordinates": [-116.97613899, 32.79206489]
       }
     },
     {
@@ -714,17 +498,11 @@
       "properties": {
         "stop_id": "75027",
         "stop_name": "El Cajon Station",
-        "routes": [
-          "520",
-          "535"
-        ]
+        "routes": ["520", "535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.97621685,
-          32.79187891
-        ]
+        "coordinates": [-116.97621685, 32.79187891]
       }
     },
     {
@@ -732,16 +510,11 @@
       "properties": {
         "stop_id": "77790",
         "stop_name": "El Cajon Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.97610337,
-          32.79283632
-        ]
+        "coordinates": [-116.97610337, 32.79283632]
       }
     },
     {
@@ -749,16 +522,11 @@
       "properties": {
         "stop_id": "75066",
         "stop_name": "Encanto/62nd St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.06336103,
-          32.71013009
-        ]
+        "coordinates": [-117.06336103, 32.71013009]
       }
     },
     {
@@ -766,16 +534,11 @@
       "properties": {
         "stop_id": "75067",
         "stop_name": "Encanto/62nd St Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.06310995,
-          32.71008392
-        ]
+        "coordinates": [-117.06310995, 32.71008392]
       }
     },
     {
@@ -783,16 +546,11 @@
       "properties": {
         "stop_id": "75068",
         "stop_name": "Euclid Ave Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08612912,
-          32.70958396
-        ]
+        "coordinates": [-117.08612912, 32.70958396]
       }
     },
     {
@@ -800,16 +558,11 @@
       "properties": {
         "stop_id": "75069",
         "stop_name": "Euclid Ave Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08576103,
-          32.70950703
-        ]
+        "coordinates": [-117.08576103, 32.70950703]
       }
     },
     {
@@ -817,16 +570,11 @@
       "properties": {
         "stop_id": "77785",
         "stop_name": "Executive Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.21402471,
-          32.87416804
-        ]
+        "coordinates": [-117.21402471, 32.87416804]
       }
     },
     {
@@ -834,16 +582,11 @@
       "properties": {
         "stop_id": "77786",
         "stop_name": "Executive Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.21404976,
-          32.87413569
-        ]
+        "coordinates": [-117.21404976, 32.87413569]
       }
     },
     {
@@ -851,16 +594,11 @@
       "properties": {
         "stop_id": "75046",
         "stop_name": "Fashion Valley Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16915192,
-          32.76547104
-        ]
+        "coordinates": [-117.16915192, 32.76547104]
       }
     },
     {
@@ -868,16 +606,11 @@
       "properties": {
         "stop_id": "75047",
         "stop_name": "Fashion Valley Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16890515,
-          32.76545309
-        ]
+        "coordinates": [-117.16890515, 32.76545309]
       }
     },
     {
@@ -885,16 +618,11 @@
       "properties": {
         "stop_id": "75054",
         "stop_name": "Fenton Parkway Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.12723711,
-          32.77827002
-        ]
+        "coordinates": [-117.12723711, 32.77827002]
       }
     },
     {
@@ -902,16 +630,11 @@
       "properties": {
         "stop_id": "75055",
         "stop_name": "Fenton Parkway Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.12700808,
-          32.77837004
-        ]
+        "coordinates": [-117.12700808, 32.77837004]
       }
     },
     {
@@ -919,17 +642,11 @@
       "properties": {
         "stop_id": "75088",
         "stop_name": "Fifth Avenue Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15967791,
-          32.71679
-        ]
+        "coordinates": [-117.15967791, 32.71679]
       }
     },
     {
@@ -937,17 +654,11 @@
       "properties": {
         "stop_id": "75089",
         "stop_name": "Fifth Avenue Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15972014,
-          32.716724
-        ]
+        "coordinates": [-117.15972014, 32.716724]
       }
     },
     {
@@ -955,16 +666,11 @@
       "properties": {
         "stop_id": "75098",
         "stop_name": "Gaslamp Quarter Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15976288,
-          32.706942
-        ]
+        "coordinates": [-117.15976288, 32.706942]
       }
     },
     {
@@ -972,16 +678,11 @@
       "properties": {
         "stop_id": "75099",
         "stop_name": "Gaslamp Quarter Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15959916,
-          32.7067651
-        ]
+        "coordinates": [-117.15959916, 32.7067651]
       }
     },
     {
@@ -989,16 +690,11 @@
       "properties": {
         "stop_id": "75022",
         "stop_name": "Gillespie Field Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.98207995,
-          32.82699596
-        ]
+        "coordinates": [-116.98207995, 32.82699596]
       }
     },
     {
@@ -1006,16 +702,11 @@
       "properties": {
         "stop_id": "75023",
         "stop_name": "Gillespie Field Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.98204188,
-          32.82676394
-        ]
+        "coordinates": [-116.98204188, 32.82676394]
       }
     },
     {
@@ -1023,16 +714,11 @@
       "properties": {
         "stop_id": "75060",
         "stop_name": "Union Grantville Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09738402,
-          32.78039787
-        ]
+        "coordinates": [-117.09738402, 32.78039787]
       }
     },
     {
@@ -1040,16 +726,11 @@
       "properties": {
         "stop_id": "75061",
         "stop_name": "Union Grantville Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09755913,
-          32.78053987
-        ]
+        "coordinates": [-117.09755913, 32.78053987]
       }
     },
     {
@@ -1057,17 +738,11 @@
       "properties": {
         "stop_id": "75030",
         "stop_name": "Grossmont Station",
-        "routes": [
-          "520",
-          "530"
-        ]
+        "routes": ["520", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.01126702,
-          32.78164207
-        ]
+        "coordinates": [-117.01126702, 32.78164207]
       }
     },
     {
@@ -1075,17 +750,11 @@
       "properties": {
         "stop_id": "75031",
         "stop_name": "Grossmont Station",
-        "routes": [
-          "520",
-          "530"
-        ]
+        "routes": ["520", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.01147008,
-          32.78160811
-        ]
+        "coordinates": [-117.01147008, 32.78160811]
       }
     },
     {
@@ -1093,16 +762,11 @@
       "properties": {
         "stop_id": "75010",
         "stop_name": "H Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09557712,
-          32.63017791
-        ]
+        "coordinates": [-117.09557712, 32.63017791]
       }
     },
     {
@@ -1110,16 +774,11 @@
       "properties": {
         "stop_id": "75011",
         "stop_name": "H Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.09557211,
-          32.62989293
-        ]
+        "coordinates": [-117.09557211, 32.62989293]
       }
     },
     {
@@ -1127,16 +786,11 @@
       "properties": {
         "stop_id": "75104",
         "stop_name": "Harborside Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.1328639,
-          32.6913259
-        ]
+        "coordinates": [-117.1328639, 32.6913259]
       }
     },
     {
@@ -1144,16 +798,11 @@
       "properties": {
         "stop_id": "75105",
         "stop_name": "Harborside Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.13263886,
-          32.69115188
-        ]
+        "coordinates": [-117.13263886, 32.69115188]
       }
     },
     {
@@ -1161,16 +810,11 @@
       "properties": {
         "stop_id": "75048",
         "stop_name": "Hazard Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15815189,
-          32.77025712
-        ]
+        "coordinates": [-117.15815189, 32.77025712]
       }
     },
     {
@@ -1178,16 +822,11 @@
       "properties": {
         "stop_id": "75049",
         "stop_name": "Hazard Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15841,
-          32.7702379
-        ]
+        "coordinates": [-117.15841, 32.7702379]
       }
     },
     {
@@ -1195,16 +834,11 @@
       "properties": {
         "stop_id": "75004",
         "stop_name": "Iris Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.06717616,
-          32.569762
-        ]
+        "coordinates": [-117.06717616, 32.569762]
       }
     },
     {
@@ -1212,16 +846,11 @@
       "properties": {
         "stop_id": "75005",
         "stop_name": "Iris Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.06696484,
-          32.56951494
-        ]
+        "coordinates": [-117.06696484, 32.56951494]
       }
     },
     {
@@ -1229,16 +858,11 @@
       "properties": {
         "stop_id": "75034",
         "stop_name": "La Mesa Blvd Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.02056497,
-          32.76513688
-        ]
+        "coordinates": [-117.02056497, 32.76513688]
       }
     },
     {
@@ -1246,16 +870,11 @@
       "properties": {
         "stop_id": "75035",
         "stop_name": "La Mesa Blvd Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.02053106,
-          32.76490512
-        ]
+        "coordinates": [-117.02053106, 32.76490512]
       }
     },
     {
@@ -1263,16 +882,11 @@
       "properties": {
         "stop_id": "75038",
         "stop_name": "Lemon Grove Depot",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.03065392,
-          32.74348189
-        ]
+        "coordinates": [-117.03065392, 32.74348189]
       }
     },
     {
@@ -1280,16 +894,11 @@
       "properties": {
         "stop_id": "75039",
         "stop_name": "Lemon Grove Depot",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.03078301,
-          32.7432961
-        ]
+        "coordinates": [-117.03078301, 32.7432961]
       }
     },
     {
@@ -1297,16 +906,11 @@
       "properties": {
         "stop_id": "75040",
         "stop_name": "Massachusetts Ave Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.03948895,
-          32.72355904
-        ]
+        "coordinates": [-117.03948895, 32.72355904]
       }
     },
     {
@@ -1314,16 +918,11 @@
       "properties": {
         "stop_id": "75041",
         "stop_name": "Massachusetts Ave Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.03967992,
-          32.7234619
-        ]
+        "coordinates": [-117.03967992, 32.7234619]
       }
     },
     {
@@ -1331,17 +930,11 @@
       "properties": {
         "stop_id": "75078",
         "stop_name": "Middletown Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.17492298,
-          32.73378587
-        ]
+        "coordinates": [-117.17492298, 32.73378587]
       }
     },
     {
@@ -1349,17 +942,11 @@
       "properties": {
         "stop_id": "75079",
         "stop_name": "Middletown Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.17479297,
-          32.73351391
-        ]
+        "coordinates": [-117.17479297, 32.73351391]
       }
     },
     {
@@ -1367,16 +954,11 @@
       "properties": {
         "stop_id": "75058",
         "stop_name": "Mission San Diego Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11110498,
-          32.78098289
-        ]
+        "coordinates": [-117.11110498, 32.78098289]
       }
     },
     {
@@ -1384,16 +966,11 @@
       "properties": {
         "stop_id": "75059",
         "stop_name": "Mission San Diego Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11097904,
-          32.78081391
-        ]
+        "coordinates": [-117.11097904, 32.78081391]
       }
     },
     {
@@ -1401,16 +978,11 @@
       "properties": {
         "stop_id": "75050",
         "stop_name": "Mission Valley Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14985611,
-          32.77108307
-        ]
+        "coordinates": [-117.14985611, 32.77108307]
       }
     },
     {
@@ -1418,16 +990,11 @@
       "properties": {
         "stop_id": "75051",
         "stop_name": "Mission Valley Center Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15013501,
-          32.77109313
-        ]
+        "coordinates": [-117.15013501, 32.77109313]
       }
     },
     {
@@ -1435,16 +1002,11 @@
       "properties": {
         "stop_id": "75044",
         "stop_name": "Morena/Linda Vista Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.19655802,
-          32.76352707
-        ]
+        "coordinates": [-117.19655802, 32.76352707]
       }
     },
     {
@@ -1452,16 +1014,11 @@
       "properties": {
         "stop_id": "75045",
         "stop_name": "Morena/Linda Vista Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.19684915,
-          32.76358613
-        ]
+        "coordinates": [-117.19684915, 32.76358613]
       }
     },
     {
@@ -1469,16 +1026,11 @@
       "properties": {
         "stop_id": "77776",
         "stop_name": "Nobel Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.23046202,
-          32.86686173
-        ]
+        "coordinates": [-117.23046202, 32.86686173]
       }
     },
     {
@@ -1486,16 +1038,11 @@
       "properties": {
         "stop_id": "77778",
         "stop_name": "Nobel Drive Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.23038762,
-          32.86696566
-        ]
+        "coordinates": [-117.23038762, 32.86696566]
       }
     },
     {
@@ -1503,17 +1050,11 @@
       "properties": {
         "stop_id": "75042",
         "stop_name": "Old Town Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.19948716,
-          32.754908
-        ]
+        "coordinates": [-117.19948716, 32.754908]
       }
     },
     {
@@ -1521,17 +1062,11 @@
       "properties": {
         "stop_id": "75043",
         "stop_name": "Old Town Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.19954799,
-          32.754697
-        ]
+        "coordinates": [-117.19954799, 32.754697]
       }
     },
     {
@@ -1539,16 +1074,11 @@
       "properties": {
         "stop_id": "75106",
         "stop_name": "Pacific Fleet Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.12479089,
-          32.68609889
-        ]
+        "coordinates": [-117.12479089, 32.68609889]
       }
     },
     {
@@ -1556,16 +1086,11 @@
       "properties": {
         "stop_id": "75107",
         "stop_name": "Pacific Fleet Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.12463707,
-          32.68589302
-        ]
+        "coordinates": [-117.12463707, 32.68589302]
       }
     },
     {
@@ -1573,16 +1098,11 @@
       "properties": {
         "stop_id": "75006",
         "stop_name": "Palm Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08375293,
-          32.58477987
-        ]
+        "coordinates": [-117.08375293, 32.58477987]
       }
     },
     {
@@ -1590,16 +1110,11 @@
       "properties": {
         "stop_id": "75007",
         "stop_name": "Palm Avenue Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08385991,
-          32.584454
-        ]
+        "coordinates": [-117.08385991, 32.584454]
       }
     },
     {
@@ -1607,16 +1122,11 @@
       "properties": {
         "stop_id": "75008",
         "stop_name": "Palomar Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08508185,
-          32.60329399
-        ]
+        "coordinates": [-117.08508185, 32.60329399]
       }
     },
     {
@@ -1624,16 +1134,11 @@
       "properties": {
         "stop_id": "75009",
         "stop_name": "Palomar Street Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.08508809,
-          32.60302707
-        ]
+        "coordinates": [-117.08508809, 32.60302707]
       }
     },
     {
@@ -1641,17 +1146,11 @@
       "properties": {
         "stop_id": "75092",
         "stop_name": "Park & Market Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15372103,
-          32.71105999
-        ]
+        "coordinates": [-117.15372103, 32.71105999]
       }
     },
     {
@@ -1659,17 +1158,11 @@
       "properties": {
         "stop_id": "75093",
         "stop_name": "Park & Market Station",
-        "routes": [
-          "510",
-          "520"
-        ]
+        "routes": ["510", "520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.15380087,
-          32.71092006
-        ]
+        "coordinates": [-117.15380087, 32.71092006]
       }
     },
     {
@@ -1677,16 +1170,11 @@
       "properties": {
         "stop_id": "75052",
         "stop_name": "Rio Vista Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14196704,
-          32.77363297
-        ]
+        "coordinates": [-117.14196704, 32.77363297]
       }
     },
     {
@@ -1694,16 +1182,11 @@
       "properties": {
         "stop_id": "75053",
         "stop_name": "Rio Vista Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.14169885,
-          32.77362089
-        ]
+        "coordinates": [-117.14169885, 32.77362089]
       }
     },
     {
@@ -1711,16 +1194,11 @@
       "properties": {
         "stop_id": "75000",
         "stop_name": "San Ysidro Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.02953904,
-          32.54456598
-        ]
+        "coordinates": [-117.02953904, 32.54456598]
       }
     },
     {
@@ -1728,17 +1206,11 @@
       "properties": {
         "stop_id": "75082",
         "stop_name": "Santa Fe Depot",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16986094,
-          32.71732492
-        ]
+        "coordinates": [-117.16986094, 32.71732492]
       }
     },
     {
@@ -1746,17 +1218,11 @@
       "properties": {
         "stop_id": "75083",
         "stop_name": "Santa Fe Depot",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.169779,
-          32.71732388
-        ]
+        "coordinates": [-117.169779, 32.71732388]
       }
     },
     {
@@ -1764,16 +1230,11 @@
       "properties": {
         "stop_id": "75020",
         "stop_name": "Santee Town Center Station",
-        "routes": [
-          "535"
-        ]
+        "routes": ["535"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -116.98113185,
-          32.84155808
-        ]
+        "coordinates": [-116.98113185, 32.84155808]
       }
     },
     {
@@ -1781,16 +1242,11 @@
       "properties": {
         "stop_id": "75062",
         "stop_name": "SDSU Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.07063815,
-          32.77327502
-        ]
+        "coordinates": [-117.07063815, 32.77327502]
       }
     },
     {
@@ -1798,16 +1254,11 @@
       "properties": {
         "stop_id": "75063",
         "stop_name": "SDSU Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.07037198,
-          32.77316493
-        ]
+        "coordinates": [-117.07037198, 32.77316493]
       }
     },
     {
@@ -1815,16 +1266,11 @@
       "properties": {
         "stop_id": "75094",
         "stop_name": "Seaport Village Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16845216,
-          32.71173999
-        ]
+        "coordinates": [-117.16845216, 32.71173999]
       }
     },
     {
@@ -1832,16 +1278,11 @@
       "properties": {
         "stop_id": "75095",
         "stop_name": "Seaport Village Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.16862004,
-          32.71200095
-        ]
+        "coordinates": [-117.16862004, 32.71200095]
       }
     },
     {
@@ -1849,16 +1290,11 @@
       "properties": {
         "stop_id": "75036",
         "stop_name": "Spring Street Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.01738502,
-          32.75690711
-        ]
+        "coordinates": [-117.01738502, 32.75690711]
       }
     },
     {
@@ -1866,16 +1302,11 @@
       "properties": {
         "stop_id": "75037",
         "stop_name": "Spring Street Station",
-        "routes": [
-          "520"
-        ]
+        "routes": ["520"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.01753104,
-          32.75675394
-        ]
+        "coordinates": [-117.01753104, 32.75675394]
       }
     },
     {
@@ -1883,16 +1314,11 @@
       "properties": {
         "stop_id": "75056",
         "stop_name": "Stadium Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11949198,
-          32.78092904
-        ]
+        "coordinates": [-117.11949198, 32.78092904]
       }
     },
     {
@@ -1900,16 +1326,11 @@
       "properties": {
         "stop_id": "75057",
         "stop_name": "Stadium Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.11971092,
-          32.78102507
-        ]
+        "coordinates": [-117.11971092, 32.78102507]
       }
     },
     {
@@ -1917,16 +1338,11 @@
       "properties": {
         "stop_id": "77770",
         "stop_name": "Tecolote Road Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.20508853,
-          32.76981209
-        ]
+        "coordinates": [-117.20508853, 32.76981209]
       }
     },
     {
@@ -1934,16 +1350,11 @@
       "properties": {
         "stop_id": "77771",
         "stop_name": "Tecolote Road Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.20506166,
-          32.76991399
-        ]
+        "coordinates": [-117.20506166, 32.76991399]
       }
     },
     {
@@ -1951,16 +1362,11 @@
       "properties": {
         "stop_id": "77781",
         "stop_name": "UCSD Central Campus Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.23184702,
-          32.87829122
-        ]
+        "coordinates": [-117.23184702, 32.87829122]
       }
     },
     {
@@ -1968,16 +1374,11 @@
       "properties": {
         "stop_id": "77782",
         "stop_name": "UCSD Central Campus Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.23177898,
-          32.87844073
-        ]
+        "coordinates": [-117.23177898, 32.87844073]
       }
     },
     {
@@ -1985,16 +1386,11 @@
       "properties": {
         "stop_id": "75064",
         "stop_name": "UCSD Health East Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.05670693,
-          32.77730904
-        ]
+        "coordinates": [-117.05670693, 32.77730904]
       }
     },
     {
@@ -2002,16 +1398,11 @@
       "properties": {
         "stop_id": "75065",
         "stop_name": "UCSD Health East Station",
-        "routes": [
-          "530"
-        ]
+        "routes": ["530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.05691814,
-          32.77742199
-        ]
+        "coordinates": [-117.05691814, 32.77742199]
       }
     },
     {
@@ -2019,16 +1410,11 @@
       "properties": {
         "stop_id": "77783",
         "stop_name": "UCSD Health La Jolla Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.22359758,
-          32.88190183
-        ]
+        "coordinates": [-117.22359758, 32.88190183]
       }
     },
     {
@@ -2036,16 +1422,11 @@
       "properties": {
         "stop_id": "77784",
         "stop_name": "UCSD Health La Jolla Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.22349207,
-          32.88181636
-        ]
+        "coordinates": [-117.22349207, 32.88181636]
       }
     },
     {
@@ -2053,16 +1434,11 @@
       "properties": {
         "stop_id": "77787",
         "stop_name": "UTC Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.21401071,
-          32.86920431
-        ]
+        "coordinates": [-117.21401071, 32.86920431]
       }
     },
     {
@@ -2070,16 +1446,11 @@
       "properties": {
         "stop_id": "77779",
         "stop_name": "VA Medical Center Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.22992964,
-          32.87415396
-        ]
+        "coordinates": [-117.22992964, 32.87415396]
       }
     },
     {
@@ -2087,16 +1458,11 @@
       "properties": {
         "stop_id": "77780",
         "stop_name": "VA Medical Center Station",
-        "routes": [
-          "510"
-        ]
+        "routes": ["510"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.22981838,
-          32.87425324
-        ]
+        "coordinates": [-117.22981838, 32.87425324]
       }
     },
     {
@@ -2104,17 +1470,11 @@
       "properties": {
         "stop_id": "75076",
         "stop_name": "Washington Street Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.18446791,
-          32.74172394
-        ]
+        "coordinates": [-117.18446791, 32.74172394]
       }
     },
     {
@@ -2122,17 +1482,11 @@
       "properties": {
         "stop_id": "75077",
         "stop_name": "Washington Street Station",
-        "routes": [
-          "510",
-          "530"
-        ]
+        "routes": ["510", "530"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.18429004,
-          32.74154197
-        ]
+        "coordinates": [-117.18429004, 32.74154197]
       }
     }
   ]

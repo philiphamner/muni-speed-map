@@ -62,7 +62,7 @@ function normalizeFeature(f, sourceName) {
         s
           .replace(/^TRAX\s+/i, "")
           .replace(/\s*Line$/i, "")
-          .trim()
+          .trim(),
       );
   }
 
@@ -113,7 +113,7 @@ function featureIsSLine(f) {
         try {
           console.log(
             "Attempting server-side filtered query:",
-            src.urlFiltered
+            src.urlFiltered,
           );
           const res = await fetch(src.urlFiltered, {
             headers: { Accept: "application/json" },
@@ -122,14 +122,14 @@ function featureIsSLine(f) {
             geo = await res.json();
           } else {
             throw new Error(
-              `Filtered query failed: ${res.status} ${res.statusText}`
+              `Filtered query failed: ${res.status} ${res.statusText}`,
             );
           }
         } catch (err) {
           // Fallback to fetching all and filter client-side
           console.warn(
             "Filtered query failed, falling back to full dataset:",
-            err.message
+            err.message,
           );
           console.log("Fetching full stops dataset from", src.urlAll);
           const resAll = await fetch(src.urlAll, {
@@ -137,7 +137,7 @@ function featureIsSLine(f) {
           });
           if (!resAll.ok)
             throw new Error(
-              `Full fetch failed: ${resAll.status} ${resAll.statusText}`
+              `Full fetch failed: ${resAll.status} ${resAll.statusText}`,
             );
           const allGeo = await resAll.json();
           if (!allGeo || !Array.isArray(allGeo.features))

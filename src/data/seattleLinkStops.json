@@ -6,16 +6,11 @@
       "properties": {
         "stop_id": "1108",
         "stop_name": "Westlake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.337532,
-          47.61145
-        ]
+        "coordinates": [-122.337532, 47.61145]
       }
     },
     {
@@ -23,16 +18,11 @@
       "properties": {
         "stop_id": "1121",
         "stop_name": "Westlake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.335785,
-          47.611759
-        ]
+        "coordinates": [-122.335785, 47.611759]
       }
     },
     {
@@ -40,16 +30,11 @@
       "properties": {
         "stop_id": "455",
         "stop_name": "Symphony",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.335754,
-          47.607246
-        ]
+        "coordinates": [-122.335754, 47.607246]
       }
     },
     {
@@ -57,16 +42,11 @@
       "properties": {
         "stop_id": "501",
         "stop_name": "Pioneer Square",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.331055,
-          47.602139
-        ]
+        "coordinates": [-122.331055, 47.602139]
       }
     },
     {
@@ -74,16 +54,11 @@
       "properties": {
         "stop_id": "532",
         "stop_name": "Pioneer Square",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.331581,
-          47.603199
-        ]
+        "coordinates": [-122.331581, 47.603199]
       }
     },
     {
@@ -91,16 +66,11 @@
       "properties": {
         "stop_id": "55578",
         "stop_name": "Rainier Beach",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.279083,
-          47.522953
-        ]
+        "coordinates": [-122.279083, 47.522953]
       }
     },
     {
@@ -108,16 +78,11 @@
       "properties": {
         "stop_id": "55656",
         "stop_name": "Othello",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.281693,
-          47.538502
-        ]
+        "coordinates": [-122.281693, 47.538502]
       }
     },
     {
@@ -125,16 +90,11 @@
       "properties": {
         "stop_id": "55778",
         "stop_name": "Columbia City",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.292892,
-          47.56028
-        ]
+        "coordinates": [-122.292892, 47.56028]
       }
     },
     {
@@ -142,16 +102,11 @@
       "properties": {
         "stop_id": "55860",
         "stop_name": "Mount Baker",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297867,
-          47.576992
-        ]
+        "coordinates": [-122.297867, 47.576992]
       }
     },
     {
@@ -159,16 +114,11 @@
       "properties": {
         "stop_id": "55949",
         "stop_name": "Mount Baker",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297737,
-          47.576439
-        ]
+        "coordinates": [-122.297737, 47.576439]
       }
     },
     {
@@ -176,16 +126,11 @@
       "properties": {
         "stop_id": "56039",
         "stop_name": "Columbia City",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.292389,
-          47.559025
-        ]
+        "coordinates": [-122.292389, 47.559025]
       }
     },
     {
@@ -193,16 +138,11 @@
       "properties": {
         "stop_id": "56159",
         "stop_name": "Othello",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.281471,
-          47.537529
-        ]
+        "coordinates": [-122.281471, 47.537529]
       }
     },
     {
@@ -210,16 +150,11 @@
       "properties": {
         "stop_id": "56173",
         "stop_name": "Rainier Beach",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.279587,
-          47.522266
-        ]
+        "coordinates": [-122.279587, 47.522266]
       }
     },
     {
@@ -227,16 +162,11 @@
       "properties": {
         "stop_id": "565",
         "stop_name": "Symphony",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.336166,
-          47.608246
-        ]
+        "coordinates": [-122.336166, 47.608246]
       }
     },
     {
@@ -244,16 +174,11 @@
       "properties": {
         "stop_id": "621",
         "stop_name": "Int'l Dist/Chinatown",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.32782,
-          47.598438
-        ]
+        "coordinates": [-122.32782, 47.598438]
       }
     },
     {
@@ -261,16 +186,11 @@
       "properties": {
         "stop_id": "623",
         "stop_name": "Int'l Dist/Chinatown",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.328217,
-          47.59766
-        ]
+        "coordinates": [-122.328217, 47.59766]
       }
     },
     {
@@ -278,16 +198,11 @@
       "properties": {
         "stop_id": "990001",
         "stop_name": "U District",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.314194,
-          47.659875
-        ]
+        "coordinates": [-122.314194, 47.659875]
       }
     },
     {
@@ -295,16 +210,11 @@
       "properties": {
         "stop_id": "990002",
         "stop_name": "U District",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.314067,
-          47.660749
-        ]
+        "coordinates": [-122.314067, 47.660749]
       }
     },
     {
@@ -312,16 +222,11 @@
       "properties": {
         "stop_id": "990003",
         "stop_name": "Roosevelt",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.316041,
-          47.676107
-        ]
+        "coordinates": [-122.316041, 47.676107]
       }
     },
     {
@@ -329,16 +234,11 @@
       "properties": {
         "stop_id": "990004",
         "stop_name": "Roosevelt",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.315928,
-          47.677081
-        ]
+        "coordinates": [-122.315928, 47.677081]
       }
     },
     {
@@ -346,16 +246,11 @@
       "properties": {
         "stop_id": "990005",
         "stop_name": "Northgate",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.32832,
-          47.702662
-        ]
+        "coordinates": [-122.32832, 47.702662]
       }
     },
     {
@@ -363,16 +258,11 @@
       "properties": {
         "stop_id": "990006",
         "stop_name": "Northgate",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.328244,
-          47.703414
-        ]
+        "coordinates": [-122.328244, 47.703414]
       }
     },
     {
@@ -380,16 +270,11 @@
       "properties": {
         "stop_id": "99101",
         "stop_name": "Stadium",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.327354,
-          47.591824
-        ]
+        "coordinates": [-122.327354, 47.591824]
       }
     },
     {
@@ -397,16 +282,11 @@
       "properties": {
         "stop_id": "99111",
         "stop_name": "SODO",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.327522,
-          47.579952
-        ]
+        "coordinates": [-122.327522, 47.579952]
       }
     },
     {
@@ -414,16 +294,11 @@
       "properties": {
         "stop_id": "99121",
         "stop_name": "Beacon Hill",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.311279,
-          47.579124
-        ]
+        "coordinates": [-122.311279, 47.579124]
       }
     },
     {
@@ -431,16 +306,11 @@
       "properties": {
         "stop_id": "99240",
         "stop_name": "Beacon Hill",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.311401,
-          47.579678
-        ]
+        "coordinates": [-122.311401, 47.579678]
       }
     },
     {
@@ -448,16 +318,11 @@
       "properties": {
         "stop_id": "99256",
         "stop_name": "SODO",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.327263,
-          47.580589
-        ]
+        "coordinates": [-122.327263, 47.580589]
       }
     },
     {
@@ -465,16 +330,11 @@
       "properties": {
         "stop_id": "99260",
         "stop_name": "Stadium",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.326988,
-          47.592285
-        ]
+        "coordinates": [-122.326988, 47.592285]
       }
     },
     {
@@ -482,16 +342,11 @@
       "properties": {
         "stop_id": "99603",
         "stop_name": "Capitol Hill",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.320038,
-          47.619621
-        ]
+        "coordinates": [-122.320038, 47.619621]
       }
     },
     {
@@ -499,16 +354,11 @@
       "properties": {
         "stop_id": "99604",
         "stop_name": "Univ of Washington",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.303795,
-          47.649349
-        ]
+        "coordinates": [-122.303795, 47.649349]
       }
     },
     {
@@ -516,16 +366,11 @@
       "properties": {
         "stop_id": "99605",
         "stop_name": "Univ of Washington",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.303736,
-          47.650312
-        ]
+        "coordinates": [-122.303736, 47.650312]
       }
     },
     {
@@ -533,16 +378,11 @@
       "properties": {
         "stop_id": "99610",
         "stop_name": "Capitol Hill",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.320389,
-          47.61956
-        ]
+        "coordinates": [-122.320389, 47.61956]
       }
     },
     {
@@ -550,16 +390,11 @@
       "properties": {
         "stop_id": "99900",
         "stop_name": "Tukwila Int'l Blvd",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.288399,
-          47.464272
-        ]
+        "coordinates": [-122.288399, 47.464272]
       }
     },
     {
@@ -567,16 +402,11 @@
       "properties": {
         "stop_id": "99903",
         "stop_name": "SeaTac/Airport",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.296692,
-          47.445053
-        ]
+        "coordinates": [-122.296692, 47.445053]
       }
     },
     {
@@ -584,16 +414,11 @@
       "properties": {
         "stop_id": "99904",
         "stop_name": "SeaTac/Airport",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297028,
-          47.444969
-        ]
+        "coordinates": [-122.297028, 47.444969]
       }
     },
     {
@@ -601,16 +426,11 @@
       "properties": {
         "stop_id": "99905",
         "stop_name": "Tukwila Int'l Blvd",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.288002,
-          47.463924
-        ]
+        "coordinates": [-122.288002, 47.463924]
       }
     },
     {
@@ -618,16 +438,11 @@
       "properties": {
         "stop_id": "99913",
         "stop_name": "Angle Lake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297615,
-          47.423122
-        ]
+        "coordinates": [-122.297615, 47.423122]
       }
     },
     {
@@ -635,16 +450,11 @@
       "properties": {
         "stop_id": "99914",
         "stop_name": "Angle Lake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297958,
-          47.422154
-        ]
+        "coordinates": [-122.297958, 47.422154]
       }
     },
     {
@@ -652,16 +462,11 @@
       "properties": {
         "stop_id": "E09-T2",
         "stop_name": "South Bellevue",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.190604,
-          47.586932
-        ]
+        "coordinates": [-122.190604, 47.586932]
       }
     },
     {
@@ -669,16 +474,11 @@
       "properties": {
         "stop_id": "E11-T1",
         "stop_name": "East Main",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.191202,
-          47.607707
-        ]
+        "coordinates": [-122.191202, 47.607707]
       }
     },
     {
@@ -686,16 +486,11 @@
       "properties": {
         "stop_id": "E11-T2",
         "stop_name": "East Main",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.191099,
-          47.608403
-        ]
+        "coordinates": [-122.191099, 47.608403]
       }
     },
     {
@@ -703,16 +498,11 @@
       "properties": {
         "stop_id": "E15-T1",
         "stop_name": "Bellevue Downtown",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.192531,
-          47.615285
-        ]
+        "coordinates": [-122.192531, 47.615285]
       }
     },
     {
@@ -720,16 +510,11 @@
       "properties": {
         "stop_id": "E15-T2",
         "stop_name": "Bellevue Downtown",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.191303,
-          47.615183
-        ]
+        "coordinates": [-122.191303, 47.615183]
       }
     },
     {
@@ -737,16 +522,11 @@
       "properties": {
         "stop_id": "E19-T1",
         "stop_name": "Wilburton",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.183806,
-          47.617909
-        ]
+        "coordinates": [-122.183806, 47.617909]
       }
     },
     {
@@ -754,16 +534,11 @@
       "properties": {
         "stop_id": "E19-T2",
         "stop_name": "Wilburton",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.183687,
-          47.618229
-        ]
+        "coordinates": [-122.183687, 47.618229]
       }
     },
     {
@@ -771,16 +546,11 @@
       "properties": {
         "stop_id": "E21-T1",
         "stop_name": "Spring District",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.178901,
-          47.623772
-        ]
+        "coordinates": [-122.178901, 47.623772]
       }
     },
     {
@@ -788,16 +558,11 @@
       "properties": {
         "stop_id": "E21-T2",
         "stop_name": "Spring District",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.178239,
-          47.623776
-        ]
+        "coordinates": [-122.178239, 47.623776]
       }
     },
     {
@@ -805,16 +570,11 @@
       "properties": {
         "stop_id": "E23-T1",
         "stop_name": "BelRed",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.166364,
-          47.624499
-        ]
+        "coordinates": [-122.166364, 47.624499]
       }
     },
     {
@@ -822,16 +582,11 @@
       "properties": {
         "stop_id": "E23-T2",
         "stop_name": "BelRed",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.165224,
-          47.6244
-        ]
+        "coordinates": [-122.165224, 47.6244]
       }
     },
     {
@@ -839,16 +594,11 @@
       "properties": {
         "stop_id": "E25-T1",
         "stop_name": "Overlake Village",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.139236,
-          47.636151
-        ]
+        "coordinates": [-122.139236, 47.636151]
       }
     },
     {
@@ -856,16 +606,11 @@
       "properties": {
         "stop_id": "E25-T2",
         "stop_name": "Overlake Village",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.138361,
-          47.636622
-        ]
+        "coordinates": [-122.138361, 47.636622]
       }
     },
     {
@@ -873,16 +618,11 @@
       "properties": {
         "stop_id": "E27-T1",
         "stop_name": "Redmond Technology",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.133556,
-          47.644424
-        ]
+        "coordinates": [-122.133556, 47.644424]
       }
     },
     {
@@ -890,16 +630,11 @@
       "properties": {
         "stop_id": "E27-T2",
         "stop_name": "Redmond Technology",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.133673,
-          47.645199
-        ]
+        "coordinates": [-122.133673, 47.645199]
       }
     },
     {
@@ -907,16 +642,11 @@
       "properties": {
         "stop_id": "E29-T1",
         "stop_name": "Marymoor Village",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.110398,
-          47.667166
-        ]
+        "coordinates": [-122.110398, 47.667166]
       }
     },
     {
@@ -924,16 +654,11 @@
       "properties": {
         "stop_id": "E29-T2",
         "stop_name": "Marymoor Village",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.109118,
-          47.667381
-        ]
+        "coordinates": [-122.109118, 47.667381]
       }
     },
     {
@@ -941,16 +666,11 @@
       "properties": {
         "stop_id": "E31-T1",
         "stop_name": "Downtown Redmond",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.117864,
-          47.671467
-        ]
+        "coordinates": [-122.117864, 47.671467]
       }
     },
     {
@@ -958,16 +678,11 @@
       "properties": {
         "stop_id": "E31-T2",
         "stop_name": "Downtown Redmond",
-        "routes": [
-          "2LINE"
-        ]
+        "routes": ["2LINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.118952,
-          47.671788
-        ]
+        "coordinates": [-122.118952, 47.671788]
       }
     },
     {
@@ -975,16 +690,11 @@
       "properties": {
         "stop_id": "N15-T1",
         "stop_name": "Shoreline South/148th",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.325446,
-          47.736499
-        ]
+        "coordinates": [-122.325446, 47.736499]
       }
     },
     {
@@ -992,16 +702,11 @@
       "properties": {
         "stop_id": "N15-T2",
         "stop_name": "Shoreline South/148th",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.32504,
-          47.735753
-        ]
+        "coordinates": [-122.32504, 47.735753]
       }
     },
     {
@@ -1009,16 +714,11 @@
       "properties": {
         "stop_id": "N17-T1",
         "stop_name": "Shoreline North/185th",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.322731,
-          47.764477
-        ]
+        "coordinates": [-122.322731, 47.764477]
       }
     },
     {
@@ -1026,16 +726,11 @@
       "properties": {
         "stop_id": "N17-T2",
         "stop_name": "Shoreline North/185th",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.323048,
-          47.763699
-        ]
+        "coordinates": [-122.323048, 47.763699]
       }
     },
     {
@@ -1043,16 +738,11 @@
       "properties": {
         "stop_id": "N19-T1",
         "stop_name": "Mountlake Terrace",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.314761,
-          47.785448
-        ]
+        "coordinates": [-122.314761, 47.785448]
       }
     },
     {
@@ -1060,16 +750,11 @@
       "properties": {
         "stop_id": "N19-T2",
         "stop_name": "Mountlake Terrace",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.314801,
-          47.784548
-        ]
+        "coordinates": [-122.314801, 47.784548]
       }
     },
     {
@@ -1077,16 +762,11 @@
       "properties": {
         "stop_id": "N23-T1",
         "stop_name": "Lynnwood City Center",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.294275,
-          47.815876
-        ]
+        "coordinates": [-122.294275, 47.815876]
       }
     },
     {
@@ -1094,16 +774,11 @@
       "properties": {
         "stop_id": "N23-T2",
         "stop_name": "Lynnwood City Center",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.295185,
-          47.815403
-        ]
+        "coordinates": [-122.295185, 47.815403]
       }
     },
     {
@@ -1111,16 +786,11 @@
       "properties": {
         "stop_id": "S03-T1",
         "stop_name": "Kent Des Moines",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.294272,
-          47.389904
-        ]
+        "coordinates": [-122.294272, 47.389904]
       }
     },
     {
@@ -1128,16 +798,11 @@
       "properties": {
         "stop_id": "S03-T2",
         "stop_name": "Kent Des Moines",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.294524,
-          47.389185
-        ]
+        "coordinates": [-122.294524, 47.389185]
       }
     },
     {
@@ -1145,16 +810,11 @@
       "properties": {
         "stop_id": "S05-T1",
         "stop_name": "Star Lake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297205,
-          47.359625
-        ]
+        "coordinates": [-122.297205, 47.359625]
       }
     },
     {
@@ -1162,16 +822,11 @@
       "properties": {
         "stop_id": "S05-T2",
         "stop_name": "Star Lake",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.297634,
-          47.359011
-        ]
+        "coordinates": [-122.297634, 47.359011]
       }
     },
     {
@@ -1179,16 +834,11 @@
       "properties": {
         "stop_id": "S07-T1",
         "stop_name": "Federal Way Downtown",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.303587,
-          47.316208
-        ]
+        "coordinates": [-122.303587, 47.316208]
       }
     },
     {
@@ -1196,16 +846,11 @@
       "properties": {
         "stop_id": "S07-T2",
         "stop_name": "Federal Way Downtown",
-        "routes": [
-          "100479"
-        ]
+        "routes": ["100479"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.303689,
-          47.316241
-        ]
+        "coordinates": [-122.303689, 47.316241]
       }
     },
     {
@@ -1213,16 +858,11 @@
       "properties": {
         "stop_id": "T01",
         "stop_name": "Tacoma Dome",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.428118,
-          47.239868
-        ]
+        "coordinates": [-122.428118, 47.239868]
       }
     },
     {
@@ -1230,16 +870,11 @@
       "properties": {
         "stop_id": "T03",
         "stop_name": "S 25th",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.434202,
-          47.239081
-        ]
+        "coordinates": [-122.434202, 47.239081]
       }
     },
     {
@@ -1247,16 +882,11 @@
       "properties": {
         "stop_id": "T05-T1",
         "stop_name": "Union Station",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.436616,
-          47.244915
-        ]
+        "coordinates": [-122.436616, 47.244915]
       }
     },
     {
@@ -1264,16 +894,11 @@
       "properties": {
         "stop_id": "T05-T2",
         "stop_name": "Union Station",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.436628,
-          47.24477
-        ]
+        "coordinates": [-122.436628, 47.24477]
       }
     },
     {
@@ -1281,16 +906,11 @@
       "properties": {
         "stop_id": "T07-T1",
         "stop_name": "Convention Center",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.4385,
-          47.249514
-        ]
+        "coordinates": [-122.4385, 47.249514]
       }
     },
     {
@@ -1298,16 +918,11 @@
       "properties": {
         "stop_id": "T07-T2",
         "stop_name": "Convention Center",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.438656,
-          47.249493
-        ]
+        "coordinates": [-122.438656, 47.249493]
       }
     },
     {
@@ -1315,16 +930,11 @@
       "properties": {
         "stop_id": "T09-T1",
         "stop_name": "Theater District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.439266,
-          47.253016
-        ]
+        "coordinates": [-122.439266, 47.253016]
       }
     },
     {
@@ -1332,16 +942,11 @@
       "properties": {
         "stop_id": "T09-T2",
         "stop_name": "Theater District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.439308,
-          47.252651
-        ]
+        "coordinates": [-122.439308, 47.252651]
       }
     },
     {
@@ -1349,16 +954,11 @@
       "properties": {
         "stop_id": "T13-T1",
         "stop_name": "Old City Hall",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.440413,
-          47.2578
-        ]
+        "coordinates": [-122.440413, 47.2578]
       }
     },
     {
@@ -1366,16 +966,11 @@
       "properties": {
         "stop_id": "T13-T2",
         "stop_name": "Old City Hall",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.440423,
-          47.257689
-        ]
+        "coordinates": [-122.440423, 47.257689]
       }
     },
     {
@@ -1383,16 +978,11 @@
       "properties": {
         "stop_id": "T15-T1",
         "stop_name": "S 4th",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.442799,
-          47.261428
-        ]
+        "coordinates": [-122.442799, 47.261428]
       }
     },
     {
@@ -1400,16 +990,11 @@
       "properties": {
         "stop_id": "T15-T2",
         "stop_name": "S 4th",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.442654,
-          47.261224
-        ]
+        "coordinates": [-122.442654, 47.261224]
       }
     },
     {
@@ -1417,16 +1002,11 @@
       "properties": {
         "stop_id": "T17-T1",
         "stop_name": "Stadium District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.449052,
-          47.263816
-        ]
+        "coordinates": [-122.449052, 47.263816]
       }
     },
     {
@@ -1434,16 +1014,11 @@
       "properties": {
         "stop_id": "T17-T2",
         "stop_name": "Stadium District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.448921,
-          47.263956
-        ]
+        "coordinates": [-122.448921, 47.263956]
       }
     },
     {
@@ -1451,16 +1026,11 @@
       "properties": {
         "stop_id": "T19-T1",
         "stop_name": "Tacoma General",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.453565,
-          47.260036
-        ]
+        "coordinates": [-122.453565, 47.260036]
       }
     },
     {
@@ -1468,16 +1038,11 @@
       "properties": {
         "stop_id": "T19-T2",
         "stop_name": "Tacoma General",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.453558,
-          47.260145
-        ]
+        "coordinates": [-122.453558, 47.260145]
       }
     },
     {
@@ -1485,16 +1050,11 @@
       "properties": {
         "stop_id": "T21-T1",
         "stop_name": "6th Ave",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.452839,
-          47.256867
-        ]
+        "coordinates": [-122.452839, 47.256867]
       }
     },
     {
@@ -1502,16 +1062,11 @@
       "properties": {
         "stop_id": "T21-T2",
         "stop_name": "6th Ave",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.452842,
-          47.256985
-        ]
+        "coordinates": [-122.452842, 47.256985]
       }
     },
     {
@@ -1519,16 +1074,11 @@
       "properties": {
         "stop_id": "T23-T1",
         "stop_name": "Hilltop District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.451667,
-          47.251708
-        ]
+        "coordinates": [-122.451667, 47.251708]
       }
     },
     {
@@ -1536,16 +1086,11 @@
       "properties": {
         "stop_id": "T23-T2",
         "stop_name": "Hilltop District",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.451671,
-          47.251838
-        ]
+        "coordinates": [-122.451671, 47.251838]
       }
     },
     {
@@ -1553,16 +1098,11 @@
       "properties": {
         "stop_id": "T25-T1",
         "stop_name": "St Joseph",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.450179,
-          47.245186
-        ]
+        "coordinates": [-122.450179, 47.245186]
       }
     },
     {
@@ -1570,16 +1110,11 @@
       "properties": {
         "stop_id": "T25-T2",
         "stop_name": "St Joseph",
-        "routes": [
-          "TLINE"
-        ]
+        "routes": ["TLINE"]
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -122.450202,
-          47.245392
-        ]
+        "coordinates": [-122.450202, 47.245392]
       }
     }
   ]
