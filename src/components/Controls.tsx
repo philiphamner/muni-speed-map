@@ -92,6 +92,8 @@ function getLineColor(line: string, city: City): string {
   } else if (city === "Denver") {
     return DENVER_RTD_LINE_INFO[line as DenverRtdLine]?.color || "#666";
   } else if (city === "Salt Lake City") {
+    // Support FrontRunner color (not part of SLC_TRAX_LINES)
+    if (line === "FrontRunner") return "#003865";
     return SLC_TRAX_LINE_INFO[line as SlcTraxLine]?.color || "#666";
   }
   return "#666";
@@ -699,7 +701,7 @@ export function Controls({
               className="speed-legend-dot"
               style={{ backgroundColor: "#9b2d6b" }}
             ></span>
-            <span>≤ 5 mph</span>
+            <span>&lt; 5 mph</span>
           </div>
           <div className="speed-legend-item">
             <span

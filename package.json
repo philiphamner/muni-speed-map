@@ -19,6 +19,7 @@
     "collect:philly": "node scripts/collectDataPhilly.js",
     "collect:sacramento": "node scripts/collectDataSacramento.js",
     "collect:dallas": "node scripts/collectDataDallas.js",
+    "collect:slc": "node scripts/collectDataSaltLakeCity.js",
     "collect:all": "bash scripts/collectAll.sh",
     "parse-gtfs": "node scripts/parseGtfs.js",
     "parse-gtfs:la": "node scripts/parseGtfsLA.js",

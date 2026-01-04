@@ -59,6 +59,7 @@ import denverCrossings from "../data/denverGradeCrossings.json";
 import denverSwitches from "../data/denverSwitches.json";
 import slcTraxRoutes from "../data/slcTraxRoutes.json";
 import slcTraxStops from "../data/slcTraxStops.json";
+import slcFrontRunnerStops from "../data/slcFrontRunnerStops.json";
 import slcCrossings from "../data/slcGradeCrossings.json";
 import slcSwitches from "../data/slcSwitches.json";
 // Speed limit data from OpenRailwayMap
@@ -73,6 +74,7 @@ import denverMaxspeed from "../data/denverMaxspeed.json";
 import minneapolisMaxspeed from "../data/minneapolisMaxspeed.json";
 import dallasMaxspeed from "../data/dallasMaxspeed.json";
 import slcMaxspeed from "../data/slcMaxspeed.json";
+import slcFrontRunnerMaxspeed from "../data/slcFrontRunnerMaxspeed.json";
 import type { SpeedFilter, ViewMode, LineStats } from "../App";
 
 // Maximum distance in meters from route line to be considered "on route"
@@ -217,10 +219,24 @@ const CITY_CONFIG = {
     center: [-111.89, 40.76] as [number, number],
     zoom: 11,
     routes: slcTraxRoutes,
-    stops: slcTraxStops,
+    // Merge TRAX stops with FrontRunner stations so both appear when Show stations is enabled
+    stops: {
+      type: "FeatureCollection",
+      features: [
+        ...(slcTraxStops?.features || []),
+        ...(slcFrontRunnerStops?.features || []),
+      ],
+    },
     crossings: slcCrossings,
     switches: slcSwitches,
-    maxspeed: slcMaxspeed as any,
+    // Combine existing SLC maxspeed data with any FrontRunner maxspeed features
+    maxspeed: {
+      type: "FeatureCollection",
+      features: [
+        ...(slcMaxspeed?.features || []),
+        ...(slcFrontRunnerMaxspeed?.features || []),
+      ],
+    } as any,
   },
 };
 
@@ -931,7 +947,7 @@ export function SpeedMap({
       ).toISOString();
 
       setLoadingProgress("Loading positions...");
-      console.time("Fetching data");
+      const fetchStart = Date.now();
 
       // Fetch first page to check data availability
       let query;
@@ -1006,10 +1022,10 @@ export function SpeedMap({
         }
       }
 
-      console.timeEnd("Fetching data");
+      const fetchDuration = Date.now() - fetchStart;
       setLoadingProgress("");
       console.log(
-        `Fetched ${allData.length} ${city} positions from last 7 days`
+        `Fetched ${allData.length} ${city} positions from last 7 days (${fetchDuration} ms)`
       );
 
       // Filter to only valid lines for this city (removes data for removed lines like Mattapan)
@@ -1244,8 +1260,8 @@ export function SpeedMap({
       "case",
       ["==", ["get", "speed"], null],
       "#666666", // grey - no data
-      ["<=", ["get", "speed"], 5],
-      "#9b2d6b", // magenta - crawling (≤5 mph)
+      ["<", ["get", "speed"], 5],
+      "#9b2d6b", // magenta - crawling (<5 mph)
       ["<", ["get", "speed"], 10],
       "#ff3333", // red - very slow (< 10 mph)
       ["<", ["get", "speed"], 15],
@@ -1267,8 +1283,8 @@ export function SpeedMap({
       "case",
       ["==", ["get", "maxspeed_mph"], null],
       "#666666", // grey - no data
-      ["<=", ["get", "maxspeed_mph"], 5],
-      "#9b2d6b", // magenta - crawling (≤5 mph)
+      ["<", ["get", "maxspeed_mph"], 5],
+      "#9b2d6b", // magenta - crawling (<5 mph)
       ["<", ["get", "maxspeed_mph"], 10],
       "#ff3333", // red - very slow (< 10 mph)
       ["<", ["get", "maxspeed_mph"], 15],
@@ -1579,9 +1595,26 @@ export function SpeedMap({
             : cityConfig.stops.features.filter((f: any) => {
                 // If stop doesn't have routes property, show it (can't filter)
                 if (!f.properties.routes) return true;
-                return f.properties.routes.some((r: string) =>
-                  selectedLines.includes(r)
-                );
+
+                // Normalize routes property to an array for filtering.
+                const raw = f.properties.routes;
+                let routesArr: string[] = [];
+                if (Array.isArray(raw)) {
+                  routesArr = raw;
+                } else if (typeof raw === "string") {
+                  try {
+                    routesArr = JSON.parse(raw || "[]");
+                  } catch {
+                    // Fallback: comma-separated string
+                    routesArr = raw
+                      .toString()
+                      .split(",")
+                      .map((s) => s.trim())
+                      .filter(Boolean);
+                  }
+                }
+
+                return routesArr.some((r: string) => selectedLines.includes(r));
               }),
       };
 
@@ -1658,7 +1691,23 @@ export function SpeedMap({
         map.current.on("mousemove", "stops", (e) => {
           if (!e.features?.length || !map.current) return;
           const props = e.features[0].properties;
-          const routes = JSON.parse(props.routes || "[]");
+
+          // Parse routes which may be an array or a JSON/string
+          const rawRoutes = props.routes;
+          let routes: string[] = [];
+          if (Array.isArray(rawRoutes)) {
+            routes = rawRoutes;
+          } else if (typeof rawRoutes === "string") {
+            try {
+              routes = JSON.parse(rawRoutes || "[]");
+            } catch {
+              routes = rawRoutes
+                .toString()
+                .split(",")
+                .map((s: string) => s.trim())
+                .filter(Boolean);
+            }
+          }
 
           popup.current
             ?.setLngLat(e.lngLat)
@@ -2531,6 +2580,8 @@ export function SpeedMap({
               "case",
               ["==", ["get", "avgSpeed"], null],
               "#666666", // grey - no data
+              ["<", ["get", "avgSpeed"], 5],
+              "#9b2d6b", // magenta - crawling (<5 mph)
               ["<", ["get", "avgSpeed"], 10],
               "#ff3333", // red - very slow (< 10 mph)
               ["<", ["get", "avgSpeed"], 15],
@@ -2583,6 +2634,7 @@ export function SpeedMap({
     vehicles,
     selectedLines,
     allRouteSegments,
+    city,
   ]);
 
   return (
