@@ -254,8 +254,12 @@
   transform: scale(1.05);
 }
 
-.route-lines-toggle {
+.route-lines-section {
   margin-top: 4px;
+}
+
+.route-lines-toggle {
+  margin-bottom: 6px;
 }
 
 .route-lines-toggle label {
@@ -272,6 +276,40 @@
   height: 16px;
   accent-color: #00d9ff;
   cursor: pointer;
+}
+
+/* Route Line Mode Toggle - segmented control */
+.route-line-mode-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 2px;
+}
+
+.route-mode-btn {
+  flex: 1;
+  padding: 6px 10px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.route-mode-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.route-mode-btn.active {
+  background: rgba(0, 217, 255, 0.2);
+  color: #00d9ff;
 }
 
 /* View Mode Toggle */
@@ -499,51 +537,66 @@
 .line-stats {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .line-stat-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 34px 20px 34px 34px 1fr;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .line-stat-badge {
-  min-width: 24px;
-  padding: 3px 6px;
+  padding: 4px 8px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #000;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.line-stat-speeds {
-  display: flex;
-  align-items: baseline;
-  gap: 3px;
-  font-variant-numeric: tabular-nums;
+/* Badge width variations based on city label lengths */
+.line-stat-badge.badge-width-letter {
+  width: 28px;
+}
+
+.line-stat-badge.badge-width-3digit {
+  width: 42px;
+}
+
+.line-stat-badge.badge-width-short-word {
+  width: 48px;
+}
+
+.line-stat-badge.badge-width-word {
+  width: 54px;
+  font-size: 0.68rem;
+  padding: 3px 4px;
 }
 
 .line-stat-speed {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
-  width: 32px;
   text-align: right;
 }
 
 .line-stat-label {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: rgba(255, 255, 255, 0.4);
-  width: 36px;
+  text-align: left;
 }
 
 .line-stat-count {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.35);
-  margin-left: auto;
+  text-align: right;
 }
 
 /* Data Note */

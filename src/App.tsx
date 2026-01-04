@@ -13,6 +13,8 @@ export interface SpeedFilter {
 
 export type ViewMode = "raw" | "segments" | "live";
 
+export type RouteLineMode = "byLine" | "bySpeedLimit";
+
 export interface LineStats {
   line: string;
   avgSpeed: number;
@@ -43,6 +45,7 @@ function App() {
     showNoData: true,
   });
   const [showRouteLines, setShowRouteLines] = useState(true);
+  const [routeLineMode, setRouteLineMode] = useState<RouteLineMode>("byLine");
   const [showStops, setShowStops] = useState(false);
   const [showCrossings, setShowCrossings] = useState(false);
   const [showSwitches, setShowSwitches] = useState(false);
@@ -91,6 +94,8 @@ function App() {
         setSpeedFilter={setSpeedFilter}
         showRouteLines={showRouteLines}
         setShowRouteLines={setShowRouteLines}
+        routeLineMode={routeLineMode}
+        setRouteLineMode={setRouteLineMode}
         showStops={showStops}
         setShowStops={setShowStops}
         showCrossings={showCrossings}
@@ -109,6 +114,7 @@ function App() {
         selectedLines={selectedLines}
         speedFilter={speedFilter}
         showRouteLines={showRouteLines}
+        routeLineMode={routeLineMode}
         showStops={showStops}
         showCrossings={showCrossings}
         showSwitches={showSwitches}

@@ -40,6 +40,14 @@ import sacramentoLightRailRoutes from "../data/sacramentoLightRailRoutes.json";
 import sacramentoLightRailStops from "../data/sacramentoLightRailStops.json";
 import sacramentoCrossings from "../data/sacramentoGradeCrossings.json";
 import sacramentoSwitches from "../data/sacramentoSwitches.json";
+// Speed limit data from OpenRailwayMap
+import sfMaxspeed from "../data/sfMaxspeed.json";
+import laMaxspeed from "../data/laMaxspeed.json";
+import seattleMaxspeed from "../data/seattleMaxspeed.json";
+import bostonMaxspeed from "../data/bostonMaxspeed.json";
+import portlandMaxspeed from "../data/portlandMaxspeed.json";
+import sanDiegoMaxspeed from "../data/sanDiegoMaxspeed.json";
+import phillyMaxspeed from "../data/phillyMaxspeed.json";
 import type { SpeedFilter, ViewMode, LineStats } from "../App";
 
 // Maximum distance in meters from route line to be considered "on route"
@@ -70,6 +78,7 @@ const CITY_CONFIG = {
     stops: muniStops,
     crossings: sfCrossings,
     switches: sfSwitches,
+    maxspeed: sfMaxspeed as any,
   },
   LA: {
     center: [-118.25, 34.05] as [number, number],
@@ -78,6 +87,7 @@ const CITY_CONFIG = {
     stops: laMetroStops,
     crossings: laCrossings,
     switches: laSwitches,
+    maxspeed: laMaxspeed as any,
   },
   Seattle: {
     center: [-122.33, 47.6] as [number, number],
@@ -86,6 +96,7 @@ const CITY_CONFIG = {
     stops: seattleLinkStops,
     crossings: seattleCrossings,
     switches: seattleSwitches,
+    maxspeed: seattleMaxspeed as any,
   },
   Boston: {
     center: [-71.08, 42.35] as [number, number],
@@ -94,6 +105,7 @@ const CITY_CONFIG = {
     stops: bostonGreenLineStops,
     crossings: bostonCrossings,
     switches: bostonSwitches,
+    maxspeed: bostonMaxspeed as any,
   },
   Portland: {
     center: [-122.68, 45.52] as [number, number],
@@ -102,6 +114,7 @@ const CITY_CONFIG = {
     stops: portlandMaxStops,
     crossings: portlandCrossings,
     switches: portlandSwitches,
+    maxspeed: portlandMaxspeed as any,
   },
   "San Diego": {
     center: [-117.15, 32.72] as [number, number],
@@ -110,6 +123,7 @@ const CITY_CONFIG = {
     stops: sanDiegoTrolleyStops,
     crossings: sanDiegoCrossings,
     switches: sanDiegoSwitches,
+    maxspeed: sanDiegoMaxspeed as any,
   },
   Toronto: {
     center: [-79.38, 43.65] as [number, number],
@@ -118,6 +132,7 @@ const CITY_CONFIG = {
     stops: torontoStreetcarStops,
     crossings: torontoCrossings,
     switches: torontoSwitches,
+    maxspeed: null as any,
   },
   Philadelphia: {
     center: [-75.16, 39.95] as [number, number],
@@ -126,6 +141,7 @@ const CITY_CONFIG = {
     stops: phillyTrolleyStops,
     crossings: phillyCrossings,
     switches: phillySwitches,
+    maxspeed: phillyMaxspeed as any,
   },
   Sacramento: {
     center: [-121.49, 38.58] as [number, number],
@@ -134,6 +150,7 @@ const CITY_CONFIG = {
     stops: sacramentoLightRailStops,
     crossings: sacramentoCrossings,
     switches: sacramentoSwitches,
+    maxspeed: null as any,
   },
 };
 
@@ -567,49 +584,96 @@ const cityDataCache = new Map<City, Vehicle[]>();
 // Track if we've already started background preloading
 let preloadStarted = false;
 
+// Only select columns we actually use (reduces data transfer by ~40%)
+const POSITION_COLUMNS = "id,vehicle_id,lat,lon,route_id,direction_id,speed_calculated,recorded_at,headsign";
+
+// Parallel fetch helper - fetches multiple pages concurrently
+async function fetchPagesParallel(
+  targetCity: City,
+  since: string,
+  startPage: number,
+  numPages: number,
+  pageSize: number
+): Promise<any[]> {
+  if (!supabase) return [];
+  
+  const promises = [];
+  for (let i = 0; i < numPages; i++) {
+    const from = (startPage + i) * pageSize;
+    let query;
+    if (targetCity === "SF") {
+      query = supabase
+        .from("vehicle_positions")
+        .select(POSITION_COLUMNS)
+        .gte("recorded_at", since)
+        .or("city.is.null,city.eq.SF")
+        .order("recorded_at", { ascending: false })
+        .range(from, from + pageSize - 1);
+    } else {
+      query = supabase
+        .from("vehicle_positions")
+        .select(POSITION_COLUMNS)
+        .gte("recorded_at", since)
+        .eq("city", targetCity)
+        .order("recorded_at", { ascending: false })
+        .range(from, from + pageSize - 1);
+    }
+    promises.push(query);
+  }
+  
+  const results = await Promise.all(promises);
+  return results.flatMap(r => r.data || []);
+}
+
 // Background preload function - fetches and caches a city's data without UI updates
 async function preloadCityData(targetCity: City): Promise<void> {
   // Skip if already cached or no supabase
   if (cityDataCache.has(targetCity) || !supabase) return;
   
   try {
-    // Supabase has a server-side limit of 1000 rows per request
     const PAGE_SIZE = 1000;
-    let allData: any[] = [];
-    let from = 0;
-    let hasMore = true;
     const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
-
-    while (hasMore) {
-      // Build query with city filter first, then range LAST
-      let query;
-      if (targetCity === "SF") {
-        query = supabase
-          .from("vehicle_positions")
-          .select("*")
-          .gte("recorded_at", since)
-          .or("city.is.null,city.eq.SF")
-          .order("recorded_at", { ascending: false })
-          .range(from, from + PAGE_SIZE - 1);
-      } else {
-        query = supabase
-          .from("vehicle_positions")
-          .select("*")
-          .gte("recorded_at", since)
-          .eq("city", targetCity)
-          .order("recorded_at", { ascending: false })
-          .range(from, from + PAGE_SIZE - 1);
-      }
-
-      const { data, error } = await query;
-      if (error) break;
-
-      if (data && data.length > 0) {
-        allData = [...allData, ...data];
-        from += PAGE_SIZE;
-        hasMore = data.length === PAGE_SIZE;
-      } else {
-        hasMore = false;
+    
+    // Fetch first page to estimate total count
+    let query;
+    if (targetCity === "SF") {
+      query = supabase
+        .from("vehicle_positions")
+        .select(POSITION_COLUMNS)
+        .gte("recorded_at", since)
+        .or("city.is.null,city.eq.SF")
+        .order("recorded_at", { ascending: false })
+        .range(0, PAGE_SIZE - 1);
+    } else {
+      query = supabase
+        .from("vehicle_positions")
+        .select(POSITION_COLUMNS)
+        .gte("recorded_at", since)
+        .eq("city", targetCity)
+        .order("recorded_at", { ascending: false })
+        .range(0, PAGE_SIZE - 1);
+    }
+    
+    const { data: firstPage, error } = await query;
+    if (error || !firstPage) return;
+    
+    let allData = [...firstPage];
+    
+    // If first page is full, fetch remaining pages in parallel
+    if (firstPage.length === PAGE_SIZE) {
+      const PARALLEL_BATCH = 5;
+      let pageNum = 1;
+      let hasMore = true;
+      
+      while (hasMore) {
+        const batchData = await fetchPagesParallel(targetCity, since, pageNum, PARALLEL_BATCH, PAGE_SIZE);
+        allData = [...allData, ...batchData];
+        
+        hasMore = batchData.length === PARALLEL_BATCH * PAGE_SIZE;
+        pageNum += PARALLEL_BATCH;
+        
+        // Safety limit: max 30 pages (30k positions)
+        if (pageNum > 30) break;
       }
     }
 
@@ -667,6 +731,7 @@ interface SpeedMapProps {
   selectedLines: string[];
   speedFilter: SpeedFilter;
   showRouteLines: boolean;
+  routeLineMode: "byLine" | "bySpeedLimit";
   showStops: boolean;
   showCrossings: boolean;
   showSwitches: boolean;
@@ -685,6 +750,7 @@ export function SpeedMap({
   selectedLines,
   speedFilter,
   showRouteLines,
+  routeLineMode,
   showStops,
   showCrossings,
   showSwitches,
@@ -753,76 +819,77 @@ export function SpeedMap({
     }
 
     try {
-      // Supabase has a server-side limit of 1000 rows per request (PGRST_MAX_ROWS)
-      // We must use 1000 to properly paginate through all results
       const PAGE_SIZE = 1000;
-      let allData: any[] = [];
-      let from = 0;
-      let hasMore = true;
-
-      const since = new Date(
-        Date.now() - 7 * 24 * 60 * 60 * 1000
-      ).toISOString();
+      const PARALLEL_BATCH = 5; // Fetch 5 pages at once
+      const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
       setLoadingProgress("Loading positions...");
+      console.time("Fetching data");
 
-      while (hasMore) {
-        // Build query with city filter first, then range LAST
-        // (range must be applied after all filters to work correctly)
-        let query;
-        if (city === "SF") {
-          query = supabase
-            .from("vehicle_positions")
-            .select("*")
-            .gte("recorded_at", since)
-            .or("city.is.null,city.eq.SF")
-            .order("recorded_at", { ascending: false })
-            .range(from, from + PAGE_SIZE - 1);
-        } else {
-          query = supabase
-            .from("vehicle_positions")
-            .select("*")
-            .gte("recorded_at", since)
-            .eq("city", city)
-            .order("recorded_at", { ascending: false })
-            .range(from, from + PAGE_SIZE - 1);
-        }
+      // Fetch first page to check data availability
+      let query;
+      if (city === "SF") {
+        query = supabase
+          .from("vehicle_positions")
+          .select(POSITION_COLUMNS)
+          .gte("recorded_at", since)
+          .or("city.is.null,city.eq.SF")
+          .order("recorded_at", { ascending: false })
+          .range(0, PAGE_SIZE - 1);
+      } else {
+        query = supabase
+          .from("vehicle_positions")
+          .select(POSITION_COLUMNS)
+          .gte("recorded_at", since)
+          .eq("city", city)
+          .order("recorded_at", { ascending: false })
+          .range(0, PAGE_SIZE - 1);
+      }
 
-        let { data, error } = await query;
+      let { data: firstPage, error } = await query;
 
-        // If city column doesn't exist (old schema), fall back to unfiltered query
-        // This is only for backwards compatibility with old data
-        if (error && error.code === "42703") {
-          console.log("City column not found, fetching all data (legacy)...");
-          const fallbackQuery = supabase
-            .from("vehicle_positions")
-            .select("*")
-            .gte("recorded_at", since)
-            .order("recorded_at", { ascending: false })
-            .range(from, from + PAGE_SIZE - 1);
+      // Legacy fallback for old schema
+      if (error && error.code === "42703") {
+        console.log("City column not found, fetching all data (legacy)...");
+        const fallbackQuery = supabase
+          .from("vehicle_positions")
+          .select(POSITION_COLUMNS)
+          .gte("recorded_at", since)
+          .order("recorded_at", { ascending: false })
+          .range(0, PAGE_SIZE - 1);
+        const result = await fallbackQuery;
+        firstPage = result.data;
+        error = result.error;
+      }
 
-          const result = await fallbackQuery;
-          data = result.data;
-          error = result.error;
-        }
+      if (error) {
+        console.error("Error fetching from Supabase:", error);
+        setLoadingProgress("");
+        return;
+      }
 
-        if (error) {
-          console.error("Error fetching from Supabase:", error);
-          break;
-        }
+      let allData = firstPage || [];
+      setLoadingProgress(`Loading... ${allData.length.toLocaleString()} positions`);
 
-        if (data && data.length > 0) {
-          allData = [...allData, ...data];
-          from += PAGE_SIZE;
-          hasMore = data.length === PAGE_SIZE;
-          setLoadingProgress(
-            `Loading... ${allData.length.toLocaleString()} positions`
-          );
-        } else {
-          hasMore = false;
+      // If first page is full, fetch remaining pages in parallel batches
+      if (firstPage && firstPage.length === PAGE_SIZE) {
+        let pageNum = 1;
+        let hasMore = true;
+
+        while (hasMore) {
+          const batchData = await fetchPagesParallel(city, since, pageNum, PARALLEL_BATCH, PAGE_SIZE);
+          allData = [...allData, ...batchData];
+          setLoadingProgress(`Loading... ${allData.length.toLocaleString()} positions`);
+          
+          hasMore = batchData.length === PARALLEL_BATCH * PAGE_SIZE;
+          pageNum += PARALLEL_BATCH;
+          
+          // Safety limit: max 30 pages (30k positions)
+          if (pageNum > 30) break;
         }
       }
 
+      console.timeEnd("Fetching data");
       setLoadingProgress("");
       console.log(
         `Fetched ${allData.length} ${city} positions from last 7 days`
@@ -1041,12 +1108,62 @@ export function SpeedMap({
     };
   }, [city]); // Re-initialize map when city changes
 
+  // Speed-based color scale (memoized to prevent re-renders)
+  // Uses same scale as speed limits for consistency
+  const speedColorExpression: maplibregl.ExpressionSpecification = useMemo(
+    () => [
+      "case",
+      ["==", ["get", "speed"], null],
+      "#666666", // grey - no data
+      ["<=", ["get", "speed"], 5],
+      "#9b2d6b", // magenta - crawling (≤5 mph)
+      ["<", ["get", "speed"], 10],
+      "#ff3333", // red - very slow (< 10 mph)
+      ["<", ["get", "speed"], 15],
+      "#ff9933", // orange - slow (10-15 mph)
+      ["<", ["get", "speed"], 25],
+      "#ffdd33", // yellow - moderate (15-25 mph)
+      ["<", ["get", "speed"], 35],
+      "#88ff33", // light green - good (25-35 mph)
+      ["<", ["get", "speed"], 50],
+      "#33eebb", // teal - fast (35-50 mph)
+      "#22ccff", // cyan - very fast (50+ mph)
+    ],
+    []
+  );
+
+  // Speed limit color scale (extended for higher speeds typical of light rail)
+  const maxspeedColorExpression: maplibregl.ExpressionSpecification = useMemo(
+    () => [
+      "case",
+      ["==", ["get", "maxspeed_mph"], null],
+      "#666666", // grey - no data
+      ["<=", ["get", "maxspeed_mph"], 5],
+      "#9b2d6b", // magenta - crawling (≤5 mph)
+      ["<", ["get", "maxspeed_mph"], 10],
+      "#ff3333", // red - very slow (< 10 mph)
+      ["<", ["get", "maxspeed_mph"], 15],
+      "#ff9933", // orange - slow (10-15 mph)
+      ["<", ["get", "maxspeed_mph"], 25],
+      "#ffdd33", // yellow - moderate (15-25 mph)
+      ["<", ["get", "maxspeed_mph"], 35],
+      "#88ff33", // light green - good (25-35 mph)
+      ["<", ["get", "maxspeed_mph"], 50],
+      "#33eebb", // teal - fast (35-50 mph) - slightly more green
+      "#22ccff", // cyan - very fast (50+ mph) - slightly more blue
+    ],
+    []
+  );
+
   // Add routes layer
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
 
     const addRouteLayers = () => {
       if (!map.current) return;
+
+      const showByLine = showRouteLines && routeLineMode === "byLine";
+      const showBySpeed = showRouteLines && routeLineMode === "bySpeedLimit";
 
       // If no lines selected, show all routes; otherwise filter to selected
       const filteredRoutes = {
@@ -1065,6 +1182,15 @@ export function SpeedMap({
           map.current.removeLayer("routes-outline");
         if (map.current.getLayer("routes")) map.current.removeLayer("routes");
         if (map.current.getSource("routes")) map.current.removeSource("routes");
+        // Speed limit layers
+        if (map.current.getLayer("speed-limit-outline"))
+          map.current.removeLayer("speed-limit-outline");
+        if (map.current.getLayer("speed-limit"))
+          map.current.removeLayer("speed-limit");
+        if (map.current.getLayer("speed-limit-labels"))
+          map.current.removeLayer("speed-limit-labels");
+        if (map.current.getSource("speed-limit"))
+          map.current.removeSource("speed-limit");
       } catch (e) {
         // Layer/source may not exist, ignore
       }
@@ -1080,6 +1206,9 @@ export function SpeedMap({
         ? "stops"
         : undefined;
 
+      // Regular route layers
+      // When "byLine" mode: colored by transit line
+      // When "bySpeedLimit" mode: grey as fallback for segments without speed data
       map.current.addLayer(
         {
           id: "routes-outline",
@@ -1110,7 +1239,8 @@ export function SpeedMap({
             visibility: showRouteLines ? "visible" : "none",
           },
           paint: {
-            "line-color": ["get", "route_color"],
+            // Grey when in speed limit mode (as fallback for areas without maxspeed data)
+            "line-color": showBySpeed ? "#666666" : ["get", "route_color"],
             "line-width": 4,
             "line-opacity": 0.9,
           },
@@ -1118,9 +1248,109 @@ export function SpeedMap({
         firstDataLayer
       );
 
+      // Speed limit layers (colored by maxspeed)
+      if (cityConfig.maxspeed && cityConfig.maxspeed.features?.length > 0) {
+        map.current.addSource("speed-limit", {
+          type: "geojson",
+          data: cityConfig.maxspeed as any,
+        });
+
+        map.current.addLayer(
+          {
+            id: "speed-limit-outline",
+            type: "line",
+            source: "speed-limit",
+            layout: {
+              "line-join": "round",
+              "line-cap": "round",
+              visibility: showBySpeed ? "visible" : "none",
+            },
+            paint: {
+              "line-color": "#000",
+              "line-width": 7,
+              "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
+            },
+          },
+          firstDataLayer
+        );
+
+        map.current.addLayer(
+          {
+            id: "speed-limit",
+            type: "line",
+            source: "speed-limit",
+            layout: {
+              "line-join": "round",
+              "line-cap": "round",
+              visibility: showBySpeed ? "visible" : "none",
+            },
+            paint: {
+              "line-color": maxspeedColorExpression,
+              "line-width": 4,
+              "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
+            },
+          },
+          firstDataLayer
+        );
+
+        // Speed limit labels (visible at high zoom)
+        map.current.addLayer({
+          id: "speed-limit-labels",
+          type: "symbol",
+          source: "speed-limit",
+          layout: {
+            "symbol-placement": "line",
+            "text-field": ["concat", ["get", "maxspeed_mph"], " mph"],
+            "text-size": 11,
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            visibility: showBySpeed ? "visible" : "none",
+          },
+          minzoom: 14,
+          paint: {
+            "text-color": "#fff",
+            "text-halo-color": "#000",
+            "text-halo-width": 1.5,
+          },
+        });
+
+        // Speed limit hover
+        map.current.on("mouseenter", "speed-limit", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "pointer";
+        });
+
+        map.current.on("mouseleave", "speed-limit", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "";
+          popup.current?.remove();
+        });
+
+        map.current.on("mousemove", "speed-limit", (e) => {
+          if (!e.features?.length || !map.current) return;
+          const props = e.features[0].properties;
+          const speedMph = props.maxspeed_mph;
+          // Color matches the extended speed legend
+          const speedColor = speedMph == null ? "#666666" :
+                             speedMph >= 50 ? "#22ccff" :
+                             speedMph >= 35 ? "#33eebb" :
+                             speedMph >= 25 ? "#88ff33" :
+                             speedMph >= 15 ? "#ffdd33" :
+                             speedMph >= 10 ? "#ff9933" : "#ff3333";
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title" style="color: ${speedColor}">Speed Limit: ${props.maxspeed || "Unknown"}</div>
+                ${props.name ? `<div class="popup-detail">${props.name}</div>` : ""}
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+
       // Route hover
       map.current.on("mouseenter", "routes", () => {
-        if (map.current) map.current.getCanvas().style.cursor = "pointer";
+        if (map.current) {
+          map.current.getCanvas().style.cursor = "pointer";
+        }
       });
 
       map.current.on("mouseleave", "routes", () => {
@@ -1130,6 +1360,12 @@ export function SpeedMap({
 
       map.current.on("mousemove", "routes", (e) => {
         if (!e.features?.length || !map.current) return;
+        
+        // In speed limit mode, don't show popup for grey areas (no data)
+        // The speed-limit layer handles popups for areas with data
+        if (showBySpeed) return;
+        
+        // In byLine mode, show route name
         const props = e.features[0].properties;
         popup.current
           ?.setLngLat(e.lngLat)
@@ -1158,7 +1394,7 @@ export function SpeedMap({
       };
       setTimeout(waitForStyle, 50);
     }
-  }, [mapLoaded, selectedLines, showRouteLines, cityConfig.routes]);
+  }, [mapLoaded, selectedLines, showRouteLines, routeLineMode, cityConfig.routes, cityConfig.maxspeed, maxspeedColorExpression]);
 
   // Add/update stops layer
   useEffect(() => {
@@ -1537,25 +1773,6 @@ export function SpeedMap({
     }
   }, [mapLoaded, showSwitches, switchesData]);
 
-  // Speed-based color scale (memoized to prevent re-renders)
-  const speedColorExpression: maplibregl.ExpressionSpecification = useMemo(
-    () => [
-      "case",
-      ["==", ["get", "speed"], null],
-      "#666666",
-      ["<", ["get", "speed"], 5],
-      "#ff3333",
-      ["<", ["get", "speed"], 10],
-      "#ff9933",
-      ["<", ["get", "speed"], 15],
-      "#ffdd33",
-      ["<", ["get", "speed"], 25],
-      "#88ff33",
-      "#33ffff",
-    ],
-    []
-  );
-
   // Update vehicle data source
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
@@ -1606,8 +1823,11 @@ export function SpeedMap({
         const initialFilters: maplibregl.ExpressionSpecification[] = [
           ["!=", ["get", "speed"], null],
           [">=", ["get", "speed"], speedFilter.minSpeed],
-          ["<=", ["get", "speed"], speedFilter.maxSpeed],
         ];
+        // Only add max filter if not at 50 (50 means 50+ / no upper limit)
+        if (speedFilter.maxSpeed < 50) {
+          initialFilters.push(["<=", ["get", "speed"], speedFilter.maxSpeed]);
+        }
         if (hideStoppedTrains) {
           initialFilters.push([">", ["get", "speed"], 0]);
         }
@@ -1756,8 +1976,11 @@ export function SpeedMap({
     const filters: maplibregl.ExpressionSpecification[] = [
       ["!=", ["get", "speed"], null],
       [">=", ["get", "speed"], speedFilter.minSpeed],
-      ["<=", ["get", "speed"], speedFilter.maxSpeed],
     ];
+    // Only add max filter if not at 50 (50 means 50+ / no upper limit)
+    if (speedFilter.maxSpeed < 50) {
+      filters.push(["<=", ["get", "speed"], speedFilter.maxSpeed]);
+    }
 
     // Hide stopped trains (0 mph) if toggle is enabled
     if (hideStoppedTrains) {
@@ -1786,6 +2009,9 @@ export function SpeedMap({
     const layerOrder = [
       "routes-outline",
       "routes",
+      "speed-limit-outline",
+      "speed-limit",
+      "speed-limit-labels",
       "speed-segments",
       "vehicles-glow",
       "vehicles",
@@ -1988,8 +2214,9 @@ export function SpeedMap({
     vehicles.forEach((v) => {
       if (v.speed == null) return;
       if (!shouldShowRoute(v.routeId, selectedLines, city)) return;
-      if (v.speed < speedFilter.minSpeed || v.speed > speedFilter.maxSpeed)
-        return;
+      // Skip if below min speed, or above max speed (unless max is 50, which means 50+)
+      if (v.speed < speedFilter.minSpeed) return;
+      if (speedFilter.maxSpeed < 50 && v.speed > speedFilter.maxSpeed) return;
       if (!v.segmentId) return;
 
       if (!segmentSpeeds.has(v.segmentId)) {
@@ -2063,15 +2290,19 @@ export function SpeedMap({
             "line-width": 6,
             "line-color": [
               "case",
-              ["<", ["get", "avgSpeed"], 5],
-              "#ff3333",
+              ["==", ["get", "avgSpeed"], null],
+              "#666666", // grey - no data
               ["<", ["get", "avgSpeed"], 10],
-              "#ff9933",
+              "#ff3333", // red - very slow (< 10 mph)
               ["<", ["get", "avgSpeed"], 15],
-              "#ffdd33",
+              "#ff9933", // orange - slow (10-15 mph)
               ["<", ["get", "avgSpeed"], 25],
-              "#88ff33",
-              "#33ffff",
+              "#ffdd33", // yellow - moderate (15-25 mph)
+              ["<", ["get", "avgSpeed"], 35],
+              "#88ff33", // light green - good (25-35 mph)
+              ["<", ["get", "avgSpeed"], 50],
+              "#33eebb", // teal - fast (35-50 mph)
+              "#22ccff", // cyan - very fast (50+ mph)
             ],
             "line-opacity": 0.9,
           },

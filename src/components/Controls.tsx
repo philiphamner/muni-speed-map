@@ -24,7 +24,7 @@ import {
   SACRAMENTO_LIGHT_RAIL_LINE_INFO,
   getLinesForCity,
 } from "../types";
-import type { SpeedFilter, ViewMode, LineStats } from "../App";
+import type { SpeedFilter, ViewMode, LineStats, RouteLineMode } from "../App";
 
 // Official SFMTA colors from GTFS
 const MUNI_COLORS: Record<MuniLine, string> = {
@@ -48,8 +48,11 @@ function getLineColor(line: string, city: City): string {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.color || "#666";
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.color || 
-           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.color || "#666";
+    return (
+      PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.color ||
+      PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.color ||
+      "#666"
+    );
   } else if (city === "San Diego") {
     return (
       SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.color || "#666"
@@ -83,8 +86,11 @@ function getLineLabel(line: string, city: City): string {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.letter || line;
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.letter || 
-           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.letter || line;
+    return (
+      PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.letter ||
+      PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.letter ||
+      line
+    );
   } else if (city === "San Diego") {
     return (
       SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.letter || line
@@ -104,6 +110,22 @@ function getLineLabel(line: string, city: City): string {
   return line;
 }
 
+// Get badge width class based on the longest label in each city
+function getBadgeWidthClass(city: City): string {
+  switch (city) {
+    case "Portland":
+    case "San Diego":
+      return "badge-width-word"; // "Orange", "Yellow", "Copper"
+    case "Sacramento":
+      return "badge-width-short-word"; // "Gold", "Blue"
+    case "Toronto":
+    case "Philadelphia":
+      return "badge-width-3digit"; // "501", "102"
+    default:
+      return "badge-width-letter"; // Single letters
+  }
+}
+
 // Get line info for tooltip
 function getLineInfo(line: string, city: City): string | undefined {
   if (city === "LA") {
@@ -113,8 +135,10 @@ function getLineInfo(line: string, city: City): string | undefined {
   } else if (city === "Boston") {
     return BOSTON_GREEN_LINE_INFO[line as BostonGreenLine]?.name;
   } else if (city === "Portland") {
-    return PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.name ||
-           PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.name;
+    return (
+      PORTLAND_MAX_LINE_INFO[line as PortlandMaxLine]?.name ||
+      PORTLAND_STREETCAR_LINE_INFO[line as PortlandStreetcarLine]?.name
+    );
   } else if (city === "San Diego") {
     return SAN_DIEGO_TROLLEY_LINE_INFO[line as SanDiegoTrolleyLine]?.name;
   } else if (city === "Toronto") {
@@ -140,6 +164,8 @@ interface ControlsProps {
   setSpeedFilter: (filter: SpeedFilter) => void;
   showRouteLines: boolean;
   setShowRouteLines: (show: boolean) => void;
+  routeLineMode: RouteLineMode;
+  setRouteLineMode: (mode: RouteLineMode) => void;
   showStops: boolean;
   setShowStops: (show: boolean) => void;
   showCrossings: boolean;
@@ -165,6 +191,8 @@ export function Controls({
   setSpeedFilter,
   showRouteLines,
   setShowRouteLines,
+  routeLineMode,
+  setRouteLineMode,
   showStops,
   setShowStops,
   showCrossings,
@@ -179,14 +207,14 @@ export function Controls({
 }: ControlsProps) {
   // Sacramento warning modal state
   const [showSacWarning, setShowSacWarning] = useState(false);
-  
+
   // Show modal when user navigates to Sacramento
   useEffect(() => {
     if (city === "Sacramento") {
       setShowSacWarning(true);
     }
   }, [city]);
-  
+
   // Live mode: fresh if data is less than 5 minutes old, but always available if we have any data
   const isLiveFresh = dataAgeMinutes !== null && dataAgeMinutes < 5;
   const hasAnyData = dataAgeMinutes !== null;
@@ -268,7 +296,9 @@ export function Controls({
           🌴 LA
         </button>
         <button
-          className={`city-btn city-btn-pending ${city === "San Diego" ? "active" : ""}`}
+          className={`city-btn city-btn-pending ${
+            city === "San Diego" ? "active" : ""
+          }`}
           onClick={() => setCity("San Diego")}
           title="Waiting for API key"
         >
@@ -276,7 +306,9 @@ export function Controls({
         </button>
         {/* Row 2: Pacific NW + Central */}
         <button
-          className={`city-btn city-btn-pending ${city === "Seattle" ? "active" : ""}`}
+          className={`city-btn city-btn-pending ${
+            city === "Seattle" ? "active" : ""
+          }`}
           onClick={() => setCity("Seattle")}
           title="Waiting for API key"
         >
@@ -421,15 +453,37 @@ export function Controls({
             </button>
           ))}
         </div>
-        <div className="route-lines-toggle">
-          <label>
-            <input
-              type="checkbox"
-              checked={showRouteLines}
-              onChange={(e) => setShowRouteLines(e.target.checked)}
-            />
-            Show route lines
-          </label>
+        <div className="route-lines-section">
+          <div className="route-lines-toggle">
+            <label>
+              <input
+                type="checkbox"
+                checked={showRouteLines}
+                onChange={(e) => setShowRouteLines(e.target.checked)}
+              />
+              Show route lines
+            </label>
+          </div>
+          {showRouteLines && (
+            <div className="route-line-mode-toggle">
+              <button
+                className={`route-mode-btn ${
+                  routeLineMode === "byLine" ? "active" : ""
+                }`}
+                onClick={() => setRouteLineMode("byLine")}
+              >
+                By Line
+              </button>
+              <button
+                className={`route-mode-btn ${
+                  routeLineMode === "bySpeedLimit" ? "active" : ""
+                }`}
+                onClick={() => setRouteLineMode("bySpeedLimit")}
+              >
+                Speed Limit
+              </button>
+            </div>
+          )}
         </div>
         <div className="route-lines-toggle">
           <label>
@@ -497,7 +551,10 @@ export function Controls({
             />
           </div>
           <div className="speed-slider-row">
-            <label>Max: {speedFilter.maxSpeed} mph</label>
+            <label>
+              Max: {speedFilter.maxSpeed === 50 ? "50+" : speedFilter.maxSpeed}{" "}
+              mph
+            </label>
             <input
               type="range"
               min="0"
@@ -532,44 +589,65 @@ export function Controls({
         </div>
       </div>
 
-      {/* Speed Legend */}
+      {/* Speed Legend - static extended scale */}
       <div className="control-group">
         <div className="control-label">Speed Legend</div>
         <div className="speed-legend">
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
+              style={{ backgroundColor: "#9b2d6b" }}
+            ></span>
+            <span>≤ 5 mph</span>
+          </div>
+          <div className="speed-legend-item">
+            <span
+              className="speed-legend-dot"
               style={{ backgroundColor: "#ff3333" }}
             ></span>
-            <span>&lt; 5 mph (very slow)</span>
+            <span>5-10 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#ff9933" }}
             ></span>
-            <span>5-10 mph (slow)</span>
+            <span>10-15 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#ffdd33" }}
             ></span>
-            <span>10-15 mph (moderate)</span>
+            <span>15-25 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#88ff33" }}
             ></span>
-            <span>15-25 mph (good)</span>
+            <span>25-35 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
-              style={{ backgroundColor: "#33ffff" }}
+              style={{ backgroundColor: "#33eebb" }}
             ></span>
-            <span>&gt; 25 mph (fast)</span>
+            <span>35-50 mph</span>
+          </div>
+          <div className="speed-legend-item">
+            <span
+              className="speed-legend-dot"
+              style={{ backgroundColor: "#22ccff" }}
+            ></span>
+            <span>&gt; 50 mph</span>
+          </div>
+          <div className="speed-legend-item">
+            <span
+              className="speed-legend-dot"
+              style={{ backgroundColor: "#666666" }}
+            ></span>
+            <span>No data</span>
           </div>
         </div>
       </div>
@@ -579,16 +657,17 @@ export function Controls({
         <div className="control-group">
           <div className="control-label">Speed by Line</div>
           <div className="line-stats">
-            {[...lineStats].sort((a, b) => b.avgSpeed - a.avgSpeed).map((stat) => (
-              <div key={stat.line} className="line-stat-item">
-                <span
-                  className="line-stat-badge"
-                  style={{ backgroundColor: getLineColor(stat.line, city) }}
-                  title={getLineInfo(stat.line, city)}
-                >
-                  {getLineLabel(stat.line, city)}
-                </span>
-                <div className="line-stat-speeds">
+            {[...lineStats]
+              .sort((a, b) => b.avgSpeed - a.avgSpeed)
+              .map((stat) => (
+                <div key={stat.line} className="line-stat-item">
+                  <span
+                    className={`line-stat-badge ${getBadgeWidthClass(city)}`}
+                    style={{ backgroundColor: getLineColor(stat.line, city) }}
+                    title={getLineInfo(stat.line, city)}
+                  >
+                    {getLineLabel(stat.line, city)}
+                  </span>
                   <span className="line-stat-speed">
                     {stat.avgSpeed.toFixed(1)}
                   </span>
@@ -597,12 +676,11 @@ export function Controls({
                     {stat.medianSpeed.toFixed(1)}
                   </span>
                   <span className="line-stat-label">median</span>
+                  <span className="line-stat-count">
+                    ({stat.count.toLocaleString()})
+                  </span>
                 </div>
-                <span className="line-stat-count">
-                  ({stat.count.toLocaleString()})
-                </span>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       )}
@@ -621,15 +699,16 @@ export function Controls({
             : "Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart)."}
         </p>
         <p>
-          <strong>Data freshness:</strong> This map displays the last 7 days of
-          collected data.
+          <strong>Data freshness:</strong> This map displays all recent data
+          from the database.
         </p>
         {city === "SF" && (
           <>
             <p>
               <strong>Sunset Tunnel:</strong> The N Judah's Sunset Tunnel has no
-              GPS signal, so trains appear to "jump" through it with no data
-              points inside.
+              GPS signal inside, so data points cluster at the tunnel portals.
+              The higher speeds shown there represent the actual average speed
+              through the grade-separated tunnel section.
             </p>
             <p>
               <strong>F Line note:</strong> Grade crossings for the F Market
@@ -681,8 +760,8 @@ export function Controls({
         {city === "Seattle" && (
           <div className="data-warning">
             <strong>⚠️ No Data Available:</strong> Seattle Link data collection
-            requires a Sound Transit API key. Route lines and infrastructure
-            are shown, but no speed data is currently being collected.
+            requires a Sound Transit API key. Route lines and infrastructure are
+            shown, but no speed data is currently being collected.
           </div>
         )}
         {city === "San Diego" && (
@@ -693,29 +772,31 @@ export function Controls({
           </div>
         )}
         <p>
-          <strong>Grade crossings (X):</strong> Locations where the train
-          tracks cross a road at street level. These may have gates, stop signs,
+          <strong>Grade crossings (X):</strong> Locations where the train tracks
+          cross a road at street level. These may have gates, stop signs,
           traffic lights (with signal priority or preemption), or other controls
           that can affect train speeds.
         </p>
         <p>
-          <strong>Track switches (Y):</strong> Moveable rail sections that
-          allow trains to change tracks. Switches are often found at junctions
-          where multiple lines meet or at terminal turnbacks.
+          <strong>Track switches (Y):</strong> Moveable rail sections that allow
+          trains to change tracks. Switches are often found at junctions where
+          multiple lines meet or at terminal turnbacks.
         </p>
-        {city !== "Toronto" && city !== "Philadelphia" && (
-          <p className="data-attribution">
-            Grade crossing and switch data from{" "}
-            <a
-              href="https://www.openrailwaymap.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OpenRailwayMap
-            </a>{" "}
-            (OpenStreetMap)
-          </p>
-        )}
+        <p>
+          <strong>Speed limit overlay:</strong> When viewing route lines "By
+          Speed Limit", grey sections indicate unknown speed limits.
+        </p>
+        <p className="data-attribution">
+          Grade crossing, switch, and speed limit data from{" "}
+          <a
+            href="https://www.openrailwaymap.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OpenRailwayMap
+          </a>{" "}
+          (OpenStreetMap)
+        </p>
         <p className="data-attribution">
           Data from{" "}
           {city === "SF" ? (
@@ -793,31 +874,35 @@ export function Controls({
           ) : (
             <span>Transit API</span>
           )}
-          {city === "Portland" || city === "Boston"
-            ? ""
-            : " GTFS-realtime"}
+          {city === "Portland" || city === "Boston" ? "" : " GTFS-realtime"}
         </p>
       </div>
-      
+
       {/* Sacramento Warning Modal */}
       {showSacWarning && (
         <div className="modal-overlay" onClick={() => setShowSacWarning(false)}>
-          <div className="modal-content sac-warning-modal" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content sac-warning-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal-icon">⚠️</div>
             <h2>Sacramento Data Quality Issue</h2>
             <p>
-              <strong>SacRT does not provide live tracking for light rail.</strong>
+              <strong>
+                SacRT does not provide live tracking for light rail.
+              </strong>
             </p>
             <p>
-              Their real-time API only includes buses. The data shown here is our 
-              best attempt to filter vehicles by proximity to track geometry, but 
-              it may include misidentified buses or missing trains.
+              Their real-time API only includes buses. The data shown here is
+              our best attempt to filter vehicles by proximity to track
+              geometry, but it may include misidentified buses or missing
+              trains.
             </p>
             <p className="modal-subtext">
-              This limitation is on SacRT's end and cannot be fixed without them 
+              This limitation is on SacRT's end and cannot be fixed without them
               updating their data feed.
             </p>
-            <button 
+            <button
               className="modal-close-btn"
               onClick={() => setShowSacWarning(false)}
             >
