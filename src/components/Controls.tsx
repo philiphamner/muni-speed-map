@@ -272,17 +272,17 @@ export function Controls({
     dataAgeMinutes === null
       ? ""
       : dataAgeMinutes < 1
-        ? "(now)"
-        : dataAgeMinutes < 60
-          ? `(${Math.round(dataAgeMinutes)}m ago)`
-          : dataAgeMinutes < 1440
-            ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
-            : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
+      ? "(now)"
+      : dataAgeMinutes < 60
+      ? `(${Math.round(dataAgeMinutes)}m ago)`
+      : dataAgeMinutes < 1440
+      ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
+      : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
   const liveTooltip = isLiveFresh
     ? "Show current train positions"
     : hasAnyData
-      ? "Show last known train positions (data is stale)"
-      : "No data loaded yet";
+    ? "Show last known train positions (data is stale)"
+    : "No data loaded yet";
 
   const allLines = getLinesForCity(city);
 
@@ -337,9 +337,19 @@ export function Controls({
   };
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
+  console.log(systemLine, "temp");
 
   return (
     <div className="controls-panel">
+      <div className="app-header">
+        <h1
+          className={`app-title ${city === "Boston" ? "app-title-long" : ""}`}
+        >
+          Urban Rail Friction Map
+          {/* {systemLine}  */}
+        </h1>
+        <span className="app-city">{cityLine}</span>
+      </div>
       {/* City Selector - 3x3 grid */}
       <div className="city-selector">
         {/* Row 1: West Coast */}
@@ -454,15 +464,6 @@ export function Controls({
         >
           ⚠️ Sac
         </button>
-      </div>
-
-      <div className="app-header">
-        <span className="app-city">{cityLine}</span>
-        <h1
-          className={`app-title ${city === "Boston" ? "app-title-long" : ""}`}
-        >
-          {systemLine}
-        </h1>
       </div>
 
       {/* Data Status */}
@@ -649,7 +650,7 @@ export function Controls({
                   ...speedFilter,
                   minSpeed: Math.min(
                     Number(e.target.value),
-                    speedFilter.maxSpeed,
+                    speedFilter.maxSpeed
                   ),
                 })
               }
@@ -671,7 +672,7 @@ export function Controls({
                   ...speedFilter,
                   maxSpeed: Math.max(
                     Number(e.target.value),
-                    speedFilter.minSpeed,
+                    speedFilter.minSpeed
                   ),
                 })
               }
