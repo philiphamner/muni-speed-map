@@ -14,6 +14,12 @@ export const CITIES = [
   "Minneapolis",
   "Denver",
   "Salt Lake City",
+  "San Jose",
+  "Jersey City",
+  "Calgary",
+  "Edmonton",
+  "Cleveland",
+  "Charlotte",
 ] as const;
 export type City = (typeof CITIES)[number];
 
@@ -227,9 +233,9 @@ export const PITTSBURGH_T_LINE_INFO: Record<
   PittsburghTLine,
   { name: string; letter: string; color: string }
 > = {
-  RED: { name: "Red Line", letter: "Red", color: "#E31837" },
-  BLUE: { name: "Blue Line", letter: "Blue", color: "#0066B3" },
-  SLVR: { name: "Silver Line", letter: "Silver", color: "#A7A9AC" },
+  RED: { name: "Red Line", letter: "Red", color: "#e40d17" },
+  BLUE: { name: "Blue Line", letter: "Blue", color: "#5785b1" },
+  SLVR: { name: "Silver Line", letter: "Silver", color: "#a7a9ab" },
 };
 
 // Dallas DART Light Rail lines
@@ -309,7 +315,82 @@ export const SLC_TRAX_LINE_INFO: Record<
   Blue: { name: "Blue Line", letter: "Blue", color: "#0053A0" },
   Red: { name: "Red Line", letter: "Red", color: "#EE3124" },
   Green: { name: "Green Line", letter: "Green", color: "#008144" },
-  "S-Line": { name: "S-Line Streetcar", letter: "S", color: "#FDB913" },
+  "S-Line": { name: "S-Line Streetcar", letter: "S", color: "#77777a" },
+};
+
+// San Jose VTA Light Rail lines
+// Blue, Green, Orange lines
+export const VTA_LIGHT_RAIL_LINES = ["Blue", "Green", "Orange"] as const;
+export type VtaLightRailLine = (typeof VTA_LIGHT_RAIL_LINES)[number];
+
+// VTA Light Rail line names and colors (official VTA colors)
+export const VTA_LIGHT_RAIL_LINE_INFO: Record<
+  VtaLightRailLine,
+  { name: string; letter: string; color: string }
+> = {
+  Blue: { name: "Blue Line", letter: "Blue", color: "#0072CE" },
+  Green: { name: "Green Line", letter: "Green", color: "#008752" },
+  Orange: { name: "Orange Line", letter: "Orange", color: "#F7931D" },
+};
+
+// Jersey City Hudson-Bergen Light Rail lines
+export const HBLR_LINES = ["Bayonne Flyer", "Hoboken", "West Side"] as const;
+export type HblrLine = (typeof HBLR_LINES)[number];
+
+export const HBLR_LINE_INFO: Record<
+  HblrLine,
+  { name: string; letter: string; color: string }
+> = {
+  "Bayonne Flyer": { name: "Bayonne Flyer", letter: "BF", color: "#0072CE" },
+  Hoboken: { name: "Hoboken", letter: "HOB", color: "#0072CE" },
+  "West Side": { name: "West Side", letter: "WS", color: "#0072CE" },
+};
+
+// Calgary CTrain lines
+export const CALGARY_CTRAIN_LINES = ["Red", "Blue", "Green"] as const;
+export type CalgaryCtrainLine = (typeof CALGARY_CTRAIN_LINES)[number];
+
+export const CALGARY_CTRAIN_LINE_INFO: Record<
+  CalgaryCtrainLine,
+  { name: string; letter: string; color: string }
+> = {
+  Red: { name: "Red Line", letter: "Red", color: "#EE3124" },
+  Blue: { name: "Blue Line", letter: "Blue", color: "#0072CE" },
+  Green: { name: "Green Line", letter: "Green", color: "#00A651" },
+};
+
+// Edmonton LRT lines
+export const EDMONTON_LRT_LINES = ["Capital", "Metro"] as const;
+export type EdmontonLrtLine = (typeof EDMONTON_LRT_LINES)[number];
+
+export const EDMONTON_LRT_LINE_INFO: Record<
+  EdmontonLrtLine,
+  { name: string; letter: string; color: string }
+> = {
+  Capital: { name: "Capital Line", letter: "Cap", color: "#0072CE" },
+  Metro: { name: "Metro Line", letter: "Met", color: "#00A651" },
+};
+
+// Cleveland RTA Red Line (Rapid Transit)
+export const CLEVELAND_RTA_LINES = ["Red"] as const;
+export type ClevelandRtaLine = (typeof CLEVELAND_RTA_LINES)[number];
+
+export const CLEVELAND_RTA_LINE_INFO: Record<
+  ClevelandRtaLine,
+  { name: string; letter: string; color: string }
+> = {
+  Red: { name: "Red Line", letter: "Red", color: "#EE3124" },
+};
+
+// Charlotte LYNX Light Rail lines
+export const CHARLOTTE_LYNX_LINES = ["Blue"] as const;
+export type CharlotteLynxLine = (typeof CHARLOTTE_LYNX_LINES)[number];
+
+export const CHARLOTTE_LYNX_LINE_INFO: Record<
+  CharlotteLynxLine,
+  { name: string; letter: string; color: string }
+> = {
+  Blue: { name: "LYNX Blue Line", letter: "Blue", color: "#0072CE" },
 };
 
 // Union type for any transit line
@@ -327,7 +408,13 @@ export type TransitLine =
   | DallasDartLine
   | MinneapolisMetroLine
   | DenverRtdLine
-  | SlcTraxLine;
+  | SlcTraxLine
+  | VtaLightRailLine
+  | HblrLine
+  | CalgaryCtrainLine
+  | EdmontonLrtLine
+  | ClevelandRtaLine
+  | CharlotteLynxLine;
 
 // Get lines for a specific city
 export function getLinesForCity(city: City): readonly string[] {
@@ -360,5 +447,17 @@ export function getLinesForCity(city: City): readonly string[] {
       return DENVER_RTD_LINES;
     case "Salt Lake City":
       return SLC_TRAX_LINES;
+    case "San Jose":
+      return VTA_LIGHT_RAIL_LINES;
+    case "Jersey City":
+      return HBLR_LINES;
+    case "Calgary":
+      return CALGARY_CTRAIN_LINES;
+    case "Edmonton":
+      return EDMONTON_LRT_LINES;
+    case "Cleveland":
+      return CLEVELAND_RTA_LINES;
+    case "Charlotte":
+      return CHARLOTTE_LYNX_LINES;
   }
 }

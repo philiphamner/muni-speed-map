@@ -12,6 +12,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import fetch from "node-fetch";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -177,6 +178,13 @@ const CITIES = {
     routesFile: "slcTraxRoutes.json",
     switchesFile: "slcSwitches.json",
     signalsFile: "slcSignals.json",
+  },
+  SanJose: {
+    name: "San Jose",
+    bbox: [37.15, -122.1, 37.45, -121.75],
+    routesFile: "vtaLightRailRoutes.json",
+    switchesFile: "sanJoseSwitches.json",
+    signalsFile: "sanJoseSignals.json",
   },
 };
 

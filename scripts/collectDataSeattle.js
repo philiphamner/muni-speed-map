@@ -10,7 +10,16 @@
  * Usage: npm run collect:seattle
  */
 
+import fetch, { Headers, Request, Response } from 'node-fetch';
 import { createClient } from "@supabase/supabase-js";
+
+// Polyfill for Node.js 16 (required by newer Supabase client)
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+  globalThis.Headers = Headers;
+  globalThis.Request = Request;
+  globalThis.Response = Response;
+}
 
 // Configuration - same as other collectors
 const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
@@ -19,9 +28,8 @@ const SUPABASE_ANON_KEY =
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Sound Transit API configuration
-// TODO: Replace with your API key from Sound Transit once you receive it
-const OBA_API_KEY = "YOUR_API_KEY_HERE";
+// Sound Transit API configuration (Puget Sound OneBusAway)
+const OBA_API_KEY = "REDACTED_OBA_KEY";
 const OBA_BASE_URL = "https://api.pugetsound.onebusaway.org/api/where";
 
 // Sound Transit Link Light Rail agency ID
@@ -30,8 +38,12 @@ const AGENCY_ID = "40";
 // Polling interval in milliseconds (90 seconds to match SF)
 const POLL_INTERVAL_MS = 90 * 1000;
 
-// Link Light Rail line IDs
-const LINK_LINES = ["100479", "2LINE", "TLINE"];
+// Link Light Rail line IDs and display names
+const LINK_LINES = {
+  "100479": "1 Line",   // 1 Line (Lynnwood to Federal Way)
+  "2LINE": "2 Line",    // 2 Line (Seattle to Redmond)
+  "TLINE": "T Line",    // T Line (Tacoma Link)
+};
 
 // Store previous positions for speed calculation
 const previousPositions = new Map();
@@ -63,6 +75,19 @@ function formatTime(date) {
     hour12: true,
     timeZone: "America/Los_Angeles",
   });
+}
+
+// Extract route ID from tripId (e.g., "40_LLR_2026-01-13_Jan5_Link_20260113_Tuesday_100479_2098" -> "100479")
+function extractRouteIdFromTripId(tripId) {
+  if (!tripId) return null;
+  
+  // Check for each known line ID in the tripId
+  for (const lineId of Object.keys(LINK_LINES)) {
+    if (tripId.includes(lineId)) {
+      return lineId;
+    }
+  }
+  return null;
 }
 
 // Fetch vehicles for an agency from OneBusAway API
@@ -132,11 +157,10 @@ async function collectData() {
   try {
     const vehicles = await fetchVehicles();
 
-    // Filter to only Link Light Rail
+    // Filter to only Link Light Rail (route ID is embedded in tripId)
     const linkVehicles = vehicles.filter((v) => {
-      const tripId = v.tripId;
-      const routeId = v.trip?.routeId?.split("_").pop(); // Extract route ID from format "40_100479"
-      return LINK_LINES.includes(routeId);
+      const routeId = extractRouteIdFromTripId(v.tripId);
+      return routeId !== null;
     });
 
     console.log(`   Found ${linkVehicles.length} Link Light Rail vehicles`);
@@ -153,10 +177,10 @@ async function collectData() {
     for (const vehicle of linkVehicles) {
       const vehicleId =
         vehicle.vehicleId?.split("_").pop() || vehicle.vehicleId;
-      const routeId = vehicle.trip?.routeId?.split("_").pop();
+      const routeId = extractRouteIdFromTripId(vehicle.tripId);
       const lat = vehicle.location?.lat;
       const lon = vehicle.location?.lon;
-      const directionId = vehicle.trip?.directionId;
+      const directionId = null; // Not directly available in this API
       const timestamp = vehicle.lastLocationUpdateTime || Date.now();
 
       if (!lat || !lon || !routeId) continue;
@@ -210,7 +234,7 @@ async function collectData() {
 async function main() {
   console.log("🚃 Seattle Sound Transit Link Light Rail Collector");
   console.log(`   Polling every ${POLL_INTERVAL_MS / 1000} seconds`);
-  console.log(`   Tracking lines: ${LINK_LINES.join(", ")}`);
+  console.log(`   Tracking lines: ${Object.values(LINK_LINES).join(", ")}`);
   console.log("");
 
   if (OBA_API_KEY === "YOUR_API_KEY_HERE" || !OBA_API_KEY) {

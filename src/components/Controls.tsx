@@ -15,6 +15,12 @@ import type {
   MinneapolisMetroLine,
   DenverRtdLine,
   SlcTraxLine,
+  VtaLightRailLine,
+  HblrLine,
+  CalgaryCtrainLine,
+  EdmontonLrtLine,
+  ClevelandRtaLine,
+  CharlotteLynxLine,
   City,
 } from "../types";
 import {
@@ -32,6 +38,12 @@ import {
   MINNEAPOLIS_METRO_LINE_INFO,
   DENVER_RTD_LINE_INFO,
   SLC_TRAX_LINE_INFO,
+  VTA_LIGHT_RAIL_LINE_INFO,
+  HBLR_LINE_INFO,
+  CALGARY_CTRAIN_LINE_INFO,
+  EDMONTON_LRT_LINE_INFO,
+  CLEVELAND_RTA_LINE_INFO,
+  CHARLOTTE_LYNX_LINE_INFO,
   getLinesForCity,
 } from "../types";
 import type { SpeedFilter, ViewMode, LineStats, RouteLineMode } from "../App";
@@ -92,9 +104,19 @@ function getLineColor(line: string, city: City): string {
   } else if (city === "Denver") {
     return DENVER_RTD_LINE_INFO[line as DenverRtdLine]?.color || "#666";
   } else if (city === "Salt Lake City") {
-    // Support FrontRunner color (not part of SLC_TRAX_LINES)
-    if (line === "FrontRunner") return "#003865";
     return SLC_TRAX_LINE_INFO[line as SlcTraxLine]?.color || "#666";
+  } else if (city === "San Jose") {
+    return VTA_LIGHT_RAIL_LINE_INFO[line as VtaLightRailLine]?.color || "#666";
+  } else if (city === "Jersey City") {
+    return HBLR_LINE_INFO[line as HblrLine]?.color || "#666";
+  } else if (city === "Calgary") {
+    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.color || "#666";
+  } else if (city === "Edmonton") {
+    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.color || "#666";
+  } else if (city === "Cleveland") {
+    return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.color || "#666";
+  } else if (city === "Charlotte") {
+    return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.color || "#666";
   }
   return "#666";
 }
@@ -142,6 +164,18 @@ function getLineLabel(line: string, city: City): string {
     return DENVER_RTD_LINE_INFO[line as DenverRtdLine]?.letter || line;
   } else if (city === "Salt Lake City") {
     return SLC_TRAX_LINE_INFO[line as SlcTraxLine]?.letter || line;
+  } else if (city === "San Jose") {
+    return VTA_LIGHT_RAIL_LINE_INFO[line as VtaLightRailLine]?.letter || line;
+  } else if (city === "Jersey City") {
+    return HBLR_LINE_INFO[line as HblrLine]?.letter || line;
+  } else if (city === "Calgary") {
+    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.letter || line;
+  } else if (city === "Edmonton") {
+    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.letter || line;
+  } else if (city === "Cleveland") {
+    return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.letter || line;
+  } else if (city === "Charlotte") {
+    return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.letter || line;
   }
   return line;
 }
@@ -157,10 +191,16 @@ function getBadgeWidthClass(city: City): string {
     case "Sacramento":
     case "Minneapolis":
     case "Salt Lake City":
-      return "badge-width-short-word"; // "Gold", "Blue", "Green", "S"
+    case "San Jose":
+    case "Calgary":
+    case "Edmonton":
+    case "Cleveland":
+    case "Charlotte":
+      return "badge-width-short-word"; // "Gold", "Blue", "Green", "S", "Orange", "Cap", "Met"
     case "Toronto":
     case "Philadelphia":
-      return "badge-width-3digit"; // "501", "102"
+    case "Jersey City":
+      return "badge-width-3digit"; // "501", "102", "BF", "HOB", "WS"
     default:
       return "badge-width-letter"; // Single letters (SF, LA, Boston, Seattle, Denver)
   }
@@ -198,6 +238,18 @@ function getLineInfo(line: string, city: City): string | undefined {
     return DENVER_RTD_LINE_INFO[line as DenverRtdLine]?.name;
   } else if (city === "Salt Lake City") {
     return SLC_TRAX_LINE_INFO[line as SlcTraxLine]?.name;
+  } else if (city === "San Jose") {
+    return VTA_LIGHT_RAIL_LINE_INFO[line as VtaLightRailLine]?.name;
+  } else if (city === "Jersey City") {
+    return HBLR_LINE_INFO[line as HblrLine]?.name;
+  } else if (city === "Calgary") {
+    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.name;
+  } else if (city === "Edmonton") {
+    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.name;
+  } else if (city === "Cleveland") {
+    return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.name;
+  } else if (city === "Charlotte") {
+    return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.name;
   }
   return undefined;
 }
@@ -318,6 +370,12 @@ export function Controls({
     Minneapolis: "Minneapolis",
     Denver: "Denver",
     "Salt Lake City": "Salt Lake City",
+    "San Jose": "San Jose",
+    "Jersey City": "Jersey City",
+    Calgary: "Calgary",
+    Edmonton: "Edmonton",
+    Cleveland: "Cleveland",
+    Charlotte: "Charlotte",
   };
   const systemNames: Record<string, string> = {
     SF: "Muni Speed Map",
@@ -334,21 +392,25 @@ export function Controls({
     Minneapolis: "Metro Speed Map",
     Denver: "RTD Speed Map",
     "Salt Lake City": "TRAX Speed Map",
+    "San Jose": "VTA Speed Map",
+    "Jersey City": "HBLR Speed Map",
+    Calgary: "CTrain Speed Map",
+    Edmonton: "LRT Speed Map",
+    Cleveland: "RTA Speed Map",
+    Charlotte: "LYNX Speed Map",
   };
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
-  console.log(systemLine, "temp");
 
   return (
     <div className="controls-panel">
       <div className="app-header">
+        <span className="app-city">{cityLine}</span>
         <h1
           className={`app-title ${city === "Boston" ? "app-title-long" : ""}`}
         >
-          Urban Rail Speed Map
-          {/* {systemLine}  */}
+          {systemLine}
         </h1>
-        <span className="app-city">{cityLine}</span>
       </div>
       {/* City Selector - 3x3 grid */}
       <div className="city-selector">
@@ -365,11 +427,20 @@ export function Controls({
         >
           🌴 LA
         </button>
+
+        {/* Row 2: Pacific NW + Central */}
+        <button
+          className={`city-btn  ${city === "Seattle" ? "active" : ""}`}
+          onClick={() => setCity("Seattle")}
+          title="Waiting for API key"
+        >
+          ☕ Seattle
+        </button>
         <button
           className={`city-btn ${city === "Portland" ? "active" : ""}`}
           onClick={() => setCity("Portland")}
         >
-          🚲 Portland
+          🚲 PDX
         </button>
 
         {/* Row 3: East + Canada */}
@@ -386,6 +457,13 @@ export function Controls({
           🔔 Philly
         </button>
         <button
+          className={`city-btn  ${city === "San Jose" ? "active" : ""}`}
+          onClick={() => setCity("San Jose")}
+          title="Data collection starting soon"
+        >
+          💻 SJ
+        </button>
+        <button
           className={`city-btn ${city === "Toronto" ? "active" : ""}`}
           onClick={() => setCity("Toronto")}
         >
@@ -394,19 +472,34 @@ export function Controls({
         <button
           className={`city-btn ${city === "Minneapolis" ? "active" : ""}`}
           onClick={() => setCity("Minneapolis")}
+          title="Data collection starting soon"
         >
           🌆 MSP
         </button>
-        {/* Row 4: New cities */}
         <button
-          className={`city-btn city-btn-pending ${
-            city === "Pittsburgh" ? "active" : ""
-          }`}
+          className={`city-btn ${city === "Denver" ? "active" : ""}`}
+          onClick={() => setCity("Denver")}
+          title="Data collection starting soon"
+        >
+          🏔️ Denver
+        </button>
+        {/* Row 4: New cities */}
+
+        <button
+          className={`city-btn  ${city === "Salt Lake City" ? "active" : ""}`}
+          onClick={() => setCity("Salt Lake City")}
+          title="Data collection starting soon"
+        >
+          🏔️ SLC
+        </button>
+        <button
+          className={`city-btn  ${city === "Pittsburgh" ? "active" : ""}`}
           onClick={() => setCity("Pittsburgh")}
           title="Data collection starting soon"
         >
           🏗️ PIT
         </button>
+
         <button
           className={`city-btn city-btn-pending ${
             city === "Dallas" ? "active" : ""
@@ -415,25 +508,6 @@ export function Controls({
           title="Data collection starting soon"
         >
           ⭐ Dallas
-        </button>
-
-        <button
-          className={`city-btn city-btn-pending ${
-            city === "Denver" ? "active" : ""
-          }`}
-          onClick={() => setCity("Denver")}
-          title="Data collection starting soon"
-        >
-          🏔️ Denver
-        </button>
-        <button
-          className={`city-btn city-btn-pending ${
-            city === "Salt Lake City" ? "active" : ""
-          }`}
-          onClick={() => setCity("Salt Lake City")}
-          title="Data collection starting soon"
-        >
-          🏔️ SLC
         </button>
         <button
           className={`city-btn city-btn-pending ${
@@ -444,16 +518,6 @@ export function Controls({
         >
           🌊 SD
         </button>
-        {/* Row 2: Pacific NW + Central */}
-        <button
-          className={`city-btn city-btn-pending ${
-            city === "Seattle" ? "active" : ""
-          }`}
-          onClick={() => setCity("Seattle")}
-          title="Waiting for API key"
-        >
-          ☕ Seattle
-        </button>
 
         <button
           className={`city-btn city-btn-warning ${
@@ -463,6 +527,42 @@ export function Controls({
           title="Data quality issues - SacRT doesn't tag light rail vehicles"
         >
           ⚠️ Sac
+        </button>
+
+        <button
+          className="city-btn city-btn-dark-orange"
+          onClick={() => console.log("Jersey City (HBLR) - Coming soon")}
+          title="Hudson-Bergen Light Rail - Coming soon"
+        >
+          🚊 JC
+        </button>
+        <button
+          className="city-btn city-btn-dark-orange"
+          onClick={() => console.log("Calgary (CTrain) - Coming soon")}
+          title="CTrain - Coming soon"
+        >
+          🚊 CGY
+        </button>
+        <button
+          className="city-btn city-btn-dark-orange"
+          onClick={() => console.log("Edmonton (LRT) - Coming soon")}
+          title="Edmonton LRT - Coming soon"
+        >
+          🚊 EDM
+        </button>
+        <button
+          className="city-btn city-btn-dark-orange"
+          onClick={() => console.log("Cleveland (RTA) - Coming soon")}
+          title="RTA Red Line - Coming soon"
+        >
+          🚊 CLE
+        </button>
+        <button
+          className="city-btn city-btn-dark-orange"
+          onClick={() => console.log("Charlotte (LYNX) - Coming soon")}
+          title="LYNX Blue Line - Coming soon"
+        >
+          🚊 CLT
         </button>
       </div>
 
@@ -521,7 +621,7 @@ export function Controls({
       {/* Line Filter */}
       <div className="control-group">
         <div className="control-label-row">
-          <label className="control-label">Filter Data</label>
+          <label className="control-label">Filter Lines</label>
           <div className="toggle-group">
             <button
               className={`toggle-button ${
@@ -698,56 +798,56 @@ export function Controls({
 
       {/* Speed Legend - static extended scale */}
       <div className="control-group">
-        <div className="control-label">Speed Legend (mph)</div>
+        <div className="control-label">Speed Legend</div>
         <div className="speed-legend">
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#9b2d6b" }}
             ></span>
-            <span>&lt; 5</span>
+            <span>≤ 5 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#ff3333" }}
             ></span>
-            <span>5-10</span>
+            <span>5-10 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#ff9933" }}
             ></span>
-            <span>10-15</span>
+            <span>10-15 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#ffdd33" }}
             ></span>
-            <span>15-25</span>
+            <span>15-25 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#88ff33" }}
             ></span>
-            <span>25-35</span>
+            <span>25-35 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#33eebb" }}
             ></span>
-            <span>35-50</span>
+            <span>35-50 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
               className="speed-legend-dot"
               style={{ backgroundColor: "#22ccff" }}
             ></span>
-            <span>&gt; 50</span>
+            <span>&gt; 50 mph</span>
           </div>
           <div className="speed-legend-item">
             <span
@@ -762,7 +862,7 @@ export function Controls({
       {/* Line Statistics */}
       {lineStats.length > 0 && (
         <div className="control-group">
-          <div className="control-label">Speed by Line (mph)</div>
+          <div className="control-label">Speed by Line</div>
           <div className="line-stats">
             {[...lineStats]
               .sort((a, b) => b.avgSpeed - a.avgSpeed)
@@ -908,6 +1008,14 @@ export function Controls({
             Lake Valley with three main lines plus the S-Line streetcar. Most
             operations are at-grade with some grade-separated overpasses and
             exclusive right-of-way sections.
+          </p>
+        )}
+        {city === "San Jose" && (
+          <p>
+            <strong>VTA Light Rail:</strong> Santa Clara Valley Transportation
+            Authority operates light rail with three lines (Blue, Green, Orange)
+            serving Silicon Valley. Most operations are at-grade with some
+            subway sections in downtown San Jose.
           </p>
         )}
         {city === "Seattle" && (
@@ -1063,6 +1171,14 @@ export function Controls({
               rel="noopener noreferrer"
             >
               UTA GTFS-RT
+            </a>
+          ) : city === "San Jose" ? (
+            <a
+              href="https://511.org/open-data/transit"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              511.org
             </a>
           ) : (
             <span>Transit API</span>

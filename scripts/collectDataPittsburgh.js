@@ -22,10 +22,11 @@ const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
 const SUPABASE_ANON_KEY =
   "REDACTED_SUPABASE_KEY";
 
-// ⚠️ UPDATE THIS URL - PRT GTFS-RT Vehicle Positions feed
-// Contact PRT or check their developer resources for the current URL
+// PRT GTFS-RT Vehicle Positions feed (train-specific feed)
+// No API key needed - direct access
 const VEHICLE_POSITIONS_URL =
-  "https://realtime.portauthority.org/bustime/api/v3/getvehicles";
+  process.env.VEHICLE_POSITIONS_URL ||
+  "https://truetime.portauthority.org/gtfsrt-train/vehicles";
 
 // Light Rail route IDs
 // Red Line (South Hills Village), Blue Line (Library), Silver Line (special service)
@@ -120,10 +121,40 @@ async function fetchVehiclePositions() {
       throw new Error(`API error: ${response.status}`);
     }
 
+    // Check content-type before attempting protobuf decode
+    const contentType = response.headers.get("content-type") || "";
+    if (
+      !/protobuf|octet|application\/x-protobuf|application\/proto/i.test(
+        contentType
+      )
+    ) {
+      const bodyText = await response.text();
+      console.error(
+        "GTFS-RT endpoint returned unexpected content-type:",
+        contentType
+      );
+      console.error(
+        "Response body (truncated):\n",
+        bodyText.substring(0, 2000)
+      );
+      return [];
+    }
+
     const buffer = await response.arrayBuffer();
-    const feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-      new Uint8Array(buffer),
-    );
+    let feed;
+    try {
+      feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
+        new Uint8Array(buffer)
+      );
+    } catch (err) {
+      const asText = Buffer.from(buffer).toString("utf8");
+      console.error(
+        "Failed to decode GTFS-RT protobuf. First 2000 chars of response:\n",
+        asText.substring(0, 2000)
+      );
+      console.error("Decode error:", err && err.message ? err.message : err);
+      return [];
+    }
 
     // Filter for light rail vehicles
     const railVehicles = feed.entity
@@ -131,7 +162,7 @@ async function fetchVehiclePositions() {
         (entity) =>
           entity.vehicle &&
           entity.vehicle.trip &&
-          isRailRoute(entity.vehicle.trip.routeId),
+          isRailRoute(entity.vehicle.trip.routeId)
       )
       .map((entity) => {
         const v = entity.vehicle;
@@ -217,7 +248,7 @@ async function collectOnce() {
   } else {
     console.log(
       `[${timestamp} ET] Saved ${count} Pittsburgh T rail positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`,
+        `(${withSpeed.length} with speed) in ${elapsed}ms`
     );
   }
 }
@@ -226,7 +257,7 @@ async function collectOnce() {
 async function runCollector() {
   console.log('🏗️ Pittsburgh "The T" Light Rail - Data Collector');
   console.log(
-    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`,
+    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`
   );
   console.log(`   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")}`);
   console.log("   Press Ctrl+C to stop\n");

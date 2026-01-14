@@ -3,22 +3,34 @@
  * Salt Lake City TRAX Light Rail - Data Collector
  *
  * Polls Utah Transit Authority (UTA) GTFS-RT API every 90 seconds and saves vehicle positions to Supabase.
- * Speed is calculated from consecutive GPS readings.
  *
- * UTA provides GTFS-RT feeds:
- * Check https://www.rideuta.com/Developer-Resources for developer resources
+ * UTA's GTFS-RT feed doesn't include routeId, only tripId.
+ * We load the static GTFS trips.txt to map tripId -> routeId, then filter for TRAX routes.
  *
- * ⚠️ NOTE: UTA GTFS-RT feed URLs need to be obtained from their developer resources.
+ * Speed is provided directly in the GTFS-RT feed.
  *
  * Run with: node scripts/collectDataSaltLakeCity.js
  */
 
 import { createClient } from "@supabase/supabase-js";
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
+import fetch, { Headers } from "node-fetch";
+import fs from "fs";
+
+// Polyfill fetch and Headers for older Node.js versions
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+}
+if (!globalThis.Headers) {
+  globalThis.Headers = Headers;
+}
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
-// Prefer environment variables for secrets when running collectors. These fall back to
-// the original hard-coded values so the script still runs locally without env setup.
 const SUPABASE_URL =
   process.env.SUPABASE_URL ||
   process.env.VITE_SUPABASE_URL ||
@@ -28,125 +40,88 @@ const SUPABASE_ANON_KEY =
   process.env.VITE_SUPABASE_ANON_KEY ||
   "REDACTED_SUPABASE_KEY";
 
-// GTFS-RT feed URL (can be overridden with env var VEHICLE_POSITIONS_URL)
-// Check https://www.rideuta.com/Developer-Resources for current URL and API key requirements
-const VEHICLE_POSITIONS_URL =
-  process.env.VEHICLE_POSITIONS_URL ||
-  "https://api.rideuta.com/gtfs-realtime/vehiclepositions";
+// GTFS-RT feed URLs
+const VEHICLE_POSITIONS_URL = "https://apps.rideuta.com/tms/gtfs/Vehicle";
 
-// TRAX Light Rail route IDs
-// Blue Line, Red Line, Green Line, S-Line (Sugar House Streetcar)
-const LIGHT_RAIL_ROUTES = ["Blue", "Red", "Green", "S-Line"];
+// TRAX Light Rail route IDs (from UTA GTFS routes.txt)
+// These are internal route_id values, not the public route numbers
+const TRAX_ROUTE_IDS = {
+  "5907": "Blue",    // 701 Blue Line
+  "8246": "Red",     // 703 Red Line
+  "39020": "Green",  // 704 Green Line
+  "45389": "S-Line", // 720 S-Line (Sugar House Streetcar)
+};
 
 const POLL_INTERVAL_MS = 90000; // 90 seconds
 
 // Initialize Supabase client
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Store previous positions for speed calculation
-const previousPositions = new Map();
+// Map of tripId -> routeId (loaded from GTFS)
+let tripToRouteMap = new Map();
 
-// Haversine distance between two points in meters
-function haversineDistance(lat1, lon1, lat2, lon2) {
-  const R = 6371000; // Earth's radius in meters
-  const dLat = ((lat2 - lat1) * Math.PI) / 180;
-  const dLon = ((lon2 - lon1) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-// Calculate speed from previous position
-function calculateSpeed(vehicleId, lat, lon, timestamp) {
-  const prev = previousPositions.get(vehicleId);
-
-  // Store current position for next calculation
-  previousPositions.set(vehicleId, { lat, lon, timestamp });
-
-  if (!prev) {
-    return null; // No previous position to compare
+// Load trips.txt from GTFS and build tripId -> routeId map
+function loadTripsFromGtfs() {
+  const tripsPath = path.join(__dirname, "../gtfs_slc/trips.txt");
+  
+  if (!fs.existsSync(tripsPath)) {
+    console.error("⚠️  trips.txt not found at", tripsPath);
+    console.error("   Run: cd gtfs_slc && curl -L -o gtfs.zip 'https://apps.rideuta.com/tms/gtfs/Static' && unzip -o gtfs.zip");
+    return false;
   }
 
-  const timeDiffSeconds = (timestamp - prev.timestamp) / 1000;
+  const content = fs.readFileSync(tripsPath, "utf8");
+  const lines = content.split("\n");
+  const header = lines[0].split(",");
+  
+  const routeIdIdx = header.indexOf("route_id");
+  const tripIdIdx = header.indexOf("trip_id");
+  const headsignIdx = header.indexOf("trip_headsign");
+  const directionIdx = header.indexOf("direction_id");
 
-  // Only calculate speed if time gap is reasonable (30-300 seconds)
-  if (timeDiffSeconds < 30 || timeDiffSeconds > 300) {
-    return null;
+  let traxTripCount = 0;
+  
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split(",");
+    if (cols.length < 3) continue;
+    
+    const routeId = cols[routeIdIdx];
+    const tripId = cols[tripIdIdx];
+    const headsign = cols[headsignIdx] || "";
+    const directionId = cols[directionIdx] || "0";
+    
+    // Only store TRAX trips
+    if (TRAX_ROUTE_IDS[routeId]) {
+      tripToRouteMap.set(tripId, {
+        routeId: routeId,
+        lineName: TRAX_ROUTE_IDS[routeId],
+        headsign: headsign,
+        directionId: directionId,
+      });
+      traxTripCount++;
+    }
   }
 
-  const distanceMeters = haversineDistance(prev.lat, prev.lon, lat, lon);
-
-  // If distance is very small, vehicle is stationary
-  if (distanceMeters < 5) {
-    return 0;
-  }
-
-  // Convert to mph
-  const speedMps = distanceMeters / timeDiffSeconds;
-  const speedMph = speedMps * 2.237;
-
-  // Sanity check: TRAX max speed is around 55 mph
-  if (speedMph > 65) {
-    return null; // Likely GPS glitch
-  }
-
-  return Math.round(speedMph * 10) / 10;
-}
-
-// Check if route ID is a rail line
-function isRailRoute(routeId) {
-  // Check for TRAX lines or S-Line
-  const upperRouteId = routeId.toUpperCase();
-  return LIGHT_RAIL_ROUTES.some((r) => upperRouteId.includes(r.toUpperCase()));
-}
-
-// Normalize route ID to our format
-function normalizeRouteId(routeId) {
-  const upper = routeId.toUpperCase();
-  if (upper.includes("BLUE")) return "Blue";
-  if (upper.includes("RED")) return "Red";
-  if (upper.includes("GREEN")) return "Green";
-  if (upper.includes("S-LINE") || upper.includes("SLINE")) return "S-Line";
-  return routeId;
+  console.log(`   Loaded ${traxTripCount} TRAX trips from GTFS`);
+  return true;
 }
 
 // Fetch vehicle positions from GTFS-RT feed
 async function fetchVehiclePositions() {
   try {
     const response = await fetch(VEHICLE_POSITIONS_URL, {
-      headers: {
-        Accept: "application/x-protobuf",
-      },
+      headers: { Accept: "application/x-protobuf" },
     });
 
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
 
-    // Check content-type before attempting protobuf decode. Many servers will
-    // return an HTML or JSON error page (302/404/403) which leads to the
-    // "invalid wire type" protobuf decode error. If the content-type doesn't
-    // look like protobuf/octet-stream, log the body for debugging and return.
     const contentType = response.headers.get("content-type") || "";
-    if (
-      !/protobuf|octet|application\/x-protobuf|application\/proto/i.test(
-        contentType,
-      )
-    ) {
+    if (!/protobuf|octet/i.test(contentType)) {
       const bodyText = await response.text();
-      console.error(
-        "GTFS-RT endpoint returned unexpected content-type:",
-        contentType,
-      );
-      console.error(
-        "Response body (truncated):\n",
-        bodyText.substring(0, 2000),
-      );
+      console.error("Unexpected content-type:", contentType);
+      console.error("Response (truncated):\n", bodyText.substring(0, 500));
       return [];
     }
 
@@ -154,51 +129,49 @@ async function fetchVehiclePositions() {
     let feed;
     try {
       feed = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(
-        new Uint8Array(buffer),
+        new Uint8Array(buffer)
       );
     } catch (err) {
-      const asText = Buffer.from(buffer).toString("utf8");
-      console.error(
-        "Failed to decode GTFS-RT protobuf. First 2000 chars of response:\n",
-        asText.substring(0, 2000),
-      );
-      console.error("Decode error:", err && err.message ? err.message : err);
+      console.error("Failed to decode GTFS-RT:", err.message);
       return [];
     }
 
-    // Filter for light rail vehicles
-    const railVehicles = feed.entity
-      .filter(
-        (entity) =>
-          entity.vehicle &&
-          entity.vehicle.trip &&
-          isRailRoute(entity.vehicle.trip.routeId),
-      )
-      .map((entity) => {
-        const v = entity.vehicle;
-        const vehicleId = v.vehicle?.id || entity.id;
-        const lat = v.position?.latitude;
-        const lon = v.position?.longitude;
-        const timestamp =
-          (v.timestamp?.low || v.timestamp) * 1000 || Date.now();
+    // Filter for TRAX vehicles using tripId lookup
+    const railVehicles = [];
+    
+    for (const entity of feed.entity) {
+      if (!entity.vehicle || !entity.vehicle.trip) continue;
+      
+      const tripId = entity.vehicle.trip.tripId;
+      const tripInfo = tripToRouteMap.get(tripId);
+      
+      if (!tripInfo) continue; // Not a TRAX trip
+      
+      const v = entity.vehicle;
+      const vehicleId = v.vehicle?.id || entity.id;
+      const lat = v.position?.latitude;
+      const lon = v.position?.longitude;
+      const timestamp = (v.timestamp?.low || v.timestamp) * 1000 || Date.now();
+      
+      // Speed is provided in m/s, convert to mph
+      const speedMs = v.position?.speed;
+      const speedMph = speedMs != null ? Math.round(speedMs * 2.237 * 10) / 10 : null;
 
-        // Calculate speed from consecutive GPS readings
-        const calculatedSpeed = calculateSpeed(vehicleId, lat, lon, timestamp);
-
-        return {
+      if (lat && lon && vehicleId) {
+        railVehicles.push({
           vehicle_id: vehicleId,
-          route_id: normalizeRouteId(v.trip.routeId),
-          direction_id: String(v.trip.directionId || ""),
+          route_id: tripInfo.lineName,
+          direction_id: tripInfo.directionId,
           lat: lat,
           lon: lon,
           heading: v.position?.bearing || null,
-          speed_calculated: calculatedSpeed,
+          speed_calculated: speedMph, // API-provided speed (stored in speed_calculated column)
           recorded_at: new Date(timestamp).toISOString(),
           city: "Salt Lake City",
-          headsign: null,
-        };
-      })
-      .filter((v) => v.lat && v.lon && v.vehicle_id);
+          headsign: tripInfo.headsign || null,
+        });
+      }
+    }
 
     return railVehicles;
   } catch (error) {
@@ -211,9 +184,7 @@ async function fetchVehiclePositions() {
 async function savePositions(positions) {
   if (positions.length === 0) return { count: 0 };
 
-  const { data, error } = await supabase
-    .from("vehicle_positions")
-    .insert(positions);
+  const { error } = await supabase.from("vehicle_positions").insert(positions);
 
   if (error) {
     console.error("Error saving positions:", error.message);
@@ -226,25 +197,33 @@ async function savePositions(positions) {
 // Main collection loop
 async function collectOnce() {
   const startTime = Date.now();
-
-  // Fetch current positions
   const vehicles = await fetchVehiclePositions();
 
   if (vehicles.length === 0) {
-    console.log(`[${new Date().toISOString()}] No vehicles found`);
+    const timestamp = new Date().toLocaleString("en-US", {
+      timeZone: "America/Denver",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    console.log(`[${timestamp} MT] No TRAX vehicles found (may be outside service hours)`);
     return;
   }
 
   // Count vehicles with speed data
-  const withSpeed = vehicles.filter((v) => v.speed_calculated !== null);
+  const withSpeed = vehicles.filter((v) => v.speed_calculated !== null).length;
+  
+  // Group by line
+  const byLine = {};
+  for (const v of vehicles) {
+    byLine[v.route_id] = (byLine[v.route_id] || 0) + 1;
+  }
 
-  // Save to database
   const { count, error } = await savePositions(vehicles);
 
   const elapsed = Date.now() - startTime;
   const timestamp = new Date().toLocaleString("en-US", {
     timeZone: "America/Denver",
-    year: "numeric",
     month: "2-digit",
     day: "2-digit",
     hour: "2-digit",
@@ -256,9 +235,11 @@ async function collectOnce() {
   if (error) {
     console.log(`[${timestamp} MT] Error: ${error.message}`);
   } else {
+    const lineBreakdown = Object.entries(byLine)
+      .map(([line, count]) => `${line}:${count}`)
+      .join(" ");
     console.log(
-      `[${timestamp} MT] Saved ${count} Salt Lake City TRAX positions ` +
-        `(${withSpeed.length} with speed) in ${elapsed}ms`,
+      `[${timestamp} MT] Saved ${count} TRAX positions (${withSpeed} with speed) [${lineBreakdown}] in ${elapsed}ms`
     );
   }
 }
@@ -266,16 +247,18 @@ async function collectOnce() {
 // Run continuously
 async function runCollector() {
   console.log("🏔️ Salt Lake City TRAX Light Rail - Data Collector");
-  console.log(
-    `   Polling GTFS-RT API every ${POLL_INTERVAL_MS / 1000} seconds`,
-  );
-  console.log(`   Tracking routes: ${LIGHT_RAIL_ROUTES.join(", ")}`);
+  console.log(`   Polling every ${POLL_INTERVAL_MS / 1000} seconds`);
+  console.log("   Tracking: Blue (701), Red (703), Green (704), S-Line (720)");
+  
+  // Load GTFS data
+  if (!loadTripsFromGtfs()) {
+    console.error("\n❌ Failed to load GTFS data. Exiting.");
+    process.exit(1);
+  }
+  
   console.log("   Press Ctrl+C to stop\n");
 
-  // Initial collection
   await collectOnce();
-
-  // Set up interval
   setInterval(collectOnce, POLL_INTERVAL_MS);
 }
 
@@ -285,5 +268,4 @@ process.on("SIGINT", () => {
   process.exit(0);
 });
 
-// Start the collector
 runCollector();

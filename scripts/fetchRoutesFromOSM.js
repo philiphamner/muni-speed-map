@@ -77,7 +77,7 @@ const CITIES = {
       Blue: "#0053A0",
       Red: "#EE3124",
       Green: "#008144",
-      "S-Line": "#FDB913",
+      "S-Line": "#77777a",
     },
   },
 };
@@ -177,7 +177,7 @@ out body geom;
   } catch (error) {
     console.error(
       `   ❌ Error fetching routes for ${city.name}:`,
-      error.message,
+      error.message
     );
     return 0;
   }
@@ -243,14 +243,14 @@ out body;
     const outputPath = path.join(DATA_DIR, city.outputStopsFile);
     fs.writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
     console.log(
-      `   ✅ Saved ${features.length} stops to ${city.outputStopsFile}`,
+      `   ✅ Saved ${features.length} stops to ${city.outputStopsFile}`
     );
 
     return features.length;
   } catch (error) {
     console.error(
       `   ❌ Error fetching stops for ${city.name}:`,
-      error.message,
+      error.message
     );
     return 0;
   }
@@ -278,7 +278,7 @@ async function main() {
   console.log("Summary:");
   for (const [city, counts] of Object.entries(results)) {
     console.log(
-      `  ${CITIES[city].name}: ${counts.routes} route segments, ${counts.stops} stops`,
+      `  ${CITIES[city].name}: ${counts.routes} route segments, ${counts.stops} stops`
     );
   }
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
