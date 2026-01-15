@@ -1405,7 +1405,7 @@ export function SpeedMap({
 
       // If no lines selected, show no routes; otherwise filter to selected
       // Skip filtering for cities with OSM-sourced route data that don't have line-specific routes
-      const osmSourcedCities = ["Dallas", "Minneapolis"];
+      const osmSourcedCities = ["Dallas"];
       const skipRouteFiltering = osmSourcedCities.includes(city);
 
       const filteredRoutes = {
