@@ -4,81 +4,14 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import type { City, LAMetroLine } from "../types";
 import { getLinesForCity, CITIES, LA_METRO_LINE_INFO } from "../types";
 import { supabase } from "../lib/supabase";
-import muniRoutes from "../data/muniMetroRoutes.json";
-import muniStops from "../data/muniMetroStops.json";
-import sfCrossings from "../data/sfGradeCrossings.json";
-import sfSwitches from "../data/sfSwitches.json";
-import laMetroRoutes from "../data/laMetroRoutes.json";
-import laMetroStops from "../data/laMetroStops.json";
-import laCrossings from "../data/laGradeCrossings.json";
-import laSwitches from "../data/laSwitches.json";
-import seattleLinkRoutes from "../data/seattleLinkRoutes.json";
-import seattleLinkStops from "../data/seattleLinkStops.json";
-import seattleCrossings from "../data/seattleGradeCrossings.json";
-import seattleSwitches from "../data/seattleSwitches.json";
-import bostonGreenLineRoutes from "../data/bostonGreenLineRoutes.json";
-import bostonGreenLineStops from "../data/bostonGreenLineStops.json";
-import bostonCrossings from "../data/bostonGradeCrossings.json";
-import bostonSwitches from "../data/bostonSwitches.json";
-import portlandMaxRoutes from "../data/portlandMaxRoutes.json";
-import portlandMaxStops from "../data/portlandMaxStops.json";
-import portlandCrossings from "../data/portlandGradeCrossings.json";
-import portlandSwitches from "../data/portlandSwitches.json";
-import sanDiegoTrolleyRoutes from "../data/sanDiegoTrolleyRoutes.json";
-import sanDiegoTrolleyStops from "../data/sanDiegoTrolleyStops.json";
-import sanDiegoCrossings from "../data/sanDiegoGradeCrossings.json";
-import sanDiegoSwitches from "../data/sanDiegoSwitches.json";
-import torontoStreetcarRoutes from "../data/torontoStreetcarRoutes.json";
-import torontoLrtRoutes from "../data/torontoLrtRoutes.json";
-import torontoStreetcarStops from "../data/torontoStreetcarStops.json";
-import torontoCrossings from "../data/torontoGradeCrossings.json";
-import torontoSwitches from "../data/torontoSwitches.json";
-import phillyTrolleyRoutes from "../data/phillyTrolleyRoutes.json";
-import phillyTrolleyStops from "../data/phillyTrolleyStops.json";
-import phillyCrossings from "../data/phillyGradeCrossings.json";
-import phillySwitches from "../data/phillySwitches.json";
-import sacramentoLightRailRoutes from "../data/sacramentoLightRailRoutes.json";
-import sacramentoLightRailStops from "../data/sacramentoLightRailStops.json";
-import sacramentoCrossings from "../data/sacramentoGradeCrossings.json";
-import sacramentoSwitches from "../data/sacramentoSwitches.json";
-// New cities
-import pittsburghTRoutes from "../data/pittsburghTRoutes.json";
-import pittsburghTStops from "../data/pittsburghTStops.json";
-import pittsburghCrossings from "../data/pittsburghGradeCrossings.json";
-import pittsburghSwitches from "../data/pittsburghSwitches.json";
-import dallasDartRoutes from "../data/dallasDartRoutes.json";
-import dallasDartStops from "../data/dallasDartStops.json";
-import dallasCrossings from "../data/dallasGradeCrossings.json";
-import dallasSwitches from "../data/dallasSwitches.json";
-import minneapolisMetroRoutes from "../data/minneapolisMetroRoutes.json";
-import minneapolisMetroStops from "../data/minneapolisMetroStops.json";
-import minneapolisCrossings from "../data/minneapolisGradeCrossings.json";
-import minneapolisSwitches from "../data/minneapolisSwitches.json";
-import denverRtdRoutes from "../data/denverRtdRoutes.json";
-import denverRtdStops from "../data/denverRtdStops.json";
-import denverCrossings from "../data/denverGradeCrossings.json";
-import denverSwitches from "../data/denverSwitches.json";
-import slcTraxRoutes from "../data/slcTraxRoutes.json";
-import slcTraxStops from "../data/slcTraxStops.json";
-import slcCrossings from "../data/slcGradeCrossings.json";
-import slcSwitches from "../data/slcSwitches.json";
-import vtaLightRailRoutes from "../data/vtaLightRailRoutes.json";
-import vtaLightRailStops from "../data/vtaLightRailStops.json";
-import sanJoseCrossings from "../data/sanJoseGradeCrossings.json";
-import sanJoseSwitches from "../data/sanJoseSwitches.json";
-// Speed limit data from OpenRailwayMap
-import sfMaxspeed from "../data/sfMaxspeed.json";
-import laMaxspeed from "../data/laMaxspeed.json";
-import seattleMaxspeed from "../data/seattleMaxspeed.json";
-import bostonMaxspeed from "../data/bostonMaxspeed.json";
-import portlandMaxspeed from "../data/portlandMaxspeed.json";
-import sanDiegoMaxspeed from "../data/sanDiegoMaxspeed.json";
-import phillyMaxspeed from "../data/phillyMaxspeed.json";
-import denverMaxspeed from "../data/denverMaxspeed.json";
-import minneapolisMaxspeed from "../data/minneapolisMaxspeed.json";
-import dallasMaxspeed from "../data/dallasMaxspeed.json";
-import slcMaxspeed from "../data/slcMaxspeed.json";
-import vtaMaxspeed from "../data/vtaMaxspeed.json";
+import {
+  loadCityData,
+  isCityDataCached,
+  getCachedCityData,
+  startBackgroundStaticPreload,
+  CITY_COORDS,
+  type CityStaticData,
+} from "../data/cityDataLoaders";
 import type { SpeedFilter, ViewMode, LineStats } from "../App";
 
 // Maximum distance in meters from route line to be considered "on route"
@@ -100,150 +33,13 @@ function debounce<T extends (...args: any[]) => void>(
   return debounced as T & { cancel: () => void };
 }
 
-// City-specific configurations
-const CITY_CONFIG = {
-  SF: {
-    center: [-122.433, 37.767] as [number, number],
-    zoom: 11,
-    routes: muniRoutes,
-    stops: muniStops,
-    crossings: sfCrossings,
-    switches: sfSwitches,
-    maxspeed: sfMaxspeed as any,
-  },
-  LA: {
-    center: [-118.25, 34.05] as [number, number],
-    zoom: 11,
-    routes: laMetroRoutes,
-    stops: laMetroStops,
-    crossings: laCrossings,
-    switches: laSwitches,
-    maxspeed: laMaxspeed as any,
-  },
-  Seattle: {
-    center: [-122.33, 47.6] as [number, number],
-    zoom: 11,
-    routes: seattleLinkRoutes,
-    stops: seattleLinkStops,
-    crossings: seattleCrossings,
-    switches: seattleSwitches,
-    maxspeed: seattleMaxspeed as any,
-  },
-  Boston: {
-    center: [-71.08, 42.35] as [number, number],
-    zoom: 11,
-    routes: bostonGreenLineRoutes,
-    stops: bostonGreenLineStops,
-    crossings: bostonCrossings,
-    switches: bostonSwitches,
-    maxspeed: bostonMaxspeed as any,
-  },
-  Portland: {
-    center: [-122.68, 45.52] as [number, number],
-    zoom: 11,
-    routes: portlandMaxRoutes,
-    stops: portlandMaxStops,
-    crossings: portlandCrossings,
-    switches: portlandSwitches,
-    maxspeed: portlandMaxspeed as any,
-  },
-  "San Diego": {
-    center: [-117.15, 32.72] as [number, number],
-    zoom: 11,
-    routes: sanDiegoTrolleyRoutes,
-    stops: sanDiegoTrolleyStops,
-    crossings: sanDiegoCrossings,
-    switches: sanDiegoSwitches,
-    maxspeed: sanDiegoMaxspeed as any,
-  },
-  Toronto: {
-    center: [-79.38, 43.65] as [number, number],
-    zoom: 11,
-    // Merge streetcar routes with LRT routes
-    routes: {
-      type: "FeatureCollection",
-      features: [
-        ...(torontoStreetcarRoutes as any).features,
-        ...(torontoLrtRoutes as any).features,
-      ],
-    },
-    stops: torontoStreetcarStops,
-    crossings: torontoCrossings,
-    switches: torontoSwitches,
-    maxspeed: null as any,
-  },
-  Philadelphia: {
-    center: [-75.16, 39.95] as [number, number],
-    zoom: 11,
-    routes: phillyTrolleyRoutes,
-    stops: phillyTrolleyStops,
-    crossings: phillyCrossings,
-    switches: phillySwitches,
-    maxspeed: phillyMaxspeed as any,
-  },
-  Sacramento: {
-    center: [-121.49, 38.58] as [number, number],
-    zoom: 11,
-    routes: sacramentoLightRailRoutes,
-    stops: sacramentoLightRailStops,
-    crossings: sacramentoCrossings,
-    switches: sacramentoSwitches,
-    maxspeed: null as any,
-  },
-  Pittsburgh: {
-    center: [-79.99, 40.43] as [number, number],
-    zoom: 11,
-    routes: pittsburghTRoutes,
-    stops: pittsburghTStops,
-    crossings: pittsburghCrossings,
-    switches: pittsburghSwitches,
-    maxspeed: null as any,
-  },
-  Dallas: {
-    center: [-96.8, 32.78] as [number, number],
-    zoom: 11,
-    routes: dallasDartRoutes,
-    stops: dallasDartStops,
-    crossings: dallasCrossings,
-    switches: dallasSwitches,
-    maxspeed: dallasMaxspeed as any,
-  },
-  Minneapolis: {
-    center: [-93.27, 44.98] as [number, number],
-    zoom: 11,
-    routes: minneapolisMetroRoutes,
-    stops: minneapolisMetroStops,
-    crossings: minneapolisCrossings,
-    switches: minneapolisSwitches,
-    maxspeed: minneapolisMaxspeed as any,
-  },
-  Denver: {
-    center: [-104.9, 39.75] as [number, number],
-    zoom: 11,
-    routes: denverRtdRoutes,
-    stops: denverRtdStops,
-    crossings: denverCrossings,
-    switches: denverSwitches,
-    maxspeed: denverMaxspeed as any,
-  },
-  "Salt Lake City": {
-    center: [-111.89, 40.76] as [number, number],
-    zoom: 11,
-    routes: slcTraxRoutes,
-    stops: slcTraxStops,
-    crossings: slcCrossings,
-    switches: slcSwitches,
-    maxspeed: slcMaxspeed as any,
-  },
-  "San Jose": {
-    center: [-121.89, 37.34] as [number, number],
-    zoom: 11,
-    routes: vtaLightRailRoutes,
-    stops: vtaLightRailStops,
-    crossings: sanJoseCrossings,
-    switches: sanJoseSwitches,
-    maxspeed: vtaMaxspeed as any,
-  },
+// Empty city data placeholder - used while loading
+const EMPTY_CITY_DATA: CityStaticData = {
+  routes: { type: "FeatureCollection", features: [] },
+  stops: { type: "FeatureCollection", features: [] },
+  crossings: { type: "FeatureCollection", features: [] },
+  switches: { type: "FeatureCollection", features: [] },
+  maxspeed: null,
 };
 
 // Haversine distance between two points in meters
@@ -793,6 +589,9 @@ async function preloadCityData(targetCity: City): Promise<void> {
   if (cityDataCache.has(targetCity) || !supabase) return;
 
   try {
+    // First ensure static data is loaded for this city
+    const staticData = await loadCityData(targetCity);
+
     const PAGE_SIZE = 1000;
     const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
@@ -853,11 +652,8 @@ async function preloadCityData(targetCity: City): Promise<void> {
       return false;
     });
 
-    // Get city config for segment computation
-    const cityConfig = CITY_CONFIG[targetCity];
-
     // Build route feature map once (optimization: avoids filtering per-vehicle)
-    const routeFeatureMap = getRouteFeatureMap(cityConfig.routes);
+    const routeFeatureMap = getRouteFeatureMap(staticData.routes);
 
     const positions: Vehicle[] = filteredData.map((row: any) => ({
       id: `${row.vehicle_id}-${row.id}`,
@@ -871,7 +667,7 @@ async function preloadCityData(targetCity: City): Promise<void> {
         row.lat,
         row.lon,
         row.route_id,
-        cityConfig.routes,
+        staticData.routes,
         routeFeatureMap
       ),
       headsign: row.headsign,
@@ -948,12 +744,73 @@ export function SpeedMap({
   );
   const [loadingProgress, setLoadingProgress] = useState<string>("");
 
+  // City static data - loaded lazily on-demand
+  const [cityStaticData, setCityStaticData] = useState<CityStaticData | null>(
+    () => getCachedCityData(city) || null
+  );
+  const [cityDataLoading, setCityDataLoading] = useState(
+    !isCityDataCached(city)
+  );
+
   // Ref to avoid re-render loops with the callback
   const onVehicleUpdateRef = useRef(onVehicleUpdate);
   onVehicleUpdateRef.current = onVehicleUpdate;
 
-  // Memoize city-specific data
-  const cityConfig = useMemo(() => CITY_CONFIG[city], [city]);
+  // Load city static data when city changes
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadData() {
+      // Check if already cached (instant)
+      const cached = getCachedCityData(city);
+      if (cached) {
+        setCityStaticData(cached);
+        setCityDataLoading(false);
+        return;
+      }
+
+      // Show loading state
+      setCityDataLoading(true);
+      setLoadingProgress("Loading city data...");
+
+      try {
+        const data = await loadCityData(city);
+        if (!cancelled) {
+          setCityStaticData(data);
+          setCityDataLoading(false);
+          setLoadingProgress("");
+          // Start preloading other popular cities in the background
+          startBackgroundStaticPreload(city);
+        }
+      } catch (error) {
+        console.error(`Failed to load ${city} data:`, error);
+        if (!cancelled) {
+          setCityStaticData(EMPTY_CITY_DATA);
+          setCityDataLoading(false);
+          setLoadingProgress("");
+        }
+      }
+    }
+
+    loadData();
+    return () => {
+      cancelled = true;
+    };
+  }, [city]);
+
+  // Use loaded city data or empty placeholder
+  const cityConfig = useMemo(
+    () => ({
+      ...CITY_COORDS[city],
+      routes: cityStaticData?.routes || EMPTY_CITY_DATA.routes,
+      stops: cityStaticData?.stops || EMPTY_CITY_DATA.stops,
+      crossings: cityStaticData?.crossings || EMPTY_CITY_DATA.crossings,
+      switches: cityStaticData?.switches || EMPTY_CITY_DATA.switches,
+      maxspeed: cityStaticData?.maxspeed || null,
+    }),
+    [city, cityStaticData]
+  );
+
   const routeGeometryMap = useMemo(
     () => buildRouteGeometryMap(cityConfig.routes),
     [cityConfig.routes]
@@ -1190,8 +1047,13 @@ export function SpeedMap({
     }
   }, [city, cityConfig.routes]);
 
-  // Fetch data when city changes
+  // Fetch data when city changes (but only after static data is loaded)
   useEffect(() => {
+    // Don't fetch if static data isn't loaded yet
+    if (cityDataLoading || !cityStaticData) {
+      return;
+    }
+
     // Check cache first - if cached, don't show loading state
     const cached = cityDataCache.get(city);
     if (cached && cached.length > 0) {
@@ -1248,7 +1110,7 @@ export function SpeedMap({
     setVehicles([]);
     setDataSource("loading");
     fetchVehiclesFromSupabase();
-  }, [city, fetchVehiclesFromSupabase]);
+  }, [city, cityDataLoading, cityStaticData, fetchVehiclesFromSupabase]);
 
   // Initialize map
   useEffect(() => {
@@ -1983,8 +1845,7 @@ export function SpeedMap({
 
   // Get switches and signals data for current city, filtered by proximity to routes
   const switchesData = useMemo(() => {
-    const config = CITY_CONFIG[city];
-    const rawSwitches = config.switches || {
+    const rawSwitches = cityConfig.switches || {
       type: "FeatureCollection",
       features: [],
     };
@@ -2738,7 +2599,15 @@ export function SpeedMap({
         <div className="layer-label">{showSatellite ? "Map" : "Satellite"}</div>
       </div>
 
-      {dataSource === "none" && (
+      {/* City data loading overlay */}
+      {cityDataLoading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner" />
+          <div className="loading-text">Loading {city}...</div>
+        </div>
+      )}
+
+      {dataSource === "none" && !cityDataLoading && (
         <div className="data-status">
           No data yet. Run{" "}
           <code>
@@ -2758,7 +2627,7 @@ export function SpeedMap({
           to start collecting.
         </div>
       )}
-      {loadingProgress && (
+      {loadingProgress && !cityDataLoading && (
         <div className="loading-indicator">{loadingProgress}</div>
       )}
     </div>
