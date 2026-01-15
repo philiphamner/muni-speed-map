@@ -78,6 +78,7 @@ import denverMaxspeed from "../data/denverMaxspeed.json";
 import minneapolisMaxspeed from "../data/minneapolisMaxspeed.json";
 import dallasMaxspeed from "../data/dallasMaxspeed.json";
 import slcMaxspeed from "../data/slcMaxspeed.json";
+import vtaMaxspeed from "../data/vtaMaxspeed.json";
 import type { SpeedFilter, ViewMode, LineStats } from "../App";
 
 // Maximum distance in meters from route line to be considered "on route"
@@ -241,7 +242,7 @@ const CITY_CONFIG = {
     stops: vtaLightRailStops,
     crossings: sanJoseCrossings,
     switches: sanJoseSwitches,
-    maxspeed: null as any, // No maxspeed data yet
+    maxspeed: vtaMaxspeed as any,
   },
 };
 
@@ -395,7 +396,7 @@ function shouldShowRoute(
 }
 
 // Segment size in meters
-const SEGMENT_SIZE_METERS = 100;
+const SEGMENT_SIZE_METERS = 200;
 
 // Calculate distance along a LineString to the nearest point
 function findNearestPointOnLine(
@@ -534,27 +535,54 @@ interface SegmentData {
 
 function buildAllSegments(routes: any): SegmentData[] {
   const allSegments: SegmentData[] = [];
-  const seenRoutes = new Set<string>();
+  // Track cumulative segment offset PER ROUTE across all features
+  const routeSegmentOffsets = new Map<string, number>();
 
   routes.features.forEach((feature: any) => {
     const routeId = feature.properties.route_id;
+    const geometry = feature.geometry;
+    const geomType = geometry.type;
 
-    if (seenRoutes.has(routeId)) return;
-    seenRoutes.add(routeId);
+    // Get current offset for this route (starts at 0)
+    let cumulativeSegmentOffset = routeSegmentOffsets.get(routeId) || 0;
 
-    const coordinates = feature.geometry.coordinates;
-    const segments = createSegments(coordinates, routeId, "combined");
+    // Handle both LineString and MultiLineString geometries
+    let lineStrings: number[][][];
+    if (geomType === "MultiLineString") {
+      lineStrings = geometry.coordinates;
+    } else {
+      // LineString - wrap in array to process uniformly
+      lineStrings = [geometry.coordinates];
+    }
 
-    segments.forEach((seg) => {
-      const segmentId = `${routeId}_${seg.segmentId.split("_").pop()}`;
-      allSegments.push({
-        segmentId,
-        routeId,
-        coordinates: seg.coords,
-        startDistance: seg.startDistance,
-        endDistance: seg.endDistance,
+    // Process all line strings with cumulative offset for segment indexing
+    for (const coordinates of lineStrings) {
+      const segments = createSegments(coordinates, routeId, "combined");
+
+      segments.forEach((seg) => {
+        const originalIndex = parseInt(seg.segmentId.split("_").pop() || "0");
+        const adjustedIndex = cumulativeSegmentOffset + originalIndex;
+        const segmentId = `${routeId}_${adjustedIndex}`;
+        allSegments.push({
+          segmentId,
+          routeId,
+          coordinates: seg.coords,
+          startDistance: seg.startDistance,
+          endDistance: seg.endDistance,
+        });
       });
-    });
+
+      // Calculate how many segments this linestring produced
+      if (segments.length > 0) {
+        const lastIndex = parseInt(
+          segments[segments.length - 1].segmentId.split("_").pop() || "0"
+        );
+        cumulativeSegmentOffset += lastIndex + 1;
+      }
+    }
+
+    // Store the updated offset for this route
+    routeSegmentOffsets.set(routeId, cumulativeSegmentOffset);
   });
 
   return allSegments;
@@ -565,8 +593,14 @@ const routeFeatureCache = new Map<string, Map<string, any[]>>();
 
 // Build route features lookup map once per routes object
 function getRouteFeatureMap(routes: any): Map<string, any[]> {
-  // Use routes object reference as cache key (same object = same map)
-  const cacheKey = JSON.stringify(routes.features?.length ?? 0);
+  // Generate a unique cache key based on the first few route_ids to distinguish between cities
+  // (Different cities will have different route_ids even if same feature count)
+  const routeIds = (routes.features || [])
+    .slice(0, 5)
+    .map((f: any) => f.properties?.route_id || "")
+    .join(",");
+  const cacheKey = `${routes.features?.length ?? 0}-${routeIds}`;
+
   if (routeFeatureCache.has(cacheKey)) {
     return routeFeatureCache.get(cacheKey)!;
   }
@@ -600,20 +634,51 @@ function findSegmentForVehicle(
   let bestSegmentIndex: number | null = null;
   let minDistance = Infinity;
 
-  for (const feature of routeFeatures) {
-    const coordinates = (feature as any).geometry.coordinates;
-    const result = findNearestPointOnLine(lat, lon, coordinates);
+  // Track cumulative segment offset across ALL features for this route
+  // (same logic as buildAllSegments to ensure consistent segment IDs)
+  let cumulativeSegmentOffset = 0;
 
-    if (
-      result.distance < minDistance &&
-      result.distance <= MAX_DISTANCE_FROM_ROUTE_METERS
-    ) {
-      minDistance = result.distance;
-      bestSegmentIndex = Math.floor(result.distanceAlong / SEGMENT_SIZE_METERS);
+  for (const feature of routeFeatures) {
+    const geometry = (feature as any).geometry;
+    const geomType = geometry.type;
+
+    // Handle both LineString and MultiLineString geometries
+    let lineStrings: number[][][];
+    if (geomType === "MultiLineString") {
+      lineStrings = geometry.coordinates;
+    } else {
+      // LineString - wrap in array to process uniformly
+      lineStrings = [geometry.coordinates];
+    }
+
+    // Process each line string in the geometry
+    for (const coordinates of lineStrings) {
+      const result = findNearestPointOnLine(lat, lon, coordinates);
+
+      if (
+        result.distance < minDistance &&
+        result.distance <= MAX_DISTANCE_FROM_ROUTE_METERS
+      ) {
+        minDistance = result.distance;
+        // Calculate segment index within this linestring, then add cumulative offset
+        const localSegmentIndex = Math.floor(
+          result.distanceAlong / SEGMENT_SIZE_METERS
+        );
+        bestSegmentIndex = cumulativeSegmentOffset + localSegmentIndex;
+      }
+
+      // Calculate how many segments this linestring has
+      // Must match buildAllSegments logic: floor(length / segment_size) + 1 for the partial end segment
+      const lineLength = result.totalLength;
+      const segmentsInLine = Math.floor(lineLength / SEGMENT_SIZE_METERS) + 1;
+      cumulativeSegmentOffset += segmentsInLine;
     }
   }
 
-  if (bestSegmentIndex !== null) {
+  if (
+    bestSegmentIndex !== null &&
+    minDistance <= MAX_DISTANCE_FROM_ROUTE_METERS
+  ) {
     return `${routeId}_${bestSegmentIndex}`;
   }
 
@@ -2569,8 +2634,10 @@ export function SpeedMap({
               "case",
               ["==", ["get", "avgSpeed"], null],
               "#666666", // grey - no data
+              ["<=", ["get", "avgSpeed"], 5],
+              "#9b2d6b", // magenta - crawling (≤5 mph)
               ["<", ["get", "avgSpeed"], 10],
-              "#ff3333", // red - very slow (< 10 mph)
+              "#ff3333", // red - very slow (5-10 mph)
               ["<", ["get", "avgSpeed"], 15],
               "#ff9933", // orange - slow (10-15 mph)
               ["<", ["get", "avgSpeed"], 25],

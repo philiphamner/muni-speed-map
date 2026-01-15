@@ -12,6 +12,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import fetch from "node-fetch";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -124,7 +125,7 @@ const CITIES = {
   },
   LA: {
     name: "Los Angeles",
-    bbox: [33.75, -118.45, 34.15, -117.85], // Smaller bbox for faster query
+    bbox: [33.76, -118.50, 34.18, -117.74], // Extended to cover full A line to Glendora/San Dimas
     routesFile: "laMetroRoutes.json",
     outputFile: "laMaxspeed.json",
     railwayTypes: "light_rail",
@@ -132,7 +133,7 @@ const CITIES = {
   },
   Seattle: {
     name: "Seattle",
-    bbox: [47.35, -122.45, 47.75, -122.15], // Tighter bbox
+    bbox: [47.23, -122.46, 47.82, -122.10], // Extended to cover full 1 Line (Federal Way to Lynnwood)
     routesFile: "seattleLinkRoutes.json",
     outputFile: "seattleMaxspeed.json",
     railwayTypes: "light_rail",
@@ -223,6 +224,14 @@ const CITIES = {
     bbox: [40.6, -112.0, 40.85, -111.75],
     routesFile: "slcTraxRoutes.json",
     outputFile: "slcMaxspeed.json",
+    railwayTypes: "light_rail",
+    networkFilter: null,
+  },
+  "San Jose": {
+    name: "San Jose",
+    bbox: [37.23, -122.08, 37.42, -121.78], // VTA Light Rail extent
+    routesFile: "vtaLightRailRoutes.json",
+    outputFile: "vtaMaxspeed.json",
     railwayTypes: "light_rail",
     networkFilter: null,
   },
