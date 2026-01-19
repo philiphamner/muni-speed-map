@@ -90,6 +90,7 @@ The focus remains on **light rail and streetcars that compete with street traffi
 | 🏛️ **Sacramento**     | SacRT Light Rail | Gold, Blue                       | ✅ Collecting |
 | 🌵 **Phoenix**        | Valley Metro     | A Line, B Line                   | ✅ Collecting |
 | 🚊 **Charlotte**      | CATS LYNX        | Blue Line, Gold Line             | ✅ Collecting |
+| 🍁 **Calgary**        | Calgary CTrain   | Red Line, Blue Line              | ✅ Collecting |
 | 🌊 **San Diego**      | MTS Trolley      | Blue, Orange, Green, Copper      | ⏳ Needs key  |
 | 🤠 **Dallas**         | DART Light Rail  | Red, Blue, Green, Orange         | ⏳ Needs key  |
 
@@ -180,25 +181,27 @@ npm run collect:all
 
 ### 📜 Collection Scripts
 
-| Command                       | City           | Script                       | Status           |
-| ----------------------------- | -------------- | ---------------------------- | ---------------- |
-| `npm run collect:sf`          | San Francisco  | `collectData.js`             | ✅ Active        |
-| `npm run collect:la`          | Los Angeles    | `collectDataLA.js`           | ✅ Active        |
-| `npm run collect:seattle`     | Seattle        | `collectDataSeattle.js`      | ✅ Active        |
-| `npm run collect:portland`    | Portland       | `collectDataPortland.js`     | ✅ Active        |
-| `npm run collect:boston`      | Boston         | `collectDataBoston.js`       | ✅ Active        |
-| `npm run collect:philly`      | Philadelphia   | `collectDataPhilly.js`       | ✅ Active        |
-| `npm run collect:toronto`     | Toronto        | `collectDataToronto.js`      | ✅ Active        |
-| `npm run collect:sacramento`  | Sacramento     | `collectDataSacramento.js`   | ✅ Active        |
-| `npm run collect:minneapolis` | Minneapolis    | `collectDataMinneapolis.js`  | ✅ Active        |
-| `npm run collect:denver`      | Denver         | `collectDataDenver.js`       | ✅ Active        |
-| `npm run collect:slc`         | Salt Lake City | `collectDataSaltLakeCity.js` | ✅ Active        |
-| `npm run collect:pittsburgh`  | Pittsburgh     | `collectDataPittsburgh.js`   | ✅ Active        |
-| `npm run collect:vta`         | San Jose (VTA) | `collectDataVTA.js`          | ✅ Active        |
-| `npm run collect:phoenix`     | Phoenix        | `collectDataPhoenix.js`      | ✅ Active        |
-| `npm run collect:charlotte`   | Charlotte      | `collectDataCharlotte.js`    | ✅ Active        |
-| `npm run collect:sandiego`    | San Diego      | `collectDataSanDiego.js`     | ⏳ Needs API key |
-| `npm run collect:dallas`      | Dallas         | `collectDataDallas.js`       | ⏳ Needs API key |
+| Command                              | City                 | Script                            | Status                   |
+| ------------------------------------ | -------------------- | --------------------------------- | ------------------------ |
+| `npm run collect:sf`                 | San Francisco        | `collectData.js`                  | ✅ Active                |
+| `npm run collect:la`                 | Los Angeles          | `collectDataLA.js`                | ✅ Active                |
+| `npm run collect:seattle`            | Seattle              | `collectDataSeattle.js`           | ✅ Active                |
+| `npm run collect:portland`           | Portland (MAX)       | `collectDataPortland.js`          | ✅ Active                |
+| `npm run collect:portland-streetcar` | Portland (Streetcar) | `collectDataPortlandStreetcar.js` | ✅ Active                |
+| `npm run collect:boston`             | Boston               | `collectDataBoston.js`            | ✅ Active                |
+| `npm run collect:philly`             | Philadelphia         | `collectDataPhilly.js`            | ✅ Active                |
+| `npm run collect:toronto`            | Toronto              | `collectDataToronto.js`           | ✅ Active                |
+| `npm run collect:sacramento`         | Sacramento           | `collectDataSacramento.js`        | ✅ Active                |
+| `npm run collect:minneapolis`        | Minneapolis          | `collectDataMinneapolis.js`       | ✅ Active                |
+| `npm run collect:denver`             | Denver               | `collectDataDenver.js`            | ✅ Active                |
+| `npm run collect:slc`                | Salt Lake City       | `collectDataSaltLakeCity.js`      | ✅ Active                |
+| `npm run collect:pittsburgh`         | Pittsburgh           | `collectDataPittsburgh.js`        | ✅ Active                |
+| `npm run collect:vta`                | San Jose (VTA)       | `collectDataVTA.js`               | ✅ Active                |
+| `npm run collect:phoenix`            | Phoenix              | `collectDataPhoenix.js`           | ✅ Active                |
+| `npm run collect:charlotte`          | Charlotte            | `collectDataCharlotte.js`         | ✅ Active                |
+| `npm run collect:calgary`            | Calgary              | `collectDataCalgary.js`           | ❌ No train data in feed |
+| `npm run collect:sandiego`           | San Diego            | `collectDataSanDiego.js`          | ⏳ Needs API key         |
+| `npm run collect:dallas`             | Dallas               | `collectDataDallas.js`            | ⏳ Needs API key         |
 
 **Combined Scripts:**
 

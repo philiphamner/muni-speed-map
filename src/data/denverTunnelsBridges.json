@@ -1,0 +1,693 @@
+{
+  "type": "FeatureCollection",
+  "generated": "2026-01-19T04:32:23.460Z",
+  "source": "OpenStreetMap via Overpass API",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 32077759,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9398364,
+            39.6799866
+          ],
+          [
+            -104.9399969,
+            39.6800482
+          ],
+          [
+            -104.9401185,
+            39.6801066
+          ],
+          [
+            -104.9402175,
+            39.6801606
+          ],
+          [
+            -104.9402599,
+            39.68019
+          ],
+          [
+            -104.9403403,
+            39.6802557
+          ],
+          [
+            -104.9404089,
+            39.6803167
+          ],
+          [
+            -104.9404733,
+            39.6803807
+          ],
+          [
+            -104.9408582,
+            39.6807849
+          ],
+          [
+            -104.9409868,
+            39.6809263
+          ],
+          [
+            -104.9411404,
+            39.6811006
+          ],
+          [
+            -104.9414517,
+            39.6814655
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 37747047,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9188111,
+            39.6523996
+          ],
+          [
+            -104.9189673,
+            39.6526454
+          ],
+          [
+            -104.919072,
+            39.6528322
+          ],
+          [
+            -104.9191635,
+            39.6530159
+          ],
+          [
+            -104.9193434,
+            39.6534428
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 99353546,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9781845,
+            39.6928686
+          ],
+          [
+            -104.9786006,
+            39.6932483
+          ],
+          [
+            -104.9793747,
+            39.6939375
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 121478624,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9792098,
+            39.6936154
+          ],
+          [
+            -104.9783712,
+            39.6928694
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 121478646,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9193931,
+            39.653446
+          ],
+          [
+            -104.9192121,
+            39.6530104
+          ],
+          [
+            -104.9191111,
+            39.6528042
+          ],
+          [
+            -104.9190175,
+            39.6526332
+          ],
+          [
+            -104.9188749,
+            39.6524032
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 121478649,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9414941,
+            39.6814452
+          ],
+          [
+            -104.9412261,
+            39.6811259
+          ],
+          [
+            -104.9409393,
+            39.6808018
+          ],
+          [
+            -104.9404977,
+            39.680336
+          ],
+          [
+            -104.9404314,
+            39.6802709
+          ],
+          [
+            -104.9403897,
+            39.6802352
+          ],
+          [
+            -104.9403235,
+            39.6801824
+          ],
+          [
+            -104.9402791,
+            39.6801529
+          ],
+          [
+            -104.9402092,
+            39.6801129
+          ],
+          [
+            -104.9400925,
+            39.6800545
+          ],
+          [
+            -104.9400103,
+            39.6800179
+          ],
+          [
+            -104.9398573,
+            39.679954
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 218679716,
+        "infraType": "tunnel",
+        "name": "RTD H Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9075482,
+            39.6347698
+          ],
+          [
+            -104.9074234,
+            39.6347347
+          ],
+          [
+            -104.9073329,
+            39.6347124
+          ],
+          [
+            -104.9072161,
+            39.6346852
+          ],
+          [
+            -104.9071422,
+            39.6346722
+          ],
+          [
+            -104.9070312,
+            39.634656
+          ],
+          [
+            -104.9069698,
+            39.6346484
+          ],
+          [
+            -104.9068433,
+            39.634635
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 218679728,
+        "infraType": "tunnel",
+        "name": "RTD R Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9064215,
+            39.633838
+          ],
+          [
+            -104.9064649,
+            39.6337868
+          ],
+          [
+            -104.9065435,
+            39.6336871
+          ],
+          [
+            -104.9066005,
+            39.6336091
+          ],
+          [
+            -104.9066444,
+            39.6335412
+          ],
+          [
+            -104.9066981,
+            39.6334539
+          ],
+          [
+            -104.9067336,
+            39.6333917
+          ],
+          [
+            -104.9067969,
+            39.6332753
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 218679746,
+        "infraType": "tunnel",
+        "name": "RTD R Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9067641,
+            39.6331957
+          ],
+          [
+            -104.9066717,
+            39.6333628
+          ],
+          [
+            -104.9065912,
+            39.6334959
+          ],
+          [
+            -104.9065261,
+            39.6335873
+          ],
+          [
+            -104.9064349,
+            39.6337051
+          ],
+          [
+            -104.9063852,
+            39.6337647
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 218679750,
+        "infraType": "tunnel",
+        "name": "RTD H Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9068736,
+            39.6346932
+          ],
+          [
+            -104.907042,
+            39.6347185
+          ],
+          [
+            -104.9071436,
+            39.6347387
+          ],
+          [
+            -104.9072807,
+            39.6347696
+          ],
+          [
+            -104.9073678,
+            39.6347916
+          ],
+          [
+            -104.9075963,
+            39.6348514
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 234399825,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9366019,
+            39.6794972
+          ],
+          [
+            -104.9368579,
+            39.6795285
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 234399831,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9368307,
+            39.6794862
+          ],
+          [
+            -104.9366115,
+            39.6794586
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 344210826,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.934052,
+            39.678153
+          ],
+          [
+            -104.9337484,
+            39.6777401
+          ],
+          [
+            -104.9336947,
+            39.6776672
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 344210837,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9336195,
+            39.6776498
+          ],
+          [
+            -104.9339862,
+            39.6781406
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 914014883,
+        "infraType": "tunnel",
+        "name": "RTD W Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -105.0144159,
+            39.7375379
+          ],
+          [
+            -105.0136225,
+            39.7375309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 914014884,
+        "infraType": "tunnel",
+        "name": "RTD W Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -105.0136138,
+            39.7375756
+          ],
+          [
+            -105.014413,
+            39.7375765
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1069626507,
+        "infraType": "tunnel",
+        "name": "RTD H Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9076777,
+            39.6348802
+          ],
+          [
+            -104.9078503,
+            39.6349539
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1069626510,
+        "infraType": "tunnel",
+        "name": "RTD H Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9078211,
+            39.6348657
+          ],
+          [
+            -104.9076488,
+            39.6348057
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1308852292,
+        "infraType": "tunnel",
+        "name": "RTD E & H Lines",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -104.9793863,
+            39.6937724
+          ],
+          [
+            -104.9792098,
+            39.6936154
+          ]
+        ]
+      }
+    }
+  ]
+}

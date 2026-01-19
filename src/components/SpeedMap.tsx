@@ -40,6 +40,9 @@ const EMPTY_CITY_DATA: CityStaticData = {
   crossings: { type: "FeatureCollection", features: [] },
   switches: { type: "FeatureCollection", features: [] },
   maxspeed: null,
+  tunnelsBridges: null,
+  separation: null,
+  yards: null,
 };
 
 // Haversine distance between two points in meters
@@ -107,6 +110,116 @@ function distanceToLineString(
   }
 
   return minDistance;
+}
+
+// Distance threshold for separation data filtering
+const SEPARATION_PROXIMITY_METERS = 50;
+
+// Philadelphia streetcar routes that default to street-running when no other separation data
+const PHILLY_STREET_RUNNING_ROUTES = ["10", "11", "13", "34", "36"];
+
+// Filter separation features to only include those near the selected routes
+// For Philadelphia streetcar routes, adds street-running fallback for route geometry
+function filterSeparationByRoutes(
+  separation: any,
+  selectedRoutes: any,
+  city?: string
+): any {
+  if (!selectedRoutes?.features?.length) {
+    return { type: "FeatureCollection", features: [] };
+  }
+
+  // Build a list of all coordinate segments from selected routes
+  const routeCoords: number[][][] = [];
+  for (const feature of selectedRoutes.features) {
+    if (feature.geometry?.type === "LineString") {
+      routeCoords.push(feature.geometry.coordinates);
+    } else if (feature.geometry?.type === "MultiLineString") {
+      routeCoords.push(...feature.geometry.coordinates);
+    }
+  }
+
+  if (routeCoords.length === 0) {
+    return { type: "FeatureCollection", features: [] };
+  }
+
+  // Start with filtered OSM separation features
+  const filteredFeatures: any[] = [];
+  
+  if (separation?.features) {
+    for (const sepFeature of separation.features) {
+      if (sepFeature.geometry?.type !== "LineString") continue;
+      
+      const sepCoords = sepFeature.geometry.coordinates;
+      
+      // Check if any point of the separation feature is near any route segment
+      let isNear = false;
+      for (const [lon, lat] of sepCoords) {
+        for (const coords of routeCoords) {
+          const dist = distanceToLineString(lat, lon, coords);
+          if (dist < SEPARATION_PROXIMITY_METERS) {
+            isNear = true;
+            break;
+          }
+        }
+        if (isNear) break;
+      }
+      if (isNear) {
+        filteredFeatures.push(sepFeature);
+      }
+    }
+  }
+
+  // For Philadelphia streetcar routes (10, 11, 13, 34, 36), add route geometry as 
+  // street_running fallback - this will show as the base layer, with actual OSM
+  // separation data (tunnels, bridges) rendered on top
+  if (city === "Philadelphia") {
+    const streetRunningFeatures: any[] = [];
+    
+    for (const feature of selectedRoutes.features) {
+      const routeId = feature.properties?.route_id;
+      if (!PHILLY_STREET_RUNNING_ROUTES.includes(routeId)) continue;
+      
+      // Add route geometry as street_running separation feature
+      if (feature.geometry?.type === "LineString") {
+        streetRunningFeatures.push({
+          type: "Feature",
+          properties: {
+            id: `philly-sr-${routeId}-${Math.random().toString(36).substr(2, 9)}`,
+            separationType: "street_running",
+            name: feature.properties?.route_name || `Route ${routeId}`,
+            isStreetRunningFallback: true,
+          },
+          geometry: feature.geometry,
+        });
+      } else if (feature.geometry?.type === "MultiLineString") {
+        for (let i = 0; i < feature.geometry.coordinates.length; i++) {
+          streetRunningFeatures.push({
+            type: "Feature",
+            properties: {
+              id: `philly-sr-${routeId}-${i}-${Math.random().toString(36).substr(2, 9)}`,
+              separationType: "street_running",
+              name: feature.properties?.route_name || `Route ${routeId}`,
+              isStreetRunningFallback: true,
+            },
+            geometry: {
+              type: "LineString",
+              coordinates: feature.geometry.coordinates[i],
+            },
+          });
+        }
+      }
+    }
+    
+    // Add street-running features FIRST so they render at bottom
+    // OSM separation data (tunnels, bridges) will render on top
+    return { 
+      type: "FeatureCollection", 
+      features: [...streetRunningFeatures, ...filteredFeatures] 
+    };
+  }
+
+  return { type: "FeatureCollection", features: filteredFeatures };
 }
 
 // Build route geometry map for a given city's routes
@@ -703,7 +816,7 @@ interface SpeedMapProps {
   selectedLines: string[];
   speedFilter: SpeedFilter;
   showRouteLines: boolean;
-  routeLineMode: "byLine" | "bySpeedLimit";
+  routeLineMode: "byLine" | "bySpeedLimit" | "bySeparation";
   showStops: boolean;
   showCrossings: boolean;
   showSwitches: boolean;
@@ -807,6 +920,9 @@ export function SpeedMap({
       crossings: cityStaticData?.crossings || EMPTY_CITY_DATA.crossings,
       switches: cityStaticData?.switches || EMPTY_CITY_DATA.switches,
       maxspeed: cityStaticData?.maxspeed || null,
+      tunnelsBridges: cityStaticData?.tunnelsBridges || null,
+      separation: cityStaticData?.separation || null,
+      yards: cityStaticData?.yards || null,
     }),
     [city, cityStaticData]
   );
@@ -1264,12 +1380,15 @@ export function SpeedMap({
     const addRouteLayers = () => {
       if (!map.current) return;
 
-      const showByLine = showRouteLines && routeLineMode === "byLine";
+      const _showByLine = showRouteLines && routeLineMode === "byLine";
       const showBySpeed = showRouteLines && routeLineMode === "bySpeedLimit";
+      const showBySeparation = showRouteLines && routeLineMode === "bySeparation";
+      void _showByLine; // Silence unused variable warning
 
       // If no lines selected, show no routes; otherwise filter to selected
       // Skip filtering for cities with OSM-sourced route data that don't have line-specific routes
-      const osmSourcedCities = ["Dallas"];
+      // These cities have route_id: "default" for all routes, so line filters won't work
+      const osmSourcedCities = ["Dallas", "Denver"];
       const skipRouteFiltering = osmSourcedCities.includes(city);
 
       const filteredRoutes = {
@@ -1282,6 +1401,10 @@ export function SpeedMap({
             : cityConfig.routes.features.filter((f: any) => {
                 // Check if route matches any selected line
                 if (selectedLines.includes(f.properties.route_id)) return true;
+                // For shared routes (Pittsburgh), show when Red, Blue, or Silver is selected
+                if (f.properties.route_id === "shared" && city === "Pittsburgh") {
+                  return selectedLines.includes("RED") || selectedLines.includes("BLUE") || selectedLines.includes("SLVR");
+                }
                 // For OSM routes with multiple lines, check if any line matches
                 if (f.properties.lines && Array.isArray(f.properties.lines)) {
                   return f.properties.lines.some((line: string) =>
@@ -1292,12 +1415,26 @@ export function SpeedMap({
               }),
       };
 
+      // Tunnel visualization disabled for now - proximity-based matching between GTFS routes
+      // and OSM tunnel geometry is too imprecise (20-50m offsets between data sources).
+      // This was causing incorrect tunnel sections to appear on some lines (e.g., J Church).
+      // TODO: Implement more accurate tunnel detection, possibly using static tunnel portal
+      // locations or pre-computed route-to-tunnel mappings per city.
+      const regularRoutes = filteredRoutes;
+      const tunnelRoutes = { type: "FeatureCollection", features: [] };
+
       // Remove existing layers
       try {
         if (map.current.getLayer("routes-outline"))
           map.current.removeLayer("routes-outline");
         if (map.current.getLayer("routes")) map.current.removeLayer("routes");
+        if (map.current.getLayer("routes-tunnel-outline"))
+          map.current.removeLayer("routes-tunnel-outline");
+        if (map.current.getLayer("routes-tunnel"))
+          map.current.removeLayer("routes-tunnel");
         if (map.current.getSource("routes")) map.current.removeSource("routes");
+        if (map.current.getSource("routes-tunnel"))
+          map.current.removeSource("routes-tunnel");
         // Speed limit layers
         if (map.current.getLayer("speed-limit-outline"))
           map.current.removeLayer("speed-limit-outline");
@@ -1307,20 +1444,87 @@ export function SpeedMap({
           map.current.removeLayer("speed-limit-labels");
         if (map.current.getSource("speed-limit"))
           map.current.removeSource("speed-limit");
+        // Separation layers
+        if (map.current.getLayer("separation-outline"))
+          map.current.removeLayer("separation-outline");
+        if (map.current.getLayer("separation"))
+          map.current.removeLayer("separation");
+        if (map.current.getSource("separation"))
+          map.current.removeSource("separation");
+        // Yards layers
+        if (map.current.getLayer("yards-fill"))
+          map.current.removeLayer("yards-fill");
+        if (map.current.getLayer("yards-outline"))
+          map.current.removeLayer("yards-outline");
+        if (map.current.getSource("yards"))
+          map.current.removeSource("yards");
       } catch (e) {
         // Layer/source may not exist, ignore
       }
 
+      // Add regular routes (solid lines)
       map.current.addSource("routes", {
         type: "geojson",
-        data: filteredRoutes as any,
+        data: regularRoutes as any,
       });
+
+      // Add tunnel routes (will be dashed)
+      map.current.addSource("routes-tunnel", {
+        type: "geojson",
+        data: tunnelRoutes as any,
+      });
+
+      // Add yards source (polygon areas for rail yards/depots)
+      if (cityConfig.yards?.features?.length > 0) {
+        map.current.addSource("yards", {
+          type: "geojson",
+          data: cityConfig.yards as any,
+        });
+      }
 
       const firstDataLayer = map.current.getLayer("vehicles-glow")
         ? "vehicles-glow"
         : map.current.getLayer("stops")
         ? "stops"
         : undefined;
+
+      // Yards layer - shaded polygon areas for rail yards/depots (rendered at bottom)
+      // Currently hidden - set visibility to "visible" to enable
+      if (map.current.getSource("yards")) {
+        map.current.addLayer(
+          {
+            id: "yards-fill",
+            type: "fill",
+            source: "yards",
+            layout: {
+              visibility: "none", // Hidden for now
+            },
+            paint: {
+              "fill-color": "#6366f1", // Indigo/purple color for yards
+              "fill-opacity": 0.25,
+            },
+          },
+          firstDataLayer
+        );
+
+        map.current.addLayer(
+          {
+            id: "yards-outline",
+            type: "line",
+            source: "yards",
+            layout: {
+              visibility: "none", // Hidden for now
+            },
+            paint: {
+              "line-color": "#6366f1",
+              "line-width": 2,
+              "line-opacity": 0.6,
+              "line-dasharray": [4, 2],
+            },
+          },
+          firstDataLayer
+        );
+      }
 
       // Regular route layers
       // When "byLine" mode: colored by transit line
@@ -1355,10 +1559,49 @@ export function SpeedMap({
             visibility: showRouteLines ? "visible" : "none",
           },
           paint: {
-            // Grey when in speed limit mode (as fallback for areas without maxspeed data)
-            "line-color": showBySpeed ? "#666666" : ["get", "route_color"],
+            // Grey when in speed limit or separation mode (as fallback for areas without data)
+            "line-color": showBySpeed || showBySeparation ? "#6b7280" : ["get", "route_color"],
             "line-width": 4,
             "line-opacity": 0.9,
+          },
+        },
+        firstDataLayer
+      );
+
+      // Tunnel route layers (reduced opacity like OpenRailwayMap - faded appearance)
+      map.current.addLayer(
+        {
+          id: "routes-tunnel-outline",
+          type: "line",
+          source: "routes-tunnel",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showRouteLines ? "visible" : "none",
+          },
+          paint: {
+            "line-color": "#000",
+            "line-width": 7,
+            "line-opacity": 0.3, // Reduced opacity for faded tunnel look
+          },
+        },
+        firstDataLayer
+      );
+
+      map.current.addLayer(
+        {
+          id: "routes-tunnel",
+          type: "line",
+          source: "routes-tunnel",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showRouteLines ? "visible" : "none",
+          },
+          paint: {
+            "line-color": showBySpeed || showBySeparation ? "#6b7280" : ["get", "route_color"],
+            "line-width": 4,
+            "line-opacity": 0.45, // Reduced opacity - faded tunnel appearance like OpenRailwayMap
           },
         },
         firstDataLayer
@@ -1476,6 +1719,133 @@ export function SpeedMap({
         });
       }
 
+      // Separation layers (colored by separation type)
+      // Filter separation data to only show segments near selected routes
+      // For Philadelphia streetcar routes, this also adds street-running fallback
+      const filteredSeparation = filterSeparationByRoutes(cityConfig.separation, filteredRoutes, city);
+      
+      if (filteredSeparation.features?.length > 0) {
+        map.current.addSource("separation", {
+          type: "geojson",
+          data: filteredSeparation as any,
+        });
+
+        // Color expression for separation types
+        const separationColorExpression: any = [
+          "match",
+          ["get", "separationType"],
+          "tunnel", "#3b82f6",        // Blue
+          "elevated", "#22c55e",      // Green  
+          "street_running", "#ef4444", // Red
+          "reserved_lane", "#f97316",  // Orange
+          "separated_at_grade", "#eab308", // Yellow
+          "#6b7280" // Grey fallback for unknown
+        ];
+
+        map.current.addLayer(
+          {
+            id: "separation-outline",
+            type: "line",
+            source: "separation",
+            layout: {
+              "line-join": "round",
+              "line-cap": "round",
+              visibility: showBySeparation ? "visible" : "none",
+            },
+            paint: {
+              "line-color": "#000",
+              "line-width": 8, // Slightly wider to fully cover routes underneath
+              "line-opacity": 1.0,
+            },
+          },
+          firstDataLayer
+        );
+
+        map.current.addLayer(
+          {
+            id: "separation",
+            type: "line",
+            source: "separation",
+            layout: {
+              "line-join": "round",
+              "line-cap": "round",
+              visibility: showBySeparation ? "visible" : "none",
+            },
+            paint: {
+              "line-color": separationColorExpression,
+              "line-width": 5, // Slightly wider to fully cover routes underneath
+              "line-opacity": 1.0,
+            },
+          },
+          firstDataLayer
+        );
+
+        // Separation hover
+        map.current.on("mouseenter", "separation", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "pointer";
+        });
+
+        map.current.on("mouseleave", "separation", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "";
+          popup.current?.remove();
+        });
+
+        map.current.on("mousemove", "separation", (e) => {
+          if (!e.features?.length || !map.current) return;
+          const props = e.features[0].properties;
+          const sepType = props.separationType;
+          
+          // Get color and label for separation type
+          const sepInfo: Record<string, { color: string; label: string; icon: string }> = {
+            tunnel: { color: "#3b82f6", label: "Tunnel", icon: "🔵" },
+            elevated: { color: "#22c55e", label: "Elevated", icon: "🟢" },
+            street_running: { color: "#ef4444", label: "Street Running", icon: "🔴" },
+            reserved_lane: { color: "#f97316", label: "Reserved Lane", icon: "🟠" },
+            separated_at_grade: { color: "#eab308", label: "Separated At-Grade", icon: "🟡" },
+            unknown: { color: "#6b7280", label: "Unknown", icon: "⬜" },
+          };
+          
+          const info = sepInfo[sepType] || sepInfo.unknown;
+          
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title" style="color: ${info.color}">${info.icon} ${info.label}</div>
+                ${props.name ? `<div class="popup-detail">${props.name}</div>` : ""}
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+
+      // Yards hover handlers
+      if (map.current.getSource("yards")) {
+        map.current.on("mouseenter", "yards-fill", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "pointer";
+        });
+
+        map.current.on("mouseleave", "yards-fill", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "";
+          popup.current?.remove();
+        });
+
+        map.current.on("mousemove", "yards-fill", (e) => {
+          if (!e.features?.length || !map.current) return;
+          const props = e.features[0].properties;
+          
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
+                <div class="popup-title" style="color: #6366f1">🚃 Rail Yard</div>
+                ${props.name ? `<div class="popup-detail">${props.name}</div>` : ""}
+              </div>`
+            )
+            .addTo(map.current);
+        });
+      }
+
       // Route hover
       map.current.on("mouseenter", "routes", () => {
         if (map.current) {
@@ -1491,9 +1861,9 @@ export function SpeedMap({
       map.current.on("mousemove", "routes", (e) => {
         if (!e.features?.length || !map.current) return;
 
-        // In speed limit mode, don't show popup for grey areas (no data)
-        // The speed-limit layer handles popups for areas with data
-        if (showBySpeed) return;
+        // In speed limit or separation mode, don't show popup for grey areas (no data)
+        // The speed-limit/separation layers handle popups for areas with data
+        if (showBySpeed || showBySeparation) return;
 
         // In byLine mode, show route name
         const props = e.features[0].properties;
@@ -1531,6 +1901,8 @@ export function SpeedMap({
     routeLineMode,
     cityConfig.routes,
     cityConfig.maxspeed,
+    cityConfig.separation,
+    cityConfig.yards,
     maxspeedColorExpression,
   ]);
 
@@ -2209,16 +2581,20 @@ export function SpeedMap({
     if (!map.current) return;
 
     // Order from bottom to top:
-    // 1. Route lines at the very bottom
+    // 1. Route lines at the very bottom (solid for regular, dashed for tunnels)
     // 2. Vehicle data (raw data / segment avg) above routes
     // 3. Infrastructure overlays (crossings, switches) on top of data
     // 4. Stops/labels at the very top for readability
     const layerOrder = [
       "routes-outline",
       "routes",
+      "routes-tunnel-outline",
+      "routes-tunnel",
       "speed-limit-outline",
       "speed-limit",
       "speed-limit-labels",
+      "separation-outline",
+      "separation",
       "speed-segments",
       "vehicles-glow",
       "vehicles",

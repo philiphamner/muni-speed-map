@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "generated": "2026-01-19T04:32:54.893Z",
+  "source": "OpenStreetMap via Overpass API",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 899063943,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -112.0737911,
+            33.4439754
+          ],
+          [
+            -112.0737989,
+            33.4441542
+          ],
+          [
+            -112.0738048,
+            33.4442563
+          ],
+          [
+            -112.073806,
+            33.4443321
+          ],
+          [
+            -112.073802,
+            33.4444074
+          ],
+          [
+            -112.073805,
+            33.4444522
+          ],
+          [
+            -112.0738023,
+            33.4444862
+          ],
+          [
+            -112.0738033,
+            33.4446068
+          ],
+          [
+            -112.0738096,
+            33.4449509
+          ],
+          [
+            -112.0738126,
+            33.4450424
+          ]
+        ]
+      }
+    }
+  ]
+}

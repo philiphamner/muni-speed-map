@@ -13,7 +13,7 @@ export interface SpeedFilter {
 
 export type ViewMode = "raw" | "segments" | "live";
 
-export type RouteLineMode = "byLine" | "bySpeedLimit";
+export type RouteLineMode = "byLine" | "bySpeedLimit" | "bySeparation";
 
 export interface LineStats {
   line: string;

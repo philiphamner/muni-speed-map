@@ -1,0 +1,1497 @@
+{
+  "type": "FeatureCollection",
+  "generated": "2026-01-19T04:31:58.371Z",
+  "source": "OpenStreetMap via Overpass API",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42779250,
+        "infraType": "tunnel",
+        "name": "Mt. Lebanon Tunnel",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0415253,
+            40.3903546
+          ],
+          [
+            -80.0418228,
+            40.3896125
+          ],
+          [
+            -80.042577,
+            40.3888204
+          ],
+          [
+            -80.0435142,
+            40.387689
+          ],
+          [
+            -80.0436411,
+            40.3873871
+          ],
+          [
+            -80.0439803,
+            40.3860567
+          ],
+          [
+            -80.0440509,
+            40.3855867
+          ],
+          [
+            -80.0440381,
+            40.3852463
+          ],
+          [
+            -80.0432869,
+            40.3834079
+          ],
+          [
+            -80.0432602,
+            40.3831917
+          ],
+          [
+            -80.0432803,
+            40.3829316
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 226588131,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949398,
+            40.439461
+          ],
+          [
+            -79.9949565,
+            40.4395075
+          ],
+          [
+            -79.9949684,
+            40.439529
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 233830502,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0121159,
+            40.4480562
+          ],
+          [
+            -80.0117959,
+            40.4480578
+          ],
+          [
+            -80.0109879,
+            40.4480539
+          ],
+          [
+            -80.0095935,
+            40.4480442
+          ],
+          [
+            -80.0091637,
+            40.4480412
+          ],
+          [
+            -80.0089347,
+            40.448032
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 377085071,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9942379,
+            40.44201
+          ],
+          [
+            -79.9947669,
+            40.4412242
+          ],
+          [
+            -79.9948312,
+            40.4410527
+          ],
+          [
+            -79.9948391,
+            40.4408909
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 424832311,
+        "infraType": "tunnel",
+        "name": "Mt. Lebanon Tunnel",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.043149,
+            40.3829225
+          ],
+          [
+            -80.0431641,
+            40.3832765
+          ],
+          [
+            -80.0432063,
+            40.3834602
+          ],
+          [
+            -80.0433387,
+            40.3838276
+          ],
+          [
+            -80.0439539,
+            40.3852563
+          ],
+          [
+            -80.0439605,
+            40.3855746
+          ],
+          [
+            -80.043876,
+            40.3860895
+          ],
+          [
+            -80.0435624,
+            40.3873614
+          ],
+          [
+            -80.043431,
+            40.3876489
+          ],
+          [
+            -80.0427728,
+            40.3884979
+          ],
+          [
+            -80.0417204,
+            40.3895886
+          ],
+          [
+            -80.0414112,
+            40.3903295
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202013,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0089305,
+            40.4480461
+          ],
+          [
+            -80.0091604,
+            40.4480784
+          ],
+          [
+            -80.0095941,
+            40.4480746
+          ],
+          [
+            -80.0121205,
+            40.4480893
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202014,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0089347,
+            40.448032
+          ],
+          [
+            -80.0087041,
+            40.4479769
+          ],
+          [
+            -80.008495,
+            40.4478944
+          ],
+          [
+            -80.0083816,
+            40.4478491
+          ],
+          [
+            -80.0081207,
+            40.4477105
+          ],
+          [
+            -80.0079315,
+            40.4475805
+          ],
+          [
+            -80.0075799,
+            40.4472288
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202015,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0040861,
+            40.4416328
+          ],
+          [
+            -80.0041133,
+            40.4417723
+          ],
+          [
+            -80.0041406,
+            40.4419124
+          ],
+          [
+            -80.0042218,
+            40.4421889
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202016,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949839,
+            40.4395226
+          ],
+          [
+            -79.9949717,
+            40.439502
+          ],
+          [
+            -79.9949586,
+            40.4394603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202017,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0026983,
+            40.4416539
+          ],
+          [
+            -80.0026221,
+            40.4416907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202018,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9992294,
+            40.4420116
+          ],
+          [
+            -79.9992928,
+            40.4420279
+          ],
+          [
+            -79.9993687,
+            40.4420475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202019,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9995595,
+            40.4421187
+          ],
+          [
+            -79.9994541,
+            40.4420789
+          ],
+          [
+            -79.9993687,
+            40.4420475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202020,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9992361,
+            40.4419975
+          ],
+          [
+            -79.9992928,
+            40.4420279
+          ],
+          [
+            -79.9993602,
+            40.4420609
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202021,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9993602,
+            40.4420609
+          ],
+          [
+            -79.999442,
+            40.4420919
+          ],
+          [
+            -79.9995467,
+            40.442132
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202022,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9989864,
+            40.4419181
+          ],
+          [
+            -79.9990956,
+            40.4419601
+          ],
+          [
+            -79.9992294,
+            40.4420116
+          ],
+          [
+            -79.9993602,
+            40.4420609
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202023,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9993687,
+            40.4420475
+          ],
+          [
+            -79.9992361,
+            40.4419975
+          ],
+          [
+            -79.9989949,
+            40.4419067
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202025,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9948391,
+            40.4408909
+          ],
+          [
+            -79.9948635,
+            40.4408051
+          ],
+          [
+            -79.994866,
+            40.4407888
+          ],
+          [
+            -79.9949027,
+            40.4405473
+          ],
+          [
+            -79.9949264,
+            40.4401742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202027,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9952,
+            40.4378089
+          ],
+          [
+            -79.9950323,
+            40.4382137
+          ],
+          [
+            -79.9949438,
+            40.4386401
+          ],
+          [
+            -79.9949412,
+            40.4388904
+          ],
+          [
+            -79.9949383,
+            40.4390232
+          ],
+          [
+            -79.9949398,
+            40.439461
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557202028,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949586,
+            40.4394603
+          ],
+          [
+            -79.9949644,
+            40.4390154
+          ],
+          [
+            -79.9949752,
+            40.4388012
+          ],
+          [
+            -79.9949811,
+            40.4386088
+          ],
+          [
+            -79.9950635,
+            40.4382203
+          ],
+          [
+            -79.9952325,
+            40.4378163
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 557839410,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0044202,
+            40.4316727
+          ],
+          [
+            -80.0052026,
+            40.4278204
+          ],
+          [
+            -80.0063618,
+            40.4221123
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516835,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9989949,
+            40.4419067
+          ],
+          [
+            -79.9986174,
+            40.4417632
+          ],
+          [
+            -79.9977858,
+            40.441447
+          ],
+          [
+            -79.9973537,
+            40.4412818
+          ],
+          [
+            -79.9966095,
+            40.4409977
+          ],
+          [
+            -79.995884,
+            40.4407169
+          ],
+          [
+            -79.9953774,
+            40.4402673
+          ],
+          [
+            -79.9953049,
+            40.4401178
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516836,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9952793,
+            40.4401227
+          ],
+          [
+            -79.9953561,
+            40.4402721
+          ],
+          [
+            -79.9958882,
+            40.4407347
+          ],
+          [
+            -79.997208,
+            40.4412377
+          ],
+          [
+            -79.9976929,
+            40.4414233
+          ],
+          [
+            -79.9984438,
+            40.4417107
+          ],
+          [
+            -79.9989864,
+            40.4419181
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516837,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9953049,
+            40.4401178
+          ],
+          [
+            -79.9951841,
+            40.4398743
+          ],
+          [
+            -79.9950685,
+            40.4396698
+          ],
+          [
+            -79.9949839,
+            40.4395226
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516838,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949684,
+            40.439529
+          ],
+          [
+            -79.9950474,
+            40.439673
+          ],
+          [
+            -79.995157,
+            40.4398835
+          ],
+          [
+            -79.9952793,
+            40.4401227
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516839,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949536,
+            40.4395287
+          ],
+          [
+            -79.9949565,
+            40.4395075
+          ],
+          [
+            -79.9949586,
+            40.4394603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516840,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949398,
+            40.439461
+          ],
+          [
+            -79.9949344,
+            40.439527
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516841,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949344,
+            40.439527
+          ],
+          [
+            -79.9949008,
+            40.440157
+          ],
+          [
+            -79.9948709,
+            40.4405607
+          ],
+          [
+            -79.994866,
+            40.4407888
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563516842,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9949264,
+            40.4401742
+          ],
+          [
+            -79.99493,
+            40.4398958
+          ],
+          [
+            -79.9949536,
+            40.4395287
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563529011,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9997601,
+            40.4422096
+          ],
+          [
+            -79.9998653,
+            40.442246
+          ],
+          [
+            -79.9999574,
+            40.4422773
+          ],
+          [
+            -80.0000879,
+            40.4423048
+          ],
+          [
+            -80.000185,
+            40.4423032
+          ],
+          [
+            -80.0002884,
+            40.4422887
+          ],
+          [
+            -80.000365,
+            40.4422709
+          ],
+          [
+            -80.0007747,
+            40.4421667
+          ],
+          [
+            -80.0010341,
+            40.4421009
+          ],
+          [
+            -80.0013473,
+            40.4420203
+          ],
+          [
+            -80.0018388,
+            40.4418928
+          ],
+          [
+            -80.0026221,
+            40.4416907
+          ],
+          [
+            -80.0027043,
+            40.4416695
+          ],
+          [
+            -80.0031604,
+            40.4415553
+          ],
+          [
+            -80.0036063,
+            40.441437
+          ],
+          [
+            -80.0037293,
+            40.4414159
+          ],
+          [
+            -80.0039908,
+            40.4414672
+          ],
+          [
+            -80.0040861,
+            40.4416328
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563529012,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0041589,
+            40.4416277
+          ],
+          [
+            -80.0041345,
+            40.4415272
+          ],
+          [
+            -80.0040035,
+            40.4414069
+          ],
+          [
+            -80.0037276,
+            40.4414091
+          ],
+          [
+            -80.0035991,
+            40.4414283
+          ],
+          [
+            -80.0029983,
+            40.4415781
+          ],
+          [
+            -80.0026983,
+            40.4416539
+          ],
+          [
+            -80.002385,
+            40.4417363
+          ],
+          [
+            -80.0016543,
+            40.4419229
+          ],
+          [
+            -80.0013389,
+            40.442006
+          ],
+          [
+            -80.0003161,
+            40.4422682
+          ],
+          [
+            -80.0002771,
+            40.4422779
+          ],
+          [
+            -80.0002254,
+            40.442287
+          ],
+          [
+            -80.0001736,
+            40.4422914
+          ],
+          [
+            -80.0001162,
+            40.442293
+          ],
+          [
+            -80.0000609,
+            40.4422865
+          ],
+          [
+            -79.9999468,
+            40.4422584
+          ],
+          [
+            -79.9998809,
+            40.4422379
+          ],
+          [
+            -79.999769,
+            40.4421979
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563529013,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.999769,
+            40.4421979
+          ],
+          [
+            -79.9995595,
+            40.4421187
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 563529014,
+        "infraType": "tunnel",
+        "name": "Downtown Subway",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -79.9995467,
+            40.442132
+          ],
+          [
+            -79.9997601,
+            40.4422096
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 663076342,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0042676,
+            40.4421803
+          ],
+          [
+            -80.0042172,
+            40.4419934
+          ],
+          [
+            -80.0041806,
+            40.441764
+          ],
+          [
+            -80.0041589,
+            40.4416277
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 663076343,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0042218,
+            40.4421889
+          ],
+          [
+            -80.0047568,
+            40.4438633
+          ],
+          [
+            -80.0048872,
+            40.4440699
+          ],
+          [
+            -80.0051707,
+            40.4442927
+          ],
+          [
+            -80.0067024,
+            40.4451665
+          ],
+          [
+            -80.0068258,
+            40.4453138
+          ],
+          [
+            -80.006925,
+            40.4455313
+          ],
+          [
+            -80.0069966,
+            40.4456888
+          ],
+          [
+            -80.0070597,
+            40.4458129
+          ],
+          [
+            -80.0072,
+            40.4462099
+          ],
+          [
+            -80.0073014,
+            40.4465001
+          ],
+          [
+            -80.0074665,
+            40.4469564
+          ],
+          [
+            -80.0075629,
+            40.4472358
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 663076344,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0075799,
+            40.4472288
+          ],
+          [
+            -80.0070852,
+            40.445849
+          ],
+          [
+            -80.0069399,
+            40.4455281
+          ],
+          [
+            -80.0068343,
+            40.4453073
+          ],
+          [
+            -80.0067088,
+            40.445159
+          ],
+          [
+            -80.0051814,
+            40.4442851
+          ],
+          [
+            -80.0048986,
+            40.4440656
+          ],
+          [
+            -80.0047703,
+            40.4438611
+          ],
+          [
+            -80.0042676,
+            40.4421803
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 663076345,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0075629,
+            40.4472358
+          ],
+          [
+            -80.0079124,
+            40.4475869
+          ],
+          [
+            -80.008103,
+            40.4477164
+          ],
+          [
+            -80.0083674,
+            40.4478599
+          ],
+          [
+            -80.0086956,
+            40.447992
+          ],
+          [
+            -80.0088494,
+            40.4480292
+          ],
+          [
+            -80.0089305,
+            40.4480461
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 773645440,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.0063245,
+            40.4221079
+          ],
+          [
+            -80.0043629,
+            40.4316651
+          ]
+        ]
+      }
+    }
+  ]
+}

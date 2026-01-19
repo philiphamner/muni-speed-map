@@ -251,6 +251,14 @@ const CITIES = {
     railwayTypes: "light_rail|tram",
     networkFilter: null,
   },
+  Calgary: {
+    name: "Calgary",
+    bbox: [50.88, -114.25, 51.18, -113.90], // CTrain Red & Blue Line extent
+    routesFile: "calgaryLightRailRoutes.json",
+    outputFile: "calgaryMaxspeed.json",
+    railwayTypes: "light_rail",
+    networkFilter: null,
+  },
 };
 
 const OVERPASS_API = "https://overpass-api.de/api/interpreter";

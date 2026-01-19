@@ -544,7 +544,7 @@ export function Controls({
           🌊 SD
         </button>
 
-        <button
+        {/* <button
           className="city-btn city-btn-dark-orange"
           onClick={() => console.log("Cleveland (RTA) - Coming soon")}
           title="RTA Red Line - Coming soon"
@@ -560,9 +560,16 @@ export function Controls({
           🚊JC
         </button>
         <button
+          className={`city-btn ${city === "Calgary" ? "active" : ""}`}
+          onClick={() => setCity("Calgary")}
+          title="CTrain Red & Blue Lines"
+        >
+          🍁 CGY
+        </button>
+        <button
           className="city-btn city-btn-dark-orange"
-          onClick={() => console.log("Calgary (CTrain) - Coming soon")}
-          title="CTrain - Coming soon"
+          onClick={() => console.log("Edmonton (LRT) - Coming soon")}
+          title="LRT Capital & Metro Lines - Coming soon"
         >
           🚊 EMD
         </button>
@@ -574,9 +581,9 @@ export function Controls({
           title="Data collection starting soon"
         >
           ⭐ Dallas
-        </button>
+        </button> */}
 
-        <button
+        {/* <button
           className={`city-btn city-btn-warning ${
             city === "Sacramento" ? "active" : ""
           }`}
@@ -584,7 +591,7 @@ export function Controls({
           title="Data quality issues - SacRT doesn't tag light rail vehicles"
         >
           ⚠️ Sac
-        </button>
+        </button> */}
       </div>
 
       {/* Data Status */}
@@ -744,6 +751,43 @@ export function Controls({
               >
                 Speed Limit
               </button>
+              <button
+                className={`route-mode-btn ${
+                  routeLineMode === "bySeparation" ? "active" : ""
+                }`}
+                onClick={() => setRouteLineMode("bySeparation")}
+              >
+                Separation
+              </button>
+            </div>
+          )}
+          {/* Separation Legend - shown when separation mode is active */}
+          {showRouteLines && routeLineMode === "bySeparation" && (
+            <div className="separation-legend">
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#3b82f6" }}></span>
+                <span>Tunnel</span>
+              </div>
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#22c55e" }}></span>
+                <span>Elevated</span>
+              </div>
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#ef4444" }}></span>
+                <span>Street Running</span>
+              </div>
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#f97316" }}></span>
+                <span>Reserved Lane</span>
+              </div>
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#eab308" }}></span>
+                <span>Separated At-Grade</span>
+              </div>
+              <div className="separation-legend-item">
+                <span className="separation-legend-line" style={{ backgroundColor: "#6b7280" }}></span>
+                <span>Unknown</span>
+              </div>
             </div>
           )}
         </div>

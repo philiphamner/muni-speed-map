@@ -14,6 +14,7 @@
     "collect:seattle": "node scripts/collectDataSeattle.js",
     "collect:boston": "node scripts/collectDataBoston.js",
     "collect:portland": "node scripts/collectDataPortland.js",
+    "collect:portland-streetcar": "node scripts/collectDataPortlandStreetcar.js",
     "collect:sandiego": "node scripts/collectDataSanDiego.js",
     "collect:toronto": "node scripts/collectDataToronto.js",
     "collect:philly": "node scripts/collectDataPhilly.js",
@@ -27,6 +28,7 @@
     "collect:vta": "node scripts/collectDataVTA.js",
     "collect:phoenix": "node scripts/collectDataPhoenix.js",
     "collect:charlotte": "node scripts/collectDataCharlotte.js",
+    "collect:calgary": "node scripts/collectDataCalgary.js",
     "collect:all": "bash scripts/collectAll.sh",
     "parse-gtfs": "node scripts/parseGtfs.js",
     "parse-gtfs:la": "node scripts/parseGtfsLA.js",
@@ -59,7 +61,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-map-gl": "^8.1.0",
-    "ws": "^8.18.3"
+    "ws": "^8.18.3",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

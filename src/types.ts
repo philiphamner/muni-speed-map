@@ -417,16 +417,18 @@ export const HBLR_LINE_INFO: Record<
 };
 
 // Calgary CTrain lines
-export const CALGARY_CTRAIN_LINES = ["Red", "Blue", "Green"] as const;
+// 201 = Red Line (Somerset-Bridlewood to Tuscany)
+// 202 = Blue Line (Saddletowne to 69 Street)
+// Note: Green Line is under construction and not yet in service
+export const CALGARY_CTRAIN_LINES = ["201", "202"] as const;
 export type CalgaryCtrainLine = (typeof CALGARY_CTRAIN_LINES)[number];
 
 export const CALGARY_CTRAIN_LINE_INFO: Record<
   CalgaryCtrainLine,
   { name: string; letter: string; color: string }
 > = {
-  Red: { name: "Red Line", letter: "Red", color: "#EE3124" },
-  Blue: { name: "Blue Line", letter: "Blue", color: "#0072CE" },
-  Green: { name: "Green Line", letter: "Green", color: "#00A651" },
+  "201": { name: "Red Line", letter: "Red", color: "#EE3124" },
+  "202": { name: "Blue Line", letter: "Blue", color: "#0072CE" },
 };
 
 // Edmonton LRT lines

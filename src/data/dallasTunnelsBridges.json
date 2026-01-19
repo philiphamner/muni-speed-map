@@ -1,0 +1,713 @@
+{
+  "type": "FeatureCollection",
+  "generated": "2026-01-19T04:32:07.371Z",
+  "source": "OpenStreetMap via Overpass API",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 91353900,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7769656,
+            32.8362348
+          ],
+          [
+            -96.7792759,
+            32.8342904
+          ],
+          [
+            -96.7796333,
+            32.8339522
+          ],
+          [
+            -96.7799472,
+            32.8335688
+          ],
+          [
+            -96.7803179,
+            32.8330021
+          ],
+          [
+            -96.7804661,
+            32.8326259
+          ],
+          [
+            -96.7805989,
+            32.8321785
+          ],
+          [
+            -96.7809221,
+            32.8313469
+          ],
+          [
+            -96.7813925,
+            32.8305602
+          ],
+          [
+            -96.7819212,
+            32.8298177
+          ],
+          [
+            -96.782392,
+            32.8291449
+          ],
+          [
+            -96.7828828,
+            32.828356
+          ],
+          [
+            -96.7833181,
+            32.82758
+          ],
+          [
+            -96.7839476,
+            32.826305
+          ],
+          [
+            -96.7845227,
+            32.8249199
+          ],
+          [
+            -96.7848757,
+            32.8240883
+          ],
+          [
+            -96.7853022,
+            32.8232791
+          ],
+          [
+            -96.7858373,
+            32.8223302
+          ],
+          [
+            -96.7862302,
+            32.8215784
+          ],
+          [
+            -96.7870255,
+            32.8199623
+          ],
+          [
+            -96.7874627,
+            32.8191812
+          ],
+          [
+            -96.78838,
+            32.8176609
+          ],
+          [
+            -96.789363,
+            32.8158553
+          ],
+          [
+            -96.7896111,
+            32.8153977
+          ],
+          [
+            -96.7902723,
+            32.8140801
+          ],
+          [
+            -96.7908785,
+            32.8128628
+          ],
+          [
+            -96.7926153,
+            32.8095449
+          ],
+          [
+            -96.792868,
+            32.8089381
+          ],
+          [
+            -96.7930651,
+            32.8083181
+          ],
+          [
+            -96.7932056,
+            32.8076618
+          ],
+          [
+            -96.7933822,
+            32.8066309
+          ],
+          [
+            -96.7934144,
+            32.8056484
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 91353927,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7931802,
+            32.7918409
+          ],
+          [
+            -96.7931985,
+            32.7919988
+          ],
+          [
+            -96.7931951,
+            32.7921629
+          ],
+          [
+            -96.7929786,
+            32.7961347
+          ],
+          [
+            -96.7929746,
+            32.7976419
+          ],
+          [
+            -96.7930752,
+            32.7991446
+          ],
+          [
+            -96.7931288,
+            32.8002235
+          ],
+          [
+            -96.7930806,
+            32.8020079
+          ],
+          [
+            -96.7931342,
+            32.803107
+          ],
+          [
+            -96.7932697,
+            32.8047207
+          ],
+          [
+            -96.7932753,
+            32.8056419
+          ],
+          [
+            -96.7932463,
+            32.8066215
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202261220,
+        "infraType": "tunnel",
+        "name": "DART Green/Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.8406878,
+            32.8292505
+          ],
+          [
+            -96.8407704,
+            32.8293235
+          ],
+          [
+            -96.8408349,
+            32.8293805
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202261232,
+        "infraType": "tunnel",
+        "name": "DART Green/Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.8408784,
+            32.8293468
+          ],
+          [
+            -96.8407304,
+            32.8292164
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202261246,
+        "infraType": "tunnel",
+        "name": "DART Green/Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.8419638,
+            32.8303117
+          ],
+          [
+            -96.8414655,
+            32.8298719
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202345952,
+        "infraType": "tunnel",
+        "name": "DART Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.9135435,
+            32.8481559
+          ],
+          [
+            -96.9126696,
+            32.8475902
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202345959,
+        "infraType": "tunnel",
+        "name": "DART Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.9126291,
+            32.8476319
+          ],
+          [
+            -96.9135142,
+            32.8481942
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 421558278,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7932463,
+            32.8066215
+          ],
+          [
+            -96.7931459,
+            32.8076477
+          ],
+          [
+            -96.7930209,
+            32.8083085
+          ],
+          [
+            -96.7928211,
+            32.8089262
+          ],
+          [
+            -96.7925733,
+            32.8095232
+          ],
+          [
+            -96.7908329,
+            32.8128482
+          ],
+          [
+            -96.790228,
+            32.8140666
+          ],
+          [
+            -96.7895548,
+            32.8153853
+          ],
+          [
+            -96.7893094,
+            32.8158428
+          ],
+          [
+            -96.7883317,
+            32.8176507
+          ],
+          [
+            -96.7874131,
+            32.8191621
+          ],
+          [
+            -96.7869839,
+            32.8199476
+          ],
+          [
+            -96.7861953,
+            32.8215672
+          ],
+          [
+            -96.7858198,
+            32.8222727
+          ],
+          [
+            -96.7852539,
+            32.8232588
+          ],
+          [
+            -96.7848314,
+            32.8240759
+          ],
+          [
+            -96.7844741,
+            32.8249037
+          ],
+          [
+            -96.7839114,
+            32.8262949
+          ],
+          [
+            -96.783273,
+            32.8275626
+          ],
+          [
+            -96.7828359,
+            32.8283425
+          ],
+          [
+            -96.782337,
+            32.8291269
+          ],
+          [
+            -96.7818797,
+            32.8297985
+          ],
+          [
+            -96.7813395,
+            32.8305444
+          ],
+          [
+            -96.7808792,
+            32.8313356
+          ],
+          [
+            -96.7805573,
+            32.8321774
+          ],
+          [
+            -96.7804205,
+            32.8326045
+          ],
+          [
+            -96.7802582,
+            32.8329756
+          ],
+          [
+            -96.779886,
+            32.833518
+          ],
+          [
+            -96.7795582,
+            32.8338981
+          ],
+          [
+            -96.7792078,
+            32.8342114
+          ],
+          [
+            -96.776151,
+            32.8368097
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 421566417,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7934144,
+            32.8056484
+          ],
+          [
+            -96.7933689,
+            32.8047086
+          ],
+          [
+            -96.7931825,
+            32.8031093
+          ],
+          [
+            -96.7931262,
+            32.8020068
+          ],
+          [
+            -96.7931771,
+            32.8002246
+          ],
+          [
+            -96.7931315,
+            32.7991875
+          ],
+          [
+            -96.7930323,
+            32.7976408
+          ],
+          [
+            -96.7930309,
+            32.7961325
+          ],
+          [
+            -96.7932438,
+            32.7921661
+          ],
+          [
+            -96.7932469,
+            32.7919988
+          ],
+          [
+            -96.7932293,
+            32.7918344
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 910965818,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7931581,
+            32.7917137
+          ],
+          [
+            -96.7931802,
+            32.7918409
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 910965819,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7931687,
+            32.7917123
+          ],
+          [
+            -96.7931802,
+            32.7918409
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 910965820,
+        "infraType": "tunnel",
+        "name": null,
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7932293,
+            32.7918344
+          ],
+          [
+            -96.7931968,
+            32.7917086
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 910965821,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7932293,
+            32.7918344
+          ],
+          [
+            -96.7932073,
+            32.7917072
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 911026407,
+        "infraType": "tunnel",
+        "name": "DART Green/Orange Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.8414223,
+            32.8299027
+          ],
+          [
+            -96.8419204,
+            32.8303428
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1052675128,
+        "infraType": "tunnel",
+        "name": "DART Orange/Red/Blue Line",
+        "tunnel": true,
+        "bridge": false,
+        "cutting": false,
+        "embankment": false,
+        "layer": -2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -96.7762293,
+            32.8368754
+          ],
+          [
+            -96.7769656,
+            32.8362348
+          ]
+        ]
+      }
+    }
+  ]
+}
