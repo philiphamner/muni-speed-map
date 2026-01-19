@@ -773,17 +773,18 @@ export function Controls({
                 <span>Elevated</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#ef4444" }}></span>
-                <span>Street Running</span>
+                <span className="separation-legend-line" style={{ backgroundColor: "#eab308" }}></span>
+                <span>Separated At-Grade</span>
               </div>
               <div className="separation-legend-item">
                 <span className="separation-legend-line" style={{ backgroundColor: "#f97316" }}></span>
                 <span>Reserved Lane</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#eab308" }}></span>
-                <span>Separated At-Grade</span>
+                <span className="separation-legend-line" style={{ backgroundColor: "#ef4444" }}></span>
+                <span>Mixed Traffic</span>
               </div>
+
               <div className="separation-legend-item">
                 <span className="separation-legend-line" style={{ backgroundColor: "#6b7280" }}></span>
                 <span>Unknown</span>

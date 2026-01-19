@@ -112,7 +112,7 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
 
   switch (city) {
     case "SF": {
-      const [routes, stops, crossings, switches, maxspeed, tunnelsBridges, separation, yards] = await Promise.all([
+      const [routes, stops, crossings, switches, maxspeed, tunnelsBridges, separation, separationOverrides, yards] = await Promise.all([
         import("./muniMetroRoutes.json"),
         import("./muniMetroStops.json"),
         import("./sfGradeCrossings.json"),
@@ -120,9 +120,22 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./sfMaxspeed.json"),
         import("./sfTunnelsBridges.json").catch(() => ({ default: null })),
         import("./sfSeparation.json").catch(() => ({ default: null })),
+        import("./sfSeparationOverrides.json").catch(() => ({ default: null })),
         import("./sfYards.json").catch(() => ({ default: null })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
+      
+      // Merge separation data with manual overrides (overrides take precedence)
+      let mergedSeparation: any = separation.default;
+      if (separationOverrides.default?.features?.length) {
+        const osmFeatures = separation.default?.features || [];
+        const overrideFeatures = separationOverrides.default.features;
+        mergedSeparation = {
+          type: "FeatureCollection",
+          features: [...overrideFeatures, ...osmFeatures], // Overrides first so they render on top
+        };
+      }
+      
       return {
         routes: routes.default,
         stops: stops.default,
@@ -130,7 +143,7 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         switches: switches.default,
         maxspeed: maxspeed.default,
         tunnelsBridges: tunnelsBridges.default,
-        separation: separation.default,
+        separation: mergedSeparation,
         yards: yards.default,
       };
     }
