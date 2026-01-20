@@ -219,12 +219,6 @@ const CITIES = {
     routesFile: "phillyTrolleyRoutes.json",
     outputFile: "phillyGradeCrossings.json",
   },
-  Sacramento: {
-    name: "Sacramento",
-    bbox: [38.45, -121.6, 38.7, -121.2],
-    routesFile: "sacramentoLightRailRoutes.json",
-    outputFile: "sacramentoGradeCrossings.json",
-  },
   Pittsburgh: {
     name: "Pittsburgh",
     bbox: [40.3, -80.15, 40.55, -79.85],
@@ -266,6 +260,18 @@ const CITIES = {
     bbox: [39.15, -76.69, 39.52, -76.60],
     routesFile: "baltimoreLightRailRoutes.json",
     outputFile: "baltimoreGradeCrossings.json",
+  },
+  Phoenix: {
+    name: "Phoenix",
+    bbox: [33.3, -112.2, 33.6, -111.8],
+    routesFile: "phoenixLightRailRoutes.json",
+    outputFile: "phoenixGradeCrossings.json",
+  },
+  Charlotte: {
+    name: "Charlotte",
+    bbox: [35.1, -81.0, 35.4, -80.7],
+    routesFile: "charlotteLightRailRoutes.json",
+    outputFile: "charlotteGradeCrossings.json",
   },
 };
 

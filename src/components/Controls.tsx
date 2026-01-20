@@ -426,7 +426,7 @@ export function Controls({
     Cleveland: "RTA Speed Map",
     Charlotte: "LYNX Speed Map",
     Phoenix: "Valley Metro Speed Map",
-    Baltimore: "Light Rail Speed Map",
+    Baltimore: "RailLink Speed Map",
   };
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
