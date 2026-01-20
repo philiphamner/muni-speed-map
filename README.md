@@ -43,6 +43,7 @@ Each city was selected because its light rail or streetcar system has **signific
 | 🏔️ **Salt Lake City** | UTA TRAX         | Four light rail lines with street-running through downtown Salt Lake City                   |
 | 🏗️ **Pittsburgh**     | The T Light Rail | Historic light rail system with downtown subway and South Hills surface sections            |
 | 🏛️ **Sacramento**     | SacRT Light Rail | Street-running through downtown Sacramento with Gold and Blue Lines                         |
+| 🦀 **Baltimore**       | MTA Light Rail   | 29-mile light rail with branches to BWI Airport, Glen Burnie, and Hunt Valley               |
 
 **Not included:** Heavy rail systems (BART, NYC Subway, DC Metro) that are fully grade-separated — they don't have traffic conflicts to analyze.
 
@@ -91,6 +92,7 @@ The focus remains on **light rail and streetcars that compete with street traffi
 | 🌵 **Phoenix**        | Valley Metro     | A Line, B Line                   | ✅ Collecting |
 | 🚊 **Charlotte**      | CATS LYNX        | Blue Line, Gold Line             | ✅ Collecting |
 | 🍁 **Calgary**        | Calgary CTrain   | Red Line, Blue Line              | ✅ Collecting |
+| 🦀 **Baltimore**       | MTA Light Rail   | Light RailLink                   | ⏳ Needs key  |
 | 🌊 **San Diego**      | MTS Trolley      | Blue, Orange, Green, Copper      | ⏳ Needs key  |
 | 🤠 **Dallas**         | DART Light Rail  | Red, Blue, Green, Orange         | ⏳ Needs key  |
 
@@ -200,6 +202,7 @@ npm run collect:all
 | `npm run collect:phoenix`            | Phoenix              | `collectDataPhoenix.js`           | ✅ Active                |
 | `npm run collect:charlotte`          | Charlotte            | `collectDataCharlotte.js`         | ✅ Active                |
 | `npm run collect:calgary`            | Calgary              | `collectDataCalgary.js`           | ❌ No train data in feed |
+| `npm run collect:baltimore`          | Baltimore            | `collectDataBaltimore.js`         | ⏳ Needs Swiftly API key |
 | `npm run collect:sandiego`           | San Diego            | `collectDataSanDiego.js`          | ⏳ Needs API key         |
 | `npm run collect:dallas`             | Dallas               | `collectDataDallas.js`            | ⏳ Needs API key         |
 
@@ -237,6 +240,7 @@ npm run collect:all
 | Sacramento     | SacRT GTFS-RT       | ❌ No key needed                                                                               |
 | Phoenix        | Valley Metro JSON   | ❌ No key needed                                                                               |
 | Charlotte      | CATS GTFS-RT        | ❌ No key needed                                                                               |
+| Baltimore      | Swiftly GTFS-RT     | ✅ Yes - https://www.goswift.ly/ (via MTA Maryland)                                            |
 | San Diego      | MTS GTFS-RT         | ✅ Yes - https://www.sdmts.com/business-center/app-developers                                  |
 
 ### Data Retention
@@ -312,6 +316,7 @@ MIT License - feel free to use and adapt for transit advocacy in your city!
 - **Sacramento**: [SacRT Transit Data Portal](https://www.sacrt.com/transit-data-portal/)
 - **Phoenix**: [Valley Metro GTFS-RT](https://www.valleymetro.org/gtfs-real-time-data)
 - **Charlotte**: [CATS GTFS-RT](https://gtfsrealtime.ridetransit.org/)
+- **Baltimore**: [MTA Maryland GTFS-RT](https://www.mta.maryland.gov/developer-resources)
 - **San Diego**: [MTS Developer Resources](https://www.sdmts.com/business-center/app-developers)
 - **Grade Crossings**: [OpenStreetMap](https://www.openstreetmap.org/) via Overpass API
 - **Base Map**: [CARTO Dark Matter](https://carto.com/basemaps/)

@@ -221,6 +221,13 @@ const CITIES = {
     outputFile: "charlotteSeparation.json",
     railwayTypes: "light_rail|tram",
   },
+  Baltimore: {
+    name: "Baltimore",
+    bbox: [39.15, -76.69, 39.52, -76.60],
+    routesFile: "baltimoreLightRailRoutes.json",
+    outputFile: "baltimoreSeparation.json",
+    railwayTypes: "light_rail",
+  },
 };
 
 const OVERPASS_API = "https://overpass-api.de/api/interpreter";

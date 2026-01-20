@@ -251,6 +251,14 @@ const CITIES = {
     railwayTypes: "light_rail|tram",
     networkFilter: null,
   },
+  Baltimore: {
+    name: "Baltimore",
+    bbox: [39.15, -76.69, 39.52, -76.60], // Light RailLink extent
+    routesFile: "baltimoreLightRailRoutes.json",
+    outputFile: "baltimoreMaxspeed.json",
+    railwayTypes: "light_rail",
+    networkFilter: null,
+  },
   Calgary: {
     name: "Calgary",
     bbox: [50.88, -114.25, 51.18, -113.90], // CTrain Red & Blue Line extent

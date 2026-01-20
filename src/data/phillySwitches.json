@@ -4,36 +4,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 110004336,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2018391,
-          39.957736
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 110004430,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2023661,
-          39.9629362
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 110343717,
         "type": "switch",
         "railway": "switch"
@@ -58,38 +28,6 @@
         "coordinates": [
           -75.2035782,
           39.9741958
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 110428846,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2055742,
-          39.9649275
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 110456918,
-        "type": "switch",
-        "railway": "switch",
-        "railway:switch:local_operated": "no",
-        "ref": "203"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.195852,
-          39.9749339
         ]
       }
     },
@@ -128,6 +66,36 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 360505347,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2035687,
+          39.9496753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 360505530,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2035694,
+          39.9492282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 529467685,
         "type": "switch",
         "railway": "switch"
@@ -137,6 +105,66 @@
         "coordinates": [
           -75.2630399,
           39.9614389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 651004277,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2031774,
+          39.9495992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 651004736,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2035352,
+          39.9492704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 651004986,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2036307,
+          39.9497257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 651011990,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1917625,
+          39.9551254
         ]
       }
     },
@@ -580,15 +608,30 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 2906075322,
+        "id": 1597254758,
         "type": "switch",
         "railway": "switch"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.1788819,
-          39.9738353
+          -75.214806,
+          39.9412502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1597254875,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2140556,
+          39.9417748
         ]
       }
     },
@@ -619,6 +662,21 @@
         "coordinates": [
           -75.2464846,
           39.9171276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3215241597,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2527742,
+          39.9244981
         ]
       }
     },
@@ -760,6 +818,21 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3215363003,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2127876,
+          39.9409955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3215363010,
         "type": "switch",
         "railway": "switch"
@@ -790,6 +863,21 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3215363168,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2129894,
+          39.9411714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3215363170,
         "type": "switch",
         "railway": "switch"
@@ -814,6 +902,36 @@
         "coordinates": [
           -75.2423413,
           39.9137839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3215363189,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2140161,
+          39.9418016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3215363203,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2148211,
+          39.9412396
         ]
       }
     },
@@ -910,6 +1028,36 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3215363398,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2139722,
+          39.9400826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3215363401,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2139677,
+          39.9420385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3215363405,
         "type": "switch",
         "railway": "switch"
@@ -919,6 +1067,21 @@
         "coordinates": [
           -75.2137456,
           39.9400778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3215363416,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.213742,
+          39.9418167
         ]
       }
     },
@@ -1015,6 +1178,36 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3216763868,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.204935,
+          39.9485602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3216763926,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2049118,
+          39.9486006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3216763935,
         "type": "switch",
         "railway": "switch"
@@ -1024,6 +1217,21 @@
         "coordinates": [
           -75.2071418,
           39.9467261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3216763939,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2040352,
+          39.948923
         ]
       }
     },
@@ -1045,6 +1253,21 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 3217322686,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2164187,
+          39.9440677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3217322721,
         "type": "switch",
         "railway": "switch"
@@ -1054,6 +1277,21 @@
         "coordinates": [
           -75.2164153,
           39.9442969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3217322781,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2163477,
+          39.9440487
         ]
       }
     },
@@ -1090,21 +1328,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 3218353567,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.203053,
-          39.9519292
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 3218353580,
         "type": "switch",
         "railway": "switch"
@@ -1114,51 +1337,6 @@
         "coordinates": [
           -75.2073279,
           39.948486
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3218353587,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.202903,
-          39.9517116
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3218353591,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2071014,
-          39.9486873
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3218353598,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.207058,
-          39.9485995
         ]
       }
     },
@@ -1195,45 +1373,15 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 3230268421,
+        "id": 3231911170,
         "type": "switch",
         "railway": "switch"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.2020304,
-          39.957913
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3230268427,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2018521,
-          39.9580323
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3230268434,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2016313,
-          39.9578648
+          -75.1936769,
+          39.9583584
         ]
       }
     },
@@ -1279,6 +1427,21 @@
         "coordinates": [
           -75.202595,
           39.9633176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3231911210,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1938093,
+          39.9586437
         ]
       }
     },
@@ -1474,21 +1637,6 @@
         "coordinates": [
           -75.2393838,
           39.9699291
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3233552647,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2441291,
-          39.9702255
         ]
       }
     },
@@ -1960,21 +2108,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 3421655349,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.1780956,
-          39.9725152
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 3421888643,
         "type": "switch",
         "railway": "switch"
@@ -1984,6 +2117,36 @@
         "coordinates": [
           -75.1346775,
           39.9687511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3666491378,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1344702,
+          39.9651278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3666491382,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1344343,
+          39.9657921
         ]
       }
     },
@@ -2050,36 +2213,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 4775923626,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2071807,
-          39.9499563
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 4775923627,
-        "type": "switch",
-        "railway": "switch"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.2071411,
-          39.9499222
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 4775923628,
         "type": "switch",
         "railway": "switch"
@@ -2089,6 +2222,81 @@
         "coordinates": [
           -75.207326,
           39.9497789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5336784619,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1633528,
+          39.9533818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5336784620,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16271,
+          39.9533508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5336784821,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1627202,
+          39.9533068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5336784822,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1633438,
+          39.9534259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6551564226,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1917529,
+          39.9551603
         ]
       }
     },
@@ -2155,15 +2363,165 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 7201598075,
+        "id": 7191834349,
         "type": "switch",
         "railway": "switch"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.1001947,
-          39.983811
+          -75.1854788,
+          39.9551324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7191834350,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1854857,
+          39.9550935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7191843627,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1668412,
+          39.9527658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7191843628,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1668317,
+          39.9528043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7192213154,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1672801,
+          39.9528602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7192213155,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1672891,
+          39.952823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7192213157,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1859331,
+          39.9551498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7192213159,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1859241,
+          39.955187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7204248601,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2127386,
+          39.9409549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7204248606,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2163725,
+          39.9440291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7204248608,
+        "type": "switch",
+        "railway": "switch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.2163933,
+          39.9440854
         ]
       }
     },

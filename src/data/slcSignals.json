@@ -68,22 +68,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 6188868433,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.8969305,
-          40.7434123
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 6188868434,
         "type": "signal",
         "railway": "signal",
@@ -500,22 +484,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 6189205313,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9099796,
-          40.6174231
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 6189205318,
         "type": "signal",
         "railway": "signal",
@@ -676,22 +644,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 6510282333,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.990553,
-          40.5883629
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 6510282334,
         "type": "signal",
         "railway": "signal",
@@ -756,58 +708,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 7550122142,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "normal",
-        "railway:signal:position": "bridge"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9052221,
-          40.7778034
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 7550149532,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9198441,
-          40.8086763
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 7550149536,
-        "type": "signal",
-        "railway": "signal"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.919714,
-          40.8122292
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 10665580401,
         "type": "signal",
         "railway": "signal",
@@ -834,197 +734,6 @@
         "coordinates": [
           -111.920304,
           40.7237556
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 11471967596,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9014017,
-          40.8844869
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 11471967597,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9021201,
-          40.8829058
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 11471967598,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9020389,
-          40.8828741
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843188569,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "normal",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9102809,
-          40.7646763
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843188570,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "right"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9102039,
-          40.7646916
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843188593,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:position": "right",
-        "railway:signal:speed_limit": "US:UTA:speed_limit",
-        "railway:signal:speed_limit:form": "sign",
-        "railway:signal:speed_limit:height": "normal",
-        "railway:signal:speed_limit:speed": "30 mph",
-        "railway:signal:speed_limit:speed:diverging": "15 mph"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9105152,
-          40.7652013
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843188594,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:position": "right",
-        "railway:signal:speed_limit": "US:UTA:speed_limit",
-        "railway:signal:speed_limit:form": "sign",
-        "railway:signal:speed_limit:height": "normal",
-        "railway:signal:speed_limit:speed": "30 mph",
-        "railway:signal:speed_limit:speed:diverging": "15 mph"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9104587,
-          40.7651993
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843207104,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9107704,
-          40.7658396
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 12843207105,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "dwarf",
-        "railway:signal:position": "right"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.9107165,
-          40.7658472
         ]
       }
     }

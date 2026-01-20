@@ -22,6 +22,7 @@ import type {
   EdmontonLrtLine,
   ClevelandRtaLine,
   CharlotteLynxLine,
+  BaltimoreLightRailLine,
   City,
 } from "../types";
 import {
@@ -46,6 +47,7 @@ import {
   EDMONTON_LRT_LINE_INFO,
   CLEVELAND_RTA_LINE_INFO,
   CHARLOTTE_LYNX_LINE_INFO,
+  BALTIMORE_LIGHT_RAIL_LINE_INFO,
   getLinesForCity,
 } from "../types";
 import type { SpeedFilter, ViewMode, LineStats, RouteLineMode } from "../App";
@@ -124,6 +126,8 @@ function getLineColor(line: string, city: City): string {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.color || "#666";
   } else if (city === "Charlotte") {
     return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.color || "#666";
+  } else if (city === "Baltimore") {
+    return BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.color || "#666";
   }
   return "#666";
 }
@@ -187,6 +191,8 @@ function getLineLabel(line: string, city: City): string {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.letter || line;
   } else if (city === "Charlotte") {
     return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.letter || line;
+  } else if (city === "Baltimore") {
+    return BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.letter || line;
   }
   return line;
 }
@@ -210,7 +216,8 @@ function getBadgeWidthClass(city: City): string {
     case "Charlotte":
       return "badge-width-short-word"; // "Blue", "Gold"
     case "Phoenix":
-      return "badge-width-letter"; // Single letters (A, B)
+    case "Baltimore":
+      return "badge-width-letter"; // Single letters (A, B) or short codes (LR)
     case "Toronto":
     case "Philadelphia":
     case "Jersey City":
@@ -266,6 +273,8 @@ function getLineInfo(line: string, city: City): string | undefined {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.name;
   } else if (city === "Charlotte") {
     return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.name;
+  } else if (city === "Baltimore") {
+    return BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.name;
   }
   return undefined;
 }
@@ -393,6 +402,7 @@ export function Controls({
     Cleveland: "Cleveland",
     Charlotte: "Charlotte",
     Phoenix: "Phoenix",
+    Baltimore: "Baltimore",
   };
   const systemNames: Record<string, string> = {
     SF: "Muni Speed Map",
@@ -416,6 +426,7 @@ export function Controls({
     Cleveland: "RTA Speed Map",
     Charlotte: "LYNX Speed Map",
     Phoenix: "Valley Metro Speed Map",
+    Baltimore: "Light Rail Speed Map",
   };
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
@@ -532,6 +543,14 @@ export function Controls({
           title="LYNX Blue Line & Gold Line"
         >
           🚊 CLT
+        </button>
+
+        <button
+          className={`city-btn city-btn-pending ${city === "Baltimore" ? "active" : ""}`}
+          onClick={() => setCity("Baltimore")}
+          title="MTA Light RailLink"
+        >
+          🦀 BAL
         </button>
 
         <button
@@ -733,34 +752,35 @@ export function Controls({
               Show route lines
             </label>
           </div>
-          {showRouteLines && (
-            <div className="route-line-mode-toggle">
-              <button
-                className={`route-mode-btn ${
-                  routeLineMode === "byLine" ? "active" : ""
-                }`}
-                onClick={() => setRouteLineMode("byLine")}
-              >
-                By Line
-              </button>
-              <button
-                className={`route-mode-btn ${
-                  routeLineMode === "bySpeedLimit" ? "active" : ""
-                }`}
-                onClick={() => setRouteLineMode("bySpeedLimit")}
-              >
-                Speed Limit
-              </button>
-              <button
-                className={`route-mode-btn ${
-                  routeLineMode === "bySeparation" ? "active" : ""
-                }`}
-                onClick={() => setRouteLineMode("bySeparation")}
-              >
-                Separation
-              </button>
-            </div>
-          )}
+          <div className={`route-line-mode-toggle ${!showRouteLines ? "disabled" : ""}`}>
+            <button
+              className={`route-mode-btn ${
+                routeLineMode === "byLine" ? "active" : ""
+              }`}
+              onClick={() => setRouteLineMode("byLine")}
+              disabled={!showRouteLines}
+            >
+              By Line
+            </button>
+            <button
+              className={`route-mode-btn ${
+                routeLineMode === "bySpeedLimit" ? "active" : ""
+              }`}
+              onClick={() => setRouteLineMode("bySpeedLimit")}
+              disabled={!showRouteLines}
+            >
+              Speed Limit
+            </button>
+            <button
+              className={`route-mode-btn ${
+                routeLineMode === "bySeparation" ? "active" : ""
+              }`}
+              onClick={() => setRouteLineMode("bySeparation")}
+              disabled={!showRouteLines}
+            >
+              Separation
+            </button>
+          </div>
           {/* Separation Legend - shown when separation mode is active */}
           {showRouteLines && routeLineMode === "bySeparation" && (
             <div className="separation-legend">

@@ -1908,7 +1908,7 @@
           "801"
         ],
         "crossingCount": 4,
-        "crossing_barrier": null,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
@@ -4303,8 +4303,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.1586293,
-          34.033399599999996
+          -118.15864644999999,
+          34.0333996
         ]
       }
     },

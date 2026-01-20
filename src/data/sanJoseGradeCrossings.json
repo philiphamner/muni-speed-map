@@ -3480,6 +3480,29 @@
           37.330545375
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13458705836",
+        "type": "level_crossing",
+        "routes": [
+          "Blue",
+          "Green"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8901424,
+          37.337409
+        ]
+      }
     }
   ]
 }

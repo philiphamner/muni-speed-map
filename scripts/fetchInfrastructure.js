@@ -186,6 +186,13 @@ const CITIES = {
     switchesFile: "sanJoseSwitches.json",
     signalsFile: "sanJoseSignals.json",
   },
+  Baltimore: {
+    name: "Baltimore",
+    bbox: [39.15, -76.69, 39.52, -76.60],
+    routesFile: "baltimoreLightRailRoutes.json",
+    switchesFile: "baltimoreSwitches.json",
+    signalsFile: "baltimoreSignals.json",
+  },
 };
 
 const OVERPASS_API = "https://overpass-api.de/api/interpreter";

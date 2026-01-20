@@ -379,6 +379,22 @@
   color: #00d9ff;
 }
 
+/* Disabled state for route line mode toggle */
+.route-line-mode-toggle.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.route-mode-btn:disabled {
+  cursor: not-allowed;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.route-mode-btn:disabled:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /* View Mode Toggle */
 .view-mode-toggle {
   display: flex;

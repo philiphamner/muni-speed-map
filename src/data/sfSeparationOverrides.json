@@ -12,57 +12,197 @@
         "description": "Dedicated streetcar right-of-way through Dolores Park area, fenced off from traffic",
         "isManualOverride": true,
         "source": "Local knowledge",
-        "lines": ["J"]
+        "lines": [
+          "J"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-122.428367, 37.761294],
-          [-122.428218, 37.761101],
-          [-122.428097, 37.760754],
-          [-122.428069, 37.760622],
-          [-122.428048, 37.760314],
-          [-122.427989, 37.75971],
-          [-122.427978, 37.759607],
-          [-122.42796, 37.759434],
-          [-122.427909, 37.758938],
-          [-122.427887, 37.758283],
-          [-122.427875, 37.758105],
-          [-122.427864, 37.758],
-          [-122.427845, 37.757923],
-          [-122.427823, 37.757874],
-          [-122.427808, 37.757835],
-          [-122.42777, 37.757795],
-          [-122.427719, 37.757762],
-          [-122.427652, 37.757735],
-          [-122.427568, 37.757712],
-          [-122.42745, 37.757695],
-          [-122.427261, 37.757687],
-          [-122.427197, 37.757675],
-          [-122.427141, 37.757656],
-          [-122.427065, 37.757608],
-          [-122.427016, 37.757562],
-          [-122.42698, 37.757496],
-          [-122.426982, 37.757462],
-          [-122.426972, 37.757461],
-          [-122.426962, 37.757358],
-          [-122.426929, 37.757056],
-          [-122.426902, 37.756668],
-          [-122.426888, 37.75656],
-          [-122.426925, 37.756433],
-          [-122.426975, 37.756342],
-          [-122.427074, 37.756232],
-          [-122.427215, 37.756122],
-          [-122.427284, 37.756036],
-          [-122.427314, 37.75596],
-          [-122.427329, 37.755892],
-          [-122.427288, 37.755482],
-          [-122.427305, 37.755405],
-          [-122.427332, 37.755311],
-          [-122.427473, 37.755147],
-          [-122.427579, 37.755043],
-          [-122.427671, 37.754962],
-          [-122.427748, 37.754901]
+          [
+            -122.428367,
+            37.761294
+          ],
+          [
+            -122.428218,
+            37.761101
+          ],
+          [
+            -122.428097,
+            37.760754
+          ],
+          [
+            -122.428069,
+            37.760622
+          ],
+          [
+            -122.428048,
+            37.760314
+          ],
+          [
+            -122.427989,
+            37.75971
+          ],
+          [
+            -122.427978,
+            37.759607
+          ],
+          [
+            -122.42796,
+            37.759434
+          ],
+          [
+            -122.427909,
+            37.758938
+          ],
+          [
+            -122.427887,
+            37.758283
+          ],
+          [
+            -122.427875,
+            37.758105
+          ],
+          [
+            -122.427864,
+            37.758
+          ],
+          [
+            -122.427845,
+            37.757923
+          ],
+          [
+            -122.427823,
+            37.757874
+          ],
+          [
+            -122.427808,
+            37.757835
+          ],
+          [
+            -122.42777,
+            37.757795
+          ],
+          [
+            -122.427719,
+            37.757762
+          ],
+          [
+            -122.427652,
+            37.757735
+          ],
+          [
+            -122.427568,
+            37.757712
+          ],
+          [
+            -122.42745,
+            37.757695
+          ],
+          [
+            -122.427261,
+            37.757687
+          ],
+          [
+            -122.427197,
+            37.757675
+          ],
+          [
+            -122.427141,
+            37.757656
+          ],
+          [
+            -122.427065,
+            37.757608
+          ],
+          [
+            -122.427016,
+            37.757562
+          ],
+          [
+            -122.42698,
+            37.757496
+          ],
+          [
+            -122.426982,
+            37.757462
+          ],
+          [
+            -122.426972,
+            37.757461
+          ],
+          [
+            -122.426962,
+            37.757358
+          ],
+          [
+            -122.426929,
+            37.757056
+          ],
+          [
+            -122.426902,
+            37.756668
+          ],
+          [
+            -122.426888,
+            37.75656
+          ],
+          [
+            -122.426925,
+            37.756433
+          ],
+          [
+            -122.426975,
+            37.756342
+          ],
+          [
+            -122.427074,
+            37.756232
+          ],
+          [
+            -122.427215,
+            37.756122
+          ],
+          [
+            -122.427284,
+            37.756036
+          ],
+          [
+            -122.427314,
+            37.75596
+          ],
+          [
+            -122.427329,
+            37.755892
+          ],
+          [
+            -122.427288,
+            37.755482
+          ],
+          [
+            -122.427305,
+            37.755405
+          ],
+          [
+            -122.427332,
+            37.755311
+          ],
+          [
+            -122.427473,
+            37.755147
+          ],
+          [
+            -122.427579,
+            37.755043
+          ],
+          [
+            -122.427671,
+            37.754962
+          ],
+          [
+            -122.427748,
+            37.754901
+          ]
         ]
       }
     },
@@ -75,57 +215,197 @@
         "description": "Dedicated median along The Embarcadero and into 4th & King yard area",
         "isManualOverride": true,
         "source": "Local knowledge",
-        "lines": ["N", "T", "K"]
+        "lines": [
+          "N"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-122.390715, 37.791931],
-          [-122.390602, 37.79163],
-          [-122.390574, 37.791561],
-          [-122.39055, 37.791503],
-          [-122.390483, 37.791373],
-          [-122.390424, 37.791274],
-          [-122.390357, 37.791175],
-          [-122.390319, 37.791122],
-          [-122.390284, 37.791077],
-          [-122.390254, 37.791039],
-          [-122.390224, 37.791005],
-          [-122.390025, 37.790832],
-          [-122.38991, 37.790695],
-          [-122.389795, 37.790615],
-          [-122.3896, 37.790472],
-          [-122.389394, 37.790302],
-          [-122.38897, 37.789954],
-          [-122.388494, 37.789577],
-          [-122.38838, 37.789468],
-          [-122.388266, 37.789307],
-          [-122.388125, 37.789017],
-          [-122.387961, 37.78848],
-          [-122.387901, 37.788263],
-          [-122.387831, 37.787922],
-          [-122.387808, 37.787102],
-          [-122.388036, 37.784778],
-          [-122.388057, 37.784609],
-          [-122.38816, 37.783238],
-          [-122.388319, 37.781803],
-          [-122.388322, 37.781492],
-          [-122.388365, 37.781251],
-          [-122.388415, 37.781055],
-          [-122.388491, 37.780888],
-          [-122.388608, 37.780707],
-          [-122.388887, 37.780397],
-          [-122.389603, 37.779866],
-          [-122.389895, 37.779649],
-          [-122.391853, 37.77813],
-          [-122.394048, 37.776338],
-          [-122.394127, 37.776278],
-          [-122.396274, 37.774583],
-          [-122.396387, 37.774504],
-          [-122.397361, 37.773728],
-          [-122.397533, 37.773541],
-          [-122.39766, 37.773344],
-          [-122.397763, 37.773184]
+          [
+            -122.390715,
+            37.791931
+          ],
+          [
+            -122.390602,
+            37.79163
+          ],
+          [
+            -122.390574,
+            37.791561
+          ],
+          [
+            -122.39055,
+            37.791503
+          ],
+          [
+            -122.390483,
+            37.791373
+          ],
+          [
+            -122.390424,
+            37.791274
+          ],
+          [
+            -122.390357,
+            37.791175
+          ],
+          [
+            -122.390319,
+            37.791122
+          ],
+          [
+            -122.390284,
+            37.791077
+          ],
+          [
+            -122.390254,
+            37.791039
+          ],
+          [
+            -122.390224,
+            37.791005
+          ],
+          [
+            -122.390025,
+            37.790832
+          ],
+          [
+            -122.38991,
+            37.790695
+          ],
+          [
+            -122.389795,
+            37.790615
+          ],
+          [
+            -122.3896,
+            37.790472
+          ],
+          [
+            -122.389394,
+            37.790302
+          ],
+          [
+            -122.38897,
+            37.789954
+          ],
+          [
+            -122.388494,
+            37.789577
+          ],
+          [
+            -122.38838,
+            37.789468
+          ],
+          [
+            -122.388266,
+            37.789307
+          ],
+          [
+            -122.388125,
+            37.789017
+          ],
+          [
+            -122.387961,
+            37.78848
+          ],
+          [
+            -122.387901,
+            37.788263
+          ],
+          [
+            -122.387831,
+            37.787922
+          ],
+          [
+            -122.387808,
+            37.787102
+          ],
+          [
+            -122.388036,
+            37.784778
+          ],
+          [
+            -122.388057,
+            37.784609
+          ],
+          [
+            -122.38816,
+            37.783238
+          ],
+          [
+            -122.388319,
+            37.781803
+          ],
+          [
+            -122.388322,
+            37.781492
+          ],
+          [
+            -122.388365,
+            37.781251
+          ],
+          [
+            -122.388415,
+            37.781055
+          ],
+          [
+            -122.388491,
+            37.780888
+          ],
+          [
+            -122.388608,
+            37.780707
+          ],
+          [
+            -122.388887,
+            37.780397
+          ],
+          [
+            -122.389603,
+            37.779866
+          ],
+          [
+            -122.389895,
+            37.779649
+          ],
+          [
+            -122.391853,
+            37.77813
+          ],
+          [
+            -122.394048,
+            37.776338
+          ],
+          [
+            -122.394127,
+            37.776278
+          ],
+          [
+            -122.396274,
+            37.774583
+          ],
+          [
+            -122.396387,
+            37.774504
+          ],
+          [
+            -122.397361,
+            37.773728
+          ],
+          [
+            -122.397533,
+            37.773541
+          ],
+          [
+            -122.39766,
+            37.773344
+          ],
+          [
+            -122.397763,
+            37.773184
+          ]
         ]
       }
     },
@@ -138,37 +418,1413 @@
         "description": "Dedicated median ROW from West Portal/Sloat/St Francis Circle station through 19th Avenue",
         "isManualOverride": true,
         "source": "Local knowledge",
-        "lines": ["M", "K"]
+        "lines": [
+          "M"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-122.471526, 37.734798],
-          [-122.471582, 37.734711],
-          [-122.471971, 37.734244],
-          [-122.472594, 37.733441],
-          [-122.473691, 37.732014],
-          [-122.473767, 37.731922],
-          [-122.47422, 37.731331],
-          [-122.474309, 37.731193],
-          [-122.474371, 37.731097],
-          [-122.474392, 37.731065],
-          [-122.474574, 37.730692],
-          [-122.474646, 37.730471],
-          [-122.474822, 37.730335],
-          [-122.47479, 37.729633],
-          [-122.474819, 37.729005],
-          [-122.474903, 37.727026],
-          [-122.474918, 37.72692],
-          [-122.47498, 37.725686],
-          [-122.475018, 37.724929],
-          [-122.475114, 37.723087],
-          [-122.47521, 37.721351],
-          [-122.475234, 37.721062],
-          [-122.475238, 37.720447],
-          [-122.474985, 37.719926],
-          [-122.474752, 37.719531],
-          [-122.472585, 37.717178]
+          [
+            -122.471526,
+            37.734798
+          ],
+          [
+            -122.471582,
+            37.734711
+          ],
+          [
+            -122.471971,
+            37.734244
+          ],
+          [
+            -122.472594,
+            37.733441
+          ],
+          [
+            -122.473691,
+            37.732014
+          ],
+          [
+            -122.473767,
+            37.731922
+          ],
+          [
+            -122.47422,
+            37.731331
+          ],
+          [
+            -122.474309,
+            37.731193
+          ],
+          [
+            -122.474371,
+            37.731097
+          ],
+          [
+            -122.474392,
+            37.731065
+          ],
+          [
+            -122.474574,
+            37.730692
+          ],
+          [
+            -122.474646,
+            37.730471
+          ],
+          [
+            -122.474822,
+            37.730335
+          ],
+          [
+            -122.47479,
+            37.729633
+          ],
+          [
+            -122.474819,
+            37.729005
+          ],
+          [
+            -122.474903,
+            37.727026
+          ],
+          [
+            -122.474918,
+            37.72692
+          ],
+          [
+            -122.47498,
+            37.725686
+          ],
+          [
+            -122.475018,
+            37.724929
+          ],
+          [
+            -122.475114,
+            37.723087
+          ],
+          [
+            -122.47521,
+            37.721351
+          ],
+          [
+            -122.475234,
+            37.721062
+          ],
+          [
+            -122.475238,
+            37.720447
+          ],
+          [
+            -122.474985,
+            37.719926
+          ],
+          [
+            -122.474752,
+            37.719531
+          ],
+          [
+            -122.472585,
+            37.717178
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-160306978",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 160306978
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4259836,
+            37.7698737
+          ],
+          [
+            -122.4261507,
+            37.7697429
+          ],
+          [
+            -122.4263097,
+            37.7696183
+          ],
+          [
+            -122.4274928,
+            37.7686916
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-160307216",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 160307216
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4259836,
+            37.7698737
+          ],
+          [
+            -122.4261062,
+            37.7697866
+          ],
+          [
+            -122.4262208,
+            37.7697258
+          ],
+          [
+            -122.42633,
+            37.7696805
+          ],
+          [
+            -122.4264093,
+            37.7696575
+          ],
+          [
+            -122.4265483,
+            37.7696345
+          ],
+          [
+            -122.4266934,
+            37.7696207
+          ],
+          [
+            -122.4271777,
+            37.769586
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-160333986",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 160333986
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3908195,
+            37.7920442
+          ],
+          [
+            -122.3908899,
+            37.792184
+          ],
+          [
+            -122.3909838,
+            37.7923413
+          ],
+          [
+            -122.391095,
+            37.7925042
+          ],
+          [
+            -122.3912879,
+            37.7927475
+          ],
+          [
+            -122.3914013,
+            37.7928589
+          ],
+          [
+            -122.392019,
+            37.7933811
+          ],
+          [
+            -122.3922524,
+            37.793589
+          ],
+          [
+            -122.3932211,
+            37.7944876
+          ],
+          [
+            -122.3933443,
+            37.7946014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-252221514",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 252221514
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4271746,
+            37.7695516
+          ],
+          [
+            -122.4264831,
+            37.7695991
+          ],
+          [
+            -122.4263875,
+            37.7696136
+          ],
+          [
+            -122.4262973,
+            37.7696448
+          ],
+          [
+            -122.4262139,
+            37.7696861
+          ],
+          [
+            -122.4261263,
+            37.7697235
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-340366203",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 340366203
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3972026,
+            37.7926891
+          ],
+          [
+            -122.3977749,
+            37.7922348
+          ],
+          [
+            -122.3979675,
+            37.7920845
+          ],
+          [
+            -122.3985064,
+            37.7916586
+          ],
+          [
+            -122.4006544,
+            37.7899609
+          ],
+          [
+            -122.4012879,
+            37.7894601
+          ],
+          [
+            -122.4023343,
+            37.788633
+          ],
+          [
+            -122.4056678,
+            37.7859982
+          ],
+          [
+            -122.4078022,
+            37.7843112
+          ],
+          [
+            -122.4081035,
+            37.784073
+          ],
+          [
+            -122.41314,
+            37.7801101
+          ],
+          [
+            -122.4145068,
+            37.7790243
+          ],
+          [
+            -122.4174364,
+            37.7766955
+          ],
+          [
+            -122.4196282,
+            37.7749627
+          ],
+          [
+            -122.4199248,
+            37.7747283
+          ],
+          [
+            -122.4200384,
+            37.7746384
+          ],
+          [
+            -122.4202776,
+            37.7744493
+          ],
+          [
+            -122.4203903,
+            37.7743602
+          ],
+          [
+            -122.4205919,
+            37.7742009
+          ],
+          [
+            -122.4217283,
+            37.7733025
+          ],
+          [
+            -122.4227721,
+            37.7724772
+          ],
+          [
+            -122.4233096,
+            37.7720524
+          ],
+          [
+            -122.4246565,
+            37.7709875
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-551273337",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 551273337
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4245507,
+            37.7709038
+          ],
+          [
+            -122.4232032,
+            37.7719691
+          ],
+          [
+            -122.4228291,
+            37.7722648
+          ],
+          [
+            -122.422668,
+            37.7723921
+          ],
+          [
+            -122.4226143,
+            37.7724313
+          ],
+          [
+            -122.4216219,
+            37.7732193
+          ],
+          [
+            -122.4204854,
+            37.7741178
+          ],
+          [
+            -122.4202834,
+            37.7742775
+          ],
+          [
+            -122.4201699,
+            37.7743672
+          ],
+          [
+            -122.419931,
+            37.774556
+          ],
+          [
+            -122.4198179,
+            37.7746455
+          ],
+          [
+            -122.4193457,
+            37.775027
+          ],
+          [
+            -122.4188561,
+            37.7754058
+          ],
+          [
+            -122.4173298,
+            37.7766124
+          ],
+          [
+            -122.414399,
+            37.7789422
+          ],
+          [
+            -122.4130305,
+            37.7800293
+          ],
+          [
+            -122.4068922,
+            37.7848631
+          ],
+          [
+            -122.405562,
+            37.7859146
+          ],
+          [
+            -122.4011881,
+            37.7893717
+          ],
+          [
+            -122.3983992,
+            37.791576
+          ],
+          [
+            -122.3978634,
+            37.7919995
+          ],
+          [
+            -122.3970947,
+            37.792607
+          ],
+          [
+            -122.3968407,
+            37.7928078
+          ],
+          [
+            -122.3965892,
+            37.7930066
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-551273341",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 551273341
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3934204,
+            37.7945346
+          ],
+          [
+            -122.3933041,
+            37.7944296
+          ],
+          [
+            -122.3923181,
+            37.7935225
+          ],
+          [
+            -122.3921315,
+            37.7933582
+          ],
+          [
+            -122.3914961,
+            37.7928219
+          ],
+          [
+            -122.3913848,
+            37.7927221
+          ],
+          [
+            -122.3912821,
+            37.7926167
+          ],
+          [
+            -122.3911887,
+            37.792506
+          ],
+          [
+            -122.391105,
+            37.7923906
+          ],
+          [
+            -122.3910312,
+            37.7922709
+          ],
+          [
+            -122.3909679,
+            37.7921477
+          ],
+          [
+            -122.3909152,
+            37.7920213
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-654563362",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 654563362
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4246565,
+            37.7709875
+          ],
+          [
+            -122.4253643,
+            37.7704052
+          ],
+          [
+            -122.4259836,
+            37.7698737
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076107",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076107
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3922765,
+            37.7935514
+          ],
+          [
+            -122.3929718,
+            37.7941906
+          ],
+          [
+            -122.393087,
+            37.7942964
+          ],
+          [
+            -122.3933823,
+            37.794568
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076108",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076108
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.393087,
+            37.7942964
+          ],
+          [
+            -122.3934204,
+            37.7945346
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076109",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076109
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3929718,
+            37.7941906
+          ],
+          [
+            -122.3932211,
+            37.7944876
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076112",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076112
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3954967,
+            37.7939603
+          ],
+          [
+            -122.3953409,
+            37.7940821
+          ],
+          [
+            -122.3947124,
+            37.7945732
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076113",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076113
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3983992,
+            37.791576
+          ],
+          [
+            -122.398184,
+            37.7918295
+          ],
+          [
+            -122.3979675,
+            37.7920845
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076114",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076114
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3965892,
+            37.7930066
+          ],
+          [
+            -122.3959666,
+            37.7934968
+          ],
+          [
+            -122.3957544,
+            37.7936664
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076115",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076115
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3958651,
+            37.7937462
+          ],
+          [
+            -122.3960818,
+            37.7935729
+          ],
+          [
+            -122.3966933,
+            37.7930916
+          ],
+          [
+            -122.3972026,
+            37.7926891
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675076116",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675076116
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3957544,
+            37.7936664
+          ],
+          [
+            -122.3954967,
+            37.7939603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-675077534",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 675077534
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3958651,
+            37.7937462
+          ],
+          [
+            -122.3954967,
+            37.7939603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-677305093",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 677305093
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4261263,
+            37.7697235
+          ],
+          [
+            -122.4254589,
+            37.7701942
+          ],
+          [
+            -122.4245507,
+            37.7709038
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-677305094",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 677305094
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3957544,
+            37.7936664
+          ],
+          [
+            -122.39466,
+            37.7945319
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-677305095",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 677305095
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3947648,
+            37.7946145
+          ],
+          [
+            -122.3958397,
+            37.7937663
+          ],
+          [
+            -122.3958651,
+            37.7937462
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-677305096",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 677305096
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.39466,
+            37.7945319
+          ],
+          [
+            -122.3945116,
+            37.794638
+          ],
+          [
+            -122.3943351,
+            37.7947126
+          ],
+          [
+            -122.394141,
+            37.7947512
+          ],
+          [
+            -122.3939409,
+            37.7947516
+          ],
+          [
+            -122.3937466,
+            37.7947138
+          ],
+          [
+            -122.3935696,
+            37.79464
+          ],
+          [
+            -122.3934204,
+            37.7945346
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-677305097",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 677305097
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3933443,
+            37.7946014
+          ],
+          [
+            -122.3935143,
+            37.7947217
+          ],
+          [
+            -122.3937157,
+            37.7948067
+          ],
+          [
+            -122.3939368,
+            37.7948516
+          ],
+          [
+            -122.394165,
+            37.7948537
+          ],
+          [
+            -122.3943874,
+            37.7948129
+          ],
+          [
+            -122.3945912,
+            37.7947317
+          ],
+          [
+            -122.3947648,
+            37.7946145
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-694654077",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 694654077
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4274684,
+            37.7686722
+          ],
+          [
+            -122.4262839,
+            37.7696
+          ],
+          [
+            -122.4261263,
+            37.7697235
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647080",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647080
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4205387,
+            37.7741594
+          ],
+          [
+            -122.4214089,
+            37.7734732
+          ],
+          [
+            -122.4217283,
+            37.7733025
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647081",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647081
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.422668,
+            37.7723921
+          ],
+          [
+            -122.4229881,
+            37.7722227
+          ],
+          [
+            -122.4233096,
+            37.7720524
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647082",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647082
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4232032,
+            37.7719691
+          ],
+          [
+            -122.4229881,
+            37.7722227
+          ],
+          [
+            -122.4227721,
+            37.7724772
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647083",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647083
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3978634,
+            37.7919995
+          ],
+          [
+            -122.398184,
+            37.7918295
+          ],
+          [
+            -122.3985064,
+            37.7916586
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647084",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647084
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3937311,
+            37.7947603
+          ],
+          [
+            -122.3935419,
+            37.7946809
+          ],
+          [
+            -122.3933823,
+            37.794568
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647085",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647085
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3935696,
+            37.79464
+          ],
+          [
+            -122.3937388,
+            37.794737
+          ],
+          [
+            -122.3939388,
+            37.7948016
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647086",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647086
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3933443,
+            37.7946014
+          ],
+          [
+            -122.3935281,
+            37.7947013
+          ],
+          [
+            -122.3937311,
+            37.7947603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "jn-market-subway-773647087",
+        "separationType": "tunnel",
+        "name": "Market Street Subway (J/N section)",
+        "description": "Market Street Subway from Embarcadero to Church/Duboce - used by J and N lines",
+        "isManualOverride": true,
+        "lines": [
+          "J",
+          "N"
+        ],
+        "originalId": 773647087
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3947124,
+            37.7945732
+          ],
+          [
+            -122.3945514,
+            37.7946848
+          ],
+          [
+            -122.3943612,
+            37.7947627
+          ],
+          [
+            -122.394153,
+            37.7948024
+          ],
+          [
+            -122.3939388,
+            37.7948016
+          ],
+          [
+            -122.3937311,
+            37.7947603
+          ]
         ]
       }
     }

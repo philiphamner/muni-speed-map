@@ -1,0 +1,583 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7625",
+        "stop_name": "Glen Burnie (Cromwell)",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.633255,
+          39.172428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7626",
+        "stop_name": "Ferndale",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.640282,
+          39.184059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7627",
+        "stop_name": "BWI Airport",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.67009,
+          39.183155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7630",
+        "stop_name": "Linthicum",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.655106,
+          39.202633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7631",
+        "stop_name": "North Linthicum",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.645798,
+          39.21463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7632",
+        "stop_name": "Nursery Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.641197,
+          39.221882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7634",
+        "stop_name": "Baltimore Highlands",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.632729,
+          39.235443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7635",
+        "stop_name": "Patapsco",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.629791,
+          39.242317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7637",
+        "stop_name": "Cherry Hill",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.634827,
+          39.256367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7638",
+        "stop_name": "Westport",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.631889,
+          39.262131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7639",
+        "stop_name": "Hamburg Street",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619682,
+          39.279297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7640",
+        "stop_name": "Camden Station / Camden Yards",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619408,
+          39.283703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7641",
+        "stop_name": "Convention Center",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619354,
+          39.28616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7642",
+        "stop_name": "Baltimore Arena (University Center)",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619431,
+          39.289085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7643",
+        "stop_name": "Lexington Market",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619576,
+          39.292568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7644",
+        "stop_name": "Mt. Vernon (Centre Street)",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619934,
+          39.297176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7645",
+        "stop_name": "Cultural Center / State Center",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.620445,
+          39.304092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7646",
+        "stop_name": "Mt. Royal / MICA",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619858,
+          39.307747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7647",
+        "stop_name": "Penn Station",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.616141,
+          39.307791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7648",
+        "stop_name": "North Avenue",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.622726,
+          39.312244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7649",
+        "stop_name": "MTA Light Rail Division",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.625885,
+          39.315395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7650",
+        "stop_name": "Woodberry",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.643478,
+          39.331551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7651",
+        "stop_name": "Cold Spring Lane",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.647934,
+          39.34446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7652",
+        "stop_name": "Mt. Washington",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.652374,
+          39.368793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7654",
+        "stop_name": "Falls Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.649323,
+          39.37682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7655",
+        "stop_name": "Lutherville",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.627159,
+          39.429317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7656",
+        "stop_name": "Timonium",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.628204,
+          39.434219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7657",
+        "stop_name": "Fairgrounds",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.635056,
+          39.448906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7658",
+        "stop_name": "Warren Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.654198,
+          39.475979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7659",
+        "stop_name": "Gilroy Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.661591,
+          39.482506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7660",
+        "stop_name": "McCormick Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.658493,
+          39.489628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7661",
+        "stop_name": "Pepper Road",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.655678,
+          39.492168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "7662",
+        "stop_name": "Hunt Valley",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.653755,
+          39.496227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": "s7013",
+        "stop_name": "Camden Station",
+        "routes": [
+          "Light Rail"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.619713,
+          39.283745
+        ]
+      }
+    }
+  ]
+}

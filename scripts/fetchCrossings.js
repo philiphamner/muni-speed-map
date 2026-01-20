@@ -261,6 +261,12 @@ const CITIES = {
     routesFile: "vtaLightRailRoutes.json",
     outputFile: "sanJoseGradeCrossings.json",
   },
+  Baltimore: {
+    name: "Baltimore",
+    bbox: [39.15, -76.69, 39.52, -76.60],
+    routesFile: "baltimoreLightRailRoutes.json",
+    outputFile: "baltimoreGradeCrossings.json",
+  },
 };
 
 const OVERPASS_API = "https://overpass-api.de/api/interpreter";
@@ -288,14 +294,24 @@ async function fetchCrossings(cityKey, city) {
     return 0;
   }
 
-  // Build route geometry map
+  // Build route geometry map - handle both LineString and MultiLineString
   const routeCoordsByRouteId = new Map();
   routes.features.forEach((feature) => {
     const routeId = feature.properties.route_id;
     if (!routeCoordsByRouteId.has(routeId)) {
       routeCoordsByRouteId.set(routeId, []);
     }
-    routeCoordsByRouteId.get(routeId).push(feature.geometry.coordinates);
+    
+    // Handle MultiLineString (array of line strings) vs LineString (single line)
+    if (feature.geometry.type === "MultiLineString") {
+      // Each element in coordinates is a separate line string
+      for (const lineCoords of feature.geometry.coordinates) {
+        routeCoordsByRouteId.get(routeId).push(lineCoords);
+      }
+    } else {
+      // LineString - coordinates is a single line
+      routeCoordsByRouteId.get(routeId).push(feature.geometry.coordinates);
+    }
   });
   console.log(`   Found ${routeCoordsByRouteId.size} unique routes`);
 

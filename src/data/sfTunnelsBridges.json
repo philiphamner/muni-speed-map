@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-01-19T04:30:23.795Z",
+  "generated": "2026-01-20T05:22:50.661Z",
   "source": "OpenStreetMap via Overpass API",
   "features": [
     {
@@ -33,6 +33,32 @@
           [
             -122.4473032,
             37.7226895
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24141683,
+        "infraType": "cutting",
+        "name": "M-Line",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4473032,
+            37.7226895
+          ],
+          [
+            -122.4474577,
+            37.7220367
           ]
         ]
       }
@@ -91,6 +117,32 @@
           [
             -122.4482856,
             37.7175065
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27435105,
+        "infraType": "bridge",
+        "name": "Muni K",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4482281,
+            37.7229665
+          ],
+          [
+            -122.4473805,
+            37.7229696
           ]
         ]
       }
@@ -404,6 +456,32 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 51052473,
+        "infraType": "cutting",
+        "name": "M-Line",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4473539,
+            37.7220228
+          ],
+          [
+            -122.4472087,
+            37.722676
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 51052483,
         "infraType": "tunnel",
         "name": "M-Line",
@@ -541,6 +619,212 @@
           [
             -122.4478875,
             37.7193197
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159320983,
+        "infraType": "bridge",
+        "name": "Muni K",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4473675,
+            37.7230109
+          ],
+          [
+            -122.4482158,
+            37.7230079
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159778977,
+        "infraType": "bridge",
+        "name": "Muni M",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4487758,
+            37.7182814
+          ],
+          [
+            -122.4487461,
+            37.718306
+          ],
+          [
+            -122.4487202,
+            37.718326
+          ],
+          [
+            -122.4486922,
+            37.7183458
+          ],
+          [
+            -122.4486587,
+            37.7183691
+          ],
+          [
+            -122.4486166,
+            37.7183977
+          ],
+          [
+            -122.4483736,
+            37.718553
+          ],
+          [
+            -122.4483192,
+            37.7185889
+          ],
+          [
+            -122.4482766,
+            37.7186181
+          ],
+          [
+            -122.448235,
+            37.7186486
+          ],
+          [
+            -122.4481989,
+            37.7186764
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159778983,
+        "infraType": "bridge",
+        "name": "Muni M",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4481927,
+            37.7187265
+          ],
+          [
+            -122.4482368,
+            37.7186897
+          ],
+          [
+            -122.4482851,
+            37.7186528
+          ],
+          [
+            -122.448343,
+            37.718612
+          ],
+          [
+            -122.4483971,
+            37.7185767
+          ],
+          [
+            -122.4486158,
+            37.7184369
+          ],
+          [
+            -122.4486424,
+            37.7184201
+          ],
+          [
+            -122.4486669,
+            37.7184039
+          ],
+          [
+            -122.4486907,
+            37.7183877
+          ],
+          [
+            -122.4487183,
+            37.7183685
+          ],
+          [
+            -122.448746,
+            37.718348
+          ],
+          [
+            -122.4487715,
+            37.7183286
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159798877,
+        "infraType": "bridge",
+        "name": "Muni J",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4326429,
+            37.7329399
+          ],
+          [
+            -122.4320284,
+            37.7332331
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 160272602,
+        "infraType": "bridge",
+        "name": "Muni J",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.4320798,
+            37.7332618
+          ],
+          [
+            -122.4326945,
+            37.732971
           ]
         ]
       }
@@ -1150,6 +1434,60 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 160312617,
+        "infraType": "cutting",
+        "name": "Muni Metro",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3903013,
+            37.7911266
+          ],
+          [
+            -122.3903871,
+            37.7912301
+          ],
+          [
+            -122.3904666,
+            37.7913341
+          ],
+          [
+            -122.3905321,
+            37.7914283
+          ],
+          [
+            -122.3905963,
+            37.7915274
+          ],
+          [
+            -122.3906462,
+            37.791629
+          ],
+          [
+            -122.390696,
+            37.791744
+          ],
+          [
+            -122.3907472,
+            37.7918655
+          ],
+          [
+            -122.3908195,
+            37.7920442
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 160333986,
         "infraType": "tunnel",
         "name": "Muni Metro",
@@ -1201,6 +1539,178 @@
           [
             -122.3933443,
             37.7946014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 160842754,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3873797,
+            37.7476785
+          ],
+          [
+            -122.3873679,
+            37.7475223
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 161151433,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3983231,
+            37.716556
+          ],
+          [
+            -122.398344,
+            37.7164124
+          ],
+          [
+            -122.3983857,
+            37.7162884
+          ],
+          [
+            -122.3984368,
+            37.7161455
+          ],
+          [
+            -122.3987192,
+            37.715577
+          ],
+          [
+            -122.3987621,
+            37.7154946
+          ],
+          [
+            -122.3988259,
+            37.7154048
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 161151435,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3988019,
+            37.7153665
+          ],
+          [
+            -122.3987257,
+            37.7154737
+          ],
+          [
+            -122.3986907,
+            37.7155406
+          ],
+          [
+            -122.3983968,
+            37.7161356
+          ],
+          [
+            -122.3983376,
+            37.7162695
+          ],
+          [
+            -122.3983049,
+            37.7163996
+          ],
+          [
+            -122.3982844,
+            37.7164895
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 240059480,
+        "infraType": "cutting",
+        "name": "Muni Metro",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3909152,
+            37.7920213
+          ],
+          [
+            -122.3908572,
+            37.7918704
+          ],
+          [
+            -122.3908033,
+            37.791738
+          ],
+          [
+            -122.3907421,
+            37.7916162
+          ],
+          [
+            -122.3906748,
+            37.7914997
+          ],
+          [
+            -122.3906135,
+            37.7913982
+          ],
+          [
+            -122.3905449,
+            37.7913066
+          ],
+          [
+            -122.390453,
+            37.7911952
+          ],
+          [
+            -122.3903681,
+            37.7910921
           ]
         ]
       }
@@ -1445,6 +1955,58 @@
           [
             -122.4052925,
             37.7853533
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 331461212,
+        "infraType": "cutting",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3990185,
+            37.780287
+          ],
+          [
+            -122.3985086,
+            37.779886
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 331461213,
+        "infraType": "cutting",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3984781,
+            37.7799101
+          ],
+          [
+            -122.3989847,
+            37.7803143
           ]
         ]
       }
@@ -1851,6 +2413,84 @@
           [
             -122.4259836,
             37.7698737
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 667768316,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3873145,
+            37.7475258
+          ],
+          [
+            -122.3873276,
+            37.7476817
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 667768318,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3873415,
+            37.7472378
+          ],
+          [
+            -122.3873252,
+            37.7470759
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 667768319,
+        "infraType": "bridge",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3872701,
+            37.7470793
+          ],
+          [
+            -122.3872871,
+            37.7472409
           ]
         ]
       }
@@ -3761,6 +4401,58 @@
           [
             -122.4012272,
             37.7819963
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1335815559,
+        "infraType": "cutting",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3985086,
+            37.779886
+          ],
+          [
+            -122.3982939,
+            37.7797171
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1335815560,
+        "infraType": "cutting",
+        "name": "Muni T",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3982637,
+            37.7797391
+          ],
+          [
+            -122.3984781,
+            37.7799101
           ]
         ]
       }

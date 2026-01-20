@@ -21,6 +21,7 @@ export const CITIES = [
   "Edmonton",
   "Cleveland",
   "Charlotte",
+  "Baltimore",
 ] as const;
 export type City = (typeof CITIES)[number];
 
@@ -480,6 +481,19 @@ export const PHOENIX_LIGHT_RAIL_LINE_INFO: Record<
   B: { name: "B Line (North-South)", letter: "B", color: "#B76912" }, // Official orange
 };
 
+// Baltimore Light RailLink
+// Single unified line with branches to Hunt Valley, BWI Airport, Glen Burnie
+export const BALTIMORE_LIGHT_RAIL_LINES = ["Light Rail"] as const;
+export type BaltimoreLightRailLine =
+  (typeof BALTIMORE_LIGHT_RAIL_LINES)[number];
+
+export const BALTIMORE_LIGHT_RAIL_LINE_INFO: Record<
+  BaltimoreLightRailLine,
+  { name: string; letter: string; color: string }
+> = {
+  "Light Rail": { name: "Light RailLink", letter: "LR", color: "#007499" }, // MTA teal
+};
+
 // Union type for any transit line
 export type TransitLine =
   | MuniLine
@@ -502,7 +516,8 @@ export type TransitLine =
   | CalgaryCtrainLine
   | EdmontonLrtLine
   | ClevelandRtaLine
-  | CharlotteLynxLine;
+  | CharlotteLynxLine
+  | BaltimoreLightRailLine;
 
 // Get lines for a specific city
 export function getLinesForCity(city: City): readonly string[] {
@@ -549,5 +564,7 @@ export function getLinesForCity(city: City): readonly string[] {
       return CLEVELAND_RTA_LINES;
     case "Charlotte":
       return CHARLOTTE_LYNX_LINES;
+    case "Baltimore":
+      return BALTIMORE_LIGHT_RAIL_LINES;
   }
 }

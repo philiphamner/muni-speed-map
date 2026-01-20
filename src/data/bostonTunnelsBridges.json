@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated": "2026-01-19T04:31:03.405Z",
+  "generated": "2026-01-20T05:23:19.319Z",
   "source": "OpenStreetMap via Overpass API",
   "features": [
     {
@@ -174,6 +174,36 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 9267553,
+        "infraType": "cutting",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0659024,
+            42.3660938
+          ],
+          [
+            -71.0656594,
+            42.366021
+          ],
+          [
+            -71.0648638,
+            42.3657252
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 9267599,
         "infraType": "tunnel",
         "name": "Green Line",
@@ -237,6 +267,36 @@
           [
             -71.0708139,
             42.3518759
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 50266184,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0675286,
+            42.3666223
+          ],
+          [
+            -71.0677425,
+            42.3667323
+          ],
+          [
+            -71.0688504,
+            42.3672952
           ]
         ]
       }
@@ -578,6 +638,48 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 196203213,
+        "infraType": "bridge",
+        "name": "Green Line (B)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.1103251,
+            42.350475
+          ],
+          [
+            -71.1107797,
+            42.3505288
+          ],
+          [
+            -71.1109205,
+            42.3505453
+          ],
+          [
+            -71.1109528,
+            42.3505488
+          ],
+          [
+            -71.1111733,
+            42.3505767
+          ],
+          [
+            -71.111725,
+            42.3506378
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 218004438,
         "infraType": "tunnel",
         "name": "Green Line",
@@ -679,6 +781,36 @@
           [
             -71.0598426,
             42.3602588
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 218004440,
+        "infraType": "cutting",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": false,
+        "cutting": true,
+        "embankment": false,
+        "layer": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0648315,
+            42.3657906
+          ],
+          [
+            -71.0656287,
+            42.3660581
+          ],
+          [
+            -71.0658859,
+            42.3661303
           ]
         ]
       }
@@ -1101,6 +1233,32 @@
           [
             -71.1495527,
             42.3348752
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 335996232,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.1859602,
+            42.3303692
+          ],
+          [
+            -71.1861296,
+            42.330384
           ]
         ]
       }
@@ -1880,6 +2038,32 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 534608891,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.1861302,
+            42.3303481
+          ],
+          [
+            -71.1859639,
+            42.3303342
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 534608914,
         "infraType": "tunnel",
         "name": "Green Line (D)",
@@ -1903,6 +2087,48 @@
           [
             -71.1487217,
             42.3350781
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 534703891,
+        "infraType": "bridge",
+        "name": "Green Line (B)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.1116589,
+            42.3506032
+          ],
+          [
+            -71.1111786,
+            42.3505469
+          ],
+          [
+            -71.1109649,
+            42.3505212
+          ],
+          [
+            -71.1109209,
+            42.3505159
+          ],
+          [
+            -71.1107856,
+            42.3505015
+          ],
+          [
+            -71.1102526,
+            42.3504358
           ]
         ]
       }
@@ -2936,6 +3162,78 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 688009192,
+        "infraType": "bridge",
+        "name": "Green Line (E)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0882008,
+            42.3809884
+          ],
+          [
+            -71.0879486,
+            42.3807345
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 688260657,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0822108,
+            42.3749891
+          ],
+          [
+            -71.0820635,
+            42.3749606
+          ],
+          [
+            -71.0819285,
+            42.3749186
+          ],
+          [
+            -71.0818257,
+            42.3748745
+          ],
+          [
+            -71.0817209,
+            42.3748162
+          ],
+          [
+            -71.0816189,
+            42.3747422
+          ],
+          [
+            -71.0812038,
+            42.3743457
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 698837581,
         "infraType": "tunnel",
         "name": "Green Line",
@@ -3092,6 +3390,416 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 709619901,
+        "infraType": "bridge",
+        "name": "Green Line (E)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0882648,
+            42.3809689
+          ],
+          [
+            -71.0880128,
+            42.3807161
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 709619902,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0765992,
+            42.371666
+          ],
+          [
+            -71.0768418,
+            42.3717927
+          ],
+          [
+            -71.0770823,
+            42.371901
+          ],
+          [
+            -71.0772296,
+            42.371963
+          ],
+          [
+            -71.0778529,
+            42.3722255
+          ],
+          [
+            -71.0779783,
+            42.3722821
+          ],
+          [
+            -71.078214,
+            42.3723775
+          ],
+          [
+            -71.0784653,
+            42.3724966
+          ],
+          [
+            -71.0789477,
+            42.3727511
+          ],
+          [
+            -71.0792693,
+            42.3729417
+          ],
+          [
+            -71.079823,
+            42.3732864
+          ],
+          [
+            -71.0799163,
+            42.3733417
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 709619903,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0812038,
+            42.3743457
+          ],
+          [
+            -71.0809058,
+            42.374026
+          ],
+          [
+            -71.0807955,
+            42.3739186
+          ],
+          [
+            -71.0806598,
+            42.3738001
+          ],
+          [
+            -71.0805092,
+            42.3736829
+          ],
+          [
+            -71.0803285,
+            42.3735588
+          ],
+          [
+            -71.0795523,
+            42.3730731
+          ],
+          [
+            -71.0793058,
+            42.37292
+          ],
+          [
+            -71.0789797,
+            42.372729
+          ],
+          [
+            -71.0784917,
+            42.3724707
+          ],
+          [
+            -71.07691,
+            42.3716814
+          ],
+          [
+            -71.0766486,
+            42.3715384
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 709619905,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0804385,
+            42.3741603
+          ],
+          [
+            -71.0804486,
+            42.374383
+          ],
+          [
+            -71.0804703,
+            42.3745054
+          ],
+          [
+            -71.0805194,
+            42.3746255
+          ],
+          [
+            -71.0805748,
+            42.3747128
+          ],
+          [
+            -71.0806447,
+            42.3747942
+          ],
+          [
+            -71.0807303,
+            42.3748702
+          ],
+          [
+            -71.0808315,
+            42.3749392
+          ],
+          [
+            -71.0809374,
+            42.3749947
+          ],
+          [
+            -71.0810639,
+            42.3750438
+          ],
+          [
+            -71.0812029,
+            42.3750805
+          ],
+          [
+            -71.0813475,
+            42.3751021
+          ],
+          [
+            -71.0814963,
+            42.3751084
+          ],
+          [
+            -71.0822175,
+            42.3751098
+          ],
+          [
+            -71.0823606,
+            42.3751117
+          ],
+          [
+            -71.0824898,
+            42.3751177
+          ],
+          [
+            -71.0825946,
+            42.3751255
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 724192043,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0846557,
+            42.3753261
+          ],
+          [
+            -71.0835425,
+            42.3751926
+          ],
+          [
+            -71.0832254,
+            42.3751499
+          ],
+          [
+            -71.0829876,
+            42.3751136
+          ],
+          [
+            -71.0822108,
+            42.3749891
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 724192044,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0799163,
+            42.3733417
+          ],
+          [
+            -71.0801642,
+            42.3735475
+          ],
+          [
+            -71.0802668,
+            42.3736443
+          ],
+          [
+            -71.0803403,
+            42.3737419
+          ],
+          [
+            -71.0803917,
+            42.3738425
+          ],
+          [
+            -71.0804229,
+            42.3739462
+          ],
+          [
+            -71.0804337,
+            42.3740442
+          ],
+          [
+            -71.0804385,
+            42.3741603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 724466141,
+        "infraType": "bridge",
+        "name": null,
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0795523,
+            42.3730731
+          ],
+          [
+            -71.079823,
+            42.3732864
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 724474999,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0886707,
+            42.3758325
+          ],
+          [
+            -71.0889166,
+            42.375862
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 724475000,
+        "infraType": "bridge",
+        "name": "Green Line (D)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0888958,
+            42.3758228
+          ],
+          [
+            -71.0886475,
+            42.3757917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 730042433,
         "infraType": "tunnel",
         "name": "Green Line",
@@ -3181,6 +3889,140 @@
           [
             -71.059694,
             42.3590882
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 808229777,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0748662,
+            42.3702874
+          ],
+          [
+            -71.073852,
+            42.3697972
+          ],
+          [
+            -71.0733982,
+            42.3695692
+          ],
+          [
+            -71.0729945,
+            42.3693629
+          ],
+          [
+            -71.0728967,
+            42.369313
+          ],
+          [
+            -71.072468,
+            42.3690953
+          ],
+          [
+            -71.072142,
+            42.3689294
+          ],
+          [
+            -71.0715885,
+            42.3686495
+          ],
+          [
+            -71.0710405,
+            42.3683702
+          ],
+          [
+            -71.0703817,
+            42.3680355
+          ],
+          [
+            -71.0691239,
+            42.367393
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 822621504,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0690939,
+            42.3674189
+          ],
+          [
+            -71.0703236,
+            42.368047
+          ],
+          [
+            -71.0726801,
+            42.3692441
+          ],
+          [
+            -71.0735515,
+            42.3696838
+          ],
+          [
+            -71.0740642,
+            42.3699367
+          ],
+          [
+            -71.0748369,
+            42.3703176
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 822621506,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0688768,
+            42.3672675
+          ],
+          [
+            -71.0677684,
+            42.3667045
+          ],
+          [
+            -71.0675551,
+            42.3665938
           ]
         ]
       }
@@ -4486,6 +5328,166 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 1041809770,
+        "infraType": "bridge",
+        "name": "Green Line (E)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0842005,
+            42.3768633
+          ],
+          [
+            -71.0836738,
+            42.3763064
+          ],
+          [
+            -71.0835432,
+            42.3761863
+          ],
+          [
+            -71.0834017,
+            42.3760707
+          ],
+          [
+            -71.083255,
+            42.3759638
+          ],
+          [
+            -71.083101,
+            42.3758636
+          ],
+          [
+            -71.0823888,
+            42.3754419
+          ],
+          [
+            -71.0821984,
+            42.3753198
+          ],
+          [
+            -71.0820213,
+            42.3751906
+          ],
+          [
+            -71.0818573,
+            42.3750546
+          ],
+          [
+            -71.0817245,
+            42.3749306
+          ],
+          [
+            -71.0816177,
+            42.3748195
+          ],
+          [
+            -71.0812038,
+            42.3743457
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1041809882,
+        "infraType": "bridge",
+        "name": "Green Line (E)",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0799163,
+            42.3733417
+          ],
+          [
+            -71.0802974,
+            42.3735815
+          ],
+          [
+            -71.0804815,
+            42.373708
+          ],
+          [
+            -71.0806281,
+            42.3738222
+          ],
+          [
+            -71.0807601,
+            42.3739375
+          ],
+          [
+            -71.0808697,
+            42.374044
+          ],
+          [
+            -71.0815807,
+            42.3748374
+          ],
+          [
+            -71.0816881,
+            42.3749486
+          ],
+          [
+            -71.081824,
+            42.375075
+          ],
+          [
+            -71.0819908,
+            42.3752124
+          ],
+          [
+            -71.0821753,
+            42.3753459
+          ],
+          [
+            -71.0823585,
+            42.3754625
+          ],
+          [
+            -71.0830727,
+            42.3758868
+          ],
+          [
+            -71.0832252,
+            42.3759867
+          ],
+          [
+            -71.0833701,
+            42.3760926
+          ],
+          [
+            -71.0835095,
+            42.3762063
+          ],
+          [
+            -71.0836395,
+            42.3763249
+          ],
+          [
+            -71.0841673,
+            42.3768811
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 1056637810,
         "infraType": "tunnel",
         "name": "Green Line",
@@ -5177,6 +6179,286 @@
           [
             -71.063734,
             42.3548283
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890203,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0757797,
+            42.3708742
+          ],
+          [
+            -71.0755996,
+            42.3707339
+          ],
+          [
+            -71.0754179,
+            42.3706076
+          ],
+          [
+            -71.0752728,
+            42.3705152
+          ],
+          [
+            -71.0750709,
+            42.3703983
+          ],
+          [
+            -71.0748662,
+            42.3702874
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890204,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0766486,
+            42.3715384
+          ],
+          [
+            -71.0764325,
+            42.3713943
+          ],
+          [
+            -71.0763659,
+            42.3713473
+          ],
+          [
+            -71.0763025,
+            42.3713018
+          ],
+          [
+            -71.0762331,
+            42.3712489
+          ],
+          [
+            -71.075945,
+            42.3710144
+          ],
+          [
+            -71.0758368,
+            42.3709226
+          ],
+          [
+            -71.0757797,
+            42.3708742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890205,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0675551,
+            42.3665938
+          ],
+          [
+            -71.0674227,
+            42.3665266
+          ],
+          [
+            -71.067271,
+            42.3664582
+          ],
+          [
+            -71.0671225,
+            42.3663991
+          ],
+          [
+            -71.0669663,
+            42.3663479
+          ],
+          [
+            -71.0668084,
+            42.3663059
+          ],
+          [
+            -71.0666384,
+            42.3662648
+          ],
+          [
+            -71.0664191,
+            42.3662175
+          ],
+          [
+            -71.066318,
+            42.3661957
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890206,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0663048,
+            42.366229
+          ],
+          [
+            -71.0666246,
+            42.3662978
+          ],
+          [
+            -71.0667931,
+            42.3663386
+          ],
+          [
+            -71.0669488,
+            42.3663801
+          ],
+          [
+            -71.0671019,
+            42.3664302
+          ],
+          [
+            -71.0672476,
+            42.3664883
+          ],
+          [
+            -71.0673972,
+            42.3665557
+          ],
+          [
+            -71.0675286,
+            42.3666223
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890207,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0748369,
+            42.3703176
+          ],
+          [
+            -71.0749939,
+            42.3704147
+          ],
+          [
+            -71.0751751,
+            42.3705373
+          ],
+          [
+            -71.0753286,
+            42.3706562
+          ],
+          [
+            -71.0754852,
+            42.3707875
+          ],
+          [
+            -71.0756511,
+            42.3709385
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1451890208,
+        "infraType": "bridge",
+        "name": "Green Line",
+        "tunnel": false,
+        "bridge": true,
+        "cutting": false,
+        "embankment": false,
+        "layer": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0756511,
+            42.3709385
+          ],
+          [
+            -71.0759403,
+            42.3712055
+          ],
+          [
+            -71.0761186,
+            42.3713506
+          ],
+          [
+            -71.0763497,
+            42.3715143
+          ],
+          [
+            -71.0764562,
+            42.3715791
+          ],
+          [
+            -71.0765992,
+            42.371666
           ]
         ]
       }

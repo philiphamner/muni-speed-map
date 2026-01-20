@@ -1552,63 +1552,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 7554544295,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main:form": "light",
-        "railway:signal:position": "right"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9383723,
-          39.7764335
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 7554544297,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "backward",
-        "railway:signal:main:form": "light",
-        "railway:signal:position": "right"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.9361442,
-          39.7764742
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 7555399541,
-        "type": "signal",
-        "railway": "signal",
-        "railway:signal:direction": "forward",
-        "railway:signal:main": "US:main",
-        "railway:signal:main:form": "light",
-        "railway:signal:main:function": "entry/protection",
-        "railway:signal:main:height": "normal",
-        "railway:signal:position": "left"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.995933,
-          39.7621892
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 7897314118,
         "type": "signal",
         "railway": "signal",
