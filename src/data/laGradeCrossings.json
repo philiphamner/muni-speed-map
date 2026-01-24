@@ -6,9 +6,7 @@
       "properties": {
         "id": "084E-0.12",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "LA UNION STATION BAGGAGE SOUTH",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -21,10 +19,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.23517,
-          34.05424
-        ]
+        "coordinates": [-118.23517, 34.05424]
       }
     },
     {
@@ -32,9 +27,7 @@
       "properties": {
         "id": "084L-0.62",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "12TH ST & FLOWER ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -47,10 +40,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.26547,
-          34.04154
-        ]
+        "coordinates": [-118.26547, 34.04154]
       }
     },
     {
@@ -58,9 +48,7 @@
       "properties": {
         "id": "084L-0.73-D",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "DWY N/O PICO BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -73,10 +61,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.266561,
-          34.040302
-        ]
+        "coordinates": [-118.266561, 34.040302]
       }
     },
     {
@@ -84,9 +69,7 @@
       "properties": {
         "id": "084L-0.75",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PICO BL @ FLOWER ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -99,10 +82,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2669,
-          34.039983
-        ]
+        "coordinates": [-118.2669, 34.039983]
       }
     },
     {
@@ -110,9 +90,7 @@
       "properties": {
         "id": "084L-0.99",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "VENICE BL & FLOWER ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -125,10 +103,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.268734,
-          34.03696
-        ]
+        "coordinates": [-118.268734, 34.03696]
       }
     },
     {
@@ -136,9 +111,7 @@
       "properties": {
         "id": "084L-01.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "I-10 ON-RAMP",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -151,10 +124,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.269717,
-          34.035466
-        ]
+        "coordinates": [-118.269717, 34.035466]
       }
     },
     {
@@ -162,9 +132,7 @@
       "properties": {
         "id": "084L-01.12",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "18TH ST @ FLOWER ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -177,10 +145,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.269815,
-          34.035287
-        ]
+        "coordinates": [-118.269815, 34.035287]
       }
     },
     {
@@ -188,9 +153,7 @@
       "properties": {
         "id": "084L-01.23",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WASHINGTON BLVD E/O FLOWER",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -203,10 +166,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.270499,
-          34.03377
-        ]
+        "coordinates": [-118.270499, 34.03377]
       }
     },
     {
@@ -214,9 +174,7 @@
       "properties": {
         "id": "084L-01.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GRAND AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -229,10 +187,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.268341,
-          34.032704
-        ]
+        "coordinates": [-118.268341, 34.032704]
       }
     },
     {
@@ -240,9 +195,7 @@
       "properties": {
         "id": "084L-01.44",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "OLIVE ST & WASHINGTON",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -255,10 +208,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.267556,
-          34.032363
-        ]
+        "coordinates": [-118.267556, 34.032363]
       }
     },
     {
@@ -266,9 +216,7 @@
       "properties": {
         "id": "084L-01.49",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "HILL ST & WASHINGTON BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -281,10 +229,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.266749,
-          34.032003
-        ]
+        "coordinates": [-118.266749, 34.032003]
       }
     },
     {
@@ -292,9 +237,7 @@
       "properties": {
         "id": "084L-01.56",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BROADWAY",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -307,10 +250,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.265725,
-          34.031538
-        ]
+        "coordinates": [-118.265725, 34.031538]
       }
     },
     {
@@ -318,9 +258,7 @@
       "properties": {
         "id": "084L-01.63",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MAIN ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -333,10 +271,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.264646,
-          34.031043
-        ]
+        "coordinates": [-118.264646, 34.031043]
       }
     },
     {
@@ -344,9 +279,7 @@
       "properties": {
         "id": "084L-01.70",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "LOS ANGELES ST & WASHINGTON BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -359,10 +292,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.263557,
-          34.030546
-        ]
+        "coordinates": [-118.263557, 34.030546]
       }
     },
     {
@@ -370,9 +300,7 @@
       "properties": {
         "id": "084L-01.83",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MAPLE AVE & WASHINGTON ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -385,10 +313,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.261413,
-          34.029559
-        ]
+        "coordinates": [-118.261413, 34.029559]
       }
     },
     {
@@ -396,9 +321,7 @@
       "properties": {
         "id": "084L-01.98",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "TRINITY ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -411,10 +334,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.259184,
-          34.028517
-        ]
+        "coordinates": [-118.259184, 34.028517]
       }
     },
     {
@@ -422,9 +342,7 @@
       "properties": {
         "id": "084L-02.08",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "SAN PEDRO ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -437,10 +355,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.257426,
-          34.027698
-        ]
+        "coordinates": [-118.257426, 34.027698]
       }
     },
     {
@@ -448,9 +363,7 @@
       "properties": {
         "id": "084L-02.34",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GRIFFITH AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -463,10 +376,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.253538,
-          34.0259
-        ]
+        "coordinates": [-118.253538, 34.0259]
       }
     },
     {
@@ -474,9 +384,7 @@
       "properties": {
         "id": "084P-02.46",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVE 33",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -489,10 +397,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.216733,
-          34.08383
-        ]
+        "coordinates": [-118.216733, 34.08383]
       }
     },
     {
@@ -500,9 +405,7 @@
       "properties": {
         "id": "084L-02.54",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "CENTRAL AVE & WASHINGTON BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -515,10 +418,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.250506,
-          34.024481
-        ]
+        "coordinates": [-118.250506, 34.024481]
       }
     },
     {
@@ -526,9 +426,7 @@
       "properties": {
         "id": "084L-02.71",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "NAOMI ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -541,10 +439,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.248007,
-          34.023086
-        ]
+        "coordinates": [-118.248007, 34.023086]
       }
     },
     {
@@ -552,9 +447,7 @@
       "properties": {
         "id": "084P-02.83",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "FRENCH AVENUE",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -567,10 +460,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.212585,
-          34.087844
-        ]
+        "coordinates": [-118.212585, 34.087844]
       }
     },
     {
@@ -578,9 +468,7 @@
       "properties": {
         "id": "084L-02.85",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "HOOPER AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -593,36 +481,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.246021,
-          34.021967
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-03.01-C",
-        "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
-        "name": "WASHINGTON-LG BEACH",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 3.01,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.243266,
-          34.020776
-        ]
+        "coordinates": [-118.246021, 34.021967]
       }
     },
     {
@@ -630,9 +489,7 @@
       "properties": {
         "id": "084L-03.04",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WASHINGTON-LG BEACH",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -645,36 +502,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243207,
-          34.020591
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-03.07-C",
-        "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
-        "name": "WASHINGTON BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 3.07,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.242996,
-          34.020678
-        ]
+        "coordinates": [-118.243207, 34.020591]
       }
     },
     {
@@ -682,9 +510,7 @@
       "properties": {
         "id": "084L-03.18",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "20TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -697,10 +523,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243092,
-          34.018769
-        ]
+        "coordinates": [-118.243092, 34.018769]
       }
     },
     {
@@ -708,9 +531,7 @@
       "properties": {
         "id": "084L-03.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "24TH ST AT LONG BEACH AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -723,10 +544,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243128,
-          34.01521
-        ]
+        "coordinates": [-118.243128, 34.01521]
       }
     },
     {
@@ -734,9 +552,7 @@
       "properties": {
         "id": "084P-03.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 45",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -749,10 +565,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.208682,
-          34.09668
-        ]
+        "coordinates": [-118.208682, 34.09668]
       }
     },
     {
@@ -760,9 +573,7 @@
       "properties": {
         "id": "084L-03.90 , 001BBH-486.13",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "41ST ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -775,10 +586,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243142,
-          34.008083
-        ]
+        "coordinates": [-118.243142, 34.008083]
       }
     },
     {
@@ -786,9 +594,7 @@
       "properties": {
         "id": "084L-04.20 , 001BBH-486.42",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "VERNON AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -801,10 +607,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243213,
-          34.00393
-        ]
+        "coordinates": [-118.243213, 34.00393]
       }
     },
     {
@@ -812,9 +615,7 @@
       "properties": {
         "id": "084P-04.26",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 50 & MARMION WAY",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -827,10 +628,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.202889,
-          34.105971
-        ]
+        "coordinates": [-118.202889, 34.105971]
       }
     },
     {
@@ -838,9 +636,7 @@
       "properties": {
         "id": "084P-04.35",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 51",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -853,10 +649,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.201609,
-          34.106723
-        ]
+        "coordinates": [-118.201609, 34.106723]
       }
     },
     {
@@ -864,9 +657,7 @@
       "properties": {
         "id": "084P-04.44",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 52",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -879,10 +670,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2003,
-          34.1074
-        ]
+        "coordinates": [-118.2003, 34.1074]
       }
     },
     {
@@ -890,9 +678,7 @@
       "properties": {
         "id": "084L-04.50 , 001BBH-486.73",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "48TH PL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -905,10 +691,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243298,
-          33.999364
-        ]
+        "coordinates": [-118.243298, 33.999364]
       }
     },
     {
@@ -916,9 +699,7 @@
       "properties": {
         "id": "084P-04.53",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 53",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -931,10 +712,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.198949,
-          34.108043
-        ]
+        "coordinates": [-118.198949, 34.108043]
       }
     },
     {
@@ -942,9 +720,7 @@
       "properties": {
         "id": "084P-04.61",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 54",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -957,10 +733,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.197623,
-          34.108695
-        ]
+        "coordinates": [-118.197623, 34.108695]
       }
     },
     {
@@ -968,9 +741,7 @@
       "properties": {
         "id": "084P-04.70",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 55",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -983,10 +754,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.196288,
-          34.109353
-        ]
+        "coordinates": [-118.196288, 34.109353]
       }
     },
     {
@@ -994,9 +762,7 @@
       "properties": {
         "id": "084P-04.78",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 56",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1009,10 +775,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.194973,
-          34.109992
-        ]
+        "coordinates": [-118.194973, 34.109992]
       }
     },
     {
@@ -1020,9 +783,7 @@
       "properties": {
         "id": "084P-04.88",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 57",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1035,10 +796,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193622,
-          34.110663
-        ]
+        "coordinates": [-118.193622, 34.110663]
       }
     },
     {
@@ -1046,9 +804,7 @@
       "properties": {
         "id": "084L-05.00 , 001BBH-2.22",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "55TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1061,10 +817,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243382,
-          33.992984
-        ]
+        "coordinates": [-118.243382, 33.992984]
       }
     },
     {
@@ -1072,9 +825,7 @@
       "properties": {
         "id": "084P-05.02",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 59",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1087,10 +838,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.191626,
-          34.111645
-        ]
+        "coordinates": [-118.191626, 34.111645]
       }
     },
     {
@@ -1098,9 +846,7 @@
       "properties": {
         "id": "084P-05.08",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 60",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1113,10 +859,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.190478,
-          34.112018
-        ]
+        "coordinates": [-118.190478, 34.112018]
       }
     },
     {
@@ -1124,9 +867,7 @@
       "properties": {
         "id": "084P-05.19",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AVENUE 61",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1139,10 +880,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.188697,
-          34.112115
-        ]
+        "coordinates": [-118.188697, 34.112115]
       }
     },
     {
@@ -1150,9 +888,7 @@
       "properties": {
         "id": "084P-05.22",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "FIGUEROA ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1165,10 +901,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.188032,
-          34.111973
-        ]
+        "coordinates": [-118.188032, 34.111973]
       }
     },
     {
@@ -1176,9 +909,7 @@
       "properties": {
         "id": "084L-05.70 , 001BBH-003.01",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GAGE AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1191,10 +922,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.24336,
-          33.98201
-        ]
+        "coordinates": [-118.24336, 33.98201]
       }
     },
     {
@@ -1202,9 +930,7 @@
       "properties": {
         "id": "084P-05.98",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "ARROYO VERDE/SYCAMORE",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1217,10 +943,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.175431,
-          34.110706
-        ]
+        "coordinates": [-118.175431, 34.110706]
       }
     },
     {
@@ -1228,9 +951,7 @@
       "properties": {
         "id": "084L-06.20 , 001BBH-003.51",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "FLORENCE AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1243,10 +964,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243336,
-          33.974713
-        ]
+        "coordinates": [-118.243336, 33.974713]
       }
     },
     {
@@ -1254,9 +972,7 @@
       "properties": {
         "id": "084P-06.30",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PASADENA AVE",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1269,10 +985,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.170192,
-          34.111988
-        ]
+        "coordinates": [-118.170192, 34.111988]
       }
     },
     {
@@ -1280,9 +993,7 @@
       "properties": {
         "id": "084P-06.59",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "INDIANA AVE",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1295,10 +1006,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.165035,
-          34.112342
-        ]
+        "coordinates": [-118.165035, 34.112342]
       }
     },
     {
@@ -1306,9 +1014,7 @@
       "properties": {
         "id": "084L-06.70 , 001BBH-004.02",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "NADEAU ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1321,10 +1027,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243296,
-          33.967417
-        ]
+        "coordinates": [-118.243296, 33.967417]
       }
     },
     {
@@ -1332,9 +1035,7 @@
       "properties": {
         "id": "084P-06.81",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "ORANGE GROVE AVE",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1347,10 +1048,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.161247,
-          34.112653
-        ]
+        "coordinates": [-118.161247, 34.112653]
       }
     },
     {
@@ -1358,9 +1056,7 @@
       "properties": {
         "id": "084P-07.03",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "EL CENTRO AV/GLENDON WY",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1373,10 +1069,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.158485,
-          34.114745
-        ]
+        "coordinates": [-118.158485, 34.114745]
       }
     },
     {
@@ -1384,9 +1077,7 @@
       "properties": {
         "id": "084P-07.13",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MISSION / MERIDIAN",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1399,10 +1090,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.157146,
-          34.11576
-        ]
+        "coordinates": [-118.157146, 34.11576]
       }
     },
     {
@@ -1410,9 +1098,7 @@
       "properties": {
         "id": "084P-07.23",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "HOPE ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1425,10 +1111,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.155961,
-          34.116704
-        ]
+        "coordinates": [-118.155961, 34.116704]
       }
     },
     {
@@ -1436,9 +1119,7 @@
       "properties": {
         "id": "084P-07.44",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "FREMONT / GREVALIA",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1451,10 +1132,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.153147,
-          34.118828
-        ]
+        "coordinates": [-118.153147, 34.118828]
       }
     },
     {
@@ -1462,9 +1140,7 @@
       "properties": {
         "id": "084L-07.70 , 001BBH-004.91",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "92ND ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1477,10 +1153,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243275,
-          33.953243
-        ]
+        "coordinates": [-118.243275, 33.953243]
       }
     },
     {
@@ -1488,9 +1161,7 @@
       "properties": {
         "id": "084P-08.09-X",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PASADENA WATER & POWER DEPT",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1503,10 +1174,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.1482,
-          34.12678
-        ]
+        "coordinates": [-118.1482, 34.12678]
       }
     },
     {
@@ -1514,9 +1182,7 @@
       "properties": {
         "id": "084P-08.14",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GLENARM ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1529,10 +1195,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.148035,
-          34.127526
-        ]
+        "coordinates": [-118.148035, 34.127526]
       }
     },
     {
@@ -1540,9 +1203,7 @@
       "properties": {
         "id": "084L-08.20 , 001BBH-490.42",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "CENTURY BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1555,10 +1216,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.243248,
-          33.945674
-        ]
+        "coordinates": [-118.243248, 33.945674]
       }
     },
     {
@@ -1566,9 +1224,7 @@
       "properties": {
         "id": "084L-08.40 , 001BBH-490.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "103RD ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1581,10 +1237,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.24324,
-          33.94321
-        ]
+        "coordinates": [-118.24324, 33.94321]
       }
     },
     {
@@ -1592,9 +1245,7 @@
       "properties": {
         "id": "084P-08.71",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "CALIFORNIA BLVD",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1607,10 +1258,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.148131,
-          34.135714
-        ]
+        "coordinates": [-118.148131, 34.135714]
       }
     },
     {
@@ -1618,9 +1266,7 @@
       "properties": {
         "id": "084L-08.80 , 001BBH-490.97",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "108TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1633,10 +1279,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.242725,
-          33.937855
-        ]
+        "coordinates": [-118.242725, 33.937855]
       }
     },
     {
@@ -1644,9 +1287,7 @@
       "properties": {
         "id": "084P-09.04",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "DEL MAR BLVD",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -1659,10 +1300,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.14818,
-          34.14056
-        ]
+        "coordinates": [-118.14818, 34.14056]
       }
     },
     {
@@ -1670,9 +1308,7 @@
       "properties": {
         "id": "084L-09.30 , 001BBH-491.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WILMINGTON AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1685,10 +1321,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.239099,
-          33.930906
-        ]
+        "coordinates": [-118.239099, 33.930906]
       }
     },
     {
@@ -1696,9 +1329,7 @@
       "properties": {
         "id": "084L-09.60-C",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "Willowbrook Ave East (BLUE/GREEN LINE CON)",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1711,10 +1342,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.237331,
-          33.927925
-        ]
+        "coordinates": [-118.237331, 33.927925]
       }
     },
     {
@@ -1722,9 +1350,7 @@
       "properties": {
         "id": "084L-09.80 , 001BBH-6.97",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "119TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1737,10 +1363,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.235832,
-          33.924602
-        ]
+        "coordinates": [-118.235832, 33.924602]
       }
     },
     {
@@ -1748,9 +1371,7 @@
       "properties": {
         "id": "084L-10.10 , 001BBH-7.32",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "124TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1763,10 +1384,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.233329,
-          33.919837
-        ]
+        "coordinates": [-118.233329, 33.919837]
       }
     },
     {
@@ -1774,9 +1392,7 @@
       "properties": {
         "id": "084L-10.40 , 001BBH-7.59",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "EL SEGUNDO BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1789,10 +1405,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.231409,
-          33.916199
-        ]
+        "coordinates": [-118.231409, 33.916199]
       }
     },
     {
@@ -1800,9 +1413,7 @@
       "properties": {
         "id": "084L-10.50 , 001BBH-7.72",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "130TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1815,10 +1426,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.230481,
-          33.914391
-        ]
+        "coordinates": [-118.230481, 33.914391]
       }
     },
     {
@@ -1826,9 +1434,7 @@
       "properties": {
         "id": "084L-10.80 , 001BBH-7.98",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "STOCKWELL ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1841,10 +1447,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.228641,
-          33.910865
-        ]
+        "coordinates": [-118.228641, 33.910865]
       }
     },
     {
@@ -1852,9 +1455,7 @@
       "properties": {
         "id": "084L-11.50 , 001BBH-8.71",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "ELM ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1867,10 +1468,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.224502,
-          33.900638
-        ]
+        "coordinates": [-118.224502, 33.900638]
       }
     },
     {
@@ -1878,9 +1476,7 @@
       "properties": {
         "id": "084L-11.90 , 001BBH-9.01",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "COMPTON BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1893,10 +1489,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.224215,
-          33.895998
-        ]
+        "coordinates": [-118.224215, 33.895998]
       }
     },
     {
@@ -1904,9 +1497,7 @@
       "properties": {
         "id": "084L-12.10 , 001BBH-9.27",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MYRRH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1919,10 +1510,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.223931,
-          33.89228
-        ]
+        "coordinates": [-118.223931, 33.89228]
       }
     },
     {
@@ -1930,9 +1518,7 @@
       "properties": {
         "id": "084L-12.40 , 001BBH-9.53",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "ALONDRA BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1945,10 +1531,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2237,
-          33.888586
-        ]
+        "coordinates": [-118.2237, 33.888586]
       }
     },
     {
@@ -1956,9 +1539,7 @@
       "properties": {
         "id": "084L-12.90 , 001BBH-10.04",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GREENLEAF BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1971,10 +1552,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.223194,
-          33.881157
-        ]
+        "coordinates": [-118.223194, 33.881157]
       }
     },
     {
@@ -1982,9 +1560,7 @@
       "properties": {
         "id": "084L-13.70 , 001BBH-10.86",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MANVILLE ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -1997,10 +1573,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.220315,
-          33.870416
-        ]
+        "coordinates": [-118.220315, 33.870416]
       }
     },
     {
@@ -2008,9 +1581,7 @@
       "properties": {
         "id": "084P-16.29-X",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "New Castle Park Private",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2023,10 +1594,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.035374,
-          34.146814
-        ]
+        "coordinates": [-118.035374, 34.146814]
       }
     },
     {
@@ -2034,9 +1602,7 @@
       "properties": {
         "id": "084P-16.80",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "1ST AV & SANTA CLARA",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2049,10 +1615,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.028408,
-          34.142276
-        ]
+        "coordinates": [-118.028408, 34.142276]
       }
     },
     {
@@ -2060,9 +1623,7 @@
       "properties": {
         "id": "084L-17.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WARDLOW RD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2075,10 +1636,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.195494,
-          33.818973
-        ]
+        "coordinates": [-118.195494, 33.818973]
       }
     },
     {
@@ -2086,9 +1644,7 @@
       "properties": {
         "id": "084P-18.01",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MAYFLOWER AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2101,10 +1657,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.009512,
-          34.134799
-        ]
+        "coordinates": [-118.009512, 34.134799]
       }
     },
     {
@@ -2112,9 +1665,7 @@
       "properties": {
         "id": "084L-18.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "SPRING ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2127,10 +1678,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.191988,
-          33.811637
-        ]
+        "coordinates": [-118.191988, 33.811637]
       }
     },
     {
@@ -2138,9 +1686,7 @@
       "properties": {
         "id": "084P-18.27",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MAGNOLIA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2153,10 +1699,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.005103,
-          34.133593
-        ]
+        "coordinates": [-118.005103, 34.133593]
       }
     },
     {
@@ -2164,9 +1707,7 @@
       "properties": {
         "id": "084L-18.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "27TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2179,10 +1720,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189386,
-          33.806097
-        ]
+        "coordinates": [-118.189386, 33.806097]
       }
     },
     {
@@ -2190,9 +1728,7 @@
       "properties": {
         "id": "084P-18.53",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MYRTLE AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2205,10 +1741,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.000823,
-          34.132532
-        ]
+        "coordinates": [-118.000823, 34.132532]
       }
     },
     {
@@ -2216,9 +1749,7 @@
       "properties": {
         "id": "084L-18.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WILLOW ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2231,10 +1762,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189362,
-          33.80432
-        ]
+        "coordinates": [-118.189362, 33.80432]
       }
     },
     {
@@ -2242,9 +1770,7 @@
       "properties": {
         "id": "084P-18.86",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "CALIFORNIA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2257,10 +1783,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.995043,
-          34.132384
-        ]
+        "coordinates": [-117.995043, 34.132384]
       }
     },
     {
@@ -2268,9 +1791,7 @@
       "properties": {
         "id": "084L-18.90",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BURNETT ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2283,10 +1804,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.18937,
-          33.800728
-        ]
+        "coordinates": [-118.18937, 33.800728]
       }
     },
     {
@@ -2294,9 +1812,7 @@
       "properties": {
         "id": "084L-19.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "HILL ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2309,10 +1825,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189381,
-          33.797121
-        ]
+        "coordinates": [-118.189381, 33.797121]
       }
     },
     {
@@ -2320,9 +1833,7 @@
       "properties": {
         "id": "084P-19.10-CX",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "3M Driveway",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2335,10 +1846,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.990887,
-          34.132832
-        ]
+        "coordinates": [-117.990887, 34.132832]
       }
     },
     {
@@ -2346,9 +1854,7 @@
       "properties": {
         "id": "084P-19.36",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "MOUNTAIN AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2361,10 +1867,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.986314,
-          34.132433
-        ]
+        "coordinates": [-117.986314, 34.132433]
       }
     },
     {
@@ -2372,9 +1875,7 @@
       "properties": {
         "id": "084L-19.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "20TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2387,10 +1888,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189378,
-          33.793488
-        ]
+        "coordinates": [-118.189378, 33.793488]
       }
     },
     {
@@ -2398,9 +1896,7 @@
       "properties": {
         "id": "084L-19.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "19TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2413,10 +1909,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189381,
-          33.79168
-        ]
+        "coordinates": [-118.189381, 33.79168]
       }
     },
     {
@@ -2424,9 +1917,7 @@
       "properties": {
         "id": "084L-19.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PACIFIC COAST HWY & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2439,10 +1930,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189373,
-          33.789857
-        ]
+        "coordinates": [-118.189373, 33.789857]
       }
     },
     {
@@ -2450,9 +1938,7 @@
       "properties": {
         "id": "084L-19.80",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "16TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2465,10 +1951,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189381,
-          33.787135
-        ]
+        "coordinates": [-118.189381, 33.787135]
       }
     },
     {
@@ -2476,9 +1959,7 @@
       "properties": {
         "id": "084P-19.86",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BUENA VISTA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2491,10 +1972,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.977554,
-          34.132475
-        ]
+        "coordinates": [-117.977554, 34.132475]
       }
     },
     {
@@ -2502,9 +1980,7 @@
       "properties": {
         "id": "084L-20.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "14TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2517,10 +1993,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189341,
-          33.78378
-        ]
+        "coordinates": [-118.189341, 33.78378]
       }
     },
     {
@@ -2528,9 +2001,7 @@
       "properties": {
         "id": "084L-20.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "ANAHEIM ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2543,10 +2014,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189378,
-          33.782601
-        ]
+        "coordinates": [-118.189378, 33.782601]
       }
     },
     {
@@ -2554,9 +2022,7 @@
       "properties": {
         "id": "084L-20.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "10TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2569,10 +2035,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189381,
-          33.77896
-        ]
+        "coordinates": [-118.189381, 33.77896]
       }
     },
     {
@@ -2580,9 +2043,7 @@
       "properties": {
         "id": "084L-20.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "8TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2595,10 +2056,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189384,
-          33.776539
-        ]
+        "coordinates": [-118.189384, 33.776539]
       }
     },
     {
@@ -2606,9 +2064,7 @@
       "properties": {
         "id": "084P-20.51",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "HIGHLAND AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -2621,10 +2077,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.966616,
-          34.132519
-        ]
+        "coordinates": [-117.966616, 34.132519]
       }
     },
     {
@@ -2632,9 +2085,7 @@
       "properties": {
         "id": "084L-20.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "7TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2647,10 +2098,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189394,
-          33.77533
-        ]
+        "coordinates": [-118.189394, 33.77533]
       }
     },
     {
@@ -2658,9 +2106,7 @@
       "properties": {
         "id": "084L-20.70",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "6TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2673,10 +2119,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189403,
-          33.77414
-        ]
+        "coordinates": [-118.189403, 33.77414]
       }
     },
     {
@@ -2684,9 +2127,7 @@
       "properties": {
         "id": "084L-20.90",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "4TH ST & LONG BEACH BLVD",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2699,10 +2140,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189405,
-          33.771719
-        ]
+        "coordinates": [-118.189405, 33.771719]
       }
     },
     {
@@ -2710,9 +2148,7 @@
       "properties": {
         "id": "084L-20.96",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "3RD ST & LONG BEACH",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2725,10 +2161,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189405,
-          33.770499
-        ]
+        "coordinates": [-118.189405, 33.770499]
       }
     },
     {
@@ -2736,9 +2169,7 @@
       "properties": {
         "id": "084L-21.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BROADWAY @ LONG BEACH",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2751,10 +2182,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.18936,
-          33.769297
-        ]
+        "coordinates": [-118.18936, 33.769297]
       }
     },
     {
@@ -2762,9 +2190,7 @@
       "properties": {
         "id": "084L-21.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "1ST & LONG BEACH BL",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2777,10 +2203,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189478,
-          33.768142
-        ]
+        "coordinates": [-118.189478, 33.768142]
       }
     },
     {
@@ -2788,9 +2211,7 @@
       "properties": {
         "id": "084L-21.20",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "LOCUST AV (PROMENADE)",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2803,10 +2224,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.191082,
-          33.768093
-        ]
+        "coordinates": [-118.191082, 33.768093]
       }
     },
     {
@@ -2814,9 +2232,7 @@
       "properties": {
         "id": "084L-21.30",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PINE AV @ 1ST ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2829,10 +2245,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.192409,
-          33.768066
-        ]
+        "coordinates": [-118.192409, 33.768066]
       }
     },
     {
@@ -2840,9 +2253,7 @@
       "properties": {
         "id": "084L-21.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "1ST ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2855,10 +2266,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193737,
-          33.76806
-        ]
+        "coordinates": [-118.193737, 33.76806]
       }
     },
     {
@@ -2866,9 +2274,7 @@
       "properties": {
         "id": "084L-21.45",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "DRWY-1ST/BRDWY/PACFC",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2881,10 +2287,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193741,
-          33.768852
-        ]
+        "coordinates": [-118.193741, 33.768852]
       }
     },
     {
@@ -2892,9 +2295,7 @@
       "properties": {
         "id": "084L-21.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BROADWAY & PACIFIC",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2907,10 +2308,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193724,
-          33.769248
-        ]
+        "coordinates": [-118.193724, 33.769248]
       }
     },
     {
@@ -2918,9 +2316,7 @@
       "properties": {
         "id": "084L-21.55",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "3RD ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2933,10 +2329,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193721,
-          33.770488
-        ]
+        "coordinates": [-118.193721, 33.770488]
       }
     },
     {
@@ -2944,9 +2337,7 @@
       "properties": {
         "id": "084L-21.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "4TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2959,10 +2350,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193716,
-          33.77173
-        ]
+        "coordinates": [-118.193716, 33.77173]
       }
     },
     {
@@ -2970,9 +2358,7 @@
       "properties": {
         "id": "084L-21.70",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "5TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -2985,10 +2371,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193726,
-          33.772931
-        ]
+        "coordinates": [-118.193726, 33.772931]
       }
     },
     {
@@ -2996,9 +2379,7 @@
       "properties": {
         "id": "084L-21.80",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "6TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3011,10 +2392,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193724,
-          33.774131
-        ]
+        "coordinates": [-118.193724, 33.774131]
       }
     },
     {
@@ -3022,9 +2400,7 @@
       "properties": {
         "id": "084L-21.90",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "7TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3037,10 +2413,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193734,
-          33.775348
-        ]
+        "coordinates": [-118.193734, 33.775348]
       }
     },
     {
@@ -3048,9 +2421,7 @@
       "properties": {
         "id": "084L-21.96",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "8TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3063,10 +2434,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193634,
-          33.776402
-        ]
+        "coordinates": [-118.193634, 33.776402]
       }
     },
     {
@@ -3074,9 +2442,7 @@
       "properties": {
         "id": "084L-21.97-C",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "8TH ST & PACIFIC AV",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3089,10 +2455,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.193748,
-          33.776493
-        ]
+        "coordinates": [-118.193748, 33.776493]
       }
     },
     {
@@ -3100,9 +2463,7 @@
       "properties": {
         "id": "084L-22.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PINE AV & 8TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3115,10 +2476,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.192372,
-          33.77657
-        ]
+        "coordinates": [-118.192372, 33.77657]
       }
     },
     {
@@ -3126,9 +2484,7 @@
       "properties": {
         "id": "084L-22.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "LOCUST ST & 8TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3141,10 +2497,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.191074,
-          33.77657
-        ]
+        "coordinates": [-118.191074, 33.77657]
       }
     },
     {
@@ -3152,9 +2505,7 @@
       "properties": {
         "id": "084L-22.20",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "LONG BEACH & 8TH ST",
         "lineName": "A Line (Blue)",
         "gradeType": "At Grade",
@@ -3167,10 +2518,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.189491,
-          33.77653
-        ]
+        "coordinates": [-118.189491, 33.77653]
       }
     },
     {
@@ -3178,9 +2526,7 @@
       "properties": {
         "id": "084P-23.37, 101PA-117.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "VIRGINIA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3193,10 +2539,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.917919,
-          34.132301
-        ]
+        "coordinates": [-117.917919, 34.132301]
       }
     },
     {
@@ -3204,9 +2547,7 @@
       "properties": {
         "id": "084P-23.93, 101PA-117.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "SAN GABRIEL (SR 39)",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3219,10 +2560,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.908784,
-          34.13503
-        ]
+        "coordinates": [-117.908784, 34.13503]
       }
     },
     {
@@ -3230,9 +2568,7 @@
       "properties": {
         "id": "084P-24.01, 101PA-116.90",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "AZUSA AV (SR 39)",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3245,10 +2581,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.907517,
-          34.135436
-        ]
+        "coordinates": [-117.907517, 34.135436]
       }
     },
     {
@@ -3256,9 +2589,7 @@
       "properties": {
         "id": "084P-24.17, 101PA-116.70",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "DALTON AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3271,10 +2602,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.904911,
-          34.136145
-        ]
+        "coordinates": [-117.904911, 34.136145]
       }
     },
     {
@@ -3282,9 +2610,7 @@
       "properties": {
         "id": "084P-24.32, 101PA-116.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "PASADENA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3297,10 +2623,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.902387,
-          34.13662
-        ]
+        "coordinates": [-117.902387, 34.13662]
       }
     },
     {
@@ -3308,9 +2631,7 @@
       "properties": {
         "id": "084P-25.53, 101PA-115.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "BARRANCA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3323,10 +2644,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.881344,
-          34.138625
-        ]
+        "coordinates": [-117.881344, 34.138625]
       }
     },
     {
@@ -3334,9 +2652,7 @@
       "properties": {
         "id": "084P-26.48, 101PA-114.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S VERMONT AV AT W ADA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3349,10 +2665,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.867153,
-          34.132389
-        ]
+        "coordinates": [-117.867153, 34.132389]
       }
     },
     {
@@ -3360,9 +2673,7 @@
       "properties": {
         "id": "084P-26.72, 101PA-114.20",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GLENDORA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3375,10 +2686,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.863807,
-          34.130513
-        ]
+        "coordinates": [-117.863807, 34.130513]
       }
     },
     {
@@ -3386,9 +2694,7 @@
       "properties": {
         "id": "084P-26.93, 101PA-114.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S PASADENA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3401,10 +2707,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.860231,
-          34.129821
-        ]
+        "coordinates": [-117.860231, 34.129821]
       }
     },
     {
@@ -3412,9 +2715,7 @@
       "properties": {
         "id": "084P-27.47, 101PA-113.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S ELWOOD AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3427,10 +2728,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.850746,
-          34.129819
-        ]
+        "coordinates": [-117.850746, 34.129819]
       }
     },
     {
@@ -3438,9 +2736,7 @@
       "properties": {
         "id": "084P-27.72, 101PA-113.20",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S LORAINE AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3453,10 +2749,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.846411,
-          34.129805
-        ]
+        "coordinates": [-117.846411, 34.129805]
       }
     },
     {
@@ -3464,9 +2757,7 @@
       "properties": {
         "id": "084P-29.54, 101PA-111.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "GLADSTONE AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3479,10 +2770,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.826314,
-          34.11393
-        ]
+        "coordinates": [-117.826314, 34.11393]
       }
     },
     {
@@ -3490,9 +2778,7 @@
       "properties": {
         "id": "084P-30.30, 101PA-110.60",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "EUCLA AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3505,10 +2791,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.81586,
-          34.107707
-        ]
+        "coordinates": [-117.81586, 34.107707]
       }
     },
     {
@@ -3516,9 +2799,7 @@
       "properties": {
         "id": "084P-30.82, 101PA-110.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S SAN DIMAS AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3531,10 +2812,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.807152,
-          34.105532
-        ]
+        "coordinates": [-117.807152, 34.105532]
       }
     },
     {
@@ -3542,9 +2820,7 @@
       "properties": {
         "id": "084P-31.08, 101PA-109.80",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S WALNUT AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3557,10 +2833,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.802776,
-          34.104441
-        ]
+        "coordinates": [-117.802776, 34.104441]
       }
     },
     {
@@ -3568,9 +2841,7 @@
       "properties": {
         "id": "084P-31.60, 101PA-109.30",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "S SAN DIMAS CANYON RD",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3583,10 +2854,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.793994,
-          34.102213
-        ]
+        "coordinates": [-117.793994, 34.102213]
       }
     },
     {
@@ -3594,9 +2862,7 @@
       "properties": {
         "id": "084P-32.36, 101PA-108.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WHEELER AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3609,10 +2875,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.781029,
-          34.100559
-        ]
+        "coordinates": [-117.781029, 34.100559]
       }
     },
     {
@@ -3620,9 +2883,7 @@
       "properties": {
         "id": "084P-32.59, 101PA-108.30",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "A ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3635,10 +2896,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.777064,
-          34.099626
-        ]
+        "coordinates": [-117.777064, 34.099626]
       }
     },
     {
@@ -3646,9 +2904,7 @@
       "properties": {
         "id": "084P-32.95, 101PA-108.00",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "D ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3661,10 +2917,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.771153,
-          34.098057
-        ]
+        "coordinates": [-117.771153, 34.098057]
       }
     },
     {
@@ -3672,9 +2925,7 @@
       "properties": {
         "id": "084P-33.06, 101PA-107.90",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "E ST",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3687,10 +2938,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.769304,
-          34.097572
-        ]
+        "coordinates": [-117.769304, 34.097572]
       }
     },
     {
@@ -3698,9 +2946,7 @@
       "properties": {
         "id": "084P-33.39, 101PA-107.50",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "WHITE AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3713,10 +2959,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.763821,
-          34.096161
-        ]
+        "coordinates": [-117.763821, 34.096161]
       }
     },
     {
@@ -3724,9 +2967,7 @@
       "properties": {
         "id": "084P-33.85, 101PA-107.10",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "FULTON RD",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3739,10 +2980,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.756159,
-          34.094304
-        ]
+        "coordinates": [-117.756159, 34.094304]
       }
     },
     {
@@ -3750,9 +2988,7 @@
       "properties": {
         "id": "084P-35.49, 101SG-32.40",
         "type": "level_crossing",
-        "routes": [
-          "801"
-        ],
+        "routes": ["801"],
         "name": "CAMBRIDGE AV",
         "lineName": "A Line (former Gold)",
         "gradeType": "At Grade",
@@ -3765,10 +3001,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -117.7276,
-          34.093964
-        ]
+        "coordinates": [-117.7276, 34.093964]
       }
     },
     {
@@ -3776,9 +3009,7 @@
       "properties": {
         "id": "084E-0.84",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "VIGNES ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3791,10 +3022,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.233904,
-          34.048454
-        ]
+        "coordinates": [-118.233904, 34.048454]
       }
     },
     {
@@ -3802,9 +3030,7 @@
       "properties": {
         "id": "084E-1.19",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "MISSION RD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3817,10 +3043,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.22775,
-          34.04776
-        ]
+        "coordinates": [-118.22775, 34.04776]
       }
     },
     {
@@ -3828,9 +3051,7 @@
       "properties": {
         "id": "084E-1.26",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "ANDERSON ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3843,10 +3064,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.22674,
-          34.04768
-        ]
+        "coordinates": [-118.22674, 34.04768]
       }
     },
     {
@@ -3854,9 +3072,7 @@
       "properties": {
         "id": "084E-1.34",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "UTAH ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3869,10 +3085,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.22525,
-          34.04759
-        ]
+        "coordinates": [-118.22525, 34.04759]
       }
     },
     {
@@ -3880,9 +3093,7 @@
       "properties": {
         "id": "084E-1.41",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "CLARENCE ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3895,10 +3106,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.22407,
-          34.0475
-        ]
+        "coordinates": [-118.22407, 34.0475]
       }
     },
     {
@@ -3906,9 +3114,7 @@
       "properties": {
         "id": "084E-3.25",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "LORENA ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3921,10 +3127,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.19502,
-          34.03717
-        ]
+        "coordinates": [-118.19502, 34.03717]
       }
     },
     {
@@ -3932,9 +3135,7 @@
       "properties": {
         "id": "084E-3.42",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "FIRST ST EB LANES AT INDIANA ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3947,10 +3148,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.19241,
-          34.03592
-        ]
+        "coordinates": [-118.19241, 34.03592]
       }
     },
     {
@@ -3958,9 +3156,7 @@
       "properties": {
         "id": "084E-3.61",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "THIRD ST WB LANES AT INDIANA ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3973,10 +3169,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.191957,
-          34.03332
-        ]
+        "coordinates": [-118.191957, 34.03332]
       }
     },
     {
@@ -3984,9 +3177,7 @@
       "properties": {
         "id": "084E-3.89",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "ROWAN AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -3999,10 +3190,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.187399,
-          34.033261
-        ]
+        "coordinates": [-118.187399, 34.033261]
       }
     },
     {
@@ -4010,9 +3198,7 @@
       "properties": {
         "id": "084E-4.04",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "GAGE AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4025,10 +3211,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.184633,
-          34.03333
-        ]
+        "coordinates": [-118.184633, 34.03333]
       }
     },
     {
@@ -4036,9 +3219,7 @@
       "properties": {
         "id": "084E-4.13",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "SR 60 ON-OFF RAMP",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4051,10 +3232,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.182967,
-          34.033343
-        ]
+        "coordinates": [-118.182967, 34.033343]
       }
     },
     {
@@ -4062,9 +3240,7 @@
       "properties": {
         "id": "084E-4.29",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "DOWNEY RD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4077,10 +3253,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.180126,
-          34.033341
-        ]
+        "coordinates": [-118.180126, 34.033341]
       }
     },
     {
@@ -4088,9 +3261,7 @@
       "properties": {
         "id": "084E-4.65",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "EASTERN AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4103,10 +3274,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.173888,
-          34.033356
-        ]
+        "coordinates": [-118.173888, 34.033356]
       }
     },
     {
@@ -4114,9 +3282,7 @@
       "properties": {
         "id": "084E-4.92",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "FORD BLVD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4129,10 +3295,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.169246,
-          34.033332
-        ]
+        "coordinates": [-118.169246, 34.033332]
       }
     },
     {
@@ -4140,9 +3303,7 @@
       "properties": {
         "id": "084E-5.05",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "MCDONNELL AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4155,10 +3316,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.166974,
-          34.033318
-        ]
+        "coordinates": [-118.166974, 34.033318]
       }
     },
     {
@@ -4166,9 +3324,7 @@
       "properties": {
         "id": "084E-5.23",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "ARIZONA AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4181,10 +3337,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.16379,
-          34.03332
-        ]
+        "coordinates": [-118.16379, 34.03332]
       }
     },
     {
@@ -4192,9 +3345,7 @@
       "properties": {
         "id": "084E-5.33",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "MEDNIK AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4207,10 +3358,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.16216,
-          34.03335
-        ]
+        "coordinates": [-118.16216, 34.03335]
       }
     },
     {
@@ -4218,9 +3366,7 @@
       "properties": {
         "id": "084E-5.44",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "CIVIC CENTER WAY",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4233,10 +3379,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.16015,
-          34.03337
-        ]
+        "coordinates": [-118.16015, 34.03337]
       }
     },
     {
@@ -4244,9 +3387,7 @@
       "properties": {
         "id": "084E-5.53",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "LA VERNE AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4259,10 +3400,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.15866,
-          34.03339
-        ]
+        "coordinates": [-118.15866, 34.03339]
       }
     },
     {
@@ -4270,9 +3408,7 @@
       "properties": {
         "id": "084E-5.69",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "WOODS AVE/VIA CORONA/BEVERLY BLVD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4285,10 +3421,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.15564,
-          34.03341
-        ]
+        "coordinates": [-118.15564, 34.03341]
       }
     },
     {
@@ -4296,9 +3429,7 @@
       "properties": {
         "id": "084S-100.03",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "WASHINGTON BLVD.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4311,10 +3442,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.270786,
-          34.033803
-        ]
+        "coordinates": [-118.270786, 34.033803]
       }
     },
     {
@@ -4322,9 +3450,7 @@
       "properties": {
         "id": "084S-100.20",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "TRADE TECH DRIVEWAY #6 & 21st ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4337,10 +3463,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.27212,
-          34.031653
-        ]
+        "coordinates": [-118.27212, 34.031653]
       }
     },
     {
@@ -4348,9 +3471,7 @@
       "properties": {
         "id": "084S-100.26",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "TRADE TECH DRIVEWAY #7 (PARKING LOT) & FLOWER ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4363,10 +3484,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.2726,
-          34.030748
-        ]
+        "coordinates": [-118.2726, 34.030748]
       }
     },
     {
@@ -4374,9 +3492,7 @@
       "properties": {
         "id": "084S-100.30",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "23RD STREET",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4389,10 +3505,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.27295,
-          34.030136
-        ]
+        "coordinates": [-118.27295, 34.030136]
       }
     },
     {
@@ -4400,9 +3513,7 @@
       "properties": {
         "id": "084S-100.50",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "ADAMS BLVD.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4415,10 +3526,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.274818,
-          34.027644
-        ]
+        "coordinates": [-118.274818, 34.027644]
       }
     },
     {
@@ -4426,9 +3534,7 @@
       "properties": {
         "id": "084S-100.60",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "28TH STREET",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4441,10 +3547,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.275752,
-          34.025974
-        ]
+        "coordinates": [-118.275752, 34.025974]
       }
     },
     {
@@ -4452,9 +3555,7 @@
       "properties": {
         "id": "084S-100.66",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "I-110 HOV ON-RAMP",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4467,10 +3568,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.275897,
-          34.025772
-        ]
+        "coordinates": [-118.275897, 34.025772]
       }
     },
     {
@@ -4478,9 +3576,7 @@
       "properties": {
         "id": "084S-100.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "30TH STREET",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4493,10 +3589,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.276711,
-          34.024488
-        ]
+        "coordinates": [-118.276711, 34.024488]
       }
     },
     {
@@ -4504,9 +3597,7 @@
       "properties": {
         "id": "084S-101.00",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "JEFFERSON BLVD.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4519,10 +3610,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.278641,
-          34.021338
-        ]
+        "coordinates": [-118.278641, 34.021338]
       }
     },
     {
@@ -4530,9 +3618,7 @@
       "properties": {
         "id": "084S-101.70",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "WATT WAY",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4545,10 +3631,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.289018,
-          34.018238
-        ]
+        "coordinates": [-118.289018, 34.018238]
       }
     },
     {
@@ -4556,9 +3639,7 @@
       "properties": {
         "id": "084S-101.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "BILL ROBERTSON LANE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4571,10 +3652,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.290132,
-          34.018245
-        ]
+        "coordinates": [-118.290132, 34.018245]
       }
     },
     {
@@ -4582,9 +3660,7 @@
       "properties": {
         "id": "084S-101.90",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "VERMONT AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4597,10 +3673,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.291551,
-          34.018256
-        ]
+        "coordinates": [-118.291551, 34.018256]
       }
     },
     {
@@ -4608,9 +3681,7 @@
       "properties": {
         "id": "084S-102.20",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "RAYMOND AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4623,10 +3694,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.29771,
-          34.018278
-        ]
+        "coordinates": [-118.29771, 34.018278]
       }
     },
     {
@@ -4634,9 +3702,7 @@
       "properties": {
         "id": "084S-102.40",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "NORMANDIE AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4649,10 +3715,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.300181,
-          34.018278
-        ]
+        "coordinates": [-118.300181, 34.018278]
       }
     },
     {
@@ -4660,9 +3723,7 @@
       "properties": {
         "id": "084S-102.50",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "HALLDALE AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4675,10 +3736,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.302905,
-          34.018294
-        ]
+        "coordinates": [-118.302905, 34.018294]
       }
     },
     {
@@ -4686,9 +3744,7 @@
       "properties": {
         "id": "084S-102.60",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "DENKER AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4701,10 +3757,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.304519,
-          34.018296
-        ]
+        "coordinates": [-118.304519, 34.018296]
       }
     },
     {
@@ -4712,9 +3765,7 @@
       "properties": {
         "id": "084S-102.90",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "WESTERN AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4727,10 +3778,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.308931,
-          34.018351
-        ]
+        "coordinates": [-118.308931, 34.018351]
       }
     },
     {
@@ -4738,9 +3786,7 @@
       "properties": {
         "id": "084S-103.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "RODEO ROAD / GRAMERCY PLACE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4753,10 +3799,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.313224,
-          34.018379
-        ]
+        "coordinates": [-118.313224, 34.018379]
       }
     },
     {
@@ -4764,9 +3807,7 @@
       "properties": {
         "id": "084S-103.40",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "ARLINGTON AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4779,10 +3820,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.317811,
-          34.018775
-        ]
+        "coordinates": [-118.317811, 34.018775]
       }
     },
     {
@@ -4790,9 +3828,7 @@
       "properties": {
         "id": "084S-103.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "7TH AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4805,10 +3841,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.32478,
-          34.020359
-        ]
+        "coordinates": [-118.32478, 34.020359]
       }
     },
     {
@@ -4816,9 +3849,7 @@
       "properties": {
         "id": "084S-104.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "11TH AVE./DEGNAN BLVD.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4831,10 +3862,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.329622,
-          34.021458
-        ]
+        "coordinates": [-118.329622, 34.021458]
       }
     },
     {
@@ -4842,9 +3870,7 @@
       "properties": {
         "id": "084S-104.40",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "CRENSHAW",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4857,10 +3883,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.335106,
-          34.022541
-        ]
+        "coordinates": [-118.335106, 34.022541]
       }
     },
     {
@@ -4868,9 +3891,7 @@
       "properties": {
         "id": "084S-104.70",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "BUCKINGHAM ROAD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4883,10 +3904,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.34048,
-          34.023339
-        ]
+        "coordinates": [-118.34048, 34.023339]
       }
     },
     {
@@ -4894,9 +3912,7 @@
       "properties": {
         "id": "084S-105.00",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "FARMDALE AVE.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4909,10 +3925,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.346053,
-          34.023955
-        ]
+        "coordinates": [-118.346053, 34.023955]
       }
     },
     {
@@ -4920,9 +3933,7 @@
       "properties": {
         "id": "084S-106.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "HAUSER BLVD.",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4935,10 +3946,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.365234,
-          34.025834
-        ]
+        "coordinates": [-118.365234, 34.025834]
       }
     },
     {
@@ -4946,9 +3954,7 @@
       "properties": {
         "id": "084S-107.90",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "BAGLEY AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4961,10 +3967,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.397018,
-          34.028693
-        ]
+        "coordinates": [-118.397018, 34.028693]
       }
     },
     {
@@ -4972,9 +3975,7 @@
       "properties": {
         "id": "084S-109.50",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "OVERLAND AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -4987,10 +3988,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.421223,
-          34.037178
-        ]
+        "coordinates": [-118.421223, 34.037178]
       }
     },
     {
@@ -4998,9 +3996,7 @@
       "properties": {
         "id": "084S-109.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "WESTWOOD BLVD",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5013,10 +4009,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.425676,
-          34.036631
-        ]
+        "coordinates": [-118.425676, 34.036631]
       }
     },
     {
@@ -5024,9 +4017,7 @@
       "properties": {
         "id": "084S-110.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "MILITARY AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5039,10 +4030,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.431115,
-          34.03584
-        ]
+        "coordinates": [-118.431115, 34.03584]
       }
     },
     {
@@ -5050,9 +4038,7 @@
       "properties": {
         "id": "084S-111.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "BARRINGTON AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5065,10 +4051,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.44671,
-          34.032926
-        ]
+        "coordinates": [-118.44671, 34.032926]
       }
     },
     {
@@ -5076,9 +4059,7 @@
       "properties": {
         "id": "084S-112.10",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "STEWART ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5091,10 +4072,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.465144,
-          34.029116
-        ]
+        "coordinates": [-118.465144, 34.029116]
       }
     },
     {
@@ -5102,9 +4080,7 @@
       "properties": {
         "id": "084S-112.40",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "26TH ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5117,10 +4093,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.46998,
-          34.027717
-        ]
+        "coordinates": [-118.46998, 34.027717]
       }
     },
     {
@@ -5128,9 +4101,7 @@
       "properties": {
         "id": "084S-112.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "20TH ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5143,10 +4114,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.476026,
-          34.025263
-        ]
+        "coordinates": [-118.476026, 34.025263]
       }
     },
     {
@@ -5154,9 +4122,7 @@
       "properties": {
         "id": "084S-112.90",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "19TH ST",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5169,10 +4135,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.477115,
-          34.024614
-        ]
+        "coordinates": [-118.477115, 34.024614]
       }
     },
     {
@@ -5180,9 +4143,7 @@
       "properties": {
         "id": "084S-113.00",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "17TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5195,10 +4156,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.479634,
-          34.023742
-        ]
+        "coordinates": [-118.479634, 34.023742]
       }
     },
     {
@@ -5206,9 +4164,7 @@
       "properties": {
         "id": "084S-113.20",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "14TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5221,10 +4177,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.482576,
-          34.021426
-        ]
+        "coordinates": [-118.482576, 34.021426]
       }
     },
     {
@@ -5232,9 +4185,7 @@
       "properties": {
         "id": "084S-113.50",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "11TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5247,10 +4198,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.485441,
-          34.019136
-        ]
+        "coordinates": [-118.485441, 34.019136]
       }
     },
     {
@@ -5258,9 +4206,7 @@
       "properties": {
         "id": "084S-113.70",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "LINCOLN BLVD/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5273,10 +4219,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.48823,
-          34.01682
-        ]
+        "coordinates": [-118.48823, 34.01682]
       }
     },
     {
@@ -5284,9 +4227,7 @@
       "properties": {
         "id": "084S-113.80",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "7TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5299,10 +4240,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.489206,
-          34.016051
-        ]
+        "coordinates": [-118.489206, 34.016051]
       }
     },
     {
@@ -5310,9 +4248,7 @@
       "properties": {
         "id": "084S-113.85",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "6TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5325,10 +4261,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.49014,
-          34.015281
-        ]
+        "coordinates": [-118.49014, 34.015281]
       }
     },
     {
@@ -5336,9 +4269,7 @@
       "properties": {
         "id": "084S-113.90",
         "type": "level_crossing",
-        "routes": [
-          "804"
-        ],
+        "routes": ["804"],
         "name": "5TH ST/COLORADO AVE",
         "lineName": "E Line (Expo)",
         "gradeType": "At Grade",
@@ -5351,10 +4282,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.491095,
-          34.014494
-        ]
+        "coordinates": [-118.491095, 34.014494]
       }
     },
     {
@@ -5362,9 +4290,7 @@
       "properties": {
         "id": "084A-1.62",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "ARBOR VITAE ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5377,10 +4303,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.378716,
-          33.952652
-        ]
+        "coordinates": [-118.378716, 33.952652]
       }
     },
     {
@@ -5388,9 +4311,7 @@
       "properties": {
         "id": "084A-2.42",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "HINDRY AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5403,10 +4324,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.37357,
-          33.96237
-        ]
+        "coordinates": [-118.37357, 33.96237]
       }
     },
     {
@@ -5414,9 +4332,7 @@
       "properties": {
         "id": "084A-2.88",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "OAK ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5429,10 +4345,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.366359,
-          33.965219
-        ]
+        "coordinates": [-118.366359, 33.965219]
       }
     },
     {
@@ -5440,9 +4353,7 @@
       "properties": {
         "id": "084A-3.03",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "CEDAR AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5455,10 +4366,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.364007,
-          33.966099
-        ]
+        "coordinates": [-118.364007, 33.966099]
       }
     },
     {
@@ -5466,9 +4374,7 @@
       "properties": {
         "id": "084A-3.30",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "EUCALYPTUS AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5481,10 +4387,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.359421,
-          33.966097
-        ]
+        "coordinates": [-118.359421, 33.966097]
       }
     },
     {
@@ -5492,9 +4395,7 @@
       "properties": {
         "id": "084A-3.43",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "IVY AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5507,10 +4408,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.35725,
-          33.965605
-        ]
+        "coordinates": [-118.35725, 33.965605]
       }
     },
     {
@@ -5518,9 +4416,7 @@
       "properties": {
         "id": "084A-4.12",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "CENTINELA AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5533,10 +4429,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.347278,
-          33.96994
-        ]
+        "coordinates": [-118.347278, 33.96994]
       }
     },
     {
@@ -5544,9 +4437,7 @@
       "properties": {
         "id": "084A-4.70",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "HIGH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5559,10 +4450,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.33847,
-          33.97413
-        ]
+        "coordinates": [-118.33847, 33.97413]
       }
     },
     {
@@ -5570,9 +4458,7 @@
       "properties": {
         "id": "084A-4.92",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "WEST BL",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5585,10 +4471,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.335247,
-          33.975666
-        ]
+        "coordinates": [-118.335247, 33.975666]
       }
     },
     {
@@ -5596,9 +4479,7 @@
       "properties": {
         "id": "084A-5.01",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "BRYNHURST AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5611,10 +4492,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.333818,
-          33.97633
-        ]
+        "coordinates": [-118.333818, 33.97633]
       }
     },
     {
@@ -5622,9 +4500,7 @@
       "properties": {
         "id": "084A-6.06",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "59TH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5637,10 +4513,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.33085,
-          33.987194
-        ]
+        "coordinates": [-118.33085, 33.987194]
       }
     },
     {
@@ -5648,9 +4521,7 @@
       "properties": {
         "id": "084A-6.19",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "SLAUSON AV",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5663,10 +4534,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330837,
-          33.989031
-        ]
+        "coordinates": [-118.330837, 33.989031]
       }
     },
     {
@@ -5674,9 +4542,7 @@
       "properties": {
         "id": "084A-6.32",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "57TH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5689,10 +4555,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330832,
-          33.990878
-        ]
+        "coordinates": [-118.330832, 33.990878]
       }
     },
     {
@@ -5700,9 +4563,7 @@
       "properties": {
         "id": "084A-6.47",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "54TH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5715,10 +4576,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330824,
-          33.99313
-        ]
+        "coordinates": [-118.330824, 33.99313]
       }
     },
     {
@@ -5726,9 +4584,7 @@
       "properties": {
         "id": "084A-6.60",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "52ND ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5741,10 +4597,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330815,
-          33.99497
-        ]
+        "coordinates": [-118.330815, 33.99497]
       }
     },
     {
@@ -5752,9 +4605,7 @@
       "properties": {
         "id": "084A-6.79",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "50TH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5767,10 +4618,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330805,
-          33.997751
-        ]
+        "coordinates": [-118.330805, 33.997751]
       }
     },
     {
@@ -5778,9 +4626,7 @@
       "properties": {
         "id": "084A-6.95",
         "type": "level_crossing",
-        "routes": [
-          "807"
-        ],
+        "routes": ["807"],
         "name": "48TH ST",
         "lineName": "K Line (Crenshaw)",
         "gradeType": "At Grade",
@@ -5793,10 +4639,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.330794,
-          34.000026
-        ]
+        "coordinates": [-118.330794, 34.000026]
       }
     },
     {
@@ -5817,10 +4660,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448753,
-          34.1847
-        ]
+        "coordinates": [-118.448753, 34.1847]
       }
     },
     {
@@ -5841,10 +4681,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448753,
-          34.186661
-        ]
+        "coordinates": [-118.448753, 34.186661]
       }
     },
     {
@@ -5865,10 +4702,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448692,
-          34.190689
-        ]
+        "coordinates": [-118.448692, 34.190689]
       }
     },
     {
@@ -5889,10 +4723,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448753,
-          34.193943
-        ]
+        "coordinates": [-118.448753, 34.193943]
       }
     },
     {
@@ -5913,10 +4744,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448746,
-          34.198486
-        ]
+        "coordinates": [-118.448746, 34.198486]
       }
     },
     {
@@ -5937,10 +4765,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448776,
-          34.201233
-        ]
+        "coordinates": [-118.448776, 34.201233]
       }
     },
     {
@@ -5961,10 +4786,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448753,
-          34.204834
-        ]
+        "coordinates": [-118.448753, 34.204834]
       }
     },
     {
@@ -5985,10 +4807,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448776,
-          34.208485
-        ]
+        "coordinates": [-118.448776, 34.208485]
       }
     },
     {
@@ -6009,10 +4828,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448769,
-          34.210304
-        ]
+        "coordinates": [-118.448769, 34.210304]
       }
     },
     {
@@ -6033,10 +4849,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.449394,
-          34.21035
-        ]
+        "coordinates": [-118.449394, 34.21035]
       }
     },
     {
@@ -6057,10 +4870,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448792,
-          34.213421
-        ]
+        "coordinates": [-118.448792, 34.213421]
       }
     },
     {
@@ -6081,10 +4891,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448784,
-          34.217964
-        ]
+        "coordinates": [-118.448784, 34.217964]
       }
     },
     {
@@ -6105,10 +4912,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448769,
-          34.221558
-        ]
+        "coordinates": [-118.448769, 34.221558]
       }
     },
     {
@@ -6129,10 +4933,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.44883,
-          34.224789
-        ]
+        "coordinates": [-118.44883, 34.224789]
       }
     },
     {
@@ -6153,10 +4954,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.449944,
-          34.226879
-        ]
+        "coordinates": [-118.449944, 34.226879]
       }
     },
     {
@@ -6177,10 +4975,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.450256,
-          34.228867
-        ]
+        "coordinates": [-118.450256, 34.228867]
       }
     },
     {
@@ -6201,10 +4996,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.450249,
-          34.23539
-        ]
+        "coordinates": [-118.450249, 34.23539]
       }
     },
     {
@@ -6225,10 +5017,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.450249,
-          34.239052
-        ]
+        "coordinates": [-118.450249, 34.239052]
       }
     },
     {
@@ -6249,10 +5038,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.450244,
-          34.242652
-        ]
+        "coordinates": [-118.450244, 34.242652]
       }
     },
     {
@@ -6273,10 +5059,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.448154,
-          34.247135
-        ]
+        "coordinates": [-118.448154, 34.247135]
       }
     },
     {
@@ -6297,10 +5080,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.442001,
-          34.25164
-        ]
+        "coordinates": [-118.442001, 34.25164]
       }
     },
     {
@@ -6321,10 +5101,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.438676,
-          34.253937
-        ]
+        "coordinates": [-118.438676, 34.253937]
       }
     },
     {
@@ -6345,10 +5122,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.43705,
-          34.255196
-        ]
+        "coordinates": [-118.43705, 34.255196]
       }
     },
     {
@@ -6369,10 +5143,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.43212,
-          34.258805
-        ]
+        "coordinates": [-118.43212, 34.258805]
       }
     },
     {
@@ -6393,10 +5164,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          -118.427185,
-          34.262379
-        ]
+        "coordinates": [-118.427185, 34.262379]
       }
     }
   ]
