@@ -271,7 +271,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17872",
-        "stop_name": "4th & Brannan Southbound",
+        "stop_name": "4th & Brannan",
         "stop_code": "17872",
         "routes": ["T"],
         "route_count": 1
@@ -929,7 +929,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17879",
-        "stop_name": "Fourth Street & Brannan Northbound",
+        "stop_name": "4th & Brannan",
         "stop_code": "17879",
         "routes": ["T"],
         "route_count": 1
@@ -3813,7 +3813,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17357",
-        "stop_name": "Ucsf / Chase Center (16th St)",
+        "stop_name": "UCSF / Chase Center (16th St)",
         "stop_code": "17357",
         "routes": ["T"],
         "route_count": 1
@@ -3827,7 +3827,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17360",
-        "stop_name": "Ucsf / Chase Center (16th Street)",
+        "stop_name": "UCSF / Chase Center (16th St)",
         "stop_code": "17360",
         "routes": ["T"],
         "route_count": 1
@@ -3841,7 +3841,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17361",
-        "stop_name": "Ucsf Medical Center (Mariposa)",
+        "stop_name": "UCSF Medical Center (Mariposa)",
         "stop_code": "17361",
         "routes": ["T"],
         "route_count": 1
@@ -3855,7 +3855,7 @@
       "type": "Feature",
       "properties": {
         "stop_id": "17356",
-        "stop_name": "Ucsf Medical Center (Mariposa)",
+        "stop_name": "UCSF Medical Center (Mariposa)",
         "stop_code": "17356",
         "routes": ["T"],
         "route_count": 1

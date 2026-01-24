@@ -186,6 +186,7 @@ function filterSeparationByRoutes(
     const routeId = feature.properties?.route_id;
     if (routeId) selectedLineIds.add(routeId);
   }
+  console.log(`filterSeparationByRoutes: city=${city}, selectedLineIds=${[...selectedLineIds].join(",")}, separationFeatures=${separation?.features?.length || 0}`);
 
   // Build a list of all coordinate segments from selected routes
   const routeCoords: number[][][] = [];
@@ -209,11 +210,82 @@ function filterSeparationByRoutes(
       if (sepFeature.geometry?.type !== "LineString") continue;
       
       // If feature has explicit "lines" property, only include if one of those lines is selected
+      // Exception: SF tunnels have special logic handled later (e.g., Market St Subway is J/N tagged but used by K/L/M too)
       const featureLines = sepFeature.properties?.lines;
-      if (featureLines && Array.isArray(featureLines)) {
+      const sepType = sepFeature.properties?.separationType;
+      const isSfTunnel = city === "SF" && sepType === "tunnel";
+      
+      if (featureLines && Array.isArray(featureLines) && !isSfTunnel) {
         const matchesSelectedLine = featureLines.some((line: string) => selectedLineIds.has(line));
         if (!matchesSelectedLine) {
           continue; // Skip this feature - it's for a different line
+        }
+      }
+      
+      // SF separation: Handle tunnel filtering based on which lines actually use each tunnel
+      const sepName = sepFeature.properties?.name || "";
+      const hasExplicitLines = featureLines && Array.isArray(featureLines) && featureLines.length > 0;
+      
+      if (isSfTunnel) {
+        // If this tunnel has explicit line associations (from overrides), check if it applies
+        // Special case: Market Street Subway is tagged with J/N but also used by K/L/M
+        if (hasExplicitLines) {
+          const matchesSelectedLine = featureLines.some((line: string) => selectedLineIds.has(line));
+          // For Market Street Subway (J/N tagged), also include if K/L/M is selected
+          const isMarketStSubway = featureLines.includes("J") && featureLines.includes("N");
+          const hasKLM = ["K", "L", "M"].some(line => selectedLineIds.has(line));
+          if (!matchesSelectedLine && !(isMarketStSubway && hasKLM)) {
+            continue; // Skip - this tunnel override isn't for any selected line
+          }
+        }
+        
+        // Determine which tunnel this is based on name
+        const isCentralSubway = sepName.includes("Central Subway");
+        const isSunsetTunnel = sepName.includes("Sunset Tunnel");
+        const isTwinPeaksTunnel = sepName.includes("Twin Peaks");
+        const isJTunnel = sepName === "Muni J";
+        // Market Street tunnel: "Muni Metro", null name, or anything not matching above specific tunnels
+        const isMarketStreetTunnel = !isCentralSubway && !isSunsetTunnel && !isTwinPeaksTunnel && !isJTunnel;
+        
+        // Check which subway lines are selected
+        const hasJKLMN = ["J", "K", "L", "M", "N"].some(line => selectedLineIds.has(line));
+        const hasT = selectedLineIds.has("T");
+        const hasF = selectedLineIds.has("F");
+        const hasL = selectedLineIds.has("L");
+        
+        // F line runs entirely on surface - never show ANY tunnel for F-only
+        if (hasF && !hasT && !hasJKLMN) {
+          continue; // Skip all tunnels when only F is selected
+        }
+        
+        // T line only uses Central Subway - skip non-Central-Subway tunnels when T is selected without J/K/L/M/N
+        if (hasT && !hasJKLMN) {
+          if (!isCentralSubway) {
+            continue; // Skip Market Street and other tunnels for T line
+          }
+        }
+        
+        // If F + T are selected together (no J/K/L/M/N), only show Central Subway
+        if (hasF && hasT && !hasJKLMN) {
+          if (!isCentralSubway) {
+            continue;
+          }
+        }
+        
+        // If Market Street tunnel and none of J/K/L/M/N selected, skip it
+        // (This handles cases like F+T, or just T, where Market St tunnel shouldn't show)
+        if (isMarketStreetTunnel && !hasJKLMN) {
+          continue;
+        }
+        
+        // For L line only: skip tunnel segments west of West Portal (longitude < -122.46)
+        // The L line's Twin Peaks Tunnel ends at West Portal; west of there is surface level
+        if (hasL && !hasExplicitLines) {
+          const sepCoords = sepFeature.geometry.coordinates;
+          const allPointsWestOfWestPortal = sepCoords.every(([lon]: number[]) => lon < -122.46);
+          if (allPointsWestOfWestPortal) {
+            continue; // Skip tunnel segments that are entirely west of West Portal for L line
+          }
         }
       }
       
@@ -233,6 +305,9 @@ function filterSeparationByRoutes(
       }
       if (isNear) {
         filteredFeatures.push(sepFeature);
+      } else if (sepFeature.properties?.isManualOverride) {
+        // Debug: log when manual overrides are skipped due to proximity check
+        console.log(`Manual override "${sepFeature.properties?.id}" skipped - not near any selected route`);
       }
     }
   }
@@ -1982,8 +2057,29 @@ export function SpeedMap({
       // Filter separation data to only show segments near selected routes
       // For Philadelphia streetcar routes, this also adds street-running fallback
       const filteredSeparation = filterSeparationByRoutes(cityConfig.separation, filteredRoutes, city);
+      console.log(`Separation filter result: ${filteredSeparation.features?.length || 0} features for ${city}`, selectedLines);
+      console.log(`showBySeparation=${showBySeparation}, routeLineMode=${routeLineMode}`);
+      
+      // Debug: log separation types breakdown
+      if (filteredSeparation.features?.length > 0) {
+        const typeCounts: Record<string, number> = {};
+        for (const f of filteredSeparation.features) {
+          const t = f.properties?.separationType || "unknown";
+          typeCounts[t] = (typeCounts[t] || 0) + 1;
+        }
+        console.log(`Separation types breakdown:`, typeCounts);
+        
+        // Check for L-Taraval specifically
+        const lTaraval = filteredSeparation.features.find((f: any) => f.properties?.id === "manual-l-taraval-mixed-traffic");
+        if (lTaraval) {
+          console.log(`L-Taraval mixed traffic feature INCLUDED:`, lTaraval.properties);
+        } else {
+          console.log(`L-Taraval mixed traffic feature NOT in filtered results`);
+        }
+      }
       
       if (filteredSeparation.features?.length > 0) {
+        console.log(`Adding separation source with ${filteredSeparation.features.length} features`);
         map.current.addSource("separation", {
           type: "geojson",
           data: filteredSeparation as any,
@@ -1996,6 +2092,7 @@ export function SpeedMap({
           "tunnel", "#3b82f6",        // Blue
           "elevated", "#22c55e",      // Green  
           "street_running", "#ef4444", // Red
+          "mixed_traffic", "#ef4444",  // Red (same as street_running)
           "reserved_lane", "#f97316",  // Orange
           "separated_at_grade", "#eab308", // Yellow
           "#6b7280" // Grey fallback for unknown
@@ -2059,6 +2156,7 @@ export function SpeedMap({
             tunnel: { color: "#3b82f6", label: "Tunnel / Trench", icon: "🔵" },
             elevated: { color: "#22c55e", label: "Elevated", icon: "🟢" },
             street_running: { color: "#ef4444", label: "Street Running", icon: "🔴" },
+            mixed_traffic: { color: "#ef4444", label: "Mixed Traffic", icon: "🔴" },
             reserved_lane: { color: "#f97316", label: "Reserved Lane", icon: "🟠" },
             separated_at_grade: { color: "#eab308", label: "Separated At-Grade", icon: "🟡" },
             unknown: { color: "#6b7280", label: "Unknown", icon: "⬜" },
