@@ -443,13 +443,14 @@ export function Controls({
   };
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
+  const longTitleCities = ["Boston", "Phoenix"];
 
   return (
     <div className="controls-panel">
       <div className="app-header">
         <span className="app-city">{cityLine}</span>
         <h1
-          className={`app-title ${city === "Boston" ? "app-title-long" : ""}`}
+          className={`app-title ${longTitleCities.includes(city)  ? "app-title-long" : ""}`}
         >
           {systemLine}
         </h1>
@@ -516,14 +517,14 @@ export function Controls({
           onClick={() => setCity("Minneapolis")}
           title="Data collection starting soon"
         >
-          🌆 MSP
+          🌲 MSP
         </button>
         <button
           className={`city-btn ${city === "Denver" ? "active" : ""}`}
           onClick={() => setCity("Denver")}
           title="Data collection starting soon"
         >
-          🏔️ Denver
+          ⛏️ Denver
         </button>
         {/* Row 4: New cities */}
 
@@ -555,7 +556,7 @@ export function Controls({
           onClick={() => setCity("Charlotte")}
           title="LYNX Blue Line & Gold Line"
         >
-          🚊 CLT
+          🏦 CLT
         </button>
 
         <button

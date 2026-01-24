@@ -976,6 +976,11 @@ export function SpeedMap({
   const crossingPopupPinned = useRef(false);
   const crossingHandlersRegistered = useRef(false);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [expandedStopCluster, setExpandedStopCluster] = useState<string | null>(null);
+  // Reset expanded cluster when city changes
+  useEffect(() => {
+    setExpandedStopCluster(null);
+  }, [city]);
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [dataSource, setDataSource] = useState<"loading" | "supabase" | "none">(
     "loading"
@@ -1072,6 +1077,81 @@ export function SpeedMap({
     }),
     [city, cityStaticData]
   );
+
+  // Cluster stops by exact name - shows single marker for stations with same name
+  // Returns { clustered: features for merged markers, individual: all original features keyed by name }
+  const clusteredStops = useMemo(() => {
+    const features = cityConfig.stops?.features || [];
+    
+    // Group stops by name
+    const byName: Record<string, any[]> = {};
+    for (const f of features) {
+      const name = f.properties?.stop_name || "Unknown";
+      if (!byName[name]) byName[name] = [];
+      byName[name].push(f);
+    }
+    
+    // Build clustered features (centroid for multi-stop clusters, original for singles)
+    const clustered: any[] = [];
+    const individualByCluster: Record<string, any[]> = {};
+    
+    for (const [name, stops] of Object.entries(byName)) {
+      if (stops.length === 1) {
+        // Single stop - use as-is, not a cluster
+        clustered.push({
+          ...stops[0],
+          properties: {
+            ...stops[0].properties,
+            is_cluster: false,
+            cluster_size: 1,
+            cluster_name: name,
+          },
+        });
+      } else {
+        // Multiple stops with same name - compute centroid
+        let sumLon = 0, sumLat = 0;
+        const allRoutes = new Set<string>();
+        for (const s of stops) {
+          const [lon, lat] = s.geometry.coordinates;
+          sumLon += lon;
+          sumLat += lat;
+          const routes = s.properties?.routes || [];
+          routes.forEach((r: string) => allRoutes.add(r));
+        }
+        const centroid: [number, number] = [sumLon / stops.length, sumLat / stops.length];
+        
+        clustered.push({
+          type: "Feature",
+          properties: {
+            stop_name: name,
+            cluster_name: name,
+            is_cluster: true,
+            cluster_size: stops.length,
+            routes: Array.from(allRoutes),
+          },
+          geometry: {
+            type: "Point",
+            coordinates: centroid,
+          },
+        });
+        
+        // Store individual stops for expansion
+        individualByCluster[name] = stops.map(s => ({
+          ...s,
+          properties: {
+            ...s.properties,
+            is_cluster: false,
+            cluster_name: name,
+          },
+        }));
+      }
+    }
+    
+    return {
+      clustered: { type: "FeatureCollection", features: clustered },
+      individualByCluster,
+    };
+  }, [cityConfig.stops]);
 
   const routeGeometryMap = useMemo(
     () => buildRouteGeometryMap(cityConfig.routes),
@@ -1487,6 +1567,11 @@ export function SpeedMap({
 
     map.current.on("load", () => {
       setMapLoaded(true);
+    });
+
+    // Collapse expanded stop clusters when zooming
+    map.current.on("zoomstart", () => {
+      setExpandedStopCluster(null);
     });
 
     return () => {
@@ -2057,28 +2142,49 @@ export function SpeedMap({
     maxspeedColorExpression,
   ]);
 
-  // Add/update stops layer
+  // Add/update stops layer with clustering by name
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
 
     const addStopsLayers = () => {
       if (!map.current) return;
 
-      // If no lines selected, show no stops; otherwise filter to selected
-      // Note: OSM-sourced stops may not have a 'routes' property
-      const filteredStops = {
-        ...cityConfig.stops,
-        features:
-          selectedLines.length === 0
-            ? [] // Show nothing when all lines deselected
-            : cityConfig.stops.features.filter((f: any) => {
-                // If stop doesn't have routes property or it's not an array, show it (can't filter)
-                if (!f.properties.routes || !Array.isArray(f.properties.routes))
-                  return true;
-                return f.properties.routes.some((r: string) =>
-                  selectedLines.includes(r)
-                );
-              }),
+      // Filter clustered stops to selected lines
+      const filterByLines = (features: any[]) => {
+        if (selectedLines.length === 0) return [];
+        return features.filter((f: any) => {
+          const routes = f.properties?.routes;
+          if (!routes || !Array.isArray(routes)) return true;
+          return routes.some((r: string) => selectedLines.includes(r));
+        });
+      };
+
+      // Build the stops to display:
+      // - If a cluster is expanded, show individual stops for that cluster + other clustered stops
+      // - Otherwise, show all clustered stops
+      let displayFeatures: any[] = [];
+      const filteredClustered = filterByLines(clusteredStops.clustered.features);
+      
+      if (expandedStopCluster && clusteredStops.individualByCluster[expandedStopCluster]) {
+        // Show expanded individual stops for the selected cluster
+        const expandedStops = filterByLines(clusteredStops.individualByCluster[expandedStopCluster]);
+        // Mark them as expanded
+        const expandedWithFlag = expandedStops.map((f: any) => ({
+          ...f,
+          properties: { ...f.properties, is_expanded: true },
+        }));
+        // Show other clusters (not the expanded one)
+        const otherClusters = filteredClustered.filter(
+          (f: any) => f.properties.cluster_name !== expandedStopCluster
+        );
+        displayFeatures = [...otherClusters, ...expandedWithFlag];
+      } else {
+        displayFeatures = filteredClustered;
+      }
+
+      const stopsData = {
+        type: "FeatureCollection",
+        features: displayFeatures,
       };
 
       const existingSource = map.current.getSource(
@@ -2086,7 +2192,7 @@ export function SpeedMap({
       ) as maplibregl.GeoJSONSource;
 
       if (existingSource) {
-        existingSource.setData(filteredStops as any);
+        existingSource.setData(stopsData as any);
         map.current.setLayoutProperty(
           "stops",
           "visibility",
@@ -2100,7 +2206,7 @@ export function SpeedMap({
       } else {
         map.current.addSource("stops", {
           type: "geojson",
-          data: filteredStops as any,
+          data: stopsData as any,
         });
 
         map.current.addLayer({
@@ -2115,7 +2221,13 @@ export function SpeedMap({
             "text-ignore-placement": true,
           },
           paint: {
-            "text-color": "#ffffff",
+            // Cluster markers: white, Expanded individual markers: purple
+            "text-color": [
+              "case",
+              ["==", ["get", "is_expanded"], true],
+              "#a855f7", // Purple for expanded individual stops
+              "#ffffff"  // White for clusters and single stops
+            ],
             "text-halo-color": "#333333",
             "text-halo-width": 2.5,
           },
@@ -2155,6 +2267,12 @@ export function SpeedMap({
           if (!e.features?.length || !map.current) return;
           const props = e.features[0].properties;
           const routes = JSON.parse(props.routes || "[]");
+          const isCluster = props.is_cluster === true || props.is_cluster === "true";
+          const clusterSize = props.cluster_size || 1;
+
+          const clusterHint = isCluster && clusterSize > 1 
+            ? `<div class="popup-detail" style="color: #a855f7;">Click to show ${clusterSize} platforms</div>` 
+            : "";
 
           popup.current
             ?.setLngLat(e.lngLat)
@@ -2162,9 +2280,27 @@ export function SpeedMap({
               `<div class="popup-content">
                 <div class="popup-title">${props.stop_name}</div>
                 <div class="popup-detail">Lines: ${routes.join(", ")}</div>
+                ${clusterHint}
               </div>`
             )
             .addTo(map.current);
+        });
+
+        // Click to expand/collapse clusters
+        map.current.on("click", "stops", (e) => {
+          if (!e.features?.length) return;
+          const props = e.features[0].properties;
+          const clusterName = props.cluster_name;
+          const isCluster = props.is_cluster === true || props.is_cluster === "true";
+          const isExpanded = props.is_expanded === true || props.is_expanded === "true";
+
+          if (isCluster && clusterName) {
+            // Expand this cluster
+            setExpandedStopCluster(clusterName);
+          } else if (isExpanded) {
+            // Clicking an expanded stop collapses the cluster
+            setExpandedStopCluster(null);
+          }
         });
       }
     };
@@ -2184,7 +2320,7 @@ export function SpeedMap({
       };
       setTimeout(waitForStyle, 50);
     }
-  }, [mapLoaded, showStops, selectedLines, cityConfig.stops]);
+  }, [mapLoaded, showStops, selectedLines, clusteredStops, expandedStopCluster]);
 
   // Show all grade crossings regardless of selected lines
   // Note: F-line only crossings are already filtered out during the fetch script
@@ -2235,9 +2371,9 @@ export function SpeedMap({
       ) as maplibregl.GeoJSONSource;
 
       // Determine crossing color based on city
-      // LA & Charlotte get green for gated crossings (verified accurate), orange for others
-      // All other cities get orange (barrier data unreliable)
-      const verifiedGateCities = ["LA", "Charlotte"];
+      // Cities with verified CPUC gate data get green for gated crossings, orange for others
+      // All other cities get orange (OSM barrier data unreliable)
+      const verifiedGateCities = ["LA", "Charlotte", "San Diego"];
       const crossingColor = verifiedGateCities.includes(city)
         ? [
             "case",
@@ -2370,17 +2506,26 @@ export function SpeedMap({
             e.originalEvent.stopPropagation();
           });
 
-          // Click elsewhere on map to unpin
+          // Click elsewhere on map to unpin crossing popup and collapse stop clusters
           map.current.on("click", (e) => {
             // Check if click was on a crossing (handled above)
-            const features = map.current?.queryRenderedFeatures(e.point, {
+            const crossingFeatures = map.current?.queryRenderedFeatures(e.point, {
               layers: ["crossings"],
             });
-            if (features && features.length > 0) return;
+            if (crossingFeatures && crossingFeatures.length > 0) return;
+
+            // Check if click was on a stop (handled in stops layer)
+            const stopFeatures = map.current?.queryRenderedFeatures(e.point, {
+              layers: ["stops"],
+            });
+            if (stopFeatures && stopFeatures.length > 0) return;
 
             // Unpin and remove popup
             crossingPopupPinned.current = false;
             popup.current?.remove();
+            
+            // Collapse any expanded stop cluster
+            setExpandedStopCluster(null);
           });
         }
       }

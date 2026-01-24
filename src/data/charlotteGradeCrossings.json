@@ -363,27 +363,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1183158634,1183158855",
-        "type": "level_crossing",
-        "routes": [
-          "501"
-        ],
-        "crossingCount": 2,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -80.8274531,
-          35.2354712
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "2476875700,5187818272",
         "type": "level_crossing",
         "routes": [
