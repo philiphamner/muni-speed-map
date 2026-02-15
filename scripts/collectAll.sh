@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Collect data for all 6 cities
+# Collect data for all cities with working collectors
 # Each collector runs as a separate background process with its own output
 
 echo ""
@@ -45,7 +45,7 @@ cleanup() {
         fi
     done
     # Also kill any child node processes
-    pkill -P $$ 2>/dev/null
+    pkill -P $ 2>/dev/null
     echo -e "${GREEN}✓ All collectors stopped${NC}"
     exit 0
 }
@@ -53,7 +53,7 @@ cleanup() {
 # Set up trap to catch Ctrl+C
 trap cleanup SIGINT SIGTERM
 
-# Start all collectors (12 working cities)
+# Start all collectors for cities with working data collection
 start_collector "SF" "collectData.js" "🌉"
 start_collector "LA" "collectDataLA.js" "🌴"
 start_collector "Seattle" "collectDataSeattle.js" "☕"
@@ -62,14 +62,22 @@ start_collector "Boston" "collectDataBoston.js" "🦞"
 start_collector "Philadelphia" "collectDataPhilly.js" "🔔"
 start_collector "San Jose" "collectDataVTA.js" "💻"
 start_collector "Toronto" "collectDataToronto.js" "🍁"
-start_collector "Minneapolis" "collectDataMinneapolis.js" "🌆"
-start_collector "Denver" "collectDataDenver.js" "🏔️"
+start_collector "Minneapolis" "collectDataMinneapolis.js" "🌲"
+start_collector "Denver" "collectDataDenver.js" "⛏️"
 start_collector "Salt Lake City" "collectDataSaltLakeCity.js" "🏔️"
 start_collector "Pittsburgh" "collectDataPittsburgh.js" "🏗️"
+start_collector "Phoenix" "collectDataPhoenix.js" "🌵"
+start_collector "Charlotte" "collectDataCharlotte.js" "🏦"
+start_collector "Baltimore" "collectDataBaltimore.js" "🦀"
+start_collector "Cleveland" "collectDataCleveland.js" "🎸"
+start_collector "San Diego" "collectDataSanDiego.js" "🌊"
+start_collector "Sacramento" "collectDataSacramento.js" "🍇"
+start_collector "Dallas" "collectDataDallas.js" "🤠"
+start_collector "Calgary" "collectDataCalgary.js" "🍁"
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "${GREEN}✅ All 12 collectors running!${NC}"
+echo -e "${GREEN}✅ All 20 collectors running!${NC}"
 echo ""
 echo "📊 Logs will appear below, prefixed by city."
 echo "🛑 Press Ctrl+C to stop all collectors."
@@ -79,4 +87,3 @@ echo ""
 
 # Wait for all background processes
 wait
-

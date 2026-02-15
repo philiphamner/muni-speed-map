@@ -22,6 +22,7 @@ export const CITIES = [
   "Cleveland",
   "Charlotte",
   "Baltimore",
+  "Washington",
 ] as const;
 export type City = (typeof CITIES)[number];
 
@@ -343,16 +344,17 @@ export const MINNEAPOLIS_METRO_LINE_INFO: Record<
 // Lines present in OSM data: A, B, D, E, G, H, L, N, R, W
 // C and F are not explicitly tagged in OSM (they share tracks with other lines)
 export const DENVER_RTD_LINES = [
-  "A",
-  "B",
+  // "A",
+  // "B",
   "D",
   "E",
-  "G",
+  // "G",
   "H",
   "L",
-  "N",
+  // "N",
   "R",
   "W",
+  "S",
 ] as const;
 export type DenverRtdLine = (typeof DENVER_RTD_LINES)[number];
 

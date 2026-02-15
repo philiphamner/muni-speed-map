@@ -35,14 +35,14 @@ const VEHICLE_POSITIONS_URL = 'https://www.rtd-denver.com/files/gtfs-rt/VehicleP
 // RTD Rail route IDs from GTFS - maps to display letters
 // Format: { gtfsRouteId: displayLetter }
 const RAIL_ROUTE_MAP = {
-  'A': 'A',         // A Line - Airport (commuter rail)
-  '113B': 'B',      // B Line - Westminster (commuter rail)
+  // 'A': 'A',         // A Line - Airport (commuter rail)
+  // '113B': 'B',      // B Line - Westminster (commuter rail)
   '101D': 'D',      // D Line (light rail) - also matches 101D_merged_*
   '101E': 'E',      // E Line (light rail)
-  '113G': 'G',      // G Line - Arvada (commuter rail)
+  // '113G': 'G',      // G Line - Arvada (commuter rail)
   '101H': 'H',      // H Line (light rail) - also matches 101H_merged_*
   '109L': 'L',      // L Line (light rail)
-  '117N': 'N',      // N Line - Northglenn (commuter rail)
+  // '117N': 'N',      // N Line - Northglenn (commuter rail)
   '107R': 'R',      // R Line (light rail)
   '101S': 'S',      // S Line (light rail) - added for completeness
   '103W': 'W',      // W Line (light rail)

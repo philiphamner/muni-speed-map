@@ -50,7 +50,13 @@ import {
   BALTIMORE_LIGHT_RAIL_LINE_INFO,
   getLinesForCity,
 } from "../types";
-import type { SpeedFilter, ViewMode, LineStats, RouteLineMode, SpeedUnit } from "../App";
+import type {
+  SpeedFilter,
+  ViewMode,
+  LineStats,
+  RouteLineMode,
+  SpeedUnit,
+} from "../App";
 
 // Official SFMTA colors from GTFS
 const MUNI_COLORS: Record<MuniLine, string> = {
@@ -127,7 +133,10 @@ function getLineColor(line: string, city: City): string {
   } else if (city === "Charlotte") {
     return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.color || "#666";
   } else if (city === "Baltimore") {
-    return BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.color || "#666";
+    return (
+      BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.color ||
+      "#666"
+    );
   }
   return "#666";
 }
@@ -192,7 +201,10 @@ function getLineLabel(line: string, city: City): string {
   } else if (city === "Charlotte") {
     return CHARLOTTE_LYNX_LINE_INFO[line as CharlotteLynxLine]?.letter || line;
   } else if (city === "Baltimore") {
-    return BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.letter || line;
+    return (
+      BALTIMORE_LIGHT_RAIL_LINE_INFO[line as BaltimoreLightRailLine]?.letter ||
+      line
+    );
   }
   return line;
 }
@@ -354,17 +366,17 @@ export function Controls({
     dataAgeMinutes === null
       ? ""
       : dataAgeMinutes < 1
-      ? "(now)"
-      : dataAgeMinutes < 60
-      ? `(${Math.round(dataAgeMinutes)}m ago)`
-      : dataAgeMinutes < 1440
-      ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
-      : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
+        ? "(now)"
+        : dataAgeMinutes < 60
+          ? `(${Math.round(dataAgeMinutes)}m ago)`
+          : dataAgeMinutes < 1440
+            ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
+            : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
   const liveTooltip = isLiveFresh
     ? "Show current train positions"
     : hasAnyData
-    ? "Show last known train positions (data is stale)"
-    : "No data loaded yet";
+      ? "Show last known train positions (data is stale)"
+      : "No data loaded yet";
 
   const allLines = getLinesForCity(city);
 
@@ -388,7 +400,7 @@ export function Controls({
   const convertSpeed = (mph: number): number => {
     return speedUnit === "kmh" ? mph * 1.60934 : mph;
   };
-  
+
   const unitLabel = speedUnit === "kmh" ? "km/h" : "mph";
   const unitLabelLower = speedUnit === "kmh" ? "km/h" : "mph";
 
@@ -450,7 +462,7 @@ export function Controls({
       <div className="app-header">
         <span className="app-city">{cityLine}</span>
         <h1
-          className={`app-title ${longTitleCities.includes(city)  ? "app-title-long" : ""}`}
+          className={`app-title ${longTitleCities.includes(city) ? "app-title-long" : ""}`}
         >
           {systemLine}
         </h1>
@@ -576,36 +588,25 @@ export function Controls({
         </button>
 
         <button
-          className={`city-btn city-btn-pending ${
-            city === "San Diego" ? "active" : ""
-          }`}
+          className={`city-btn ${city === "San Diego" ? "active" : ""}`}
           onClick={() => setCity("San Diego")}
           title="Waiting for API key"
         >
           🌊 SD
         </button>
-
-        {/* <button
-          className="city-btn city-btn-dark-orange"
-          onClick={() => console.log("Cleveland (RTA) - Coming soon")}
-          title="RTA Red Line - Coming soon"
+        <button
+          className={`city-btn city-btn-dark-orange ${city === "Calgary" ? "active" : ""}`}
+          onClick={() => setCity("Calgary")}
+          title="CTrain Red & Blue Lines"
         >
-          🚊 CLE
+          🍁 CGY
         </button>
-
         <button
           className="city-btn city-btn-dark-orange"
           onClick={() => console.log("Jersey City (HBLR) - Coming soon")}
           title="Hudson-Bergen Light Rail - Coming soon"
         >
           🚊JC
-        </button>
-        <button
-          className={`city-btn ${city === "Calgary" ? "active" : ""}`}
-          onClick={() => setCity("Calgary")}
-          title="CTrain Red & Blue Lines"
-        >
-          🍁 CGY
         </button>
         <button
           className="city-btn city-btn-dark-orange"
@@ -615,14 +616,27 @@ export function Controls({
           🚊 EMD
         </button>
         <button
-          className={`city-btn city-btn-pending ${
+          className={`city-btn city-btn-dark-orange ${
             city === "Dallas" ? "active" : ""
           }`}
           onClick={() => setCity("Dallas")}
           title="Data collection starting soon"
         >
           ⭐ Dallas
-        </button> */}
+        </button>
+
+        <button
+          className={`city-btn city-btn-dark-orange ${
+            city === "Washington" ? "active" : ""
+          }`}
+          onClick={() =>
+            console.log("Washington D.C. (Purple Line) - Coming soon")
+          }
+          // onClick={() => setCity("Washington")}
+          title="Data collection starting soon"
+        >
+          🇺🇸 D.C.
+        </button>
 
         {/* <button
           className={`city-btn city-btn-warning ${
@@ -783,7 +797,9 @@ export function Controls({
               Show route lines
             </label>
           </div>
-          <div className={`route-line-mode-toggle ${!showRouteLines ? "disabled" : ""}`}>
+          <div
+            className={`route-line-mode-toggle ${!showRouteLines ? "disabled" : ""}`}
+          >
             <button
               className={`route-mode-btn ${
                 routeLineMode === "byLine" ? "active" : ""
@@ -793,7 +809,11 @@ export function Controls({
             >
               By Line
             </button>
-            {city === "Toronto" || city === "Pittsburgh" || city === "Baltimore" || city === "Phoenix" || city === "Cleveland" ? (
+            {city === "Toronto" ||
+            city === "Pittsburgh" ||
+            city === "Baltimore" ||
+            city === "Phoenix" ||
+            city === "Cleveland" ? (
               <button
                 className="route-mode-btn"
                 style={{ opacity: 0.4, cursor: "not-allowed" }}
@@ -827,28 +847,46 @@ export function Controls({
           {showRouteLines && routeLineMode === "bySeparation" && (
             <div className="separation-legend">
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#3b82f6" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#3b82f6" }}
+                ></span>
                 <span>Tunnel / Trench</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#22c55e" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#22c55e" }}
+                ></span>
                 <span>Elevated</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#eab308" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#eab308" }}
+                ></span>
                 <span>Separated At-Grade</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#f97316" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#f97316" }}
+                ></span>
                 <span>Reserved Lane</span>
               </div>
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#ef4444" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#ef4444" }}
+                ></span>
                 <span>Mixed Traffic</span>
               </div>
 
               <div className="separation-legend-item">
-                <span className="separation-legend-line" style={{ backgroundColor: "#6b7280" }}></span>
+                <span
+                  className="separation-legend-line"
+                  style={{ backgroundColor: "#6b7280" }}
+                ></span>
                 <span>Unknown</span>
               </div>
             </div>
@@ -870,11 +908,7 @@ export function Controls({
               style={{ opacity: 0.5, cursor: "not-allowed" }}
               title="Grade crossing data is not available for this city"
             >
-              <input
-                type="checkbox"
-                checked={false}
-                disabled
-              />
+              <input type="checkbox" checked={false} disabled />
               Show grade crossings (X)
             </label>
           ) : (
@@ -915,7 +949,10 @@ export function Controls({
         <div className="control-label">Speed Filter</div>
         <div className="speed-filter">
           <div className="speed-slider-row">
-            <label>Min: {Math.round(convertSpeed(speedFilter.minSpeed))} {unitLabelLower}</label>
+            <label>
+              Min: {Math.round(convertSpeed(speedFilter.minSpeed))}{" "}
+              {unitLabelLower}
+            </label>
             <input
               type="range"
               min="0"
@@ -926,7 +963,7 @@ export function Controls({
                   ...speedFilter,
                   minSpeed: Math.min(
                     Number(e.target.value),
-                    speedFilter.maxSpeed
+                    speedFilter.maxSpeed,
                   ),
                 })
               }
@@ -935,7 +972,10 @@ export function Controls({
           </div>
           <div className="speed-slider-row">
             <label>
-              Max: {speedFilter.maxSpeed === 50 ? `${Math.round(convertSpeed(50))}+` : Math.round(convertSpeed(speedFilter.maxSpeed))}{" "}
+              Max:{" "}
+              {speedFilter.maxSpeed === 50
+                ? `${Math.round(convertSpeed(50))}+`
+                : Math.round(convertSpeed(speedFilter.maxSpeed))}{" "}
               {unitLabelLower}
             </label>
             <input
@@ -948,7 +988,7 @@ export function Controls({
                   ...speedFilter,
                   maxSpeed: Math.max(
                     Number(e.target.value),
-                    speedFilter.minSpeed
+                    speedFilter.minSpeed,
                   ),
                 })
               }
@@ -974,7 +1014,9 @@ export function Controls({
 
       {/* Speed Legend - two column layout: slow (left) to fast (right) */}
       <div className="control-group">
-        <div className="control-label">Speed Legend (<span className="unit-text">{unitLabel}</span>)</div>
+        <div className="control-label">
+          Speed Legend (<span className="unit-text">{unitLabel}</span>)
+        </div>
         <div className="speed-legend-grid">
           {/* Left column - slower speeds */}
           <div className="speed-legend-column">
@@ -990,21 +1032,27 @@ export function Controls({
                 className="speed-legend-dot"
                 style={{ backgroundColor: "#ff3333" }}
               ></span>
-              <span>{Math.round(convertSpeed(5))}-{Math.round(convertSpeed(10))}</span>
+              <span>
+                {Math.round(convertSpeed(5))}-{Math.round(convertSpeed(10))}
+              </span>
             </div>
             <div className="speed-legend-item">
               <span
                 className="speed-legend-dot"
                 style={{ backgroundColor: "#ff9933" }}
               ></span>
-              <span>{Math.round(convertSpeed(10))}-{Math.round(convertSpeed(15))}</span>
+              <span>
+                {Math.round(convertSpeed(10))}-{Math.round(convertSpeed(15))}
+              </span>
             </div>
             <div className="speed-legend-item">
               <span
                 className="speed-legend-dot"
                 style={{ backgroundColor: "#ffdd33" }}
               ></span>
-              <span>{Math.round(convertSpeed(15))}-{Math.round(convertSpeed(25))}</span>
+              <span>
+                {Math.round(convertSpeed(15))}-{Math.round(convertSpeed(25))}
+              </span>
             </div>
           </div>
           {/* Right column - faster speeds */}
@@ -1014,14 +1062,18 @@ export function Controls({
                 className="speed-legend-dot"
                 style={{ backgroundColor: "#88ff33" }}
               ></span>
-              <span>{Math.round(convertSpeed(25))}-{Math.round(convertSpeed(35))}</span>
+              <span>
+                {Math.round(convertSpeed(25))}-{Math.round(convertSpeed(35))}
+              </span>
             </div>
             <div className="speed-legend-item">
               <span
                 className="speed-legend-dot"
                 style={{ backgroundColor: "#33eebb" }}
               ></span>
-              <span>{Math.round(convertSpeed(35))}-{Math.round(convertSpeed(50))}</span>
+              <span>
+                {Math.round(convertSpeed(35))}-{Math.round(convertSpeed(50))}
+              </span>
             </div>
             <div className="speed-legend-item">
               <span
@@ -1044,7 +1096,9 @@ export function Controls({
       {/* Line Statistics */}
       {lineStats.length > 0 && (
         <div className="control-group">
-          <div className="control-label">Speed by Line (<span className="unit-text">{unitLabel}</span>)</div>
+          <div className="control-label">
+            Speed by Line (<span className="unit-text">{unitLabel}</span>)
+          </div>
           <div className="line-stats">
             {[...lineStats]
               .sort((a, b) => b.avgSpeed - a.avgSpeed)
