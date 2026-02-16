@@ -41,7 +41,7 @@ export const ABOUT_SECTIONS = {
 export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   {
     city: "San Francisco",
-    note: "N Judah in Sunset Tunnel can show portal clustering because GPS is weak underground; apparent tunnel speeds represent through-tunnel travel, not dense in-tunnel GPS sampling. F-Wharf and Market crossings are intentionally hidden to avoid confusion with the Market Street subway below. The F-Wharf is turned off by default to avoid confusing its slower street-running speeds with the faster underground sections of the system below Market Street.",
+    note: "N Judah in Sunset Tunnel can show portal clustering because location data is not available there; apparent tunnel speeds represent through-tunnel travel, not dense in-tunnel GPS sampling. F-Wharf and Market crossings are intentionally hidden to avoid confusion with the Market Street subway below. The F-Wharf is turned off by default to avoid confusing its slower street-running speeds with the faster underground sections of the system below Market Street.",
   },
   {
     city: "Los Angeles",
