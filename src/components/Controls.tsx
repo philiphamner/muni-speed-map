@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type {
   MuniLine,
   LAMetroLine,
@@ -60,29 +60,70 @@ import type {
 } from "../App";
 
 const OFFICIAL_TRANSIT_MAP_URLS: Record<City, string> = {
-  SF: "",
-  LA: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Los_Angeles_Metro_System_Map.png",
-  Seattle: "",
-  Boston: "",
+  SF: "https://www.sfmta.com/media/33952/download?inline",
+  LA: "https://cdn.beta.metro.net/wp-content/uploads/2025/09/19112839/26-0250_blt_GM_MlinkAmtrak_47x47.5_DCR.pdf",
+  Seattle:
+    "https://www.soundtransit.org/sites/default/files/documents/st-current-service-map.pdf",
+  Boston: "https://ontheworldmap.com/usa/city/boston/mbta-subway-map.jpg",
   Portland: "https://trimet.org/maps/img/railsystem.png",
-  "San Diego": "",
-  Toronto: "",
+  "San Diego":
+    "https://www.sdmts.com/sites/default/files/attachments/trolley-system-map-2025.jpg",
+  Toronto:
+    "https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_SubwayStreetcarLightrailMap.pdf?rev=7d8053749e5c4075a1ae81a5d9a5fe86",
   Philadelphia: "",
   Sacramento: "",
-  Pittsburgh: "",
+  Pittsburgh:
+    "https://www.rideprt.org/contentassets/063109698b9343de8d10ee531601accc/lrtmap.pdf",
   Dallas: "",
-  Minneapolis: "",
-  Denver: "",
+  Minneapolis:
+    "https://www.metrotransit.org/Data/Sites/1/media/metro/metro_diagrammap.pdf",
+  Denver:
+    "https://cdn.rtd-denver.com/image/upload/f_auto,q_auto/v1727299506/RTD_Rail_Map_September_2024_Website_FINAL_ksznbi.jpg",
   "Salt Lake City": "",
-  "San Jose": "",
-  Phoenix: "",
+  "San Jose":
+    "https://www.vta.org/sites/default/files/2026-01/ADA-LR-busconnect-011226.pdf",
+  Phoenix:
+    "https://i0.wp.com/transitmap.net/wp-content/uploads/2025/07/ValleyMetro-2025.jpg",
   "Jersey City": "",
   Calgary: "",
   Edmonton: "",
-  Cleveland: "",
-  Charlotte: "",
-  Baltimore: "",
+  Cleveland:
+    "https://www.riderta.com/sites/default/files/pdf/maps/System_Map_Rapid.pdf",
+  Charlotte:
+    "https://www.charlottenc.gov/files/sharedassets/cats/v/4/cats-images/rtcs-plan-map-28x42-7_29_2025-5-1.jpg",
+  Baltimore: "https://www.urbanrail.net/am/balt/baltimore-map.gif",
   Washington: "",
+};
+
+const TRANSIT_MAP_DISPLAY_URLS: Partial<Record<City, string>> = {
+  SF: "/maps/sf-sfmta-map-33952.png",
+  LA: "/maps/la-metro-map-2025.png",
+  Seattle: "/maps/seattle-soundtransit-service-map.png",
+  Toronto: "/maps/toronto-ttc-subway-streetcar-lightrail-map.png",
+  Philadelphia: "/maps/philly-septa-system-map-v2-2.png",
+  Pittsburgh: "/maps/pittsburgh-prt-lrtmap.png",
+  Minneapolis: "/maps/minneapolis-metro-diagrammap.png",
+  "San Jose": "/maps/san-jose-vta-ada-lr-busconnect-011226.png",
+  "Salt Lake City": "/maps/uta-rail-map-nov2025.png",
+  Cleveland: "/maps/cleveland-system-map-rapid.png",
+  Baltimore: "/maps/baltimore-light-raillink-2.png",
+};
+
+const TRANSIT_MAP_SOURCE_URLS: Partial<Record<City, string>> = {
+  SF: "https://www.sfmta.com/maps/muni-metro-map",
+  LA: "https://www.metro.net/riding/guide/system-maps/",
+  Seattle: "https://www.soundtransit.org/get-to-know-us/maps",
+  Toronto: "https://www.ttc.ca/routes-and-schedules",
+  Philadelphia:
+    "https://wwww.septa.org/wp-content/uploads/page/communication/SEPTA_System-Map_v2-2.pdf",
+  Pittsburgh:
+    "https://www.rideprt.org/inside-Pittsburgh-Regional-Transit/rider-info/how-to-ride/how-to-ride-the-light-rail-system/",
+  Minneapolis: "https://www.metrotransit.org/schedules-maps",
+  "San Jose": "https://www.vta.org/go/maps",
+  Cleveland: "https://www.riderta.com/maps",
+  "San Diego": "https://www.sdmts.com/transit-services/trolley",
+  Baltimore: "https://www.mta.maryland.gov/schedule/stops/lightrail",
+  Phoenix: "https://www.valleymetro.org/",
 };
 
 // Official SFMTA colors from GTFS
@@ -388,10 +429,40 @@ export function Controls({
   speedUnit,
   setSpeedUnit,
 }: ControlsProps) {
+  const MIN_TRANSIT_MAP_ZOOM = 1;
+  const MAX_TRANSIT_MAP_ZOOM = 4;
+  const TRANSIT_MAP_ZOOM_STEP = 0.1;
+  const TRANSIT_MAP_BUTTON_ZOOM_STEP = 0.25;
+  const TRANSIT_MAP_PAN_STEP = 40;
+  const TRANSIT_MAP_PAN_STEP_FAST = 120;
+
   // Sacramento warning modal state
   const [showSacWarning, setShowSacWarning] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showTransitMapModal, setShowTransitMapModal] = useState(false);
+  const [transitMapZoom, setTransitMapZoom] = useState(MIN_TRANSIT_MAP_ZOOM);
+  const [transitMapPan, setTransitMapPan] = useState({ x: 0, y: 0 });
+  const [isTransitMapPanning, setIsTransitMapPanning] = useState(false);
+  const [transitMapBaseSize, setTransitMapBaseSize] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
+  const transitMapViewportRef = useRef<HTMLDivElement | null>(null);
+  const transitMapDragRef = useRef<{
+    active: boolean;
+    pointerId: number | null;
+    startX: number;
+    startY: number;
+    startPanX: number;
+    startPanY: number;
+  }>({
+    active: false,
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+    startPanX: 0,
+    startPanY: 0,
+  });
 
   // Show modal when user navigates to Sacramento
   useEffect(() => {
@@ -515,9 +586,215 @@ export function Controls({
   const systemLine = systemNames[city] || "Speed Map";
   const longTitleCities = ["Boston", "Phoenix"];
   const officialTransitMapUrl = OFFICIAL_TRANSIT_MAP_URLS[city];
-  const isOfficialMapPdf =
-    !!officialTransitMapUrl &&
-    officialTransitMapUrl.toLowerCase().split("?")[0].endsWith(".pdf");
+  const transitMapDisplayUrl =
+    TRANSIT_MAP_DISPLAY_URLS[city] || officialTransitMapUrl;
+  const transitMapSourceUrl =
+    TRANSIT_MAP_SOURCE_URLS[city] ||
+    officialTransitMapUrl ||
+    transitMapDisplayUrl;
+  const isDisplayedMapPdf =
+    !!transitMapDisplayUrl &&
+    transitMapDisplayUrl.toLowerCase().split("?")[0].endsWith(".pdf");
+  const clampTransitMapZoom = (zoom: number) =>
+    Math.min(MAX_TRANSIT_MAP_ZOOM, Math.max(MIN_TRANSIT_MAP_ZOOM, zoom));
+  const clampTransitMapPan = (zoom: number, x: number, y: number) => {
+    if (!transitMapBaseSize || !transitMapViewportRef.current) {
+      return { x: 0, y: 0 };
+    }
+
+    const viewport = transitMapViewportRef.current;
+    const viewportWidth = viewport.clientWidth;
+    const viewportHeight = viewport.clientHeight;
+    const contentWidth = transitMapBaseSize.width * zoom;
+    const contentHeight = transitMapBaseSize.height * zoom;
+
+    let clampedX = x;
+    let clampedY = y;
+
+    if (contentWidth <= viewportWidth) {
+      clampedX = (viewportWidth - contentWidth) / 2;
+    } else {
+      const minX = viewportWidth - contentWidth;
+      clampedX = Math.max(minX, Math.min(0, x));
+    }
+
+    if (contentHeight <= viewportHeight) {
+      clampedY = (viewportHeight - contentHeight) / 2;
+    } else {
+      const minY = viewportHeight - contentHeight;
+      clampedY = Math.max(minY, Math.min(0, y));
+    }
+
+    return { x: clampedX, y: clampedY };
+  };
+  const transitMapCanvasStyle = transitMapBaseSize
+    ? {
+        width: `${Math.round(transitMapBaseSize.width)}px`,
+        height: `${Math.round(transitMapBaseSize.height)}px`,
+      }
+    : undefined;
+  const transitMapImageStyle = transitMapBaseSize
+    ? {
+        width: `${transitMapBaseSize.width}px`,
+        height: `${transitMapBaseSize.height}px`,
+        transform: `translate3d(${Math.round(transitMapPan.x)}px, ${Math.round(transitMapPan.y)}px, 0) scale(${transitMapZoom})`,
+        transformOrigin: "top left",
+      }
+    : undefined;
+
+  const applyTransitMapZoom = (
+    requestedZoom: number,
+    clientX?: number,
+    clientY?: number,
+  ) => {
+    const nextZoom = clampTransitMapZoom(requestedZoom);
+    if (nextZoom === transitMapZoom) return;
+
+    if (transitMapBaseSize && transitMapViewportRef.current) {
+      const viewport = transitMapViewportRef.current;
+      const viewportRect = viewport.getBoundingClientRect();
+      const anchorX =
+        typeof clientX === "number"
+          ? clientX - viewportRect.left
+          : viewportRect.width / 2;
+      const anchorY =
+        typeof clientY === "number"
+          ? clientY - viewportRect.top
+          : viewportRect.height / 2;
+
+      const imageX = (anchorX - transitMapPan.x) / transitMapZoom;
+      const imageY = (anchorY - transitMapPan.y) / transitMapZoom;
+      const nextPan = {
+        x: anchorX - imageX * nextZoom,
+        y: anchorY - imageY * nextZoom,
+      };
+
+      setTransitMapZoom(nextZoom);
+      setTransitMapPan(clampTransitMapPan(nextZoom, nextPan.x, nextPan.y));
+      return;
+    }
+
+    setTransitMapZoom(nextZoom);
+  };
+
+  const handleTransitMapWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    if (!transitMapBaseSize) return;
+    const zoomFactor = Math.exp(-event.deltaY * 0.001);
+    applyTransitMapZoom(
+      clampTransitMapZoom(transitMapZoom * zoomFactor),
+      event.clientX,
+      event.clientY,
+    );
+  };
+
+  const handleTransitMapPointerDown = (
+    event: React.PointerEvent<HTMLDivElement>,
+  ) => {
+    if (transitMapZoom <= MIN_TRANSIT_MAP_ZOOM) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+
+    const viewport = transitMapViewportRef.current;
+    if (!viewport) return;
+
+    transitMapDragRef.current = {
+      active: true,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startPanX: transitMapPan.x,
+      startPanY: transitMapPan.y,
+    };
+    setIsTransitMapPanning(true);
+    viewport.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  };
+
+  const handleTransitMapPointerMove = (
+    event: React.PointerEvent<HTMLDivElement>,
+  ) => {
+    const dragState = transitMapDragRef.current;
+    if (!dragState.active || dragState.pointerId !== event.pointerId) return;
+
+    const viewport = transitMapViewportRef.current;
+    if (!viewport) return;
+
+    const deltaX = event.clientX - dragState.startX;
+    const deltaY = event.clientY - dragState.startY;
+    const nextPan = clampTransitMapPan(
+      transitMapZoom,
+      dragState.startPanX + deltaX,
+      dragState.startPanY + deltaY,
+    );
+    setTransitMapPan(nextPan);
+  };
+
+  const handleTransitMapPointerUp = (
+    event: React.PointerEvent<HTMLDivElement>,
+  ) => {
+    const dragState = transitMapDragRef.current;
+    if (!dragState.active || dragState.pointerId !== event.pointerId) return;
+
+    const viewport = transitMapViewportRef.current;
+    if (viewport) {
+      try {
+        viewport.releasePointerCapture(event.pointerId);
+      } catch {
+        // Ignore if pointer capture has already been released.
+      }
+    }
+    transitMapDragRef.current.active = false;
+    transitMapDragRef.current.pointerId = null;
+    setIsTransitMapPanning(false);
+  };
+
+  const handleTransitMapKeyDown = (
+    event: React.KeyboardEvent<HTMLDivElement>,
+  ) => {
+    const isArrowKey =
+      event.key === "ArrowUp" ||
+      event.key === "ArrowDown" ||
+      event.key === "ArrowLeft" ||
+      event.key === "ArrowRight";
+    if (!isArrowKey) return;
+
+    // Keep keyboard panning for zoomed-in map states.
+    if (transitMapZoom <= MIN_TRANSIT_MAP_ZOOM) return;
+
+    event.preventDefault();
+    const panStep = event.shiftKey
+      ? TRANSIT_MAP_PAN_STEP_FAST
+      : TRANSIT_MAP_PAN_STEP;
+
+    setTransitMapPan((currentPan) => {
+      let nextX = currentPan.x;
+      let nextY = currentPan.y;
+
+      if (event.key === "ArrowLeft") nextX += panStep;
+      if (event.key === "ArrowRight") nextX -= panStep;
+      if (event.key === "ArrowUp") nextY += panStep;
+      if (event.key === "ArrowDown") nextY -= panStep;
+
+      return clampTransitMapPan(transitMapZoom, nextX, nextY);
+    });
+  };
+
+  useEffect(() => {
+    if (!showTransitMapModal) return;
+    setTransitMapZoom(MIN_TRANSIT_MAP_ZOOM);
+    setTransitMapPan({ x: 0, y: 0 });
+    setTransitMapBaseSize(null);
+    setIsTransitMapPanning(false);
+    transitMapDragRef.current.active = false;
+    transitMapDragRef.current.pointerId = null;
+  }, [showTransitMapModal, city, transitMapDisplayUrl]);
+
+  useEffect(() => {
+    if (!transitMapBaseSize) return;
+    setTransitMapPan((currentPan) =>
+      clampTransitMapPan(transitMapZoom, currentPan.x, currentPan.y),
+    );
+  }, [transitMapZoom, transitMapBaseSize]);
 
   return (
     <div className="controls-panel">
@@ -1487,40 +1764,129 @@ export function Controls({
                 ? "Reference map provided by the local transit agency."
                 : "No official rail map URL is configured for this city yet."}
             </p> */}
-            {officialTransitMapUrl ? (
+            {transitMapDisplayUrl ? (
               <>
-                {isOfficialMapPdf ? (
+                {isDisplayedMapPdf ? (
                   <div className="transit-map-pdf-placeholder">
                     <p>
                       This city map is a PDF. Open it in a new tab for the best
                       viewing experience.
                     </p>
-                    <a
-                      className="transit-map-open-btn"
-                      href={officialTransitMapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open PDF map
-                    </a>
+                    {transitMapSourceUrl && (
+                      <p className="transit-map-source">
+                        Source:{" "}
+                        <a
+                          className="transit-map-source-link"
+                          href={transitMapSourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {transitMapSourceUrl}
+                        </a>
+                      </p>
+                    )}
                   </div>
                 ) : (
                   <>
                     <div className="transit-map-frame">
-                      <img
-                        src={officialTransitMapUrl}
-                        alt={`${city} official rail map`}
-                        className="transit-map-image"
-                      />
+                      <div
+                        ref={transitMapViewportRef}
+                        className={`transit-map-viewport ${transitMapZoom > MIN_TRANSIT_MAP_ZOOM ? "zoomed" : ""} ${isTransitMapPanning ? "is-panning" : ""}`}
+                        tabIndex={0}
+                        role="application"
+                        aria-label="Official rail map. Use scroll to zoom, drag or arrow keys to pan."
+                        onWheel={handleTransitMapWheel}
+                        onKeyDown={handleTransitMapKeyDown}
+                        onDoubleClick={(event) =>
+                          applyTransitMapZoom(
+                            transitMapZoom + TRANSIT_MAP_ZOOM_STEP,
+                            event.clientX,
+                            event.clientY,
+                          )
+                        }
+                        onPointerDown={handleTransitMapPointerDown}
+                        onPointerMove={handleTransitMapPointerMove}
+                        onPointerUp={handleTransitMapPointerUp}
+                        onPointerCancel={handleTransitMapPointerUp}
+                      >
+                        <div
+                          className="transit-map-canvas"
+                          style={transitMapCanvasStyle}
+                        >
+                          <img
+                            src={transitMapDisplayUrl}
+                            alt={`${city} official rail map`}
+                            className="transit-map-image"
+                            style={transitMapImageStyle}
+                            onLoad={(event) => {
+                              const imageRect =
+                                event.currentTarget.getBoundingClientRect();
+                              setTransitMapBaseSize({
+                                width: imageRect.width,
+                                height: imageRect.height,
+                              });
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <a
-                      className="transit-map-open-link"
-                      href={officialTransitMapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open full-size map in new tab
-                    </a>
+                    <div className="transit-map-zoom-controls">
+                      <button
+                        type="button"
+                        className="transit-map-zoom-btn"
+                        onClick={() =>
+                          applyTransitMapZoom(
+                            transitMapZoom - TRANSIT_MAP_BUTTON_ZOOM_STEP,
+                          )
+                        }
+                        disabled={transitMapZoom <= MIN_TRANSIT_MAP_ZOOM}
+                        aria-label="Zoom out map"
+                      >
+                        -
+                      </button>
+                      <span className="transit-map-zoom-level">
+                        {Math.round(transitMapZoom * 100)}%
+                      </span>
+                      <button
+                        type="button"
+                        className="transit-map-zoom-btn"
+                        onClick={() =>
+                          applyTransitMapZoom(
+                            transitMapZoom + TRANSIT_MAP_BUTTON_ZOOM_STEP,
+                          )
+                        }
+                        disabled={transitMapZoom >= MAX_TRANSIT_MAP_ZOOM}
+                        aria-label="Zoom in map"
+                      >
+                        +
+                      </button>
+                      <button
+                        type="button"
+                        className="transit-map-zoom-reset"
+                        onClick={() =>
+                          applyTransitMapZoom(MIN_TRANSIT_MAP_ZOOM)
+                        }
+                        disabled={transitMapZoom === MIN_TRANSIT_MAP_ZOOM}
+                      >
+                        Reset
+                      </button>
+                      <span className="transit-map-zoom-hint">
+                        Scroll to zoom, drag or arrow keys to pan
+                      </span>
+                    </div>
+                    {transitMapSourceUrl && (
+                      <p className="transit-map-source">
+                        Source:{" "}
+                        <a
+                          className="transit-map-source-link"
+                          href={transitMapSourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {transitMapSourceUrl}
+                        </a>
+                      </p>
+                    )}
                   </>
                 )}
               </>

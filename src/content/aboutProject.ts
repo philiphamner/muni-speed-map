@@ -6,7 +6,7 @@ export interface AboutCityNote {
 export const ABOUT_SECTIONS = {
   title: "About This Project",
   whatItIs:
-    "This app visualizes light-rail and tram performance in North American cities using live vehicle positions and static infrastructure data. The goal is to make speed patterns, bottlenecks, and route characteristics easy to inspect.",
+    "WHAT PROBLEM IS THIS TRYING TO SOLVE?  I TRIED TO FIND DATA ON SLOW SEGMENTS OF SF MUNI BUT FAILED, AND WANTED TO CREATE THAT RESOURCE.  This app visualizes light-rail and tram performance in North American cities using live vehicle positions and static infrastructure data. The goal is to make speed patterns, bottlenecks, and route characteristics easy to inspect.",
   keyDecisions: [
     "Scope is live light-rail/tram analytics first. Regional/metro layers are context only.",
     "Regional & metro overlays are static passenger-rail references, not speed analytics.",

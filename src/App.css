@@ -1245,7 +1245,7 @@
   background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
-  padding: 32px;
+  padding: 32px 80px;
   max-width: 420px;
   margin: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -1387,8 +1387,8 @@
 }
 
 .transit-map-modal {
-  max-width: 1320px;
   width: min(1320px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
   max-height: calc(100vh - 24px);
   overflow-y: auto;
   text-align: left;
@@ -1402,23 +1402,95 @@
 
 .transit-map-frame {
   margin-top: 12px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 12px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.25);
 }
 
+.transit-map-viewport {
+  width: 100%;
+  max-height: 78vh;
+  max-width: 100%;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  touch-action: none;
+  user-select: none;
+}
+
+.transit-map-viewport.zoomed {
+  cursor: grab;
+}
+
+.transit-map-viewport.zoomed.is-panning {
+  cursor: grabbing;
+}
+
+.transit-map-canvas {
+  position: relative;
+}
+
 .transit-map-image {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   max-height: 78vh;
   object-fit: contain;
   height: auto;
+  will-change: transform;
+}
+
+.transit-map-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.transit-map-zoom-btn,
+.transit-map-zoom-reset {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  height: 32px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.transit-map-zoom-btn {
+  width: 32px;
+  padding: 0;
+}
+
+.transit-map-zoom-btn:disabled,
+.transit-map-zoom-reset:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.transit-map-zoom-level {
+  min-width: 52px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.transit-map-zoom-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .transit-map-open-link {
-  display: inline-block;
-  margin-top: 12px;
+  display: block;
+  width: fit-content;
+  margin-top: 16px;
+  margin-bottom: 6px;
   color: #9befff;
   font-size: 0.9rem;
   text-decoration: none;
@@ -1426,6 +1498,25 @@
 }
 
 .transit-map-open-link:hover {
+  color: #d5f8ff;
+  border-bottom-color: rgba(213, 248, 255, 0.7);
+}
+
+.transit-map-source {
+  margin: 0 0 6px 0;
+  padding-top: 14px;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.8);
+  overflow-wrap: anywhere;
+}
+
+.transit-map-source-link {
+  color: #9befff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(155, 239, 255, 0.5);
+}
+
+.transit-map-source-link:hover {
   color: #d5f8ff;
   border-bottom-color: rgba(213, 248, 255, 0.7);
 }

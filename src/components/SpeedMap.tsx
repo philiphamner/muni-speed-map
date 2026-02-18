@@ -838,8 +838,7 @@ function findSegmentForVehicle(
         // Calculate how many segments this linestring has
         // Must match buildAllSegments logic: floor(length / segment_size) + 1 for the partial end segment
         const lineLength = result.totalLength;
-        const segmentsInLine =
-          Math.floor(lineLength / SEGMENT_SIZE_METERS) + 1;
+        const segmentsInLine = Math.floor(lineLength / SEGMENT_SIZE_METERS) + 1;
         cumulativeSegmentOffset += segmentsInLine;
       }
     }
@@ -1360,15 +1359,14 @@ export function SpeedMap({
         ?.setLngLat(e.lngLat)
         .setHTML(
           `<div class="popup-content">
-            <div class="popup-title">Regional & Metro Rail</div>
             ${
               heavy.length
-                ? `<div class="popup-detail" style="margin-top:4px;color:#d1d5db"> Metro / Subway </div>${groupHtml(heavy)}`
+                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db"> Metro / Subway </div>${groupHtml(heavy)}`
                 : ""
             }
             ${
               commuter.length
-                ? `<div class="popup-detail" style="margin-top:4px;color:#d1d5db">Regional / Commuter rail</div>${groupHtml(commuter)}`
+                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db">Regional / Commuter rail</div>${groupHtml(commuter)}`
                 : ""
             }
           </div>`,
