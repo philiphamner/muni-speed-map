@@ -3197,6 +3197,21 @@ export function SpeedMap({
           });
           if (stopFeatures && stopFeatures.length > 0) return;
 
+          // Check if click was on a traffic light (handled in traffic lights layer)
+          const trafficLightFeatures = map.current?.queryRenderedFeatures(
+            e.point,
+            {
+              layers: ["traffic-lights"],
+            },
+          );
+          if (trafficLightFeatures && trafficLightFeatures.length > 0) return;
+
+          // Check if click was on a switch (handled in switches layer)
+          const switchFeatures = map.current?.queryRenderedFeatures(e.point, {
+            layers: ["switches"],
+          });
+          if (switchFeatures && switchFeatures.length > 0) return;
+
           // Unpin and remove popup
           crossingPopupPinned.current = false;
           popup.current?.remove();
@@ -3332,6 +3347,8 @@ export function SpeedMap({
       });
 
       map.current.on("mousemove", "switches", (e) => {
+        // Don't update popup if it's pinned
+        if (crossingPopupPinned.current) return;
         if (!e.features?.length || !map.current) return;
 
         const feature = e.features[0];
@@ -3351,6 +3368,35 @@ export function SpeedMap({
               </div>`,
           )
           .addTo(map.current);
+      });
+
+      // Click to pin the popup
+      map.current.on("click", "switches", (e) => {
+        if (!e.features?.length || !map.current) return;
+
+        const feature = e.features[0];
+        const coords =
+          feature.geometry.type === "Point"
+            ? (feature.geometry as GeoJSON.Point).coordinates
+            : null;
+        const lon = coords ? coords[0].toFixed(6) : "N/A";
+        const lat = coords ? coords[1].toFixed(6) : "N/A";
+
+        crossingPopupPinned.current = true;
+
+        popup.current
+          ?.setLngLat(e.lngLat)
+          .setHTML(
+            `<div class="popup-content popup-pinned">
+                <div class="popup-title">⚡ Track Switch 📌</div>
+                <div class="popup-coords">${lat}, ${lon}</div>
+                <div class="popup-hint">Click elsewhere to close</div>
+              </div>`,
+          )
+          .addTo(map.current);
+
+        // Prevent the click from propagating to the map
+        e.originalEvent.stopPropagation();
       });
     };
 
