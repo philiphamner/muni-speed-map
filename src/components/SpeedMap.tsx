@@ -3030,183 +3030,184 @@ export function SpeedMap({
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
 
+    // Determine crossing color based on city
+    // Cities with verified CPUC gate data get green for gated crossings, orange for others
+    // All other cities get orange (OSM barrier data unreliable)
+    const verifiedGateCities = ["LA", "Charlotte", "San Diego"];
+    const crossingColor = verifiedGateCities.includes(city)
+      ? [
+          "case",
+          ["==", ["get", "crossing_barrier"], "yes"],
+          "#22c55e", // Green for gated crossings in verified cities
+          "#ff9500", // Orange for ungated/unknown
+        ]
+      : "#ff9500"; // Orange for all other cities
+
+    // Check if source already exists - if so, just update data (fast path)
+    const existingSource = map.current.getSource(
+      "crossings",
+    ) as maplibregl.GeoJSONSource;
+
+    if (existingSource) {
+      // Fast path: source exists, just update data immediately
+      existingSource.setData(filteredCrossings as any);
+      map.current.setLayoutProperty(
+        "crossings",
+        "visibility",
+        showCrossings ? "visible" : "none",
+      );
+      // Update color when city changes
+      map.current.setPaintProperty(
+        "crossings",
+        "text-color",
+        crossingColor as any,
+      );
+      return; // Exit early - no need to check style or create layers
+    }
+
+    // Slow path: first time setup - need to create source and layer
     const addCrossingsLayer = () => {
       if (!map.current) return;
 
-      const existingSource = map.current.getSource(
-        "crossings",
-      ) as maplibregl.GeoJSONSource;
+      map.current.addSource("crossings", {
+        type: "geojson",
+        data: filteredCrossings as any,
+      });
 
-      // Determine crossing color based on city
-      // Cities with verified CPUC gate data get green for gated crossings, orange for others
-      // All other cities get orange (OSM barrier data unreliable)
-      const verifiedGateCities = ["LA", "Charlotte", "San Diego"];
-      const crossingColor = verifiedGateCities.includes(city)
-        ? [
-            "case",
-            ["==", ["get", "crossing_barrier"], "yes"],
-            "#22c55e", // Green for gated crossings in verified cities
-            "#ff9500", // Orange for ungated/unknown
-          ]
-        : "#ff9500"; // Orange for all other cities
+      // Add crossing markers layer
+      map.current.addLayer({
+        id: "crossings",
+        type: "symbol",
+        source: "crossings",
+        layout: {
+          visibility: showCrossings ? "visible" : "none",
+          "text-field": "✕",
+          "text-size": 14,
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+        },
+        paint: {
+          "text-color": crossingColor as any,
+          "text-halo-color": "#000000",
+          "text-halo-width": 1.5,
+        },
+      });
 
-      if (existingSource) {
-        // Update data with filtered crossings
-        existingSource.setData(filteredCrossings as any);
-        map.current.setLayoutProperty(
-          "crossings",
-          "visibility",
-          showCrossings ? "visible" : "none",
-        );
-        // Update color when city changes
-        map.current.setPaintProperty(
-          "crossings",
-          "text-color",
-          crossingColor as any,
-        );
-      } else {
-        map.current.addSource("crossings", {
-          type: "geojson",
-          data: filteredCrossings as any,
+      // Register event handlers only once (they use refs so they work across re-renders)
+      if (!crossingHandlersRegistered.current) {
+        crossingHandlersRegistered.current = true;
+
+        // Crossing hover popup
+        map.current.on("mouseenter", "crossings", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "pointer";
         });
 
-        // Add crossing markers layer
-        map.current.addLayer({
-          id: "crossings",
-          type: "symbol",
-          source: "crossings",
-          layout: {
-            visibility: showCrossings ? "visible" : "none",
-            "text-field": "✕",
-            "text-size": 14,
-            "text-allow-overlap": true,
-            "text-ignore-placement": true,
-          },
-          paint: {
-            "text-color": crossingColor as any,
-            "text-halo-color": "#000000",
-            "text-halo-width": 1.5,
-          },
+        map.current.on("mouseleave", "crossings", () => {
+          if (map.current) map.current.getCanvas().style.cursor = "";
+          // Only remove popup if not pinned
+          if (!crossingPopupPinned.current) {
+            popup.current?.remove();
+          }
         });
 
-        // Register event handlers only once (they use refs so they work across re-renders)
-        if (!crossingHandlersRegistered.current) {
-          crossingHandlersRegistered.current = true;
+        map.current.on("mousemove", "crossings", (e) => {
+          // Don't update popup if it's pinned
+          if (crossingPopupPinned.current) return;
+          if (!e.features?.length || !map.current) return;
 
-          // Crossing hover popup
-          map.current.on("mouseenter", "crossings", () => {
-            if (map.current) map.current.getCanvas().style.cursor = "pointer";
-          });
+          // Get coordinates from the feature geometry
+          const feature = e.features[0];
+          const props = feature.properties || {};
+          const coords =
+            feature.geometry.type === "Point"
+              ? (feature.geometry as GeoJSON.Point).coordinates
+              : null;
+          const lon = coords ? coords[0].toFixed(6) : "N/A";
+          const lat = coords ? coords[1].toFixed(6) : "N/A";
 
-          map.current.on("mouseleave", "crossings", () => {
-            if (map.current) map.current.getCanvas().style.cursor = "";
-            // Only remove popup if not pinned
-            if (!crossingPopupPinned.current) {
-              popup.current?.remove();
-            }
-          });
+          // Build barrier info line
+          const barrierStatus =
+            props.crossing_barrier === "yes"
+              ? "✓ Gated"
+              : props.crossing_barrier === "no"
+                ? "✗ No gates"
+                : "";
 
-          map.current.on("mousemove", "crossings", (e) => {
-            // Don't update popup if it's pinned
-            if (crossingPopupPinned.current) return;
-            if (!e.features?.length || !map.current) return;
-
-            // Get coordinates from the feature geometry
-            const feature = e.features[0];
-            const props = feature.properties || {};
-            const coords =
-              feature.geometry.type === "Point"
-                ? (feature.geometry as GeoJSON.Point).coordinates
-                : null;
-            const lon = coords ? coords[0].toFixed(6) : "N/A";
-            const lat = coords ? coords[1].toFixed(6) : "N/A";
-
-            // Build barrier info line
-            const barrierStatus =
-              props.crossing_barrier === "yes"
-                ? "✓ Gated"
-                : props.crossing_barrier === "no"
-                  ? "✗ No gates"
-                  : "";
-
-            popup.current
-              ?.setLngLat(e.lngLat)
-              .setHTML(
-                `<div class="popup-content">
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content">
                   <div class="popup-title">Grade Crossing${barrierStatus ? ` <span style="color: ${props.crossing_barrier === "yes" ? "#22c55e" : "#ff9500"}">${barrierStatus}</span>` : ""}</div>
                   <div class="popup-coords">${lat}, ${lon}</div>
                 </div>`,
-              )
-              .addTo(map.current);
-          });
+            )
+            .addTo(map.current);
+        });
 
-          // Click to pin the popup
-          map.current.on("click", "crossings", (e) => {
-            if (!e.features?.length || !map.current) return;
+        // Click to pin the popup
+        map.current.on("click", "crossings", (e) => {
+          if (!e.features?.length || !map.current) return;
 
-            // Get coordinates from the feature geometry
-            const feature = e.features[0];
-            const props = feature.properties || {};
-            const coords =
-              feature.geometry.type === "Point"
-                ? (feature.geometry as GeoJSON.Point).coordinates
-                : null;
-            const lon = coords ? coords[0].toFixed(6) : "N/A";
-            const lat = coords ? coords[1].toFixed(6) : "N/A";
+          // Get coordinates from the feature geometry
+          const feature = e.features[0];
+          const props = feature.properties || {};
+          const coords =
+            feature.geometry.type === "Point"
+              ? (feature.geometry as GeoJSON.Point).coordinates
+              : null;
+          const lon = coords ? coords[0].toFixed(6) : "N/A";
+          const lat = coords ? coords[1].toFixed(6) : "N/A";
 
-            // Build barrier info line
-            const barrierStatus =
-              props.crossing_barrier === "yes"
-                ? "✓ Gated"
-                : props.crossing_barrier === "no"
-                  ? "✗ No gates"
-                  : "";
+          // Build barrier info line
+          const barrierStatus =
+            props.crossing_barrier === "yes"
+              ? "✓ Gated"
+              : props.crossing_barrier === "no"
+                ? "✗ No gates"
+                : "";
 
-            crossingPopupPinned.current = true;
+          crossingPopupPinned.current = true;
 
-            popup.current
-              ?.setLngLat(e.lngLat)
-              .setHTML(
-                `<div class="popup-content popup-pinned">
+          popup.current
+            ?.setLngLat(e.lngLat)
+            .setHTML(
+              `<div class="popup-content popup-pinned">
                   <div class="popup-title">Grade Crossing${barrierStatus ? ` <span style="color: ${props.crossing_barrier === "yes" ? "#22c55e" : "#ff9500"}">${barrierStatus}</span>` : ""} 📌</div>
                   <div class="popup-coords">${lat}, ${lon}</div>
                   <div class="popup-hint">Click elsewhere to close</div>
                 </div>`,
-              )
-              .addTo(map.current);
+            )
+            .addTo(map.current);
 
-            // Prevent the click from propagating to the map
-            e.originalEvent.stopPropagation();
+          // Prevent the click from propagating to the map
+          e.originalEvent.stopPropagation();
+        });
+
+        // Click elsewhere on map to unpin crossing popup and collapse stop clusters
+        map.current.on("click", (e) => {
+          // Check if click was on a crossing (handled above)
+          const crossingFeatures = map.current?.queryRenderedFeatures(e.point, {
+            layers: ["crossings"],
           });
+          if (crossingFeatures && crossingFeatures.length > 0) return;
 
-          // Click elsewhere on map to unpin crossing popup and collapse stop clusters
-          map.current.on("click", (e) => {
-            // Check if click was on a crossing (handled above)
-            const crossingFeatures = map.current?.queryRenderedFeatures(
-              e.point,
-              {
-                layers: ["crossings"],
-              },
-            );
-            if (crossingFeatures && crossingFeatures.length > 0) return;
-
-            // Check if click was on a stop (handled in stops layer)
-            const stopFeatures = map.current?.queryRenderedFeatures(e.point, {
-              layers: ["stops"],
-            });
-            if (stopFeatures && stopFeatures.length > 0) return;
-
-            // Unpin and remove popup
-            crossingPopupPinned.current = false;
-            popup.current?.remove();
-
-            // Collapse any expanded stop cluster
-            setExpandedStopCluster(null);
+          // Check if click was on a stop (handled in stops layer)
+          const stopFeatures = map.current?.queryRenderedFeatures(e.point, {
+            layers: ["stops"],
           });
-        }
+          if (stopFeatures && stopFeatures.length > 0) return;
+
+          // Unpin and remove popup
+          crossingPopupPinned.current = false;
+          popup.current?.remove();
+
+          // Collapse any expanded stop cluster
+          setExpandedStopCluster(null);
+        });
       }
     };
 
+    // Only wait for style on first setup
     if (map.current.isStyleLoaded()) {
       addCrossingsLayer();
     } else {
@@ -3233,13 +3234,18 @@ export function SpeedMap({
     const filteredFeatures = rawSwitches.features.filter((sw: any) => {
       // If switch has pre-computed routes property, use it for fast filtering
       const switchRoutes = sw.properties?.routes;
-      if (switchRoutes && Array.isArray(switchRoutes)) {
+      if (
+        switchRoutes &&
+        Array.isArray(switchRoutes) &&
+        switchRoutes.length > 0
+      ) {
+        // Fast path: use pre-computed routes
         return switchRoutes.some((route: string) =>
           selectedLines.includes(route),
         );
       }
 
-      // Fallback: check proximity to selected route lines
+      // Fallback: check proximity to selected route lines (only for switches without routes property)
       const [lon, lat] = sw.geometry.coordinates;
       const maxDistanceMeters = 50;
 
@@ -3264,86 +3270,91 @@ export function SpeedMap({
     });
 
     return { ...rawSwitches, features: filteredFeatures };
-  }, [city, cityConfig.routes, cityConfig.switches, selectedLines]);
+  }, [cityConfig.switches, selectedLines]);
 
   // Add/update switches layer
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
 
+    // Check if source already exists - if so, just update data (fast path)
+    const existingSource = map.current.getSource(
+      "switches",
+    ) as maplibregl.GeoJSONSource;
+
+    if (existingSource) {
+      // Fast path: source exists, just update data immediately
+      existingSource.setData(switchesData as any);
+      map.current.setLayoutProperty(
+        "switches",
+        "visibility",
+        showSwitches ? "visible" : "none",
+      );
+      return; // Exit early - no need to check style or create layers
+    }
+
+    // Slow path: first time setup - need to create source and layer
     const addSwitchesLayer = () => {
       if (!map.current) return;
 
-      const existingSource = map.current.getSource(
-        "switches",
-      ) as maplibregl.GeoJSONSource;
+      map.current.addSource("switches", {
+        type: "geojson",
+        data: switchesData as any,
+      });
 
-      if (existingSource) {
-        existingSource.setData(switchesData as any);
-        map.current.setLayoutProperty(
-          "switches",
-          "visibility",
-          showSwitches ? "visible" : "none",
-        );
-      } else {
-        map.current.addSource("switches", {
-          type: "geojson",
-          data: switchesData as any,
-        });
+      // Add switch markers - use Y symbol in cyan
+      map.current.addLayer({
+        id: "switches",
+        type: "symbol",
+        source: "switches",
+        layout: {
+          visibility: showSwitches ? "visible" : "none",
+          "text-field": "Y",
+          "text-size": 14,
+          "text-font": ["Open Sans Bold"],
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+        },
+        paint: {
+          "text-color": "#00d4ff",
+          "text-halo-color": "#000000",
+          "text-halo-width": 2,
+        },
+      });
 
-        // Add switch markers - use Y symbol in cyan
-        map.current.addLayer({
-          id: "switches",
-          type: "symbol",
-          source: "switches",
-          layout: {
-            visibility: showSwitches ? "visible" : "none",
-            "text-field": "Y",
-            "text-size": 14,
-            "text-font": ["Open Sans Bold"],
-            "text-allow-overlap": true,
-            "text-ignore-placement": true,
-          },
-          paint: {
-            "text-color": "#00d4ff",
-            "text-halo-color": "#000000",
-            "text-halo-width": 2,
-          },
-        });
+      // Switch hover popup
+      map.current.on("mouseenter", "switches", () => {
+        if (map.current) map.current.getCanvas().style.cursor = "pointer";
+      });
 
-        // Switch hover popup
-        map.current.on("mouseenter", "switches", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "pointer";
-        });
+      map.current.on("mouseleave", "switches", () => {
+        if (map.current) map.current.getCanvas().style.cursor = "";
+        if (!crossingPopupPinned.current) popup.current?.remove();
+      });
 
-        map.current.on("mouseleave", "switches", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "";
-          if (!crossingPopupPinned.current) popup.current?.remove();
-        });
+      map.current.on("mousemove", "switches", (e) => {
+        if (!e.features?.length || !map.current) return;
 
-        map.current.on("mousemove", "switches", (e) => {
-          if (!e.features?.length || !map.current) return;
+        const feature = e.features[0];
+        const coords =
+          feature.geometry.type === "Point"
+            ? (feature.geometry as GeoJSON.Point).coordinates
+            : null;
+        const lon = coords ? coords[0].toFixed(6) : "N/A";
+        const lat = coords ? coords[1].toFixed(6) : "N/A";
 
-          const feature = e.features[0];
-          const coords =
-            feature.geometry.type === "Point"
-              ? (feature.geometry as GeoJSON.Point).coordinates
-              : null;
-          const lon = coords ? coords[0].toFixed(6) : "N/A";
-          const lat = coords ? coords[1].toFixed(6) : "N/A";
-
-          popup.current
-            ?.setLngLat(e.lngLat)
-            .setHTML(
-              `<div class="popup-content">
+        popup.current
+          ?.setLngLat(e.lngLat)
+          .setHTML(
+            `<div class="popup-content">
                 <div class="popup-title">⚡ Track Switch</div>
                 <div class="popup-coords">${lat}, ${lon}</div>
               </div>`,
-            )
-            .addTo(map.current);
-        });
-      }
+          )
+          .addTo(map.current);
+      });
     };
 
+    // Only wait for style on first setup
     if (map.current.isStyleLoaded()) {
       addSwitchesLayer();
     } else {
