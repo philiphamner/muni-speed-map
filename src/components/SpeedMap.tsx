@@ -1955,7 +1955,7 @@ export function SpeedMap({
       // If no lines selected, show no routes; otherwise filter to selected
       // Skip filtering for cities with OSM-sourced route data that don't have line-specific routes
       // These cities have route_id: "default" for all routes, so line filters won't work
-      const osmSourcedCities = ["Dallas", "Denver"];
+      const osmSourcedCities = ["Dallas"];
       const skipRouteFiltering = osmSourcedCities.includes(city);
 
       const filteredRoutes = {

@@ -344,17 +344,20 @@ export const MINNEAPOLIS_METRO_LINE_INFO: Record<
 // Lines present in OSM data: A, B, D, E, G, H, L, N, R, W
 // C and F are not explicitly tagged in OSM (they share tracks with other lines)
 export const DENVER_RTD_LINES = [
+  // A,B,G,N are commuter rail
   // "A",
   // "B",
+  // "G",
+  // "N",
+  // The rest are light rail
   "D",
   "E",
-  // "G",
   "H",
   "L",
-  // "N",
   "R",
   "W",
-  "S",
+  // S is unknown, perhaps a specialty line?  Not in our current GTFS.
+  // "S",
 ] as const;
 export type DenverRtdLine = (typeof DENVER_RTD_LINES)[number];
 

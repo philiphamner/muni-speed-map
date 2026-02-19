@@ -1,170 +1,201 @@
-// Parse Denver RTD GTFS data and extract Light Rail and Commuter Rail lines as GeoJSON
-import { readFileSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+// Parse Denver RTD GTFS data and extract Light Rail lines as GeoJSON
+import { readFileSync, writeFileSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const gtfsDir = join(__dirname, '..', 'gtfs_denver');
-const outputDir = join(__dirname, '..', 'src', 'data');
+const gtfsDir = join(
+  process.env.HOME,
+  "Downloads",
+  "RTD_Denver_Direct_Operated_Light_Rail_GTFS",
+);
+const outputDir = join(__dirname, "..", "src", "data");
 
-// RTD Rail lines - route_type 0 = light rail, 2 = commuter rail
-// We'll match by route_short_name (the letter)
-const RAIL_LETTERS = ['A', 'B', 'D', 'E', 'G', 'H', 'L', 'N', 'R', 'S', 'W'];
+// Denver RTD Light Rail lines (route_id from GTFS)
+// Based on the routes.txt file we saw
+const LIGHT_RAIL_ROUTES = ["101D", "101E", "101H", "103W", "107R", "109L"];
 
-// Official RTD line colors (matching types.ts)
-const LINE_COLORS = {
-  A: '#57C5B6',  // Teal (commuter rail to airport)
-  B: '#0072CE',  // Blue (commuter rail)
-  D: '#008752',  // Green
-  E: '#6F2C91',  // Purple
-  G: '#F9A01B',  // Gold (commuter rail)
-  H: '#6F2C91',  // Purple (same as E)
-  L: '#0072CE',  // Blue (same as B)
-  N: '#57C5B6',  // Teal (same as A)
-  R: '#CE0037',  // Red
-  S: '#CE0E2D',  // Red (similar to R)
-  W: '#008752',  // Green (same as D)
-};
-
-const LINE_NAMES = {
-  A: 'A Line (Airport)',
-  B: 'B Line (Westminster)',
-  D: 'D Line',
-  E: 'E Line',
-  G: 'G Line (Arvada)',
-  H: 'H Line',
-  L: 'L Line',
-  N: 'N Line (Northglenn)',
-  R: 'R Line',
-  S: 'S Line',  // New line, not in types.ts yet
-  W: 'W Line (Lakewood)',
+// Extract single letter from route_short_name for route_id
+// 101D -> D, 101E -> E, etc.
+const ROUTE_LETTER_MAP = {
+  "101D": "D",
+  "101E": "E",
+  "101H": "H",
+  "103W": "W",
+  "107R": "R",
+  "109L": "L",
 };
 
 function parseCSV(filename) {
-  const content = readFileSync(join(gtfsDir, filename), 'utf-8').replace(/\r/g, '');
-  const lines = content.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim().replace(/^\uFEFF/, '')); // Remove BOM if present
-  
-  return lines.slice(1).map(line => {
+  const content = readFileSync(join(gtfsDir, filename), "utf-8");
+  const lines = content.trim().split("\n");
+  const headers = lines[0].split(",").map((h) =>
+    h
+      .trim()
+      .replace(/^\uFEFF/, "")
+      .replace(/^"|"$/g, ""),
+  ); // Remove BOM and quotes
+
+  return lines.slice(1).map((line) => {
     const values = [];
-    let current = '';
+    let current = "";
     let inQuotes = false;
-    
+
     for (const char of line) {
       if (char === '"') {
         inQuotes = !inQuotes;
-      } else if (char === ',' && !inQuotes) {
+      } else if (char === "," && !inQuotes) {
         values.push(current);
-        current = '';
+        current = "";
       } else {
         current += char;
       }
     }
     values.push(current);
-    
+
     const obj = {};
-    headers.forEach((header, i) => {
-      obj[header] = values[i] || '';
+    headers.forEach((h, i) => {
+      obj[h] = values[i]?.trim().replace(/^"|"$/g, "") || "";
     });
     return obj;
   });
 }
 
-console.log('Parsing Denver RTD GTFS data...');
+function main() {
+  console.log("Parsing Denver RTD GTFS data...");
+  console.log(`GTFS directory: ${gtfsDir}`);
 
-// Parse routes
-const routes = parseCSV('routes.txt');
-console.log('Sample route:', routes[0]);
+  // Parse routes
+  const routes = parseCSV("routes.txt");
+  console.log(`Total routes: ${routes.length}`);
+  const lightRailRoutes = routes.filter((r) =>
+    LIGHT_RAIL_ROUTES.includes(r.route_id),
+  );
+  console.log(
+    `Found ${lightRailRoutes.length} Light Rail routes:`,
+    lightRailRoutes.map((r) => `${r.route_id} (${r.route_short_name})`),
+  );
 
-// Find rail routes (route_type 0 or 2 with single letter short names)
-const railRoutes = routes.filter(r => {
-  const routeType = parseInt(r.route_type);
-  const shortName = r.route_short_name?.trim();
-  return (routeType === 0 || routeType === 2) && RAIL_LETTERS.includes(shortName);
-});
-console.log(`Found ${railRoutes.length} rail routes:`, railRoutes.map(r => r.route_short_name));
+  // Parse trips to get shape_ids for each route
+  const trips = parseCSV("trips.txt");
+  console.log(`Total trips: ${trips.length}`);
+  const lightRailTrips = trips.filter((t) =>
+    LIGHT_RAIL_ROUTES.includes(t.route_id),
+  );
+  console.log(`Light Rail trips: ${lightRailTrips.length}`);
 
-// Build route_id -> letter map
-const routeIdToLetter = new Map();
-railRoutes.forEach(r => {
-  routeIdToLetter.set(r.route_id, r.route_short_name);
-});
-
-// Parse shapes
-const shapes = parseCSV('shapes.txt');
-const shapeMap = new Map();
-shapes.forEach(s => {
-  const shapeId = s.shape_id;
-  if (!shapeMap.has(shapeId)) {
-    shapeMap.set(shapeId, []);
-  }
-  shapeMap.get(shapeId).push({
-    lat: parseFloat(s.shape_pt_lat),
-    lon: parseFloat(s.shape_pt_lon),
-    seq: parseInt(s.shape_pt_sequence)
+  // Count trips per shape_id for each route/direction
+  const shapeCounts = {};
+  lightRailTrips.forEach((trip) => {
+    const key = `${trip.route_id}_${trip.direction_id}`;
+    if (!shapeCounts[key]) {
+      shapeCounts[key] = {
+        route_id: trip.route_id,
+        direction_id: trip.direction_id,
+        shapes: {},
+      };
+    }
+    const shapeId = trip.shape_id;
+    if (!shapeCounts[key].shapes[shapeId]) {
+      shapeCounts[key].shapes[shapeId] = {
+        count: 0,
+        headsign: trip.trip_headsign || "",
+      };
+    }
+    shapeCounts[key].shapes[shapeId].count++;
   });
-});
 
-// Sort each shape's points by sequence
-shapeMap.forEach((points, shapeId) => {
-  points.sort((a, b) => a.seq - b.seq);
-});
+  // Pick the most common shape for each route/direction
+  const selectedShapes = {};
+  Object.entries(shapeCounts).forEach(([key, data]) => {
+    const shapes = Object.entries(data.shapes);
 
-console.log(`Parsed ${shapeMap.size} shapes`);
+    // Sort by count (descending) and pick the most common
+    shapes.sort((a, b) => b[1].count - a[1].count);
 
-// Parse trips to get shape_id -> route_id mapping
-const trips = parseCSV('trips.txt');
-const shapeToRoute = new Map();
-trips.forEach(t => {
-  if (routeIdToLetter.has(t.route_id)) {
-    shapeToRoute.set(t.shape_id, t.route_id);
-  }
-});
+    const [shapeId, info] = shapes[0];
+    selectedShapes[shapeId] = {
+      route_id: data.route_id,
+      direction_id: data.direction_id,
+      headsign: info.headsign,
+      trip_count: info.count,
+    };
 
-console.log(`Found ${shapeToRoute.size} rail shapes`);
+    console.log(
+      `${data.route_id} dir ${data.direction_id}: picked shape ${shapeId} (${info.headsign || "no headsign"}, ${info.count} trips)`,
+    );
+  });
 
-// Build GeoJSON features
-const features = [];
-const seenShapes = new Set();
+  console.log(`\nSelected ${Object.keys(selectedShapes).length} shapes`);
 
-shapeToRoute.forEach((routeId, shapeId) => {
-  if (seenShapes.has(shapeId)) return;
-  seenShapes.add(shapeId);
-  
-  const points = shapeMap.get(shapeId);
-  if (!points || points.length === 0) return;
-  
-  const letter = routeIdToLetter.get(routeId);
-  
-  features.push({
-    type: 'Feature',
-    properties: {
-      shape_id: shapeId,
-      route_id: letter,
-      route_name: LINE_NAMES[letter] || `${letter} Line`,
-      route_color: LINE_COLORS[letter] || '#009CDE',
-    },
-    geometry: {
-      type: 'LineString',
-      coordinates: points.map(p => [p.lon, p.lat])
+  // Parse shapes
+  const shapes = parseCSV("shapes.txt");
+  console.log(`Total shape points: ${shapes.length}`);
+
+  // Group shape points by shape_id and filter for our routes
+  const shapePoints = {};
+  shapes.forEach((pt) => {
+    if (selectedShapes[pt.shape_id]) {
+      if (!shapePoints[pt.shape_id]) {
+        shapePoints[pt.shape_id] = [];
+      }
+      shapePoints[pt.shape_id].push({
+        lon: parseFloat(pt.shape_pt_lon),
+        lat: parseFloat(pt.shape_pt_lat),
+        seq: parseInt(pt.shape_pt_sequence),
+        dist: parseFloat(pt.shape_dist_traveled) || 0,
+      });
     }
   });
-});
 
-console.log(`Generated ${features.length} features`);
+  // Sort by sequence
+  Object.values(shapePoints).forEach((pts) => {
+    pts.sort((a, b) => a.seq - b.seq);
+  });
 
-// Write output
-const geojson = {
-  type: 'FeatureCollection',
-  generated: new Date().toISOString(),
-  source: 'RTD Denver GTFS',
-  features
-};
+  // Create GeoJSON features
+  const features = Object.entries(shapePoints).map(([shapeId, points]) => {
+    const info = selectedShapes[shapeId];
+    const route = lightRailRoutes.find((r) => r.route_id === info.route_id);
+    const routeLetter = ROUTE_LETTER_MAP[info.route_id] || info.route_id;
 
-writeFileSync(
-  join(outputDir, 'denverRtdRoutes.json'),
-  JSON.stringify(geojson, null, 2)
-);
+    return {
+      type: "Feature",
+      properties: {
+        shape_id: shapeId,
+        route_id: routeLetter, // Use single letter (D, E, H, etc.)
+        route_name: route?.route_long_name || info.route_id,
+        route_color: `#${route?.route_color || "666666"}`,
+        route_letter: routeLetter,
+        direction_id: info.direction_id,
+        direction: info.direction_id === "0" ? "outbound" : "inbound",
+        headsign: info.headsign,
+      },
+      geometry: {
+        type: "LineString",
+        coordinates: points.map((p) => [p.lon, p.lat]),
+      },
+    };
+  });
 
-console.log('Wrote denverRtdRoutes.json');
+  const geojson = {
+    type: "FeatureCollection",
+    features,
+  };
 
+  // Write output
+  const outputPath = join(outputDir, "denverRtdRoutes.json");
+  writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
+  console.log(`\nWrote ${features.length} features to ${outputPath}`);
+
+  // Summary
+  console.log("\nRoute summary:");
+  features.forEach((f) => {
+    const p = f.properties;
+    console.log(
+      `  ${p.route_id} ${p.direction}: ${p.route_name} (${p.headsign || "no headsign"})`,
+    );
+  });
+}
+
+main();
