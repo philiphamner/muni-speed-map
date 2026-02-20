@@ -2992,11 +2992,8 @@ export function SpeedMap({
       (crossing: any) => {
         const nearRoutes: string[] = crossing.properties.routes;
         // If has routes property, check if any of those routes are selected
-        if (nearRoutes) {
-          // "default" means crossing applies to all lines (e.g., Denver)
-          if (nearRoutes.includes("default") && selectedLines.length > 0) {
-            return true;
-          }
+        // Skip "default" routes - fall through to proximity-based filtering
+        if (nearRoutes && !nearRoutes.includes("default")) {
           return nearRoutes.some((route: string) =>
             selectedLines.includes(route),
           );
