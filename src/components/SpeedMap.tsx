@@ -2098,12 +2098,6 @@ export function SpeedMap({
         `Rail context for ${city}: heavy=${effectiveRailContext.heavy?.features?.length || 0}, commuter=${effectiveRailContext.commuter?.features?.length || 0}`,
       );
 
-      const firstDataLayer = map.current.getLayer("vehicles-glow")
-        ? "vehicles-glow"
-        : map.current.getLayer("stops")
-          ? "stops"
-          : undefined;
-
       map.current.addLayer(
         {
           id: "rail-context-heavy",
@@ -2120,7 +2114,6 @@ export function SpeedMap({
             "line-opacity": 0.9,
           },
         },
-        firstDataLayer,
       );
 
       map.current.addLayer(
@@ -2139,7 +2132,6 @@ export function SpeedMap({
             "line-opacity": 0.95,
           },
         },
-        firstDataLayer,
       );
 
       for (const layerId of ["rail-context-heavy", "rail-context-commuter"]) {
@@ -2170,7 +2162,6 @@ export function SpeedMap({
             "line-opacity": 0.6,
           },
         },
-        firstDataLayer,
       );
 
       map.current.addLayer(
@@ -2193,7 +2184,6 @@ export function SpeedMap({
             "line-opacity": 0.9,
           },
         },
-        firstDataLayer,
       );
 
       // Under-construction route layers (dashed lines to indicate not yet operational)
@@ -2214,7 +2204,6 @@ export function SpeedMap({
             "line-dasharray": [2, 2], // Dashed pattern for construction
           },
         },
-        firstDataLayer,
       );
 
       map.current.addLayer(
@@ -2237,7 +2226,6 @@ export function SpeedMap({
             "line-dasharray": [2, 2], // Dashed pattern for construction
           },
         },
-        firstDataLayer,
       );
 
       // Tunnel route layers (reduced opacity like OpenRailwayMap - faded appearance)
@@ -2257,7 +2245,6 @@ export function SpeedMap({
             "line-opacity": 0.3, // Reduced opacity for faded tunnel look
           },
         },
-        firstDataLayer,
       );
 
       map.current.addLayer(
@@ -2279,7 +2266,6 @@ export function SpeedMap({
             "line-opacity": 0.45, // Reduced opacity - faded tunnel appearance like OpenRailwayMap
           },
         },
-        firstDataLayer,
       );
 
       // Speed limit layers (colored by maxspeed)
@@ -2305,7 +2291,6 @@ export function SpeedMap({
               "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
             },
           },
-          firstDataLayer,
         );
 
         map.current.addLayer(
@@ -2324,7 +2309,6 @@ export function SpeedMap({
               "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
             },
           },
-          firstDataLayer,
         );
 
         // Speed limit labels (visible at high zoom)
@@ -2479,7 +2463,6 @@ export function SpeedMap({
               "line-opacity": 1.0,
             },
           },
-          firstDataLayer,
         );
 
         map.current.addLayer(
@@ -2498,7 +2481,6 @@ export function SpeedMap({
               "line-opacity": 1.0,
             },
           },
-          firstDataLayer,
         );
 
         // Separation hover
@@ -2590,6 +2572,23 @@ export function SpeedMap({
           )
           .addTo(map.current);
       });
+
+      // Ensure symbol layers (stops, traffic-lights, crossings, switches, vehicles)
+      // stay above route layers by moving them to the top after route layers are added
+      const symbolLayers = [
+        "stops",
+        "stops-label",
+        "traffic-lights",
+        "crossings",
+        "switches",
+        "vehicles-glow",
+        "vehicles",
+      ];
+      for (const layerId of symbolLayers) {
+        if (map.current.getLayer(layerId)) {
+          map.current.moveLayer(layerId);
+        }
+      }
     };
 
     // If style is already loaded, add layers immediately
@@ -2954,6 +2953,7 @@ export function SpeedMap({
 
           e.originalEvent.stopPropagation();
         });
+
       }
     };
 
@@ -3742,6 +3742,7 @@ export function SpeedMap({
       "speed-segments",
       "vehicles-glow",
       "vehicles",
+      "traffic-lights",
       "crossings",
       "switches",
       "stops",

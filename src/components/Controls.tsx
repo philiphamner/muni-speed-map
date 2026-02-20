@@ -1402,6 +1402,7 @@ export function Controls({
               setShowRouteLines(true);
               setShowStops(false);
               setShowCrossings(false);
+              setShowTrafficLights(false);
               setShowSwitches(false);
               setShowRailContextHeavy(false);
               setShowRailContextCommuter(false);

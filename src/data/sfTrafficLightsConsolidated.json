@@ -1282,7 +1282,7 @@
         "id": "cluster-105",
         "type": "traffic_signal",
         "count": 2,
-        "routes": ["T", "F"],
+        "routes": ["F"],
         "snapped": true,
         "crossing_id": "4700256952,4700256953,6250503336,6250503337"
       },
