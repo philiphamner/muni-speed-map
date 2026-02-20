@@ -1502,6 +1502,58 @@ export function SpeedMap({
       });
       if (!features.length) return;
 
+      // Agency abbreviation map
+      const agencyAbbrev: Record<string, string> = {
+        "Bay Area Rapid Transit": "BART",
+        "Regional Transportation District": "RTD",
+        "Massachusetts Bay Transportation Authority": "MBTA",
+        "Cape Cod Regional Transit Authority": "CCRTA",
+        "Southeastern Pennsylvania Transportation Authority": "SEPTA",
+        "New Jersey Transit Corporation": "NJ Transit",
+        "New Jersey Transit": "NJ Transit",
+        "Metropolitan Transportation Authority": "MTA",
+        "Los Angeles County Metropolitan Transportation Authority": "LA Metro",
+        "Southern California Regional Rail Authority": "Metrolink",
+        "Sound Transit": "Sound Transit",
+        "TriMet": "TriMet",
+        "Utah Transit Authority": "UTA",
+        "Denver Regional Transportation District": "RTD",
+        "Capitol Corridor Joint Powers Authority": "Capitol Corridor",
+        "Altamont Corridor Express": "ACE",
+        "Sonoma Marin Area Rail Transit": "SMART",
+        "Caltrain": "Caltrain",
+        "Port Authority Trans-Hudson Corporation": "PATH",
+        "Maryland Transit Administration": "MTA Maryland",
+        "Greater Cleveland Regional Transit Authority": "RTA",
+        "Metro Transit": "Metro Transit",
+        "Valley Metro": "Valley Metro",
+        "Charlotte Area Transit System": "CATS",
+        "San Diego Metropolitan Transit System": "MTS",
+        "Toronto Transit Commission": "TTC",
+        "GO Transit": "GO Transit",
+        "Calgary Transit": "Calgary Transit",
+      };
+
+      const getAbbrev = (agency: string) => agencyAbbrev[agency] || agency;
+
+      // Clean up service name: prefer short name, strip direction suffixes
+      const cleanServiceName = (shortName: string, longName: string, routeId: string) => {
+        // For BART-style names with direction suffixes, just use the color
+        let name = shortName || longName || routeId;
+        // Strip -N, -S, -E, -W suffixes
+        name = name.replace(/[-\s]?[NSEW]$/, "");
+        // If we have a long name that's more descriptive (like "Fairmount Line"), prefer it
+        if (!shortName && longName) {
+          name = longName;
+        } else if (shortName && longName && !longName.includes(" to ")) {
+          // If long name doesn't have "X to Y" format, it might be better (e.g., "Fairmount Line")
+          name = longName;
+        } else if (shortName) {
+          name = shortName.replace(/[-\s]?[NSEW]$/, "");
+        }
+        return name;
+      };
+
       const dedupe = new Set<string>();
       const heavy: Array<{ service: string; agency: string }> = [];
       const commuter: Array<{ service: string; agency: string }> = [];
@@ -1522,29 +1574,40 @@ export function SpeedMap({
           .trim()
           .toLowerCase();
 
-        const serviceName =
-          shortName && longName
-            ? `${shortName} ${longName}`
-            : shortName || longName || routeId;
-        const key = `${serviceClass}|${serviceName}|${agencyName}`;
+        const serviceName = cleanServiceName(shortName, longName, routeId);
+        const abbrevAgency = getAbbrev(agencyName);
+        const key = `${serviceClass}|${serviceName}|${abbrevAgency}`;
         if (dedupe.has(key)) continue;
         dedupe.add(key);
 
         if (serviceClass === "heavy") {
-          heavy.push({ service: serviceName, agency: agencyName });
+          heavy.push({ service: serviceName, agency: abbrevAgency });
         } else {
-          commuter.push({ service: serviceName, agency: agencyName });
+          commuter.push({ service: serviceName, agency: abbrevAgency });
         }
       }
 
-      const groupHtml = (items: Array<{ service: string; agency: string }>) =>
-        items
-          .sort((a, b) => a.service.localeCompare(b.service))
-          .map(
-            (item) =>
-              `<div class="popup-detail">${escapeHtml(item.service)} <span style="color:#9ca3af">(${escapeHtml(item.agency)})</span></div>`,
-          )
-          .join("");
+      // Group items by agency for cleaner display
+      const groupByAgency = (items: Array<{ service: string; agency: string }>) => {
+        const grouped: Record<string, string[]> = {};
+        for (const item of items) {
+          if (!grouped[item.agency]) grouped[item.agency] = [];
+          grouped[item.agency].push(item.service);
+        }
+        return grouped;
+      };
+
+      const renderGroupedHtml = (items: Array<{ service: string; agency: string }>) => {
+        const grouped = groupByAgency(items);
+        const agencies = Object.keys(grouped).sort();
+        
+        return `<div style="text-align:left;padding-left:8px">` + agencies.map(agency => {
+          const lines = grouped[agency].sort();
+          // Always show agency header with bulleted lines underneath
+          const lineList = lines.map(l => `<div style="padding-left:12px;color:#e5e7eb">• ${escapeHtml(l)}</div>`).join("");
+          return `<div style="margin:6px 0"><span style="color:#9ca3af;font-weight:500">${escapeHtml(agency)}:</span>${lineList}</div>`;
+        }).join("") + `</div>`;
+      };
 
       popup.current
         ?.setLngLat(e.lngLat)
@@ -1552,12 +1615,12 @@ export function SpeedMap({
           `<div class="popup-content">
             ${
               heavy.length
-                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db"> Metro / Subway </div>${groupHtml(heavy)}`
+                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db">Metro / Subway</div>${renderGroupedHtml(heavy)}`
                 : ""
             }
             ${
               commuter.length
-                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db">Regional / Commuter rail</div>${groupHtml(commuter)}`
+                ? `<div class="popup-title" style="margin-top:4px;color:#d1d5db">Regional / Commuter rail</div>${renderGroupedHtml(commuter)}`
                 : ""
             }
           </div>`,
