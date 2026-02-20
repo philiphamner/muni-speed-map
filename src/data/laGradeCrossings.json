@@ -4,5167 +4,4777 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-0.12",
+        "id": "17680180,1866577817",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "LA UNION STATION BAGGAGE SOUTH",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 0.12,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.23517, 34.05424]
+        "coordinates": [
+          -118.26830675,
+          34.032700750000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-0.62",
+        "id": "67619050,1778692901",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "12TH ST & FLOWER ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.62,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.26547, 34.04154]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-0.73-D",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "DWY N/O PICO BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.73,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.266561, 34.040302]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-0.75",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PICO BL @ FLOWER ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.75,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.2669, 34.039983]
+        "coordinates": [
+          -118.2574111,
+          34.0276966
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-0.99",
+        "id": "72092213,1778692816",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "VENICE BL & FLOWER ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.99,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.268734, 34.03696]
+        "coordinates": [
+          -118.265691,
+          34.031528249999994
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.10",
+        "id": "72092242,1778692897",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "I-10 ON-RAMP",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.1,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.269717, 34.035466]
+        "coordinates": [
+          -118.25050585,
+          34.02449625
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.12",
+        "id": "111964609,1996011920",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "18TH ST @ FLOWER ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.12,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.269815, 34.035287]
+        "coordinates": [
+          -118.1936517,
+          34.1106741
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.23",
+        "id": "111964671,1996011941",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WASHINGTON BLVD E/O FLOWER",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.23,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.270499, 34.03377]
+        "coordinates": [
+          -118.1916097,
+          34.1116796
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.40",
+        "id": "111964714,1996011962",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GRAND AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.4,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.268341, 34.032704]
+        "coordinates": [
+          -118.1904916,
+          34.1120618
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.44",
+        "id": "111964741,702233126,1996011959,1996011961",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "OLIVE ST & WASHINGTON",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.44,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.267556, 34.032363]
+        "coordinates": [
+          -118.1880471,
+          34.112010874999996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.49",
+        "id": "111964818,1996011968",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "HILL ST & WASHINGTON BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.49,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.266749, 34.032003]
+        "coordinates": [
+          -118.18871955,
+          34.1121434
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.56",
+        "id": "111964866,1996011904",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BROADWAY",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.56,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.265725, 34.031538]
+        "coordinates": [
+          -118.19632285,
+          34.109359749999996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.63",
+        "id": "111964948,1996011898",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MAIN ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.63,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.264646, 34.031043]
+        "coordinates": [
+          -118.1989837,
+          34.108050750000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.70",
+        "id": "122610452,3534415812,7314579131,7314579132",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "LOS ANGELES ST & WASHINGTON BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.7,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.263557, 34.030546]
+        "coordinates": [
+          -118.4771504,
+          34.024646225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.83",
+        "id": "122683780,6104258264,6432786353",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MAPLE AVE & WASHINGTON ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.83,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.261413, 34.029559]
+        "coordinates": [
+          -118.37871166666667,
+          33.95265963333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-01.98",
+        "id": "122699767,2193446251",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "TRINITY ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.98,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.259184, 34.028517]
+        "coordinates": [
+          -118.3296024,
+          34.021452800000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-02.08",
+        "id": "122739571,3176155750,3364316783",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "SAN PEDRO ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 2.08,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.257426, 34.027698]
+        "coordinates": [
+          -117.90493963333334,
+          34.13627916666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-02.34",
+        "id": "122823776,4688562582",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GRIFFITH AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 2.34,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.253538, 34.0259]
+        "coordinates": [
+          -117.76392265,
+          34.09585185
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-02.46",
+        "id": "122950944,5874651539,13121463749,13121463750",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVE 33",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 2.46,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.216733, 34.08383]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-02.54",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "CENTRAL AVE & WASHINGTON BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 2.54,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.250506, 34.024481]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-02.71",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "NAOMI ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 2.71,
-        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.248007, 34.023086]
+        "coordinates": [
+          -118.373582125,
+          33.96237035
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-02.83",
+        "id": "123056067,10542094920,10542094921,11199277041,11199277042,11199277043",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "FRENCH AVENUE",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 2.83,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.212585, 34.087844]
+        "coordinates": [
+          -117.80277033333334,
+          34.10444828333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-02.85",
+        "id": "123133488,273495056,1779331158",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "HOOPER AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 2.85,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.246021, 34.021967]
+        "coordinates": [
+          -118.22863919999999,
+          33.91086083333334
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-03.04",
+        "id": "123133493,273495055,1779331120",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WASHINGTON-LG BEACH",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 3.04,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.243207, 34.020591]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-03.18",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "20TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.18,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.243092, 34.018769]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-03.40",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "24TH ST AT LONG BEACH AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.4,
-        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243128, 34.01521]
+        "coordinates": [
+          -118.23048863333334,
+          33.91439213333334
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-03.50",
+        "id": "123133496,273495054,1779331174,4059571928,4059571929,4059571930",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 45",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.5,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.208682, 34.09668]
+        "coordinates": [
+          -118.23144194999999,
+          33.91621933333334
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-03.90 , 001BBH-486.13",
+        "id": "123296751,5874651726",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "41ST ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.9,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243142, 34.008083]
+        "coordinates": [
+          -118.35728695,
+          33.9656258
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-04.20 , 001BBH-486.42",
+        "id": "123296753,5874651735,12391427669,12391427670",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "VERNON AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.2,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243213, 34.00393]
+        "coordinates": [
+          -118.3594189,
+          33.966118975
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.26",
+        "id": "123296760,5874651752,12391415665,12391415666",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 50 & MARMION WAY",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.26,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.202889, 34.105971]
+        "coordinates": [
+          -118.366348925,
+          33.965243225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.35",
+        "id": "123296887,2757587140,3364322200",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 51",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.35,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.201609, 34.106723]
+        "coordinates": [
+          -117.90879626666667,
+          34.13514266666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.44",
+        "id": "123296977,3335203248,7050937056,7050937059",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 52",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.44,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.2003, 34.1074]
+        "coordinates": [
+          -118.0008318,
+          34.132549600000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-04.50 , 001BBH-486.73",
+        "id": "123296985,3335203268",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "48TH PL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243298, 33.999364]
+        "coordinates": [
+          -118.00509285000001,
+          34.13359625
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.53",
+        "id": "123296990,3335203272,7035234054,7035234055",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 53",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.53,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.198949, 34.108043]
+        "coordinates": [
+          -118.009518375,
+          34.13480617500001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.61",
+        "id": "123297245,2280273165,8795622946,8795622947",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 54",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.61,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.197623, 34.108695]
+        "coordinates": [
+          -118.36899170000001,
+          33.894625500000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.70",
+        "id": "123298016,9582062324,10542141539,11189811181,11189811182,11189811183",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 55",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.7,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.196288, 34.109353]
+        "coordinates": [
+          -117.75615023333334,
+          34.09427564999999
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.78",
+        "id": "123298017,5947148135,13139681956,13139681957",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 56",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.78,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.194973, 34.109992]
+        "coordinates": [
+          -117.74859225,
+          34.0941064
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-04.88",
+        "id": "123337116,1779331159,2190640928,2190640948,2190640952,2190640953",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 57",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.88,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.193622, 34.110663]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-05.00 , 001BBH-2.22",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "55TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.243382, 33.992984]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-05.02",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 59",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.02,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.191626, 34.111645]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-05.08",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 60",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.08,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.190478, 34.112018]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-05.19",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AVENUE 61",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.19,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.188697, 34.112115]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-05.22",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "FIGUEROA ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.22,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.188032, 34.111973]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-05.70 , 001BBH-003.01",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GAGE AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.7,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.24336, 33.98201]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-05.98",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "ARROYO VERDE/SYCAMORE",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.98,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.175431, 34.110706]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-06.20 , 001BBH-003.51",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "FLORENCE AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 6.2,
-        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243336, 33.974713]
+        "coordinates": [
+          -118.23907461666668,
+          33.930811733333336
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-06.30",
+        "id": "123386743,2193446228",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PASADENA AVE",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 6.3,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.170192, 34.111988]
+        "coordinates": [
+          -118.34047720000001,
+          34.0233374
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-06.59",
+        "id": "123386746,2193446249",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "INDIANA AVE",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 6.59,
+        "routes": [
+          "804",
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.165035, 34.112342]
+        "coordinates": [
+          -118.3351081,
+          34.022541450000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-06.70 , 001BBH-004.02",
+        "id": "123391334,2218213936,11189811177,11189811178",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "NADEAU ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 6.7,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243296, 33.967417]
+        "coordinates": [
+          -117.756145125,
+          34.09386645
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-06.81",
+        "id": "123421920,3534415808",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "ORANGE GROVE AVE",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 6.81,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.161247, 34.112653]
+        "coordinates": [
+          -118.47603585,
+          34.02526735
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-07.03",
+        "id": "123462578,3176155733,3364316792",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "EL CENTRO AV/GLENDON WY",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 7.03,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.158485, 34.114745]
+        "coordinates": [
+          -117.90241739999999,
+          34.13662706666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-07.13",
+        "id": "123512087,1995905086",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MISSION / MERIDIAN",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 7.13,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.157146, 34.11576]
+        "coordinates": [
+          -118.2167255,
+          34.08383135
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-07.23",
+        "id": "123578267,2757582954,3364316779",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "HOPE ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 7.23,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.155961, 34.116704]
+        "coordinates": [
+          -117.9075085,
+          34.13554920000001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-07.44",
+        "id": "123656021,279929461,1779331252",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "FREMONT / GREVALIA",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 7.44,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.153147, 34.118828]
+        "coordinates": [
+          -118.23333433333333,
+          33.91984013333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-07.70 , 001BBH-004.91",
+        "id": "123756394,273127101,1433109730,1778657830",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "92ND ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 7.7,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243275, 33.953243]
+        "coordinates": [
+          -118.24333,
+          33.999371525
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-08.09-X",
+        "id": "136598916,1996011907",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PASADENA WATER & POWER DEPT",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.09,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.1482, 34.12678]
+        "coordinates": [
+          -118.1949879,
+          34.11002005
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-08.14",
+        "id": "138387533,1996058737",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GLENARM ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.14,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.148035, 34.127526]
+        "coordinates": [
+          -118.17543219999999,
+          34.11071615
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-08.20 , 001BBH-490.42",
+        "id": "250745131,1866577875",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "CENTURY BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.2,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.243248, 33.945674]
+        "coordinates": [
+          -118.2675548,
+          34.0323616
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-08.40 , 001BBH-490.60",
+        "id": "250745143,1788094339",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "103RD ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.4,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.24324, 33.94321]
+        "coordinates": [
+          -118.2614095,
+          34.02956315
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-08.71",
+        "id": "250874493,1778692858",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "CALIFORNIA BLVD",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.71,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.148131, 34.135714]
+        "coordinates": [
+          -118.2480002,
+          34.02308515
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-08.80 , 001BBH-490.97",
+        "id": "250874495,1778692886",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "108TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 8.8,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.242725, 33.937855]
+        "coordinates": [
+          -118.25352480000001,
+          34.0258934
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-09.04",
+        "id": "269607441,4749829553",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "DEL MAR BLVD",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 9.04,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.14818, 34.14056]
+        "coordinates": [
+          -118.2240644,
+          34.04750885
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-09.30 , 001BBH-491.50",
+        "id": "269607512,4749829541",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WILMINGTON AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 9.3,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.239099, 33.930906]
+        "coordinates": [
+          -118.225247,
+          34.04759225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-09.60-C",
+        "id": "269608898,6217647154",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "Willowbrook Ave East (BLUE/GREEN LINE CON)",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 9.6,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.237331, 33.927925]
+        "coordinates": [
+          -118.19502405,
+          34.0371862
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-09.80 , 001BBH-6.97",
+        "id": "269609194,2081539725",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "119TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 9.8,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.235832, 33.924602]
+        "coordinates": [
+          -118.19196070000001,
+          34.03332595
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-10.10 , 001BBH-7.32",
+        "id": "269609629,6193182388",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "124TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 10.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.233329, 33.919837]
+        "coordinates": [
+          -118.18018169999999,
+          34.0333454
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-10.40 , 001BBH-7.59",
+        "id": "269610575,6047997572",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "EL SEGUNDO BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 10.4,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.231409, 33.916199]
+        "coordinates": [
+          -118.1738714,
+          34.03335375
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-10.50 , 001BBH-7.72",
+        "id": "269610741,4706591225",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "130TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 10.5,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.230481, 33.914391]
+        "coordinates": [
+          -118.1669594,
+          34.03331045
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-10.80 , 001BBH-7.98",
+        "id": "269610985,4706591226",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "STOCKWELL ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 10.8,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.228641, 33.910865]
+        "coordinates": [
+          -118.16916295,
+          34.03329545
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-11.50 , 001BBH-8.71",
+        "id": "269612229,4706591223,12928095835,12928095836",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "ELM ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 11.5,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.224502, 33.900638]
+        "coordinates": [
+          -118.162178675,
+          34.033353950000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-11.90 , 001BBH-9.01",
+        "id": "269612520,2081539736,2199147937,2199147958",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "COMPTON BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 11.9,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.224215, 33.895998]
+        "coordinates": [
+          -118.15567792499999,
+          34.033419325
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-12.10 , 001BBH-9.27",
+        "id": "269988119,2193435027,2193435052,2193435064,4400709273,4400709274",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MYRRH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 12.1,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.223931, 33.89228]
+        "coordinates": [
+          -118.27069666666667,
+          34.033803166666665
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-12.40 , 001BBH-9.53",
+        "id": "270017797",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "ALONDRA BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 12.4,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "name": null,
+        "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.2237, 33.888586]
+        "coordinates": [
+          -118.3848336,
+          33.9081329
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-12.90 , 001BBH-10.04",
+        "id": "270840039,2193439981",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GREENLEAF BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 12.9,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.223194, 33.881157]
+        "coordinates": [
+          -118.2977195,
+          34.01827955
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-13.70 , 001BBH-10.86",
+        "id": "270840204,2193439963",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MANVILLE ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 13.7,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.220315, 33.870416]
+        "coordinates": [
+          -118.30017674999999,
+          34.01828365
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-16.29-X",
+        "id": "271613141,4706591224",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "New Castle Park Private",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "2. Passive",
-        "milepost": 16.29,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.035374, 34.146814]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-16.80",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "1ST AV & SANTA CLARA",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 16.8,
-        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.028408, 34.142276]
+        "coordinates": [
+          -118.16378965,
+          34.0333346
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-17.50",
+        "id": "273124538,1778692853",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WARDLOW RD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 17.5,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.195494, 33.818973]
+        "coordinates": [
+          -118.2459941,
+          34.0219613
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-18.01",
+        "id": "273126385,1778692833,7472425911",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MAYFLOWER AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 18.01,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.009512, 34.134799]
+        "coordinates": [
+          -118.2430585,
+          34.01876143333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-18.10",
+        "id": "273126390,1778692829",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "SPRING ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 18.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.191988, 33.811637]
+        "coordinates": [
+          -118.2431364,
+          34.0152083
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-18.27",
+        "id": "273126904,1433109820,1433110097,1778692847",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MAGNOLIA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 18.27,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.005103, 34.133593]
+        "coordinates": [
+          -118.24317845,
+          34.008101
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-18.50",
+        "id": "273127099,1433109830,1433110064,1866577826",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "27TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 18.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189386, 33.806097]
+        "coordinates": [
+          -118.243238425,
+          34.003917099999995
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-18.53",
+        "id": "273177624,1778697801,1778697811,1866573051",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MYRTLE AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 18.53,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.000823, 34.132532]
+        "coordinates": [
+          -118.243376275,
+          33.9929822
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-18.60",
+        "id": "273181115,273181116,1778641644,1866573082,12925535143,12925535144,12925535145,12925535146",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WILLOW ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 18.6,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189362, 33.80432]
+        "coordinates": [
+          -118.2433739625,
+          33.982032825
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-18.86",
+        "id": "273183677,273183760,1778641527,1779257934,7331525329,7331525330,7331525331,7331525332",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "CALIFORNIA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 18.86,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-117.995043, 34.132384]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084L-18.90",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BURNETT ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 18.9,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.18937, 33.800728]
+        "coordinates": [
+          -118.2433064125,
+          33.967422725
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-19.10",
+        "id": "273492166,273492242,1779331345",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "HILL ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.1,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189381, 33.797121]
+        "coordinates": [
+          -118.23582386666668,
+          33.9246129
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-19.10-CX",
+        "id": "273494014,626311649,1779331201",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "3M Driveway",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 19.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.990887, 34.132832]
+        "coordinates": [
+          -118.22452036666668,
+          33.9006271
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-19.36",
+        "id": "273496873,273496874,1779331132",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "MOUNTAIN AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 19.36,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.986314, 34.132433]
+        "coordinates": [
+          -118.22420890000001,
+          33.895971366666664
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-19.40",
+        "id": "273497210,273499005,1779331083",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "20TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.4,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189378, 33.793488]
+        "coordinates": [
+          -118.22396433333334,
+          33.89226060000001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-19.50",
+        "id": "273499006,279932676,1779331093",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "19TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189381, 33.79168]
+        "coordinates": [
+          -118.22371473333334,
+          33.888592966666664
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-19.60",
+        "id": "277176327",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PACIFIC COAST HWY & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.6,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189373, 33.789857]
+        "coordinates": [
+          -118.2391512,
+          33.9310784
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-19.80",
+        "id": "277176786,277186180,1779331186",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "16TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.8,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189381, 33.787135]
+        "coordinates": [
+          -118.2427313,
+          33.93787286666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-19.86",
+        "id": "277178278,277178279,1778641612,1779331313,6225907035,6225907036,6225907037,6225907038",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BUENA VISTA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 19.86,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.977554, 34.132475]
+        "coordinates": [
+          -118.2432385125,
+          33.943229900000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.00",
+        "id": "277179150,277180083,1778641611,1779258012,7331329840,7331329841,7331329842,7331329843",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "14TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189341, 33.78378]
+        "coordinates": [
+          -118.24328705,
+          33.953274875
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.10",
+        "id": "277328582,277328632,1873081758,4400709286",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "ANAHEIM ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.1,
-        "crossing_barrier": null,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189378, 33.782601]
+        "coordinates": [
+          -118.269769175,
+          34.0353734
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.40",
+        "id": "277328754,1873081755",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "10TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.4,
-        "crossing_barrier": null,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189381, 33.77896]
+        "coordinates": [
+          -118.2687592,
+          34.0369597
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.50",
+        "id": "277328761,1376467709",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "8TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.5,
-        "crossing_barrier": null,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189384, 33.776539]
+        "coordinates": [
+          -118.26678525,
+          34.04001585
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-20.51",
+        "id": "277328772,1376467708",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "HIGHLAND AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 20.51,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.966616, 34.132519]
+        "coordinates": [
+          -118.26539955000001,
+          34.0414977
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.60",
+        "id": "277328922,1866577827",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "7TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.6,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189394, 33.77533]
+        "coordinates": [
+          -118.2635442,
+          34.030547299999995
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.70",
+        "id": "277328931,1778692851",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "6TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.7,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189403, 33.77414]
+        "coordinates": [
+          -118.26676570000001,
+          34.0320064
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.90",
+        "id": "279072052,2464810692,7361960598",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "4TH ST & LONG BEACH BLVD",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "4. Flashers",
-        "milepost": 20.9,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189405, 33.771719]
+        "coordinates": [
+          -118.22616520000001,
+          34.072624233333336
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-20.96",
+        "id": "279072951,1995905155",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "3RD ST & LONG BEACH",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.96,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189405, 33.770499]
+        "coordinates": [
+          -118.2125775,
+          34.08784535
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.00",
+        "id": "279073197,1995914595",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BROADWAY @ LONG BEACH",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.18936, 33.769297]
+        "coordinates": [
+          -118.20867100000001,
+          34.09671045
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.10",
+        "id": "279933153,1779393965,2504038598",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "1ST & LONG BEACH BL",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.1,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189478, 33.768142]
+        "coordinates": [
+          -118.22320353333333,
+          33.88114096666666
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.20",
+        "id": "279933900,279933901,1866528862,2276163301",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "LOCUST AV (PROMENADE)",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 21.2,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.191082, 33.768093]
+        "coordinates": [
+          -118.220315675,
+          33.87041225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.30",
+        "id": "280556181,1996094713,4075599702,4075599704",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PINE AV @ 1ST ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.3,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.192409, 33.768066]
+        "coordinates": [
+          -118.148190625,
+          34.14057725
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.40",
+        "id": "280557174,1996094702,4075599659,4075599660",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "1ST ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.4,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193737, 33.76806]
+        "coordinates": [
+          -118.14812895,
+          34.13580225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.45",
+        "id": "280559699,1996076619",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "DRWY-1ST/BRDWY/PACFC",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 21.45,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193741, 33.768852]
+        "coordinates": [
+          -118.1480493,
+          34.1275316
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.50",
+        "id": "280559738,1996076592",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BROADWAY & PACIFIC",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193724, 33.769248]
+        "coordinates": [
+          -118.14819585000001,
+          34.126785
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.55",
+        "id": "280579500,1996058865",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "3RD ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.55,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193721, 33.770488]
+        "coordinates": [
+          -118.1559326,
+          34.11671355
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.60",
+        "id": "280580210,280580277,1996058852,1996058853",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "4TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.6,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193716, 33.77173]
+        "coordinates": [
+          -118.1571855,
+          34.1157822
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.70",
+        "id": "282300162,1866487103",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "5TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.7,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193726, 33.772931]
+        "coordinates": [
+          -118.19200775,
+          33.8116458
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.80",
+        "id": "307356822,5874651745",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "6TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.8,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193724, 33.774131]
+        "coordinates": [
+          -118.36401649999999,
+          33.96613365
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.90",
+        "id": "321542124,663710891",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "7TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.9,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193734, 33.775348]
+        "coordinates": [
+          -118.1893885,
+          33.7898684
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.96",
+        "id": "321542125,663710896",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "8TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.96,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193634, 33.776402]
+        "coordinates": [
+          -118.18938795,
+          33.7916773
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-21.97-C",
+        "id": "321542126,663710894",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "8TH ST & PACIFIC AV",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 21.97,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.193748, 33.776493]
+        "coordinates": [
+          -118.1893863,
+          33.793493100000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-22.00",
+        "id": "321542129,663710902",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PINE AV & 8TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 22,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.192372, 33.77657]
+        "coordinates": [
+          -118.1893747,
+          33.80075415
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-22.10",
+        "id": "343149857,343150474,343151627,343151664",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "LOCUST ST & 8TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 22.1,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.191074, 33.77657]
+        "coordinates": [
+          -117.966632025,
+          34.132519125
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084L-22.20",
+        "id": "343151573,3335203233,5578308891,5578308892,5578308899,5578308901",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "LONG BEACH & 8TH ST",
-        "lineName": "A Line (Blue)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 22.2,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.189491, 33.77653]
+        "coordinates": [
+          -117.98638733333335,
+          34.13239636666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-23.37, 101PA-117.60",
+        "id": "343151592,3335203241",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "VIRGINIA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 23.37,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-117.917919, 34.132301]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-23.93, 101PA-117.00",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "SAN GABRIEL (SR 39)",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 23.93,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-117.908784, 34.13503]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-24.01, 101PA-116.90",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "AZUSA AV (SR 39)",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 24.01,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-117.907517, 34.135436]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-24.17, 101PA-116.70",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "DALTON AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 24.17,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-117.904911, 34.136145]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "084P-24.32, 101PA-116.60",
-        "type": "level_crossing",
-        "routes": ["801"],
-        "name": "PASADENA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 24.32,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.902387, 34.13662]
+        "coordinates": [
+          -117.97756715,
+          34.1324529
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-25.53, 101PA-115.40",
+        "id": "344373074,1982599062",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "BARRANCA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 25.53,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.881344, 34.138625]
+        "coordinates": [
+          -118.4257299,
+          34.03664905
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-26.48, 101PA-114.40",
+        "id": "366010088,3611006006",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S VERMONT AV AT W ADA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 26.48,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.867153, 34.132389]
+        "coordinates": [
+          -118.23389975,
+          34.048458
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-26.72, 101PA-114.20",
+        "id": "491775320,1996058793",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GLENDORA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 26.72,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.863807, 34.130513]
+        "coordinates": [
+          -118.1612853,
+          34.11265775
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-26.93, 101PA-114.00",
+        "id": "491779514,1996058780",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S PASADENA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 26.93,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.860231, 34.129821]
+        "coordinates": [
+          -118.16505225,
+          34.1123523
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-27.47, 101PA-113.40",
+        "id": "491779517,559197979,1996058757,1996058758,1996058759",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S ELWOOD AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 27.47,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 5,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.850746, 34.129819]
+        "coordinates": [
+          -118.17004385999999,
+          34.11200326
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-27.72, 101PA-113.20",
+        "id": "544348510,2193435055",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S LORAINE AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 27.72,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.846411, 34.129805]
+        "coordinates": [
+          -118.2748334,
+          34.02762075
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-29.54, 101PA-111.40",
+        "id": "559085330",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "GLADSTONE AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 29.54,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "name": null,
+        "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.826314, 34.11393]
+        "coordinates": [
+          -118.1703803,
+          34.1120001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-30.30, 101PA-110.60",
+        "id": "563390490,4749829574",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "EUCLA AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 30.3,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.81586, 34.107707]
+        "coordinates": [
+          -118.2277647,
+          34.0477724
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-30.82, 101PA-110.10",
+        "id": "580308424,1996011901",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S SAN DIMAS AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 30.82,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.807152, 34.105532]
+        "coordinates": [
+          -118.197647,
+          34.108710099999996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-31.08, 101PA-109.80",
+        "id": "581894494,1110075203,3364322194",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S WALNUT AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 31.08,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.802776, 34.104441]
+        "coordinates": [
+          -117.91793546666666,
+          34.13233016666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-31.60, 101PA-109.30",
+        "id": "601390379,2193446222",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "S SAN DIMAS CANYON RD",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 31.6,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.793994, 34.102213]
+        "coordinates": [
+          -118.32479075,
+          34.0203539
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-32.36, 101PA-108.50",
+        "id": "601390380,2193435037",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WHEELER AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 32.36,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.781029, 34.100559]
+        "coordinates": [
+          -118.29013265,
+          34.0182405
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-32.59, 101PA-108.30",
+        "id": "601390381,2193435041",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "A ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 32.59,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.777064, 34.099626]
+        "coordinates": [
+          -118.28903009999999,
+          34.018237799999994
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-32.95, 101PA-108.00",
+        "id": "601390382,2193439975",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "D ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 32.95,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.771153, 34.098057]
+        "coordinates": [
+          -118.30291745,
+          34.0182925
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-33.06, 101PA-107.90",
+        "id": "601390383,2193446236",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "E ST",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 33.06,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.769304, 34.097572]
+        "coordinates": [
+          -118.31780574999999,
+          34.01877815
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-33.39, 101PA-107.50",
+        "id": "601390385,2193439980",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "WHITE AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 33.39,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.763821, 34.096161]
+        "coordinates": [
+          -118.3089121,
+          34.01833635
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-33.85, 101PA-107.10",
+        "id": "601390387,2193439965",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "FULTON RD",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 33.85,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.756159, 34.094304]
+        "coordinates": [
+          -118.3045371,
+          34.018299
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084P-35.49, 101SG-32.40",
+        "id": "602715686,1996011896",
         "type": "level_crossing",
-        "routes": ["801"],
-        "name": "CAMBRIDGE AV",
-        "lineName": "A Line (former Gold)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 35.49,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-117.7276, 34.093964]
+        "coordinates": [
+          -118.2003115,
+          34.10739825
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-0.84",
+        "id": "602715761,1996011893",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "VIGNES ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.84,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.233904, 34.048454]
+        "coordinates": [
+          -118.20164185,
+          34.1067416
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-1.19",
+        "id": "602715798,1996011874",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "MISSION RD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.19,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.22775, 34.04776]
+        "coordinates": [
+          -118.20289894999999,
+          34.1059926
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-1.26",
+        "id": "607813188,8300139577",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "ANDERSON ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.26,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.22674, 34.04768]
+        "coordinates": [
+          -118.1869845,
+          34.03331075
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-1.34",
+        "id": "607813231,2199148520",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "UTAH ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.34,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.22525, 34.04759]
+        "coordinates": [
+          -118.16019835,
+          34.03337755
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-1.41",
+        "id": "613483955,1866577859,4400709251,4400709254",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "CLARENCE ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.41,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.22407, 34.0475]
+        "coordinates": [
+          -118.243259725,
+          34.0206528
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-3.25",
+        "id": "626311652,626489147",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "LORENA ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.25,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.19502, 34.03717]
+        "coordinates": [
+          -118.2249312,
+          33.903312
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-3.42",
+        "id": "629931493,11192647997",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "FIRST ST EB LANES AT INDIANA ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.42,
+        "routes": [
+          "803"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.19241, 34.03592]
+        "coordinates": [
+          -118.2253348,
+          33.9299432
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-3.61",
+        "id": "644265628,2218213962",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "THIRD ST WB LANES AT INDIANA ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.61,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.191957, 34.03332]
+        "coordinates": [
+          -117.75214185,
+          34.093622499999995
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-3.89",
+        "id": "660937723,2193446225",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "ROWAN AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.89,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.187399, 34.033261]
+        "coordinates": [
+          -118.34605965,
+          34.02395475
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-4.04",
+        "id": "701702625",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "GAGE AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.04,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.184633, 34.03333]
+        "coordinates": [
+          -118.2071897,
+          33.8387961
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-4.13",
+        "id": "999042315,3335203224,5585953285,5585953286",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "SR 60 ON-OFF RAMP",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.13,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.182967, 34.033343]
+        "coordinates": [
+          -117.995073875,
+          34.13237355
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-4.29",
+        "id": "1285296058,2438283428",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "DOWNEY RD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.29,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.180126, 34.033341]
+        "coordinates": [
+          -118.39700395,
+          34.0286843
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-4.65",
+        "id": "1378231752,2193435026",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "EASTERN AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.65,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.173888, 34.033356]
+        "coordinates": [
+          -118.27670655,
+          34.02448365
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-4.92",
+        "id": "1378231753,2193435032",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "FORD BLVD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.92,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.169246, 34.033332]
+        "coordinates": [
+          -118.2786515,
+          34.0213069
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.05",
+        "id": "1378231762,2193435072",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "MCDONNELL AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.05,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.166974, 34.033318]
+        "coordinates": [
+          -118.27589800000001,
+          34.0257683
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.23",
+        "id": "1378231765,2193435018",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "ARIZONA AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.23,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.16379, 34.03332]
+        "coordinates": [
+          -118.27574625,
+          34.02597555
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.33",
+        "id": "1378231766,2193435046",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "MEDNIK AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.33,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.16216, 34.03335]
+        "coordinates": [
+          -118.2729516,
+          34.030136850000005
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.44",
+        "id": "1431601104",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "CIVIC CENTER WAY",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.44,
+        "routes": [
+          "802",
+          "805"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.16015, 34.03337]
+        "coordinates": [
+          -118.2315445,
+          34.0459006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.53",
+        "id": "1433109771",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "LA VERNE AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 5.53,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.15866, 34.03339]
+        "coordinates": [
+          -118.2431753,
+          33.9968414
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084E-5.69",
+        "id": "1433109809",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "WOODS AVE/VIA CORONA/BEVERLY BLVD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.69,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.15564, 34.03341]
+        "coordinates": [
+          -118.2429536,
+          34.0140113
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.03",
+        "id": "1433110053",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "WASHINGTON BLVD.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.03,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.270786, 34.033803]
+        "coordinates": [
+          -118.2429615,
+          34.013771
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.20",
+        "id": "1617864313,2193456397",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "TRADE TECH DRIVEWAY #6 & 21st ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.2,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.27212, 34.031653]
+        "coordinates": [
+          -118.3652359,
+          34.0258315
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.26",
+        "id": "1623240143,1623240145,6193182389,6193182390",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "TRADE TECH DRIVEWAY #7 (PARKING LOT) & FLOWER ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.26,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.2726, 34.030748]
+        "coordinates": [
+          -118.182976,
+          34.0333313
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.30",
+        "id": "1738419621,1866577831",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "23RD STREET",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.3,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.27295, 34.030136]
+        "coordinates": [
+          -118.26465519999999,
+          34.0310597
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.50",
+        "id": "1778641596,2278878918",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "ADAMS BLVD.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.274818, 34.027644]
+        "coordinates": [
+          -118.24336455,
+          33.98566645
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.60",
+        "id": "1778651104,1778651106,1778651107,1778651108,1778651109,1778651115,1779331165,1779331167",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "28TH STREET",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.6,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.275752, 34.025974]
+        "coordinates": [
+          -118.243255975,
+          33.945673337500004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.66",
+        "id": "1778657821,9375568741",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "I-110 HOV ON-RAMP",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.66,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.275897, 34.025772]
+        "coordinates": [
+          -118.24330075,
+          33.98927825
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-100.80",
+        "id": "1866528778,1866528784",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "30TH STREET",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 100.8,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.276711, 34.024488]
+        "coordinates": [
+          -118.2160804,
+          33.859913000000006
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-101.00",
+        "id": "1982599063,3534427597",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "JEFFERSON BLVD.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 101,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.278641, 34.021338]
+        "coordinates": [
+          -118.4311426,
+          34.03584095
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-101.70",
+        "id": "1982599064,3534427595,7314579107,7314579135",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "WATT WAY",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 101.7,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.289018, 34.018238]
+        "coordinates": [
+          -118.446778825,
+          34.0329848
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-101.80",
+        "id": "1982599065,3534427652,3609856410,3609856436",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "BILL ROBERTSON LANE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 101.8,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.290132, 34.018245]
+        "coordinates": [
+          -118.421258475,
+          34.0371976
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-101.90",
+        "id": "1982618087,3534454252",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "VERMONT AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 101.9,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.291551, 34.018256]
+        "coordinates": [
+          -118.4854155,
+          34.0191175
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-102.20",
+        "id": "1982618094,2757492438,3534415815",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "RAYMOND AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 102.2,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.29771, 34.018278]
+        "coordinates": [
+          -118.47966539999999,
+          34.02370630000001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-102.40",
+        "id": "1982618096,3534454238",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "NORMANDIE AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 102.4,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.300181, 34.018278]
+        "coordinates": [
+          -118.4901501,
+          34.01527955
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-102.50",
+        "id": "1982618101,3534415799",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "HALLDALE AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 102.5,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.302905, 34.018294]
+        "coordinates": [
+          -118.4825806,
+          34.0214128
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-102.60",
+        "id": "1995283192,1995283193,1996058911,1996058914,7310315756",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "DENKER AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 102.6,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 5,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.304519, 34.018296]
+        "coordinates": [
+          -118.15313004,
+          34.118821940000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-102.90",
+        "id": "1995404361,1996058834",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "WESTERN AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 102.9,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.308931, 34.018351]
+        "coordinates": [
+          -118.1584253,
+          34.11472005
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-103.10",
+        "id": "2128285475,2128285480,6217647148,6217647149",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "RODEO ROAD / GRAMERCY PLACE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 103.1,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.313224, 34.018379]
+        "coordinates": [
+          -118.192434175,
+          34.035929525
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-103.40",
+        "id": "2193435023,2193435061,6208583949",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "ARLINGTON AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 103.4,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.317811, 34.018775]
+        "coordinates": [
+          -118.27208016666667,
+          34.03171626666666
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-103.80",
+        "id": "2193439967,2193439972",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "7TH AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 103.8,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.32478, 34.020359]
+        "coordinates": [
+          -118.2915528,
+          34.018250300000005
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-104.10",
+        "id": "2199130078",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "11TH AVE./DEGNAN BLVD.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 104.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "name": null,
+        "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.329622, 34.021458]
+        "coordinates": [
+          -118.2108817,
+          33.8476589
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-104.40",
+        "id": "2276169196,2276169212",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "CRENSHAW",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 104.4,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.335106, 34.022541]
+        "coordinates": [
+          -118.22048405000001,
+          33.871553399999996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-104.70",
+        "id": "2757411562,3534454255",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "BUCKINGHAM ROAD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 104.7,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.34048, 34.023339]
+        "coordinates": [
+          -118.48825215,
+          34.0168225
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-105.00",
+        "id": "2757411565,3534454242",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "FARMDALE AVE.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 105,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.346053, 34.023955]
+        "coordinates": [
+          -118.48919085,
+          34.016054249999996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-106.10",
+        "id": "2820313820",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "HAUSER BLVD.",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 106.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "name": null,
+        "crossing_barrier": "no",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.365234, 34.025834]
+        "coordinates": [
+          -118.4794904,
+          34.0238332
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-107.90",
+        "id": "2948677322,3534419364",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "BAGLEY AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 107.9,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.397018, 34.028693]
+        "coordinates": [
+          -118.4699653,
+          34.02772215
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-109.50",
+        "id": "3110477187,3110477188",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "OVERLAND AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 109.5,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.421223, 34.037178]
+        "coordinates": [
+          -118.18937675000001,
+          33.8043283
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-109.80",
+        "id": "3151612516,3151612520,3534419371",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "WESTWOOD BLVD",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 109.8,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.425676, 34.036631]
+        "coordinates": [
+          -118.46514026666667,
+          34.029168733333336
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-110.10",
+        "id": "3534454239,3534454249,3534454258",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "MILITARY AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 110.1,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.431115, 34.03584]
+        "coordinates": [
+          -118.49105049999999,
+          34.014481100000005
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-111.10",
+        "id": "3749698798,3751550743,9582148584",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "BARRINGTON AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 111.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.44671, 34.032926]
+        "coordinates": [
+          -117.87264913333333,
+          34.13599836666666
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-112.10",
+        "id": "3838728330",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "STEWART ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 112.1,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "name": null,
+        "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.465144, 34.029116]
+        "coordinates": [
+          -118.2097657,
+          33.8457388
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-112.40",
+        "id": "3838728341,3838729476",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "26TH ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 112.4,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.46998, 34.027717]
+        "coordinates": [
+          -118.21043470000001,
+          33.8466315
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-112.80",
+        "id": "3846770392,3846770405,3846770406,3846770422",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "20TH ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 112.8,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.476026, 34.025263]
+        "coordinates": [
+          -118.195504,
+          33.8189822
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-112.90",
+        "id": "3978688473,3978688474",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "19TH ST",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 112.9,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.477115, 34.024614]
+        "coordinates": [
+          -118.23519015,
+          34.05425535
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.00",
+        "id": "4037259141,9329342919",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "17TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.479634, 34.023742]
+        "coordinates": [
+          -117.82893015,
+          34.1172933
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.20",
+        "id": "4400391452,4400391453,4400391454,4400391455",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "14TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.2,
-        "crossing_barrier": null,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.482576, 34.021426]
+        "coordinates": [
+          -118.313247675,
+          34.01838239999999
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.50",
+        "id": "4400709252,11219345702,11219345703,11219345705",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "11TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.5,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.485441, 34.019136]
+        "coordinates": [
+          -118.24304175,
+          34.020637075
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.70",
+        "id": "4607706093,4607706094,4607706095,4607706096",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "LINCOLN BLVD/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.7,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.48823, 34.01682]
+        "coordinates": [
+          -118.02834855,
+          34.142322825
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.80",
+        "id": "4749829538,4749829552",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "7TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.8,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.489206, 34.016051]
+        "coordinates": [
+          -118.2267176,
+          34.047693499999994
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.85",
+        "id": "5585955358,5590161537,5590161538",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "6TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.85,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.49014, 34.015281]
+        "coordinates": [
+          -117.9908878,
+          34.13283266666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084S-113.90",
+        "id": "5874651775,8498404922",
         "type": "level_crossing",
-        "routes": ["804"],
-        "name": "5TH ST/COLORADO AVE",
-        "lineName": "E Line (Expo)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 113.9,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.491095, 34.014494]
+        "coordinates": [
+          -118.335224,
+          33.975673900000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-1.62",
+        "id": "5874651778,5874651781,13094539292,13094539293",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "ARBOR VITAE ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 1.62,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.378716, 33.952652]
+        "coordinates": [
+          -118.3338146,
+          33.9763282
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-2.42",
+        "id": "5874651895,5874651910,9432423734,9432423735",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "HINDRY AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 2.42,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.37357, 33.96237]
+        "coordinates": [
+          -118.347286,
+          33.969981725000004
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-2.88",
+        "id": "5947148133",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "OAK ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 2.88,
-        "crossing_barrier": "yes",
+        "routes": [
+          "801"
+        ],
+        "name": null,
+        "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.366359, 33.965219]
+        "coordinates": [
+          -117.7486599,
+          34.0936486
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-3.03",
+        "id": "6193182391,6193182392",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "CEDAR AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.03,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.364007, 33.966099]
+        "coordinates": [
+          -118.18463335,
+          34.03332145
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-3.30",
+        "id": "6193182393,6193182394,6193182395,6193182396",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "EUCALYPTUS AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.3,
-        "crossing_barrier": "yes",
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.359421, 33.966097]
+        "coordinates": [
+          -118.18742237499998,
+          34.033310725
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-3.43",
+        "id": "6215401924,6215401925",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "IVY AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 3.43,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.35725, 33.965605]
+        "coordinates": [
+          -118.3308308,
+          33.99087025
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-4.12",
+        "id": "6215401926,6215401927",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "CENTINELA AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.12,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.347278, 33.96994]
+        "coordinates": [
+          -118.33082075,
+          33.99312865
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-4.70",
+        "id": "6215401928,6215401929",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "HIGH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.7,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.33847, 33.97413]
+        "coordinates": [
+          -118.3308,
+          33.99774360000001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-4.92",
+        "id": "6215401930,6215401931",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "WEST BL",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 4.92,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.335247, 33.975666]
+        "coordinates": [
+          -118.330812,
+          33.99496905
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-5.01",
+        "id": "6215401932,6215401933",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "BRYNHURST AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "5. Gates",
-        "milepost": 5.01,
-        "crossing_barrier": "yes",
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.333818, 33.97633]
+        "coordinates": [
+          -118.33078995,
+          34.00003085
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.06",
+        "id": "6215401934,6215401935",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "59TH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.06,
-        "crossing_barrier": null,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.33085, 33.987194]
+        "coordinates": [
+          -118.330838,
+          33.9890007
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.19",
+        "id": "6225907072,6225907073,6225907074,6225907075,6225907076,6225907077,6225907078,6225907079",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "SLAUSON AV",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.19,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330837, 33.989031]
+        "coordinates": [
+          -118.2433470125,
+          33.9747398625
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.32",
+        "id": "6792432969,6792432970",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "57TH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.32,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330832, 33.990878]
+        "coordinates": [
+          -118.2691275,
+          34.0363806
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.47",
+        "id": "6808093751,6808093752",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "54TH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.47,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330824, 33.99313]
+        "coordinates": [
+          -118.2676163,
+          34.0387359
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.60",
+        "id": "6859348450,6859348451",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "52ND ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.6,
-        "crossing_barrier": null,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330815, 33.99497]
+        "coordinates": [
+          -118.33848275,
+          33.9741429
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.79",
+        "id": "6986430147,7005735902,7005735903",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "50TH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.79,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330805, 33.997751]
+        "coordinates": [
+          -118.37902580000001,
+          33.95185253333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084A-6.95",
+        "id": "7004731979",
         "type": "level_crossing",
-        "routes": ["807"],
-        "name": "48TH ST",
-        "lineName": "K Line (Crenshaw)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.95,
+        "routes": [
+          "807"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.330794, 34.000026]
+        "coordinates": [
+          -118.3792874,
+          33.9503034
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-0.35",
+        "id": "7833852575,9582062319,9582062320,9741775081,9741775082,10542136237,10542136238,10542136239",
         "type": "level_crossing",
-        "routes": [],
-        "name": "Sylvan St",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.35,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": "yes",
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": "yes"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448753, 34.1847]
+        "coordinates": [
+          -117.79403995,
+          34.1022777
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-0.49",
+        "id": "8322699574,8322699575,8322699576,8322699577",
         "type": "level_crossing",
-        "routes": [],
-        "name": "VICTORY BL",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.49,
+        "routes": [
+          "802",
+          "805"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448753, 34.186661]
+        "coordinates": [
+          -118.230991675,
+          34.049096774999995
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-0.77",
+        "id": "8361650784,8361650785",
         "type": "level_crossing",
-        "routes": [],
-        "name": "KITTRIDGE ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.77,
+        "routes": [
+          "804"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448692, 34.190689]
+        "coordinates": [
+          -118.15864644999999,
+          34.0333996
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-0.99",
+        "id": "9329157467,9329157468,9329157471,9329157472,9329157476,9329157477",
         "type": "level_crossing",
-        "routes": [],
-        "name": "VANOWEN ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.99,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448753, 34.193943]
+        "coordinates": [
+          -117.85073640000002,
+          34.12981823333334
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-1.31",
+        "id": "9329157475,10542081039,10542081040,11189883519,11189883520,11189883521",
         "type": "level_crossing",
-        "routes": [],
-        "name": "VOSE ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.31,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448746, 34.198486]
+        "coordinates": [
+          -117.86022086666667,
+          34.12982456666666
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-1.49",
+        "id": "9329157478,9329405981,9329405982,9329405986,9329405987,9329405988",
         "type": "level_crossing",
-        "routes": [],
-        "name": "SHERMAN WY",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.49,
-        "crossing_barrier": null,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448776, 34.201233]
+        "coordinates": [
+          -117.84639746666669,
+          34.12981515
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-1.74",
+        "id": "9329327409,9329327410,9329327411,9329327412,9329327413,9329327414",
         "type": "level_crossing",
-        "routes": [],
-        "name": "VALERIO ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.74,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448753, 34.204834]
+        "coordinates": [
+          -117.82629025,
+          34.11392525
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-1.99",
+        "id": "9329342926,10092059478,11199214769",
         "type": "level_crossing",
-        "routes": [],
-        "name": "SATICOY ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.99,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448776, 34.208485]
+        "coordinates": [
+          -117.81144820000002,
+          34.106669833333335
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-2.12",
+        "id": "9329342927",
         "type": "level_crossing",
-        "routes": [],
-        "name": "KESWICK ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.12,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448769, 34.210304]
+        "coordinates": [
+          -117.8111095,
+          34.1065859
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-2.14",
+        "id": "9330610664,9330610665,9330610670,9330610671,10542101558,10542101559",
         "type": "level_crossing",
-        "routes": [],
-        "name": "RAYMER ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.14,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.449394, 34.21035]
+        "coordinates": [
+          -117.76929503333332,
+          34.09756818333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-2.33",
+        "id": "9330622204,9330622205,9330622206,9330622207,9330622208,9330622209",
         "type": "level_crossing",
-        "routes": [],
-        "name": "ARMINTA RD",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.33,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448792, 34.213421]
+        "coordinates": [
+          -117.81584468333334,
+          34.10768863333333
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-2.64",
+        "id": "9330972913,9330972914,9330972915,9330972916,9331053217,9331053218",
         "type": "level_crossing",
-        "routes": [],
-        "name": "LANARK ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.64,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448784, 34.217964]
+        "coordinates": [
+          -117.86713561666666,
+          34.13239465000001
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-2.89",
+        "id": "9331280969,9331280970,9331280971,9331280972,9331280973,9331280974",
         "type": "level_crossing",
-        "routes": [],
-        "name": "ROSCOE BL",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.89,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448769, 34.221558]
+        "coordinates": [
+          -117.86379688333334,
+          34.13051696666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-3.12",
+        "id": "9331317664,9331317666,9331317667,9331317668,11189854417,11189854418",
         "type": "level_crossing",
-        "routes": [],
-        "name": "CHASE ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.12,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.44883, 34.224789]
+        "coordinates": [
+          -117.78103746666666,
+          34.100546533333336
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-3.29",
+        "id": "9331320420,9331320421,9331320422,9331320423,9331320424,9331320425",
         "type": "level_crossing",
-        "routes": [],
-        "name": "PARTHENIA ST / VESPER AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.29,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.449944, 34.226879]
+        "coordinates": [
+          -117.88132488333333,
+          34.13861551666667
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-3.41",
+        "id": "9598870158,9598870159,10542139545,10542139546,10542139547,10542139548",
         "type": "level_crossing",
-        "routes": [],
-        "name": "NORTH PARTHENIA ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.41,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.450256, 34.228867]
+        "coordinates": [
+          -117.77114338333335,
+          34.09805731666666
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-3.87",
+        "id": "9657133635",
         "type": "level_crossing",
-        "routes": [],
-        "name": "NORDHOFF ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 3.87,
+        "routes": [
+          "803",
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.450249, 34.23539]
+        "coordinates": [
+          -118.2373066,
+          33.928149
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-4.12",
+        "id": "9741775080",
         "type": "level_crossing",
-        "routes": [],
-        "name": "TUPPER ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.12,
+        "routes": [
+          "801"
+        ],
+        "name": null,
         "crossing_barrier": null,
         "crossing_light": null,
-        "crossing_bell": null
+        "crossing_bell": null,
+        "crossingCount": 1
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.450249, 34.239052]
+        "coordinates": [
+          -117.7941475,
+          34.1023889
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-4.37",
+        "id": "9859071698,9859071699,10542145721,10542145722,10542145723,10542145724",
         "type": "level_crossing",
-        "routes": [],
-        "name": "PLUMMER ST",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.37,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.450244, 34.242652]
+        "coordinates": [
+          -117.76381821666666,
+          34.0961558
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-4.72",
+        "id": "10076563139,10076563140,10076563141,10076563142,10076563143,10076563144",
         "type": "level_crossing",
-        "routes": [],
-        "name": "WOODMAN AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 4.72,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.448154, 34.247135]
+        "coordinates": [
+          -117.77704586666665,
+          34.0996211
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-5.19",
+        "id": "10088767537,10088767538",
         "type": "level_crossing",
-        "routes": [],
-        "name": "BEACHY AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.19,
+        "routes": [
+          "807"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.442001, 34.25164]
+        "coordinates": [
+          -118.330848,
+          33.9871981
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-5.45",
+        "id": "10542112930,10542112931,10542112932,10542112933,10542112934,10542112935",
         "type": "level_crossing",
-        "routes": [],
-        "name": "ARLETA AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.45,
+        "routes": [
+          "801"
+        ],
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.438676, 34.253937]
+        "coordinates": [
+          -117.80713665,
+          34.105532016666665
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-5.57",
+        "id": "12594060025,12594060026",
         "type": "level_crossing",
-        "routes": [],
-        "name": "BARTEE AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.57,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.43705, 34.255196]
+        "coordinates": [
+          -118.26740659999999,
+          34.03906355
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-5.94",
+        "id": "12594060032,12594060033,12594060034",
         "type": "level_crossing",
-        "routes": [],
-        "name": "LAUREL CANYON BL",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 5.94,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 3,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.43212, 34.258805]
+        "coordinates": [
+          -118.2680679,
+          34.0380357
+        ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "084F-6.32",
+        "id": "12594060038,12594060039",
         "type": "level_crossing",
-        "routes": [],
-        "name": "KEWEN AV",
-        "lineName": "F Line (ESFV)",
-        "gradeType": "At Grade",
-        "pedestrianOnly": false,
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 6.32,
+        "routes": [
+          "804",
+          "801"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.427185, 34.262379]
+        "coordinates": [
+          -118.26835775,
+          34.0375806
+        ]
       }
     }
   ]

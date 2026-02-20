@@ -4,692 +4,57 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "081B-0.00",
+        "id": "48857645,1111263832",
         "type": "level_crossing",
         "routes": [
           "510",
-          "530"
+          "520"
         ],
-        "name": "IMPERIAL AVE",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": null,
-        "crossing_barrier": null,
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.15345,
-          32.706258
+          -117.1537501,
+          32.7094308
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081B-1.51",
+        "id": "48857646,1358130953",
         "type": "level_crossing",
         "routes": [
           "510",
-          "530"
+          "520"
         ],
-        "name": "COLUMBIA STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.1,
-        "crossing_barrier": null,
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.167375,
-          32.716718
+          -117.15375449999999,
+          32.710452950000004
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081B-0.25",
+        "id": "48857661,1042017411",
         "type": "level_crossing",
         "routes": [
           "510",
-          "530"
+          "520"
         ],
-        "name": "K ST AND PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.25,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153729,
-          32.708107
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.30",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "J ST AND PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.3,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153708,
-          32.70939
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.35",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "ISLAND ST AND PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.35,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153772,
-          32.710465
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.37",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "MARKET ST & PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.37,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153745,
-          32.711523
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.44",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "W  G ST & PARK BLVD (12TH ST)",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.44,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153772,
-          32.712625
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.56",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "INDIA ST",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.5,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.168283,
-          32.716758
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.51",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "F STREET & PARK BLVD (12TH ST)",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.51,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153769,
-          32.713651
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.58",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "E ST AND PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.58,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153763,
-          32.714692
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.66",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "BROADWAY AND PARK BLVD",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.66,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.153829,
-          32.71574
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.77",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "11TH  AV  / C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.77,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.154694,
-          32.716741
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.82",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "10TH AVE &  C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.82,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.155618,
-          32.716723
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.87",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "9TH  AV / C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.87,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.15652,
-          32.716727
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.93",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "8TH AVE & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 0.93,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.157411,
-          32.716775
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-0.98",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "7TH AVE AT C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 0.98,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.158329,
-          32.716747
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.03",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "6TH  AV / C ST",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.03,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.159253,
-          32.716761
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.08",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "5TH AV  AT  C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.08,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.160153,
-          32.716735
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.14",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "4TH AV & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.14,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.161063,
-          32.716742
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.19",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "3RD  AV & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.19,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.161964,
-          32.716729
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.24",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "2ND  AV",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.24,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.162939,
-          32.71674
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.30",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "1ST AVE & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.3,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.163853,
-          32.716736
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.35",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "FRONT STREET & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.35,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.164724,
-          32.716747
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.40",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "UNION ST & C STREET",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.4,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.165604,
-          32.716731
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.45",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "STATE ST & C ST",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.45,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.166485,
-          32.716721
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081B-1.65",
-        "type": "level_crossing",
-        "routes": [
-          "510",
-          "530"
-        ],
-        "name": "KETTNER BLVD NEAR BROADWAY",
-        "lineName": "BLUE/ORANGE - Centre City - Santa Fe Depot to Yard",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.65,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.169163,
-          32.715965
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-1.70",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "SIGSBEE ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 1.7,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -697,24 +62,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.150566,
-          32.700765
+          -117.1619804,
+          32.7167395
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036-1.80",
+        "id": "48857672,283253212,1042017474,2817123261",
         "type": "level_crossing",
         "routes": [
           "510"
         ],
-        "name": "BEARDSLEY ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 1.8,
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -722,749 +83,62 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.148892,
-          32.699606
+          -117.16919015,
+          32.71594785
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036-2.30",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "SAMPSON ST NR HARBOR DR",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 2.3,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.142217,
-          32.695031
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-2.50",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "SCHLEY ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 2.5,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.138972,
-          32.692864
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-2.80",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "28TH ST NR HARBOR DR",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 2.8,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.133693,
-          32.691548
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-3.10-X",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "National Steel Private (between 28th and 32nd)",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 3.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.129164,
-          32.689076
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-3.40",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "32ND ST NEAR HARBOR",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 3.4,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.125373,
-          32.686451
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-4.60",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "8TH ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 4.6,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.112817,
-          32.674162
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-4.90",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "CIVIC CENTER DR",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 4.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.111114,
-          32.669875
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-7.10",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "E ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 7.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.099353,
-          32.639698
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-7.40",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "F STREET",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 7.4,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.097988,
-          32.63626
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-7.90",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "H ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 7.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.095254,
-          32.629323
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-8.40",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "J ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 8.4,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.092599,
-          32.622446
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-8.90",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "L ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 8.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.0899,
-          32.615546
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-9.10",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "MOSS ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 9.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.088523,
-          32.612105
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-9.40",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "NAPLES ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 9.4,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.087213,
-          32.608609
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-9.70",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "PALOMAR ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 9.7,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.08536,
-          32.603887
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-10.10",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "ANITA ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 10.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.083879,
-          32.598504
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-11.10",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "PALM AV",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 11.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.083801,
-          32.583784
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-12.00",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "27TH ST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.075436,
-          32.574914
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-12.60",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "IRIS AV",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.6,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.066289,
-          32.569108
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-12.90",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "DAIRY MART RD",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.062411,
-          32.566698
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-13.80",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "SMYTHE CROSSING",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 13.8,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.050443,
-          32.559373
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-14.00",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "SEAWARD AV",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.046039,
-          32.557077
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-14.10",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "PARK AV - WEST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14.1,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.044532,
-          32.556261
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-14.13",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "PARK AV - EAST",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14.13,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.044091,
-          32.556035
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-14.90-X",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "RR YARD PRIVATE DRIVEWAY AT BEYER BLVD",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.032185,
-          32.547742
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-15.14-X",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "GATEWAY INN PVT DWY AT BEYER BLVD",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 15.14,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.031061,
-          32.54662
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-15.24-X",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "GATEWAY INN PVT DWY AT SAN YSIDRO",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 15.24,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.030321,
-          32.545392
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-15.25-X",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "JACK IN THE BOX PVT DRIVEWAY",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 15.25,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.030203,
-          32.545286
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036-15.28",
-        "type": "level_crossing",
-        "routes": [
-          "510"
-        ],
-        "name": "RAIL COURT NEAR E SAN YSIDRO BLVD",
-        "lineName": "BLUE - Yard to San Ysidro",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 15.28,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.029851,
-          32.544934
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "081MV-4.39",
+        "id": "48884224,1217814793",
         "type": "level_crossing",
         "routes": [
           "520"
         ],
-        "name": "FRIARS RD AT NAPA ST",
-        "lineName": "GREEN - Old Town to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 4.39,
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.11965825,
+          32.70648045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "48925461,49507656,11890728122,11890728123",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.112823375,
+          32.674190925000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "48963043,4342991876",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1472,25 +146,2091 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.195226,
-          32.763475
+          -117.13370195,
+          32.69129275
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081MV-6.50-X",
+        "id": "48995943,49426584,49494529,285954572,2808094461,2808094462",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 6,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16036105,
+          32.70716323333334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49012955,49012957,1707884847,1707884850,1707884860",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 5,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.19523226000001,
+          32.76349164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49047616,49047617,1815809578,1815809580",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.177425725,
+          32.7364559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49052995,1042017842,2817123281,2817123282,2817126673,7722452121,7722452122",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 7,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16916275714286,
+          32.71250792857143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49056716,5837108869",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1537754,
+          32.71260770000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49056717,1111263627",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1537835,
+          32.713653750000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49056718,1358130954",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15379100000001,
+          32.71469875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49065737,1110056546",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.07544189999999,
+          32.5749127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49070200,1815011198,12067654363,12067654364",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.13897367499999,
+          32.69284664999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49071728,347419873",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.04408755,
+          32.55605845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49072928,1107245526,1111263515,1815809498,12067745962,12067745963,12067745964,12067745965",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.170007775,
+          32.720906812500004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49072934,1815809516",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.17068925000001,
+          32.72487995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49072936,1815809534",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1711057,
+          32.725861800000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49072963,1815809609,1815809623,1815809624,4344648777,4344648779,4344648780,4344648781",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1838041375,
+          32.7412609625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49099317,1175131250,1214583760,1214584015",
         "type": "level_crossing",
         "routes": [
           "520"
         ],
-        "name": "HAZARD CENTER WEST DRWY",
-        "lineName": "GREEN - Old Town to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 6.5,
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03079007500001,
+          32.74270755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49112899,1042017409",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16290735,
+          32.71673645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49142150,1111263703",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
         "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1422115,
+          32.695012399999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49172230,1214191122",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.01975655000001,
+          32.7636453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49175441,1111263520",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16738295,
+          32.71672505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49251365,1214183311,4341753427,4341753431",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02192439999999,
+          32.76743485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49283619,1214614668,5861073242,5861073243",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.085054875,
+          32.709534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49302939,275709657,1110056630",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.08385546666666,
+          32.5985143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49313176,1214614648",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.07109700000001,
+          32.7093784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49324387,283253216,1042017580,1042017819,1111263887,2817126856,2817126857,4114901968,4495554077,6184516218,6184516219",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 11,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16997761818183,
+          32.71571184545455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49334433,49496110,13533624991,13533624992,13533624993",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 5,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.14397234,
+          32.70529658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49344778,1111263760",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16109575,
+          32.71674125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49358444,1811301844",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.04452384999999,
+          32.55628455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49362747,6184516711",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9760641,
+          32.82123865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49374561,1110056593,4341652684,4341652685",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.062410125,
+          32.566682525000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49384976,1042017508,5510257090,5510257107",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16380659999999,
+          32.716732975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49384979,1042017615,6184516229",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16556366666667,
+          32.716719000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49384981,1042017387,6184516228",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16653366666667,
+          32.7167212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49385936,1042017733",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16925015,
+          32.712738200000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49407247,1214614650",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0680135,
+          32.7094985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49415127,1110062248,11890764680,11890764681",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.09934287500002,
+          32.639691775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49426603,1111263728",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16019965,
+          32.7167515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49475699,1214183193,3832910226,3832910227",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.021160075,
+          32.766097224999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49476138,1183956582",
+        "type": "level_crossing",
+        "routes": [
+          "520",
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9984528,
+          32.785402250000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49486108,1214191114",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02023034999999,
+          32.76447435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49494518,2232701179,4199767012",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16491366666666,
+          32.7096417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49494522,49634631,2232701177",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16403733333334,
+          32.7091863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49495393,1183956768",
+        "type": "level_crossing",
+        "routes": [
+          "520",
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9761589,
+          32.79133975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496103,1217869955",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.14578510000001,
+          32.70524435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496114,13372491771",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1424189,
+          32.70524895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496254,1110062256,5412043754,5412043755",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0952903,
+          32.62932925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496258,1110062194,3581916703,3581916704",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.092600925,
+          32.62242915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496267,1110057194,1110060536",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.08718143333333,
+          32.60863353333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496329,1110056627",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.06627445000001,
+          32.5691233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496407,347991757,1111263980",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.14889813333333,
+          32.69959853333334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496716,1214614701",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.06397849999999,
+          32.7100139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496745,1214605573",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.04932885,
+          32.7122866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496752,1214584004,4342946086,4342946087",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03902205,
+          32.724180375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496762,1214584054",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03209989999999,
+          32.7348011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496770,1214583973",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03098729999999,
+          32.738993199999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49496781,1214548924",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0258838,
+          32.7477012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49504809,1110060555,4341311258,4341311259",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.089905725,
+          32.6155442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49518850,1815011125,10079123543,10079123544",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.125431475,
+          32.6864844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49638070,1214605490",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.05808965,
+          32.7107125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49639173,1110057214,1110060463",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0885469,
+          32.6121029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49694406,1110051737",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.05041675,
+          32.559364599999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49740754,1815011162,4342991877,4342991879",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.13369714999999,
+          32.691556675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49746288,1110062225",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.09798235,
+          32.63621115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "274954288",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "name": null,
+        "crossing_barrier": "full",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1374562,
+          32.6919033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "274986734,1217814710",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.10225134999999,
+          32.7084879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "304930058,6184516248,6184516249",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.153577,
+          32.7062984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "344551918,1106795515,1111263725,1713129467,1713129476,2800750191,2800750192,2800750193,2800750194,2800750195",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 10,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.17003048000001,
+          32.719861290000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "344558976,1111263551",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15834135,
+          32.71675515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "347419132,1110041676",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03106500000001,
+          32.54662135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "347991756,1111263738,3952958758",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15056126666667,
+          32.7007532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "347991758,1111263750,12067711282,12067711283",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1472219,
+          32.69846135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "347997534,1217842886,1217842894,1217842955",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.12734325,
+          32.7053346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "348003746",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9837837,
+          32.8314068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "348003749",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": "no",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9837914,
+          32.8350464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "348003752,4732885404,11882771903",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.98375216666666,
+          32.8387698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "358282850,1217815185",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1142288,
+          32.706617949999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "517001463,1052273239,1052273267,1052273355,1276526315,1276526321,1815809683,1815809685",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1999039875,
+          32.7555469375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "848263671,1110056492,11934210012,11934210013",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.083813125,
+          32.583803375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1041765422,1041765426,1041765693,1041765949,1042017519,1042017532",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 6,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16794726666667,
+          32.711321149999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1042017374,5510257085",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.16830150000001,
+          32.716763549999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1042017400,5510257089",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1647277,
+          32.71672975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1042017574",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "name": null,
+        "crossing_barrier": "full",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1698955,
+          32.7156372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1105811829,1107245555,1111263640,1815809499,9900108111,9900108112,9900108113,9900108114",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 8,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.170009625,
+          32.721961650000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1107245544,9888065366,9888065367,9888065368",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1700842,
+          32.719263624999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1107305325,10079123545",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1254364,
+          32.686174449999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1109979399,1110041654,5494858182,5494858185",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03620147500001,
+          32.551274500000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1110041679,1110041713",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0298569,
+          32.54495025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1110041696,5494858020,5494858121,5494858122",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.032195825,
+          32.547759075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1110043521,1110051727",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.04601945,
+          32.55706885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1111263622,1111263963",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15926325000001,
+          32.7167532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1111263907,5837108865",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15376359999999,
+          32.711547100000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1111290028,1217924937,7532736624,9898778003",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15270555000001,
+          32.705235225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1175131340,1175131566,1214549325,1214549368,1214549480",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 5,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03026176,
+          32.744584360000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1183956306,1183956512,1183956955,1183957039",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.97562737499999,
+          32.805825999999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1183956440,6335678209",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.97682465,
+          32.81684265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1183956561,1183956972",
+        "type": "level_crossing",
+        "routes": [
+          "520",
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9790063,
+          32.784234749999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1183956669,1183956751",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.97571450000001,
+          32.8023284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1183956811,1183956881",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9768197,
+          32.81201405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1186125347,1213089795",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
       },
@@ -1498,23 +2238,40 @@
         "type": "Point",
         "coordinates": [
           -117.159183,
-          32.769673
+          32.76969029999999
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081MV-6.75-X",
+        "id": "1211625273,1211625310,7252195802,7252195803",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.043184675,
+          32.77247625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1217842647,1217842865",
         "type": "level_crossing",
         "routes": [
           "520"
         ],
-        "name": "HAZARD CENTER EAST DRWY",
-        "lineName": "GREEN - Old Town to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 6.75,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1522,24 +2279,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.157641,
-          32.770449
+          -117.1345632,
+          32.70533265
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081MV-8.69",
+        "id": "1217842669,1217842839",
         "type": "level_crossing",
         "routes": [
           "520"
         ],
-        "name": "FENTON PARKWAY",
-        "lineName": "GREEN - Old Town to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 8.69,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1547,24 +2300,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.12664,
-          32.77874
+          -117.13546955,
+          32.705327
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "081MV-14.20",
+        "id": "1217842707,1217842795",
         "type": "level_crossing",
         "routes": [
           "520"
         ],
-        "name": "ALVARADO RD NR 70TH ST",
-        "lineName": "GREEN - Old Town to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14.2,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1572,25 +2321,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.043158,
-          32.772427
+          -117.1338816,
+          32.70533695
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-14.70",
+        "id": "1217842719,1217842888,1217842981",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "SEVERIN DR",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 14.7,
+        "crossingCount": 3,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1598,25 +2342,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.998435,
-          32.785341
+          -117.12953206666668,
+          32.7053352
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-16.10",
+        "id": "1217842722,1217842759,1217842956,7851506695",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "HILL ST / FRONT ST",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 16.1,
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1624,25 +2363,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.978994,
-          32.784209
+          -117.12527904999999,
+          32.705427025000006
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-16.70",
+        "id": "1217842725,1217842771",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "W PALM AV",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 16.7,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1650,25 +2384,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.97615,
-          32.791341
+          -117.138038,
+          32.705309
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-17.45",
+        "id": "1217842830,13372491776",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "WAGNER DR",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 17.45,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1676,25 +2405,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.975703,
-          32.802308
+          -117.1359873,
+          32.705323750000005
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-17.56",
+        "id": "1217842835,1217842961",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "ARNELE STA. ENTRANCE",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 17.56,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1702,25 +2426,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.975707,
-          32.803965
+          -117.13208929999999,
+          32.7053484
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-17.70, 036D-17.65-C",
+        "id": "1217869938,1217869950",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "PETREE ST AND MARSHALL AVE",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 17.7,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1728,25 +2447,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.975706,
-          32.80585
+          -117.1466832,
+          32.70524065
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-18.14",
+        "id": "1217869939,1217869985",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "VERNON WY",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 18.14,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1754,25 +2468,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.976808,
-          32.812007
+          -117.1485279,
+          32.705236799999994
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-18.47",
+        "id": "1217869949,1217869976,13372515956,13372515957",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "BRADLEY AV",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 18.47,
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1780,25 +2489,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.976805,
-          32.816845
+          -117.14027710000002,
+          32.7052728
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-18.55",
+        "id": "1217869953,1217869981",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "CHEM-TRONICS DWY",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 18.55,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1806,25 +2510,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.976116,
-          32.81763
+          -117.13994545,
+          32.7052981
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-18.79",
+        "id": "1217869954,1217869956",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "BILLY MITCHELL DR",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 18.79,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1832,25 +2531,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.976053,
-          32.821257
+          -117.15165075,
+          32.70524695
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-19.40",
+        "id": "1217869969,1217869991",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "N MARSHALL AVE",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 19.4,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1858,25 +2552,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.98256,
-          32.827675
+          -117.14944084999999,
+          32.70523005
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-19.63",
+        "id": "1217869979,1217869990",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "520"
         ],
-        "name": "CUYAMACA ST",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 19.63,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -1884,25 +2573,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.983865,
-          32.829896
+          -117.144865,
+          32.705238300000005
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-19.73",
+        "id": "1217924455,1217924633,1217924747,1217924821,1217924940,1217925450",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "510"
         ],
-        "name": "PROSPECT AV",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.73,
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
@@ -1910,25 +2594,65 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.983768,
-          32.831436
+          -117.15287421666666,
+          32.703649000000006
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-19.82",
+        "id": "1217924476",
         "type": "level_crossing",
         "routes": [
-          "520",
-          "530"
+          "510",
+          "520"
         ],
-        "name": "SR 52/CUYAMACA STREET",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.82,
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1528199,
+          32.7050184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1217925424",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1526536,
+          32.7040563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1218290096,1218290115,6187330497,6187330498",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
@@ -1936,553 +2660,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -116.98377,
-          32.832637
+          -117.153195875,
+          32.703762299999994
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-19.98",
+        "id": "1268347661,1815011277,1815809625,1815809626,12067780084,12067780085,12067780086,12067780087",
         "type": "level_crossing",
         "routes": [
-          "520",
+          "510",
           "530"
         ],
-        "name": "BUENA VISTA ST",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 19.98,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.983758,
-          32.835029
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-20.23",
-        "type": "level_crossing",
-        "routes": [
-          "520",
-          "530"
-        ],
-        "name": "MISSION GORGE RD",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.23,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.98377,
-          32.838709
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-20.35",
-        "type": "level_crossing",
-        "routes": [
-          "520",
-          "530"
-        ],
-        "name": "SANTEE TOWN CENTER PARKING SOUTH",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.35,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.982604,
-          32.840119
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-20.42",
-        "type": "level_crossing",
-        "routes": [
-          "520",
-          "530"
-        ],
-        "name": "SANTEE TOWN CENTER PARKING NORTH",
-        "lineName": "GREEN/ORANGE - La Mesa to Santee",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 20.42,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.981876,
-          32.840838
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.30",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "13TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.3,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.152723,
-          32.70522
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.40",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "14TH ST / NATIONAL AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.4,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.151669,
-          32.705249
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.50",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "16TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 1.5,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.149438,
-          32.705226
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.55",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "17TH ST & COMMERCIAL",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.55,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.148494,
-          32.705249
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.70",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "19TH ST & COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 1.7,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.146713,
-          32.705222
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.75",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "20TH ST AND COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.75,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.145779,
-          32.705222
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.80",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "21ST ST AND COMMERCIAL",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.8,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.144883,
-          32.705231
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.85",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "22ND ST & COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.85,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.143939,
-          32.705285
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-1.95",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "24TH ST AND COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 1.95,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.142408,
-          32.705246
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.10",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "COMMERCIAL ST & 25TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.1,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.140319,
-          32.705275
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.15",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "OCEANVIEW BL",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.15,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.139833,
-          32.705304
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.20",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "26TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.2,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.138013,
-          32.705295
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.30",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "27TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.3,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.135994,
-          32.705329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.55",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "29TH ST AND COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.55,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.132093,
-          32.705329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.70",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "30TH ST AND COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.7,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.129512,
-          32.705354
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.80",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "31ST ST & COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "2. Passive",
-        "milepost": 2.8,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.127376,
-          32.705356
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-2.95",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "32ND ST AT COMMERCIAL ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "3. Traffic Signals",
-        "milepost": 2.95,
-        "crossing_barrier": null,
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.125219,
-          32.705418
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-3.60",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "FRANCIS ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 3.6,
+        "crossingCount": 8,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2490,24 +2682,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.119649,
-          32.706479
+          -117.186972825,
+          32.74292187499999
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-3.90",
+        "id": "1350778927,1815809566,1815809567,1815809568,8077035586,8077035587,8077035588,8077035589",
         "type": "level_crossing",
         "routes": [
+          "510",
           "530"
         ],
-        "name": "HORTON AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 3.9,
+        "crossingCount": 8,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2515,349 +2704,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.114201,
-          32.706623
+          -117.17446710000002,
+          32.7331062875
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-4.60",
+        "id": "1357359312,1358130957,4746127395,6184516246",
         "type": "level_crossing",
         "routes": [
-          "530"
+          "510",
+          "520"
         ],
-        "name": "43RD ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 4.6,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.102284,
-          32.708502
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-5.70",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "EUCLID AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 5.7,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.085011,
-          32.709536
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-6.50",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "MERLIN DR",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 6.5,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.071096,
-          32.709362
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-6.70",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "60TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 6.7,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.068006,
-          32.709462
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-6.90",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "62ND ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 6.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.063974,
-          32.709986
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-7.20",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "65TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 7.2,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.058083,
-          32.710712
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-7.75",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "69TH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 7.75,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.049307,
-          32.712287
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-8.90",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "MASSACHUSETTS AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 8.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.03899,
-          32.724168
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-9.61",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "SAN MIGUEL AV (PREV CYPRESS AV)",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 9.61,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.032037,
-          32.734803
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-9.90",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "CENTRAL AVE",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 9.9,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.030943,
-          32.738998
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-10.20",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "BROADWAY",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 10.2,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.030804,
-          32.742711
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-10.30",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "LEMON GROVE AVE NEAR NORTH AVE",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 10.3,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.030224,
-          32.744657
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-10.80",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "GROVE PL - HIGH ST",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 10.8,
-        "crossing_barrier": "yes",
-        "crossing_light": null,
-        "crossing_bell": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.025872,
-          32.747676
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "036D-11.55-X",
-        "type": "level_crossing",
-        "routes": [
-          "530"
-        ],
-        "name": "PRIVATE NEAR PARK LN",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "1. None/Other/Unknown",
-        "milepost": 11.55,
+        "crossingCount": 4,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
@@ -2865,24 +2726,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.016331,
-          32.754159
+          -117.153835575,
+          32.7157414
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-12.20",
+        "id": "1358130958,3518203402,8815971348,13398908663",
         "type": "level_crossing",
         "routes": [
-          "530"
+          "510",
+          "520"
         ],
-        "name": "LEMON AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.2,
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2890,24 +2748,129 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.019758,
-          32.763636
+          -117.1546915,
+          32.7167434
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-12.30",
+        "id": "1358130960,3518203397",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15561965,
+          32.716748100000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1358130962,3518203404",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15743145,
+          32.7167732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1742404941,1742404947",
         "type": "level_crossing",
         "routes": [
           "530"
         ],
-        "name": "LA MESA BL",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.3,
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15764535,
+          32.77044655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1742469388",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": "half",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9838742,
+          32.8298899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1815011096,1815011097",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.11111375,
+          32.6698803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1815809548,1815809551,7051046929,7051046930",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2915,24 +2878,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.020238,
-          32.764481
+          -117.17281805,
+          32.729791925
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-12.40",
+        "id": "2235296613,11882772088",
         "type": "level_crossing",
         "routes": [
-          "530"
+          "535"
         ],
-        "name": "ALLISON AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.4,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2940,24 +2899,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.021133,
-          32.76606
+          -116.9826242,
+          32.84010905
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-12.50",
+        "id": "2235296704,11882772082",
         "type": "level_crossing",
         "routes": [
-          "530"
+          "535"
         ],
-        "name": "UNIVERSITY AV",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.5,
+        "crossingCount": 2,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2965,24 +2920,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.021915,
-          32.76742
+          -116.98188415000001,
+          32.84083675
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "id": "036D-12.71",
+        "id": "2626659659,2626659661,2626659678,2626659680",
         "type": "level_crossing",
         "routes": [
-          "530"
+          "510"
         ],
-        "name": "I-8 EB OFF-RAMPS AND PED",
-        "lineName": "ORANGE - Yard to La Mesa",
-        "gradeType": "At Grade",
-        "warningDevice": "5. Gates",
-        "milepost": 12.71,
+        "crossingCount": 4,
         "crossing_barrier": "yes",
         "crossing_light": null,
         "crossing_bell": null
@@ -2990,8 +2941,630 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.02318,
-          32.769655
+          -117.08535557500001,
+          32.603884225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2806006261",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "name": null,
+        "crossing_barrier": "full",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1371059,
+          32.6918608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2987124231,2987124233,6187330575,6187330576,6187330577,6187330578",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 6,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03026306666668,
+          32.545350133333336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3376213454",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9754085,
+          32.8075263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3377466668",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9764408,
+          32.8087701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3518203399,3518203403",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15654085,
+          32.7167456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3792763795,3792763796",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02309704999999,
+          32.76946205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3832910232,3832910233",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02175510000001,
+          32.76714225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3832910238,3832910239",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02204515,
+          32.7676395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3832910242,3832910243",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.02324525,
+          32.76974675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "4479162884",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9837926,
+          32.8326455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "4512335724,4512335725",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.98253665,
+          32.8276768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "5494858183",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0361926,
+          32.5514177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6184516250,6184516251",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": "yes",
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15373965,
+          32.708112549999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6187328340,6187328341,6187328342",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.03468726666667,
+          32.54993006666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6188825505,6188825506",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.97554600000001,
+          32.8077808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6352106040,6352106041",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.12921865,
+          32.689110299999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6352106042",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "name": null,
+        "crossing_barrier": "half",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1294134,
+          32.688925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6566195581,7473315352,8569647644",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 3,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.23300133333332,
+          32.83725263333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "7532736626",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "name": null,
+        "crossing_barrier": "no",
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1513931,
+          32.7052638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "7622203864",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1308573,
+          32.7052794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "8569647680,8569647681",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.2343975,
+          32.848425199999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "8861274964,8861274965",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.23017225000001,
+          32.87371255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "8878437017,8878437018",
+        "type": "level_crossing",
+        "routes": [
+          "535"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.97571985,
+          32.80400675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "9739761422,9739761423",
+        "type": "level_crossing",
+        "routes": [
+          "510"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.2319306,
+          32.878859500000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "9888065391,9888065392,9888065393,9888065394",
+        "type": "level_crossing",
+        "routes": [
+          "510",
+          "530"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.170085475,
+          32.71633715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "11975270966,11975270967,11975270968,11975384369",
+        "type": "level_crossing",
+        "routes": [
+          "530"
+        ],
+        "crossingCount": 4,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1266714,
+          32.7787221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13372491738",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1314908,
+          32.7053035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13372491770",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "name": null,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null,
+        "crossingCount": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1266748,
+          32.7053023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13372491772,13372491773",
+        "type": "level_crossing",
+        "routes": [
+          "520"
+        ],
+        "crossingCount": 2,
+        "crossing_barrier": null,
+        "crossing_light": null,
+        "crossing_bell": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.14183675000001,
+          32.70524795
         ]
       }
     }

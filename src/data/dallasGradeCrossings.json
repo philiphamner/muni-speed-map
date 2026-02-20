@@ -67,12 +67,12 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "81553439,81553441,2123255411,2123255412",
+        "id": "81553439,81553441,2123255411,2123255412,5440270348,5440270349",
         "type": "level_crossing",
         "routes": [
           "shared"
         ],
-        "crossingCount": 4,
+        "crossingCount": 6,
         "crossing_barrier": null,
         "crossing_light": null,
         "crossing_bell": null
@@ -80,8 +80,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.8570199,
-          32.7254807
+          -96.85705588333333,
+          32.725459949999994
         ]
       }
     },
@@ -1681,8 +1681,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.7204119,
-          32.96741685
+          -96.72041215,
+          32.967418300000006
         ]
       }
     },
