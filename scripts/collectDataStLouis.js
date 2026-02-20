@@ -19,6 +19,9 @@ import fetch from "node-fetch";
 import { createClient } from "@supabase/supabase-js";
 import gtfs from "gtfs-realtime-bindings";
 import AdmZip from "adm-zip";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const { transit_realtime } = gtfs;
 
@@ -43,10 +46,15 @@ const FILTER_TO_RAIL_ONLY = false;
 // MetroLink should be 0 or 2 in most feeds.
 const RAIL_ROUTE_TYPES = new Set(["0", "2", "1"]);
 
-// Supabase
-const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  "REDACTED_SUPABASE_KEY";
+// Supabase from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // -----------------------

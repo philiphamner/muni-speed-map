@@ -15,13 +15,18 @@
 
 import { createClient } from "@supabase/supabase-js";
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
+import dotenv from "dotenv";
 
-// Configuration (can be overridden with environment variables)
-const SUPABASE_URL =
-  process.env.SUPABASE_URL || "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  process.env.SUPABASE_ANON_KEY ||
-  "REDACTED_SUPABASE_KEY";
+dotenv.config();
+
+// Configuration from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
 
 // Metro Transit GTFS-RT Vehicle Positions feed (no API key required)
 const VEHICLE_POSITIONS_URL =

@@ -16,6 +16,9 @@ import { createClient } from "@supabase/supabase-js";
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
 import fetch, { Headers } from "node-fetch";
 import fs from "fs";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Polyfill fetch and Headers for older Node.js versions
 if (!globalThis.fetch) {
@@ -30,15 +33,14 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Configuration
-const SUPABASE_URL =
-  process.env.SUPABASE_URL ||
-  process.env.VITE_SUPABASE_URL ||
-  "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  process.env.SUPABASE_ANON_KEY ||
-  process.env.VITE_SUPABASE_ANON_KEY ||
-  "REDACTED_SUPABASE_KEY";
+// Configuration from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
 
 // GTFS-RT feed URLs
 const VEHICLE_POSITIONS_URL = "https://apps.rideuta.com/tms/gtfs/Vehicle";

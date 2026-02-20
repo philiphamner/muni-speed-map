@@ -9,15 +9,24 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
 
-// Configuration
-const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  "REDACTED_SUPABASE_KEY";
+dotenv.config();
 
-// ⚠️ REPLACE WITH YOUR TRIMET API KEY (AppID)
-// Register at: https://developer.trimet.org/
-const TRIMET_APP_ID = "REDACTED_TRIMET_KEY";
+// Configuration from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const TRIMET_APP_ID = process.env.TRIMET_APP_ID;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
+
+if (!TRIMET_APP_ID) {
+  console.error("❌ Error: TRIMET_APP_ID environment variable is required");
+  process.exit(1);
+}
 
 // MAX Light Rail lines (route IDs)
 // 90 = MAX Red, 100 = MAX Blue, 190 = MAX Yellow, 200 = MAX Green, 290 = MAX Orange

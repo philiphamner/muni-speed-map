@@ -4416,33 +4416,35 @@ export function SpeedMap({
           Speed ({speedUnit === "kmh" ? "km/h" : "mph"})
         </div>
         <div className="map-speed-legend-grid">
+          {/* Column 1: slow speeds (read down) */}
           <div className="map-speed-legend-item">
             <span className="map-speed-dot" style={{ backgroundColor: "#9b2d6b" }}></span>
             <span>≤ {speedUnit === "kmh" ? 8 : 5}</span>
+          </div>
+          {/* Column 2: fast speeds (read down) */}
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#88ff33" }}></span>
+            <span>{speedUnit === "kmh" ? "40-56" : "25-35"}</span>
           </div>
           <div className="map-speed-legend-item">
             <span className="map-speed-dot" style={{ backgroundColor: "#ff3333" }}></span>
             <span>{speedUnit === "kmh" ? "8-16" : "5-10"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#ff9933" }}></span>
-            <span>{speedUnit === "kmh" ? "16-24" : "10-15"}</span>
-          </div>
-          <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#ffdd33" }}></span>
-            <span>{speedUnit === "kmh" ? "24-40" : "15-25"}</span>
-          </div>
-          <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#88ff33" }}></span>
-            <span>{speedUnit === "kmh" ? "40-56" : "25-35"}</span>
-          </div>
-          <div className="map-speed-legend-item">
             <span className="map-speed-dot" style={{ backgroundColor: "#33eebb" }}></span>
             <span>{speedUnit === "kmh" ? "56-80" : "35-50"}</span>
           </div>
           <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#ff9933" }}></span>
+            <span>{speedUnit === "kmh" ? "16-24" : "10-15"}</span>
+          </div>
+          <div className="map-speed-legend-item">
             <span className="map-speed-dot" style={{ backgroundColor: "#22ccff" }}></span>
             <span>&gt; {speedUnit === "kmh" ? 80 : 50}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#ffdd33" }}></span>
+            <span>{speedUnit === "kmh" ? "24-40" : "15-25"}</span>
           </div>
           <div className="map-speed-legend-item">
             <span className="map-speed-dot" style={{ backgroundColor: "#666666" }}></span>

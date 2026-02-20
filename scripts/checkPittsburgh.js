@@ -5,10 +5,18 @@ global.Request = Request;
 global.Response = Response;
 
 import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
 
 const supabase = createClient(
-  "https://REDACTED_SUPABASE_REF.supabase.co",
-  "REDACTED_SUPABASE_KEY"
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
 );
 
 // Library Junction is around 40.356 (shared area ends)

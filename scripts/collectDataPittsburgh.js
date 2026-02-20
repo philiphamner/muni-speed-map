@@ -9,18 +9,23 @@
  * Check https://www.rideprt.org/ for developer resources
  * Or search Transitland: https://www.transit.land/feeds
  *
- * ⚠️ NOTE: PRT GTFS-RT feed URLs may need to be obtained from their developer resources.
- *
  * Run with: node scripts/collectDataPittsburgh.js
  */
 
 import { createClient } from "@supabase/supabase-js";
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
+import dotenv from "dotenv";
 
-// Configuration
-const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  "REDACTED_SUPABASE_KEY";
+dotenv.config();
+
+// Configuration from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
 
 // PRT GTFS-RT Vehicle Positions feed (train-specific feed)
 // No API key needed - direct access

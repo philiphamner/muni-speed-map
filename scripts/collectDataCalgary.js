@@ -12,16 +12,24 @@
 import fetch from "node-fetch";
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
 import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const VEHICLE_POSITIONS_URL =
   "https://data.calgary.ca/download/am7c-qe3u/application%2Foctet-stream";
 
 const POLL_INTERVAL_MS = 90_000;
 
-// Supabase configuration
-const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  "REDACTED_SUPABASE_KEY";
+// Supabase configuration from environment variables
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Store previous positions for speed calculation

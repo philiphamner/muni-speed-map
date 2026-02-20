@@ -5,12 +5,16 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
 
-const SUPABASE_URL = "https://REDACTED_SUPABASE_REF.supabase.co";
-const SUPABASE_ANON_KEY =
-  "REDACTED_SUPABASE_KEY";
+dotenv.config();
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+  console.error("❌ Error: SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required");
+  process.exit(1);
+}
+
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
 async function checkSanDiegoDbDirect() {
   console.log("🔍 Checking San Diego data directly in database...\n");

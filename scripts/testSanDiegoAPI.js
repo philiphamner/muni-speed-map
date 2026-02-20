@@ -2,8 +2,16 @@
 
 import fetch from "node-fetch";
 import gtfs from "gtfs-realtime-bindings";
+import dotenv from "dotenv";
 
-const API_KEY = "REDACTED_MTS_KEY";
+dotenv.config();
+
+if (!process.env.MTS_API_KEY) {
+  console.error("❌ Error: MTS_API_KEY environment variable is required");
+  process.exit(1);
+}
+
+const API_KEY = process.env.MTS_API_KEY;
 const URL = `https://realtime.sdmts.com/api/api/gtfs_realtime/vehicle-positions-for-agency/MTS.pb?key=${API_KEY}`;
 const TARGET_ROUTE_IDS = new Set(["510", "520", "530", "535"]);
 
