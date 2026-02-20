@@ -32,6 +32,7 @@
     "collect:baltimore": "node scripts/collectDataBaltimore.js",
     "collect:cleveland": "node scripts/collectDataCleveland.js",
     "collect:multi": "bash scripts/collectMultiple.sh",
+    "collect:selected": "bash scripts/collectSelected.sh",
     "collect:all": "bash scripts/collectAll.sh",
     "parse-gtfs": "node scripts/parseGtfs.js",
     "parse-gtfs:la": "node scripts/parseGtfsLA.js",

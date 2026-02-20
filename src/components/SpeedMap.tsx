@@ -4183,22 +4183,17 @@ export function SpeedMap({
     city,
   ]);
 
-  // Separate effect for segment calculations (runs when entering segment mode or when filters change)
-  useEffect(() => {
-    if (!map.current || !mapLoaded) return;
-    if (viewMode !== "segments") return;
-
-    // Recalculate segment averages with current speed filter
+  // Memoized segment averages calculation - expensive, only recalculate when data changes
+  // NOT dependent on selectedLines - that filtering happens in the display effect below
+  const cachedSegmentAverages = useMemo(() => {
     const segmentSpeeds: Map<string, number[]> = new Map();
 
     vehicles.forEach((v) => {
       if (v.speed == null) return;
-      if (!shouldShowRoute(v.routeId, selectedLines, city)) return;
       // Skip if below min speed, or above max speed (unless max is 50, which means 50+)
       if (v.speed < speedFilter.minSpeed) return;
       if (speedFilter.maxSpeed < 50 && v.speed > speedFilter.maxSpeed) return;
       // Hide stopped trains (0 mph) if toggle is enabled
-      // Use 0.5 threshold so speeds that round to 0 (like 0.3 mph) are also hidden
       if (hideStoppedTrains && v.speed < 0.5) return;
       if (!v.segmentId) return;
 
@@ -4219,7 +4214,6 @@ export function SpeedMap({
     // Parallel segments have a referenceSegmentId field that tells us which reference segment to clone from
     if (city && CITIES_WITH_PARALLEL_TRACKS.includes(city)) {
       allRouteSegments.forEach((seg) => {
-        if (!shouldShowRoute(seg.routeId, selectedLines, city)) return;
         if (!seg.referenceSegmentId) return; // Only process parallel segments
         
         // Clone data from the reference segment
@@ -4230,19 +4224,27 @@ export function SpeedMap({
       });
     }
 
+    return segmentAverages;
+  }, [vehicles, speedFilter, hideStoppedTrains, city, allRouteSegments]);
+
+  // Display effect for segments - uses cached averages, only re-runs when selectedLines changes
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+    if (viewMode !== "segments") return;
+
     const segmentFeatures = allRouteSegments
       .filter((seg) => shouldShowRoute(seg.routeId, selectedLines, city))
-      .filter((seg) => segmentAverages.has(seg.segmentId))
+      .filter((seg) => cachedSegmentAverages.has(seg.segmentId))
       .filter((seg) => {
         // Hide segment averages at 0 mph when hideStoppedTrains is enabled
         if (hideStoppedTrains) {
-          const data = segmentAverages.get(seg.segmentId);
+          const data = cachedSegmentAverages.get(seg.segmentId);
           return data && data.avg >= 0.5;
         }
         return true;
       })
       .map((seg) => {
-        const data = segmentAverages.get(seg.segmentId)!;
+        const data = cachedSegmentAverages.get(seg.segmentId)!;
         return {
           type: "Feature" as const,
           properties: {
@@ -4344,13 +4346,13 @@ export function SpeedMap({
       });
     }
   }, [
-    speedFilter,
+    cachedSegmentAverages,
     hideStoppedTrains,
     viewMode,
     mapLoaded,
-    vehicles,
     selectedLines,
     allRouteSegments,
+    city,
   ]);
 
   // Toggle satellite/dark base map

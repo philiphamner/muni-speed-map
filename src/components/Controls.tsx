@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import type {
   MuniLine,
   LAMetroLine,
@@ -284,17 +284,16 @@ function getBadgeWidthClass(city: City): string {
     case "San Diego":
     case "Pittsburgh":
     case "Dallas":
-      return "badge-width-word"; // "Orange", "Yellow", "Copper", "Red", etc.
+    case "San Jose": // "Orange", "Green", "Blue"
+    case "Salt Lake City": // "Green", "Blue", "Red", "S"
+    case "Cleveland": // "Green", "Blue", "Red"
+      return "badge-width-word"; // Cities with "Orange", "Green", etc.
     case "Sacramento":
     case "Minneapolis":
-    case "Salt Lake City":
-    case "San Jose":
     case "Calgary":
     case "Edmonton":
-    case "Cleveland":
-      return "badge-width-short-word"; // "Blue", "Green", "Cap", "Met"
-    case "Charlotte":
-      return "badge-width-short-word"; // "Blue", "Gold"
+    case "Charlotte": // "Blue", "Gold"
+      return "badge-width-short-word"; // "Blue", "Gold", "Cap", "Met"
     case "Phoenix":
       return "badge-width-letter"; // Single letters (A, B)
     case "Baltimore":
@@ -397,6 +396,44 @@ interface ControlsProps {
   setSpeedUnit: (unit: SpeedUnit) => void;
 }
 
+function CollapsibleSection({
+  title,
+  isExpanded,
+  onToggle,
+  children,
+  rightElement,
+}: {
+  title: string;
+  isExpanded: boolean;
+  onToggle: () => void;
+  children: ReactNode;
+  rightElement?: ReactNode;
+}) {
+  return (
+    <div className="collapsible-section">
+      <button
+        className="collapsible-header"
+        onClick={onToggle}
+        type="button"
+      >
+        <span className={`collapsible-chevron ${isExpanded ? "expanded" : ""}`}>
+          ▶
+        </span>
+        <span className="collapsible-title">{title}</span>
+        {rightElement && (
+          <span
+            className="collapsible-right"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {rightElement}
+          </span>
+        )}
+      </button>
+      {isExpanded && <div className="collapsible-content">{children}</div>}
+    </div>
+  );
+}
+
 export function Controls({
   city,
   setCity,
@@ -466,6 +503,13 @@ export function Controls({
     startY: 0,
     startPanX: 0,
     startPanY: 0,
+  });
+
+  // Collapsible sections state
+  const [sections, setSections] = useState({
+    speedView: true,
+    linesContext: true,
+    infrastructure: true,
   });
 
   // Show modal when user navigates to Sacramento
@@ -817,6 +861,12 @@ export function Controls({
       >
         View official rail map
       </button>
+      <button
+        className="app-header-link-btn app-header-link-btn-alt"
+        onClick={() => setShowAboutModal(true)}
+      >
+        About this project
+      </button>
       {/* City Selector - 3x3 grid */}
       <div className="city-selector">
         {/* Row 1: West Coast */}
@@ -998,12 +1048,6 @@ export function Controls({
           ⚠️ Sac
         </button> */}
       </div>
-      <button
-        className="about-project-btn"
-        onClick={() => setShowAboutModal(true)}
-      >
-        About this project
-      </button>
 
       {/* Data Status */}
       <div className="status-section">
@@ -1018,25 +1062,30 @@ export function Controls({
         </div>
       </div>
 
-      {/* View Mode Toggle */}
-      <div className="control-group">
-        <div className="control-label-row">
-          <div className="control-label">Speed View Mode</div>
-          <div className="unit-toggle-group">
-            <button
-              className={`unit-toggle-btn ${speedUnit === "mph" ? "active" : ""}`}
-              onClick={() => setSpeedUnit("mph")}
-            >
-              mph
-            </button>
-            <button
-              className={`unit-toggle-btn ${speedUnit === "kmh" ? "active" : ""}`}
-              onClick={() => setSpeedUnit("kmh")}
-            >
-              km/h
-            </button>
-          </div>
-        </div>
+      {/* Speed View & Filter */}
+      <CollapsibleSection
+        title="Speed View & Filter"
+        isExpanded={sections.speedView}
+        onToggle={() => setSections((s) => ({ ...s, speedView: !s.speedView }))}
+        rightElement={
+          sections.speedView ? (
+            <div className="unit-toggle-group">
+              <button
+                className={`unit-toggle-btn ${speedUnit === "mph" ? "active" : ""}`}
+                onClick={() => setSpeedUnit("mph")}
+              >
+                mph
+              </button>
+              <button
+                className={`unit-toggle-btn ${speedUnit === "kmh" ? "active" : ""}`}
+                onClick={() => setSpeedUnit("kmh")}
+              >
+                km/h
+              </button>
+            </div>
+          ) : undefined
+        }
+      >
         <div className="view-mode-toggle">
           <button
             className={`view-mode-btn ${viewMode === "raw" ? "active" : ""}`}
@@ -1071,31 +1120,96 @@ export function Controls({
             <span className="btn-subtext">{liveTimeText || "\u00A0"}</span>
           </button>
         </div>
-      </div>
-
-      {/* Line Filter */}
-      <div className="control-group">
-        <div className="control-label-row">
-          <label className="control-label">Filter Lines</label>
-          <div className="toggle-group">
-            <button
-              className={`toggle-button ${
-                selectedLines.length === allLines.length ? "active" : ""
-              }`}
-              onClick={selectAllLines}
-            >
-              All
-            </button>
-            <button
-              className={`toggle-button ${
-                selectedLines.length === 0 ? "active" : ""
-              }`}
-              onClick={clearAllLines}
-            >
-              None
-            </button>
+        <div className="control-label">Speed Filter</div>
+        <div className="speed-filter">
+          <div className="speed-slider-row">
+            <label>
+              Min: {Math.round(convertSpeed(speedFilter.minSpeed))}{" "}
+              {unitLabelLower}
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value={speedFilter.minSpeed}
+              onChange={(e) =>
+                setSpeedFilter({
+                  ...speedFilter,
+                  minSpeed: Math.min(
+                    Number(e.target.value),
+                    speedFilter.maxSpeed,
+                  ),
+                })
+              }
+              className="speed-slider"
+            />
+          </div>
+          <div className="speed-slider-row">
+            <label>
+              Max:{" "}
+              {speedFilter.maxSpeed === 50
+                ? `${Math.round(convertSpeed(50))}+`
+                : Math.round(convertSpeed(speedFilter.maxSpeed))}{" "}
+              {unitLabelLower}
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value={speedFilter.maxSpeed}
+              onChange={(e) =>
+                setSpeedFilter({
+                  ...speedFilter,
+                  maxSpeed: Math.max(
+                    Number(e.target.value),
+                    speedFilter.minSpeed,
+                  ),
+                })
+              }
+              className="speed-slider"
+            />
           </div>
         </div>
+        <div className="route-lines-toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={hideStoppedTrains}
+              onChange={(e) => setHideStoppedTrains(e.target.checked)}
+            />
+            Hide stopped trains (0 {unitLabelLower})
+          </label>
+        </div>
+      </CollapsibleSection>
+
+      {/* Lines & Regional Context */}
+      <CollapsibleSection
+        title="Lines & Regional Context"
+        isExpanded={sections.linesContext}
+        onToggle={() => setSections((s) => ({ ...s, linesContext: !s.linesContext }))}
+        rightElement={
+          sections.linesContext ? (
+            <div className="toggle-group">
+              <button
+                className={`toggle-button ${
+                  selectedLines.length === allLines.length ? "active" : ""
+                }`}
+                onClick={selectAllLines}
+              >
+                All
+              </button>
+              <button
+                className={`toggle-button ${
+                  selectedLines.length === 0 ? "active" : ""
+                }`}
+                onClick={clearAllLines}
+              >
+                None
+              </button>
+            </div>
+          ) : undefined
+        }
+      >
         <div className="line-buttons">
           {allLines.map((line) => (
             <button
@@ -1248,6 +1362,35 @@ export function Controls({
             </div>
           )}
         </div>
+        <div className="control-label" style={{ marginTop: 8 }}>Regional & Metro Overlay</div>
+        <div className="route-lines-toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={showRailContextHeavy}
+              onChange={(e) => setShowRailContextHeavy(e.target.checked)}
+            />
+            Metro / Subway ({railContextHeavyCount})
+          </label>
+        </div>
+        <div className="route-lines-toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={showRailContextCommuter}
+              onChange={(e) => setShowRailContextCommuter(e.target.checked)}
+            />
+            Regional / Commuter rail ({railContextCommuterCount})
+          </label>
+        </div>
+      </CollapsibleSection>
+
+      {/* Infrastructure */}
+      <CollapsibleSection
+        title="Infrastructure"
+        isExpanded={sections.infrastructure}
+        onToggle={() => setSections((s) => ({ ...s, infrastructure: !s.infrastructure }))}
+      >
         <div className="route-lines-toggle">
           <label>
             <input
@@ -1298,111 +1441,26 @@ export function Controls({
             Show track switches (Y)
           </label>
         </div>
-        <div className="route-lines-toggle">
-          <label>
-            <input
-              type="checkbox"
-              checked={hideStoppedTrains}
-              onChange={(e) => setHideStoppedTrains(e.target.checked)}
-            />
-            Hide stopped trains (0 {unitLabelLower})
-          </label>
-        </div>
-        <div className="route-lines-section">
-          <div className="control-label">Regional & Metro Overlay</div>
-          <div className="route-lines-toggle">
-            <label>
-              <input
-                type="checkbox"
-                checked={showRailContextHeavy}
-                onChange={(e) => setShowRailContextHeavy(e.target.checked)}
-              />
-              Metro / Subway ({railContextHeavyCount})
-            </label>
-          </div>
-          <div className="route-lines-toggle">
-            <label>
-              <input
-                type="checkbox"
-                checked={showRailContextCommuter}
-                onChange={(e) => setShowRailContextCommuter(e.target.checked)}
-              />
-              Regional / Commuter rail ({railContextCommuterCount})
-            </label>
-          </div>
-        </div>
-      </div>
+      </CollapsibleSection>
 
-      {/* Speed Filter */}
-      <div className="control-group">
-        <div className="control-label">Speed Filter</div>
-        <div className="speed-filter">
-          <div className="speed-slider-row">
-            <label>
-              Min: {Math.round(convertSpeed(speedFilter.minSpeed))}{" "}
-              {unitLabelLower}
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="50"
-              value={speedFilter.minSpeed}
-              onChange={(e) =>
-                setSpeedFilter({
-                  ...speedFilter,
-                  minSpeed: Math.min(
-                    Number(e.target.value),
-                    speedFilter.maxSpeed,
-                  ),
-                })
-              }
-              className="speed-slider"
-            />
-          </div>
-          <div className="speed-slider-row">
-            <label>
-              Max:{" "}
-              {speedFilter.maxSpeed === 50
-                ? `${Math.round(convertSpeed(50))}+`
-                : Math.round(convertSpeed(speedFilter.maxSpeed))}{" "}
-              {unitLabelLower}
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="50"
-              value={speedFilter.maxSpeed}
-              onChange={(e) =>
-                setSpeedFilter({
-                  ...speedFilter,
-                  maxSpeed: Math.max(
-                    Number(e.target.value),
-                    speedFilter.minSpeed,
-                  ),
-                })
-              }
-              className="speed-slider"
-            />
-          </div>
-          <button
-            className="reset-filter-btn"
-            onClick={() => {
-              setSpeedFilter({ minSpeed: 0, maxSpeed: 50, showNoData: true });
-              setSelectedLines([...allLines] as string[]);
-              setShowRouteLines(true);
-              setShowStops(false);
-              setShowCrossings(false);
-              setShowTrafficLights(false);
-              setShowSwitches(false);
-              setShowRailContextHeavy(false);
-              setShowRailContextCommuter(false);
-              setHideStoppedTrains(false);
-            }}
-          >
-            Reset Filters
-          </button>
-        </div>
-      </div>
+      {/* Reset All Filters */}
+      <button
+        className="reset-filter-btn"
+        onClick={() => {
+          setSpeedFilter({ minSpeed: 0, maxSpeed: 50, showNoData: true });
+          setSelectedLines([...allLines] as string[]);
+          setShowRouteLines(true);
+          setShowStops(false);
+          setShowCrossings(false);
+          setShowTrafficLights(false);
+          setShowSwitches(false);
+          setShowRailContextHeavy(false);
+          setShowRailContextCommuter(false);
+          setHideStoppedTrains(false);
+        }}
+      >
+        Reset All Filters
+      </button>
 
       {/* Line Statistics */}
       {lineStats.length > 0 && (
