@@ -493,11 +493,11 @@
 
 .route-mode-btn {
   flex: 1;
-  padding: 6px 6px;
+  padding: 7px 8px;
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   cursor: pointer;
   border-radius: 4px;
@@ -535,22 +535,22 @@
 .view-mode-toggle {
   display: flex;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 3px;
+  border-radius: 6px;
+  padding: 2px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  min-height: 52px;
+  gap: 2px;
 }
 
 .view-mode-btn {
   flex: 1;
-  padding: 8px 12px;
+  padding: 7px 8px;
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: all 0.2s;
 }
 

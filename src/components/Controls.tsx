@@ -1101,24 +1101,6 @@ export function Controls({
           >
             Segment Avg
           </button>
-          <button
-            className={`view-mode-btn live-btn ${
-              viewMode === "live" ? "active" : ""
-            } ${!hasAnyData ? "disabled" : ""} ${
-              hasAnyData && !isLiveFresh ? "stale" : ""
-            }`}
-            onClick={() => hasAnyData && setViewMode("live")}
-            disabled={!hasAnyData}
-            title={liveTooltip}
-          >
-            <span className="btn-main-row">
-              <span className="btn-icon">
-                {!hasAnyData ? "⚫" : isLiveFresh ? "🟢" : "🟡"}
-              </span>
-              <span>Live</span>
-            </span>
-            <span className="btn-subtext">{liveTimeText || "\u00A0"}</span>
-          </button>
         </div>
         <div className="control-label">Speed Filter</div>
         <div className="speed-filter">
