@@ -4408,20 +4408,46 @@ export function SpeedMap({
     <div className="map-wrapper">
       <div ref={mapContainer} className="map-container" />
 
-      {/* Crossing gate legend - only for cities with verified gate data */}
-      {showCrossings &&
-        ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city) && (
-          <div className="crossing-gate-legend">
-            <div className="crossing-legend-item">
-              <span className="crossing-x gated">✕</span>
-              <span>Gated</span>
-            </div>
-            <div className="crossing-legend-item">
-              <span className="crossing-x other">✕</span>
-              <span>Other</span>
-            </div>
+      {/* Speed Legend - on map above layer toggle */}
+      <div className="map-speed-legend">
+        <div className="map-speed-legend-title">
+          Speed ({speedUnit === "kmh" ? "km/h" : "mph"})
+        </div>
+        <div className="map-speed-legend-grid">
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#9b2d6b" }}></span>
+            <span>≤ {speedUnit === "kmh" ? 8 : 5}</span>
           </div>
-        )}
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#ff3333" }}></span>
+            <span>{speedUnit === "kmh" ? "8-16" : "5-10"}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#ff9933" }}></span>
+            <span>{speedUnit === "kmh" ? "16-24" : "10-15"}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#ffdd33" }}></span>
+            <span>{speedUnit === "kmh" ? "24-40" : "15-25"}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#88ff33" }}></span>
+            <span>{speedUnit === "kmh" ? "40-56" : "25-35"}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#33eebb" }}></span>
+            <span>{speedUnit === "kmh" ? "56-80" : "35-50"}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#22ccff" }}></span>
+            <span>&gt; {speedUnit === "kmh" ? 80 : 50}</span>
+          </div>
+          <div className="map-speed-legend-item">
+            <span className="map-speed-dot" style={{ backgroundColor: "#666666" }}></span>
+            <span>No data</span>
+          </div>
+        </div>
+      </div>
 
       {/* Google Maps-style layer toggle button */}
       <div
@@ -4439,30 +4465,54 @@ export function SpeedMap({
         />
       </div>
 
-      {/* Regional & Metro Overlay legend */}
-      {(showRailContextHeavy || showRailContextCommuter) && (
-        <div className="rail-context-legend">
-          <div className="rail-context-legend-title">
-            Regional & Metro Overlay
-          </div>
-          <div
-            className={`rail-context-legend-item ${
-              showRailContextHeavy ? "" : "disabled"
-            }`}
-          >
-            <span className="rail-context-legend-line heavy"></span>
-            <span>Metro / Subway</span>
-          </div>
-          <div
-            className={`rail-context-legend-item ${
-              showRailContextCommuter ? "" : "disabled"
-            }`}
-          >
-            <span className="rail-context-legend-line commuter"></span>
-            <span>Regional / Commuter</span>
-          </div>
+      {/* Dynamic legends - positioned at top-left, stacked vertically */}
+      {(showCrossings && ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city)) ||
+       showRailContextHeavy || showRailContextCommuter ? (
+        <div className="map-dynamic-legends">
+          {/* Crossing gate legend - only for cities with verified gate data */}
+          {showCrossings &&
+            ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city) && (
+              <div className="crossing-gate-legend-inline">
+                <div className="dynamic-legend-title">Grade Crossings</div>
+                <div className="crossing-legend-items">
+                  <div className="crossing-legend-item">
+                    <span className="crossing-x gated">✕</span>
+                    <span>Gated</span>
+                  </div>
+                  <div className="crossing-legend-item">
+                    <span className="crossing-x other">✕</span>
+                    <span>Other</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          {/* Regional & Metro Overlay legend */}
+          {(showRailContextHeavy || showRailContextCommuter) && (
+            <div className="rail-context-legend-inline">
+              <div className="dynamic-legend-title">
+                Regional & Metro Overlay
+              </div>
+              <div
+                className={`rail-context-legend-item ${
+                  showRailContextHeavy ? "" : "disabled"
+                }`}
+              >
+                <span className="rail-context-legend-line heavy"></span>
+                <span>Metro / Subway</span>
+              </div>
+              <div
+                className={`rail-context-legend-item ${
+                  showRailContextCommuter ? "" : "disabled"
+                }`}
+              >
+                <span className="rail-context-legend-line commuter"></span>
+                <span>Regional / Commuter</span>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      ) : null}
 
       {/* City data loading overlay */}
       {cityDataLoading && (

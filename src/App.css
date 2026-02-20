@@ -1586,14 +1586,100 @@
   margin-bottom: 4px;
 }
 
-/* Floating crossing gate legend - above satellite toggle */
-.crossing-gate-legend {
+/* Speed Legend - on map above layer toggle */
+.map-speed-legend {
   position: absolute;
   bottom: 170px;
-  /* Above satellite toggle (68px + 91px + 11px gap) */
   left: 10px;
-  background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.map-speed-legend-title {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+}
+
+.map-speed-legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 14px;
+}
+
+.map-speed-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.map-speed-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Container for dynamic legends at top-left */
+.map-dynamic-legends {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Shared title style for dynamic legends */
+.dynamic-legend-title {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+/* Crossing gate legend inline (within container) */
+.crossing-gate-legend-inline {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.crossing-gate-legend-inline:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.crossing-legend-items {
+  display: flex;
+  gap: 12px;
+}
+
+/* Legacy standalone crossing gate legend (fallback) */
+.crossing-gate-legend {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   padding: 8px 12px;
   z-index: 1000;
@@ -1626,18 +1712,29 @@
   color: #ff9500;
 }
 
-/* Floating rail context legend - near map toggle and crossing legend */
+/* Rail context legend inline (within container) */
+.rail-context-legend-inline {
+  /* No extra styling needed, inherits from container */
+}
+
+.rail-context-legend-inline:not(:last-child) {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Legacy standalone rail context legend (fallback) */
 .rail-context-legend {
   position: absolute;
-  bottom: 238px;
+  top: 10px;
   left: 10px;
-  background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   padding: 8px 12px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  min-width: 170px;
+  min-width: 150px;
 }
 
 .rail-context-legend-title {
