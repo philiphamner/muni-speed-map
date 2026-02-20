@@ -1279,24 +1279,14 @@ export function Controls({
           )}
         </div>
         <div className="route-lines-toggle">
-          {city === "SF" ? (
-            <label>
-              <input
-                type="checkbox"
-                checked={showTrafficLights}
-                onChange={(e) => setShowTrafficLights(e.target.checked)}
-              />
-              Show traffic lights (🚦)
-            </label>
-          ) : (
-            <label
-              style={{ opacity: 0.5, cursor: "not-allowed" }}
-              title="Traffic light data is only available for San Francisco"
-            >
-              <input type="checkbox" checked={false} disabled />
-              Show traffic lights (🚦)
-            </label>
-          )}
+          <label>
+            <input
+              type="checkbox"
+              checked={showTrafficLights}
+              onChange={(e) => setShowTrafficLights(e.target.checked)}
+            />
+            Show traffic lights (🚦)
+          </label>
         </div>
         <div className="route-lines-toggle">
           <label>
