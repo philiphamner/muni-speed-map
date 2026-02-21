@@ -1643,6 +1643,8 @@ export function Controls({
                 <p key={i}>{para}</p>
               ))}
               <p>
+                <p>{ABOUT_SECTIONS.whatItIs.details}</p>
+
                 <strong>
                   This project seeks to be an analytics platform that:
                 </strong>
@@ -1652,7 +1654,6 @@ export function Controls({
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <p>{ABOUT_SECTIONS.whatItIs.details}</p>
               <p>{ABOUT_SECTIONS.whatItIs.goal}</p>
             </div>
 
