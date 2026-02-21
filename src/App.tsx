@@ -4,6 +4,7 @@ import { Controls } from "./components/Controls";
 import { MUNI_LINES, getLinesForCity } from "./types";
 import type { City } from "./types";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 
 export interface SpeedFilter {
@@ -160,6 +161,7 @@ function App() {
         }}
       />
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
