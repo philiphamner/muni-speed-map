@@ -102,7 +102,7 @@ export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   },
   {
     city: "Baltimore",
-    note: "Light RailLink analytics are paired with Metro SubwayLink and MARC Penn/Camden context layers from MTA Maryland feeds.",
+    note: "Light RailLink shows gaps in coverage along certain stretches—possibly due to limited GPS reporting frequency or infrastructure constraints. Regional context includes Metro SubwayLink and MARC commuter rail.",
   },
   {
     city: "Cleveland",
