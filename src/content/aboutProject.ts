@@ -33,7 +33,6 @@ export const ABOUT_SECTIONS = {
   dataMethodology: [
     "Live train positions come from agency GTFS-realtime or equivalent APIs.",
     "Speed is either reported directly by the agency or estimated from consecutive GPS position updates.",
-    "Data freshness reflects what is currently in the database; stale periods can occur when live feeds are interrupted.",
     "Route geometry, crossings, switches, and separation overlays come from curated static files and OpenStreetMap data.",
     "Regional/metro overlays are built from GTFS static feeds, filtered to passenger rail services.",
   ],
