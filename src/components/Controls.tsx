@@ -441,7 +441,7 @@ export function Controls({
   setSelectedLines,
   vehicleCount,
   lastUpdate,
-  dataAgeMinutes,
+  dataAgeMinutes: _dataAgeMinutes,
   speedFilter,
   setSpeedFilter,
   showRouteLines,
@@ -535,25 +535,6 @@ export function Controls({
       document.removeEventListener("keydown", handleEscape);
     };
   }, [showAboutModal, showTransitMapModal]);
-
-  // Live mode: fresh if data is less than 5 minutes old, but always available if we have any data
-  const isLiveFresh = dataAgeMinutes !== null && dataAgeMinutes < 5;
-  const hasAnyData = dataAgeMinutes !== null;
-  const liveTimeText =
-    dataAgeMinutes === null
-      ? ""
-      : dataAgeMinutes < 1
-        ? "(now)"
-        : dataAgeMinutes < 60
-          ? `(${Math.round(dataAgeMinutes)}m ago)`
-          : dataAgeMinutes < 1440
-            ? `(${Math.round(dataAgeMinutes / 60)}h ago)`
-            : `(${Math.round(dataAgeMinutes / 1440)}d ago)`;
-  const liveTooltip = isLiveFresh
-    ? "Show current train positions"
-    : hasAnyData
-      ? "Show last known train positions (data is stale)"
-      : "No data loaded yet";
 
   const allLines = getLinesForCity(city);
 
