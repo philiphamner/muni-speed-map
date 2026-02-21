@@ -78,7 +78,7 @@ export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   },
   {
     city: "Minneapolis–St. Paul",
-    note: "Separation data is curated to avoid unrelated airport people-mover infrastructure. Airport tunnel and grade-separation sections can have distinct speed behavior compared with downtown street-running areas.",
+    note: "Airport tunnel and grade-separation sections can have distinct speed behavior compared with downtown street-running areas.",
   },
   {
     city: "Denver",
@@ -102,7 +102,7 @@ export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   },
   {
     city: "Baltimore",
-    note: "Light RailLink shows gaps in coverage along certain stretches—possibly due to limited GPS reporting frequency or infrastructure constraints. Regional context includes Metro SubwayLink and MARC commuter rail.",
+    note: "Light RailLink shows gaps in coverage along certain stretches (especially when the trains are not near stations) possibly due to limited GPS reporting frequency or infrastructure constraints. Regional context includes Metro SubwayLink and MARC commuter rail.",
   },
   {
     city: "Cleveland",
