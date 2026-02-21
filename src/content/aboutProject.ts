@@ -20,15 +20,14 @@ export const ABOUT_SECTIONS = {
   exclusions: [
     "Heavy rail-only systems: New York City, Chicago, Washington DC, Honolulu, Vancouver, Montreal",
     "Streetcar / Heritage-only systems: New Orleans, SF Cable Cars, Detroit, Kansas City, Cincinnati, Norfolk",
-    "Live light-rail data either does not exist or are not available to the public: Dallas (DART), Houston (METRORail), Sacramento (SacRT), St. Louis (MetroLink), New Jersey (HBLR, River Line, Newark), Mexico City, Guadalajara, Monterrey, Calgary (C-Train), Edmonton",
+    "No public live data available: Dallas (DART), Houston (METRORail), Sacramento (SacRT), St. Louis (MetroLink), New Jersey (HBLR, River Line, Newark), Mexico City, Guadalajara, Monterrey, Calgary (C-Train), Edmonton",
   ],
   dataMethodology: [
     "Live train positions come from agency GTFS-realtime or equivalent APIs.",
-    "Where agencies do not publish speed directly, speed is estimated from consecutive position updates.",
-    "Speed source can vary by city: some cities provide direct speed in API responses, others require GPS-derived estimation.",
-    "Data freshness reflects what is currently in the database, including stale periods when live feeds are interrupted.",
-    "Route geometry, crossings, switches, and separation overlays use curated static files and OSM-derived data.",
-    "Regional/metro overlays are built from GTFS static feeds and filtered to passenger services.",
+    "Speed is either reported directly by the agency or estimated from consecutive GPS position updates.",
+    "Data freshness reflects what is currently in the database; stale periods can occur when live feeds are interrupted.",
+    "Route geometry, crossings, switches, and separation overlays come from curated static files and OpenStreetMap data.",
+    "Regional/metro overlays are built from GTFS static feeds, filtered to passenger rail services.",
   ],
   segmentAverages: [
     "Route lines are divided into fixed 200-meter segments. Each vehicle position is assigned to the segment it falls within based on distance along the route.",
@@ -47,7 +46,7 @@ export const ABOUT_SECTIONS = {
 export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   {
     city: "San Francisco",
-    note: "N Judah in Sunset Tunnel can show portal clustering because location data is not available there; apparent tunnel speeds represent through-tunnel travel, not dense in-tunnel GPS sampling. F-Wharf and Market crossings are intentionally hidden to avoid confusion with the Market Street subway below. The F-Wharf is turned off by default to avoid confusing its slower street-running speeds with the faster underground sections of the system below Market Street.",
+    note: "N Judah tunnel speeds may appear clustered at portals due to limited GPS in the Sunset Tunnel. The F-Market & Wharves line is hidden by default to avoid confusing its slower street-running speeds with the faster underground Muni Metro lines.",
   },
   {
     city: "Los Angeles",
@@ -87,7 +86,7 @@ export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   },
   {
     city: "Salt Lake City",
-    note: "Regional/metro context uses static fallback safeguards to avoid empty overlays caused by loader timing issues.",
+    note: "TRAX lines share downtown trackage, so compare individual line speeds separately from the shared core for clearer interpretation.",
   },
   {
     city: "Pittsburgh",
@@ -111,6 +110,6 @@ export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   },
   {
     city: "San Diego",
-    note: "Regional context includes Coaster from NCTD static GTFS. Live trolley coverage can vary when API credentials/feed availability are limited.",
+    note: "Regional context includes NCTD Coaster commuter rail. The Trolley system covers four lines with varying service patterns across the metro area.",
   },
 ];
