@@ -8,7 +8,7 @@ export const ABOUT_SECTIONS = {
   whatItIs: {
     intro: [
       "As a San Francisco railfan, I was frustrated by how slow Muni's light-rail often feels, but I couldn't find any granular data showing where and why trains bog down. So I built it myself. Once I had a working prototype, I realized the same approach could apply to other cities. I chose to focus on light rail specifically because, unlike heavy metro systems, it operates in environments where targeted improvements—signal priority, stop consolidation, lane separation—can make a real difference.",
-      "Light-rail systems in North America often suffer from slow speeds due to mixed traffic, signal delays, frequent stops, and constrained infrastructure.",
+      "Light-rail systems in North America often suffer from slow speeds due to mixed traffic, signal delays, frequent stops, and constrained infrastructure. By combining real-time data with static GTFS and infrastructure overlays, the platform makes it possible to identify systemic slow zones, compare cities, and evaluate infrastructure tradeoffs.",
     ],
     platformFeatures: [
       "Ingests live GTFS-RT vehicle positions",
@@ -17,8 +17,6 @@ export const ABOUT_SECTIONS = {
       "Stores historical performance data",
       "Visualizes speed distributions and bottlenecks on interactive maps",
     ],
-    details:
-      "By combining real-time data with static GTFS and infrastructure overlays, the platform makes it possible to identify systemic slow zones, compare cities, and evaluate infrastructure tradeoffs.",
     goal: 'The aim is to turn anecdotal complaints about "slow trains" into measurable, actionable insights.',
   },
   keyDecisions: [
