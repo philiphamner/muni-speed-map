@@ -336,6 +336,8 @@ interface ControlsProps {
   lineStats: LineStats[];
   speedUnit: SpeedUnit;
   setSpeedUnit: (unit: SpeedUnit) => void;
+  isSidebarOpen?: boolean;
+  onCloseSidebar?: () => void;
 }
 
 function CollapsibleSection({
@@ -407,6 +409,8 @@ export function Controls({
   lineStats,
   speedUnit,
   setSpeedUnit,
+  isSidebarOpen,
+  onCloseSidebar,
 }: ControlsProps) {
   const MIN_TRANSIT_MAP_ZOOM = 1;
   const MAX_TRANSIT_MAP_ZOOM = 4;
@@ -747,7 +751,15 @@ export function Controls({
   }, [transitMapZoom, transitMapBaseSize]);
 
   return (
-    <div className="controls-panel">
+    <div className={`controls-panel ${isSidebarOpen ? "mobile-open" : ""}`}>
+      {/* Mobile close button */}
+      <button
+        className="mobile-close-btn"
+        onClick={onCloseSidebar}
+        aria-label="Close menu"
+      >
+        ✕
+      </button>
       <div className="app-header">
         <span className="app-city">{cityLine}</span>
         <h1

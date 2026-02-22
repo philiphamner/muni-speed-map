@@ -35,6 +35,9 @@ const useIsDev = () => {
 function App() {
   const isDev = useIsDev();
 
+  // Mobile sidebar state
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // City selector - SF or LA
   const [city, setCity] = useState<City>("SF");
 
@@ -103,6 +106,23 @@ function App() {
 
   return (
     <div className="app">
+      {/* Mobile menu toggle button */}
+      <button
+        className="mobile-menu-toggle"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        aria-label={isSidebarOpen ? "Close menu" : "Open menu"}
+      >
+        {isSidebarOpen ? "✕" : "☰"}
+      </button>
+
+      {/* Mobile overlay when sidebar is open */}
+      {isSidebarOpen && (
+        <div
+          className="mobile-overlay"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       <Controls
         city={city}
         setCity={setCity}
@@ -138,6 +158,8 @@ function App() {
         lineStats={lineStats}
         speedUnit={speedUnit}
         setSpeedUnit={setSpeedUnit}
+        isSidebarOpen={isSidebarOpen}
+        onCloseSidebar={() => setIsSidebarOpen(false)}
       />
       <SpeedMap
         key={city}
