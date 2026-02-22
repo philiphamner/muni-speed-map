@@ -9,17 +9,12 @@ import type {
   SanDiegoTrolleyLine,
   TorontoStreetcarLine,
   PhillyTrolleyLine,
-  SacramentoLightRailLine,
   PittsburghTLine,
-  DallasDartLine,
   MinneapolisMetroLine,
   DenverRtdLine,
   SlcTraxLine,
   VtaLightRailLine,
   PhoenixLightRailLine,
-  HblrLine,
-  CalgaryCtrainLine,
-  EdmontonLrtLine,
   ClevelandRtaLine,
   CharlotteLynxLine,
   BaltimoreLightRailLine,
@@ -34,17 +29,12 @@ import {
   SAN_DIEGO_TROLLEY_LINE_INFO,
   TORONTO_STREETCAR_LINE_INFO,
   PHILLY_TROLLEY_LINE_INFO,
-  SACRAMENTO_LIGHT_RAIL_LINE_INFO,
   PITTSBURGH_T_LINE_INFO,
-  DALLAS_DART_LINE_INFO,
   MINNEAPOLIS_METRO_LINE_INFO,
   DENVER_RTD_LINE_INFO,
   SLC_TRAX_LINE_INFO,
   VTA_LIGHT_RAIL_LINE_INFO,
   PHOENIX_LIGHT_RAIL_LINE_INFO,
-  HBLR_LINE_INFO,
-  CALGARY_CTRAIN_LINE_INFO,
-  EDMONTON_LRT_LINE_INFO,
   CLEVELAND_RTA_LINE_INFO,
   CHARLOTTE_LYNX_LINE_INFO,
   BALTIMORE_LIGHT_RAIL_LINE_INFO,
@@ -71,10 +61,8 @@ const OFFICIAL_TRANSIT_MAP_URLS: Record<City, string> = {
   Toronto:
     "https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_SubwayStreetcarLightrailMap.pdf?rev=7d8053749e5c4075a1ae81a5d9a5fe86",
   Philadelphia: "",
-  Sacramento: "",
   Pittsburgh:
     "https://www.rideprt.org/contentassets/063109698b9343de8d10ee531601accc/lrtmap.pdf",
-  Dallas: "",
   Minneapolis:
     "https://www.metrotransit.org/Data/Sites/1/media/metro/metro_diagrammap.pdf",
   Denver:
@@ -84,15 +72,11 @@ const OFFICIAL_TRANSIT_MAP_URLS: Record<City, string> = {
     "https://www.vta.org/sites/default/files/2026-01/ADA-LR-busconnect-011226.pdf",
   Phoenix:
     "https://i0.wp.com/transitmap.net/wp-content/uploads/2025/07/ValleyMetro-2025.jpg",
-  "Jersey City": "",
-  Calgary: "",
-  Edmonton: "",
   Cleveland:
     "https://www.riderta.com/sites/default/files/pdf/maps/System_Map_Rapid.pdf",
   Charlotte:
     "https://www.charlottenc.gov/files/sharedassets/cats/v/4/cats-images/rtcs-plan-map-28x42-7_29_2025-5-1.jpg",
   Baltimore: "https://www.urbanrail.net/am/balt/baltimore-map.gif",
-  Washington: "",
 };
 
 const TRANSIT_MAP_DISPLAY_URLS: Partial<Record<City, string>> = {
@@ -166,15 +150,8 @@ function getLineColor(line: string, city: City): string {
     return (
       PHILLY_TROLLEY_LINE_INFO[line as PhillyTrolleyLine]?.color || "#5A960A"
     );
-  } else if (city === "Sacramento") {
-    return (
-      SACRAMENTO_LIGHT_RAIL_LINE_INFO[line as SacramentoLightRailLine]?.color ||
-      "#666"
-    );
   } else if (city === "Pittsburgh") {
     return PITTSBURGH_T_LINE_INFO[line as PittsburghTLine]?.color || "#666";
-  } else if (city === "Dallas") {
-    return DALLAS_DART_LINE_INFO[line as DallasDartLine]?.color || "#666";
   } else if (city === "Minneapolis") {
     return (
       MINNEAPOLIS_METRO_LINE_INFO[line as MinneapolisMetroLine]?.color || "#666"
@@ -190,12 +167,6 @@ function getLineColor(line: string, city: City): string {
       PHOENIX_LIGHT_RAIL_LINE_INFO[line as PhoenixLightRailLine]?.color ||
       "#E5721A"
     );
-  } else if (city === "Jersey City") {
-    return HBLR_LINE_INFO[line as HblrLine]?.color || "#666";
-  } else if (city === "Calgary") {
-    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.color || "#666";
-  } else if (city === "Edmonton") {
-    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.color || "#666";
   } else if (city === "Cleveland") {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.color || "#666";
   } else if (city === "Charlotte") {
@@ -235,15 +206,8 @@ function getLineLabel(line: string, city: City): string {
     );
   } else if (city === "Philadelphia") {
     return PHILLY_TROLLEY_LINE_INFO[line as PhillyTrolleyLine]?.letter || line;
-  } else if (city === "Sacramento") {
-    return (
-      SACRAMENTO_LIGHT_RAIL_LINE_INFO[line as SacramentoLightRailLine]
-        ?.letter || line
-    );
   } else if (city === "Pittsburgh") {
     return PITTSBURGH_T_LINE_INFO[line as PittsburghTLine]?.letter || line;
-  } else if (city === "Dallas") {
-    return DALLAS_DART_LINE_INFO[line as DallasDartLine]?.letter || line;
   } else if (city === "Minneapolis") {
     return (
       MINNEAPOLIS_METRO_LINE_INFO[line as MinneapolisMetroLine]?.letter || line
@@ -258,12 +222,6 @@ function getLineLabel(line: string, city: City): string {
     return (
       PHOENIX_LIGHT_RAIL_LINE_INFO[line as PhoenixLightRailLine]?.letter || line
     );
-  } else if (city === "Jersey City") {
-    return HBLR_LINE_INFO[line as HblrLine]?.letter || line;
-  } else if (city === "Calgary") {
-    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.letter || line;
-  } else if (city === "Edmonton") {
-    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.letter || line;
   } else if (city === "Cleveland") {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.letter || line;
   } else if (city === "Charlotte") {
@@ -283,15 +241,11 @@ function getBadgeWidthClass(city: City): string {
     case "Portland":
     case "San Diego":
     case "Pittsburgh":
-    case "Dallas":
     case "San Jose": // "Orange", "Green", "Blue"
     case "Salt Lake City": // "Green", "Blue", "Red", "S"
     case "Cleveland": // "Green", "Blue", "Red"
       return "badge-width-word"; // Cities with "Orange", "Green", etc.
-    case "Sacramento":
     case "Minneapolis":
-    case "Calgary":
-    case "Edmonton":
     case "Charlotte": // "Blue", "Gold"
       return "badge-width-short-word"; // "Blue", "Gold", "Cap", "Met"
     case "Phoenix":
@@ -300,8 +254,7 @@ function getBadgeWidthClass(city: City): string {
       return "badge-width-3digit"; // "LR" needs more space than single letter
     case "Toronto":
     case "Philadelphia":
-    case "Jersey City":
-      return "badge-width-3digit"; // "501", "102", "BF", "HOB", "WS"
+      return "badge-width-3digit"; // "501", "102"
     default:
       return "badge-width-letter"; // Single letters (SF, LA, Boston, Seattle, Denver)
   }
@@ -326,13 +279,8 @@ function getLineInfo(line: string, city: City): string | undefined {
     return TORONTO_STREETCAR_LINE_INFO[line as TorontoStreetcarLine]?.name;
   } else if (city === "Philadelphia") {
     return PHILLY_TROLLEY_LINE_INFO[line as PhillyTrolleyLine]?.name;
-  } else if (city === "Sacramento") {
-    return SACRAMENTO_LIGHT_RAIL_LINE_INFO[line as SacramentoLightRailLine]
-      ?.name;
   } else if (city === "Pittsburgh") {
     return PITTSBURGH_T_LINE_INFO[line as PittsburghTLine]?.name;
-  } else if (city === "Dallas") {
-    return DALLAS_DART_LINE_INFO[line as DallasDartLine]?.name;
   } else if (city === "Minneapolis") {
     return MINNEAPOLIS_METRO_LINE_INFO[line as MinneapolisMetroLine]?.name;
   } else if (city === "Denver") {
@@ -343,12 +291,6 @@ function getLineInfo(line: string, city: City): string | undefined {
     return VTA_LIGHT_RAIL_LINE_INFO[line as VtaLightRailLine]?.name;
   } else if (city === "Phoenix") {
     return PHOENIX_LIGHT_RAIL_LINE_INFO[line as PhoenixLightRailLine]?.name;
-  } else if (city === "Jersey City") {
-    return HBLR_LINE_INFO[line as HblrLine]?.name;
-  } else if (city === "Calgary") {
-    return CALGARY_CTRAIN_LINE_INFO[line as CalgaryCtrainLine]?.name;
-  } else if (city === "Edmonton") {
-    return EDMONTON_LRT_LINE_INFO[line as EdmontonLrtLine]?.name;
   } else if (city === "Cleveland") {
     return CLEVELAND_RTA_LINE_INFO[line as ClevelandRtaLine]?.name;
   } else if (city === "Charlotte") {
@@ -507,13 +449,6 @@ export function Controls({
     linesContext: true,
     infrastructure: true,
   });
-
-  // Show modal when user navigates to Sacramento
-  useEffect(() => {
-    if (city === "Sacramento") {
-      setShowSacWarning(true);
-    }
-  }, [city]);
 
   // Allow Escape key to close open informational modals.
   useEffect(() => {
@@ -1473,9 +1408,7 @@ export function Controls({
           city === "Boston" ||
           city === "Portland" ||
           city === "Toronto" ||
-          city === "Sacramento" ||
           city === "Pittsburgh" ||
-          city === "Dallas" ||
           city === "Minneapolis" ||
           city === "Denver" ||
           city === "Salt Lake City"
@@ -1559,14 +1492,6 @@ export function Controls({
             >
               SEPTA API
             </a>
-          ) : city === "Sacramento" ? (
-            <a
-              href="https://www.sacrt.com/transit-data-portal/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SacRT GTFS-RT
-            </a>
           ) : city === "Pittsburgh" ? (
             <a
               href="https://www.rideprt.org/inside-Pittsburgh-Regional-Transit/developer-resources/"
@@ -1574,14 +1499,6 @@ export function Controls({
               rel="noopener noreferrer"
             >
               Pittsburgh Regional Transit API
-            </a>
-          ) : city === "Dallas" ? (
-            <a
-              href="https://www.dart.org/about/dartdevelopers"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DART GTFS-RT
             </a>
           ) : city === "Minneapolis" ? (
             <a
