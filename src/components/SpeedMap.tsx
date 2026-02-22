@@ -1373,6 +1373,54 @@ export function SpeedMap({
   const onVehicleUpdateRef = useRef(onVehicleUpdate);
   onVehicleUpdateRef.current = onVehicleUpdate;
 
+  // Single source of truth: whenever vehicles changes, compute and propagate count/stats
+  useEffect(() => {
+    if (vehicles.length === 0) {
+      onVehicleUpdateRef.current?.(0, new Date(), [], undefined);
+      return;
+    }
+
+    // Calculate timestamps and data age
+    const timestamps = vehicles.map((v) => new Date(v.recordedAt).getTime());
+    const latestTime = new Date(Math.max(...timestamps));
+    const dataAgeMinutes = (Date.now() - latestTime.getTime()) / (1000 * 60);
+
+    // Calculate line stats (exclude 0 mph readings from averages)
+    const lineSpeedMap = new Map<string, number[]>();
+    vehicles.forEach((v) => {
+      if (v.speed == null || v.speed < 0.5) return;
+      if (!lineSpeedMap.has(v.routeId)) {
+        lineSpeedMap.set(v.routeId, []);
+      }
+      lineSpeedMap.get(v.routeId)!.push(v.speed);
+    });
+
+    const stats: LineStats[] = [];
+    lineSpeedMap.forEach((speeds, line) => {
+      if (line === "Shared") return;
+      const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
+      const sorted = [...speeds].sort((a, b) => a - b);
+      const mid = Math.floor(sorted.length / 2);
+      const median =
+        sorted.length % 2 !== 0
+          ? sorted[mid]
+          : (sorted[mid - 1] + sorted[mid]) / 2;
+      stats.push({
+        line,
+        avgSpeed: avg,
+        medianSpeed: median,
+        count: speeds.length,
+      });
+    });
+
+    onVehicleUpdateRef.current?.(
+      vehicles.length,
+      latestTime,
+      stats,
+      dataAgeMinutes,
+    );
+  }, [vehicles]);
+
   // Keep speedUnit in a ref so event handlers can access current value
   const speedUnitRef = useRef(speedUnit);
   speedUnitRef.current = speedUnit;
@@ -1751,53 +1799,12 @@ export function SpeedMap({
     }
 
     // Check cache first - instant city switching!
+    // The vehicles useEffect will automatically update count/stats
     const cached = cityDataCache.get(city);
     if (cached && cached.length > 0) {
       console.log(`Using cached ${city} data: ${cached.length} positions`);
       setVehicles(cached);
       setDataSource("supabase");
-
-      // Also update parent with cached data stats (fixes race condition where
-      // count shows 0 even though data is displayed)
-      const timestamps = cached.map((v) => new Date(v.recordedAt).getTime());
-      const latestTime = new Date(Math.max(...timestamps));
-      const dataAgeMinutes =
-        (Date.now() - latestTime.getTime()) / (1000 * 60);
-
-      // Calculate line stats from cached data
-      const lineSpeedMap = new Map<string, number[]>();
-      cached.forEach((v) => {
-        if (v.speed == null || v.speed < 0.5) return;
-        if (!lineSpeedMap.has(v.routeId)) {
-          lineSpeedMap.set(v.routeId, []);
-        }
-        lineSpeedMap.get(v.routeId)!.push(v.speed);
-      });
-
-      const stats: LineStats[] = [];
-      lineSpeedMap.forEach((speeds, line) => {
-        if (line === "Shared") return;
-        const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
-        const sorted = [...speeds].sort((a, b) => a - b);
-        const mid = Math.floor(sorted.length / 2);
-        const median =
-          sorted.length % 2 !== 0
-            ? sorted[mid]
-            : (sorted[mid - 1] + sorted[mid]) / 2;
-        stats.push({
-          line,
-          avgSpeed: avg,
-          medianSpeed: median,
-          count: speeds.length,
-        });
-      });
-
-      onVehicleUpdateRef.current?.(
-        cached.length,
-        latestTime,
-        stats,
-        dataAgeMinutes,
-      );
       return;
     }
 
@@ -1955,53 +1962,7 @@ export function SpeedMap({
 
       setVehicles(allPositions);
       setDataSource("supabase");
-
-      // Calculate line statistics (allPositions already filtered to valid lines)
-      // Exclude 0 mph readings (trains in yards, at terminals, etc.) from averages
-      const lineSpeedMap = new Map<string, number[]>();
-      allPositions.forEach((v) => {
-        if (v.speed == null || v.speed < 0.5) return; // Skip null and ~0 mph readings
-        if (!lineSpeedMap.has(v.routeId)) {
-          lineSpeedMap.set(v.routeId, []);
-        }
-        lineSpeedMap.get(v.routeId)!.push(v.speed);
-      });
-
-      const stats: LineStats[] = [];
-      lineSpeedMap.forEach((speeds, line) => {
-        // Skip "Shared" from stats display - it's an internal classification for Sacramento
-        if (line === "Shared") return;
-
-        const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
-        const sorted = [...speeds].sort((a, b) => a - b);
-        const mid = Math.floor(sorted.length / 2);
-        const median =
-          sorted.length % 2 === 0
-            ? (sorted[mid - 1] + sorted[mid]) / 2
-            : sorted[mid];
-        stats.push({
-          line,
-          avgSpeed: avg,
-          medianSpeed: median,
-          count: speeds.length,
-        });
-      });
-      stats.sort((a, b) => b.avgSpeed - a.avgSpeed);
-
-      if (allPositions.length > 0) {
-        const latestTime = new Date(allPositions[0].recordedAt);
-        // Calculate how many minutes old the latest data is
-        const dataAgeMinutes =
-          (Date.now() - latestTime.getTime()) / (1000 * 60);
-        onVehicleUpdateRef.current?.(
-          allPositions.length,
-          latestTime,
-          stats,
-          dataAgeMinutes,
-        );
-      } else {
-        onVehicleUpdateRef.current?.(0, new Date(), [], undefined);
-      }
+      // The vehicles useEffect will automatically update count/stats
 
       // Show rendering phase - will be cleared by idle event listener
       // after MapLibre finishes rendering all the data
@@ -2022,58 +1983,14 @@ export function SpeedMap({
     }
 
     // Check cache first - if cached, don't show loading state
+    // The vehicles useEffect will automatically update count/stats
     const cached = cityDataCache.get(city);
     if (cached && cached.length > 0) {
       // Instant switch - use cached data
       setVehicles(cached);
       setDataSource("supabase");
       setLoadingProgress("Rendering...");
-      // Note: setIsProcessing(false) will be called by the idle listener in vehicles useEffect
       console.log(`Instant cache hit for ${city}: ${cached.length} positions`);
-
-      // Also update parent with cached data stats
-      if (cached.length > 0) {
-        const timestamps = cached.map((v) => new Date(v.recordedAt).getTime());
-        const latestTime = new Date(Math.max(...timestamps));
-        const dataAgeMinutes =
-          (Date.now() - latestTime.getTime()) / (1000 * 60);
-
-        // Calculate line stats from cached data
-        // Exclude 0 mph readings (trains in yards, at terminals, etc.) from averages
-        const lineSpeedMap = new Map<string, number[]>();
-        cached.forEach((v) => {
-          if (v.speed == null || v.speed < 0.5) return; // Skip null and ~0 mph readings
-          if (!lineSpeedMap.has(v.routeId)) {
-            lineSpeedMap.set(v.routeId, []);
-          }
-          lineSpeedMap.get(v.routeId)!.push(v.speed);
-        });
-
-        const stats: LineStats[] = [];
-        lineSpeedMap.forEach((speeds, line) => {
-          if (line === "Shared") return;
-          const avg = speeds.reduce((a, b) => a + b, 0) / speeds.length;
-          const sorted = [...speeds].sort((a, b) => a - b);
-          const mid = Math.floor(sorted.length / 2);
-          const median =
-            sorted.length % 2 !== 0
-              ? sorted[mid]
-              : (sorted[mid - 1] + sorted[mid]) / 2;
-          stats.push({
-            line,
-            avgSpeed: avg,
-            medianSpeed: median,
-            count: speeds.length,
-          });
-        });
-
-        onVehicleUpdateRef.current?.(
-          cached.length,
-          latestTime,
-          stats,
-          dataAgeMinutes,
-        );
-      }
       return;
     }
     // No cache - show loading and fetch
