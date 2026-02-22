@@ -8,21 +8,15 @@ export const CITIES = [
   "San Diego",
   "Toronto",
   "Philadelphia",
-  "Sacramento",
   "Pittsburgh",
-  "Dallas",
   "Minneapolis",
   "Denver",
   "Salt Lake City",
   "San Jose",
   "Phoenix",
-  "Jersey City",
-  "Calgary",
-  "Edmonton",
   "Cleveland",
   "Charlotte",
   "Baltimore",
-  "Washington",
 ] as const;
 export type City = (typeof CITIES)[number];
 

@@ -35,6 +35,55 @@ function debounce<T extends (...args: any[]) => void>(
   return debounced as T & { cancel: () => void };
 }
 
+// Get current time with milliseconds for logging
+function getTimestamp(): string {
+  const now = new Date();
+  return `${now.toLocaleTimeString()}.${now.getMilliseconds().toString().padStart(3, '0')}`;
+}
+
+// Monitor for long tasks (>50ms) that block the main thread
+function waitForNoLongTasks(
+  quietPeriodMs: number = 2000, // Wait for 2s with no long tasks
+  startTime: number = performance.now()
+): Promise<void> {
+  return new Promise((resolve) => {
+    let lastLongTaskTime = performance.now();
+    let resolved = false;
+
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        lastLongTaskTime = performance.now();
+        console.log(`philip999 [${getTimestamp()}] 🔴 Long task: ${entry.duration.toFixed(0)}ms`);
+      }
+    });
+
+    try {
+      observer.observe({ entryTypes: ["longtask"] });
+    } catch {
+      console.log(`philip999 [${getTimestamp()}] ⚠️ Long Task API not supported`);
+      resolve();
+      return;
+    }
+
+    const checkQuiet = () => {
+      if (resolved) return;
+
+      const quietTime = performance.now() - lastLongTaskTime;
+      if (quietTime >= quietPeriodMs) {
+        resolved = true;
+        observer.disconnect();
+        const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+        console.log(`philip999 [${getTimestamp()}] ✅ Stable for ${quietPeriodMs}ms - total load time: ${elapsed}s`);
+        resolve();
+      } else {
+        setTimeout(checkQuiet, 500);
+      }
+    };
+
+    setTimeout(checkQuiet, quietPeriodMs);
+  });
+}
+
 // Empty city data placeholder - used while loading
 const EMPTY_CITY_DATA: CityStaticData = {
   routes: { type: "FeatureCollection", features: [] },
@@ -3873,28 +3922,76 @@ export function SpeedMap({
       }
     };
 
-    // Function to wait for map to finish rendering
+    // Function to wait for map to finish rendering (both CPU and GPU)
     const waitForIdle = () => {
       if (!map.current) return;
 
-      // Listen for the idle event (fires when map finishes rendering)
-      const handleIdle = () => {
-        console.log("Map idle - clearing loading indicator");
-        setLoadingProgress("");
-        setIsProcessing(false);
+      const startTime = performance.now();
+      let longTasksDone = false;
+      let mapIdle = false;
+      let finished = false;
+
+      console.log(`philip999 [${getTimestamp()}] Starting combined CPU + GPU monitoring...`);
+
+      // EXPERIMENTAL: Monitor render events to detect when rendering truly stops
+      let lastRenderTime = performance.now();
+      let renderStopped = false;
+      const onRender = () => {
+        lastRenderTime = performance.now();
       };
+      map.current.on("render", onRender);
+      
+      const renderCheckInterval = setInterval(() => {
+        const timeSinceLastRender = performance.now() - lastRenderTime;
+        if (timeSinceLastRender > 1000 && !renderStopped) {
+          renderStopped = true;
+          const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+          console.log(`philip999 [${getTimestamp()}] 🎯 RENDER STOPPED for 1s - total time: ${elapsed}s`);
+          clearInterval(renderCheckInterval);
+          map.current?.off("render", onRender);
+        }
+      }, 500);
 
-      // Use once so it only fires once
-      map.current.once("idle", handleIdle);
-
-      // Fallback timeout in case idle doesn't fire
-      setTimeout(() => {
-        if (isProcessing) {
-          console.log("Loading fallback timeout - clearing indicator");
+      const tryFinish = () => {
+        if (finished) return;
+        if (longTasksDone && mapIdle) {
+          finished = true;
+          const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+          console.log(`philip999 [${getTimestamp()}] ✅ Both CPU and GPU done after ${elapsed}s - clearing indicator`);
           setLoadingProgress("");
           setIsProcessing(false);
         }
-      }, 10000);
+      };
+
+      // Wait for JS long tasks to finish (CPU work)
+      waitForNoLongTasks(2000, startTime).then(() => {
+        const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+        console.log(`philip999 [${getTimestamp()}] CPU tasks complete after ${elapsed}s`);
+        longTasksDone = true;
+        tryFinish();
+      });
+
+      // Wait for MapLibre to finish rendering (GPU work)
+      map.current.once("idle", () => {
+        const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+        console.log(`philip999 [${getTimestamp()}] MapLibre idle (GPU done) after ${elapsed}s`);
+        mapIdle = true;
+        tryFinish();
+      });
+
+      // Safety fallback timeout (60s) in case something goes wrong
+      setTimeout(() => {
+        if (!finished) {
+          finished = true;
+          const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+          console.log(`philip999 [${getTimestamp()}] ⚠️ Fallback timeout after ${elapsed}s (CPU: ${longTasksDone}, GPU: ${mapIdle})`);
+          setLoadingProgress("");
+          setIsProcessing(false);
+        }
+        // Clean up render monitoring
+        clearInterval(renderCheckInterval);
+        map.current?.off("render", onRender);
+      }, 60000);
     };
 
     // If style is already loaded, add layers immediately

@@ -26,7 +26,15 @@ export interface LineStats {
   count: number;
 }
 
+// Check if dev mode is enabled via query param (excludes from analytics)
+const useIsDev = () => {
+  if (typeof window === "undefined") return false;
+  return window.location.search.includes("dev=true");
+};
+
 function App() {
+  const isDev = useIsDev();
+
   // City selector - SF or LA
   const [city, setCity] = useState<City>("SF");
 
@@ -160,8 +168,8 @@ function App() {
           if (ageMinutes !== undefined) setDataAgeMinutes(ageMinutes);
         }}
       />
-      <Analytics />
-      <SpeedInsights />
+      {!isDev && <Analytics />}
+      {!isDev && <SpeedInsights />}
     </div>
   );
 }
