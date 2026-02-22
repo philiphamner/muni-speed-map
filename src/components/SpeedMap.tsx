@@ -534,32 +534,25 @@ function isOnRoute(
 ): boolean {
   // Skip route check for cities where route geometry doesn't fully cover all track
   // or vehicle positions may be slightly off-track
-  if (
-    city === "Sacramento" ||
-    city === "Salt Lake City" ||
-    city === "Pittsburgh" ||
-    city === "Calgary"
-  ) {
+  if (city === "Salt Lake City" || city === "Pittsburgh") {
     return true;
   }
 
-  // For Sacramento "Shared" vehicles, check against both Gold and Blue routes
-  const routeIdsToCheck = routeId === "Shared" ? ["Gold", "Blue"] : [routeId];
+  const routeLines = routeGeometryMap.get(routeId);
+  if (!routeLines) {
+    // If no route geometry found, allow the point
+    return true;
+  }
 
-  for (const rid of routeIdsToCheck) {
-    const routeLines = routeGeometryMap.get(rid);
-    if (!routeLines) continue;
-
-    for (const lineCoords of routeLines) {
-      const distance = distanceToLineString(lat, lon, lineCoords);
-      if (distance <= MAX_DISTANCE_FROM_ROUTE_METERS) {
-        return true;
-      }
+  for (const lineCoords of routeLines) {
+    const distance = distanceToLineString(lat, lon, lineCoords);
+    if (distance <= MAX_DISTANCE_FROM_ROUTE_METERS) {
+      return true;
     }
   }
 
-  // If no route geometry found, allow the point
-  if (routeIdsToCheck.every((rid) => !routeGeometryMap.has(rid))) {
+  // No routes matched, need to check if route geometry exists
+  if (!routeGeometryMap.has(routeId)) {
     return true;
   }
 
@@ -567,29 +560,13 @@ function isOnRoute(
 }
 
 // Check if a route should be shown based on selected lines
-// Handles Sacramento's "Shared" section: show Shared vehicles when either Gold or Blue is selected
 function shouldShowRoute(
   routeId: string,
   selectedLines: string[],
   city: string,
 ): boolean {
-  // Calgary special case: show ALL vehicles regardless of route_id or selected lines
-  // This allows us to see all Calgary Transit vehicles (buses, CTrain, etc.)
-  if (city === "Calgary") {
-    return true;
-  }
-
   // Direct match
   if (selectedLines.includes(routeId)) {
-    return true;
-  }
-
-  // Sacramento special case: "Shared" vehicles should show when either Gold or Blue is selected
-  if (
-    city === "Sacramento" &&
-    routeId === "Shared" &&
-    (selectedLines.includes("Gold") || selectedLines.includes("Blue"))
-  ) {
     return true;
   }
 
@@ -1183,14 +1160,6 @@ async function fetchPagesParallel(
         .or("city.is.null,city.eq.San Diego")
         .order("recorded_at", { ascending: false })
         .range(from, from + pageSize - 1);
-    } else if (targetCity === "Calgary") {
-      // Handle Calgary like SF/San Diego - include both legacy (null) and new data
-      query = supabase
-        .from("vehicle_positions")
-        .select(POSITION_COLUMNS)
-        .or("city.is.null,city.eq.Calgary")
-        .order("recorded_at", { ascending: false })
-        .range(from, from + pageSize - 1);
     } else {
       query = supabase
         .from("vehicle_positions")
@@ -1233,14 +1202,6 @@ async function preloadCityData(targetCity: City): Promise<void> {
         .or("city.is.null,city.eq.San Diego")
         .order("recorded_at", { ascending: false })
         .range(0, PAGE_SIZE - 1);
-    } else if (targetCity === "Calgary") {
-      // Handle Calgary like SF/San Diego - include both legacy (null) and new data
-      query = supabase
-        .from("vehicle_positions")
-        .select(POSITION_COLUMNS)
-        .or("city.is.null,city.eq.Calgary")
-        .order("recorded_at", { ascending: false })
-        .range(0, PAGE_SIZE - 1);
     } else {
       query = supabase
         .from("vehicle_positions")
@@ -1281,11 +1242,7 @@ async function preloadCityData(targetCity: City): Promise<void> {
     // Filter to valid lines and transform
     const validLines = getLinesForCity(targetCity);
     const filteredData = allData.filter((row: any) => {
-      if (validLines.includes(row.route_id)) return true;
-      if (targetCity === "Sacramento" && row.route_id === "Shared") return true;
-      // Calgary special case: include ALL vehicles regardless of route_id
-      if (targetCity === "Calgary") return true;
-      return false;
+      return validLines.includes(row.route_id);
     });
 
     // Build route feature map once (optimization: avoids filtering per-vehicle)
@@ -1826,14 +1783,6 @@ export function SpeedMap({
           .or("city.is.null,city.eq.San Diego")
           .order("recorded_at", { ascending: false })
           .range(0, PAGE_SIZE - 1);
-      } else if (city === "Calgary") {
-        // Handle Calgary like SF/San Diego - include both legacy (null) and new data
-        query = supabase
-          .from("vehicle_positions")
-          .select(POSITION_COLUMNS)
-          .or("city.is.null,city.eq.Calgary")
-          .order("recorded_at", { ascending: false })
-          .range(0, PAGE_SIZE - 1);
       } else {
         query = supabase
           .from("vehicle_positions")
@@ -1907,15 +1856,9 @@ export function SpeedMap({
       await new Promise((resolve) => setTimeout(resolve, 50));
 
       // Filter to only valid lines for this city (removes data for removed lines like Mattapan)
-      // For Sacramento, also include "Shared" for downtown shared section vehicles
       const validLines = getLinesForCity(city);
       const filteredData = allData.filter((row: any) => {
-        if (validLines.includes(row.route_id)) return true;
-        // Sacramento special case: include "Shared" vehicles
-        if (city === "Sacramento" && row.route_id === "Shared") return true;
-        // Calgary special case: include ALL vehicles regardless of route_id
-        if (city === "Calgary") return true;
-        return false;
+        return validLines.includes(row.route_id);
       });
       console.log(
         `Filtered to ${filteredData.length} positions for valid lines`,
@@ -2259,7 +2202,7 @@ export function SpeedMap({
       // If no lines selected, show no routes; otherwise filter to selected
       // Skip filtering for cities with OSM-sourced route data that don't have line-specific routes
       // These cities have route_id: "default" for all routes, so line filters won't work
-      const osmSourcedCities = ["Dallas"];
+      const osmSourcedCities: string[] = [];
       const skipRouteFiltering = osmSourcedCities.includes(city);
 
       const filteredRoutes = {

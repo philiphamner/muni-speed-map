@@ -537,12 +537,8 @@ export function getLinesForCity(city: City): readonly string[] {
       return TORONTO_STREETCAR_LINES;
     case "Philadelphia":
       return PHILLY_TROLLEY_LINES;
-    case "Sacramento":
-      return SACRAMENTO_LIGHT_RAIL_LINES;
     case "Pittsburgh":
       return PITTSBURGH_T_LINES;
-    case "Dallas":
-      return DALLAS_DART_LINES;
     case "Minneapolis":
       return MINNEAPOLIS_METRO_LINES;
     case "Denver":
@@ -553,19 +549,11 @@ export function getLinesForCity(city: City): readonly string[] {
       return VTA_LIGHT_RAIL_LINES;
     case "Phoenix":
       return PHOENIX_LIGHT_RAIL_LINES;
-    case "Jersey City":
-      return HBLR_LINES;
-    case "Calgary":
-      return CALGARY_CTRAIN_LINES;
-    case "Edmonton":
-      return EDMONTON_LRT_LINES;
     case "Cleveland":
       return CLEVELAND_RTA_LINES;
     case "Charlotte":
       return CHARLOTTE_LYNX_LINES;
     case "Baltimore":
       return BALTIMORE_LIGHT_RAIL_LINES;
-    case "Washington":
-      return []; // No light rail data yet
   }
 }

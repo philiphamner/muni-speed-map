@@ -31,21 +31,15 @@ const cityToRailContextPrefix: Partial<Record<City, string>> = {
   "San Diego": "sanDiego",
   Toronto: "toronto",
   Philadelphia: "philly",
-  Sacramento: "sacramento",
   Pittsburgh: "pittsburgh",
-  Dallas: "dallas",
   Minneapolis: "minneapolis",
   Denver: "denver",
   "Salt Lake City": "slc",
   "San Jose": "vta",
   Phoenix: "phoenix",
-  "Jersey City": "hblr",
-  Calgary: "calgary",
-  Edmonton: "edmonton",
   Cleveland: "cleveland",
   Charlotte: "charlotte",
   Baltimore: "baltimore",
-  Washington: "washington",
 };
 
 const railContextModules = import.meta.glob("./*RailContext*.json");
@@ -126,9 +120,7 @@ export const CITY_COORDS: Record<
   "San Diego": { center: [-117.16338943173511, 32.76334066930366], zoom: 11 },
   Toronto: { center: [-79.38, 43.65], zoom: 11 },
   Philadelphia: { center: [-75.2495383789954, 39.9514002426764], zoom: 11 },
-  Sacramento: { center: [-121.49, 38.58], zoom: 11 },
   Pittsburgh: { center: [-80.01941337992724, 40.38898236744643], zoom: 11 },
-  Dallas: { center: [-96.8, 32.78], zoom: 11 },
   Minneapolis: { center: [-93.2023633249224, 44.9483201926178], zoom: 11 },
   Denver: { center: [-104.98772423634054, 39.68748990782979], zoom: 11 },
   "Salt Lake City": {
@@ -137,14 +129,9 @@ export const CITY_COORDS: Record<
   },
   "San Jose": { center: [-121.89, 37.34], zoom: 11 },
   Phoenix: { center: [-112.0, 33.47], zoom: 11 },
-  // Placeholder cities (no data yet)
-  "Jersey City": { center: [-74.05, 40.73], zoom: 11 },
-  Calgary: { center: [-114.07, 51.05], zoom: 11 },
-  Edmonton: { center: [-113.5, 53.55], zoom: 11 },
   Cleveland: { center: [-81.69, 41.5], zoom: 11 },
   Charlotte: { center: [-80.84, 35.23], zoom: 11 },
   Baltimore: { center: [-76.62, 39.32], zoom: 11 },
-  Washington: { center: [-77.03, 38.91], zoom: 11 },
 };
 
 // Cache for loaded city data - persists across component remounts
@@ -547,33 +534,6 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
       };
     }
 
-    case "Sacramento": {
-      const [routes, stops, crossings, switches, tunnelsBridges, separation] =
-        await Promise.all([
-          import("./sacramentoLightRailRoutes.json"),
-          import("./sacramentoLightRailStops.json"),
-          import("./sacramentoGradeCrossings.json"),
-          import("./sacramentoSwitches.json"),
-          import("./sacramentoTunnelsBridges.json").catch(() => ({
-            default: null,
-          })),
-          import("./sacramentoSeparation.json").catch(() => ({
-            default: null,
-          })),
-        ]);
-      console.timeEnd(`Loading ${city} static data`);
-      return {
-        routes: routes.default,
-        stops: stops.default,
-        crossings: crossings.default,
-        switches: switches.default,
-        maxspeed: null,
-        tunnelsBridges: tunnelsBridges.default,
-        separation: separation.default,
-        trafficLights: null,
-      };
-    }
-
     case "Pittsburgh": {
       const [routes, stops, crossings, switches, tunnelsBridges, separation, trafficLights] =
         await Promise.all([
@@ -596,39 +556,6 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         crossings: crossings.default,
         switches: switches.default,
         maxspeed: null,
-        tunnelsBridges: tunnelsBridges.default,
-        separation: separation.default,
-        trafficLights: trafficLights.default,
-      };
-    }
-
-    case "Dallas": {
-      const [
-        routes,
-        stops,
-        crossings,
-        switches,
-        maxspeed,
-        tunnelsBridges,
-        separation,
-        trafficLights,
-      ] = await Promise.all([
-        import("./dallasDartRoutes.json"),
-        import("./dallasDartStops.json"),
-        import("./dallasGradeCrossings.json"),
-        import("./dallasSwitches.json"),
-        import("./dallasMaxspeed.json"),
-        import("./dallasTunnelsBridges.json").catch(() => ({ default: null })),
-        import("./dallasSeparation.json").catch(() => ({ default: null })),
-        import("./dallasTrafficLightsConsolidated.json").catch(() => ({ default: null })),
-      ]);
-      console.timeEnd(`Loading ${city} static data`);
-      return {
-        routes: routes.default,
-        stops: stops.default,
-        crossings: crossings.default,
-        switches: switches.default,
-        maxspeed: maxspeed.default,
         tunnelsBridges: tunnelsBridges.default,
         separation: separation.default,
         trafficLights: trafficLights.default,
@@ -837,37 +764,6 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
       };
     }
 
-    case "Calgary": {
-      const [
-        routes,
-        stops,
-        crossings,
-        switches,
-        maxspeed,
-        tunnelsBridges,
-        separation,
-      ] = await Promise.all([
-        import("./calgaryLightRailRoutes.json"),
-        import("./calgaryLightRailStops.json"),
-        import("./calgaryGradeCrossings.json"),
-        import("./calgarySwitches.json"),
-        import("./calgaryMaxspeed.json"),
-        import("./calgaryTunnelsBridges.json").catch(() => ({ default: null })),
-        import("./calgarySeparation.json").catch(() => ({ default: null })),
-      ]);
-      console.timeEnd(`Loading ${city} static data`);
-      return {
-        routes: routes.default,
-        stops: stops.default,
-        crossings: crossings.default,
-        switches: switches.default,
-        maxspeed: maxspeed.default,
-        tunnelsBridges: tunnelsBridges.default,
-        separation: separation.default,
-        trafficLights: null,
-      };
-    }
-
     case "Baltimore": {
       const [routes, stops, crossings, switches, tunnelsBridges, separation, trafficLights] =
         await Promise.all([
@@ -915,22 +811,6 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         tunnelsBridges: null, // No tunnels/bridges data yet
         separation: separation?.default || null,
         trafficLights: trafficLights?.default || null,
-      };
-    }
-
-    // Placeholder cities - return empty data
-    case "Jersey City":
-    case "Edmonton": {
-      console.timeEnd(`Loading ${city} static data`);
-      return {
-        routes: { type: "FeatureCollection", features: [] },
-        stops: { type: "FeatureCollection", features: [] },
-        crossings: { type: "FeatureCollection", features: [] },
-        switches: { type: "FeatureCollection", features: [] },
-        maxspeed: null,
-        tunnelsBridges: null,
-        separation: null,
-        trafficLights: null,
       };
     }
 
