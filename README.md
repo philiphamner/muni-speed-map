@@ -1,10 +1,14 @@
-# 🚊 Transit Speed Map
+# 🚊 Light Rail Analytics Map
 
 A real-time visualization tool for analyzing light rail and streetcar speeds across major US cities. Identify slow zones, compare performance, and support data-driven transit advocacy.
+
+**📖 User Documentation:** See the "About This Project" modal in the app for end-user guides and city-specific notes.
 
 ![Transit Speed Map Screenshot](docs/screenshot-sf.png)
 
 ---
+
+## For Developers & Contributors
 
 ## 🎯 The Problem
 
@@ -43,8 +47,8 @@ Each city was selected because its light rail or streetcar system has **signific
 | 🏔️ **Salt Lake City** | UTA TRAX         | Four light rail lines with street-running through downtown Salt Lake City                   |
 | 🏗️ **Pittsburgh**     | The T Light Rail | Historic light rail system with downtown subway and South Hills surface sections            |
 | 🏛️ **Sacramento**     | SacRT Light Rail | Street-running through downtown Sacramento with Gold and Blue Lines                         |
-| 🦀 **Baltimore**       | MTA Light Rail   | 29-mile light rail with branches to BWI Airport, Glen Burnie, and Hunt Valley               |
-| 🎸 **Cleveland**       | RTA Rapid        | Red Line rapid transit plus Blue/Green branches with downtown subway and suburban sections  |
+| 🦀 **Baltimore**      | MTA Light Rail   | 29-mile light rail with branches to BWI Airport, Glen Burnie, and Hunt Valley               |
+| 🎸 **Cleveland**      | RTA Rapid        | Red Line rapid transit plus Blue/Green branches with downtown subway and suburban sections  |
 
 **Not included:** Heavy rail systems (BART, NYC Subway, DC Metro) that are fully grade-separated — they don't have traffic conflicts to analyze.
 
@@ -75,28 +79,28 @@ The focus remains on **light rail and streetcars that compete with street traffi
 
 ## 🌆 Supported Cities
 
-| City                  | System           | Lines                            | Status        |
-| --------------------- | ---------------- | -------------------------------- | ------------- |
-| 🌉 **San Francisco**  | Muni Metro       | F, J, K, L, M, N, T              | ✅ Collecting |
-| 🌴 **Los Angeles**    | Metro Rail       | A, B, C, D, E, K                 | ✅ Collecting |
-| ☕ **Seattle**        | Link Light Rail  | 1 Line, 2 Line, T Line           | ✅ Collecting |
-| 🚲 **Portland**       | MAX Light Rail   | Blue, Green, Orange, Red, Yellow | ✅ Collecting |
-| 🦞 **Boston**         | MBTA Green Line  | B, C, D, E                       | ✅ Collecting |
-| 🔔 **Philadelphia**   | SEPTA Trolleys   | 10, 11, 13, 15, 34, 36, 101, 102 | ✅ Collecting |
-| 💻 **San Jose**       | VTA Light Rail   | Blue, Green, Orange              | ✅ Collecting |
-| 🍁 **Toronto**        | TTC Streetcars   | 501-512, Line 6 Finch West       | ✅ Collecting |
-| 🌆 **Minneapolis**    | Metro Transit    | Blue, Green                      | ✅ Collecting |
-| 🏔️ **Denver**         | RTD Light Rail   | A, B, C, D, E, F, G, H, L, R, W  | ✅ Collecting |
-| 🏔️ **Salt Lake City** | UTA TRAX         | Blue, Red, Green, S-Line         | ✅ Collecting |
-| 🏗️ **Pittsburgh**     | The T Light Rail | Red, Blue, Silver                | ✅ Collecting |
-| 🏛️ **Sacramento**     | SacRT Light Rail | Gold, Blue                       | ✅ Collecting |
-| 🌵 **Phoenix**        | Valley Metro     | A Line, B Line                   | ✅ Collecting |
-| 🚊 **Charlotte**      | CATS LYNX        | Blue Line, Gold Line             | ✅ Collecting |
-| 🍁 **Calgary**        | Calgary CTrain   | Red Line, Blue Line              | ✅ Collecting |
-| 🦀 **Baltimore**       | MTA Light Rail   | Light RailLink                   | ✅ Collecting |
-| 🎸 **Cleveland**       | RTA Rapid        | Red, Blue, Green                 | ✅ Collecting |
-| 🌊 **San Diego**      | MTS Trolley      | Blue, Orange, Green, Copper      | ⏳ Needs key  |
-| 🤠 **Dallas**         | DART Light Rail  | Red, Blue, Green, Orange         | ⏳ Needs key  |
+| City                  | System           | Lines                            | Status                 |
+| --------------------- | ---------------- | -------------------------------- | ---------------------- |
+| 🌉 **San Francisco**  | Muni Metro       | F, J, K, L, M, N, T              | ✅ Collecting          |
+| 🌴 **Los Angeles**    | Metro Rail       | A, B, C, D, E, K                 | ✅ Collecting          |
+| ☕ **Seattle**        | Link Light Rail  | 1 Line, 2 Line, T Line           | ✅ Collecting          |
+| 🚲 **Portland**       | MAX Light Rail   | Blue, Green, Orange, Red, Yellow | ✅ Collecting          |
+| 🦞 **Boston**         | MBTA Green Line  | B, C, D, E                       | ✅ Collecting          |
+| 🔔 **Philadelphia**   | SEPTA Trolleys   | 10, 11, 13, 15, 34, 36, 101, 102 | ✅ Collecting          |
+| 💻 **San Jose**       | VTA Light Rail   | Blue, Green, Orange              | ✅ Collecting          |
+| 🍁 **Toronto**        | TTC Streetcars   | 501-512, Line 6 Finch West       | ✅ Collecting          |
+| 🌆 **Minneapolis**    | Metro Transit    | Blue, Green                      | ✅ Collecting          |
+| 🏔️ **Denver**         | RTD Light Rail   | A, B, C, D, E, F, G, H, L, R, W  | ✅ Collecting          |
+| 🏔️ **Salt Lake City** | UTA TRAX         | Blue, Red, Green, S-Line         | ✅ Collecting          |
+| 🏗️ **Pittsburgh**     | The T Light Rail | Red, Blue, Silver                | ✅ Collecting          |
+| 🏛️ **Sacramento**     | SacRT Light Rail | Gold, Blue                       | ✅ Collecting          |
+| 🌵 **Phoenix**        | Valley Metro     | A Line, B Line                   | ✅ Collecting          |
+| 🚊 **Charlotte**      | CATS LYNX        | Blue Line, Gold Line             | ✅ Collecting          |
+| 🦀 **Baltimore**      | MTA Light Rail   | Light RailLink                   | ✅ Collecting          |
+| 🎸 **Cleveland**      | RTA Rapid        | Red, Blue, Green                 | ✅ Collecting          |
+| 🍁 **Calgary**        | Calgary CTrain   | Red Line, Blue Line              | ❌ No public live data |
+| 🌊 **San Diego**      | MTS Trolley      | Blue, Orange, Green, Copper      | ⏳ Needs key           |
+| 🤠 **Dallas**         | DART Light Rail  | Red, Blue, Green, Orange         | ⏳ Needs key           |
 
 ## ✨ Features
 
@@ -185,29 +189,29 @@ npm run collect:all
 
 ### 📜 Collection Scripts
 
-| Command                              | City                 | Script                            | Status                   |
-| ------------------------------------ | -------------------- | --------------------------------- | ------------------------ |
-| `npm run collect:sf`                 | San Francisco        | `collectData.js`                  | ✅ Active                |
-| `npm run collect:la`                 | Los Angeles          | `collectDataLA.js`                | ✅ Active                |
-| `npm run collect:seattle`            | Seattle              | `collectDataSeattle.js`           | ✅ Active                |
-| `npm run collect:portland`           | Portland (MAX)       | `collectDataPortland.js`          | ✅ Active                |
-| `npm run collect:portland-streetcar` | Portland (Streetcar) | `collectDataPortlandStreetcar.js` | ✅ Active                |
-| `npm run collect:boston`             | Boston               | `collectDataBoston.js`            | ✅ Active                |
-| `npm run collect:philly`             | Philadelphia         | `collectDataPhilly.js`            | ✅ Active                |
-| `npm run collect:toronto`            | Toronto              | `collectDataToronto.js`           | ✅ Active                |
-| `npm run collect:sacramento`         | Sacramento           | `collectDataSacramento.js`        | ✅ Active                |
-| `npm run collect:minneapolis`        | Minneapolis          | `collectDataMinneapolis.js`       | ✅ Active                |
-| `npm run collect:denver`             | Denver               | `collectDataDenver.js`            | ✅ Active                |
-| `npm run collect:slc`                | Salt Lake City       | `collectDataSaltLakeCity.js`      | ✅ Active                |
-| `npm run collect:pittsburgh`         | Pittsburgh           | `collectDataPittsburgh.js`        | ✅ Active                |
-| `npm run collect:vta`                | San Jose (VTA)       | `collectDataVTA.js`               | ✅ Active                |
-| `npm run collect:phoenix`            | Phoenix              | `collectDataPhoenix.js`           | ✅ Active                |
-| `npm run collect:charlotte`          | Charlotte            | `collectDataCharlotte.js`         | ✅ Active                |
-| `npm run collect:calgary`            | Calgary              | `collectDataCalgary.js`           | ❌ No train data in feed |
-| `npm run collect:baltimore`          | Baltimore            | `collectDataBaltimore.js`         | ✅ Active                |
-| `npm run collect:cleveland`          | Cleveland            | `collectDataCleveland.js`         | ✅ Active                |
-| `npm run collect:sandiego`           | San Diego            | `collectDataSanDiego.js`          | ⏳ Needs API key         |
-| `npm run collect:dallas`             | Dallas               | `collectDataDallas.js`            | ⏳ Needs API key         |
+| Command                              | City                 | Script                            | Status                 |
+| ------------------------------------ | -------------------- | --------------------------------- | ---------------------- |
+| `npm run collect:sf`                 | San Francisco        | `collectData.js`                  | ✅ Active              |
+| `npm run collect:la`                 | Los Angeles          | `collectDataLA.js`                | ✅ Active              |
+| `npm run collect:seattle`            | Seattle              | `collectDataSeattle.js`           | ✅ Active              |
+| `npm run collect:portland`           | Portland (MAX)       | `collectDataPortland.js`          | ✅ Active              |
+| `npm run collect:portland-streetcar` | Portland (Streetcar) | `collectDataPortlandStreetcar.js` | ✅ Active              |
+| `npm run collect:boston`             | Boston               | `collectDataBoston.js`            | ✅ Active              |
+| `npm run collect:philly`             | Philadelphia         | `collectDataPhilly.js`            | ✅ Active              |
+| `npm run collect:toronto`            | Toronto              | `collectDataToronto.js`           | ✅ Active              |
+| `npm run collect:sacramento`         | Sacramento           | `collectDataSacramento.js`        | ✅ Active              |
+| `npm run collect:minneapolis`        | Minneapolis          | `collectDataMinneapolis.js`       | ✅ Active              |
+| `npm run collect:denver`             | Denver               | `collectDataDenver.js`            | ✅ Active              |
+| `npm run collect:slc`                | Salt Lake City       | `collectDataSaltLakeCity.js`      | ✅ Active              |
+| `npm run collect:pittsburgh`         | Pittsburgh           | `collectDataPittsburgh.js`        | ✅ Active              |
+| `npm run collect:vta`                | San Jose (VTA)       | `collectDataVTA.js`               | ✅ Active              |
+| `npm run collect:phoenix`            | Phoenix              | `collectDataPhoenix.js`           | ✅ Active              |
+| `npm run collect:charlotte`          | Charlotte            | `collectDataCharlotte.js`         | ✅ Active              |
+| `npm run collect:calgary`            | Calgary              | `collectDataCalgary.js`           | ❌ No public live data |
+| `npm run collect:baltimore`          | Baltimore            | `collectDataBaltimore.js`         | ✅ Active              |
+| `npm run collect:cleveland`          | Cleveland            | `collectDataCleveland.js`         | ✅ Active              |
+| `npm run collect:sandiego`           | San Diego            | `collectDataSanDiego.js`          | ⏳ Needs API key       |
+| `npm run collect:dallas`             | Dallas               | `collectDataDallas.js`            | ⏳ Needs API key       |
 
 **Combined Scripts:**
 
@@ -221,8 +225,8 @@ npm run collect:all
 
 ### How Speed is Calculated
 
-- **SF, Seattle, San Diego, Philadelphia**: Speed calculated from GPS distance ÷ time between consecutive readings (~90 seconds apart)
-- **LA, Boston, Portland, Toronto, Sacramento**: Speed reported directly by the transit agency's API
+- **SF, Seattle, Philadelphia, San Jose, Phoenix, Charlotte, Baltimore, Cleveland, San Diego**: Speed calculated from GPS distance ÷ time between consecutive readings (~90 seconds apart)
+- **LA, Boston, Portland, Toronto, Minneapolis, Denver, Salt Lake City, Pittsburgh**: Speed reported directly by the transit agency's API
 
 ### API Keys Required
 

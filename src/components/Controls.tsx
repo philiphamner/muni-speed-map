@@ -1559,6 +1559,16 @@ export function Controls({
                     </ul>
                   </div>
                   <div className="about-section-block">
+                    <h3>Understanding Infrastructure Markers</h3>
+                    <ul>
+                      {ABOUT_SECTIONS.howto.infrastructureMarkers.map(
+                        (item) => (
+                          <li key={item}>{item}</li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+                  <div className="about-section-block">
                     <h3>Tips</h3>
                     <ul>
                       {ABOUT_SECTIONS.howto.tips.map((item) => (
@@ -1614,16 +1624,6 @@ export function Controls({
                       {ABOUT_SECTIONS.features.visualizations.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
-                    </ul>
-                  </div>
-                  <div className="about-section-block">
-                    <h3>How To Read The Map</h3>
-                    <ul>
-                      {ABOUT_SECTIONS.features.interpretationNotes.map(
-                        (item) => (
-                          <li key={item}>{item}</li>
-                        ),
-                      )}
                     </ul>
                   </div>
                 </>
