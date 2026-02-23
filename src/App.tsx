@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { SpeedMap } from "./components/SpeedMap";
 import { Controls } from "./components/Controls";
 import { MUNI_LINES, getLinesForCity } from "./types";
@@ -34,6 +34,25 @@ const useIsDev = () => {
 
 function App() {
   const isDev = useIsDev();
+
+  // Initial load state - show overlay until preload completes
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  // Fallback timeout in case preload hangs
+  useEffect(() => {
+    const fallbackTimer = setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 25000); // 25 second fallback
+
+    return () => {
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
+
+  // Callback when background preload completes
+  const handlePreloadComplete = useCallback(() => {
+    setIsInitialLoad(false);
+  }, []);
 
   // Mobile sidebar state
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -189,7 +208,24 @@ function App() {
           if (stats) setLineStats(stats);
           if (ageMinutes !== undefined) setDataAgeMinutes(ageMinutes);
         }}
+        onPreloadComplete={handlePreloadComplete}
       />
+
+      {/* Initial load overlay - only shows on first app load */}
+      {isInitialLoad && (
+        <div
+          key="initial-loader"
+          className="loading-overlay initial-load-overlay"
+        >
+          <div className="initial-load-content">
+            <div className="loading-text">Loading map data...</div>
+            <div className="progress-bar-container">
+              <div className="progress-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {!isDev && <Analytics />}
       {!isDev && <SpeedInsights />}
     </div>

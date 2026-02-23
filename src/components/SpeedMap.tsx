@@ -38,13 +38,13 @@ function debounce<T extends (...args: any[]) => void>(
 // Get current time with milliseconds for logging
 function getTimestamp(): string {
   const now = new Date();
-  return `${now.toLocaleTimeString()}.${now.getMilliseconds().toString().padStart(3, '0')}`;
+  return `${now.toLocaleTimeString()}.${now.getMilliseconds().toString().padStart(3, "0")}`;
 }
 
 // Monitor for long tasks (>50ms) that block the main thread
 function waitForNoLongTasks(
   quietPeriodMs: number = 2000, // Wait for 2s with no long tasks
-  startTime: number = performance.now()
+  startTime: number = performance.now(),
 ): Promise<void> {
   return new Promise((resolve) => {
     let lastLongTaskTime = performance.now();
@@ -53,14 +53,18 @@ function waitForNoLongTasks(
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         lastLongTaskTime = performance.now();
-        console.log(`philip999 [${getTimestamp()}] 🔴 Long task: ${entry.duration.toFixed(0)}ms`);
+        console.log(
+          `philip999 [${getTimestamp()}] 🔴 Long task: ${entry.duration.toFixed(0)}ms`,
+        );
       }
     });
 
     try {
       observer.observe({ entryTypes: ["longtask"] });
     } catch {
-      console.log(`philip999 [${getTimestamp()}] ⚠️ Long Task API not supported`);
+      console.log(
+        `philip999 [${getTimestamp()}] ⚠️ Long Task API not supported`,
+      );
       resolve();
       return;
     }
@@ -73,7 +77,9 @@ function waitForNoLongTasks(
         resolved = true;
         observer.disconnect();
         const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-        console.log(`philip999 [${getTimestamp()}] ✅ Stable for ${quietPeriodMs}ms - total load time: ${elapsed}s`);
+        console.log(
+          `philip999 [${getTimestamp()}] ✅ Stable for ${quietPeriodMs}ms - total load time: ${elapsed}s`,
+        );
         resolve();
       } else {
         setTimeout(checkQuiet, 500);
@@ -744,7 +750,8 @@ function extractLineSubsection(
 
     // Check if we need to start within this segment
     if (!started && nextDistance >= startDist) {
-      const t = segmentLength > 0 ? (startDist - distanceAlong) / segmentLength : 0;
+      const t =
+        segmentLength > 0 ? (startDist - distanceAlong) / segmentLength : 0;
       const startX = x1 + t * (x2 - x1);
       const startY = y1 + t * (y2 - y1);
       result.push([startX, startY]);
@@ -754,16 +761,19 @@ function extractLineSubsection(
     // If we've started, add intermediate points
     if (started && distanceAlong >= startDist && distanceAlong < endDist) {
       // Add the start of this segment if it's after our start point
-      if (result.length === 0 || 
-          result[result.length - 1][0] !== x1 || 
-          result[result.length - 1][1] !== y1) {
+      if (
+        result.length === 0 ||
+        result[result.length - 1][0] !== x1 ||
+        result[result.length - 1][1] !== y1
+      ) {
         result.push([x1, y1]);
       }
     }
 
     // Check if we need to end within this segment
     if (started && nextDistance >= endDist) {
-      const t = segmentLength > 0 ? (endDist - distanceAlong) / segmentLength : 0;
+      const t =
+        segmentLength > 0 ? (endDist - distanceAlong) / segmentLength : 0;
       const endX = x1 + t * (x2 - x1);
       const endY = y1 + t * (y2 - y1);
       result.push([endX, endY]);
@@ -807,9 +817,16 @@ function projectPointOntoLine(
       minDistance = dist;
       const dx = x2 - x1;
       const dy = y2 - y1;
-      const t = dx === 0 && dy === 0
-        ? 0
-        : Math.max(0, Math.min(1, ((lon - x1) * dx + (lat - y1) * dy) / (dx * dx + dy * dy)));
+      const t =
+        dx === 0 && dy === 0
+          ? 0
+          : Math.max(
+              0,
+              Math.min(
+                1,
+                ((lon - x1) * dx + (lat - y1) * dy) / (dx * dx + dy * dy),
+              ),
+            );
       bestDistanceAlong = distanceAlong + t * segmentLength;
       bestProjectedPoint = [x1 + t * dx, y1 + t * dy];
     }
@@ -822,14 +839,17 @@ function projectPointOntoLine(
     return null;
   }
 
-  return { distanceAlong: bestDistanceAlong, projectedPoint: bestProjectedPoint };
+  return {
+    distanceAlong: bestDistanceAlong,
+    projectedPoint: bestProjectedPoint,
+  };
 }
 
 function buildAllSegments(routes: any, city?: string): SegmentData[] {
   const allSegments: SegmentData[] = [];
   // Track cumulative segment offset PER ROUTE across all features
   const routeSegmentOffsets = new Map<string, number>();
-  
+
   // For LA: track reference segments per route for projecting onto parallel tracks
   const referenceSegmentsByRoute = new Map<string, SegmentData[]>();
   const processedRoutes = new Set<string>();
@@ -849,14 +869,15 @@ function buildAllSegments(routes: any, city?: string): SegmentData[] {
     }
 
     // For cities with parallel tracks: check if this is a parallel track (not the first feature for this route)
-    const usesParallelMerge = city && CITIES_WITH_PARALLEL_TRACKS.includes(city);
+    const usesParallelMerge =
+      city && CITIES_WITH_PARALLEL_TRACKS.includes(city);
     const isParallelTrack = usesParallelMerge && processedRoutes.has(routeId);
-    
+
     if (usesParallelMerge && !processedRoutes.has(routeId)) {
       // First feature for this route - these are reference segments
       processedRoutes.add(routeId);
       const routeRefSegments: SegmentData[] = [];
-      
+
       for (const coordinates of lineStrings) {
         const segments = createSegments(coordinates, routeId, "combined");
 
@@ -874,38 +895,55 @@ function buildAllSegments(routes: any, city?: string): SegmentData[] {
           routeRefSegments.push(segmentData);
         });
       }
-      
+
       referenceSegmentsByRoute.set(routeId, routeRefSegments);
-      
     } else if (isParallelTrack) {
       // LA parallel track: project reference segment boundaries onto this geometry
       const refSegments = referenceSegmentsByRoute.get(routeId) || [];
-      
+
       for (const coordinates of lineStrings) {
         // For each reference segment, project its start/end points onto this parallel geometry
         refSegments.forEach((refSeg, idx) => {
           // Get the start and end points of the reference segment
           const refStart = refSeg.coordinates[0];
           const refEnd = refSeg.coordinates[refSeg.coordinates.length - 1];
-          
+
           // Project these points onto the parallel geometry
-          const startProjection = projectPointOntoLine(refStart[1], refStart[0], coordinates);
-          const endProjection = projectPointOntoLine(refEnd[1], refEnd[0], coordinates);
-          
+          const startProjection = projectPointOntoLine(
+            refStart[1],
+            refStart[0],
+            coordinates,
+          );
+          const endProjection = projectPointOntoLine(
+            refEnd[1],
+            refEnd[0],
+            coordinates,
+          );
+
           if (!startProjection || !endProjection) {
             return; // Skip if projection fails (points too far from parallel track)
           }
-          
+
           // Extract the subsection of the parallel geometry between projected points
-          const startDist = Math.min(startProjection.distanceAlong, endProjection.distanceAlong);
-          const endDist = Math.max(startProjection.distanceAlong, endProjection.distanceAlong);
-          
-          const parallelCoords = extractLineSubsection(coordinates, startDist, endDist);
-          
+          const startDist = Math.min(
+            startProjection.distanceAlong,
+            endProjection.distanceAlong,
+          );
+          const endDist = Math.max(
+            startProjection.distanceAlong,
+            endProjection.distanceAlong,
+          );
+
+          const parallelCoords = extractLineSubsection(
+            coordinates,
+            startDist,
+            endDist,
+          );
+
           if (parallelCoords.length < 2) {
             return; // Skip invalid segments
           }
-          
+
           // Create parallel segment with reference to the original
           const parallelSegmentId = `${routeId}_p_${idx}`;
           allSegments.push({
@@ -918,11 +956,10 @@ function buildAllSegments(routes: any, city?: string): SegmentData[] {
           });
         });
       }
-      
     } else {
       // Non-LA city: build segments normally with cumulative offset
       let cumulativeSegmentOffset = routeSegmentOffsets.get(routeId) || 0;
-      
+
       for (const coordinates of lineStrings) {
         const segments = createSegments(coordinates, routeId, "combined");
 
@@ -1015,8 +1052,11 @@ function findSegmentForVehicle(
 
     // For cities with parallel tracks: only use the first feature per route (project all vehicles onto reference geometry)
     // This ensures all speed data ends up in reference segments for combined averaging
-    const usesParallelMerge = city && CITIES_WITH_PARALLEL_TRACKS.includes(city);
-    const featuresToProcess = usesParallelMerge ? routeFeatures.slice(0, 1) : routeFeatures;
+    const usesParallelMerge =
+      city && CITIES_WITH_PARALLEL_TRACKS.includes(city);
+    const featuresToProcess = usesParallelMerge
+      ? routeFeatures.slice(0, 1)
+      : routeFeatures;
 
     for (const feature of featuresToProcess) {
       const geometry = (feature as any).geometry;
@@ -1278,17 +1318,37 @@ async function preloadCityData(targetCity: City): Promise<void> {
 }
 
 // Start background preloading for all cities (staggered)
-function startBackgroundPreload(currentCity: City) {
+function startBackgroundPreload(currentCity: City, onComplete?: () => void) {
   if (preloadStarted) return;
   preloadStarted = true;
 
   const otherCities = CITIES.filter((c) => c !== currentCity);
 
+  if (otherCities.length === 0) {
+    onComplete?.();
+    return;
+  }
+
+  let completedCount = 0;
+
   // Stagger requests by 500ms each to avoid hammering the server
   otherCities.forEach((city, index) => {
     setTimeout(
       () => {
-        preloadCityData(city);
+        preloadCityData(city)
+          .then(() => {
+            completedCount++;
+            if (completedCount === otherCities.length) {
+              onComplete?.();
+            }
+          })
+          .catch(() => {
+            // Count failures as complete to avoid hanging
+            completedCount++;
+            if (completedCount === otherCities.length) {
+              onComplete?.();
+            }
+          });
       },
       (index + 1) * 500,
     );
@@ -1312,6 +1372,7 @@ interface SpeedMapProps {
   showSatellite: boolean;
   onSatelliteToggle?: (show: boolean) => void;
   speedUnit: "mph" | "kmh";
+  onMapReady?: () => void;
   onVehicleUpdate?: (
     count: number,
     time: Date,
@@ -1319,6 +1380,7 @@ interface SpeedMapProps {
     dataAgeMinutes?: number,
   ) => void;
   onRailContextUpdate?: (heavyCount: number, commuterCount: number) => void;
+  onPreloadComplete?: () => void;
 }
 
 export function SpeedMap({
@@ -1338,8 +1400,10 @@ export function SpeedMap({
   showSatellite,
   onSatelliteToggle,
   speedUnit,
+  onMapReady,
   onVehicleUpdate,
   onRailContextUpdate,
+  onPreloadComplete,
 }: SpeedMapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -1360,6 +1424,20 @@ export function SpeedMap({
   );
   const [loadingProgress, setLoadingProgress] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState(false);
+
+  // Track preload completion - need both static AND vehicle data to finish
+  const preloadStatusRef = useRef({ staticDone: false, vehicleDone: false });
+  const onPreloadCompleteRef = useRef(onPreloadComplete);
+  onPreloadCompleteRef.current = onPreloadComplete;
+
+  const checkPreloadComplete = useCallback(() => {
+    if (
+      preloadStatusRef.current.staticDone &&
+      preloadStatusRef.current.vehicleDone
+    ) {
+      onPreloadCompleteRef.current?.();
+    }
+  }, []);
 
   // City static data - loaded lazily on-demand
   const [cityStaticData, setCityStaticData] = useState<CityStaticData | null>(
@@ -1465,8 +1543,13 @@ export function SpeedMap({
           setCityStaticData(data);
           setCityDataLoading(false);
           setLoadingProgress("");
-          // Start preloading other popular cities in the background
-          startBackgroundStaticPreload(city);
+          // Start background preload of other cities
+          startBackgroundStaticPreload(city, () => {
+            if (!cancelled) {
+              preloadStatusRef.current.staticDone = true;
+              checkPreloadComplete();
+            }
+          });
         }
       } catch (error) {
         console.error(`Failed to load ${city} data:`, error);
@@ -1569,13 +1652,13 @@ export function SpeedMap({
         "Los Angeles County Metropolitan Transportation Authority": "LA Metro",
         "Southern California Regional Rail Authority": "Metrolink",
         "Sound Transit": "Sound Transit",
-        "TriMet": "TriMet",
+        TriMet: "TriMet",
         "Utah Transit Authority": "UTA",
         "Denver Regional Transportation District": "RTD",
         "Capitol Corridor Joint Powers Authority": "Capitol Corridor",
         "Altamont Corridor Express": "ACE",
         "Sonoma Marin Area Rail Transit": "SMART",
-        "Caltrain": "Caltrain",
+        Caltrain: "Caltrain",
         "Port Authority Trans-Hudson Corporation": "PATH",
         "Maryland Transit Administration": "MTA Maryland",
         "Greater Cleveland Regional Transit Authority": "RTA",
@@ -1591,7 +1674,11 @@ export function SpeedMap({
       const getAbbrev = (agency: string) => agencyAbbrev[agency] || agency;
 
       // Clean up service name: prefer short name, strip direction suffixes
-      const cleanServiceName = (shortName: string, longName: string, routeId: string) => {
+      const cleanServiceName = (
+        shortName: string,
+        longName: string,
+        routeId: string,
+      ) => {
         // For BART-style names with direction suffixes, just use the color
         let name = shortName || longName || routeId;
         // Strip -N, -S, -E, -W suffixes
@@ -1642,7 +1729,9 @@ export function SpeedMap({
       }
 
       // Group items by agency for cleaner display
-      const groupByAgency = (items: Array<{ service: string; agency: string }>) => {
+      const groupByAgency = (
+        items: Array<{ service: string; agency: string }>,
+      ) => {
         const grouped: Record<string, string[]> = {};
         for (const item of items) {
           if (!grouped[item.agency]) grouped[item.agency] = [];
@@ -1651,16 +1740,29 @@ export function SpeedMap({
         return grouped;
       };
 
-      const renderGroupedHtml = (items: Array<{ service: string; agency: string }>) => {
+      const renderGroupedHtml = (
+        items: Array<{ service: string; agency: string }>,
+      ) => {
         const grouped = groupByAgency(items);
         const agencies = Object.keys(grouped).sort();
-        
-        return `<div style="text-align:left;padding-left:8px">` + agencies.map(agency => {
-          const lines = grouped[agency].sort();
-          // Always show agency header with bulleted lines underneath
-          const lineList = lines.map(l => `<div style="padding-left:12px;color:#e5e7eb">• ${escapeHtml(l)}</div>`).join("");
-          return `<div style="margin:6px 0"><span style="color:#9ca3af;font-weight:500">${escapeHtml(agency)}:</span>${lineList}</div>`;
-        }).join("") + `</div>`;
+
+        return (
+          `<div style="text-align:left;padding-left:8px">` +
+          agencies
+            .map((agency) => {
+              const lines = grouped[agency].sort();
+              // Always show agency header with bulleted lines underneath
+              const lineList = lines
+                .map(
+                  (l) =>
+                    `<div style="padding-left:12px;color:#e5e7eb">• ${escapeHtml(l)}</div>`,
+                )
+                .join("");
+              return `<div style="margin:6px 0"><span style="color:#9ca3af;font-weight:500">${escapeHtml(agency)}:</span>${lineList}</div>`;
+            })
+            .join("") +
+          `</div>`
+        );
       };
 
       popup.current
@@ -1952,7 +2054,10 @@ export function SpeedMap({
       cityDataCache.set(city, allPositions);
 
       // Start background preloading other cities
-      startBackgroundPreload(city);
+      startBackgroundPreload(city, () => {
+        preloadStatusRef.current.vehicleDone = true;
+        checkPreloadComplete();
+      });
 
       // Show rendering phase
       setLoadingProgress(
@@ -2300,41 +2405,37 @@ export function SpeedMap({
         `Rail context for ${city}: heavy=${effectiveRailContext.heavy?.features?.length || 0}, commuter=${effectiveRailContext.commuter?.features?.length || 0}`,
       );
 
-      map.current.addLayer(
-        {
-          id: "rail-context-heavy",
-          type: "line",
-          source: "rail-context-heavy-src",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRailContextHeavy ? "visible" : "none",
-          },
-          paint: {
-            "line-color": "#d7dee8",
-            "line-width": 3.5,
-            "line-opacity": 0.9,
-          },
+      map.current.addLayer({
+        id: "rail-context-heavy",
+        type: "line",
+        source: "rail-context-heavy-src",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRailContextHeavy ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color": "#d7dee8",
+          "line-width": 3.5,
+          "line-opacity": 0.9,
+        },
+      });
 
-      map.current.addLayer(
-        {
-          id: "rail-context-commuter",
-          type: "line",
-          source: "rail-context-commuter-src",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRailContextCommuter ? "visible" : "none",
-          },
-          paint: {
-            "line-color": "#77c4ff",
-            "line-width": 2.1,
-            "line-opacity": 0.95,
-          },
+      map.current.addLayer({
+        id: "rail-context-commuter",
+        type: "line",
+        source: "rail-context-commuter-src",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRailContextCommuter ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color": "#77c4ff",
+          "line-width": 2.1,
+          "line-opacity": 0.95,
+        },
+      });
 
       for (const layerId of ["rail-context-heavy", "rail-context-commuter"]) {
         map.current.off("mouseenter", layerId, handleRailContextMouseEnter);
@@ -2348,127 +2449,115 @@ export function SpeedMap({
       // Regular route layers
       // When "byLine" mode: colored by transit line
       // When "bySpeedLimit" mode: grey as fallback for segments without speed data
-      map.current.addLayer(
-        {
-          id: "routes-outline",
-          type: "line",
-          source: "routes",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            "line-color": "#000",
-            "line-width": 7,
-            "line-opacity": 0.6,
-          },
+      map.current.addLayer({
+        id: "routes-outline",
+        type: "line",
+        source: "routes",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color": "#000",
+          "line-width": 7,
+          "line-opacity": 0.6,
+        },
+      });
 
-      map.current.addLayer(
-        {
-          id: "routes",
-          type: "line",
-          source: "routes",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            // Grey when in speed limit or separation mode (as fallback for areas without data)
-            "line-color":
-              showBySpeed || showBySeparation
-                ? "#6b7280"
-                : ["get", "route_color"],
-            "line-width": 4,
-            "line-opacity": 0.9,
-          },
+      map.current.addLayer({
+        id: "routes",
+        type: "line",
+        source: "routes",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          // Grey when in speed limit or separation mode (as fallback for areas without data)
+          "line-color":
+            showBySpeed || showBySeparation
+              ? "#6b7280"
+              : ["get", "route_color"],
+          "line-width": 4,
+          "line-opacity": 0.9,
+        },
+      });
 
       // Under-construction route layers (dashed lines to indicate not yet operational)
-      map.current.addLayer(
-        {
-          id: "routes-construction-outline",
-          type: "line",
-          source: "routes-construction",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            "line-color": "#000",
-            "line-width": 7,
-            "line-opacity": 0.5,
-            "line-dasharray": [2, 2], // Dashed pattern for construction
-          },
+      map.current.addLayer({
+        id: "routes-construction-outline",
+        type: "line",
+        source: "routes-construction",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color": "#000",
+          "line-width": 7,
+          "line-opacity": 0.5,
+          "line-dasharray": [2, 2], // Dashed pattern for construction
+        },
+      });
 
-      map.current.addLayer(
-        {
-          id: "routes-construction",
-          type: "line",
-          source: "routes-construction",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            "line-color":
-              showBySpeed || showBySeparation
-                ? "#6b7280"
-                : ["get", "route_color"],
-            "line-width": 4,
-            "line-opacity": 0.8,
-            "line-dasharray": [2, 2], // Dashed pattern for construction
-          },
+      map.current.addLayer({
+        id: "routes-construction",
+        type: "line",
+        source: "routes-construction",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color":
+            showBySpeed || showBySeparation
+              ? "#6b7280"
+              : ["get", "route_color"],
+          "line-width": 4,
+          "line-opacity": 0.8,
+          "line-dasharray": [2, 2], // Dashed pattern for construction
+        },
+      });
 
       // Tunnel route layers (reduced opacity like OpenRailwayMap - faded appearance)
-      map.current.addLayer(
-        {
-          id: "routes-tunnel-outline",
-          type: "line",
-          source: "routes-tunnel",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            "line-color": "#000",
-            "line-width": 7,
-            "line-opacity": 0.3, // Reduced opacity for faded tunnel look
-          },
+      map.current.addLayer({
+        id: "routes-tunnel-outline",
+        type: "line",
+        source: "routes-tunnel",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color": "#000",
+          "line-width": 7,
+          "line-opacity": 0.3, // Reduced opacity for faded tunnel look
+        },
+      });
 
-      map.current.addLayer(
-        {
-          id: "routes-tunnel",
-          type: "line",
-          source: "routes-tunnel",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round",
-            visibility: showRouteLines ? "visible" : "none",
-          },
-          paint: {
-            "line-color":
-              showBySpeed || showBySeparation
-                ? "#6b7280"
-                : ["get", "route_color"],
-            "line-width": 4,
-            "line-opacity": 0.45, // Reduced opacity - faded tunnel appearance like OpenRailwayMap
-          },
+      map.current.addLayer({
+        id: "routes-tunnel",
+        type: "line",
+        source: "routes-tunnel",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showRouteLines ? "visible" : "none",
         },
-      );
+        paint: {
+          "line-color":
+            showBySpeed || showBySeparation
+              ? "#6b7280"
+              : ["get", "route_color"],
+          "line-width": 4,
+          "line-opacity": 0.45, // Reduced opacity - faded tunnel appearance like OpenRailwayMap
+        },
+      });
 
       // Speed limit layers (colored by maxspeed)
       if (cityConfig.maxspeed && cityConfig.maxspeed.features?.length > 0) {
@@ -2477,41 +2566,37 @@ export function SpeedMap({
           data: cityConfig.maxspeed as any,
         });
 
-        map.current.addLayer(
-          {
-            id: "speed-limit-outline",
-            type: "line",
-            source: "speed-limit",
-            layout: {
-              "line-join": "round",
-              "line-cap": "round",
-              visibility: showBySpeed ? "visible" : "none",
-            },
-            paint: {
-              "line-color": "#000",
-              "line-width": 7,
-              "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
-            },
+        map.current.addLayer({
+          id: "speed-limit-outline",
+          type: "line",
+          source: "speed-limit",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showBySpeed ? "visible" : "none",
           },
-        );
+          paint: {
+            "line-color": "#000",
+            "line-width": 7,
+            "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
+          },
+        });
 
-        map.current.addLayer(
-          {
-            id: "speed-limit",
-            type: "line",
-            source: "speed-limit",
-            layout: {
-              "line-join": "round",
-              "line-cap": "round",
-              visibility: showBySpeed ? "visible" : "none",
-            },
-            paint: {
-              "line-color": maxspeedColorExpression,
-              "line-width": 4,
-              "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
-            },
+        map.current.addLayer({
+          id: "speed-limit",
+          type: "line",
+          source: "speed-limit",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showBySpeed ? "visible" : "none",
           },
-        );
+          paint: {
+            "line-color": maxspeedColorExpression,
+            "line-width": 4,
+            "line-opacity": 1.0, // Fully opaque to completely cover grey routes underneath
+          },
+        });
 
         // Speed limit labels (visible at high zoom)
         map.current.addLayer({
@@ -2649,41 +2734,37 @@ export function SpeedMap({
           "#6b7280", // Grey fallback for unknown
         ];
 
-        map.current.addLayer(
-          {
-            id: "separation-outline",
-            type: "line",
-            source: "separation",
-            layout: {
-              "line-join": "round",
-              "line-cap": "round",
-              visibility: showBySeparation ? "visible" : "none",
-            },
-            paint: {
-              "line-color": "#000",
-              "line-width": 8, // Slightly wider to fully cover routes underneath
-              "line-opacity": 1.0,
-            },
+        map.current.addLayer({
+          id: "separation-outline",
+          type: "line",
+          source: "separation",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showBySeparation ? "visible" : "none",
           },
-        );
+          paint: {
+            "line-color": "#000",
+            "line-width": 8, // Slightly wider to fully cover routes underneath
+            "line-opacity": 1.0,
+          },
+        });
 
-        map.current.addLayer(
-          {
-            id: "separation",
-            type: "line",
-            source: "separation",
-            layout: {
-              "line-join": "round",
-              "line-cap": "round",
-              visibility: showBySeparation ? "visible" : "none",
-            },
-            paint: {
-              "line-color": separationColorExpression,
-              "line-width": 5, // Slightly wider to fully cover routes underneath
-              "line-opacity": 1.0,
-            },
+        map.current.addLayer({
+          id: "separation",
+          type: "line",
+          source: "separation",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+            visibility: showBySeparation ? "visible" : "none",
           },
-        );
+          paint: {
+            "line-color": separationColorExpression,
+            "line-width": 5, // Slightly wider to fully cover routes underneath
+            "line-opacity": 1.0,
+          },
+        });
 
         // Separation hover
         map.current.on("mouseenter", "separation", () => {
@@ -3155,7 +3236,6 @@ export function SpeedMap({
 
           e.originalEvent.stopPropagation();
         });
-
       }
     };
 
@@ -3833,7 +3913,9 @@ export function SpeedMap({
       let mapIdle = false;
       let finished = false;
 
-      console.log(`philip999 [${getTimestamp()}] Starting combined CPU + GPU monitoring...`);
+      console.log(
+        `philip999 [${getTimestamp()}] Starting combined CPU + GPU monitoring...`,
+      );
 
       // EXPERIMENTAL: Monitor render events to detect when rendering truly stops
       let lastRenderTime = performance.now();
@@ -3842,13 +3924,15 @@ export function SpeedMap({
         lastRenderTime = performance.now();
       };
       map.current.on("render", onRender);
-      
+
       const renderCheckInterval = setInterval(() => {
         const timeSinceLastRender = performance.now() - lastRenderTime;
         if (timeSinceLastRender > 1000 && !renderStopped) {
           renderStopped = true;
           const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-          console.log(`philip999 [${getTimestamp()}] 🎯 RENDER STOPPED for 1s - total time: ${elapsed}s`);
+          console.log(
+            `philip999 [${getTimestamp()}] 🎯 RENDER STOPPED for 1s - total time: ${elapsed}s`,
+          );
           clearInterval(renderCheckInterval);
           map.current?.off("render", onRender);
         }
@@ -3859,16 +3943,22 @@ export function SpeedMap({
         if (longTasksDone && mapIdle) {
           finished = true;
           const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-          console.log(`philip999 [${getTimestamp()}] ✅ Both CPU and GPU done after ${elapsed}s - clearing indicator`);
+          console.log(
+            `philip999 [${getTimestamp()}] ✅ Both CPU and GPU done after ${elapsed}s - clearing indicator`,
+          );
           setLoadingProgress("");
           setIsProcessing(false);
+          // Notify parent that map is ready
+          onMapReady?.();
         }
       };
 
       // Wait for JS long tasks to finish (CPU work)
       waitForNoLongTasks(2000, startTime).then(() => {
         const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-        console.log(`philip999 [${getTimestamp()}] CPU tasks complete after ${elapsed}s`);
+        console.log(
+          `philip999 [${getTimestamp()}] CPU tasks complete after ${elapsed}s`,
+        );
         longTasksDone = true;
         tryFinish();
       });
@@ -3876,7 +3966,9 @@ export function SpeedMap({
       // Wait for MapLibre to finish rendering (GPU work)
       map.current.once("idle", () => {
         const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-        console.log(`philip999 [${getTimestamp()}] MapLibre idle (GPU done) after ${elapsed}s`);
+        console.log(
+          `philip999 [${getTimestamp()}] MapLibre idle (GPU done) after ${elapsed}s`,
+        );
         mapIdle = true;
         tryFinish();
       });
@@ -3886,7 +3978,9 @@ export function SpeedMap({
         if (!finished) {
           finished = true;
           const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-          console.log(`philip999 [${getTimestamp()}] ⚠️ Fallback timeout after ${elapsed}s (CPU: ${longTasksDone}, GPU: ${mapIdle})`);
+          console.log(
+            `philip999 [${getTimestamp()}] ⚠️ Fallback timeout after ${elapsed}s (CPU: ${longTasksDone}, GPU: ${mapIdle})`,
+          );
           setLoadingProgress("");
           setIsProcessing(false);
         }
@@ -4214,7 +4308,7 @@ export function SpeedMap({
     if (city && CITIES_WITH_PARALLEL_TRACKS.includes(city)) {
       allRouteSegments.forEach((seg) => {
         if (!seg.referenceSegmentId) return; // Only process parallel segments
-        
+
         // Clone data from the reference segment
         const refAverage = segmentAverages.get(seg.referenceSegmentId);
         if (refAverage) {
@@ -4417,36 +4511,60 @@ export function SpeedMap({
         <div className="map-speed-legend-grid">
           {/* Column 1: slow speeds (read down) */}
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#9b2d6b" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#9b2d6b" }}
+            ></span>
             <span>≤ {speedUnit === "kmh" ? 8 : 5}</span>
           </div>
           {/* Column 2: fast speeds (read down) */}
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#88ff33" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#88ff33" }}
+            ></span>
             <span>{speedUnit === "kmh" ? "40-56" : "25-35"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#ff3333" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#ff3333" }}
+            ></span>
             <span>{speedUnit === "kmh" ? "8-16" : "5-10"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#33eebb" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#33eebb" }}
+            ></span>
             <span>{speedUnit === "kmh" ? "56-80" : "35-50"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#ff9933" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#ff9933" }}
+            ></span>
             <span>{speedUnit === "kmh" ? "16-24" : "10-15"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#22ccff" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#22ccff" }}
+            ></span>
             <span>&gt; {speedUnit === "kmh" ? 80 : 50}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#ffdd33" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#ffdd33" }}
+            ></span>
             <span>{speedUnit === "kmh" ? "24-40" : "15-25"}</span>
           </div>
           <div className="map-speed-legend-item">
-            <span className="map-speed-dot" style={{ backgroundColor: "#666666" }}></span>
+            <span
+              className="map-speed-dot"
+              style={{ backgroundColor: "#666666" }}
+            ></span>
             <span>No data</span>
           </div>
         </div>
@@ -4469,12 +4587,16 @@ export function SpeedMap({
       </div>
 
       {/* Dynamic legends - positioned at top-left, stacked vertically */}
-      {(showCrossings && ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city)) ||
-       showRailContextHeavy || showRailContextCommuter ? (
+      {(showCrossings &&
+        ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city)) ||
+      showRailContextHeavy ||
+      showRailContextCommuter ? (
         <div className="map-dynamic-legends">
           {/* Crossing gate legend - only for cities with verified gate data */}
           {showCrossings &&
-            ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city) && (
+            ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(
+              city,
+            ) && (
               <div className="crossing-gate-legend-inline">
                 <div className="dynamic-legend-title">Grade Crossings</div>
                 <div className="crossing-legend-items">

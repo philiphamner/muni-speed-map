@@ -2147,3 +2147,75 @@
     padding: 18px;
   }
 }
+
+/* Initial load overlay - only covers map area, not sidebar */
+.initial-load-overlay {
+  position: fixed;
+  top: 0;
+  left: 300px; /* Start after sidebar */
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 20, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  pointer-events: all;
+  isolation: isolate; /* Create new stacking context */
+  animation: none; /* Override fadeIn from .loading-overlay */
+}
+
+.initial-load-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  isolation: isolate; /* Isolate from parent repaints */
+}
+
+.progress-bar-container {
+  width: 280px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  isolation: isolate; /* Isolate the animation */
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d9ff 0%, #00ff88 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: fillProgress 21s linear forwards;
+  will-change: transform;
+  backface-visibility: hidden; /* Force GPU layer */
+}
+
+@keyframes fillProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.progress-percentage {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  min-width: 45px;
+  text-align: center;
+}
+
+/* Mobile: cover full screen including sidebar */
+@media (max-width: 768px) {
+  .initial-load-overlay {
+    left: 0;
+  }
+}

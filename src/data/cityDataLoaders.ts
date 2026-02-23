@@ -186,11 +186,15 @@ export function getCachedCityData(city: City): CityStaticData | undefined {
 /**
  * Preload city data in the background (doesn't block UI)
  */
-export function preloadCityStaticData(city: City): void {
-  if (cityStaticDataCache.has(city) || loadingPromises.has(city)) return;
-  loadCityData(city).catch(() => {
-    /* ignore preload errors */
-  });
+export function preloadCityStaticData(city: City): Promise<void> {
+  if (cityStaticDataCache.has(city) || loadingPromises.has(city)) {
+    return Promise.resolve();
+  }
+  return loadCityData(city)
+    .then(() => {})
+    .catch(() => {
+      /* ignore preload errors */
+    });
 }
 
 /**
@@ -269,7 +273,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./laTunnelsBridges.json").catch(() => ({ default: null })),
         import("./laSeparation.json").catch(() => ({ default: null })),
         import("./laSeparationOverrides.json").catch(() => ({ default: null })),
-        import("./laTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./laTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
 
@@ -315,7 +321,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./seattleMaxspeed.json"),
         import("./seattleTunnelsBridges.json").catch(() => ({ default: null })),
         import("./seattleSeparation.json").catch(() => ({ default: null })),
-        import("./seattleTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./seattleTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -348,7 +356,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./bostonMaxspeed.json"),
         import("./bostonTunnelsBridges.json").catch(() => ({ default: null })),
         import("./bostonSeparation.json").catch(() => ({ default: null })),
-        import("./bostonTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./bostonTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -387,7 +397,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./portlandSeparationOverrides.json").catch(() => ({
           default: null,
         })),
-        import("./portlandTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./portlandTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
 
@@ -432,7 +444,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
           default: null,
         })),
         import("./sanDiegoSeparation.json").catch(() => ({ default: null })),
-        import("./sanDiegoTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./sanDiegoTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -465,7 +479,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./torontoSwitches.json"),
         import("./torontoTunnelsBridges.json").catch(() => ({ default: null })),
         import("./torontoSeparation.json").catch(() => ({ default: null })),
-        import("./torontoTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./torontoTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       // Merge streetcar and LRT routes
@@ -509,7 +525,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./phillySeparationOverrides.json").catch(() => ({
           default: null,
         })),
-        import("./phillyTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./phillyTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
 
@@ -535,20 +553,29 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
     }
 
     case "Pittsburgh": {
-      const [routes, stops, crossings, switches, tunnelsBridges, separation, trafficLights] =
-        await Promise.all([
-          import("./pittsburghTRoutes.json"),
-          import("./pittsburghTStops.json"),
-          import("./pittsburghGradeCrossings.json"),
-          import("./pittsburghSwitches.json"),
-          import("./pittsburghTunnelsBridges.json").catch(() => ({
-            default: null,
-          })),
-          import("./pittsburghSeparation.json").catch(() => ({
-            default: null,
-          })),
-          import("./pittsburghTrafficLightsConsolidated.json").catch(() => ({ default: null })),
-        ]);
+      const [
+        routes,
+        stops,
+        crossings,
+        switches,
+        tunnelsBridges,
+        separation,
+        trafficLights,
+      ] = await Promise.all([
+        import("./pittsburghTRoutes.json"),
+        import("./pittsburghTStops.json"),
+        import("./pittsburghGradeCrossings.json"),
+        import("./pittsburghSwitches.json"),
+        import("./pittsburghTunnelsBridges.json").catch(() => ({
+          default: null,
+        })),
+        import("./pittsburghSeparation.json").catch(() => ({
+          default: null,
+        })),
+        import("./pittsburghTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
+      ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
         routes: routes.default,
@@ -582,7 +609,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
           default: null,
         })),
         import("./minneapolisSeparation.json").catch(() => ({ default: null })),
-        import("./minneapolisTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./minneapolisTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -615,7 +644,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./denverMaxspeed.json"),
         import("./denverTunnelsBridges.json").catch(() => ({ default: null })),
         import("./denverSeparation.json").catch(() => ({ default: null })),
-        import("./denverTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./denverTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -648,7 +679,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./slcMaxspeed.json"),
         import("./slcTunnelsBridges.json").catch(() => ({ default: null })),
         import("./slcSeparation.json").catch(() => ({ default: null })),
-        import("./slcTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./slcTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -681,7 +714,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./vtaMaxspeed.json"),
         import("./vtaTunnelsBridges.json").catch(() => ({ default: null })),
         import("./vtaSeparation.json").catch(() => ({ default: null })),
-        import("./sanJoseTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./sanJoseTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -714,7 +749,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
         import("./phoenixMaxspeed.json"),
         import("./phoenixTunnelsBridges.json").catch(() => ({ default: null })),
         import("./phoenixSeparation.json").catch(() => ({ default: null })),
-        import("./phoenixTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./phoenixTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -749,7 +786,9 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
           default: null,
         })),
         import("./charlotteSeparation.json").catch(() => ({ default: null })),
-        import("./charlotteTrafficLightsConsolidated.json").catch(() => ({ default: null })),
+        import("./charlotteTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
       ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
@@ -765,18 +804,27 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
     }
 
     case "Baltimore": {
-      const [routes, stops, crossings, switches, tunnelsBridges, separation, trafficLights] =
-        await Promise.all([
-          import("./baltimoreLightRailRoutes.json"),
-          import("./baltimoreLightRailStops.json"),
-          import("./baltimoreGradeCrossings.json"),
-          import("./baltimoreSwitches.json"),
-          import("./baltimoreTunnelsBridges.json").catch(() => ({
-            default: null,
-          })),
-          import("./baltimoreSeparation.json").catch(() => ({ default: null })),
-          import("./baltimoreTrafficLightsConsolidated.json").catch(() => ({ default: null })),
-        ]);
+      const [
+        routes,
+        stops,
+        crossings,
+        switches,
+        tunnelsBridges,
+        separation,
+        trafficLights,
+      ] = await Promise.all([
+        import("./baltimoreLightRailRoutes.json"),
+        import("./baltimoreLightRailStops.json"),
+        import("./baltimoreGradeCrossings.json"),
+        import("./baltimoreSwitches.json"),
+        import("./baltimoreTunnelsBridges.json").catch(() => ({
+          default: null,
+        })),
+        import("./baltimoreSeparation.json").catch(() => ({ default: null })),
+        import("./baltimoreTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
+      ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
         routes: routes.default,
@@ -791,16 +839,25 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
     }
 
     case "Cleveland": {
-      const [routes, stops, crossings, switches, maxspeed, separation, trafficLights] =
-        await Promise.all([
-          import("./clevelandRtaRoutes.json"),
-          import("./clevelandRtaStops.json"),
-          import("./clevelandGradeCrossings.json"),
-          import("./clevelandSwitches.json"),
-          import("./clevelandMaxspeed.json").catch(() => ({ default: null })),
-          import("./clevelandSeparation.json").catch(() => ({ default: null })),
-          import("./clevelandTrafficLightsConsolidated.json").catch(() => ({ default: null })),
-        ]);
+      const [
+        routes,
+        stops,
+        crossings,
+        switches,
+        maxspeed,
+        separation,
+        trafficLights,
+      ] = await Promise.all([
+        import("./clevelandRtaRoutes.json"),
+        import("./clevelandRtaStops.json"),
+        import("./clevelandGradeCrossings.json"),
+        import("./clevelandSwitches.json"),
+        import("./clevelandMaxspeed.json").catch(() => ({ default: null })),
+        import("./clevelandSeparation.json").catch(() => ({ default: null })),
+        import("./clevelandTrafficLightsConsolidated.json").catch(() => ({
+          default: null,
+        })),
+      ]);
       console.timeEnd(`Loading ${city} static data`);
       return {
         routes: routes.default,
@@ -834,7 +891,10 @@ async function doLoadCityData(city: City): Promise<CityStaticData> {
 /**
  * Start background preloading for popular cities (called after initial city loads)
  */
-export function startBackgroundStaticPreload(currentCity: City): void {
+export function startBackgroundStaticPreload(
+  currentCity: City,
+  onComplete?: () => void,
+): void {
   // Prioritize the most popular cities
   const popularCities: City[] = [
     "LA",
@@ -849,11 +909,33 @@ export function startBackgroundStaticPreload(currentCity: City): void {
     (c) => c !== currentCity && !cityStaticDataCache.has(c),
   );
 
+  if (citiesToPreload.length === 0) {
+    // Nothing to preload, call completion immediately
+    onComplete?.();
+    return;
+  }
+
+  let completedCount = 0;
+
   // Stagger preloading by 300ms each to avoid blocking UI
   citiesToPreload.forEach((city, index) => {
     setTimeout(
       () => {
-        preloadCityStaticData(city);
+        preloadCityStaticData(city)
+          .then(() => {
+            completedCount++;
+            if (completedCount === citiesToPreload.length) {
+              // All cities preloaded
+              onComplete?.();
+            }
+          })
+          .catch(() => {
+            // Count failed preloads as complete to avoid hanging
+            completedCount++;
+            if (completedCount === citiesToPreload.length) {
+              onComplete?.();
+            }
+          });
       },
       (index + 1) * 300,
     );
