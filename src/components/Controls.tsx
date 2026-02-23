@@ -1371,6 +1371,7 @@ export function Controls({
           setShowRailContextHeavy(false);
           setShowRailContextCommuter(false);
           setHideStoppedTrains(false);
+          setHideAllTrains(false);
         }}
       >
         Reset All Filters
