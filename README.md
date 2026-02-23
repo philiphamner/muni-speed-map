@@ -56,12 +56,11 @@ These systems have significant street-running and could be added:
 
 | City             | System      | Why It's a Good Candidate                                                      |
 | ---------------- | ----------- | ------------------------------------------------------------------------------ |
-| 🌊 **San Diego** | MTS Trolley | Large network with street-running sections through downtown and East County    |
 | 🤠 **Houston**   | METRORail   | Red Line runs at-grade through Midtown and Medical Center                      |
 | 🇨🇦 **Calgary**   | CTrain      | One of North America's busiest light rail systems with downtown street-running |
 | 🇨🇦 **Edmonton**  | ETS LRT     | Capital, Metro, and Valley Lines with urban at-grade sections                  |
 
-### ❌ Systems We Chose Not to Include
+### ❌ Systems I Chose Not to Include
 
 | System                                   | Why Not                                                                                 |
 | ---------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -248,10 +247,6 @@ npm run collect:all
 | Baltimore      | Swiftly GTFS-RT     | ✅ Yes - https://www.goswift.ly/ (via MTA Maryland)                                            |
 | San Diego      | MTS GTFS-RT         | ✅ Yes - https://www.sdmts.com/business-center/app-developers                                  |
 
-### Data Retention
-
-- Frontend displays last 7 days of data
-- Supabase `pg_cron` job deletes data older than 8 days (optional)
 
 ## 🗂️ Project Structure
 
