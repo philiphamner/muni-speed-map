@@ -120,71 +120,71 @@ export const ABOUT_SECTIONS = {
 
 export const ABOUT_CITY_NOTES: AboutCityNote[] = [
   {
-    city: "San Francisco",
-    note: "N Judah tunnel speeds may appear clustered at portals due to limited GPS signal in the Sunset Tunnel. The F-Market & Wharves line is hidden by default to avoid confusing its slower street-running speeds with the faster underground Muni Metro lines. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
-    city: "Los Angeles",
-    note: "Complex areas around major terminals can look choppy because GTFS shape granularity varies by operator. Regional context includes Metrolink commuter rail. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Seattle",
-    note: "Link transitions between tunneled and surface-running segments, so speed patterns can shift quickly at transition points and around major interline sections. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
-    city: "Portland",
-    note: "MAX uses downtown transit-mall segments where trains share lanes with buses. Grade-crossing patterns may appear sparse in the core because these differ from conventional at-grade crossings. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+    city: "Baltimore",
+    note: "Light RailLink shows gaps in coverage along certain stretches, especially between stations, possibly due to limited GPS reporting frequency or infrastructure constraints. Regional context includes Metro SubwayLink and MARC commuter rail. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
   },
   {
     city: "Boston",
     note: "Green Line branch merges and street-running sections create strong speed variation by branch and by central subway approach. Each branch has distinct operating characteristics worth comparing separately. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
   },
   {
-    city: "Philadelphia",
-    note: "Street-running trolley segments often lack OSM grade-crossing tags, so mixed-traffic behavior is interpreted primarily from speed patterns. Regional context includes SEPTA Regional Rail, SEPTA subway lines, PATCO, and NJ Transit Atlantic City Line. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
-    city: "San Jose",
-    note: "Regional context includes Bay Area commuter and metro lines (BART, Caltrain, Capitol Corridor) visible when zoomed out across the broader metro footprint. VTA light rail operates primarily in surface-running configurations with significant at-grade segments. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
-    city: "Toronto",
-    note: "Streetcar corridors run in mixed traffic and typically are not tagged as classic railway grade crossings in OSM, so infrastructure markers may appear sparse. Context layers include TTC subway (heavy rail) and GO Transit (commuter rail). Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Minneapolis–St. Paul",
-    note: "Airport tunnel and grade-separation sections show distinct speed behavior compared with downtown street-running areas. The Blue and Green lines share downtown trackage, so compare individual line performance separately from the shared core. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Denver",
-    note: "RTD operates multiple long corridors with different operating profiles. Network-wide averages can hide major segment-level differences between suburban and urban sections, so line-level filtering is useful for interpretation. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Salt Lake City",
-    note: "TRAX lines share downtown trackage, so compare individual line speeds separately from the shared core for clearer interpretation. The system includes both street-running and grade-separated segments with distinct performance characteristics. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Pittsburgh",
-    note: "The T transitions between downtown subway and South Hills surface running, creating clear grade-separation and speed regime differences in one corridor. This makes Pittsburgh useful for comparing tunnel vs surface performance. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
-  },
-  {
-    city: "Phoenix",
-    note: "Valley Metro is largely surface-running with extensive at-grade segments. Intersection effects and corridor traffic conditions are often visible in the speed distribution, making this a good example of mixed-traffic light rail performance. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
     city: "Charlotte",
     note: "LYNX Blue and Gold lines have distinct service patterns. Compare overlap areas separately from end segments for clearer speed interpretation, as shared trackage can show different performance than single-line sections. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
-  },
-  {
-    city: "Baltimore",
-    note: "Light RailLink shows gaps in coverage along certain stretches, especially between stations, possibly due to limited GPS reporting frequency or infrastructure constraints. Regional context includes Metro SubwayLink and MARC commuter rail. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
   },
   {
     city: "Cleveland",
     note: "RTA corridor behavior varies between shared trunk sections and outer branches. Line-level filtering is useful before comparing averages, as the Red Line operates differently from the Blue and Green lines. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
   },
   {
+    city: "Denver",
+    note: "RTD operates multiple long corridors with different operating profiles. Network-wide averages can hide major segment-level differences between suburban and urban sections, so line-level filtering is useful for interpretation. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
+    city: "Los Angeles",
+    note: "Complex areas around major terminals can look choppy because GTFS shape granularity varies by operator. Regional context includes Metrolink commuter rail. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
+    city: "Minneapolis–St. Paul",
+    note: "Airport tunnel and grade-separation sections show distinct speed behavior compared with downtown street-running areas. The Blue and Green lines share downtown trackage, so compare individual line performance separately from the shared core. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
+    city: "Philadelphia",
+    note: "Street-running trolley segments often lack OSM grade-crossing tags, so mixed-traffic behavior is interpreted primarily from speed patterns. Regional context includes SEPTA Regional Rail, SEPTA subway lines, PATCO, and NJ Transit Atlantic City Line. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "Phoenix",
+    note: "Valley Metro is largely surface-running with extensive at-grade segments. Intersection effects and corridor traffic conditions are often visible in the speed distribution, making this a good example of mixed-traffic light rail performance. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "Pittsburgh",
+    note: "The T transitions between downtown subway and South Hills surface running, creating clear grade-separation and speed regime differences in one corridor. This makes Pittsburgh useful for comparing tunnel vs surface performance. GPS positions derived from the source data appear somewhat offset from the track alignment. I am unsure why, perhaps because of old technology used by the city. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
+    city: "Portland",
+    note: "MAX uses downtown transit-mall segments where trains share lanes with buses. Grade-crossing patterns may appear sparse in the core because these differ from conventional at-grade crossings. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
+    city: "Salt Lake City",
+    note: "TRAX lines share downtown trackage, so compare individual line speeds separately from the shared core for clearer interpretation. The system includes both street-running and grade-separated segments with distinct performance characteristics. Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
+  },
+  {
     city: "San Diego",
     note: "The Trolley system covers four lines with varying service patterns across the metro area. Regional context includes NCTD Coaster commuter rail. The system includes both street-running and grade-separated segments. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "San Francisco",
+    note: "N Judah tunnel speeds may appear clustered at portals due to limited GPS signal in the Sunset Tunnel. The F-Market & Wharves line is hidden by default to avoid confusing its slower street-running speeds with the faster underground Muni Metro lines. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "San Jose",
+    note: "Regional context includes Bay Area commuter and metro lines (BART, Caltrain, Capitol Corridor) visible when zoomed out across the broader metro footprint. VTA light rail operates primarily in surface-running configurations with significant at-grade segments. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "Seattle",
+    note: "Link transitions between tunneled and surface-running segments, so speed patterns can shift quickly at transition points and around major interline sections. Speed is calculated from GPS positions, measuring distance traveled between consecutive readings (~90 seconds apart).",
+  },
+  {
+    city: "Toronto",
+    note: "Streetcar corridors run in mixed traffic and typically are not tagged as classic railway grade crossings in OSM, so infrastructure markers may appear sparse. Context layers include TTC subway (heavy rail) and GO Transit (commuter rail). Speed is provided directly by the transit agency's API, giving accurate real-time readings.",
   },
 ];
