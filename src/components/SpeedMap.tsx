@@ -2,13 +2,12 @@ import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { City, LAMetroLine } from "../types";
-import { getLinesForCity, CITIES, LA_METRO_LINE_INFO } from "../types";
+import { getLinesForCity, LA_METRO_LINE_INFO } from "../types";
 import { supabase } from "../lib/supabase";
 import {
   loadCityData,
   isCityDataCached,
   getCachedCityData,
-  startBackgroundStaticPreload,
   CITY_COORDS,
   type CityStaticData,
 } from "../data/cityDataLoaders";
@@ -1165,9 +1164,6 @@ interface Vehicle {
 // Module-level cache - persists across component remounts for instant city switching
 const cityDataCache = new Map<City, Vehicle[]>();
 
-// Track if we've already started background preloading
-let preloadStarted = false;
-
 // Only select columns we actually use (reduces data transfer by ~40%)
 const POSITION_COLUMNS =
   "id,vehicle_id,lat,lon,route_id,direction_id,speed_calculated,recorded_at,headsign";
@@ -1213,146 +1209,6 @@ async function fetchPagesParallel(
 
   const results = await Promise.all(promises);
   return results.flatMap((r) => r.data || []);
-}
-
-// Background preload function - fetches and caches a city's data without UI updates
-async function preloadCityData(targetCity: City): Promise<void> {
-  // Skip if already cached or no supabase
-  if (cityDataCache.has(targetCity) || !supabase) return;
-
-  try {
-    // First ensure static data is loaded for this city
-    const staticData = await loadCityData(targetCity);
-
-    const PAGE_SIZE = 1000;
-    // Fetch first page to estimate total count
-    let query;
-    if (targetCity === "SF") {
-      query = supabase
-        .from("vehicle_positions")
-        .select(POSITION_COLUMNS)
-        .or("city.is.null,city.eq.SF")
-        .order("recorded_at", { ascending: false })
-        .range(0, PAGE_SIZE - 1);
-    } else if (targetCity === "San Diego") {
-      // Handle San Diego like SF - include both legacy (null) and new data
-      query = supabase
-        .from("vehicle_positions")
-        .select(POSITION_COLUMNS)
-        .or("city.is.null,city.eq.San Diego")
-        .order("recorded_at", { ascending: false })
-        .range(0, PAGE_SIZE - 1);
-    } else {
-      query = supabase
-        .from("vehicle_positions")
-        .select(POSITION_COLUMNS)
-        .eq("city", targetCity)
-        .order("recorded_at", { ascending: false })
-        .range(0, PAGE_SIZE - 1);
-    }
-
-    const { data: firstPage, error } = await query;
-    if (error || !firstPage) return;
-
-    let allData = [...firstPage];
-
-    // If first page is full, fetch remaining pages in parallel
-    if (firstPage.length === PAGE_SIZE) {
-      const PARALLEL_BATCH = 5;
-      let pageNum = 1;
-      let hasMore = true;
-
-      while (hasMore) {
-        const batchData = await fetchPagesParallel(
-          targetCity,
-          pageNum,
-          PARALLEL_BATCH,
-          PAGE_SIZE,
-        );
-        allData = [...allData, ...batchData];
-
-        hasMore = batchData.length === PARALLEL_BATCH * PAGE_SIZE;
-        pageNum += PARALLEL_BATCH;
-
-        // Safety limit: max 30 pages (30k positions)
-        if (pageNum > 30) break;
-      }
-    }
-
-    // Filter to valid lines and transform
-    const validLines = getLinesForCity(targetCity);
-    const filteredData = allData.filter((row: any) => {
-      return validLines.includes(row.route_id);
-    });
-
-    // Build route feature map once (optimization: avoids filtering per-vehicle)
-    const routeFeatureMap = getRouteFeatureMap(staticData.routes);
-
-    const positions: Vehicle[] = filteredData.map((row: any) => ({
-      id: `${row.vehicle_id}-${row.id}`,
-      lat: row.lat,
-      lon: row.lon,
-      routeId: row.route_id,
-      direction: getDirection(row.direction_id),
-      speed: row.speed_calculated,
-      recordedAt: row.recorded_at,
-      segmentId: findSegmentForVehicle(
-        row.lat,
-        row.lon,
-        row.route_id,
-        staticData.routes,
-        routeFeatureMap,
-        targetCity,
-      ),
-      headsign: row.headsign,
-    }));
-
-    // Store in cache
-    cityDataCache.set(targetCity, positions);
-    console.log(
-      `Background preloaded ${targetCity}: ${positions.length} positions`,
-    );
-  } catch (error) {
-    console.warn(`Failed to preload ${targetCity}:`, error);
-  }
-}
-
-// Start background preloading for all cities (staggered)
-function startBackgroundPreload(currentCity: City, onComplete?: () => void) {
-  if (preloadStarted) return;
-  preloadStarted = true;
-
-  const otherCities = CITIES.filter((c) => c !== currentCity);
-
-  if (otherCities.length === 0) {
-    onComplete?.();
-    return;
-  }
-
-  let completedCount = 0;
-
-  // Stagger requests by 500ms each to avoid hammering the server
-  otherCities.forEach((city, index) => {
-    setTimeout(
-      () => {
-        preloadCityData(city)
-          .then(() => {
-            completedCount++;
-            if (completedCount === otherCities.length) {
-              onComplete?.();
-            }
-          })
-          .catch(() => {
-            // Count failures as complete to avoid hanging
-            completedCount++;
-            if (completedCount === otherCities.length) {
-              onComplete?.();
-            }
-          });
-      },
-      (index + 1) * 500,
-    );
-  });
 }
 
 interface SpeedMapProps {
