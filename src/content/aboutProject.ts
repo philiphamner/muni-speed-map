@@ -72,6 +72,11 @@ export const ABOUT_SECTIONS = {
       "For some cities (currently Los Angeles and Denver), the platform combines speed readings from both directions of travel into unified segment averages. This produces more statistically robust data—instead of splitting readings between parallel tracks, all readings contribute to one average per segment.",
       "The result is a speed profile that answers 'how fast do trains move through this section' rather than tracking inbound vs outbound separately.",
     ],
+    lineStatistics: [
+      "The 'Speed by Line' statistics exclude vehicles traveling below 0.5 mph to focus on operational speeds.",
+      "This filtering removes trains stopped in yards and maintenance facilities, which would artificially lower averages without providing meaningful insight into in-service performance.",
+      "While this approach may exclude some trains legitimately stopped at stations during passenger loading, it provides a more accurate picture of how fast trains move when actually in motion on the network.",
+    ],
     limitations: [
       "GPS accuracy varies by agency and can be affected by tunnels, urban canyons, and signal quality",
       "Update frequency differs between cities (typically 10-30 seconds)",

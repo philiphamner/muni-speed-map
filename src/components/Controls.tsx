@@ -1639,6 +1639,14 @@ export function Controls({
                     </ul>
                   </div>
                   <div className="about-section-block">
+                    <h3>Speed by Line Statistics</h3>
+                    <ul>
+                      {ABOUT_SECTIONS.data.lineStatistics.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="about-section-block">
                     <h3>Limitations</h3>
                     <ul>
                       {ABOUT_SECTIONS.data.limitations.map((item) => (
