@@ -4,10 +4,6 @@ A real-time visualization tool for analyzing light rail and streetcar speeds acr
 
 **🌐 Live App:** [https://muni-speed-map.vercel.app/](https://muni-speed-map.vercel.app/)
 
-**📖 User Documentation:** See the "About This Project" modal in the app for end-user guides and city-specific notes.
-
-![Transit Speed Map Screenshot](docs/screenshot-sf.png)
-
 ---
 
 ## For Developers & Contributors
