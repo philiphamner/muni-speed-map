@@ -4424,6 +4424,55 @@ export function SpeedMap({
         </div>
       </div>
 
+      {/* Separation Legend - shown on map when separation mode is active */}
+      {showRouteLines && routeLineMode === "bySeparation" && (
+        <div className="map-separation-legend">
+          <div className="map-separation-legend-title">Grade Separation</div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#3b82f6" }}
+            ></span>
+            <span>Tunnel / Trench</span>
+          </div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#22c55e" }}
+            ></span>
+            <span>Elevated</span>
+          </div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#eab308" }}
+            ></span>
+            <span>Separated At-Grade</span>
+          </div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#f97316" }}
+            ></span>
+            <span>Reserved Lane</span>
+          </div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#ef4444" }}
+            ></span>
+            <span>Mixed Traffic</span>
+          </div>
+          <div className="separation-legend-item">
+            <span
+              className="separation-legend-line"
+              style={{ backgroundColor: "#6b7280" }}
+            ></span>
+            <span>Unknown</span>
+          </div>
+        </div>
+      )}
+
       {/* Google Maps-style layer toggle button */}
       <div
         className="map-layer-toggle"

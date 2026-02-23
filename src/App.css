@@ -1730,6 +1730,31 @@
   flex-shrink: 0;
 }
 
+/* Separation Legend - on map, above speed legend when separation mode is active */
+.map-separation-legend {
+  position: absolute;
+  bottom: 353px;
+  left: 10px;
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-separation-legend-title {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2px;
+}
+
 /* Container for dynamic legends at top-left */
 .map-dynamic-legends {
   position: absolute;
@@ -2050,6 +2075,12 @@
     left: 10px;
   }
 
+  /* Separation legend - above speed legend */
+  .map-separation-legend {
+    bottom: 235px;
+    left: 10px;
+  }
+
   /* Move dynamic legends (crossing legend, etc.) to avoid hamburger */
   .map-dynamic-legends {
     top: 70px;
@@ -2059,6 +2090,7 @@
      HIDE MAP ELEMENTS WHEN SIDEBAR IS OPEN
      =========================================== */
   .controls-panel.mobile-open ~ .map-wrapper .map-speed-legend,
+  .controls-panel.mobile-open ~ .map-wrapper .map-separation-legend,
   .controls-panel.mobile-open ~ .map-wrapper .map-layer-toggle,
   .controls-panel.mobile-open ~ .map-wrapper .maplibregl-ctrl-bottom-left,
   .controls-panel.mobile-open ~ .map-wrapper .map-dynamic-legends {
@@ -2108,6 +2140,13 @@
   /* Speed legend stays in top-left in landscape */
   .map-speed-legend {
     top: 12px;
+    bottom: auto;
+    left: 10px;
+  }
+
+  /* Separation legend below speed legend in landscape */
+  .map-separation-legend {
+    top: 140px;
     bottom: auto;
     left: 10px;
   }
