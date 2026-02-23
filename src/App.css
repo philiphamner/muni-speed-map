@@ -2190,7 +2190,7 @@
   width: 100%;
   transform-origin: left center;
   transform: scaleX(0);
-  animation: fillProgress 21s linear forwards;
+  animation: fillProgress 5s linear forwards;
   will-change: transform;
   backface-visibility: hidden; /* Force GPU layer */
 }

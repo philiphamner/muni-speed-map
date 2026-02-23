@@ -1431,10 +1431,14 @@ export function SpeedMap({
   onPreloadCompleteRef.current = onPreloadComplete;
 
   const checkPreloadComplete = useCallback(() => {
-    if (
-      preloadStatusRef.current.staticDone &&
-      preloadStatusRef.current.vehicleDone
-    ) {
+    const status = preloadStatusRef.current;
+    console.log(
+      `philipzzz 📊 Preload status: static=${status.staticDone}, vehicle=${status.vehicleDone}`,
+    );
+    if (status.staticDone && status.vehicleDone) {
+      console.log(
+        "philipzzz ✅ Both preloads complete - calling onPreloadComplete",
+      );
       onPreloadCompleteRef.current?.();
     }
   }, []);
@@ -1543,13 +1547,9 @@ export function SpeedMap({
           setCityStaticData(data);
           setCityDataLoading(false);
           setLoadingProgress("");
-          // Start background preload of other cities
-          startBackgroundStaticPreload(city, () => {
-            if (!cancelled) {
-              preloadStatusRef.current.staticDone = true;
-              checkPreloadComplete();
-            }
-          });
+          // Mark static preload as complete immediately (no background preload)
+          preloadStatusRef.current.staticDone = true;
+          checkPreloadComplete();
         }
       } catch (error) {
         console.error(`Failed to load ${city} data:`, error);
@@ -2053,11 +2053,9 @@ export function SpeedMap({
       // Cache the results for instant switching
       cityDataCache.set(city, allPositions);
 
-      // Start background preloading other cities
-      startBackgroundPreload(city, () => {
-        preloadStatusRef.current.vehicleDone = true;
-        checkPreloadComplete();
-      });
+      // Mark vehicle preload as complete immediately (no background preload)
+      preloadStatusRef.current.vehicleDone = true;
+      checkPreloadComplete();
 
       // Show rendering phase
       setLoadingProgress(

@@ -35,14 +35,20 @@ const useIsDev = () => {
 function App() {
   const isDev = useIsDev();
 
-  // Initial load state - show overlay until preload completes
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  // Track app start time for debugging
+  if (!(window as any).__appStartTime) {
+    (window as any).__appStartTime = performance.now();
+    console.log("philipzzz 🚀 App started");
+  }
+
+  // Initial load state - DISABLED for now
+  const [isInitialLoad, setIsInitialLoad] = useState(false);
 
   // Fallback timeout in case preload hangs
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 25000); // 25 second fallback
+    }, 10000); // 10 second fallback (reduced from 25s since no background preload)
 
     return () => {
       clearTimeout(fallbackTimer);
@@ -51,6 +57,13 @@ function App() {
 
   // Callback when background preload completes
   const handlePreloadComplete = useCallback(() => {
+    const elapsed = (
+      (performance.now() - (window as any).__appStartTime) /
+      1000
+    ).toFixed(2);
+    console.log(
+      `philipzzz 🎉 All preloads complete at ${elapsed}s - hiding overlay`,
+    );
     setIsInitialLoad(false);
   }, []);
 
