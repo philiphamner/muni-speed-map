@@ -84,6 +84,7 @@ const EMPTY_CITY_DATA: CityStaticData = {
   trafficLights: null,
   railContextHeavy: null,
   railContextCommuter: null,
+  busRoutesOverlay: null,
 };
 
 function escapeHtml(value: string): string {
@@ -1200,6 +1201,7 @@ interface SpeedMapProps {
   showSwitches: boolean;
   showRailContextHeavy: boolean;
   showRailContextCommuter: boolean;
+  showBusRoutesOverlay: boolean;
   hideStoppedTrains: boolean;
   hideAllTrains: boolean;
   viewMode: ViewMode;
@@ -1213,7 +1215,11 @@ interface SpeedMapProps {
     lineStats?: LineStats[],
     dataAgeMinutes?: number,
   ) => void;
-  onRailContextUpdate?: (heavyCount: number, commuterCount: number) => void;
+  onRailContextUpdate?: (
+    heavyCount: number,
+    commuterCount: number,
+    busCount: number,
+  ) => void;
   onPreloadComplete?: () => void;
 }
 
@@ -1229,6 +1235,7 @@ export function SpeedMap({
   showSwitches,
   showRailContextHeavy,
   showRailContextCommuter,
+  showBusRoutesOverlay,
   hideStoppedTrains,
   hideAllTrains,
   viewMode,
@@ -1410,6 +1417,7 @@ export function SpeedMap({
       trafficLights: cityStaticData?.trafficLights || null,
       railContextHeavy: cityStaticData?.railContextHeavy || null,
       railContextCommuter: cityStaticData?.railContextCommuter || null,
+      busRoutesOverlay: cityStaticData?.busRoutesOverlay || null,
     }),
     [city, cityStaticData],
   );
@@ -1443,12 +1451,17 @@ export function SpeedMap({
     () => ({
       heavy: effectiveRailContext.heavy?.features?.length || 0,
       commuter: effectiveRailContext.commuter?.features?.length || 0,
+      bus: cityConfig.busRoutesOverlay?.features?.length || 0,
     }),
-    [effectiveRailContext],
+    [effectiveRailContext, cityConfig.busRoutesOverlay],
   );
 
   useEffect(() => {
-    onRailContextUpdate?.(railContextCounts.heavy, railContextCounts.commuter);
+    onRailContextUpdate?.(
+      railContextCounts.heavy,
+      railContextCounts.commuter,
+      railContextCounts.bus,
+    );
   }, [onRailContextUpdate, railContextCounts]);
 
   const handleRailContextMouseEnter = useCallback(() => {
@@ -2159,6 +2172,8 @@ export function SpeedMap({
           map.current.removeLayer("rail-context-heavy");
         if (map.current.getLayer("rail-context-commuter"))
           map.current.removeLayer("rail-context-commuter");
+        if (map.current.getLayer("bus-routes-overlay"))
+          map.current.removeLayer("bus-routes-overlay");
         if (map.current.getSource("routes")) map.current.removeSource("routes");
         if (map.current.getSource("routes-construction"))
           map.current.removeSource("routes-construction");
@@ -2168,6 +2183,8 @@ export function SpeedMap({
           map.current.removeSource("rail-context-heavy-src");
         if (map.current.getSource("rail-context-commuter-src"))
           map.current.removeSource("rail-context-commuter-src");
+        if (map.current.getSource("bus-routes-overlay-src"))
+          map.current.removeSource("bus-routes-overlay-src");
         // Speed limit layers
         if (map.current.getLayer("speed-limit-outline"))
           map.current.removeLayer("speed-limit-outline");
@@ -2222,6 +2239,17 @@ export function SpeedMap({
         },
       });
 
+      map.current.addSource("bus-routes-overlay-src", {
+        type: "geojson",
+        data:
+          cityConfig.busRoutesOverlay
+            ? cityConfig.busRoutesOverlay
+            : {
+                type: "FeatureCollection",
+                features: [],
+              },
+      });
+
       map.current.addLayer({
         id: "rail-context-heavy",
         type: "line",
@@ -2251,6 +2279,44 @@ export function SpeedMap({
           "line-color": "#77c4ff",
           "line-width": 2.1,
           "line-opacity": 0.95,
+        },
+      });
+
+      map.current.addLayer({
+        id: "bus-routes-overlay",
+        type: "line",
+        source: "bus-routes-overlay-src",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+          visibility: showBusRoutesOverlay ? "visible" : "none",
+        },
+        paint: {
+          "line-color": "#ffd34d",
+          "line-width": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            10,
+            0.6,
+            12,
+            1.0,
+            14,
+            1.6,
+          ],
+          "line-opacity": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            9,
+            0.0,
+            10,
+            0.18,
+            12,
+            0.28,
+            14,
+            0.36,
+          ],
         },
       });
 
@@ -2687,10 +2753,12 @@ export function SpeedMap({
     showRouteLines,
     showRailContextHeavy,
     showRailContextCommuter,
+    showBusRoutesOverlay,
     routeLineMode,
     cityConfig.routes,
     cityConfig.maxspeed,
     cityConfig.separation,
+    cityConfig.busRoutesOverlay,
     effectiveRailContext,
     maxspeedColorExpression,
     handleRailContextMouseEnter,
@@ -2716,10 +2784,22 @@ export function SpeedMap({
           showRailContextCommuter ? "visible" : "none",
         );
       }
+      if (map.current.getLayer("bus-routes-overlay")) {
+        map.current.setLayoutProperty(
+          "bus-routes-overlay",
+          "visibility",
+          showBusRoutesOverlay ? "visible" : "none",
+        );
+      }
     } catch (e) {
       // Layers might not exist yet
     }
-  }, [mapLoaded, showRailContextHeavy, showRailContextCommuter]);
+  }, [
+    mapLoaded,
+    showRailContextHeavy,
+    showRailContextCommuter,
+    showBusRoutesOverlay,
+  ]);
 
   // Traffic lights filtering
   const filteredTrafficLights = useMemo(() => {
@@ -4422,7 +4502,8 @@ export function SpeedMap({
       {(showCrossings &&
         ["LA", "San Diego", "Salt Lake City", "Charlotte"].includes(city)) ||
       showRailContextHeavy ||
-      showRailContextCommuter ? (
+      showRailContextCommuter ||
+      showBusRoutesOverlay ? (
         <div className="map-dynamic-legends">
           {/* Crossing gate legend - only for cities with verified gate data */}
           {showCrossings &&
@@ -4445,7 +4526,9 @@ export function SpeedMap({
             )}
 
           {/* Regional & Metro Overlay legend */}
-          {(showRailContextHeavy || showRailContextCommuter) && (
+          {(showRailContextHeavy ||
+            showRailContextCommuter ||
+            showBusRoutesOverlay) && (
             <div className="rail-context-legend-inline">
               <div className="dynamic-legend-title">
                 Regional & Metro Overlay
@@ -4465,6 +4548,22 @@ export function SpeedMap({
               >
                 <span className="rail-context-legend-line commuter"></span>
                 <span>Regional / Commuter</span>
+              </div>
+              <div
+                className={`rail-context-legend-item ${
+                  showBusRoutesOverlay ? "" : "disabled"
+                }`}
+              >
+                <span
+                  className="rail-context-legend-line"
+                  style={{
+                    borderTopColor: "#ffd34d",
+                    borderTopWidth: 2,
+                    borderTopStyle: "solid",
+                    opacity: 0.9,
+                  }}
+                ></span>
+                <span>Bus routes</span>
               </div>
             </div>
           )}

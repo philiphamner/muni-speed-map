@@ -332,8 +332,11 @@ interface ControlsProps {
   setShowRailContextHeavy: (show: boolean) => void;
   showRailContextCommuter: boolean;
   setShowRailContextCommuter: (show: boolean) => void;
+  showBusRoutesOverlay: boolean;
+  setShowBusRoutesOverlay: (show: boolean) => void;
   railContextHeavyCount: number;
   railContextCommuterCount: number;
+  busRoutesOverlayCount: number;
   hideStoppedTrains: boolean;
   setHideStoppedTrains: (hide: boolean) => void;
   hideAllTrains: boolean;
@@ -407,8 +410,11 @@ export function Controls({
   setShowRailContextHeavy,
   showRailContextCommuter,
   setShowRailContextCommuter,
+  showBusRoutesOverlay,
+  setShowBusRoutesOverlay,
   railContextHeavyCount,
   railContextCommuterCount,
+  busRoutesOverlayCount,
   hideStoppedTrains,
   setHideStoppedTrains,
   hideAllTrains,
@@ -1295,6 +1301,33 @@ export function Controls({
             Regional / Commuter rail ({railContextCommuterCount})
           </label>
         </div>
+        {(city === "SF" ||
+          city === "LA" ||
+          city === "Boston" ||
+          city === "Toronto" ||
+          city === "Denver" ||
+          city === "Portland" ||
+          city === "San Diego" ||
+          city === "San Jose" ||
+          city === "Seattle" ||
+          city === "Philadelphia" ||
+          city === "Minneapolis" ||
+          city === "Phoenix" ||
+          city === "Salt Lake City" ||
+          city === "Charlotte" ||
+          city === "Cleveland" ||
+          city === "Pittsburgh") && (
+          <div className="route-lines-toggle">
+            <label>
+              <input
+                type="checkbox"
+                checked={showBusRoutesOverlay}
+                onChange={(e) => setShowBusRoutesOverlay(e.target.checked)}
+              />
+              Bus routes ({busRoutesOverlayCount})
+            </label>
+          </div>
+        )}
       </CollapsibleSection>
 
       {/* Infrastructure */}
@@ -1371,6 +1404,7 @@ export function Controls({
           setShowSwitches(false);
           setShowRailContextHeavy(false);
           setShowRailContextCommuter(false);
+          setShowBusRoutesOverlay(false);
           setHideStoppedTrains(false);
           setHideAllTrains(false);
         }}

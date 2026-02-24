@@ -105,31 +105,106 @@ function parseCsv(filename) {
   });
 }
 
+function perpendicularDistance(point, start, end) {
+  const [x, y] = point;
+  const [x1, y1] = start;
+  const [x2, y2] = end;
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  if (dx === 0 && dy === 0) {
+    const px = x - x1;
+    const py = y - y1;
+    return Math.sqrt(px * px + py * py);
+  }
+  const t = ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy);
+  const projX = x1 + t * dx;
+  const projY = y1 + t * dy;
+  const px = x - projX;
+  const py = y - projY;
+  return Math.sqrt(px * px + py * py);
+}
+
+function douglasPeucker(coords, epsilon) {
+  if (coords.length <= 2) return coords;
+  let maxDistance = 0;
+  let index = 0;
+  for (let i = 1; i < coords.length - 1; i++) {
+    const distance = perpendicularDistance(
+      coords[i],
+      coords[0],
+      coords[coords.length - 1],
+    );
+    if (distance > maxDistance) {
+      maxDistance = distance;
+      index = i;
+    }
+  }
+  if (maxDistance <= epsilon) {
+    return [coords[0], coords[coords.length - 1]];
+  }
+  const left = douglasPeucker(coords.slice(0, index + 1), epsilon);
+  const right = douglasPeucker(coords.slice(index), epsilon);
+  return [...left.slice(0, -1), ...right];
+}
+
 // Main function
 async function main() {
   console.log("🚇 Parsing Baltimore MTA Light RailLink GTFS data...\n");
 
-  // 1. Read trips.txt to get shape_id list
+  // 1. Read trips.txt and choose representative shapes by normalized headsign+direction
   console.log("Reading trips.txt...");
   const trips = parseCsv("trips.txt");
-  
-  const shapeIds = new Set();
+
+  const normalizeHeadsign = (headsign) =>
+    (headsign || "")
+      .toUpperCase()
+      .replace(/\s+/g, " ")
+      .replace(/\(.*?\)/g, "")
+      .trim();
+
+  const candidatesByServiceDir = new Map(); // key -> { shapeId -> count/headsign }
   const shapeHeadsigns = new Map(); // shape_id -> headsign for debugging
-  
+
   for (const trip of trips) {
     const shapeId = trip.shape_id;
     if (!shapeId) continue;
-    
-    shapeIds.add(shapeId);
+
+    const directionId = trip.direction_id || "0";
+    const normalizedHeadsign = normalizeHeadsign(trip.trip_headsign);
+    const branch = getBranchFromShapeId(shapeId);
+    const key = `${branch}__${normalizedHeadsign || "UNKNOWN"}__${directionId}`;
+
+    if (!candidatesByServiceDir.has(key)) {
+      candidatesByServiceDir.set(key, new Map());
+    }
+    const byShape = candidatesByServiceDir.get(key);
+    const existing = byShape.get(shapeId) || {
+      count: 0,
+      headsign: trip.trip_headsign || "",
+      branch,
+      directionId,
+    };
+    existing.count += 1;
+    byShape.set(shapeId, existing);
+
     if (!shapeHeadsigns.has(shapeId)) {
       shapeHeadsigns.set(shapeId, trip.trip_headsign);
     }
   }
-  
-  console.log(`Found ${shapeIds.size} unique shapes`);
-  for (const shapeId of shapeIds) {
-    console.log(`  ${shapeId} -> ${getBranchFromShapeId(shapeId)} (${shapeHeadsigns.get(shapeId)})`);
+
+  const selectedShapeIds = new Set();
+  console.log(`Found ${candidatesByServiceDir.size} service-direction groups`);
+  for (const [key, byShape] of candidatesByServiceDir) {
+    const [bestShapeId, best] = Array.from(byShape.entries()).sort(
+      (a, b) => b[1].count - a[1].count,
+    )[0];
+    selectedShapeIds.add(bestShapeId);
+    console.log(
+      `  ${key} -> ${bestShapeId} (${best.count} trips, ${best.headsign || "no headsign"})`,
+    );
   }
+
+  console.log(`Selected ${selectedShapeIds.size} representative shapes`);
 
   // 2. Read shapes.txt and build geometries per shape
   console.log("\nReading shapes.txt...");
@@ -139,7 +214,7 @@ async function main() {
   
   for (const point of shapes) {
     const shapeId = point.shape_id;
-    if (!shapeIds.has(shapeId)) continue;
+    if (!selectedShapeIds.has(shapeId)) continue;
     
     if (!shapeGeometries.has(shapeId)) {
       shapeGeometries.set(shapeId, []);
@@ -153,21 +228,33 @@ async function main() {
   }
   
   // Sort each shape's points by sequence and convert to coordinate arrays
+  // then simplify to reduce client parse/render cost.
+  let totalOriginalCoords = 0;
+  let totalSimplifiedCoords = 0;
+  const SIMPLIFY_EPSILON = 0.00006; // ~6m; conservative for rail geometry
   for (const [shapeId, points] of shapeGeometries) {
     points.sort((a, b) => a.seq - b.seq);
-    shapeGeometries.set(shapeId, points.map(p => [p.lon, p.lat]));
+    const coords = points.map(p => [p.lon, p.lat]);
+    const simplified =
+      coords.length > 100 ? douglasPeucker(coords, SIMPLIFY_EPSILON) : coords;
+    totalOriginalCoords += coords.length;
+    totalSimplifiedCoords += simplified.length;
+    shapeGeometries.set(shapeId, simplified);
   }
   
-  console.log(`Processed ${shapeGeometries.size} shape geometries`);
+  console.log(`Processed ${shapeGeometries.size} selected shape geometries`);
+  console.log(
+    `Simplified coordinates: ${totalOriginalCoords} -> ${totalSimplifiedCoords} (${Math.round((totalSimplifiedCoords / totalOriginalCoords) * 100)}%)`,
+  );
 
   // 3. Build a single unified GeoJSON feature for the Light Rail system
-  // We'll create a MultiLineString with all unique segments
+  // We'll create a MultiLineString with representative segments only.
   console.log("\nBuilding route GeoJSON...");
   
   const seenSegments = new Set();
   const allCoords = [];
   
-  for (const shapeId of shapeIds) {
+  for (const shapeId of selectedShapeIds) {
     const coords = shapeGeometries.get(shapeId);
     if (!coords || coords.length < 2) continue;
     

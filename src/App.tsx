@@ -91,8 +91,10 @@ function App() {
   const [showSwitches, setShowSwitches] = useState(false);
   const [showRailContextHeavy, setShowRailContextHeavy] = useState(false);
   const [showRailContextCommuter, setShowRailContextCommuter] = useState(false);
+  const [showBusRoutesOverlay, setShowBusRoutesOverlay] = useState(false);
   const [railContextHeavyCount, setRailContextHeavyCount] = useState(0);
   const [railContextCommuterCount, setRailContextCommuterCount] = useState(0);
+  const [busRoutesOverlayCount, setBusRoutesOverlayCount] = useState(0);
   const [hideStoppedTrains, setHideStoppedTrains] = useState(false);
   const [hideAllTrains, setHideAllTrains] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>("raw");
@@ -121,6 +123,7 @@ function App() {
     setDataAgeMinutes(null);
     setRailContextHeavyCount(0);
     setRailContextCommuterCount(0);
+    setBusRoutesOverlayCount(0);
     // If switching away from live mode, default to raw
     if (viewMode === "live") {
       setViewMode("raw");
@@ -174,8 +177,11 @@ function App() {
         setShowRailContextHeavy={setShowRailContextHeavy}
         showRailContextCommuter={showRailContextCommuter}
         setShowRailContextCommuter={setShowRailContextCommuter}
+        showBusRoutesOverlay={showBusRoutesOverlay}
+        setShowBusRoutesOverlay={setShowBusRoutesOverlay}
         railContextHeavyCount={railContextHeavyCount}
         railContextCommuterCount={railContextCommuterCount}
+        busRoutesOverlayCount={busRoutesOverlayCount}
         hideStoppedTrains={hideStoppedTrains}
         setHideStoppedTrains={setHideStoppedTrains}
         hideAllTrains={hideAllTrains}
@@ -201,15 +207,17 @@ function App() {
         showSwitches={showSwitches}
         showRailContextHeavy={showRailContextHeavy}
         showRailContextCommuter={showRailContextCommuter}
+        showBusRoutesOverlay={showBusRoutesOverlay}
         hideStoppedTrains={hideStoppedTrains}
         hideAllTrains={hideAllTrains}
         viewMode={viewMode}
         showSatellite={showSatellite}
         onSatelliteToggle={setShowSatellite}
         speedUnit={speedUnit}
-        onRailContextUpdate={(heavyCount, commuterCount) => {
+        onRailContextUpdate={(heavyCount, commuterCount, busCount) => {
           setRailContextHeavyCount(heavyCount);
           setRailContextCommuterCount(commuterCount);
+          setBusRoutesOverlayCount(busCount ?? 0);
         }}
         onVehicleUpdate={(count, time, stats, ageMinutes) => {
           setVehicleCount(count);
