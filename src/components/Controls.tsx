@@ -787,9 +787,9 @@ export function Controls({
       <button
         className="app-header-link-btn"
         onClick={() => setShowTransitMapModal(true)}
-        title="View official transit rail map"
+        title="View rail map"
       >
-        View official rail map
+        View rail map
       </button>
       <button
         className="app-header-link-btn app-header-link-btn-alt"
@@ -1589,6 +1589,17 @@ export function Controls({
               ×
             </button>
             <h2>{ABOUT_SECTIONS.title}</h2>
+            <div className="about-data-clarity-callout" role="note">
+              <p>
+                <strong>Important:</strong> This map is not live tracking.
+              </p>
+              <p>
+                It shows a snapshot of recorded vehicle position/speed
+                observations captured during a weekday early-afternoon period.
+                Counts like <strong>"5,115 positions"</strong> are sample
+                observations, not unique trains.
+              </p>
+            </div>
 
             {/* Tab Navigation */}
             <div className="about-tabs">
@@ -1827,7 +1838,7 @@ export function Controls({
                         className={`transit-map-viewport ${transitMapZoom > MIN_TRANSIT_MAP_ZOOM ? "zoomed" : ""} ${isTransitMapPanning ? "is-panning" : ""}`}
                         tabIndex={0}
                         role="application"
-                        aria-label="Official rail map. Use scroll to zoom, drag or arrow keys to pan."
+                        aria-label="Rail map. Use scroll to zoom, drag or arrow keys to pan."
                         onWheel={handleTransitMapWheel}
                         onKeyDown={handleTransitMapKeyDown}
                         onDoubleClick={(event) =>
@@ -1848,7 +1859,7 @@ export function Controls({
                         >
                           <img
                             src={transitMapDisplayUrl}
-                            alt={`${city} official rail map`}
+                            alt={`${city} rail map`}
                             className="transit-map-image"
                             style={transitMapImageStyle}
                             onLoad={(event) => {

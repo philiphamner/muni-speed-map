@@ -1563,6 +1563,34 @@
   margin-bottom: 16px;
 }
 
+.about-data-clarity-callout {
+  margin: 0 0 18px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 211, 77, 0.35);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 211, 77, 0.08) 0%,
+    rgba(255, 211, 77, 0.03) 100%
+  );
+  text-align: left;
+}
+
+.about-data-clarity-callout p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.about-data-clarity-callout p + p {
+  margin-top: 8px;
+}
+
+.about-data-clarity-callout strong {
+  color: #ffe28a;
+}
+
 /* About Modal Tabs */
 .about-tabs {
   display: flex;
