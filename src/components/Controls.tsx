@@ -390,8 +390,8 @@ export function Controls({
   selectedLines,
   setSelectedLines,
   vehicleCount,
-  lastUpdate: _lastUpdate,
-  dataAgeMinutes: _dataAgeMinutes,
+  // lastUpdate: _lastUpdate,
+  // dataAgeMinutes: _dataAgeMinutes,
   speedFilter,
   setSpeedFilter,
   showRouteLines,
@@ -425,7 +425,7 @@ export function Controls({
   speedUnit,
   setSpeedUnit,
   isSidebarOpen,
-  onCloseSidebar,
+  // onCloseSidebar: _onCloseSidebar,
 }: ControlsProps) {
   const MIN_TRANSIT_MAP_ZOOM = 1;
   const MAX_TRANSIT_MAP_ZOOM = 4;
