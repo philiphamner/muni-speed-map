@@ -1644,7 +1644,26 @@ export function SpeedMap({
   // Cluster stops by exact name - shows single marker for stations with same name
   // Returns { clustered: features for merged markers, individual: all original features keyed by name }
   const clusteredStops = useMemo(() => {
-    const features = cityConfig.stops?.features || [];
+    const rawFeatures = cityConfig.stops?.features || [];
+
+    // Normalize stop feature schemas across city data sources.
+    // Some cities (e.g. Minneapolis) use OSM-style `name` instead of `stop_name`.
+    const features = rawFeatures
+      .map((f: any) => {
+        const props = f?.properties || {};
+        const stopName = props.stop_name || props.name || props.station_name;
+        if (!stopName || !f?.geometry?.coordinates) return null;
+
+        return {
+          ...f,
+          properties: {
+            ...props,
+            stop_name: stopName,
+            routes: Array.isArray(props.routes) ? props.routes : props.routes ? [props.routes] : [],
+          },
+        };
+      })
+      .filter(Boolean);
 
     // Group stops by name
     const byName: Record<string, any[]> = {};
@@ -2907,7 +2926,20 @@ export function SpeedMap({
         if (selectedLines.length === 0) return [];
         return features.filter((f: any) => {
           const routes = f.properties?.routes;
-          if (!routes || !Array.isArray(routes)) return true;
+          if (!routes || !Array.isArray(routes) || routes.length === 0)
+            return true;
+          if (city === "LA") {
+            // LA stops may use GTFS route codes while user-facing line logic can reference letters.
+            const laAliases = new Set<string>();
+            for (const route of routes) {
+              const routeId = String(route);
+              laAliases.add(routeId);
+              const lineInfo =
+                LA_METRO_LINE_INFO[routeId as keyof typeof LA_METRO_LINE_INFO];
+              if (lineInfo?.letter) laAliases.add(lineInfo.letter);
+            }
+            return selectedLines.some((line) => laAliases.has(String(line)));
+          }
           return routes.some((r: string) => selectedLines.includes(r));
         });
       };
