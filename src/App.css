@@ -2282,14 +2282,14 @@
   /* Distance/scale control - bottom left */
   .maplibregl-ctrl-bottom-left .maplibregl-ctrl-scale {
     margin-left: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   /* Map layer toggle - above scale, bottom left */
   .map-layer-toggle {
     width: 90px;
     height: 90px;
-    bottom: 45px;
+    bottom: 78px;
     left: 10px;
   }
 
@@ -2299,13 +2299,14 @@
 
   /* Speed legend - above map toggle, bottom left */
   .map-speed-legend {
-    bottom: 145px;
+    bottom: 184px;
     left: 10px;
   }
 
   /* Separation legend - above speed legend */
   .map-separation-legend {
-    bottom: 235px;
+    /* bottom: 352px; */
+    bottom: 315px;
     left: 10px;
   }
 
