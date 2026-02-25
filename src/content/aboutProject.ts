@@ -29,6 +29,9 @@ export const ABOUT_SECTIONS = {
       "I chose to focus on light rail specifically because, unlike heavy metro systems or commuter/regional rail, it operates in environments where targeted improvements (signal priority, stop consolidation, lane separation) can make a real difference. Light rail in North America often suffers from operating in mixed traffic, signal delays, frequent stops, and constrained infrastructure. By combining real-time data with static GTFS and infrastructure overlays, this platform makes it possible to identify systemic slow zones, compare cities, and evaluate infrastructure tradeoffs.",
     ],
     goal: 'The aim is to turn anecdotal complaints about "slow trains" into measurable, actionable insights.',
+    dataCollectionTitle: "How the Speed Maps Were Built",
+    dataCollection:
+      "To build these speed maps, I queried each transit agency's live vehicle endpoint every 90 seconds. Each query returned the latest reported location and speed for the agency's entire active train fleet. I collected those system-wide snapshots over several hours during the workday across multiple days in February 2026, then aggregated them into a city-level speed map showing where trains tend to move quickly or slow down.",
   },
 
   howto: {

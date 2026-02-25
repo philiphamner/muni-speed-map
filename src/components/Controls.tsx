@@ -1566,17 +1566,6 @@ export function Controls({
               ×
             </button>
             <h2>{ABOUT_SECTIONS.title}</h2>
-            <div className="about-data-clarity-callout" role="note">
-              <p>
-                <strong>Important:</strong> This map is not live tracking.
-              </p>
-              <p>
-                It shows a snapshot of recorded vehicle position/speed
-                observations captured during a weekday early-afternoon period.
-                Counts like <strong>"5,115 positions"</strong> are sample
-                observations, not unique trains.
-              </p>
-            </div>
 
             {/* Tab Navigation */}
             <div className="about-tabs">
@@ -1599,6 +1588,8 @@ export function Controls({
                     <p key={i}>{para}</p>
                   ))}
                   <p>{ABOUT_SECTIONS.overview.goal}</p>
+                  <h3>{ABOUT_SECTIONS.overview.dataCollectionTitle}</h3>
+                  <p>{ABOUT_SECTIONS.overview.dataCollection}</p>
                 </div>
               )}
 
