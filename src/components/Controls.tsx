@@ -557,6 +557,8 @@ export function Controls({
   const cityLine = cityNames[city] || city;
   const systemLine = systemNames[city] || "Speed Map";
   const longTitleCities = ["Boston", "Phoenix"];
+  const mobileMediumTitleCities = ["Phoenix", "Baltimore", "Toronto"];
+  const mobileSmallTitleCities: City[] = [];
   const officialTransitMapUrl = OFFICIAL_TRANSIT_MAP_URLS[city];
   const transitMapDisplayUrl =
     TRANSIT_MAP_DISPLAY_URLS[city] || officialTransitMapUrl;
@@ -773,7 +775,7 @@ export function Controls({
       <div className="app-header">
         <span className="app-city">{cityLine}</span>
         <h1
-          className={`app-title ${longTitleCities.includes(city) ? "app-title-long" : ""}`}
+          className={`app-title ${longTitleCities.includes(city) ? "app-title-long" : ""} ${mobileMediumTitleCities.includes(city) ? "app-title-mobile-medium" : ""} ${mobileSmallTitleCities.includes(city) ? "app-title-mobile-small" : ""}`}
         >
           {systemLine}
         </h1>

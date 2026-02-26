@@ -2324,6 +2324,20 @@
     transform: translateX(0);
   }
 
+  /* Keep header text clear of the mobile close button/hamburger slot. */
+  .controls-panel.mobile-open .app-header {
+    padding-left: 56px;
+  }
+
+  .app-title.app-title-mobile-medium {
+    font-size: 1.18rem;
+  }
+
+  .app-title.app-title-mobile-small {
+    font-size: 1.06rem;
+    letter-spacing: -0.35px;
+  }
+
   /* Show close button inside sidebar on mobile */
   .mobile-close-btn {
     display: flex;
@@ -2485,6 +2499,11 @@
   .about-prospective-card p {
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+
+  /* Hide rail map modal zoom buttons on mobile (gesture/double-tap zoom remains). */
+  .transit-map-zoom-controls {
+    display: none;
   }
 }
 
