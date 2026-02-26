@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import type {
   MuniLine,
   LAMetroLine,
@@ -1554,8 +1555,13 @@ export function Controls({
       </div>
 
       {/* About Project Modal */}
-      {showAboutModal && (
-        <div className="modal-overlay" onClick={() => setShowAboutModal(false)}>
+      {showAboutModal &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="modal-overlay"
+            onClick={() => setShowAboutModal(false)}
+          >
           <div
             className="modal-content about-modal"
             onClick={(e) => e.stopPropagation()}
@@ -1779,15 +1785,18 @@ export function Controls({
               )}
             </div>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
 
       {/* Official Transit Map Modal */}
-      {showTransitMapModal && (
-        <div
-          className="modal-overlay"
-          onClick={() => setShowTransitMapModal(false)}
-        >
+      {showTransitMapModal &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="modal-overlay"
+            onClick={() => setShowTransitMapModal(false)}
+          >
           <div
             className="modal-content transit-map-modal"
             onClick={(e) => e.stopPropagation()}
@@ -1938,12 +1947,18 @@ export function Controls({
               </div>
             )}
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
 
       {/* Sacramento Warning Modal */}
-      {showSacWarning && (
-        <div className="modal-overlay" onClick={() => setShowSacWarning(false)}>
+      {showSacWarning &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="modal-overlay"
+            onClick={() => setShowSacWarning(false)}
+          >
           <div
             className="modal-content sac-warning-modal"
             onClick={(e) => e.stopPropagation()}
@@ -1972,8 +1987,9 @@ export function Controls({
               I Understand
             </button>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </div>
   );
 }

@@ -2436,6 +2436,56 @@
     padding: 6px 10px;
     font-size: 0.7rem;
   }
+
+  /* About modal mobile improvements */
+  .modal-overlay {
+    padding-top: 4vh;
+    align-items: flex-start;
+  }
+
+  .about-modal {
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+    margin: 8px;
+    padding: 20px 16px 16px;
+    max-height: calc(100vh - 16px);
+  }
+
+  .about-modal h2 {
+    margin-bottom: 12px;
+    padding-right: 44px;
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .about-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+    overflow-x: visible;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  .about-tab {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 120px;
+    padding: 10px 8px;
+    font-size: 0.78rem;
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  .about-tab-content {
+    min-height: 0;
+    max-height: calc(100vh - 240px);
+  }
+
+  .about-tab-content p,
+  .about-section-block li,
+  .about-prospective-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
 }
 
 /* ===========================================
