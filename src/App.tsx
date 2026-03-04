@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SpeedMap } from "./components/SpeedMap";
 import { Controls } from "./components/Controls";
 import { CITIES, getLinesForCity } from "./types";
@@ -42,30 +42,6 @@ function getCityFromUrl(): City {
 function App() {
   const isDev = useIsDev();
 
-  // Track app start time for debugging
-  if (!(window as any).__appStartTime) {
-    (window as any).__appStartTime = performance.now();
-  }
-
-  // Initial load state - DISABLED for now
-  const [isInitialLoad, setIsInitialLoad] = useState(false);
-
-  // Fallback timeout in case preload hangs
-  useEffect(() => {
-    const fallbackTimer = setTimeout(() => {
-      setIsInitialLoad(false);
-    }, 10000); // 10 second fallback (reduced from 25s since no background preload)
-
-    return () => {
-      clearTimeout(fallbackTimer);
-    };
-  }, []);
-
-  // Callback when background preload completes
-  const handlePreloadComplete = useCallback(() => {
-    setIsInitialLoad(false);
-  }, []);
-
   // Mobile sidebar state
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -92,8 +68,6 @@ function App() {
   noneSelectedRef.current = selectedLines.length === 0;
 
   const [vehicleCount, setVehicleCount] = useState(0);
-  const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
-  const [dataAgeMinutes, setDataAgeMinutes] = useState<number | null>(null);
   const [speedFilter, setSpeedFilter] = useState<SpeedFilter>({
     minSpeed: 0,
     maxSpeed: 50,
@@ -136,8 +110,6 @@ function App() {
     // Reset stats and counts when changing city (data is different)
     setLineStats([]);
     setVehicleCount(0);
-    setLastUpdate(null);
-    setDataAgeMinutes(null);
     setRailContextHeavyCount(0);
     setRailContextCommuterCount(0);
     setBusRoutesOverlayCount(0);
@@ -174,8 +146,6 @@ function App() {
         selectedLines={selectedLines}
         setSelectedLines={setSelectedLines}
         vehicleCount={vehicleCount}
-        lastUpdate={lastUpdate}
-        dataAgeMinutes={dataAgeMinutes}
         speedFilter={speedFilter}
         setSpeedFilter={setSpeedFilter}
         showRouteLines={showRouteLines}
@@ -209,7 +179,6 @@ function App() {
         speedUnit={speedUnit}
         setSpeedUnit={setSpeedUnit}
         isSidebarOpen={isSidebarOpen}
-        onCloseSidebar={() => setIsSidebarOpen(false)}
       />
       <SpeedMap
         key={city}
@@ -238,29 +207,11 @@ function App() {
           setRailContextCommuterCount(commuterCount);
           setBusRoutesOverlayCount(busCount ?? 0);
         }}
-        onVehicleUpdate={(count, time, stats, ageMinutes) => {
+        onVehicleUpdate={(count, _time, stats) => {
           setVehicleCount(count);
-          setLastUpdate(time);
           if (stats) setLineStats(stats);
-          if (ageMinutes !== undefined) setDataAgeMinutes(ageMinutes);
         }}
-        onPreloadComplete={handlePreloadComplete}
       />
-
-      {/* Initial load overlay - only shows on first app load */}
-      {isInitialLoad && (
-        <div
-          key="initial-loader"
-          className="loading-overlay initial-load-overlay"
-        >
-          <div className="initial-load-content">
-            <div className="loading-text">Loading map data...</div>
-            <div className="progress-bar-container">
-              <div className="progress-bar-fill"></div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {!isDev && <Analytics />}
       {!isDev && <SpeedInsights />}

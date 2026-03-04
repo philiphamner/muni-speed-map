@@ -88,63 +88,6 @@
   color: #c8f8ff;
 }
 
-/* Warning style for cities with data quality issues */
-.city-btn.city-btn-warning {
-  color: #ff6b6b;
-  text-shadow: 0 0 8px rgba(255, 80, 80, 0.4);
-}
-
-.city-btn.city-btn-warning:hover {
-  color: #ff5555;
-  background: rgba(255, 80, 80, 0.15);
-  text-shadow: 0 0 10px rgba(255, 80, 80, 0.5);
-}
-
-.city-btn.city-btn-warning.active {
-  background: linear-gradient(135deg, rgba(255, 80, 80, 0.35) 0%, rgba(200, 50, 50, 0.25) 100%);
-  color: #ff7777;
-  box-shadow: 0 2px 12px rgba(255, 80, 80, 0.3);
-  text-shadow: 0 0 8px rgba(255, 100, 100, 0.5);
-}
-
-/* Pending style for cities waiting for API keys (yellow) */
-.city-btn.city-btn-pending {
-  color: #ffd93d;
-  text-shadow: 0 0 8px rgba(255, 217, 61, 0.4);
-}
-
-.city-btn.city-btn-pending:hover {
-  color: #ffed4a;
-  background: rgba(255, 217, 61, 0.15);
-  text-shadow: 0 0 10px rgba(255, 217, 61, 0.5);
-}
-
-.city-btn.city-btn-pending.active {
-  background: linear-gradient(135deg, rgba(255, 217, 61, 0.35) 0%, rgba(200, 170, 30, 0.25) 100%);
-  color: #ffed4a;
-  box-shadow: 0 2px 12px rgba(255, 217, 61, 0.3);
-  text-shadow: 0 0 8px rgba(255, 230, 100, 0.5);
-}
-
-/* Dark orange style for cities in early development */
-.city-btn.city-btn-dark-orange {
-  color: #e67e22;
-  text-shadow: 0 0 8px rgba(230, 126, 34, 0.4);
-}
-
-.city-btn.city-btn-dark-orange:hover {
-  color: #f39c12;
-  background: rgba(230, 126, 34, 0.15);
-  text-shadow: 0 0 10px rgba(230, 126, 34, 0.5);
-}
-
-.city-btn.city-btn-dark-orange.active {
-  background: linear-gradient(135deg, rgba(230, 126, 34, 0.35) 0%, rgba(180, 90, 20, 0.25) 100%);
-  color: #f39c12;
-  box-shadow: 0 2px 12px rgba(230, 126, 34, 0.3);
-  text-shadow: 0 0 8px rgba(243, 156, 18, 0.5);
-}
-
 .app-header {
   display: flex;
   flex-direction: column;
@@ -1667,11 +1610,6 @@
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Sacramento-specific warning modal */
-.sac-warning-modal {
-  border-color: rgba(255, 150, 50, 0.3);
-}
-
 .about-modal {
   max-width: 860px;
   width: min(860px, calc(100vw - 40px));
@@ -2761,77 +2699,5 @@
   .controls-panel {
     width: 280px;
     padding: 18px;
-  }
-}
-
-/* Initial load overlay - only covers map area, not sidebar */
-.initial-load-overlay {
-  position: fixed;
-  top: 0;
-  left: 300px; /* Start after sidebar */
-  right: 0;
-  bottom: 0;
-  background: rgba(10, 10, 20, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 9999;
-  pointer-events: all;
-  isolation: isolate; /* Create new stacking context */
-  animation: none; /* Override fadeIn from .loading-overlay */
-}
-
-.initial-load-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  isolation: isolate; /* Isolate from parent repaints */
-}
-
-.progress-bar-container {
-  width: 280px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  isolation: isolate; /* Isolate the animation */
-}
-
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #00d9ff 0%, #00ff88 100%);
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
-  width: 100%;
-  transform-origin: left center;
-  transform: scaleX(0);
-  animation: fillProgress 5s linear forwards;
-  will-change: transform;
-  backface-visibility: hidden; /* Force GPU layer */
-}
-
-@keyframes fillProgress {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.progress-percentage {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  min-width: 45px;
-  text-align: center;
-}
-
-/* Mobile: cover full screen including sidebar */
-@media (max-width: 768px) {
-  .initial-load-overlay {
-    left: 0;
   }
 }

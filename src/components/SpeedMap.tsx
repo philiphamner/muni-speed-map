@@ -85,7 +85,6 @@ interface SpeedMapProps {
     commuterCount: number,
     busCount: number,
   ) => void;
-  onPreloadComplete?: () => void;
 }
 
 export function SpeedMap({
@@ -112,7 +111,6 @@ export function SpeedMap({
   onMapReady,
   onVehicleUpdate,
   onRailContextUpdate,
-  onPreloadComplete,
 }: SpeedMapProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -139,18 +137,6 @@ export function SpeedMap({
   );
   const [loadingProgress, setLoadingProgress] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState(false);
-
-  // Track preload completion - need both static AND vehicle data to finish
-  const preloadStatusRef = useRef({ staticDone: false, vehicleDone: false });
-  const onPreloadCompleteRef = useRef(onPreloadComplete);
-  onPreloadCompleteRef.current = onPreloadComplete;
-
-  const checkPreloadComplete = useCallback(() => {
-    const status = preloadStatusRef.current;
-    if (status.staticDone && status.vehicleDone) {
-      onPreloadCompleteRef.current?.();
-    }
-  }, []);
 
   // City static data - loaded lazily on-demand
   const [cityStaticData, setCityStaticData] = useState<CityStaticData | null>(
@@ -256,9 +242,6 @@ export function SpeedMap({
           setCityStaticData(data);
           setCityDataLoading(false);
           setLoadingProgress("");
-          // Mark static preload as complete immediately (no background preload)
-          preloadStatusRef.current.staticDone = true;
-          checkPreloadComplete();
         }
       } catch (error) {
         console.error(`Failed to load ${city} data:`, error);
@@ -392,7 +375,6 @@ export function SpeedMap({
         "San Diego Metropolitan Transit System": "MTS",
         "Toronto Transit Commission": "TTC",
         "GO Transit": "GO Transit",
-        "Calgary Transit": "Calgary Transit",
       };
 
       const getAbbrev = (agency: string) => agencyAbbrev[agency] || agency;
@@ -794,10 +776,6 @@ export function SpeedMap({
       // Cache the results for instant switching
       cityDataCache.set(city, allPositions);
 
-      // Mark vehicle preload as complete immediately (no background preload)
-      preloadStatusRef.current.vehicleDone = true;
-      checkPreloadComplete();
-
       // Show rendering phase
       setLoadingProgress(
         `Rendering ${allPositions.length.toLocaleString()} data points...`,
@@ -1038,12 +1016,6 @@ export function SpeedMap({
                   return false;
                 }),
       };
-
-      // Tunnel visualization disabled for now - proximity-based matching between GTFS routes
-      // and OSM tunnel geometry is too imprecise (20-50m offsets between data sources).
-      // This was causing incorrect tunnel sections to appear on some lines (e.g., J Church).
-      // TODO: Implement more accurate tunnel detection, possibly using static tunnel portal
-      // locations or pre-computed route-to-tunnel mappings per city.
 
       // Separate under-construction routes (like Line 5 Eglinton) for dashed styling
       const constructionRoutes = {

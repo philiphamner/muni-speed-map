@@ -314,8 +314,6 @@ interface ControlsProps {
   selectedLines: string[];
   setSelectedLines: (lines: string[]) => void;
   vehicleCount: number;
-  lastUpdate: Date | null;
-  dataAgeMinutes: number | null;
   speedFilter: SpeedFilter;
   setSpeedFilter: (filter: SpeedFilter) => void;
   showRouteLines: boolean;
@@ -349,7 +347,6 @@ interface ControlsProps {
   speedUnit: SpeedUnit;
   setSpeedUnit: (unit: SpeedUnit) => void;
   isSidebarOpen?: boolean;
-  onCloseSidebar?: () => void;
 }
 
 function CollapsibleSection({
@@ -404,8 +401,6 @@ export function Controls({
   selectedLines,
   setSelectedLines,
   vehicleCount,
-  // lastUpdate: _lastUpdate,
-  // dataAgeMinutes: _dataAgeMinutes,
   speedFilter,
   setSpeedFilter,
   showRouteLines,
@@ -439,7 +434,6 @@ export function Controls({
   speedUnit,
   setSpeedUnit,
   isSidebarOpen,
-  // onCloseSidebar: _onCloseSidebar,
 }: ControlsProps) {
   const MIN_TRANSIT_MAP_ZOOM = 1;
   const MAX_TRANSIT_MAP_ZOOM = 4;
@@ -448,8 +442,6 @@ export function Controls({
   const TRANSIT_MAP_PAN_STEP = 40;
   const TRANSIT_MAP_PAN_STEP_FAST = 120;
 
-  // Sacramento warning modal state
-  const [showSacWarning, setShowSacWarning] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [aboutActiveTab, setAboutActiveTab] = useState<AboutTab>("overview");
   const [showTransitMapModal, setShowTransitMapModal] = useState(false);
@@ -934,60 +926,6 @@ export function Controls({
         >
           🌊 SD
         </button>
-        {/* <button
-          className={`city-btn city-btn-dark-orange ${city === "Calgary" ? "active" : ""}`}
-          onClick={() => setCity("Calgary")}
-          title="CTrain Red & Blue Lines"
-        >
-          🍁 CGY
-        </button>
-        <button
-          className="city-btn city-btn-dark-orange"
-          onClick={() => {}}
-          disabled
-          title="Hudson-Bergen Light Rail - Coming soon"
-        >
-          🚊JC
-        </button>
-        <button
-          className="city-btn city-btn-dark-orange"
-          onClick={() => {}}
-          disabled
-          title="LRT Capital & Metro Lines - Coming soon"
-        >
-          🚊 EMD
-        </button>
-        <button
-          className={`city-btn city-btn-dark-orange ${
-            city === "Dallas" ? "active" : ""
-          }`}
-          onClick={() => setCity("Dallas")}
-          title="Data collection starting soon"
-        >
-          ⭐ Dallas
-        </button>
-
-        <button
-          className={`city-btn city-btn-dark-orange ${
-            city === "Washington" ? "active" : ""
-          }`}
-          onClick={() => {}}
-          disabled
-          // onClick={() => setCity("Washington")}
-          title="Data collection starting soon"
-        >
-          🇺🇸 D.C.
-        </button> */}
-
-        {/* <button
-          className={`city-btn city-btn-warning ${
-            city === "Sacramento" ? "active" : ""
-          }`}
-          onClick={() => setCity("Sacramento")}
-          title="Data quality issues - SacRT doesn't tag light rail vehicles"
-        >
-          ⚠️ Sac
-        </button> */}
       </div>
 
       {/* Data Status */}
@@ -2022,45 +1960,6 @@ export function Controls({
           document.body,
         )}
 
-      {/* Sacramento Warning Modal */}
-      {showSacWarning &&
-        typeof document !== "undefined" &&
-        createPortal(
-          <div
-            className="modal-overlay"
-            onClick={() => setShowSacWarning(false)}
-          >
-            <div
-              className="modal-content sac-warning-modal"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="modal-icon">⚠️</div>
-              <h2>Sacramento Data Quality Issue</h2>
-              <p>
-                <strong>
-                  SacRT does not provide live tracking for light rail.
-                </strong>
-              </p>
-              <p>
-                Their real-time API only includes buses. The data shown here is
-                our best attempt to filter vehicles by proximity to track
-                geometry, but it may include misidentified buses or missing
-                trains.
-              </p>
-              <p className="modal-subtext">
-                This limitation is on SacRT's end and cannot be fixed without
-                them updating their data feed.
-              </p>
-              <button
-                className="modal-close-btn"
-                onClick={() => setShowSacWarning(false)}
-              >
-                I Understand
-              </button>
-            </div>
-          </div>,
-          document.body,
-        )}
     </div>
   );
 }
