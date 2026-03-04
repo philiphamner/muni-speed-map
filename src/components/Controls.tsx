@@ -1594,7 +1594,16 @@ export function Controls({
               >
                 ×
               </button>
-              <h2>{ABOUT_SECTIONS.title}</h2>
+              <h2>
+                {ABOUT_SECTIONS.title}
+                <span style={{ fontSize: "0.5em", fontWeight: 400, color: "rgba(255,255,255,0.55)", marginLeft: "12px" }}>
+                  Built by Philip Hamner
+                  {" · "}
+                  <a href="https://www.linkedin.com/in/philip-hamner/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  {" · "}
+                  <a href="https://github.com/philiphamner/muni-speed-map" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+              </h2>
 
               {/* Tab Navigation */}
               <div className="about-tabs">
