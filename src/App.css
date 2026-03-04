@@ -261,6 +261,7 @@
   text-align: left;
   gap: 8px;
   color: inherit;
+  user-select: none;
 }
 
 .collapsible-header:hover {

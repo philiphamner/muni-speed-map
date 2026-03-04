@@ -367,7 +367,18 @@ function CollapsibleSection({
 }) {
   return (
     <div className="collapsible-section">
-      <button className="collapsible-header" onClick={onToggle} type="button">
+      <div
+        className="collapsible-header"
+        onClick={onToggle}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onToggle();
+          }
+        }}
+      >
         <span className={`collapsible-chevron ${isExpanded ? "expanded" : ""}`}>
           ▶
         </span>
@@ -376,11 +387,12 @@ function CollapsibleSection({
           <span
             className="collapsible-right"
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
           >
             {rightElement}
           </span>
         )}
-      </button>
+      </div>
       {isExpanded && <div className="collapsible-content">{children}</div>}
     </div>
   );
