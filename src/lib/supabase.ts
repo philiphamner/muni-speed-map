@@ -110,3 +110,33 @@ export async function getPositionCount(): Promise<number> {
 
   return error ? 0 : count || 0;
 }
+
+// Ridership data interface
+export interface RidershipData {
+  id?: number;
+  agency: string;
+  year: number;
+  month: string;
+  ridership: number;
+}
+
+// Fetch ridership data for an agency
+export async function fetchRidershipData(
+  agency: string,
+): Promise<RidershipData[]> {
+  if (!supabase) return [];
+
+  const { data, error } = await supabase
+    .from("ridership")
+    .select("*")
+    .eq("agency", agency)
+    .order("year", { ascending: true })
+    .order("month", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching ridership data:", error);
+    return [];
+  }
+
+  return data || [];
+}
