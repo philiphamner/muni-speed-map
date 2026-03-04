@@ -1132,26 +1132,29 @@ export function Controls({
           setSections((s) => ({ ...s, linesContext: !s.linesContext }))
         }
         rightElement={
-          sections.linesContext ? (
-            <div className="toggle-group">
-              <button
-                className={`toggle-button ${
-                  selectedLines.length === allLines.length ? "active" : ""
-                }`}
-                onClick={selectAllLines}
-              >
-                All
-              </button>
-              <button
-                className={`toggle-button ${
-                  selectedLines.length === 0 ? "active" : ""
-                }`}
-                onClick={clearAllLines}
-              >
-                None
-              </button>
-            </div>
-          ) : undefined
+          <div
+            className="toggle-group"
+            style={{
+              visibility: sections.linesContext ? "visible" : "hidden",
+            }}
+          >
+            <button
+              className={`toggle-button ${
+                selectedLines.length === allLines.length ? "active" : ""
+              }`}
+              onClick={selectAllLines}
+            >
+              All
+            </button>
+            <button
+              className={`toggle-button ${
+                selectedLines.length === 0 ? "active" : ""
+              }`}
+              onClick={clearAllLines}
+            >
+              None
+            </button>
+          </div>
         }
       >
         <div

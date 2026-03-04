@@ -335,22 +335,28 @@
 
 .toggle-group {
   display: flex;
+  align-items: center;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  padding: 2px;
+  border-radius: 5px;
+  padding: 1px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 22px;
+  box-sizing: border-box;
+  margin-right: 9px;
 }
 
 .toggle-button {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   cursor: pointer;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 3px 0;
+  border-radius: 3px;
   transition: all 0.2s;
+  text-align: center;
+  width: 35px;
 }
 
 .toggle-button:hover {
@@ -689,6 +695,7 @@
 .status-unit-toggle {
   margin-left: auto;
   flex-shrink: 0;
+  width: 82px;
 }
 
 .status-unit-toggle .unit-toggle-btn {
@@ -697,12 +704,13 @@
 
 /* Train Visibility Toggle */
 .train-visibility-toggle {
-  padding: 4px 10px;
+  height: 22px;
+  padding: 0 7px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -711,6 +719,8 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   width: 82px;
   text-align: center;
+  box-sizing: border-box;
+  margin-right: 9px;
 }
 
 .train-visibility-toggle:hover {
