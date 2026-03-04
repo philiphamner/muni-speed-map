@@ -1274,6 +1274,10 @@ export function SpeedMap({
   const hoveredTractId = useRef<string | null>(null);
   const crossingHandlersRegistered = useRef(false);
   const suppressNextMapClickUnpin = useRef(false);
+  const routeLineModeRef = useRef(routeLineMode);
+  routeLineModeRef.current = routeLineMode;
+  const showRouteLinesRef = useRef(showRouteLines);
+  showRouteLinesRef.current = showRouteLines;
   const [mapLoaded, setMapLoaded] = useState(false);
   const [expandedStopCluster, setExpandedStopCluster] = useState<string | null>(
     null,
@@ -2208,7 +2212,48 @@ export function SpeedMap({
       };
       const tunnelRoutes = { type: "FeatureCollection", features: [] };
 
-      // Remove existing layers and sources - recreate fresh on each update
+      const filteredSeparation = filterSeparationByRoutes(
+        cityConfig.separation,
+        filteredRoutes,
+        city,
+      );
+
+      const emptyFC = { type: "FeatureCollection", features: [] } as any;
+
+      // UPDATE PATH: sources already exist, just swap GeoJSON data in-place.
+      // This avoids the remove-and-recreate cycle that causes visual flicker.
+      if (map.current.getSource("routes")) {
+        try {
+          (map.current.getSource("routes") as any).setData(regularRoutes);
+          (map.current.getSource("routes-tunnel") as any).setData(tunnelRoutes);
+          (map.current.getSource("routes-construction") as any).setData(constructionRoutes);
+          (map.current.getSource("rail-context-heavy-src") as any).setData(
+            effectiveRailContext.heavy || emptyFC,
+          );
+          (map.current.getSource("rail-context-commuter-src") as any).setData(
+            effectiveRailContext.commuter || emptyFC,
+          );
+          (map.current.getSource("bus-routes-overlay-src") as any).setData(
+            cityConfig.busRoutesOverlay || emptyFC,
+          );
+          if (map.current.getSource("speed-limit")) {
+            (map.current.getSource("speed-limit") as any).setData(
+              cityConfig.maxspeed || emptyFC,
+            );
+          }
+          if (map.current.getSource("separation")) {
+            (map.current.getSource("separation") as any).setData(
+              filteredSeparation || emptyFC,
+            );
+          }
+        } catch {
+          // Source might have been removed externally
+        }
+        return;
+      }
+
+      // CREATE PATH: first time — build all sources, layers, and event handlers.
+      // Safety: remove any stale layers/sources (e.g., after style reload)
       try {
         if (map.current.getLayer("routes-outline"))
           map.current.removeLayer("routes-outline");
@@ -2550,11 +2595,14 @@ export function SpeedMap({
       });
 
       // Speed limit layers (colored by maxspeed)
-      if (cityConfig.maxspeed && cityConfig.maxspeed.features?.length > 0) {
-        map.current.addSource("speed-limit", {
-          type: "geojson",
-          data: cityConfig.maxspeed as any,
-        });
+      map.current.addSource("speed-limit", {
+        type: "geojson",
+        data: (cityConfig.maxspeed?.features?.length > 0
+          ? cityConfig.maxspeed
+          : emptyFC) as any,
+      });
+
+      {
 
         map.current.addLayer({
           id: "speed-limit-outline",
@@ -2656,30 +2704,14 @@ export function SpeedMap({
       }
 
       // Separation layers (colored by separation type)
-      // Filter separation data to only show segments near selected routes
-      // For Philadelphia streetcar routes, this also adds street-running fallback
-      const filteredSeparation = filterSeparationByRoutes(
-        cityConfig.separation,
-        filteredRoutes,
-        city,
-      );
+      map.current.addSource("separation", {
+        type: "geojson",
+        data: (filteredSeparation?.features?.length > 0
+          ? filteredSeparation
+          : emptyFC) as any,
+      });
 
-      // Debug: log separation types breakdown
-      if (filteredSeparation.features?.length > 0) {
-        const typeCounts: Record<string, number> = {};
-        for (const f of filteredSeparation.features) {
-          const t = f.properties?.separationType || "unknown";
-          typeCounts[t] = (typeCounts[t] || 0) + 1;
-        }
-      }
-
-      if (filteredSeparation.features?.length > 0) {
-        map.current.addSource("separation", {
-          type: "geojson",
-          data: filteredSeparation as any,
-        });
-
-        // Color expression for separation types
+      {
         const separationColorExpression: any = [
           "match",
           ["get", "separationType"],
@@ -2804,9 +2836,14 @@ export function SpeedMap({
       map.current.on("mousemove", "routes", (e) => {
         if (!e.features?.length || !map.current) return;
 
-        // In speed limit or separation mode, don't show popup for grey areas (no data)
-        // The speed-limit/separation layers handle popups for areas with data
-        if (showBySpeed || showBySeparation) return;
+        // Read current mode from refs to avoid stale closure captures
+        const isSpeedMode =
+          showRouteLinesRef.current &&
+          routeLineModeRef.current === "bySpeedLimit";
+        const isSepMode =
+          showRouteLinesRef.current &&
+          routeLineModeRef.current === "bySeparation";
+        if (isSpeedMode || isSepMode) return;
 
         // In byLine mode, show route name
         const props = e.features[0].properties;
@@ -2857,23 +2894,84 @@ export function SpeedMap({
   }, [
     mapLoaded,
     selectedLines,
-    showRouteLines,
-    showRailContextHeavy,
-    showRailContextCommuter,
-    showBusRoutesOverlay,
-    routeLineMode,
+    city,
     cityConfig.routes,
     cityConfig.maxspeed,
     cityConfig.separation,
     cityConfig.busRoutesOverlay,
     effectiveRailContext,
+    // Used only in CREATE path (first run); stable across renders:
     maxspeedColorExpression,
     handleRailContextMouseEnter,
     handleRailContextMouseLeave,
     handleRailContextMouseMove,
+    showRouteLines,
+    routeLineMode,
+    showRailContextHeavy,
+    showRailContextCommuter,
+    showBusRoutesOverlay,
   ]);
 
-  // Keep rail-context layer visibility in sync with toggle state
+  // Keep route-line visibility and paint in sync with mode / toggle state
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+
+    const showBySpeed = showRouteLines && routeLineMode === "bySpeedLimit";
+    const showBySeparation =
+      showRouteLines && routeLineMode === "bySeparation";
+    const routeVis: "visible" | "none" = showRouteLines ? "visible" : "none";
+    const routeColor: any =
+      showBySpeed || showBySeparation ? "#6b7280" : ["get", "route_color"];
+
+    try {
+      for (const id of [
+        "routes-outline",
+        "routes",
+        "routes-construction-outline",
+        "routes-construction",
+        "routes-tunnel-outline",
+        "routes-tunnel",
+      ]) {
+        if (map.current.getLayer(id)) {
+          map.current.setLayoutProperty(id, "visibility", routeVis);
+        }
+      }
+
+      for (const id of ["routes", "routes-construction", "routes-tunnel"]) {
+        if (map.current.getLayer(id)) {
+          map.current.setPaintProperty(id, "line-color", routeColor);
+        }
+      }
+
+      for (const id of [
+        "speed-limit-outline",
+        "speed-limit",
+        "speed-limit-labels",
+      ]) {
+        if (map.current.getLayer(id)) {
+          map.current.setLayoutProperty(
+            id,
+            "visibility",
+            showBySpeed ? "visible" : "none",
+          );
+        }
+      }
+
+      for (const id of ["separation-outline", "separation"]) {
+        if (map.current.getLayer(id)) {
+          map.current.setLayoutProperty(
+            id,
+            "visibility",
+            showBySeparation ? "visible" : "none",
+          );
+        }
+      }
+    } catch {
+      // Layers might not exist yet
+    }
+  }, [mapLoaded, showRouteLines, routeLineMode]);
+
+  // Keep rail-context / bus-overlay layer visibility in sync with toggle state
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
     try {
@@ -2905,7 +3003,7 @@ export function SpeedMap({
           showBusRoutesOverlay ? "visible" : "none",
         );
       }
-    } catch (e) {
+    } catch {
       // Layers might not exist yet
     }
   }, [
