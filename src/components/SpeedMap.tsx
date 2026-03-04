@@ -20,9 +20,7 @@ import {
   waitForNoLongTasks,
   EMPTY_CITY_DATA,
   escapeHtml,
-  haversineDistance,
   distanceToLineString,
-  MAX_DISTANCE_FROM_ROUTE_METERS,
 } from "./speedMap/geoUtils";
 import { filterSeparationByRoutes } from "./speedMap/separationUtils";
 import {
@@ -31,9 +29,7 @@ import {
   shouldShowRoute,
 } from "./speedMap/routeUtils";
 import {
-  type SegmentData,
   buildAllSegments,
-  SEGMENT_SIZE_METERS,
   CITIES_WITH_PARALLEL_TRACKS,
 } from "./speedMap/segmentUtils";
 import {

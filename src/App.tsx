@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { SpeedMap } from "./components/SpeedMap";
 import { Controls } from "./components/Controls";
-import { CITIES, MUNI_LINES, getLinesForCity } from "./types";
+import { CITIES, getLinesForCity } from "./types";
 import type { City } from "./types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
