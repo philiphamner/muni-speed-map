@@ -2,6 +2,8 @@
   "name": "muni-speed-map",
   "private": true,
   "version": "0.0.0",
+  "author": "Philip Hamner",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",

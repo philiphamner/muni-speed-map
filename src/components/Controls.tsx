@@ -1553,6 +1553,25 @@ export function Controls({
                                             : ""}
           </p>
         )}
+        <p className="data-attribution" style={{ marginTop: "8px" }}>
+          Built by Philip Hamner
+          <br />
+          <a
+            href="https://www.linkedin.com/in/philip-hamner/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          {" · "}
+          <a
+            href="https://github.com/philiphamner/muni-speed-map"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
       </div>
 
       {/* About Project Modal */}
