@@ -13,22 +13,7 @@ import {
 } from "../data/cityDataLoaders";
 import slcRailContextHeavy from "../data/slcRailContextHeavy.json";
 import slcRailContextCommuter from "../data/slcRailContextCommuter.json";
-import sfPopulationDensity from "../data/sfPopulationDensity.json";
-import laPopulationDensity from "../data/laPopulationDensity.json";
-import bostonPopulationDensity from "../data/bostonPopulationDensity.json";
-import phillyPopulationDensity from "../data/phillyPopulationDensity.json";
-import seattlePopulationDensity from "../data/seattlePopulationDensity.json";
-import portlandPopulationDensity from "../data/portlandPopulationDensity.json";
-import sanDiegoPopulationDensity from "../data/sanDiegoPopulationDensity.json";
-import sanJosePopulationDensity from "../data/sanJosePopulationDensity.json";
-import pittsburghPopulationDensity from "../data/pittsburghPopulationDensity.json";
-import minneapolisPopulationDensity from "../data/minneapolisPopulationDensity.json";
-import denverPopulationDensity from "../data/denverPopulationDensity.json";
-import saltLakeCityPopulationDensity from "../data/saltLakeCityPopulationDensity.json";
-import phoenixPopulationDensity from "../data/phoenixPopulationDensity.json";
-import clevelandPopulationDensity from "../data/clevelandPopulationDensity.json";
-import charlottePopulationDensity from "../data/charlottePopulationDensity.json";
-import baltimorePopulationDensity from "../data/baltimorePopulationDensity.json";
+import { loadPopulationDensity } from "../data/populationDensityLoader";
 import type { SpeedFilter, ViewMode, LineStats } from "../App";
 
 // Maximum distance in meters from route line to be considered "on route"
@@ -1473,26 +1458,23 @@ export function SpeedMap({
     return { heavy, commuter };
   }, [city, cityConfig.railContextHeavy, cityConfig.railContextCommuter]);
 
-  const railContextCounts = useMemo(
-    () => {
-      const busFeatures = cityConfig.busRoutesOverlay?.features || [];
-      const uniqueBusRoutes = new Set<string>();
-      for (const feature of busFeatures as any[]) {
-        const props = feature?.properties || {};
-        const routeKey = String(
-          props.route_short_name || props.route_id || props.route_name || "",
-        ).trim();
-        if (routeKey) uniqueBusRoutes.add(routeKey);
-      }
+  const railContextCounts = useMemo(() => {
+    const busFeatures = cityConfig.busRoutesOverlay?.features || [];
+    const uniqueBusRoutes = new Set<string>();
+    for (const feature of busFeatures as any[]) {
+      const props = feature?.properties || {};
+      const routeKey = String(
+        props.route_short_name || props.route_id || props.route_name || "",
+      ).trim();
+      if (routeKey) uniqueBusRoutes.add(routeKey);
+    }
 
-      return {
-        heavy: effectiveRailContext.heavy?.features?.length || 0,
-        commuter: effectiveRailContext.commuter?.features?.length || 0,
-        bus: uniqueBusRoutes.size,
-      };
-    },
-    [effectiveRailContext, cityConfig.busRoutesOverlay],
-  );
+    return {
+      heavy: effectiveRailContext.heavy?.features?.length || 0,
+      commuter: effectiveRailContext.commuter?.features?.length || 0,
+      bus: uniqueBusRoutes.size,
+    };
+  }, [effectiveRailContext, cityConfig.busRoutesOverlay]);
 
   useEffect(() => {
     onRailContextUpdate?.(
@@ -1684,7 +1666,11 @@ export function SpeedMap({
           properties: {
             ...props,
             stop_name: stopName,
-            routes: Array.isArray(props.routes) ? props.routes : props.routes ? [props.routes] : [],
+            routes: Array.isArray(props.routes)
+              ? props.routes
+              : props.routes
+                ? [props.routes]
+                : [],
           },
         };
       })
@@ -2226,7 +2212,9 @@ export function SpeedMap({
         try {
           (map.current.getSource("routes") as any).setData(regularRoutes);
           (map.current.getSource("routes-tunnel") as any).setData(tunnelRoutes);
-          (map.current.getSource("routes-construction") as any).setData(constructionRoutes);
+          (map.current.getSource("routes-construction") as any).setData(
+            constructionRoutes,
+          );
           (map.current.getSource("rail-context-heavy-src") as any).setData(
             effectiveRailContext.heavy || emptyFC,
           );
@@ -2341,13 +2329,12 @@ export function SpeedMap({
 
       map.current.addSource("bus-routes-overlay-src", {
         type: "geojson",
-        data:
-          cityConfig.busRoutesOverlay
-            ? cityConfig.busRoutesOverlay
-            : {
-                type: "FeatureCollection",
-                features: [],
-              },
+        data: cityConfig.busRoutesOverlay
+          ? cityConfig.busRoutesOverlay
+          : {
+              type: "FeatureCollection",
+              features: [],
+            },
       });
 
       map.current.addLayer({
@@ -2603,7 +2590,6 @@ export function SpeedMap({
       });
 
       {
-
         map.current.addLayer({
           id: "speed-limit-outline",
           type: "line",
@@ -2917,8 +2903,7 @@ export function SpeedMap({
     if (!map.current || !mapLoaded) return;
 
     const showBySpeed = showRouteLines && routeLineMode === "bySpeedLimit";
-    const showBySeparation =
-      showRouteLines && routeLineMode === "bySeparation";
+    const showBySeparation = showRouteLines && routeLineMode === "bySeparation";
     const routeVis: "visible" | "none" = showRouteLines ? "visible" : "none";
     const routeColor: any =
       showBySpeed || showBySeparation ? "#6b7280" : ["get", "route_color"];
@@ -4566,230 +4551,255 @@ export function SpeedMap({
   useEffect(() => {
     if (!mapLoaded || !map.current) return;
 
-    // Cities with population density data (all US cities have Census data, Toronto doesn't)
-    const hasDensityData = city !== "Toronto";
-    
-    if (!hasDensityData) {
-      // Hide layers when switching to a city without data
+    const hideDensityLayers = () => {
+      if (!map.current) return;
       if (map.current.getLayer("population-density-fill")) {
-        map.current.setLayoutProperty("population-density-fill", "visibility", "none");
+        map.current.setLayoutProperty(
+          "population-density-fill",
+          "visibility",
+          "none",
+        );
       }
       if (map.current.getLayer("population-density-outline")) {
-        map.current.setLayoutProperty("population-density-outline", "visibility", "none");
+        map.current.setLayoutProperty(
+          "population-density-outline",
+          "visibility",
+          "none",
+        );
       }
       if (map.current.getLayer("population-density-hover")) {
-        map.current.setLayoutProperty("population-density-hover", "visibility", "none");
+        map.current.setLayoutProperty(
+          "population-density-hover",
+          "visibility",
+          "none",
+        );
       }
-      return;
+    };
+
+    if (city === "Toronto" || !showPopulationDensity) {
+      hideDensityLayers();
+      if (!showPopulationDensity) return;
+      if (city === "Toronto") return;
     }
 
-    try {
-      // Select the appropriate dataset for the current city
-      const densityDatasets: Record<string, any> = {
-        SF: sfPopulationDensity,
-        LA: laPopulationDensity,
-        Boston: bostonPopulationDensity,
-        Philadelphia: phillyPopulationDensity,
-        Seattle: seattlePopulationDensity,
-        Portland: portlandPopulationDensity,
-        "San Diego": sanDiegoPopulationDensity,
-        "San Jose": sanJosePopulationDensity,
-        Pittsburgh: pittsburghPopulationDensity,
-        Minneapolis: minneapolisPopulationDensity,
-        Denver: denverPopulationDensity,
-        "Salt Lake City": saltLakeCityPopulationDensity,
-        Phoenix: phoenixPopulationDensity,
-        Cleveland: clevelandPopulationDensity,
-        Charlotte: charlottePopulationDensity,
-        Baltimore: baltimorePopulationDensity,
-      };
-      const rawData: any = densityDatasets[city];
-      
-      // Pre-process data to add density property (people per sq km)
-      const processedData = {
-        ...rawData,
-        features: rawData.features.map((f: any) => ({
+    let cancelled = false;
+
+    loadPopulationDensity(city).then((rawData) => {
+      if (cancelled || !map.current || !rawData) return;
+
+      try {
+        const processedData = {
+          ...rawData,
+          features: rawData.features.map((f: any) => ({
             ...f,
             properties: {
               ...f.properties,
-              // Calculate density: population / (area in sq meters / 1,000,000) = people per sq km
-              density: f.properties.AREALAND > 0
-                ? Math.round(f.properties.POP100 / (f.properties.AREALAND / 1000000))
-                : 0,
+              density:
+                f.properties.AREALAND > 0
+                  ? Math.round(
+                      f.properties.POP100 / (f.properties.AREALAND / 1000000),
+                    )
+                  : 0,
             },
           })),
         };
 
-      // Check if source exists - if so, update data; if not, create it
-      const existingSource = map.current.getSource("census-tracts") as maplibregl.GeoJSONSource;
-      if (existingSource) {
-        // Update the source data for the new city
-        existingSource.setData(processedData as any);
-      } else {
-        // Create source and layers for the first time
-        map.current.addSource("census-tracts", {
-          type: "geojson",
-          data: processedData as any,
-          promoteId: "GEOID", // Use GEOID as feature ID for fast feature-state updates
-        });
+        const existingSource = map.current.getSource(
+          "census-tracts",
+        ) as maplibregl.GeoJSONSource;
+        if (existingSource) {
+          existingSource.setData(processedData as any);
+        } else {
+          // Create source and layers for the first time
+          map.current.addSource("census-tracts", {
+            type: "geojson",
+            data: processedData as any,
+            promoteId: "GEOID", // Use GEOID as feature ID for fast feature-state updates
+          });
 
-        // Add fill layer with density-based coloring
-        map.current.addLayer(
-          {
-            id: "population-density-fill",
-            type: "fill",
-            source: "census-tracts",
-            paint: {
-              "fill-color": [
-                "interpolate",
-                ["linear"],
-                ["get", "density"],
-                0, "rgba(20, 20, 35, 0.2)",      // Very dark/muted - no population
-                1000, "#1a3a4a",                 // Dark blue-grey - rural/industrial
-                2500, "#2a5a5a",                 // Teal-grey - low density suburban
-                5000, "#3a7a6a",                 // Muted teal - suburban
-                8000, "#5a9a5a",                 // Green - light urban
-                12000, "#aacc44",                // Lime - urban
-                18000, "#ffcc00",                // Bright yellow - dense urban
-                28000, "#ff6600",                // Bright orange - very dense
-                45000, "#ff0066",                // Hot pink - extremely dense
-              ],
-              "fill-opacity": 0.65,
+          // Add fill layer with density-based coloring
+          map.current.addLayer(
+            {
+              id: "population-density-fill",
+              type: "fill",
+              source: "census-tracts",
+              paint: {
+                "fill-color": [
+                  "interpolate",
+                  ["linear"],
+                  ["get", "density"],
+                  0,
+                  "rgba(20, 20, 35, 0.2)", // Very dark/muted - no population
+                  1000,
+                  "#1a3a4a", // Dark blue-grey - rural/industrial
+                  2500,
+                  "#2a5a5a", // Teal-grey - low density suburban
+                  5000,
+                  "#3a7a6a", // Muted teal - suburban
+                  8000,
+                  "#5a9a5a", // Green - light urban
+                  12000,
+                  "#aacc44", // Lime - urban
+                  18000,
+                  "#ffcc00", // Bright yellow - dense urban
+                  28000,
+                  "#ff6600", // Bright orange - very dense
+                  45000,
+                  "#ff0066", // Hot pink - extremely dense
+                ],
+                "fill-opacity": 0.65,
+              },
+              layout: {
+                visibility: "none",
+              },
             },
-            layout: {
-              visibility: "none",
-            },
-          },
-          "routes" // Insert below routes layer
-        );
+            "routes", // Insert below routes layer
+          );
 
-        // Add subtle outline for tract boundaries
-        map.current.addLayer(
-          {
-            id: "population-density-outline",
-            type: "line",
-            source: "census-tracts",
-            paint: {
-              "line-color": "rgba(255, 255, 255, 0.15)",
-              "line-width": 0.5,
+          // Add subtle outline for tract boundaries
+          map.current.addLayer(
+            {
+              id: "population-density-outline",
+              type: "line",
+              source: "census-tracts",
+              paint: {
+                "line-color": "rgba(255, 255, 255, 0.15)",
+                "line-width": 0.5,
+              },
+              layout: {
+                visibility: "none",
+              },
             },
-            layout: {
-              visibility: "none",
-            },
-          },
-          "routes"
-        );
+            "routes",
+          );
 
-        // Add hover highlight layer (uses feature-state for fast O(1) updates)
-        map.current.addLayer(
-          {
-            id: "population-density-hover",
-            type: "line",
-            source: "census-tracts",
-            paint: {
-              "line-color": "#ffffff",
-              "line-width": [
-                "case",
-                ["boolean", ["feature-state", "hover"], false],
-                2,
-                0,
-              ],
-              "line-opacity": 0.8,
+          // Add hover highlight layer (uses feature-state for fast O(1) updates)
+          map.current.addLayer(
+            {
+              id: "population-density-hover",
+              type: "line",
+              source: "census-tracts",
+              paint: {
+                "line-color": "#ffffff",
+                "line-width": [
+                  "case",
+                  ["boolean", ["feature-state", "hover"], false],
+                  2,
+                  0,
+                ],
+                "line-opacity": 0.8,
+              },
+              layout: {
+                visibility: "none",
+              },
             },
-            layout: {
-              visibility: "none",
-            },
-          },
-          "routes"
-        );
+            "routes",
+          );
 
-        // Hover handlers for density layer
-        map.current.on("mouseenter", "population-density-fill", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "pointer";
-        });
+          // Hover handlers for density layer
+          map.current.on("mouseenter", "population-density-fill", () => {
+            if (map.current) map.current.getCanvas().style.cursor = "pointer";
+          });
 
-        map.current.on("mouseleave", "population-density-fill", () => {
-          if (map.current) {
-            map.current.getCanvas().style.cursor = "";
-            // Clear hover state on previous tract
-            if (hoveredTractId.current) {
-              map.current.setFeatureState(
-                { source: "census-tracts", id: hoveredTractId.current },
-                { hover: false }
-              );
-              hoveredTractId.current = null;
+          map.current.on("mouseleave", "population-density-fill", () => {
+            if (map.current) {
+              map.current.getCanvas().style.cursor = "";
+              // Clear hover state on previous tract
+              if (hoveredTractId.current) {
+                map.current.setFeatureState(
+                  { source: "census-tracts", id: hoveredTractId.current },
+                  { hover: false },
+                );
+                hoveredTractId.current = null;
+              }
             }
-          }
-          popup.current?.remove();
-        });
+            popup.current?.remove();
+          });
 
-        map.current.on("mousemove", "population-density-fill", (e) => {
-          if (!e.features?.length || !map.current) return;
-          const props = e.features[0].properties;
-          const newTractId = props.GEOID;
-          
-          // Only update if hovering a different tract
-          if (newTractId !== hoveredTractId.current) {
-            // Clear previous hover state
-            if (hoveredTractId.current) {
+          map.current.on("mousemove", "population-density-fill", (e) => {
+            if (!e.features?.length || !map.current) return;
+            const props = e.features[0].properties;
+            const newTractId = props.GEOID;
+
+            // Only update if hovering a different tract
+            if (newTractId !== hoveredTractId.current) {
+              // Clear previous hover state
+              if (hoveredTractId.current) {
+                map.current.setFeatureState(
+                  { source: "census-tracts", id: hoveredTractId.current },
+                  { hover: false },
+                );
+              }
+              // Set new hover state
+              hoveredTractId.current = newTractId;
               map.current.setFeatureState(
-                { source: "census-tracts", id: hoveredTractId.current },
-                { hover: false }
+                { source: "census-tracts", id: newTractId },
+                { hover: true },
               );
             }
-            // Set new hover state
-            hoveredTractId.current = newTractId;
-            map.current.setFeatureState(
-              { source: "census-tracts", id: newTractId },
-              { hover: true }
-            );
-          }
 
-          const density = props.density || 0;
-          const population = props.POP100 || 0;
-          
-          // Get color based on density (matching map color scale)
-          const getDensityColor = (d: number): string => {
-            if (d >= 45000) return "#ff0066";
-            if (d >= 28000) return "#ff6600";
-            if (d >= 18000) return "#ffcc00";
-            if (d >= 12000) return "#aacc44";
-            if (d >= 8000) return "#5a9a5a";
-            if (d >= 5000) return "#3a7a6a";
-            return "#2a5a5a";
-          };
-          const densityColor = getDensityColor(density);
+            const density = props.density || 0;
+            const population = props.POP100 || 0;
 
-          popup.current
-            ?.setLngLat(e.lngLat)
-            .setHTML(
-              `<div class="popup-content density-popup">
+            // Get color based on density (matching map color scale)
+            const getDensityColor = (d: number): string => {
+              if (d >= 45000) return "#ff0066";
+              if (d >= 28000) return "#ff6600";
+              if (d >= 18000) return "#ffcc00";
+              if (d >= 12000) return "#aacc44";
+              if (d >= 8000) return "#5a9a5a";
+              if (d >= 5000) return "#3a7a6a";
+              return "#2a5a5a";
+            };
+            const densityColor = getDensityColor(density);
+
+            popup.current
+              ?.setLngLat(e.lngLat)
+              .setHTML(
+                `<div class="popup-content density-popup">
                 <div class="popup-density">
                   <span class="density-value" style="color: ${densityColor}">${density.toLocaleString()}</span>
                   <span class="density-unit">people/km²</span>
                 </div>
                 <div class="popup-detail">Population: ${population.toLocaleString()}</div>
-              </div>`
-            )
-            .addTo(map.current);
-        });
-      } // end of else block (first-time layer creation)
+              </div>`,
+              )
+              .addTo(map.current);
+          });
+        } // end of else block (first-time layer creation)
 
-      // Toggle visibility
-      const isVisible = showPopulationDensity ? "visible" : "none";
-      
-      if (map.current.getLayer("population-density-fill")) {
-        map.current.setLayoutProperty("population-density-fill", "visibility", isVisible);
+        // Toggle visibility
+        const isVisible = showPopulationDensity ? "visible" : "none";
+
+        if (map.current.getLayer("population-density-fill")) {
+          map.current.setLayoutProperty(
+            "population-density-fill",
+            "visibility",
+            isVisible,
+          );
+        }
+        if (map.current.getLayer("population-density-outline")) {
+          map.current.setLayoutProperty(
+            "population-density-outline",
+            "visibility",
+            isVisible,
+          );
+        }
+        if (map.current.getLayer("population-density-hover")) {
+          map.current.setLayoutProperty(
+            "population-density-hover",
+            "visibility",
+            isVisible,
+          );
+        }
+      } catch (e) {
+        console.error("Error setting up population density layer:", e);
       }
-      if (map.current.getLayer("population-density-outline")) {
-        map.current.setLayoutProperty("population-density-outline", "visibility", isVisible);
-      }
-      if (map.current.getLayer("population-density-hover")) {
-        map.current.setLayoutProperty("population-density-hover", "visibility", isVisible);
-      }
-    } catch (e) {
-      console.error("Error setting up population density layer:", e);
-    }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [mapLoaded, showPopulationDensity, city]);
 
   // Update speed limit labels when speed unit changes
@@ -4939,9 +4949,7 @@ export function SpeedMap({
       {/* Population Density Legend - shown when density layer is active */}
       {showPopulationDensity && city !== "Toronto" && (
         <div className="map-density-legend">
-          <div className="map-density-legend-title">
-            Density (people/km²)
-          </div>
+          <div className="map-density-legend-title">Density (people/km²)</div>
           <div className="map-density-legend-scale">
             <div className="density-legend-item">
               <span
@@ -5040,9 +5048,7 @@ export function SpeedMap({
               }}
               title="Population density (2020 US Census data)"
             >
-              <div
-                className="layer-preview population-preview"
-              />
+              <div className="layer-preview population-preview" />
               <span className="layer-label">Density</span>
             </div>
           )}
