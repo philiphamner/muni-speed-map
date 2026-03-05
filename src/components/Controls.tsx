@@ -1521,7 +1521,7 @@ export function Controls({
             {city === "SF"
               ? "San Francisco County"
               : city === "LA"
-                ? "Los Angeles County"
+                ? "Los Angeles, Orange counties"
                 : city === "Boston"
                   ? "Suffolk, Middlesex, Norfolk, Essex counties"
                   : city === "Philadelphia"
