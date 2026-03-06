@@ -2402,6 +2402,10 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .app-title-logo {
+    display: none;
+  }
+
   /* Show mobile menu toggle button */
   .mobile-menu-toggle {
     display: flex;
