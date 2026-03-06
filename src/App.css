@@ -2483,7 +2483,7 @@
 
   /* Map layer selector - above scale, bottom left */
   .map-layer-selector {
-    bottom: 48px;
+    bottom: 83px;
     left: 10px;
   }
 
@@ -2511,20 +2511,20 @@
 
   /* Speed legend - above map selector, bottom left */
   .map-speed-legend {
-    bottom: 125px;
+    bottom: 155px;
     left: 10px;
     width: 160px;
   }
 
   /* Separation legend - above speed legend */
   .map-separation-legend {
-    bottom: 225px;
+    bottom: 260px;
     left: 10px;
   }
 
   /* Density legend - above speed legend */
   .map-density-legend {
-    bottom: 240px;
+    bottom: 275px;
     left: 10px;
     width: 160px;
     padding: 6px 10px;
