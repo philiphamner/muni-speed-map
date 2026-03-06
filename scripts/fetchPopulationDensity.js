@@ -49,6 +49,7 @@ const CITY_CONFIGS = {
     counties: [
       [STATE.CA, "075", "San Francisco County"],
       [STATE.CA, "081", "San Mateo County"],
+      [STATE.CA, "001", "Alameda County"],
     ],
   },
   la: {

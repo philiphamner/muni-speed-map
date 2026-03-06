@@ -1530,7 +1530,7 @@ export function Controls({
           {city === "Toronto"
             ? "Toronto CMA"
             : city === "SF"
-              ? "San Francisco, San Mateo counties"
+              ? "San Francisco, San Mateo, Alameda counties"
               : city === "LA"
                 ? "Los Angeles, Orange counties"
                 : city === "Boston"
