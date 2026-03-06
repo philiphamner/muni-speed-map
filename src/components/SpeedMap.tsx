@@ -124,6 +124,7 @@ export function SpeedMap({
   const showRouteLinesRef = useRef(showRouteLines);
   showRouteLinesRef.current = showRouteLines;
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [showMobileLegends, setShowMobileLegends] = useState(false);
   const [expandedStopCluster, setExpandedStopCluster] = useState<string | null>(
     null,
   );
@@ -3672,27 +3673,37 @@ export function SpeedMap({
     <div className="map-wrapper">
       <div ref={mapContainer} className="map-container" />
 
-      <SpeedLegend speedUnit={speedUnit} />
+      <div className={`map-legends-group ${showMobileLegends ? "mobile-expanded" : ""}`}>
+        <SpeedLegend speedUnit={speedUnit} />
 
-      {showRouteLines && routeLineMode === "bySeparation" && (
-        <SeparationLegend />
-      )}
+        {showRouteLines && routeLineMode === "bySeparation" && (
+          <SeparationLegend />
+        )}
 
-      {showPopulationDensity && <DensityLegend />}
+        {showPopulationDensity && <DensityLegend />}
+
+        <DynamicLegends
+          city={city}
+          showCrossings={showCrossings}
+          showRailContextHeavy={showRailContextHeavy}
+          showRailContextCommuter={showRailContextCommuter}
+          showBusRoutesOverlay={showBusRoutesOverlay}
+        />
+      </div>
+
+      <button
+        className="mobile-legend-toggle"
+        onClick={() => setShowMobileLegends(!showMobileLegends)}
+        aria-label={showMobileLegends ? "Hide legend" : "Show legend"}
+      >
+        {showMobileLegends ? "▾ Legend" : "▴ Legend"}
+      </button>
 
       <LayerSelector
         showSatellite={showSatellite}
         showPopulationDensity={showPopulationDensity ?? false}
         onSatelliteToggle={onSatelliteToggle}
         onPopulationDensityToggle={onPopulationDensityToggle}
-      />
-
-      <DynamicLegends
-        city={city}
-        showCrossings={showCrossings}
-        showRailContextHeavy={showRailContextHeavy}
-        showRailContextCommuter={showRailContextCommuter}
-        showBusRoutesOverlay={showBusRoutesOverlay}
       />
 
       {/* City data loading overlay */}

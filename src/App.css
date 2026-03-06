@@ -2238,6 +2238,16 @@
   border-top-width: 2px;
 }
 
+/* Legend group wrapper - transparent on desktop, collapsible on mobile */
+.map-legends-group {
+  display: contents;
+}
+
+/* Legend toggle button - hidden on desktop */
+.mobile-legend-toggle {
+  display: none;
+}
+
 /* Google Maps-style expandable layer selector */
 .map-layer-selector {
   position: absolute;
@@ -2558,15 +2568,65 @@
     top: 70px;
   }
 
+  /* --- Collapsible legend group on mobile --- */
+  .map-legends-group {
+    display: block;
+    position: absolute;
+    bottom: 180px;
+    left: 10px;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .map-legends-group.mobile-expanded {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .map-legends-group .map-speed-legend,
+  .map-legends-group .map-separation-legend,
+  .map-legends-group .map-density-legend,
+  .map-legends-group .map-dynamic-legends {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    left: auto;
+    margin-bottom: 6px;
+  }
+
+  .mobile-legend-toggle {
+    display: block;
+    position: absolute;
+    bottom: 155px;
+    left: 10px;
+    z-index: 1000;
+    background: rgba(26, 26, 46, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .mobile-legend-toggle:active {
+    background: rgba(26, 26, 46, 1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
   /* ===========================================
      HIDE MAP ELEMENTS WHEN SIDEBAR IS OPEN
      =========================================== */
-  .controls-panel.mobile-open ~ .map-wrapper .map-speed-legend,
-  .controls-panel.mobile-open ~ .map-wrapper .map-separation-legend,
-  .controls-panel.mobile-open ~ .map-wrapper .map-density-legend,
+  .controls-panel.mobile-open ~ .map-wrapper .map-legends-group,
+  .controls-panel.mobile-open ~ .map-wrapper .mobile-legend-toggle,
   .controls-panel.mobile-open ~ .map-wrapper .map-layer-selector,
-  .controls-panel.mobile-open ~ .map-wrapper .maplibregl-ctrl-bottom-left,
-  .controls-panel.mobile-open ~ .map-wrapper .map-dynamic-legends {
+  .controls-panel.mobile-open ~ .map-wrapper .maplibregl-ctrl-bottom-left {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
@@ -2665,24 +2725,16 @@
     right: 12px;
   }
 
-  /* Speed legend stays in top-left in landscape */
-  .map-speed-legend {
+  /* Legend group in landscape - position top-left */
+  .map-legends-group {
+    bottom: auto;
     top: 12px;
-    bottom: auto;
     left: 10px;
   }
 
-  /* Separation legend below speed legend in landscape */
-  .map-separation-legend {
-    top: 140px;
+  .mobile-legend-toggle {
     bottom: auto;
-    left: 10px;
-  }
-
-  /* Density legend below speed legend in landscape */
-  .map-density-legend {
-    top: 140px;
-    bottom: auto;
+    top: 12px;
     left: 10px;
   }
 
@@ -2708,13 +2760,6 @@
   /* Scale in bottom-left, above map selector */
   .maplibregl-ctrl-bottom-left .maplibregl-ctrl-scale {
     margin-bottom: 65px;
-  }
-
-  /* Dynamic legends move to right side in landscape */
-  .map-dynamic-legends {
-    top: 12px;
-    left: auto;
-    right: 70px;
   }
 }
 
