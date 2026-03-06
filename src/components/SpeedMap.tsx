@@ -3551,21 +3551,20 @@ export function SpeedMap({
             popup.current?.remove();
           });
 
-          map.current.on("mousemove", "population-density-fill", (e) => {
+          const showDensityPopup = (
+            e: maplibregl.MapLayerMouseEvent,
+          ) => {
             if (!e.features?.length || !map.current) return;
             const props = e.features[0].properties;
             const newTractId = props.GEOID;
 
-            // Only update if hovering a different tract
             if (newTractId !== hoveredTractId.current) {
-              // Clear previous hover state
               if (hoveredTractId.current) {
                 map.current.setFeatureState(
                   { source: "census-tracts", id: hoveredTractId.current },
                   { hover: false },
                 );
               }
-              // Set new hover state
               hoveredTractId.current = newTractId;
               map.current.setFeatureState(
                 { source: "census-tracts", id: newTractId },
@@ -3576,7 +3575,6 @@ export function SpeedMap({
             const density = props.density || 0;
             const population = props.POP100 || 0;
 
-            // Get color based on density (matching map color scale)
             const getDensityColor = (d: number): string => {
               if (d >= 45000) return "#ff0066";
               if (d >= 28000) return "#ff6600";
@@ -3600,7 +3598,10 @@ export function SpeedMap({
               </div>`,
               )
               .addTo(map.current);
-          });
+          };
+
+          map.current.on("mousemove", "population-density-fill", showDensityPopup);
+          map.current.on("click", "population-density-fill", showDensityPopup);
         } // end of else block (first-time layer creation)
 
         // Toggle visibility and adjust opacity for satellite overlay
