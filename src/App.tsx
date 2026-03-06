@@ -179,6 +179,7 @@ function App() {
         speedUnit={speedUnit}
         setSpeedUnit={setSpeedUnit}
         isSidebarOpen={isSidebarOpen}
+        onResetPopulationDensity={() => setShowPopulationDensity(false)}
       />
       <SpeedMap
         key={city}

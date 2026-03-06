@@ -347,6 +347,7 @@ interface ControlsProps {
   speedUnit: SpeedUnit;
   setSpeedUnit: (unit: SpeedUnit) => void;
   isSidebarOpen?: boolean;
+  onResetPopulationDensity?: () => void;
 }
 
 function CollapsibleSection({
@@ -434,6 +435,7 @@ export function Controls({
   speedUnit,
   setSpeedUnit,
   isSidebarOpen,
+  onResetPopulationDensity,
 }: ControlsProps) {
   const MIN_TRANSIT_MAP_ZOOM = 1;
   const MAX_TRANSIT_MAP_ZOOM = 4;
@@ -1343,6 +1345,7 @@ export function Controls({
           setShowBusRoutesOverlay(false);
           setHideStoppedTrains(false);
           setHideAllTrains(false);
+          onResetPopulationDensity?.();
         }}
       >
         Reset All Filters

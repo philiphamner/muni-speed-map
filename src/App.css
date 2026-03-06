@@ -2065,7 +2065,7 @@
 /* Separation Legend - on map, above speed legend when separation mode is active */
 .map-separation-legend {
   position: absolute;
-  bottom: 353px;
+  bottom: 400px;
   left: 10px;
   background: rgba(26, 26, 46, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.2);
