@@ -1,7 +1,4 @@
-import type { City } from "../../types";
-
 interface LayerSelectorProps {
-  city: City;
   showSatellite: boolean;
   showPopulationDensity: boolean;
   onSatelliteToggle?: (show: boolean) => void;
@@ -9,7 +6,6 @@ interface LayerSelectorProps {
 }
 
 export function LayerSelector({
-  city,
   showSatellite,
   showPopulationDensity,
   onSatelliteToggle,

@@ -3680,7 +3680,6 @@ export function SpeedMap({
       {showPopulationDensity && <DensityLegend />}
 
       <LayerSelector
-        city={city}
         showSatellite={showSatellite}
         showPopulationDensity={showPopulationDensity ?? false}
         onSatelliteToggle={onSatelliteToggle}

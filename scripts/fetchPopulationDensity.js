@@ -107,6 +107,7 @@ const CITY_CONFIGS = {
     counties: [
       [STATE.CA, "085", "Santa Clara County"],
       [STATE.CA, "001", "Alameda County"],
+      [STATE.CA, "081", "San Mateo County"],
     ],
   },
   pittsburgh: {
@@ -142,6 +143,7 @@ const CITY_CONFIGS = {
       [STATE.UT, "011", "Davis County"],
       [STATE.UT, "057", "Weber County"],
       [STATE.UT, "049", "Utah County"],
+      [STATE.UT, "003", "Box Elder County"],
     ],
   },
   phoenix: {
