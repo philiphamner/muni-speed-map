@@ -1211,7 +1211,7 @@ export function Controls({
               onClick={() => setRouteLineMode("bySeparation")}
               disabled={!showRouteLines}
             >
-              Separation
+              Grade Sep.
             </button>
           </div>
         </div>
